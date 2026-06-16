@@ -15,6 +15,11 @@ export default function Footer() {
             </Link>
           </div>
           <div className="pb-6">
+            <Link href="/blog" className="text-sm leading-6 text-muted-foreground hover:text-foreground">
+              المدونة
+            </Link>
+          </div>
+          <div className="pb-6">
             <Link
               href="https://www.wearetagstudio.com/#contact-form"
               target="_blank"

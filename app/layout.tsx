@@ -5,17 +5,23 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import type React from "react"
 
-const cairo = Cairo({ subsets: ["arabic", "latin"] })
+const cairo = Cairo({ 
+  subsets: ["arabic", "latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap"
+})
 
 export const metadata = {
   title: "تاج ستوديو | وكالة إبداعية",
-  // تم إزالة سطر الوصف هنا
   icons: {
     icon: "/images/logo.png",
     shortcut: "/images/logo.png",
     apple: "/images/logo.png",
   },
-    generator: 'v0.app'
+  verification: {
+    google: "vMf7yKoadMGZOD294PNRvlO-gi0IElIURjP7fIIDsj0",
+  },
+  generator: "v0.app",
 }
 
 export default function RootLayout({

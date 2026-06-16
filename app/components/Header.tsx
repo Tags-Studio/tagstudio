@@ -64,6 +64,12 @@ export default function Header() {
             من نحن
           </Link>
           <Link
+            href="/blog"
+            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"
+          >
+            المدونة
+          </Link>
+          <Link
             href="/#contact-form"
             scroll={true}
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"
