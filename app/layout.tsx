@@ -19,7 +19,7 @@ export const metadata = {
     apple: "/images/logo.png",
   },
   verification: {
-    google: "vMf7yKoadMGZOD294PNRvlO-gi0IElIURjP7fIIDsj0",
+    google: "4a88UEyz_c7KWmh3TyykZoUjK3hWSHnWUc0FSufI7Ss",
   },
   generator: "v0.app",
 }
