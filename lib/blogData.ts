@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
     slug: "ma-hia-al-huwiya-al-basariya",
     excerpt:
       "الهوية البصرية هي انطباعك الأول — قبل أن تقول كلمة واحدة. تعرف على مكوناتها وكيف تبني هوية تُميّزك عن المنافسين وتجذب عملاءك المثاليين.",
-    image: "/images/blog-identity.png",
+    image: "/images/blog-identity.webp",
     category: "تصميم",
     author: "تاج ستوديو",
     date: "2024-06-10",
@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
     slug: "kam-yukalif-tasmim-shear-ihtirafi",
     excerpt:
       "سعر الشعار يتراوح بين 50 جنيه و50,000 دولار — والفرق ليس عشوائياً! دليل شامل وصادق يشرح ما تحصل عليه في كل مستوى سعري وكيف تختار ما يناسبك.",
-    image: "/images/blog-logo.png",
+    image: "/images/blog-logo.webp",
     category: "نصائح",
     author: "تاج ستوديو",
     date: "2024-06-05",
@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
     slug: "asrar-tasmim-social-media-yajdhab-customers",
     excerpt:
       "لديك ثانية ونصف فقط لتجذب انتباه المتابع قبل أن يمر للمنشور التالي. اكتشف الأسرار السبعة التي تجعل تصاميمك لا تُقاوَم.",
-    image: "/images/blog-social.png",
+    image: "/images/blog-social.webp",
     category: "تسويق",
     author: "تاج ستوديو",
     date: "2024-05-28",
@@ -254,7 +254,7 @@ export const blogPosts: BlogPost[] = [
     slug: "video-motion-marketing",
     excerpt:
       "الفيديو أصبح اللغة الأساسية للتسويق الحديث. تعرف على كيفية استخدام الموشن جرافيك لجذب جمهورك وتوصيل رسالتك بطريقة لا تُنسى.",
-    image: "/images/blog-motion.png",
+    image: "/images/blog-motion.webp",
     category: "فيديو",
     author: "تاج ستوديو",
     date: "2024-05-15",
@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
     slug: "print-design-professional",
     excerpt:
       "رغم انتشار الوسائط الرقمية، المطبوعات الاحترافية لا تزال الأقوى في ترك انطباع دائم. تعرف على أسرار تصميم مطبوعات لا تُلقى في سلة المهملات.",
-    image: "/images/blog-print.png",
+    image: "/images/blog-print.webp",
     category: "طباعة",
     author: "تاج ستوديو",
     date: "2024-05-01",
@@ -354,7 +354,7 @@ export const blogPosts: BlogPost[] = [
     slug: "asaar-tasmim-huwiya-basariya-2025",
     excerpt:
       "كم تكلف الهوية البصرية فعلاً؟ دليل محدّث وصادق يشرح مستويات الأسعار في السوق السعودي والمصري، وما تحصل عليه في كل مستوى، وكيف تختار الباقة المناسبة لميزانيتك.",
-    image: "/images/blog-identity.png",
+    image: "/images/blog-identity.webp",
     category: "نصائح",
     author: "تاج ستوديو",
     date: "2025-06-14",
@@ -428,7 +428,7 @@ export const blogPosts: BlogPost[] = [
     slug: "taklfet-tasmim-mawqi-electroni-2025",
     excerpt:
       "دليل شامل ومفصل يشرح تكلفة تصميم المواقع الإلكترونية بمختلف أنواعها (تعريفية، متاجر، مخصصة) والعوامل التي تحدد السعر وكيف تختار الأنسب لمشروعك.",
-    image: "/images/blog-web.png",
+    image: "/images/blog-web.webp",
     category: "نصائح",
     author: "تاج ستوديو",
     date: "2026-06-16",
@@ -495,7 +495,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "khalf-al-kawalis-tasmim-huwiya",
     excerpt:
       "نأخذك في رحلة حقيقية خلف كواليس العمل في تاج ستوديو لنشرح لك خطوات تصميم الهوية البصرية من الفكرة المبدئية إلى التسليم النهائي.",
-    image: "/images/blog-identity.png",
+    image: "/images/blog-identity.webp",
     category: "تعليمي",
     author: "تاج ستوديو",
     date: "2026-06-23",
@@ -555,7 +555,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "psychology-alwan-branding",
     excerpt:
       "لماذا تختار الشركات ألواناً معينة لهويتها البصرية؟ دليل مبسط يشرح سيكولوجية الألوان وكيف تختار الألوان التي تؤثر إيجابياً على قرارات عملائك.",
-    image: "/images/blog-identity.png",
+    image: "/images/blog-identity.webp",
     category: "تعليمي",
     author: "تاج ستوديو",
     date: "2026-06-30",
@@ -604,7 +604,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "kayf-takhtar-studio-tasmim",
     excerpt:
       "الاختيار الخاطئ لاستوديو التصميم قد يكلفك ضعف الميزانية وضياع الوقت. إليك 8 معايير حاسمة للمقارنة والاختيار بثقة وأمان.",
-    image: "/images/blog-identity.png",
+    image: "/images/blog-identity.webp",
     category: "نصائح",
     author: "تاج ستوديو",
     date: "2026-07-07",
@@ -664,7 +664,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "anwa-malafat-tasmim-png-svg-pdf",
     excerpt:
       "تتلقى ملفات التصميم بصيغ مختلفة مثل PNG و SVG و PDF ولا تعرف كيف تستخدمها؟ إليك الدليل المبسط لفهم أنواع ملفات التصميم واستخداماتها الصحيحة.",
-    image: "/images/blog-print.png",
+    image: "/images/blog-print.webp",
     category: "تقني",
     author: "تاج ستوديو",
     date: "2026-07-14",
@@ -718,7 +718,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "tasmim-mawqi-seo-google",
     excerpt:
       "هل تعلم أن التصميم الجميل للموقع قد يضر بترتيبه في محركات البحث إذا لم يكن مهيئاً؟ إليك 10 نصائح عملية لربط التصميم الـ UI/UX بالـ SEO.",
-    image: "/images/blog-web.png",
+    image: "/images/blog-web.webp",
     category: "تقني",
     author: "تاج ستوديو",
     date: "2026-07-21",
@@ -765,7 +765,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "shiaar-faqat-bidun-huwiya",
     excerpt:
       "سؤال يراود كل صاحب مشروع ناشئ ذو ميزانية محدودة: هل يكفي تصميم شعار فقط في البداية؟ وما هي مخاطر وفوائد هذا القرار؟ إليك الإجابة الصادقة.",
-    image: "/images/blog-logo.png",
+    image: "/images/blog-logo.webp",
     category: "نصائح",
     author: "تاج ستوديو",
     date: "2026-07-28",
@@ -820,7 +820,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "kam-tastaghreq-tasmim-huwiya",
     excerpt:
       "تريد إطلاق مشروعك وتبحث عن الوقت الفعلي الذي يحتاجه فريق التصميم لإنجاز هويتك؟ دليل الجدول الزمني لخطوات تصميم الهوية وعوامل تسريعها.",
-    image: "/images/blog-identity.png",
+    image: "/images/blog-identity.webp",
     category: "نصائح",
     author: "تاج ستوديو",
     date: "2026-08-04",
@@ -869,7 +869,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "farq-shiaar-huwiya-alama-tijariya",
     excerpt:
       "تخلط بين هذه المصطلحات الثلاثة؟ لست وحدك! دليل مبسط وممتع يوضح الفرق الدقيق بين الشعار والهوية البصرية والعلامة التجارية بالأمثلة.",
-    image: "/images/blog-identity.png",
+    image: "/images/blog-identity.webp",
     category: "تعليمي",
     author: "تاج ستوديو",
     date: "2026-08-11",
@@ -917,7 +917,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "mata-tuhadith-huwiya-basariya",
     excerpt:
       "هل تبدو هويتك البصرية قديمة ولا تناسب طموحات شركتك الحالية؟ إليك 6 علامات واضحة تدل على أن الوقت قد حان لتحديث هويتك البصرية.",
-    image: "/images/blog-identity.png",
+    image: "/images/blog-identity.webp",
     category: "نصائح",
     author: "تاج ستوديو",
     date: "2026-08-18",
@@ -971,7 +971,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "freelancer-am-studio-tasmim",
     excerpt:
       "مقارنة عملية وصادقة توضح الفروق الجوهرية بين التعامل مع مصمم مستقل (Freelancer) أو استوديو تصميم احترافي، وكيف تحدد الأنسب لميزانيتك وحجم مشروعك.",
-    image: "/images/blog-identity.png",
+    image: "/images/blog-identity.webp",
     category: "نصائح",
     author: "تاج ستوديو",
     date: "2026-08-25",
@@ -1030,7 +1030,7 @@ WordPress vs Salla vs البرمجة الخاصة (Custom)
     slug: "baqat-tasmim-huwiya-basariya",
     excerpt:
       "تجد عروض أسعار مختلفة لباقات الهوية البصرية ولا تعرف الفرق بينها؟ دليل المشتري الذكي يشرح تفاصيل الباقات وما يجب أن تطلبه وتتأكد من وجوده.",
-    image: "/images/blog-identity.png",
+    image: "/images/blog-identity.webp",
     category: "نصائح",
     author: "تاج ستوديو",
     date: "2026-09-01",
