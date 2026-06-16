@@ -1,0 +1,466 @@
+"use client"
+
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
+import ImageModal from "./ImageModal"
+import { useSearchParams, useRouter, usePathname } from "next/navigation" // استيراد useRouter و usePathname
+
+const projects = [
+  {
+    id: 19,
+    title: "هوية زعتر و سمسم",
+    description: "تصميم هوية بصرية متكاملة لمطعم زعتر و سمسم، تشمل الشعار، الألوان، التعبئة، والزي الرسمي.",
+    imageUrl: "/images/zaatar-identity-portfolio3.webp",
+    category: "الهوية البصرية",
+  },
+  {
+    id: 20,
+    title: "هوية جمعية التنمية الزراعية",
+    description: "تطوير هوية بصرية لجمعية التنمية الزراعية، مع التركيز على الاستدامة والطبيعة.",
+    imageUrl: "/images/agricultural-development-association.avif",
+    category: "الهوية البصرية",
+  },
+  {
+    id: 21,
+    title: "هوية برجر راجي",
+    description: "تصميم هوية بصرية شاملة لعلامة برجر راجي.",
+    imageUrl: "/images/ragy-identity-portfolio.webp",
+    category: "الهوية البصرية",
+  },
+  {
+    id: 24,
+    title: "الفريج للأسماك",
+    description: "تصميم بروشور أو كتيب، ربما لعلامة تجارية فاخرة أو عقارية.",
+    imageUrl: "/images/print-design-1.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 25,
+    title: "الأمين للتمور",
+    description: "تصميم كتيب أو تقرير سنوي للشركات، يتميز بتصميم نظيف ومهني.",
+    imageUrl: "/images/print-design-2.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 26,
+    title: "الأمين للتمور",
+    description: "تصميم بطاقة عمل بأسلوب عصري وبسيط.",
+    imageUrl: "/images/print-design-3.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 27,
+    title: "الأمين للتمور",
+    description: "تصميم آخر لبطاقة عمل، يتميز بتصميم فريد أو استخدام مواد مميزة.",
+    imageUrl: "/images/print-design-4.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 28,
+    title: "الأكاديمية المالية",
+    description: "تصميم صفحة مجلة أو مطبوعة كبيرة الحجم، ربما للأزياء أو نمط الحياة.",
+    imageUrl: "/images/print-design-5.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 29,
+    title: "السهلي",
+    description: "تصميم بروشور أو نشرة إعلانية، قد يكون لحدث أو منتج.",
+    imageUrl: "/images/print-design-6.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 30,
+    title: "الامتياز التجاري",
+    description: "تصميم غلاف كتاب أو منشور، يركز على الطباعة والصور.",
+    imageUrl: "/images/print-design-7.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 31,
+    title: "وزارة السياحة",
+    description: "تصميم ملصق أو إعلان كبير الحجم، ربما لحدث ثقافي أو إطلاق منتج.",
+    imageUrl: "/images/print-design-8.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 32,
+    title: "انجلش زون",
+    description: "تصميم عبوة منتج، قد يكون لمنتج غذائي أو استهلاكي، مع هوية بصرية مميزة.",
+    imageUrl: "/images/print-design-9.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 33,
+    title: "انجلش زون",
+    description: "تصميم غلاف مجلة أو كتاب، يظهر فيه نص عربي بارز وتصميم فني.",
+    imageUrl: "/images/print-design-10.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 34,
+    title: "كتيب لجمعية الفيصلية",
+    description: "تصميم بطاقة عمل أو دعوة، مع تركيز على التفاصيل الدقيقة والخطوط الأنيقة.",
+    imageUrl: "/images/print-design-11.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 35,
+    title: "روابي الخليج",
+    description: "تصميم عبوة منتج فاخرة، ربما لمستحضرات تجميل أو منتجات فاخرة، مع شعار مميز.",
+    imageUrl: "/images/print-design-12.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 36,
+    title: "بروفايل لمكتب محاماه آل زرعه",
+    description: "تصميم بروشور أو كتيب، يظهر فيه تخطيط متعدد الصفحات ومعلومات منظمة.",
+    imageUrl: "/images/print-design-13.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 37,
+    title: "بريزينتيشن للأكاديمية المالية",
+    description: "تصميم ملصق أو إعلان، يتميز برسومات توضيحية أو أيقونات.",
+    imageUrl: "/images/print-design-14.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 38,
+    title: "كارت شخصي AMP",
+    description: "تصميم بطاقة عمل أو هوية بصرية، مع استخدام ألوان جريئة وتصميم حديث.",
+    imageUrl: "/images/print-design-15.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 39,
+    title: "كارت شخصي لشركة أبعاد",
+    description: "تصميم عبوة منتج، ربما لمنتجات غذائية أو مشروبات، مع التركيز على الجاذبية البصرية.",
+    imageUrl: "/images/print-design-16.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 40,
+    title: "بوكسات للأمين للتمور",
+    description: "تصميم غلاف كتاب أو مجلة، يظهر فيه صورة جذابة وعنوان واضح.",
+    imageUrl: "/images/print-design-17.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 41,
+    title: "بوكسات للأمين للتمور",
+    description: "تصميم بطاقة عمل أو دعوة، مع استخدام عناصر تصميم بسيطة وأنيقة.",
+    imageUrl: "/images/print-design-18.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 42,
+    title: "بوكسات للأمين للتمور",
+    description: "تصميم بطاقة عمل أو هوية بصرية، مع شعار بسيط وأنيق.",
+    imageUrl: "/images/print-design-19.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 43,
+    title: "غلاف مجلة بتصميم فني",
+    description: "تصميم غلاف مجلة أو كتاب، يظهر فيه تصميم فني معقد.",
+    imageUrl: "/images/print-design-20.avif",
+    category: "تصاميم المطبوعات",
+  },
+  {
+    id: 44,
+    title: "بروشور بصور كبيرة",
+    description: "تصميم بروشور أو كتيب، يركز على الصور الكبيرة والنصوص الموجزة.",
+    imageUrl: "/images/print-design-21.avif",
+    category: "تصاميم المطبوعات",
+  },
+  // مشاريع السوشيال ميديا
+  {
+    id: 45,
+    title: "الامتياز التجاري",
+    description: "تصميم منشور لوسائل التواصل الاجتماعي لمطعم زعتر و سمسم.",
+    imageUrl: "/images/social-media-zaatar-1.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 46,
+    title: "الامتياز التجاري",
+    description: "تصميم إعلان وجبة جديدة لمطعم زعتر و سمسم.",
+    imageUrl: "/images/social-media-zaatar-2.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 47,
+    title: "divehood",
+    description: "تصميم عرض خاص لمطعم زعتر و سمسم.",
+    imageUrl: "/images/social-media-zaatar-3.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 48,
+    title: "divehood",
+    description: "تصميم إعلان لبرجر جديد لعلامة برجر راجي.",
+    imageUrl: "/images/social-media-ragy-1.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 49,
+    title: "divehood",
+    description: "تصميم منشور تفاعلي لعلامة برجر راجي.",
+    imageUrl: "/images/social-media-ragy-2.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 50,
+    title: "جمعية التنمية الأهلية بالقارة",
+    description: "تصميم حملة تسويقية لعلامة برجر راجي.",
+    imageUrl: "/images/social-media-ragy-3.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 51,
+    title: "دايف هود",
+    description: "تصميم منشور لمنتج جديد لعلامة الواحة.",
+    imageUrl: "/images/social-media-alwaha-1.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 52,
+    title: "Bateel Diver",
+    description: "تصميم إعلان لموسم جديد لعلامة الواحة.",
+    imageUrl: "/images/social-media-alwaha-2.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 53,
+    title: "جدارة",
+    description: "تصميم منشور توعوي لعلامة الواحة.",
+    imageUrl: "/images/social-media-alwaha-3.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 54,
+    title: "انجلش زون",
+    description: "تصميم منشور إخباري لعلامة المساء.",
+    imageUrl: "/images/social-media-almasaa-1.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 55,
+    title: "الامتياز التجاري",
+    description: "تصميم إعلان لحدث قادم لعلامة المساء.",
+    imageUrl: "/images/social-media-almasaa-2.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 56,
+    title: "الامتياز التجاري",
+    description: "تصميم منشور تفاعلي لعلامة المساء.",
+    imageUrl: "/images/social-media-almasaa-3.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 57,
+    title: "الامتياز التجاري",
+    description: "تصميم منشور ديني لعلامة النور.",
+    imageUrl: "/images/social-media-alnour-1.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 58,
+    title: "انجلش زون",
+    description: "تصميم إعلان لمناسبة دينية لعلامة النور.",
+    imageUrl: "/images/social-media-alnour-2.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 59,
+    title: "انجلش زون",
+    description: "تصميم منشور صباحي لعلامة الفجر.",
+    imageUrl: "/images/social-media-alfajr-1.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 60,
+    title: "انجلش زون",
+    description: "تصميم إعلان لمنتج جديد لعلامة الفجر.",
+    imageUrl: "/images/social-media-alfajr-2.avif",
+    category: "تصميمات السوشيال ميديا",
+  },
+  {
+    id: 23,
+    title: "فيديو موشن جرافيك - VOKO ERP",
+    description: "فيديو موشن جرافيك احترافي لنظام VOKO ERP، يعرض بيئة العمل الحديثة والتقنيات المتطورة.",
+    imageUrl: "/images/voko-erp-motion-graphic-thumbnail.jpg", // تم تحديث الصورة هنا
+    category: "فيديو موشن جرافيك",
+    externalLink: "https://youtu.be/PlwOtO7kPuM",
+  },
+]
+
+const categories = ["الكل", "الهوية البصرية", "تصميمات السوشيال ميديا", "تصاميم المطبوعات", "فيديو موشن جرافيك"]
+
+export default function PortfolioGrid() {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  // استخلاص الفلتر مباشرة من معلمات URL
+  const currentCategoryFromUrl = searchParams.get("category")
+  const filter =
+    currentCategoryFromUrl && categories.includes(currentCategoryFromUrl) ? currentCategoryFromUrl : "الهوية البصرية" // الفلتر الافتراضي
+
+  const [selectedProjectImage, setSelectedProjectImage] = useState<string | null>(null)
+  const [selectedProjectTitle, setSelectedProjectTitle] = useState<string>("")
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // دالة لتحديث معلمة 'category' في URL
+  const setCategoryFilter = (category: string) => {
+    const newSearchParams = new URLSearchParams(searchParams.toString())
+    if (category === "الكل") {
+      newSearchParams.delete("category")
+    } else {
+      newSearchParams.set("category", category)
+    }
+    // تحديث URL. scroll: false لمنع التمرير التلقائي عند تغيير الفلتر داخل نفس القسم.
+    router.push(`${pathname}?${newSearchParams.toString()}#portfolio-grid`, { scroll: false })
+  }
+
+  const filteredProjects = filter === "الكل" ? projects : projects.filter((project) => project.category === filter)
+
+  const openModal = (imageUrl: string, title: string) => {
+    setSelectedProjectImage(imageUrl)
+    setSelectedProjectTitle(title)
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+    setSelectedProjectImage(null)
+    setSelectedProjectTitle("")
+  }
+
+  return (
+    <section id="portfolio-grid" className="py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">أعمالنا</h2>
+          <p className="mt-4 text-lg text-muted-foreground">عرض لتصاميمنا البسيطة وحلولنا الإبداعية.</p>
+        </motion.div>
+
+        <div className="flex justify-center space-x-4 mb-8 space-x-reverse flex-wrap gap-2">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setCategoryFilter(category)} // استخدام الدالة الجديدة هنا
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                filter === category
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence>
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="bg-background rounded-3xl shadow-lg overflow-hidden hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
+              >
+                <div
+                  className={`relative overflow-hidden ${
+                    project.category === "تصميمات السوشيال ميديا" ? "h-[400px]" : "h-64"
+                  }`}
+                >
+                  <Image
+                    src={project.imageUrl || "/placeholder.svg"}
+                    alt={project.title}
+                    layout="fill"
+                    objectFit={project.category === "تصميمات السوشيال ميديا" ? "contain" : "cover"}
+                    className="transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  />
+                  <motion.div
+                    className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300"
+                    whileHover={{ opacity: 1 }}
+                  >
+                    <p className="text-white text-center px-4">{project.description}</p>
+                  </motion.div>
+                </div>
+                <div className="p-6">
+                  <div className="text-sm font-medium text-primary mb-1">{project.category}</div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
+                  {project.externalLink ? (
+                    <a
+                      href={project.externalLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline inline-flex items-center"
+                    >
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                        />
+                      </svg>
+                      عرض المشروع
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => openModal(project.imageUrl, project.title)}
+                      className="text-primary hover:underline inline-flex items-center"
+                    >
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                        />
+                      </svg>
+                      عرض المشروع
+                    </button>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        <ImageModal
+          imageUrl={selectedProjectImage}
+          title={selectedProjectTitle}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+        />
+      </div>
+    </section>
+  )
+}
