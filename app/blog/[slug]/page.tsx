@@ -10,8 +10,12 @@ interface Props {
   }
 }
 
+// ✅ Revalidate daily to rebuild pages for newly published articles
+export const revalidate = 86400
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug)
+  const today = new Date().toISOString().split("T")[0]
+  const post = blogPosts.find((p) => p.slug === params.slug && p.date <= today)
   if (!post) return {}
 
   return {
@@ -31,13 +35,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    slug: post.slug,
-  }))
+  const today = new Date().toISOString().split("T")[0]
+  return blogPosts
+    .filter((post) => post.date <= today)
+    .map((post) => ({
+      slug: post.slug,
+    }))
 }
 
 export default function BlogPostPage({ params }: Props) {
-  const post = blogPosts.find((p) => p.slug === params.slug)
+  const today = new Date().toISOString().split("T")[0]
+  const post = blogPosts.find((p) => p.slug === params.slug && p.date <= today)
 
   if (!post) {
     notFound()
