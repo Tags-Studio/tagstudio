@@ -175,6 +175,62 @@ export default function ArticleClient({ post }: Props) {
     }
   }
 
+  // 1. Definition of the Logo Colors based on the Tag Studio brand identity
+  const logoColors = [
+    { primary: "blue-600", border: "border-blue-500", text: "text-blue-600 dark:text-blue-400", bgLight: "bg-blue-500/10", borderLight: "border-blue-500/20", hover: "hover:border-blue-500/30", check: "bg-blue-500/10 border-blue-500/25 text-blue-600 dark:text-blue-400" },
+    { primary: "cyan-500", border: "border-cyan-500", text: "text-cyan-600 dark:text-cyan-400", bgLight: "bg-cyan-500/10", borderLight: "border-cyan-500/20", hover: "hover:border-cyan-500/30", check: "bg-cyan-500/10 border-cyan-500/25 text-cyan-600 dark:text-cyan-400" },
+    { primary: "amber-500", border: "border-amber-500", text: "text-amber-600 dark:text-amber-400", bgLight: "bg-amber-500/10", borderLight: "border-amber-500/20", hover: "hover:border-amber-500/30", check: "bg-amber-500/10 border-amber-500/25 text-amber-600 dark:text-amber-400" },
+    { primary: "rose-500", border: "border-rose-500", text: "text-rose-600 dark:text-rose-400", bgLight: "bg-rose-500/10", borderLight: "border-rose-500/20", hover: "hover:border-rose-500/30", check: "bg-rose-500/10 border-rose-500/25 text-rose-600 dark:text-rose-400" }
+  ]
+
+  // 2. Map Category to primary brand theme color
+  const getCategoryTheme = (category: string) => {
+    const c = category ? category.trim() : ""
+    if (c === "تصميم") return logoColors[3] // Rose/Purple
+    if (c === "تعليمي") return logoColors[0] // Blue
+    if (c === "تقني") return logoColors[1] // Cyan
+    return logoColors[2] // Amber/Orange as default for tips ("نصائح")
+  }
+
+  const theme = getCategoryTheme(post.category)
+
+  // Selection class based on category
+  const selectionClass = 
+    theme.primary === "rose-500" ? "selection:bg-rose-500/20" : 
+    theme.primary === "blue-600" ? "selection:bg-blue-500/20" : 
+    theme.primary === "cyan-500" ? "selection:bg-cyan-500/20" : 
+    "selection:bg-amber-500/20"
+
+  // 3. Custom Callout Styles based on type
+  const getCalloutStyles = (line: string) => {
+    if (line.startsWith("تحذير:")) {
+      return {
+        border: "border-rose-500",
+        bg: "bg-rose-500/[0.04]",
+        text: "text-rose-600 dark:text-rose-400",
+      }
+    }
+    if (line.startsWith("قاعدة ذهبية:") || line.startsWith("فكرة:") || line.startsWith("نصيحة:")) {
+      return {
+        border: "border-amber-500",
+        bg: "bg-amber-500/[0.04]",
+        text: "text-amber-600 dark:text-amber-400",
+      }
+    }
+    if (line.startsWith("نتيجة الاتساق:") || line.startsWith("معلومات:")) {
+      return {
+        border: "border-cyan-500",
+        bg: "bg-cyan-500/[0.04]",
+        text: "text-cyan-600 dark:text-cyan-400",
+      }
+    }
+    return {
+      border: theme.border,
+      bg: theme.bgLight.replace("/10", "/[0.04]"),
+      text: theme.text,
+    }
+  }
+
   // ✅ Dynamic Line-by-Line Content Formatter (Looka Style & High Contrast Typography)
   const renderFormattedContent = (content: string) => {
     const lines = content.split("\n")
@@ -192,7 +248,7 @@ export default function ArticleClient({ post }: Props) {
                 const [boldText, normalText] = item.split(":")
                 return (
                   <li key={i} className="flex items-start gap-3 text-[17px] md:text-[18px] text-neutral-700 dark:text-neutral-300 leading-loose">
-                    <span className="text-amber-500 mt-2.5 text-xs flex-shrink-0">●</span>
+                    <span className={`mt-2.5 text-xs flex-shrink-0 ${theme.text.split(" ")[0]}`}>●</span>
                     <p>
                       <strong className="text-neutral-900 dark:text-neutral-100 font-bold">{boldText}:</strong>
                       {replaceIcons(normalText)}
@@ -202,7 +258,7 @@ export default function ArticleClient({ post }: Props) {
               }
               return (
                 <li key={i} className="flex items-start gap-3 text-[17px] md:text-[18px] text-neutral-700 dark:text-neutral-300 leading-loose">
-                  <span className="text-amber-500 mt-2.5 text-xs flex-shrink-0">●</span>
+                  <span className={`mt-2.5 text-xs flex-shrink-0 ${theme.text.split(" ")[0]}`}>●</span>
                   <span>{replaceIcons(item)}</span>
                 </li>
               )
@@ -220,7 +276,7 @@ export default function ArticleClient({ post }: Props) {
         continue
       }
 
-      // 1. Heading Formatting
+      // 1. Heading Formatting (Cycles through Logo colors)
       const isHeading = 
         (line.length < 90 && (
           line.endsWith(":") || 
@@ -239,11 +295,13 @@ export default function ArticleClient({ post }: Props) {
       if (isHeading) {
         flushList(i)
         const cleanText = line.replace(/:$/, "")
+        // Alternate headings through logo colors
+        const headingColorClass = logoColors[renderedElements.length % logoColors.length].border
         renderedElements.push(
           <h2 
             key={`h2-${i}`} 
             id={`heading-${i}`}
-            className="text-[24px] md:text-[30px] font-black text-neutral-900 dark:text-neutral-100 mt-12 mb-6 pt-4 border-r-[5px] border-amber-500 pr-4 scroll-mt-28 leading-snug font-outfit"
+            className={`text-[24px] md:text-[30px] font-black text-neutral-900 dark:text-neutral-100 mt-12 mb-6 pt-4 border-r-[5px] ${headingColorClass} pr-4 scroll-mt-28 leading-snug font-outfit`}
           >
             {cleanText}
           </h2>
@@ -251,7 +309,7 @@ export default function ArticleClient({ post }: Props) {
         continue
       }
 
-      // 2. Numbered Options Formatting (Looka Style - Option Card with Green Checkmark)
+      // 2. Numbered Options Formatting (Looka Style - Option Card with Green/Alternating Checkmark)
       const numberedMatch = line.match(/^([١٢٣٤٥٦٧٨٩\d]+)\.\s*(.*)/)
       if (numberedMatch) {
         flushList(i)
@@ -283,14 +341,17 @@ export default function ArticleClient({ post }: Props) {
           }
         }
 
+        // Cycle option cards style using logo colors
+        const cardTheme = logoColors[i % logoColors.length]
+
         renderedElements.push(
           <div 
             key={`option-${i}`} 
-            className="my-8 p-6 md:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/30 hover:border-amber-500/30 transition-all duration-300 shadow-sm"
+            className={`my-8 p-6 md:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/30 ${cardTheme.hover} transition-all duration-300 shadow-sm`}
           >
             <div className="flex items-start gap-4">
-              {/* Clean Green Checkmark Circle like Looka */}
-              <div className="flex-shrink-0 w-7 h-7 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mt-1">
+              {/* Clean Checkmark Circle colored by logo theme */}
+              <div className={`flex-shrink-0 w-7 h-7 rounded-full ${cardTheme.check} flex items-center justify-center mt-1`}>
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -317,24 +378,25 @@ export default function ArticleClient({ post }: Props) {
         continue
       }
 
-      // 4. Callout Box Formatting (Tips / Note / Warning with solid background and thick right border)
+      // 4. Callout Box Formatting (Tips / Note / Warning with dynamic semantic border/bg)
       const isCallout = line.startsWith("تحذير:") || line.startsWith("قاعدة ذهبية:") || line.startsWith("نتيجة الاتساق:") || line.startsWith("أولاً:") || line.startsWith("ثانياً:") || line.startsWith("ثالثاً:") || line.startsWith("رابعاً:")
       if (isCallout) {
         flushList(i)
         const colonIndex = line.indexOf(":")
         const title = line.substring(0, colonIndex + 1)
         const text = line.substring(colonIndex + 1).trim()
+        const calloutStyle = getCalloutStyles(line)
         
         renderedElements.push(
-          <div key={`callout-${i}`} className="my-8 p-6 rounded-l-2xl border-r-4 border-amber-500 bg-amber-500/[0.04] text-[17px] md:text-[18px] leading-relaxed shadow-sm">
-            <strong className="block text-amber-600 dark:text-amber-400 mb-2 font-black text-lg">{title}</strong>
+          <div key={`callout-${i}`} className={`my-8 p-6 rounded-l-2xl border-r-4 ${calloutStyle.border} ${calloutStyle.bg} text-[17px] md:text-[18px] leading-relaxed shadow-sm`}>
+            <strong className={`block ${calloutStyle.text} mb-2 font-black text-lg`}>{title}</strong>
             <span className="text-neutral-700 dark:text-neutral-300">{replaceIcons(text)}</span>
           </div>
         )
         continue
       }
 
-      // 5. معالجة الصور المدمجة (Markdown Images: ![alt](url))
+      // 5. Embedded Markdown Images
       const imageMatch = line.match(/^!\[(.*?)\]\((.*?)\)/)
       if (imageMatch) {
         flushList(i)
@@ -360,7 +422,7 @@ export default function ArticleClient({ post }: Props) {
         continue
       }
 
-      // 6. الفقرات النصية العادية ذات التباعد المريح للقراءة
+      // 6. Regular Paragraphs
       flushList(i)
       renderedElements.push(
         <p 
@@ -377,31 +439,32 @@ export default function ArticleClient({ post }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground pb-24 relative selection:bg-amber-500/20 font-sans">
-      {/* 🔴 Top Scroll Progress Indicator */}
+    <div className={`min-h-screen bg-background text-foreground pb-24 relative ${selectionClass} font-sans`}>
+      {/* 🔴 Multi-Color Scroll Progress Indicator (Full Logo Spectrum) */}
       <div className="fixed top-0 left-0 right-0 z-50 h-[4px] bg-muted/20">
         <div 
-          className="h-full bg-gradient-to-r from-amber-500 to-orange-500 transition-all duration-75"
+          className="h-full bg-gradient-to-r from-blue-500 via-cyan-500 via-amber-500 to-rose-500 transition-all duration-75"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
       {/* Header Container */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 pt-10">
-        {/* Looka-style Breadcrumbs */}
+        {/* Breadcrumbs (Using Primary Hover) */}
         <nav className="flex items-center gap-2 text-xs md:text-sm text-neutral-500/80 mb-8 font-medium">
-          <Link href="/" className="hover:text-amber-500 transition-colors">الرئيسية</Link>
+          <Link href="/" className="hover:text-primary transition-colors">الرئيسية</Link>
           <span>/</span>
-          <Link href="/blog" className="hover:text-amber-500 transition-colors">المدونة</Link>
+          <Link href="/blog" className="hover:text-primary transition-colors">المدونة</Link>
           <span>/</span>
-          <span className="hover:text-amber-500 transition-colors cursor-pointer">{post.category}</span>
+          <span className="hover:text-primary transition-colors cursor-pointer">{post.category}</span>
           <span>/</span>
           <span className="text-neutral-800 dark:text-neutral-200 truncate max-w-[200px] md:max-w-xs">{post.title}</span>
         </nav>
 
         {/* Title and Intro */}
         <div className="max-w-4xl mb-12">
-          <span className="inline-block px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-500/10 rounded-full mb-5">
+          {/* Category-Specific Badge Color */}
+          <span className={`inline-block px-3.5 py-1 text-xs font-bold uppercase tracking-wider ${theme.text} ${theme.bgLight} rounded-full mb-5`}>
             {post.category}
           </span>
           <h1 className="text-3xl md:text-5xl lg:text-[52px] font-black text-neutral-900 dark:text-neutral-100 tracking-tight leading-tight md:leading-[1.15] mb-6">
@@ -411,10 +474,10 @@ export default function ArticleClient({ post }: Props) {
             {post.excerpt}
           </p>
 
-          {/* Author/Date Row */}
+          {/* Author/Date Row (Styled by category theme) */}
           <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-500/80 mt-8 border-y border-border/50 py-4">
             <div className="flex items-center gap-2">
-              <span className="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center font-bold text-amber-500">ت</span>
+              <span className={`w-8 h-8 rounded-full ${theme.bgLight} border ${theme.borderLight} flex items-center justify-center font-bold ${theme.text.split(" ")[0]}`}>ت</span>
               <span className="font-semibold text-neutral-900 dark:text-neutral-100">{post.author}</span>
             </div>
             <span>•</span>
@@ -449,22 +512,24 @@ export default function ArticleClient({ post }: Props) {
           {/* 🛠️ RIGHT COLUMN: Sticky Table of Contents & CTA (Looka Layout) */}
           <aside className="lg:col-span-4 lg:sticky lg:top-28 order-last lg:order-first space-y-8">
             
-            {/* Table of Contents Box */}
+            {/* Table of Contents Box (Active link highlights in respective heading's brand color) */}
             {headings.length > 0 && (
               <div className="p-6 rounded-2xl border border-border/60 bg-neutral-50/50 dark:bg-neutral-900/30 backdrop-blur-sm shadow-sm">
                 <h4 className="text-md font-bold text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-border/50">
                   فهرس المحتوى
                 </h4>
                 <nav className="space-y-3">
-                  {headings.map((heading) => {
+                  {headings.map((heading, idx) => {
                     const isActive = activeHeading === heading.id
+                    const activeColorClass = logoColors[idx % logoColors.length].text
+                    const activeBorderClass = logoColors[idx % logoColors.length].border
                     return (
                       <button
                         key={heading.id}
                         onClick={() => scrollToHeading(heading.id)}
                         className={`block w-full text-right text-[15px] transition-all duration-200 py-1.5 border-r-2 pr-3 -mr-[2px] ${
                           isActive 
-                            ? "border-amber-500 text-amber-500 font-bold translate-x-[-4px]" 
+                            ? `${activeBorderClass} ${activeColorClass} font-bold translate-x-[-4px]` 
                             : "border-transparent text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200"
                         }`}
                       >
@@ -476,9 +541,11 @@ export default function ArticleClient({ post }: Props) {
               </div>
             )}
 
-            {/* Premium Looka-style CTA for Services */}
-            <div className="p-8 rounded-2xl border border-amber-500/20 bg-gradient-to-b from-amber-500/[0.04] to-transparent shadow-md relative overflow-hidden text-center">
-              <div className="absolute top-0 right-0 w-20 h-20 bg-amber-500/5 rounded-full blur-xl pointer-events-none" />
+            {/* Premium Multi-Color Accent CTA for Services */}
+            <div className="p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-gradient-to-b from-neutral-50/50 to-transparent dark:from-neutral-900/30 dark:to-transparent shadow-md relative overflow-hidden text-center hover:border-blue-500/20 transition-all duration-500">
+              {/* Premium top accent line with logo color spectrum */}
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-500 via-cyan-500 via-amber-500 to-rose-500" />
+              <div className="absolute top-0 right-0 w-20 h-20 bg-blue-500/5 rounded-full blur-xl pointer-events-none" />
               <h4 className="text-xl font-black text-neutral-900 dark:text-neutral-100 mb-3 leading-snug">هل تريد تصميم شعار وهوية بصرية تُميّزك حقاً؟</h4>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
                 فريق تاج ستوديو يساعدك في تحويل فكرة مشروعك إلى علامة تجارية قوية وجذابة تجذب عملائك المثاليين.
@@ -487,7 +554,7 @@ export default function ArticleClient({ post }: Props) {
                 href="https://wa.me/201009215131" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block w-full py-3.5 px-6 rounded-xl bg-amber-500 hover:bg-amber-600 text-background font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-amber-500/10 hover:scale-[1.01]"
+                className="inline-block w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-cyan-500/10 hover:scale-[1.01]"
               >
                 تحدث مع خبير تصميم 💬
               </a>
