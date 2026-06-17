@@ -13,7 +13,30 @@ const cairo = Cairo({
 })
 
 export const metadata = {
-  title: "تاج ستوديو | وكالة إبداعية",
+  metadataBase: new URL("https://www.wearetagstudio.com"),
+  title: {
+    default: "تاج ستوديو | تصميم هوية بصرية وشعارات احترافية في مصر والسعودية",
+    template: "%s | تاج ستوديو",
+  },
+  description: "تاج ستوديو — وكالة تصميم جرافيك احترافية متخصصة في الهوية البصرية، تصميم الشعارات، السوشيال ميديا، والموشن جرافيك. خدمنا +200 عميل في مصر والسعودية منذ 2016.",
+  keywords: ["تصميم هوية بصرية", "تصميم شعار", "وكالة تصميم", "تاج ستوديو", "موشن جرافيك", "تصميم سوشيال ميديا", "تصميم مطبوعات", "هوية تجارية"],
+  openGraph: {
+    title: "تاج ستوديو | تصميم هوية بصرية وشعارات احترافية",
+    description: "نصمم هويات بصرية، شعارات، سوشيال ميديا، وموشن جرافيك احترافي. تواصل معنا الآن.",
+    url: "https://www.wearetagstudio.com",
+    siteName: "تاج ستوديو",
+    locale: "ar_EG",
+    type: "website",
+    images: [{ url: "/images/logo.png", width: 512, height: 512, alt: "شعار تاج ستوديو" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "تاج ستوديو | تصميم هوية بصرية وشعارات احترافية",
+    description: "نصمم هويات بصرية، شعارات، سوشيال ميديا، وموشن جرافيك احترافي.",
+  },
+  alternates: {
+    canonical: "https://www.wearetagstudio.com",
+  },
   icons: {
     icon: "/images/logo.png",
     shortcut: "/images/logo.png",
@@ -22,7 +45,6 @@ export const metadata = {
   verification: {
     google: "4a88UEyz_c7KWmh3TyykZoUjK3hWSHnWUc0FSufI7Ss",
   },
-  generator: "v0.app",
 }
 
 export default function RootLayout({

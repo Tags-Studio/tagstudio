@@ -21,9 +21,7 @@ export default function Footer() {
           </div>
           <div className="pb-6">
             <Link
-              href="https://www.wearetagstudio.com/#contact-form"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#contact-form"
               className="text-sm leading-6 text-muted-foreground hover:text-foreground"
             >
               تواصل معنا
@@ -36,7 +34,7 @@ export default function Footer() {
           </div>
         </nav>
         <p className="mt-10 text-center text-sm leading-5 text-muted-foreground">
-          مصمم ومطور من قبل تاج استوديو وحقوق الطبع والنشر لنا
+          © {new Date().getFullYear()} تاج ستوديو — جميع الحقوق محفوظة. مصمم ومطور من قبل تاج استوديو
         </p>
       </div>
     </footer>
