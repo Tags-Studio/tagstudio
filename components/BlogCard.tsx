@@ -33,6 +33,8 @@ const getCategoryStyles = (category: string) => {
 
 export default function BlogCard({ post }: BlogCardProps) {
   const styles = getCategoryStyles(post.category)
+  const isSocial = post.image.includes("blog-social")
+  const imagePositionClass = isSocial ? "object-center" : "object-top"
 
   return (
     <Link href={`/blog/${post.slug}`} className="group block">
@@ -42,7 +44,7 @@ export default function BlogCard({ post }: BlogCardProps) {
             src={post.image || "/images/identity.avif"}
             alt={post.title}
             fill
-            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            className={`object-cover ${imagePositionClass} transition-transform duration-500 group-hover:scale-105`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>

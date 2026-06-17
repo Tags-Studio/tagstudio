@@ -500,7 +500,7 @@ export default function ArticleClient({ post }: Props) {
             alt={post.title}
             fill
             priority
-            className="object-cover object-top"
+            className={`object-cover ${post.image.includes("blog-social") ? "object-center" : "object-top"}`}
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/25 to-transparent" />
