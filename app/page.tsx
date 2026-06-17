@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Suspense } from "react"
 import Hero from "./components/Hero"
 import WearYourStory from "./components/WearYourStory"
@@ -8,6 +9,14 @@ import Testimonials from "./components/Testimonials" // استيراد مكون 
 import Timeline from "./components/Timeline"
 import Marquee from "./components/Marquee"
 import ContactForm from "./components/ContactForm"
+
+export const metadata: Metadata = {
+  title: "تاج ستوديو | تصميم هوية بصرية وشعارات احترافية في مصر والسعودية",
+  description: "تاج ستوديو — وكالة تصميم جرافيك احترافية متخصصة في الهوية البصرية، تصميم الشعارات، السوشيال ميديا، والموشن جرافيك. خدمنا +200 عميل في مصر والسعودية منذ 2016.",
+  alternates: {
+    canonical: "https://www.wearetagstudio.com",
+  },
+}
 
 export default function Home() {
   return (
@@ -22,16 +31,34 @@ export default function Home() {
             "alternateName": "Tag Studio",
             "description": "وكالة تصميم جرافيك احترافية متخصصة في الهوية البصرية والموشن جرافيك في مصر والسعودية",
             "url": "https://www.wearetagstudio.com",
+            "image": "https://www.wearetagstudio.com/images/logo.png",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.wearetagstudio.com/images/logo.png"
+            },
+            "telephone": "+201009215131",
             "foundingDate": "2016",
+            "priceRange": "$$",
             "address": {
               "@type": "PostalAddress",
-              "addressCountry": "EG"
+              "addressCountry": "EG",
+              "addressLocality": "القاهرة"
             },
+            "areaServed": [
+              { "@type": "Country", "name": "Egypt" },
+              { "@type": "Country", "name": "Saudi Arabia" }
+            ],
+            "sameAs": [
+              "https://www.instagram.com/tagstudio.co",
+              "https://www.facebook.com/tagstudio.co"
+            ],
             "serviceType": [
               "تصميم هوية بصرية",
+              "تصميم شعارات",
               "موشن جرافيك",
               "تصميم سوشيال ميديا",
-              "تصميم مطبوعات"
+              "تصميم مطبوعات",
+              "تصميم مواقع إلكترونية"
             ],
             "aggregateRating": {
               "@type": "AggregateRating",
