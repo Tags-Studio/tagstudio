@@ -277,8 +277,10 @@ export default function ArticleClient({ post }: Props) {
       }
 
       // 1. Heading Formatting (Cycles through Logo colors)
+      const isMarkdownHeading = line.startsWith("#")
       const isHeading = 
-        (line.length < 90 && (
+        isMarkdownHeading ||
+        ((line.length < 90 && (
           line.endsWith(":") || 
           line.startsWith("السر") || 
           line.startsWith("الخطوة") || 
@@ -290,11 +292,11 @@ export default function ArticleClient({ post }: Props) {
           line.startsWith("ثالثاً") ||
           line.startsWith("رابعاً") ||
           line.startsWith("خامساً")
-        )) && !/^[١٢٣٤٥٦٧٨٩\d]+\./.test(line)
+        )) && !/^[١٢٣٤٥٦٧٨٩\d]+\./.test(line))
 
       if (isHeading) {
         flushList(i)
-        const cleanText = line.replace(/:$/, "")
+        const cleanText = line.replace(/^#+\s*/, "").replace(/:$/, "")
         // Alternate headings through logo colors
         const headingColorClass = logoColors[renderedElements.length % logoColors.length].border
         renderedElements.push(
@@ -379,7 +381,17 @@ export default function ArticleClient({ post }: Props) {
       }
 
       // 4. Callout Box Formatting (Tips / Note / Warning with dynamic semantic border/bg)
-      const isCallout = line.startsWith("تحذير:") || line.startsWith("قاعدة ذهبية:") || line.startsWith("نتيجة الاتساق:") || line.startsWith("أولاً:") || line.startsWith("ثانياً:") || line.startsWith("ثالثاً:") || line.startsWith("رابعاً:")
+      const isCallout = 
+        line.startsWith("تحذير:") || 
+        line.startsWith("قاعدة ذهبية:") || 
+        line.startsWith("فكرة:") || 
+        line.startsWith("نصيحة:") || 
+        line.startsWith("معلومات:") || 
+        line.startsWith("نتيجة الاتساق:") || 
+        line.startsWith("أولاً:") || 
+        line.startsWith("ثانياً:") || 
+        line.startsWith("ثالثاً:") || 
+        line.startsWith("رابعاً:")
       if (isCallout) {
         flushList(i)
         const colonIndex = line.indexOf(":")
@@ -417,6 +429,29 @@ export default function ArticleClient({ post }: Props) {
                 {alt}
               </span>
             )}
+          </div>
+        )
+        continue
+      }
+
+      // 5.5 Custom WhatsApp CTA Button
+      const ctaMatch = line.match(/^\[(.*?)\]$/)
+      if (ctaMatch && (line.includes("واتساب") || line.includes("تواصل") || line.includes("سعر") || line.includes("استشارة") || line.includes("مشروعك"))) {
+        flushList(i)
+        const ctaText = ctaMatch[1]
+        renderedElements.push(
+          <div key={`cta-btn-${i}`} className="my-8 flex justify-center w-full">
+            <a 
+              href="https://wa.me/201009215131" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 w-full sm:w-auto rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white font-extrabold text-md md:text-lg transition-all shadow-md hover:shadow-emerald-500/10 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            >
+              <span>{ctaText}</span>
+              <svg className="w-5 h-5 fill-current flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.48 2.052 14.02 1.027 11.968 1.027c-5.456 0-9.9 4.374-9.904 9.802-.001 1.76.478 3.479 1.387 5.061L2.456 20.38l4.19-1.226zm10.748-5.38c-.287-.143-1.7-.838-1.963-.933-.264-.096-.456-.143-.648.143-.19.288-.74.933-.906 1.123-.167.19-.333.21-.62.067-.287-.143-1.21-.444-2.305-1.419-.853-.759-1.428-1.7-1.595-1.985-.167-.286-.018-.44.125-.582.129-.129.287-.333.43-.5.143-.167.19-.286.287-.476.096-.19.048-.357-.024-.5-.072-.143-.648-1.56-.888-2.137-.233-.564-.47-.487-.648-.496-.167-.008-.36-.008-.552-.008s-.504.071-.768.357c-.264.286-1.008.983-1.008 2.397s1.032 2.78 1.176 2.971c.144.19 2.033 3.095 4.925 4.343.687.296 1.224.474 1.643.606.69.219 1.319.188 1.815.114.553-.083 1.7-.693 1.94-1.36.24-.667.24-1.238.168-1.36-.072-.12-.264-.2-.552-.343z"/>
+              </svg>
+            </a>
           </div>
         )
         continue
