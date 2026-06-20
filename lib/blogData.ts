@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "1",
     title: "ما هي الهوية البصرية وكيف تبني هوية قوية لعلامتك التجارية؟",
-    slug: "what-is-visual-identity",
+    slug: "ma-hia-al-huwiya-al-basariya",
     excerpt: "الهوية البصرية هي انطباعك الأول — قبل أن تقول كلمة واحدة. تعرف على مكوناتها وكيف تبني هوية تُميّزك عن المنافسين وتجذب عملاءك المثاليين.",
     image: "/images/blog-identity.webp",
     category: "تصميم",
