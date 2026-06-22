@@ -434,6 +434,52 @@ export default function ArticleClient({ post }: Props) {
         continue
       }
 
+      // 5.2 Embedded Markdown Tables
+      if (line.startsWith("|")) {
+        flushList(i)
+        const tableLines: string[] = []
+        while (i < lines.length && lines[i].trim().startsWith("|")) {
+          tableLines.push(lines[i].trim())
+          i++
+        }
+        i-- // Adjust pointer back
+
+        if (tableLines.length >= 2) {
+          const headers = tableLines[0].split("|").map(h => h.trim()).filter(h => h !== "")
+          const rows = tableLines.slice(2).map(rowLine => {
+            return rowLine.split("|").map(cell => cell.trim()).filter((_, idx, arr) => idx > 0 && idx < arr.length - 1)
+          })
+
+          renderedElements.push(
+            <div key={`table-${i}`} className="my-8 overflow-x-auto rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm">
+              <table className="min-w-full divide-y divide-neutral-200 dark:divide-neutral-800 text-right">
+                <thead className="bg-neutral-50 dark:bg-neutral-900/50">
+                  <tr>
+                    {headers.map((header, idx) => (
+                      <th key={idx} className="px-6 py-4 text-sm font-black text-neutral-900 dark:text-neutral-100 tracking-wider">
+                        {replaceIcons(header)}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="bg-white dark:bg-neutral-950 divide-y divide-neutral-200 dark:divide-neutral-800">
+                  {rows.map((row, rowIdx) => (
+                    <tr key={rowIdx} className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/20 transition-colors">
+                      {row.map((cell, cellIdx) => (
+                        <td key={cellIdx} className="px-6 py-4 text-[15px] text-neutral-700 dark:text-neutral-300 font-medium">
+                          {replaceIcons(cell)}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )
+          continue
+        }
+      }
+
       // 5.5 Custom WhatsApp CTA Button
       const ctaMatch = line.match(/^\[(.*?)\]$/)
       if (ctaMatch && (line.includes("واتساب") || line.includes("تواصل") || line.includes("سعر") || line.includes("استشارة") || line.includes("مشروعك"))) {
