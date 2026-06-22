@@ -12,9 +12,9 @@ export default function WearYourStory() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">حياكم الله</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">حياكم الله في تاج ستوديو</h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            في تاج استوديو، نؤمن بأن التصميم أكثر من ألوان وخطوط. هو تجربة، وهوية، وانطباع أول لا يُنسى.
+            نحن نؤمن بأن التصميم ليس مجرد أشكال وألوان؛ بل هو منظومة بصرية متكاملة تبني الثقة، وتصنع هوية قوية تعزز نمو أعمالكم وتترك انطباعاً أولاً لا يُنسى في السوق السعودي والمصري.
           </p>
           {/* تم حذف زر "استكشف المجموعة" بالكامل */}
         </motion.div>

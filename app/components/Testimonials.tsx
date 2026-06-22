@@ -7,75 +7,51 @@ import { useState, useEffect } from "react"
 
 const testimonials = [
   {
-    quote: "تاج ستوديو ساعدنا في تنفيذ مطبوعات احترافية تعكس روح برامجنا التعليمية في الخارج. عمل راقٍ ومتقن.",
-    author: "حسن الشخص",
-    position: "روابي الخليج",
+    quote: "تطوير الهوية البصرية لجمعية التنمية الزراعية بالأحساء كان نقلة نوعية. صمم تاج ستوديو نمطاً يعكس التراث والتربة بأسلوب مؤسسي راقٍ حاز إعجاب الجميع.",
+    author: "أ. حسن الشخص",
+    position: "جمعية التنمية الزراعية بالأحساء - السعودية",
     image:
-      "https://api.dicebear.com/8.x/initials/svg?seed=Hassan&backgroundColor=a855f7,f43f5e,fbbf24&backgroundType=gradientLinear",
+      "https://api.dicebear.com/8.x/initials/svg?seed=Hassan&backgroundColor=10b981,047857,065f46&backgroundType=gradientLinear",
     rating: 5,
   },
   {
-    quote: "تصاميم السوشيال ميديا كانت واضحة وتُخاطب طلابنا بلغتهم. يعرف الفريق ما يحتاجه السوق بالضبط.",
-    author: "جوانه",
-    position: "English Zone",
+    quote: "صمموا لنا هوية بصرية ممتعة ومليئة بالطاقة لمطعم برجر راجي. التغليف والعلب والأكواب كانت مميزة جداً وجذبت الزبائن من النظرة الأولى.",
+    author: "أ. يوسف العلي",
+    position: "مطعم برجر راجي - الرياض",
     image:
-      "https://api.dicebear.com/8.x/initials/svg?seed=Joana&backgroundColor=a855f7,f43f5e,fbbf24&backgroundType=gradientLinear",
+      "https://api.dicebear.com/8.x/initials/svg?seed=Youssef&backgroundColor=f97316,ea580c,c2410c&backgroundType=gradientLinear",
     rating: 5,
   },
   {
-    quote: "فريق تاج ستوديو محترفون فعلاً. استراتيجياتهم الرقمية ساعدتنا على الوصول إلى جماهير جديدة وزيادة التحويلات.",
-    author: "ليلى علي",
-    position: "مديرة التسويق – FC Franchise Creator",
+    quote: "نقلوا الروح الريفية الأصيلة لزعتر وسمسم بشكل بصري رائع. قائمة الطعام والعلب والتغليف الصديق للبيئة صُنعوا بعناية تامة وبألوان طبيعية ممتازة.",
+    author: "أ. عبدالله ناصر",
+    position: "مطعم زعتر وسمسم - مصر والسعودية",
     image:
-      "https://api.dicebear.com/8.x/initials/svg?seed=Layla&backgroundColor=a855f7,f43f5e,fbbf24&backgroundType=gradientLinear",
-    rating: 4,
+      "https://api.dicebear.com/8.x/initials/svg?seed=Abdullah&backgroundColor=84cc16,65a30d,4d7c0f&backgroundType=gradientLinear",
+    rating: 5,
   },
   {
-    quote: "قدروا يبتكرون لنا هوية بحرية مميزة، وشغلهم دائمًا متجدد ويُحدث فرقًا بصريًا.",
-    author: "إبراهيم جمعة",
+    quote: "قدروا يبتكرون لنا هوية بحرية مميزة في Dive Hood، وشغلهم دائمًا متجدد ويُحدث فرقًا بصريًا رائعاً في جميع مطبوعاتنا ومعداتنا.",
+    author: "أ. إبراهيم جمعة",
     position: "Dive Hood",
     image:
       "https://api.dicebear.com/8.x/initials/svg?seed=Ibrahim&backgroundColor=a855f7,f43f5e,fbbf24&backgroundType=gradientLinear",
     rating: 5,
   },
   {
-    quote: "التعامل مع شريحة الأطفال كان جذابًا وآمنًا. التصاميم مريحة لأولياء الأمور ومناسبة لهم.",
-    author: "يوسف العلي",
-    position: "جدارة",
+    quote: "فريق مبدع في تصاميم السوشيال ميديا للمراكز الطبية. إدارة ممتازة لحساباتنا والالتزام بالضوابط الطبية مع إخراج فني يبعث الثقة في قلوب المرضى.",
+    author: "د. مريم القحطاني",
+    position: "المدير التنفيذي - المركز الطبي التخصصي",
     image:
-      "https://api.dicebear.com/8.x/initials/svg?seed=Youssef&backgroundColor=a855f7,f43f5e,fbbf24&backgroundType=gradientLinear",
-    rating: 4,
-  },
-  {
-    quote: "صنعوا لنا بروفايل قانوني يعكس عملنا بدون جمود. فهمونا من أول مرة وأبدعوا في التنفيذ.",
-    author: "مريم القحطاني",
-    position: "مكتب آل زرعة للمحاماة",
-    image:
-      "https://api.dicebear.com/8.x/initials/svg?seed=Mariam&backgroundColor=a855f7,f43f5e,fbbf24&backgroundType=gradientLinear",
+      "https://api.dicebear.com/8.x/initials/svg?seed=Mariam&backgroundColor=0284c7,0369a1,075985&backgroundType=gradientLinear",
     rating: 5,
   },
   {
-    quote: "التغليف الذي نفّذوه غيّر مظهر منتجاتنا بالكامل وجعلها أكثر جاذبية في الأسواق.",
-    author: "عبدالله ناصر",
-    position: "الأمين للتمور",
+    quote: "تصاميم السوشيال ميديا كانت واضحة وتُخاطب طلابنا بلغتهم. يعرف الفريق ما يحتاجه قطاع التعليم والمدارس من هيبة ورزانة تليق بأولياء الأمور.",
+    author: "أ. جوانه الشخص",
+    position: "إدارة الاتصال - English Zone",
     image:
-      "https://api.dicebear.com/8.x/initials/svg?seed=Abdullah&backgroundColor=a855f7,f43f5e,fbbf24&backgroundType=gradientLinear",
-    rating: 5,
-  },
-  {
-    quote: "تصاميمهم أحدثت فرقًا كبيرًا في حملاتنا التسويقية وزادت التفاعل بشكل ملحوظ.",
-    author: "نورة السالم",
-    position: "شركة الأضواء",
-    image:
-      "https://api.dicebear.com/8.x/initials/svg?seed=Noura&backgroundColor=a855f7,f43f5e,fbbf24&backgroundType=gradientLinear",
-    rating: 4,
-  },
-  {
-    quote: "فريق مبدع ومتفهّم لاحتياجاتنا. النتائج دائمًا تفوق توقعاتنا وبجودة عالية.",
-    author: "علياء منصور",
-    position: "مركز الإلهام",
-    image:
-      "https://api.dicebear.com/8.x/initials/svg?seed=Alia&backgroundColor=a855f7,f43f5e,fbbf24&backgroundType=gradientLinear",
+      "https://api.dicebear.com/8.x/initials/svg?seed=Joana&backgroundColor=a855f7,f43f5e,fbbf24&backgroundType=gradientLinear",
     rating: 5,
   },
 ]

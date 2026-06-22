@@ -15,7 +15,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-gradient">تاج ستوديو</span>
-            <span className="block text-xl sm:text-2xl font-semibold text-muted-foreground mt-3">وكالة تصميم هويات بصرية وشعارات احترافية</span>
+            <span className="block text-xl sm:text-2xl font-semibold text-muted-foreground mt-3">وكالة تصميم هوية بصرية في الرياض وجدة</span>
           </motion.h1>
           <motion.p
             className="mt-6 text-lg leading-8 text-muted-foreground"
@@ -23,7 +23,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            حيث يلتقي التصميم البسيط بالإبداع. نحن نصنع تجارب أنيقة تلهم وترتقي بأعمالك.
+            نحن نصنع انطباعاً أولاً لا يُنسى. وكالة تصميم جرافيك رائدة تقدم هويات بصرية متكاملة وشعارات مبتكرة تعكس رؤية 2030 وترتقي بأعمالك التجارية والطبية في السعودية والخليج.
           </motion.p>
           <motion.div
             className="mt-10 flex items-center gap-x-6"
