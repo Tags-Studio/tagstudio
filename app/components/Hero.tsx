@@ -15,7 +15,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-gradient">تاج ستوديو</span>{" "}
-            <span className="block text-xl sm:text-2xl font-semibold text-muted-foreground mt-3">وكالة تصميم هوية بصرية في الرياض وجدة</span>
+            <span className="block text-xl sm:text-2xl font-semibold text-muted-foreground mt-3">نصنع هويات بصرية تترك أثرًا — من القاهرة إلى الرياض</span>
           </motion.h1>
           <motion.p
             className="mt-6 text-lg leading-8 text-muted-foreground"
