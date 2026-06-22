@@ -142,13 +142,6 @@ export default function FAQPage() {
               >
                 المدونة
               </Link>
-
-              <Link
-                href="/faq"
-                className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                الأسئلة الشائعة
-              </Link>
             </div>
           </div>
         </div>
