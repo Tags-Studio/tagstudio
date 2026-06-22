@@ -5,6 +5,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import type React from "react"
 import Script from "next/script"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const cairo = Cairo({ 
   subsets: ["arabic", "latin"],
@@ -60,6 +61,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
+        <SpeedInsights />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7EET2GCC8N"
