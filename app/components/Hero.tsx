@@ -14,7 +14,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-gradient">تاج ستوديو</span>
+            <span className="text-gradient">تاج ستوديو</span>{" "}
             <span className="block text-xl sm:text-2xl font-semibold text-muted-foreground mt-3">وكالة تصميم هوية بصرية في الرياض وجدة</span>
           </motion.h1>
           <motion.p
@@ -23,7 +23,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            نحن نصنع انطباعاً أولاً لا يُنسى. وكالة تصميم جرافيك رائدة تقدم هويات بصرية متكاملة وشعارات مبتكرة تعكس رؤية 2030 وترتقي بأعمالك التجارية والطبية في السعودية والخليج.
+            نحن نصنع انطباعاً أولاً لا ينسى. وكالة تصميم جرافيك رائدة تقدم هويات بصرية متكاملة وشعارات مبتكرة تعكس رؤية 2030 وترتقي بأعمالك التجارية والطبية في السعودية والخليج.
           </motion.p>
           <motion.div
             className="mt-10 flex items-center gap-x-6"
@@ -31,15 +31,15 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {/* تعديل زر "استكشف أعمالنا" للتمرير إلى قسم الأعمال */}
+            {/* تعديل زر "استكشف أعمالنا" للمرور إلى قسم الأعمال */}
             <Link
-              href="#portfolio-grid" // ID القسم الذي تريد التمرير إليه
+              href="#portfolio-grid" // ID القسم المالي لمرور التمرير السلس
               className="apple-button"
               scroll={true} // تفعيل التمرير السلس
             >
               استكشف أعمالنا
             </Link>
-            {/* حذف زر "اعرف المزيد" */}
+            {/* زر "احصل على عرض سعر" */}
           </motion.div>
         </div>
         <motion.div
