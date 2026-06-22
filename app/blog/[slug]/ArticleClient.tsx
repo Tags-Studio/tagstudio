@@ -434,6 +434,173 @@ export default function ArticleClient({ post }: Props) {
         continue
       }
 
+      // 5.1 Special PACKAGES comparison table renderer
+      if (line === "[[PACKAGES]]") {
+        flushList(i)
+        // Collect the markdown table lines that follow
+        const tableLines: string[] = []
+        i++
+        while (i < lines.length && lines[i].trim().startsWith("|")) {
+          tableLines.push(lines[i].trim())
+          i++
+        }
+        i-- // step back
+
+        if (tableLines.length >= 3) {
+          const headers = tableLines[0].split("|").map(h => h.trim()).filter(h => h !== "")
+          // headers[0] = feature name col, headers[1..] = package names
+          const packageNames = headers.slice(1)
+          const rows = tableLines.slice(2).map(rowLine => {
+            return rowLine.split("|").map(cell => cell.trim()).filter((_, idx, arr) => idx > 0 && idx < arr.length - 1)
+          })
+
+          const pkgColors = [
+            {
+              border: "border-blue-500",
+              headerBg: "bg-gradient-to-b from-blue-600 to-blue-700",
+              badge: "bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/20",
+              accent: "text-blue-600 dark:text-blue-400",
+              glow: "shadow-blue-500/10",
+              label: "من",
+              ring: "ring-blue-500/20",
+            },
+            {
+              border: "border-amber-500",
+              headerBg: "bg-gradient-to-b from-amber-500 to-amber-600",
+              badge: "bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-500/20",
+              accent: "text-amber-600 dark:text-amber-400",
+              glow: "shadow-amber-500/10",
+              label: "الأكثر طلباً",
+              ring: "ring-amber-500/20",
+            },
+            {
+              border: "border-rose-500",
+              headerBg: "bg-gradient-to-b from-rose-600 to-rose-700",
+              badge: "bg-rose-500/10 text-rose-700 dark:text-rose-400 border-rose-500/20",
+              accent: "text-rose-600 dark:text-rose-400",
+              glow: "shadow-rose-500/10",
+              label: "للمشاريع الكبرى",
+              ring: "ring-rose-500/20",
+            },
+          ]
+
+          const renderCell = (cell: string, colIdx: number) => {
+            void colIdx // used for future per-column styling
+            if (cell.startsWith("✅")) {
+              const txt = cell.replace("✅", "").trim()
+              return (
+                <span className="inline-flex items-center gap-2">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center">
+                    <svg className="w-3 h-3 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  {txt && <span className="text-[13px] text-neutral-700 dark:text-neutral-300">{txt}</span>}
+                </span>
+              )
+            }
+            if (cell.startsWith("❌")) {
+              return (
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-neutral-200/60 dark:bg-neutral-800/60 border border-neutral-300/40 dark:border-neutral-700/40">
+                  <svg className="w-3 h-3 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </span>
+              )
+            }
+            return <span className="text-[13px] md:text-[14px] text-neutral-800 dark:text-neutral-200 font-medium leading-snug">{cell}</span>
+          }
+
+          const renderFeatureLabel = (cell: string) => {
+            // Strip markdown bold
+            const clean = cell.replace(/\*\*/g, "")
+            return <span className="text-[13px] md:text-[14px] font-bold text-neutral-700 dark:text-neutral-400">{clean}</span>
+          }
+
+          renderedElements.push(
+            <div key={`pkg-table-${i}`} className="my-10">
+              {/* Desktop Table */}
+              <div className="hidden md:block overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-lg">
+                <table className="w-full text-right border-collapse">
+                  <thead>
+                    <tr>
+                      {/* Feature col header */}
+                      <th className="py-5 px-6 text-sm font-black text-neutral-500 dark:text-neutral-400 bg-neutral-50 dark:bg-neutral-900/60 border-b border-neutral-200 dark:border-neutral-800 w-[28%]">
+                        {headers[0].replace(/\*\*/g, "")}
+                      </th>
+                      {packageNames.map((pkg, pIdx) => {
+                        const c = pkgColors[Math.min(pIdx, pkgColors.length - 1)]
+                        return (
+                          <th key={pIdx} className={`py-5 px-6 text-center border-b border-neutral-200 dark:border-neutral-800 ${pIdx === 1 ? 'bg-amber-50/60 dark:bg-amber-900/10' : 'bg-neutral-50 dark:bg-neutral-900/60'}`}>
+                            <div className="flex flex-col items-center gap-1.5">
+                              <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border ${c.badge}`}>
+                                {c.label}
+                              </span>
+                              <span className={`text-[15px] font-black ${c.accent} leading-tight`}>
+                                {pkg}
+                              </span>
+                            </div>
+                          </th>
+                        )
+                      })}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rows.map((row, rIdx) => (
+                      <tr
+                        key={rIdx}
+                        className={`border-b border-neutral-100 dark:border-neutral-800/60 transition-colors ${
+                          rIdx % 2 === 0
+                            ? 'bg-white dark:bg-neutral-950'
+                            : 'bg-neutral-50/50 dark:bg-neutral-900/20'
+                        }`}
+                      >
+                        <td className="py-4 px-6">{renderFeatureLabel(row[0])}</td>
+                        {row.slice(1).map((cell, cIdx) => (
+                          <td key={cIdx} className={`py-4 px-6 text-center ${cIdx === 1 ? 'bg-amber-50/40 dark:bg-amber-900/5' : ''}` }>
+                            {renderCell(cell, cIdx)}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Mobile Cards */}
+              <div className="md:hidden space-y-4">
+                {packageNames.map((pkgName, pIdx) => {
+                  const c = pkgColors[Math.min(pIdx, pkgColors.length - 1)]
+                  return (
+                    <div key={pIdx} className={`rounded-2xl border ${c.border} bg-white dark:bg-neutral-950 shadow-md ${c.glow} overflow-hidden`}>
+                      {/* Package header */}
+                      <div className={`${c.headerBg} px-5 py-4 text-white`}>
+                        <span className="text-[10px] font-bold uppercase tracking-widest opacity-80">{c.label}</span>
+                        <h3 className="text-lg font-black mt-0.5 leading-tight">{pkgName}</h3>
+                      </div>
+                      {/* Features list */}
+                      <div className="divide-y divide-neutral-100 dark:divide-neutral-800/60">
+                        {rows.map((row, rIdx) => {
+                          const featureLabel = row[0].replace(/\*\*/g, "")
+                          const cellVal = row[pIdx + 1]
+                          return (
+                            <div key={rIdx} className="flex items-center justify-between gap-3 px-5 py-3">
+                              <span className="text-[13px] font-bold text-neutral-600 dark:text-neutral-400">{featureLabel}</span>
+                              <span className="flex-shrink-0">{renderCell(cellVal, pIdx)}</span>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )
+          continue
+        }
+      }
+
       // 5.2 Embedded Markdown Tables
       if (line.startsWith("|")) {
         flushList(i)
