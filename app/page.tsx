@@ -11,7 +11,7 @@ import Marquee from "./components/Marquee"
 import ContactForm from "./components/ContactForm"
 
 export const metadata: Metadata = {
-  title: "تاج ستوديو | تصميم هوية بصرية وشعارات احترافية بالرياض وجدة والقاهرة",
+  title: "تاج ستوديو | نصنع هويات بصرية تترك أثرًا — من القاهرة إلى الرياض",
   description: "تاج ستوديو — وكالة تصميم جرافيك احترافية رائدة متخصصة في الهوية البصرية، تصميم الشعارات، السوشيال ميديا، والموشن جرافيك في الرياض وجدة والقاهرة. خدمنا +200 عميل في السعودية ومصر منذ 2016.",
   alternates: {
     canonical: "https://www.wearetagstudio.com",
