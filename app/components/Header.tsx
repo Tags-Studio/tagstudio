@@ -70,6 +70,12 @@ export default function Header() {
             المدونة
           </Link>
           <Link
+            href="/faq"
+            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"
+          >
+            الأسئلة الشائعة
+          </Link>
+          <Link
             href="/#contact-form"
             scroll={true}
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"

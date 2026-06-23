@@ -20,6 +20,11 @@ export default function Footer() {
             </Link>
           </div>
           <div className="pb-6">
+            <Link href="/faq" className="text-sm leading-6 text-muted-foreground hover:text-foreground">
+              الأسئلة الشائعة
+            </Link>
+          </div>
+          <div className="pb-6">
             <Link
               href="/#contact-form"
               className="text-sm leading-6 text-muted-foreground hover:text-foreground"
