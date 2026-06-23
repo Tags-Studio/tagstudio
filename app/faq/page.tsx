@@ -1,147 +1,232 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "الأسئلة الشائعة - Tags Studio | FAQ",
-  description: "إجابات لأهم الأسئلة حول خدمات التصميم الجرافيكي والهوية البصرية في Tags Studio. تعرف على أسعارنا، مدة التنفيذ، وكيفية بدء مشروعك معنا.",
-  openGraph: {
-    title: "الأسئلة الشائعة - Tags Studio",
-    description: "إجابات لأهم الأسئلة حول خدمات التصميم الجرافيكي والهوية البصرية",
-    type: "website",
+  title: "الأسئلة الشائعة حول تصميم الهوية البصرية والشعارات | تاج ستوديو 💬",
+  description: "كافة الإجابات التي تبحث عنها حول أسعار وباقات وتصميم الهويات البصرية والشعارات وفيديو الموشن جرافيك في السعودية ومصر مع تاج ستوديو. استشارات مجانية!",
+  keywords: [
+    "الأسئلة الشائعة تصميم شعار",
+    "تفاصيل تصميم هوية بصرية",
+    "تكلفة تصميم جرافيك",
+    "باقات التصميم الرياض",
+    "أسعار موشن جرافيك"
+  ],
+  alternates: {
+    canonical: "https://www.wearetagstudio.com/faq",
   },
-};
+}
+
+const faqSections = [
+  {
+    title: "🎨 القسم 1: أسئلة الهوية البصرية والشعارات",
+    items: [
+      {
+        q: "ما الفرق الجوهري بين الشعار والهوية البصرية؟",
+        a: "الشعار هو الرمز أو الأيقونة الفردية التي تمثل شركتك، بينما الهوية البصرية هي المنظومة التصميمية المتكاملة والمتناسقة التي تشمل: الشعار، الألوان الرسمية، خطوط الكتابة، القرطاسية والمطبوعات، تصاميم التغليف، وتصاميم السوشيال ميديا. الشعار جزء من الهوية، والهوية هي التجربة البصرية الكاملة لعميلك."
+      },
+      {
+        q: "كم تكلفة تصميم شعار أو هوية بصرية مع تاج ستوديو؟",
+        a: "نقدم باقات مرنة واضحة تناسب المشاريع والشركات في مراحلها المختلفة:\n\n• تتراوح تكلفة الشعار والهوية الأساسية للمشاريع الناشئة بين 1,500 - 2,500 ريال سعودي.\n• الباقات المتقدمة والمتكاملة للمراكز الطبية والمطاعم تتراوح بين 3,500 - 7,500 ريال سعودي حسب عدد التطبيقات والمطبوعات المطلوبة."
+      },
+      {
+        q: "كم يستغرق العمل على تصميم هوية بصرية متكاملة؟",
+        a: "يستغرق تصميم الهوية البصرية عادة من 10 إلى 15 يوم عمل، مقسمة على مراحل: البحث والتحليل، ابتكار وتصميم الأفكار والمقترحات، تقديم ومراجعة التعديلات مع العميل، والتسليم النهائي لجميع تطبيقات الهوية والملفات المصدرية."
+      },
+      {
+        q: "كم عدد المقترحات أو النماذج التي تقدمونها للشعار؟",
+        a: "حسب الباقة المختارة، نقدم عادة من 2 إلى 3 مقترحات تصميم مبتكرة ومختلفة تماماً للشعار، لنمنحك خيارات إبداعية متنوعة تناسب ذوقك وتطلعات مشروعك."
+      },
+      {
+        q: "هل يمكنني طلب تعديلات على التصاميم؟ وكم عددها؟",
+        a: "نعم بكل تأكيد، رضاك التام هو غايتنا. نوفر تعديلات مرنة أثناء مرحلة العمل (تتراوح بين 3 تعديلات إلى تعديلات غير محدودة حسب الباقة المعتمدة) على المقترح الذي تختاره، للتأكد من وصولنا للتصميم المثالي الذي يرضيك بنسبة 100%."
+      },
+      {
+        q: "ما هي صيغ الملفات التي سأحصل عليها عند التسليم النهائي؟",
+        a: "نسلمك كافة الملفات المصدرية المفتوحة والجاهزة للطباعة والاستخدام الرقمي بجودة فائقة بدقة Vector بصيغ: (AI, EPS, PDF, SVG)، بالإضافة إلى صور الشعار بخلفيات شفافة وملونة بصيغ (PNG, JPEG) للاستخدام اليومي والسوشيال ميديا."
+      },
+      {
+        q: "هل أملك حقوق الملكية الكاملة للشعار والهوية بعد التسليم؟",
+        a: "نعم، بمجرد سداد الرسوم وتسليم الملفات النهائية، تنتقل ملكية الشعار والهوية البصرية قانونياً بالكامل إليك، ويحق لك تسجيلها كعلامة تجارية رسمية في الهيئة السعودية للملكية الفكرية أو الجهات المعنية بمصر والخليج."
+      },
+      {
+        q: "هل تصاميمكم أصلية أم تستخدمون قوالب جاهزة؟",
+        a: "نلتزم في تاج ستوديو بالابتكار والأصالة بنسبة 100%. جميع شعاراتنا وهوياتنا البصرية تُصمم من الصفر خصيصاً لمشروعك بعد دراسة دقيقة لمجالك ومنافسيك وجمهورك المستهدف، ولا نستخدم القوالب الجاهزة أو الرموز المستهلكة نهائياً لحماية علامتك وضمان تميزك القانوني والبصري."
+      }
+    ]
+  },
+  {
+    title: "📦 القسم 2: باقات المطبوعات والتغليف والتسليم",
+    items: [
+      {
+        q: "هل تقدمون خدمات تصميم التعبئة والتغليف (Packaging)؟",
+        a: "نعم، نتميز بخبرة كبيرة وتصاميم متميزة في قطاع التعبئة والتغليف وخاصة لمطاعم البرجر والوجبات، الكافيهات المختصة، ومتاجر التجزئة والتجارة الإلكترونية. نصمم علب الوجبات، أكواب القهوة، أكياس التوصيل، وصناديق الشحن الفاخرة بطابع إبداعي يثري تجربة فتح الصندوق (Unboxing) لعملائك."
+      },
+      {
+        q: "هل يتضمن عملكم طباعة المواد أم التصميم فقط؟",
+        a: "نحن متخصصون في الخدمات الإبداعية والتصميم الرقمي وتجهيز الملفات للطباعة بأعلى المواصفات الفنية العالمية. نسلمك ملفات جاهزة للطباعة الفورية ومقاسات دقيقة (Vector Print-Ready Files) يمكنك تسليمها لأي مطبعة في الرياض أو جدة أو القاهرة، ونوفر استشارات فنية ومتابعة مع المطبعة مجاناً للتأكد من خروج الألوان كما صُممت."
+      },
+      {
+        q: "هل تصممون الهوية البصرية للشركات والمراكز الطبية؟",
+        a: "نعم، القطاع الطبي والعيادات التخصصية هي أحد أهم ركائز خبراتنا وتخصصنا الفريد في تاج ستوديو. نصمم هويات طبية كاملة للعيادات والمستشفيات تعزز الثقة والأمان وتشمل تصميم الروشتات، ملفات المرضى، كروت المواعيد، لوحات العيادة الداخلية واليونيفورم الطبي والتمريض."
+      }
+    ]
+  },
+  {
+    title: "📱 القسم 3: السوشيال ميديا والخدمات الرقمية",
+    items: [
+      {
+        q: "ما الذي تتضمنه خدمة تصميم السوشيال ميديا؟",
+        a: "نصمم قوالب مخصصة ومتناسقة تليق بهويتك التجارية لنشر المحتوى والعروض على إنستغرام، تويتر، وسناب شات. تشمل تصاميم بوستات، ستوري، بنرات هايلايت، وصور غلاف الحسابات بأسلوب عصري جذاب يعزز التفاعل ويزيد المبيعات."
+      },
+      {
+        q: "هل تقدمون خدمات تصميم واجهات المواقع والتطبيقات (UI/UX)؟",
+        a: "نعم، نصمم الواجهات المبدئية والرسومية للمواقع الإلكترونية وتطبيقات الجوال بشكل متوافق وسلس ومريح لتجربة المستخدم، مما يسهل على المبرمجين التنفيذ بجودة بصرية عالية تتطابق مع هويتك التجارية."
+      },
+      {
+        q: "هل تصممون بنرات وواجهات للمتاجر الإلكترونية (سلة، زد، شوبيفاي)؟",
+        a: "نعم بكل تأكيد. نصمم بنرات الواجهة الرئيسية، صور فئات المنتجات، العروض الترويجية الموسمية، ومظهر المتجر بالكامل ليتوافق بدقة مع منصات سلة وزد وشوبيفاي ليكون متجرك جذاباً ومحفزاً لعملية الشراء."
+      }
+    ]
+  },
+  {
+    title: "🎬 القسم 4: الموشن جرافيك وإنتاج الفيديو",
+    items: [
+      {
+        q: "ما هي خدمات الموشن جرافيك التي تقدمونها؟",
+        a: "ننتج فيديوهات موشن جرافيك إبداعية وتعريفية احترافية لشرح فكرة تطبيقك، الإعلان عن منتجك الجديد، أو عرض خدمات شركتك بشكل بصري مشوق وجذاب يشمل: كتابة السيناريو، التعليق الصوتي الاحترافي، الرسم المخصص، التحريك، والمؤثرات الصوتية والموسيقية."
+      },
+      {
+        q: "كم تكلفة تصميم فيديو موشن جرافيك؟",
+        a: "يعتمد السعر على مدة الفيديو المطلوب وتعقيد الرسوم والتحريك. وعادة ما تبدأ أسعار فيديوهات الموشن جرافيك الاحترافية الشاملة من 1,500 ريال سعودي للدقيقة الواحدة، مع خصومات مميزة للفيديوهات الطويلة أو الباقات المشتركة مع الهوية البصرية."
+      },
+      {
+        q: "ما هي اللغات أو اللهجات المتاحة للتعليق الصوتي (Voiceover)؟",
+        a: "نوفر باقة متميزة من أفضل المعلقين الصوتين المحترفين (أصوات رجالية ونسائية) بلهجات متعددة تلبي احتياجات سوقك المستهدف بدقة: اللهجة السعودية المحلية، اللهجة الخليجية البيضاء، اللهجة المصرية، الفصحى المبسطة، بالإضافة للغة الإنكليزية بلكنات متعددة."
+      }
+    ]
+  },
+  {
+    title: "🤝 القسم 5: التعاقد والدفع والتعاون الدولي",
+    items: [
+      {
+        q: "أنا خارج مصر والسعودية، هل يمكنني العمل معكم؟",
+        a: "نعم بكل تأكيد! نحن نخدم عملائنا في كافة دول الخليج العربي والشرق الأوسط أونلاين بالكامل. نستخدم منصات تواصل واجتماعات مرنة مثل Zoom وWhatsApp وبريد إلكتروني لتبادل الأفكار والمراجعات والموافقة على التصاميم، والمسافات لا تشكل عائقاً أمام إبداعنا والتزامنا بالخدمة الفائقة."
+      },
+      {
+        q: "ما هي طرق الدفع المتاحة للتعامل معكم؟",
+        a: "لتسهيل المعاملات المالية لعملائنا في السعودية ومصر والخليج، نوفر قنوات دفع متعددة وآمنة تشمل: التحويل البنكي المباشر لحساباتنا بالسعودية ومصر، الدفع عبر بطاقات مدى، الفيزا، وبوابات الدفع الإلكتروني الموثوقة."
+      },
+      {
+        q: "كيف أبدأ مشروعي الجديد مع تاج ستوديو اليوم؟",
+        a: "البدء بسيط وسريع للغاية! تواصل معنا عبر نموذج موقعنا الإلكتروني، أو اضغط على رابط الواتساب المباشر لمحادثة أحد مستشارينا الإبداعيين مجاناً. سنستمع لاحتياجاتك، ونناقش تفاصيل مشروعك، ثم نرسل لك عرض سعر مخصص وخطة عمل واضحة ننطلق منها فوراً لبناء براند أحلامك البصري."
+      }
+    ]
+  }
+]
+
+// Construct flat list for JSON-LD FAQ page schema
+const allFaqs = faqSections.reduce((acc, section) => {
+  return [...acc, ...section.items]
+}, [] as { q: string; a: string }[])
 
 export default function FAQPage() {
-  const faqs = [
-    {
-        "q": "لماذا تختار أن تعمل معنا؟",
-        "a": "نقدم لك جودة عالية بتكلفة مناسبة جداً! السبب بسيط: نحن لا ندفع رسوم تأشيرات أو تكاليف إضافية كالتي تدفعها الوكالات السعودية التقليدية، لذلك نستطيع تقديم خدمة ممتازة بأسعار تنافسية.\n\n**مميزاتنا:**\n✓ **جودة احترافية عالية** - فريق متخصص بخبرة واسعة\n✓ **أسعار تنافسية** - بدون رسوم إضافية أو تكاليف خفية  \n✓ **سرعة في التنفيذ** - نلتزم بمواعيد التسليم المحددة\n✓ **دعم مستمر** - نبقى معك حتى بعد التسليم\n✓ **تعديلات مجانية** - ضمن الاتفاق لضمان رضاك التام\n✓ **فهم السوق السعودي** - تصاميم تتناسب مع الذوق والثقافة المحلية"
-    },
-    {
-        "q": "ما هي الخدمات التي تقدمونها؟",
-        "a": "نقدم مجموعة شاملة من خدمات التصميم الجرافيكي:\n\n• **تصميم الهوية البصرية الكاملة** (الشعار، الألوان، الخطوط، الأنماط البصرية، دليل الاستخدام)\n• **تصميم الشعارات** الاحترافية\n• **تصميم المواد التسويقية** (منشورات، بروشورات، فلايرات)\n• **تصميم محتوى السوشيال ميديا** (Instagram, Facebook, Twitter, LinkedIn)\n• **تصميم العروض التقديمية** (Presentations)\n• **تصميم المطبوعات** (كروت العمل، الأظرف، الأوراق الرسمية)\n• **تصميم البنرات الإعلانية** الرقمية والمطبوعة"
-    },
-    {
-        "q": "ما هي المدة الزمنية اللازمة لإنهاء مشروع التصميم؟",
-        "a": "تختلف المدة حسب حجم وتعقيد المشروع:\n\n• **الشعار فقط**: 3-5 أيام عمل\n• **الهوية البصرية الكاملة**: 7-14 يوم عمل  \n• **تصميمات السوشيال ميديا**: 2-3 أيام للحزمة\n• **المطبوعات والبروشورات**: 3-5 أيام عمل\n\nنحرص دائماً على التسليم في الوقت المحدد مع الحفاظ على أعلى معايير الجودة. في حالة المشاريع العاجلة، يمكننا التفاوض على خدمة تسليم سريع."
-    },
-    {
-        "q": "هل يمكن تعديل التصميم بعد التسليم؟",
-        "a": "نعم بالتأكيد! نحن نقدم عدداً محدداً من التعديلات المجانية وفقاً للاتفاق:\n\n• **جولة مراجعة أثناء العمل**: نعرض عليك التصاميم خطوة بخطوة\n• **تعديلات مجانية**: حسب الباقة المتفق عليها (عادة 2-3 جولات تعديل)\n• **تعديلات إضافية**: متاحة برسوم معقولة بعد استنفاذ التعديلات المجانية\n\nهدفنا هو رضاك التام عن التصميم النهائي!"
-    },
-    {
-        "q": "كيف يمكنني بدء العمل معكم؟",
-        "a": "البداية سهلة وبسيطة:\n\n**1. تواصل معنا** عبر الواتساب، البريد الإلكتروني، أو نموذج التواصل\n**2. مكالمة استكشافية** نتعرف فيها على احتياجاتك وأهدافك\n**3. عرض سعر مخصص** نقدم لك عرضاً واضحاً بالتكلفة والمدة الزمنية\n**4. الموافقة والبدء** بعد الاتفاق نبدأ العمل فوراً\n**5. المراجعة والتسليم** نعرض عليك التصاميم ونجري التعديلات حتى رضاك التام\n\nنحن معك في كل خطوة! 🚀"
-    },
-    {
-        "q": "هل تعملون مع عملاء خارج السعودية؟",
-        "a": "نعم! نحن نقدم خدماتنا لعملاء في السعودية والخليج والوطن العربي وحتى دولياً. \n\nنعتمد على وسائل الاتصال الرقمية (Zoom، Google Meet، WhatsApp) لضمان التواصل السلس والمتابعة المستمرة أينما كنت. \n\nخبرتنا مع السوق السعودي تجعلنا الخيار المثالي للعلامات التجارية التي تستهدف هذا السوق."
-    },
-    {
-        "q": "ماذا تحتوي الهوية البصرية الكاملة؟",
-        "a": "الهوية البصرية الكاملة تشمل:\n\n📌 **العناصر الأساسية:**\n• الشعار (Logo) بجميع الأشكال والصيغ\n• الألوان الرسمية (Color Palette)  \n• الخطوط المعتمدة (Typography)\n• الأنماط البصرية (Patterns & Textures)\n\n📌 **التطبيقات:**\n• كروت العمل (Business Cards)\n• الأوراق الرسمية (Letterheads)\n• الأظرف (Envelopes)\n• توقيع البريد الإلكتروني\n• قوالب السوشيال ميديا\n\n📌 **دليل الهوية البصرية (Brand Guidelines):**\nوثيقة شاملة توضح كيفية استخدام العناصر بشكل صحيح"
-    },
-    {
-        "q": "هل سيتم تسليم الملفات الأصلية؟",
-        "a": "نعم! نسلمك جميع الملفات بصيغ احترافية:\n\n• **AI / EPS** (Adobe Illustrator) - ملفات قابلة للتعديل\n• **PDF** عالي الجودة للطباعة\n• **PNG** بخلفية شفافة  \n• **JPG** للاستخدام الرقمي\n• **SVG** للمواقع والتطبيقات\n\nكل الملفات ملكك بالكامل مع حقوق الاستخدام الكاملة."
-    },
-    {
-        "q": "كم عدد التعديلات المتاح لي في المشروع؟",
-        "a": "عدد التعديلات يعتمد على الباقة المختارة:\n\n• **الباقة الأساسية**: 2 جولات تعديل\n• **الباقة المتقدمة**: 3 جولات تعديل\n• **الباقة الشاملة**: تعديلات غير محدودة حتى الرضا التام\n\n**ملاحظة مهمة:** \nالتعديلات تعني تحسينات على التصميم الحالي (تغيير ألوان، تعديل خطوط، ترتيب عناصر).  \nأما تغيير الفكرة بالكامل فيعتبر تصميم جديد ويحتاج اتفاق إضافي."
-    },
-    {
-        "q": "ما الفرق بين الشعار والهوية البصرية؟",
-        "a": "**الشعار (Logo):**\nهو الرمز أو العلامة التي تمثل علامتك التجارية - مثل علامة Apple أو Nike.\n\n**الهوية البصرية (Brand Identity):**\nهي المنظومة الكاملة التي تشمل:\n• الشعار + الألوان + الخطوط + الأنماط\n• تطبيقات الشعار على جميع المواد (كروت، أوراق، منشورات)\n• دليل استخدام موحد\n\n**التشبيه:**\nالشعار هو الوجه، والهوية البصرية هي الشخصية الكاملة! \n\nلو تبي تبني علامة تجارية قوية ومتماسكة، الهوية البصرية الكاملة هي الخيار الصحيح."
-    }
-];
-
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header Section */}
-      <section className="relative py-20 sm:py-28 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              الأسئلة الشائعة
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              إجابات واضحة لكل ما يهمك حول خدماتنا في التصميم الجرافيكي والهوية البصرية
-            </p>
-          </div>
+      <section className="relative py-24 sm:py-32 overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-background border-b border-border">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-primary/10 text-primary mb-6">
+            💬 إجابات لجميع استفساراتك
+          </span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-foreground mb-6">
+            الأسئلة الشائعة
+          </h1>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            مرحباً بك في صفحة الأسئلة الشائعة لـ <strong className="text-primary font-semibold">تاج ستوديو</strong>. قمنا هنا بجمع وإجابة أكثر 20 سؤالاً يطرحها عملاؤنا في المملكة العربية السعودية ومصر حول خدمات تصميم الشعارات، الهويات البصرية، المطبوعات، السوشيال ميديا، وفيديو الموشن جرافيك، لنمنحك شفافية تامة وتفاصيل واضحة تساعدك في بدء مشروعك معنا بكل طمأنينة وسهولة.
+          </p>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 sm:py-24">
+      {/* FAQs List Section */}
+      <section className="py-20 sm:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 sm:p-8 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-300 hover:shadow-lg"
-              >
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-start gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-sm font-bold">
-                    {index + 1}
-                  </span>
-                  <span>{faq.q}</span>
+          <div className="space-y-16">
+            {faqSections.map((section, sIndex) => (
+              <div key={sIndex} className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground border-r-4 border-primary pr-4 mb-8">
+                  {section.title}
                 </h2>
-                <div 
-                  className="text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line mr-11"
-                  dangerouslySetInnerHTML={{ __html: faq.a.replace(/\n/g, '<br/>') }}
-                />
+                <div className="space-y-4">
+                  {section.items.map((item, itemIndex) => (
+                    <details
+                      key={itemIndex}
+                      className="group bg-card hover:bg-card/80 rounded-2xl border border-border/80 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300"
+                    >
+                      <summary className="flex items-center justify-between cursor-pointer focus:outline-none">
+                        <h3 className="text-lg sm:text-xl font-bold text-foreground group-open:text-primary transition-colors pr-2">
+                          {item.q}
+                        </h3>
+                        <span className="flex-shrink-0 ml-1.5 w-6 h-6 rounded-full bg-secondary/50 flex items-center justify-center text-muted-foreground group-open:rotate-180 group-open:bg-primary/10 group-open:text-primary transition-all duration-300">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="currentColor"
+                            className="w-4 h-4"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                          </svg>
+                        </span>
+                      </summary>
+                      <div className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed whitespace-pre-line border-t border-border/50 pt-4">
+                        {item.a}
+                      </div>
+                    </details>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-gradient-to-r from-gray-900 to-gray-800 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 sm:p-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-              لم تجد إجابة لسؤالك؟
-            </h2>
-            <p className="text-gray-300 mb-8 text-lg">
-              تواصل معنا مباشرة وسنكون سعداء بالإجابة على جميع استفساراتك
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
-              >
-                تواصل معنا الآن
-              </Link>
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300"
-              >
-                العودة للرئيسية
-              </Link>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="mt-12 pt-12 border-t border-gray-200 dark:border-gray-800">
-            <p className="text-center text-gray-600 dark:text-gray-400 mb-6">
-              قد يهمك أيضاً:
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/about"
-                className="px-6 py-3 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-              >
-                من نحن
-              </Link>
-              <Link
-                href="/work"
-                className="px-6 py-3 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-              >
-                أعمالنا
-              </Link>
-              <Link
-                href="/blog"
-                className="px-6 py-3 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-              >
-                المدونة
-              </Link>
+          <div className="mt-24 relative overflow-hidden rounded-3xl bg-gradient-to-b from-secondary/50 to-secondary/10 border border-border p-8 sm:p-16 text-center">
+            <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]" />
+            <div className="relative">
+              <span className="text-4xl sm:text-5xl mb-6 block">🚀</span>
+              <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-4">
+                جاهز للبدء وصنع انطباع أول لا ينسى لعلامتك؟
+              </h2>
+              <p className="text-muted-foreground mb-10 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+                لا تتردد في طرح أي سؤال آخر يدور في ذهنك. فريق مستشاري التصميم والإبداع في تاج ستوديو جاهز لمساعدتك في أي وقت لتنطلق بمشروعك بقوة في السوق السعودي والمصري والخليجي.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  href="https://wa.me/201009215131"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/20 hover:scale-[1.03]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                  >
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.242-3.832c1.644.976 3.51 1.49 5.709 1.491 5.489 0 9.954-4.455 9.957-9.948.002-2.661-1.03-5.163-2.906-7.042C17.18 2.79 14.69 1.747 12.02 1.747 6.53 1.747 2.06 6.206 2.057 11.7c-.001 2.222.581 4.39 1.684 6.26l-.997 3.645 3.556-.937zm11.378-5.594c-.263-.132-1.557-.768-1.798-.855-.24-.087-.415-.13-.59.132-.175.263-.677.855-.83 1.03-.153.175-.306.197-.569.066-1.12-.56-2.203-1.032-3.076-1.79-.817-.707-1.368-1.58-1.528-1.855-.16-.263-.017-.406.115-.537.119-.118.263-.306.394-.46.131-.153.175-.263.263-.438.088-.175.044-.329-.022-.46-.066-.132-.59-1.422-.808-1.947-.213-.512-.446-.442-.614-.45l-.523-.008c-.18 0-.474.067-.722.338-.249.271-.951.93-.951 2.268s.973 2.63 1.104 2.806c.131.176 1.916 2.926 4.64 4.103.648.28 1.154.448 1.547.573.652.207 1.245.178 1.714.109.522-.078 1.557-.636 1.777-1.25.219-.614.219-1.14.153-1.25-.067-.109-.241-.197-.504-.329z" />
+                  </svg>
+                  تواصل معنا عبر واتساب
+                </Link>
+                <Link
+                  href="/#contact-form"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-secondary text-foreground border border-border rounded-full font-bold hover:bg-secondary/80 transition-all duration-300"
+                >
+                  طلب عرض سعر مخصص
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -154,7 +239,7 @@ export default function FAQPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": faqs.map((faq) => ({
+            "mainEntity": allFaqs.map((faq) => ({
               "@type": "Question",
               "name": faq.q,
               "acceptedAnswer": {
@@ -166,5 +251,5 @@ export default function FAQPage() {
         }}
       />
     </div>
-  );
+  )
 }
