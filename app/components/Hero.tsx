@@ -39,7 +39,27 @@ export default function Hero() {
             >
               استكشف أعمالنا
             </Link>
-            {/* زر "احصل على عرض سعر" */}
+          </motion.div>
+          
+          {/* شريط إحصائيات الثقة */}
+          <motion.div
+            className="mt-16 grid grid-cols-3 gap-4 sm:gap-8 border-t border-border/40 pt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <div>
+              <p className="text-3xl sm:text-4xl font-extrabold text-primary">+10</p>
+              <p className="text-xs sm:text-sm font-semibold text-muted-foreground mt-1">سنوات خبرة</p>
+            </div>
+            <div>
+              <p className="text-3xl sm:text-4xl font-extrabold text-primary">+200</p>
+              <p className="text-xs sm:text-sm font-semibold text-muted-foreground mt-1">عميل سعيد</p>
+            </div>
+            <div>
+              <p className="text-2xl sm:text-3xl font-extrabold text-primary">الخليج ومصر</p>
+              <p className="text-xs sm:text-sm font-semibold text-muted-foreground mt-1">حضور إقليمي</p>
+            </div>
           </motion.div>
         </div>
         <motion.div

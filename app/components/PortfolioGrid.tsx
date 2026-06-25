@@ -13,6 +13,12 @@ const projects = [
     description: "تصميم هوية بصرية متكاملة لمطعم زعتر و سمسم، تشمل الشعار، الألوان، التعبئة، والزي الرسمي.",
     imageUrl: "/images/zaatar-identity-portfolio3.webp",
     category: "الهوية البصرية",
+    caseStudy: {
+      client: "مطعم زعتر وسمسم (القاهرة والرياض)",
+      problem: "الهوية القديمة للمطعم كانت تفتقر إلى التناغم والتفرد البصري، وصعوبة تطبيقها على مواد التعبئة والتغليف الصديقة للبيئة.",
+      solution: "تصميم شعار جديد مبتكر يدمج بين حبتي السمسم وورقة الزعتر، وتطوير لوحة ألوان دافئة مستوحاة من ريف الشرق الأوسط مع أنماط خطوط فريدة تلائم الباكجينج والمطبوعات الورقية.",
+      results: "توحيد الحضور البصري للمطعم عبر فروعه، وزيادة ثقة وسعادة العملاء بالعبوات الجديدة، وتحقيق زيادة ملحوظة في نسبة مشاركة تصاميم التغليف على منصات التواصل الاجتماعي."
+    },
   },
   {
     id: 20,
@@ -20,6 +26,12 @@ const projects = [
     description: "تطوير هوية بصرية لجمعية التنمية الزراعية، مع التركيز على الاستدامة والطبيعة.",
     imageUrl: "/images/agricultural-development-association.avif",
     category: "الهوية البصرية",
+    caseStudy: {
+      client: "جمعية التنمية الزراعية بالأحساء (المملكة العربية السعودية)",
+      problem: "كانت الجمعية تبحث عن هوية بصرية تجمع بين الطابع المؤسسي الرسمي وبين الطبيعة الزراعية لمنطقة الأحساء الغنية بالنخيل والخيرات.",
+      solution: "ابتكار شعار مستلهم من سعف النخيل وتقسيمات الحقول، وتطوير هوية بصرية بألوان ترابية ودرجات أخضر تعبر عن النمو والازدهار مع كتابة كوفية هندسية رصينة للخطاب الرسمي.",
+      results: "نالت الهوية استحسان الهيئات الحكومية والجمهور بالأحساء، وعززت المظهر المؤسسي للجمعية في المعارض والملتقيات الزراعية الإقليمية."
+    },
   },
   {
     id: 21,
@@ -27,6 +39,12 @@ const projects = [
     description: "تصميم هوية بصرية شاملة لعلامة برجر راجي.",
     imageUrl: "/images/ragy-identity-portfolio.webp",
     category: "الهوية البصرية",
+    caseStudy: {
+      client: "مطعم برجر راجي (الرياض)",
+      problem: "المنافسة الشديدة في قطاع مطاعم البرجر في الرياض تتطلب هوية بصرية مليئة بالطاقة والحيوية لتجذب فئة الشباب بشكل فوري.",
+      solution: "تصميم هوية بصرية ممتعة ومليئة بالنشاط باستخدام لوحة ألوان دافئة (أحمر، برتقالي، أصفر) تعزز الشهية، وتصميم علب وأكواب التوصيل برسومات كرتونية تفاعلية مخصصة.",
+      results: "نجاح باهر في جذب الزبائن من النظرة الأولى، وتزايد كبير في طلبات التوصيل بفضل المظهر المميز لأكياس وعلب المطعم في الشوارع."
+    },
   },
   {
     id: 24,
@@ -310,34 +328,17 @@ export default function PortfolioGrid() {
   const filter =
     currentCategoryFromUrl && categories.includes(currentCategoryFromUrl) ? currentCategoryFromUrl : "الهوية البصرية" // الفلتر الافتراضي
 
-  const [selectedProjectImage, setSelectedProjectImage] = useState<string | null>(null)
-  const [selectedProjectTitle, setSelectedProjectTitle] = useState<string>("")
+    const [selectedProject, setSelectedProject] = useState<any>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // دالة لتحديث معلمة 'category' في URL
-  const setCategoryFilter = (category: string) => {
-    const newSearchParams = new URLSearchParams(searchParams.toString())
-    if (category === "الكل") {
-      newSearchParams.delete("category")
-    } else {
-      newSearchParams.set("category", category)
-    }
-    // تحديث URL. scroll: false لمنع التمرير التلقائي عند تغيير الفلتر داخل نفس القسم.
-    router.push(`${pathname}?${newSearchParams.toString()}#portfolio-grid`, { scroll: false })
-  }
-
-  const filteredProjects = filter === "الكل" ? projects : projects.filter((project) => project.category === filter)
-
-  const openModal = (imageUrl: string, title: string) => {
-    setSelectedProjectImage(imageUrl)
-    setSelectedProjectTitle(title)
+  const openModal = (project: any) => {
+    setSelectedProject(project)
     setIsModalOpen(true)
   }
 
   const closeModal = () => {
     setIsModalOpen(false)
-    setSelectedProjectImage(null)
-    setSelectedProjectTitle("")
+    setSelectedProject(null)
   }
 
   return (
@@ -428,7 +429,7 @@ export default function PortfolioGrid() {
                     </a>
                   ) : (
                     <button
-                      onClick={() => openModal(project.imageUrl, project.title)}
+                      onClick={() => openModal(project)}
                       className="text-primary hover:underline inline-flex items-center"
                     >
                       <svg
@@ -455,8 +456,11 @@ export default function PortfolioGrid() {
         </motion.div>
 
         <ImageModal
-          imageUrl={selectedProjectImage}
-          title={selectedProjectTitle}
+          imageUrl={selectedProject?.imageUrl || null}
+          title={selectedProject?.title || ""}
+          category={selectedProject?.category}
+          description={selectedProject?.description}
+          caseStudy={selectedProject?.caseStudy}
           isOpen={isModalOpen}
           onClose={closeModal}
         />

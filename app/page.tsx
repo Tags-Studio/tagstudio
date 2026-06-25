@@ -9,6 +9,7 @@ import Testimonials from "./components/Testimonials" // استيراد مكون 
 import Timeline from "./components/Timeline"
 import Marquee from "./components/Marquee"
 import ContactForm from "./components/ContactForm"
+import Process from "./components/Process"
 
 export const metadata: Metadata = {
   title: "تاج ستوديو | نصنع هويات بصرية تترك أثرًا — من القاهرة إلى الرياض",
@@ -85,6 +86,7 @@ export default function Home() {
       <WearYourStory />
       <FeatureCarousel0 />
       <FeatureCarousel />
+      <Process />
       <Suspense fallback={null}>
         <PortfolioGrid />
       </Suspense>
