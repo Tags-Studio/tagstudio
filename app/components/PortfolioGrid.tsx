@@ -328,8 +328,22 @@ export default function PortfolioGrid() {
   const filter =
     currentCategoryFromUrl && categories.includes(currentCategoryFromUrl) ? currentCategoryFromUrl : "الهوية البصرية" // الفلتر الافتراضي
 
-    const [selectedProject, setSelectedProject] = useState<any>(null)
+  const [selectedProject, setSelectedProject] = useState<any>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // دالة لتحديث معلمة 'category' في URL
+  const setCategoryFilter = (category: string) => {
+    const newSearchParams = new URLSearchParams(searchParams.toString())
+    if (category === "الكل") {
+      newSearchParams.delete("category")
+    } else {
+      newSearchParams.set("category", category)
+    }
+    // تحديث URL. scroll: false لمنع التمرير التلقائي عند تغيير الفلتر داخل نفس القسم.
+    router.push(`${pathname}?${newSearchParams.toString()}#portfolio-grid`, { scroll: false })
+  }
+
+  const filteredProjects = filter === "الكل" ? projects : projects.filter((project) => project.category === filter)
 
   const openModal = (project: any) => {
     setSelectedProject(project)
