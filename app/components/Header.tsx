@@ -70,6 +70,12 @@ export default function Header() {
             المدونة
           </Link>
           <Link
+            href="/tools"
+            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"
+          >
+            أدواتنا
+          </Link>
+          <Link
             href="/faq"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"
           >
