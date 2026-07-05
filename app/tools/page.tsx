@@ -9,7 +9,8 @@ import {
   ArrowRight,
   Sparkles,
   Settings,
-  ShieldCheck
+  ShieldCheck,
+  Contrast
 } from "lucide-react"
 
 export default function ToolsIndex() {
@@ -31,6 +32,15 @@ export default function ToolsIndex() {
       badge: "مستشار الألوان الذكي",
       color: "from-amber-500/20 to-orange-500/20 text-amber-500 border-amber-500/20",
       cta: "ابدأ بتوليد لوحتك"
+    },
+    {
+      title: "أداة اختبار تناسق ألوان الهوية",
+      desc: "افحص نسبة تباين ألوان هويتك البصرية الحالية وتأكد من سهولة قراءتها ومطابقتها لمعايير الويب العالمية WCAG للتباين الرقمي.",
+      icon: Contrast,
+      href: "/tools/color-contrast-checker",
+      badge: "فاحص تباين الألوان",
+      color: "from-emerald-500/20 to-teal-500/20 text-emerald-500 border-emerald-500/20",
+      cta: "افحص تباين ألوانك"
     }
   ]
 
@@ -38,7 +48,7 @@ export default function ToolsIndex() {
     <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background/95 to-background/90 text-foreground">
       
       {/* Header section */}
-      <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
+      <div className="max-w-5xl mx-auto text-center mb-16 space-y-4">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,7 +79,7 @@ export default function ToolsIndex() {
       </div>
 
       {/* Grid listing the tools */}
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {tools.map((tool, index) => {
           const Icon = tool.icon
           return (
@@ -116,7 +126,7 @@ export default function ToolsIndex() {
       </div>
 
       {/* Trust banner */}
-      <div className="max-w-4xl mx-auto mt-16 p-6 rounded-3xl bg-primary/5 border border-primary/10 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-right">
+      <div className="max-w-5xl mx-auto mt-16 p-6 rounded-3xl bg-primary/5 border border-primary/10 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-right">
         <div className="p-3 rounded-2xl bg-primary/10 text-primary">
           <ShieldCheck className="h-6 w-6" />
         </div>
