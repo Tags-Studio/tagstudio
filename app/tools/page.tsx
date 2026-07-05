@@ -12,7 +12,8 @@ import {
   ShieldCheck,
   Contrast,
   Heart,
-  Smartphone
+  Smartphone,
+  Layers
 } from "lucide-react"
 
 export default function ToolsIndex() {
@@ -61,6 +62,15 @@ export default function ToolsIndex() {
       badge: "معاين السوشيال ميديا",
       color: "from-purple-500/20 to-fuchsia-500/20 text-purple-500 border-purple-500/20",
       cta: "عاين مقاسات تصميمك"
+    },
+    {
+      title: "تقسيم الصور لشبكة إنستغرام",
+      desc: "اقسم صورتك العريضة والبانورامية إلى أجزاء متساوية تتراصف بدقة في شبكة حسابك، ونزلها مجمعة داخل ملف مضغوط ZIP بنقرة واحدة.",
+      icon: Layers,
+      href: "/tools/instagram-grid-splitter",
+      badge: "مقسم صور الشبكة",
+      color: "from-cyan-500/20 to-teal-500/20 text-cyan-500 border-cyan-500/20",
+      cta: "اقسم صورتك الآن"
     }
   ]
 
