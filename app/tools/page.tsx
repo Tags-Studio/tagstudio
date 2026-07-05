@@ -10,7 +10,8 @@ import {
   Sparkles,
   Settings,
   ShieldCheck,
-  Contrast
+  Contrast,
+  Heart
 } from "lucide-react"
 
 export default function ToolsIndex() {
@@ -41,6 +42,15 @@ export default function ToolsIndex() {
       badge: "فاحص تباين الألوان",
       color: "from-emerald-500/20 to-teal-500/20 text-emerald-500 border-emerald-500/20",
       cta: "افحص تباين ألوانك"
+    },
+    {
+      title: "حاسبة العائد لإعلانات العيادات",
+      desc: "احسب عدد المرضى المتوقعين، تكلفة اكتساب المريض وصافي الأرباح المتوقعة لعيادتك بناءً على ميزانيتك الإعلانية وتخصصك الطبي.",
+      icon: Heart,
+      href: "/tools/medical-roi-calculator",
+      badge: "خاص بالقطاع الطبي",
+      color: "from-rose-500/20 to-pink-500/20 text-rose-500 border-rose-500/20",
+      cta: "احسب العائد لعيادتك"
     }
   ]
 
@@ -79,7 +89,7 @@ export default function ToolsIndex() {
       </div>
 
       {/* Grid listing the tools */}
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {tools.map((tool, index) => {
           const Icon = tool.icon
           return (
