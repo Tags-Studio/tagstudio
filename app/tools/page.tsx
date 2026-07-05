@@ -11,7 +11,8 @@ import {
   Settings,
   ShieldCheck,
   Contrast,
-  Heart
+  Heart,
+  Smartphone
 } from "lucide-react"
 
 export default function ToolsIndex() {
@@ -51,6 +52,15 @@ export default function ToolsIndex() {
       badge: "خاص بالقطاع الطبي",
       color: "from-rose-500/20 to-pink-500/20 text-rose-500 border-rose-500/20",
       cta: "احسب العائد لعيادتك"
+    },
+    {
+      title: "معاين المقاسات والمناطق الآمنة",
+      desc: "ارفع تصميمك وجرّبه داخل قوالب إنستغرام وتيك توك وسناب شات الحقيقية لتتأكد من عدم حجب النصوص أو الشعار بواجهة المنصة.",
+      icon: Smartphone,
+      href: "/tools/safe-area-previewer",
+      badge: "معاين السوشيال ميديا",
+      color: "from-purple-500/20 to-fuchsia-500/20 text-purple-500 border-purple-500/20",
+      cta: "عاين مقاسات تصميمك"
     }
   ]
 
@@ -89,7 +99,7 @@ export default function ToolsIndex() {
       </div>
 
       {/* Grid listing the tools */}
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {tools.map((tool, index) => {
           const Icon = tool.icon
           return (
