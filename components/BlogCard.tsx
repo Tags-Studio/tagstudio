@@ -37,33 +37,34 @@ export default function BlogCard({ post }: BlogCardProps) {
   const imagePositionClass = isSocial ? "object-center" : "object-top"
 
   return (
-    <Link href={`/blog/${post.slug}`} className="group block">
-      <div className="overflow-hidden rounded-2xl border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-all duration-300">
-        <div className="relative aspect-[16/10] w-full overflow-hidden">
-          <Image
-            src={post.image || "/images/identity.avif"}
-            alt={post.title}
-            fill
-            className={`object-cover ${imagePositionClass} transition-transform duration-500 group-hover:scale-105`}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+    <Link href={`/blog/${post.slug}`} className="group block relative rounded-2xl overflow-hidden border border-border/60 hover:border-primary/40 bg-card/65 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300">
+      {/* Hover Top Glow Line */}
+      <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-primary to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+      
+      <div className="relative aspect-[16/10] w-full overflow-hidden">
+        <Image
+          src={post.image || "/images/identity.avif"}
+          alt={post.title}
+          fill
+          className={`object-cover ${imagePositionClass} transition-transform duration-500 group-hover:scale-105`}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div>
+      <div className="p-5 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <span className={`inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full mb-3 ${styles.badge}`}>
+            {post.category}
+          </span>
+          <h3 className={`text-lg font-bold line-clamp-2 mb-2 transition-colors ${styles.hoverText}`}>
+            {post.title}
+          </h3>
+          <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+            {post.excerpt}
+          </p>
         </div>
-        <div className="p-5 flex flex-col justify-between min-h-[220px]">
-          <div>
-            <span className={`inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full mb-3 ${styles.badge}`}>
-              {post.category}
-            </span>
-            <h3 className={`text-lg font-bold line-clamp-2 mb-2 transition-colors ${styles.hoverText}`}>
-              {post.title}
-            </h3>
-            <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-              {post.excerpt}
-            </p>
-          </div>
-          <div className="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border/50">
-            <span>{post.author}</span>
-            <span>{post.readTime} دقائق قراءة</span>
-          </div>
+        <div className="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border/50">
+          <span>{post.author}</span>
+          <span>{post.readTime} دقائق قراءة</span>
         </div>
       </div>
     </Link>
