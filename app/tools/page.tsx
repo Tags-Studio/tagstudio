@@ -114,10 +114,6 @@ export default function ToolsIndex() {
 
   return (
     <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background/95 to-background/90 text-foreground relative overflow-hidden">
-      
-      {/* Background Radial Glow Circles */}
-      <div className="absolute top-[10%] right-[5%] w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-[20%] left-[10%] w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Header section */}
       <div className="max-w-5xl mx-auto text-center mb-12 space-y-4 relative z-10">

@@ -27,12 +27,8 @@ export default function BlogClientSection({ posts }: BlogClientSectionProps) {
     const matchesCategory = !selectedCategory || selectedCategory === "جميع المقالات" || post.category === selectedCategory
     return matchesSearch && matchesCategory
   })
-
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-background via-background/95 to-background/90 text-foreground py-16 md:py-24">
-      {/* Background Radial Glow Circles */}
-      <div className="absolute top-[10%] right-[5%] w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-[20%] left-[10%] w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <section className="px-4 max-w-7xl mx-auto relative z-10">
         {/* Hero Text — Static HTML for SEO */}
