@@ -113,7 +113,7 @@ export default function ToolsIndex() {
   ]
 
   return (
-    <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background/95 to-background/90 text-foreground relative overflow-hidden">
+    <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 text-foreground relative overflow-hidden">
 
       {/* Header section */}
       <div className="max-w-5xl mx-auto text-center mb-12 space-y-4 relative z-10">

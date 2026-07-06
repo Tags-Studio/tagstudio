@@ -26,9 +26,8 @@ export default function BlogClientSection({ posts }: BlogClientSectionProps) {
                           post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
     const matchesCategory = !selectedCategory || selectedCategory === "جميع المقالات" || post.category === selectedCategory
     return matchesSearch && matchesCategory
-  })
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-background via-background/95 to-background/90 text-foreground py-16 md:py-24">
+    <div className="relative overflow-hidden text-foreground py-16 md:py-24">
 
       <section className="px-4 max-w-7xl mx-auto relative z-10">
         {/* Hero Text — Static HTML for SEO */}
