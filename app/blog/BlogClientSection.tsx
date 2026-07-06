@@ -26,6 +26,8 @@ export default function BlogClientSection({ posts }: BlogClientSectionProps) {
                           post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
     const matchesCategory = !selectedCategory || selectedCategory === "جميع المقالات" || post.category === selectedCategory
     return matchesSearch && matchesCategory
+  })
+
   return (
     <div className="relative overflow-hidden text-foreground py-16 md:py-24">
 
