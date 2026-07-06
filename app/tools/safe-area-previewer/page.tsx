@@ -16,8 +16,10 @@ import {
   MessageSquare,
   Bookmark,
   Share2,
-  Trash2
+  Trash2,
+  Heart
 } from "lucide-react"
+
 
 // Platform specifications
 interface PlatformSpec {

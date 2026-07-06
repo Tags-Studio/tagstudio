@@ -154,6 +154,10 @@ export default function InstagramGridSplitter() {
     }
   }
 
+  const fmt = (n: number) => {
+    return Math.round(n).toLocaleString("en-US")
+  }
+
   const resetAll = () => {
     setImgSrc(null)
     setFileName(null)
