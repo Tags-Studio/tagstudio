@@ -57,6 +57,17 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body className={`${cairo.className} min-h-screen bg-background text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {/* Global Background 3D Glowing Circles */}
+          <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden select-none">
+            {/* Circle 1: Top Right - Royal Blue & Teal */}
+            <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-primary/15 via-blue-600/10 to-emerald-500/5 blur-[130px] opacity-80 dark:opacity-60"></div>
+            
+            {/* Circle 2: Middle Left - Gold/Amber & Indigo */}
+            <div className="absolute top-[40%] left-[-15%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-amber-500/8 via-indigo-600/10 to-transparent blur-[120px] opacity-70 dark:opacity-50"></div>
+            
+            {/* Circle 3: Bottom Right - Deep Emerald & Royal Blue */}
+            <div className="absolute bottom-[-15%] right-[-5%] w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-emerald-500/10 via-primary/10 to-blue-500/5 blur-[140px] opacity-80 dark:opacity-60"></div>
+          </div>
           <Header />
           <main>{children}</main>
           <Footer />
