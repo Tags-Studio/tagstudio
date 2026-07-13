@@ -1,84 +1,47 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Link from "next/link" // استيراد Link
+import Image from "next/image"
+import Link from "next/link"
+
+const trustPoints = [
+  "خبرة في بناء الهويات منذ 2012",
+  "تنفيذ للمشروعات في السعودية ومصر",
+  "ملفات منظمة وجاهزة للتطبيق",
+]
 
 export default function Hero() {
   return (
-    <div className="relative isolate overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
-          <motion.h1
-            className="mt-10 text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-gradient">تاج ستوديو</span>{" "}
-            <span className="block text-xl sm:text-2xl font-semibold text-muted-foreground mt-3">نصنع هويات بصرية تترك أثرًا — من القاهرة إلى الرياض</span>
-          </motion.h1>
-          <motion.p
-            className="mt-6 text-lg leading-8 text-muted-foreground"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            نحن نصنع انطباعاً أولاً لا ينسى. وكالة تصميم جرافيك رائدة تقدم هويات بصرية متكاملة وشعارات مبتكرة تعكس رؤية 2030 وترتقي بأعمالك التجارية والطبية في السعودية والخليج.
+    <section className="relative isolate overflow-hidden bg-background">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
+        <div className="max-w-2xl">
+          <motion.p className="mb-5 font-semibold text-primary" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            تاج ستوديو — هوية وتصميم للشركات
           </motion.p>
-          <motion.div
-            className="mt-10 flex items-center gap-x-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            {/* تعديل زر "استكشف أعمالنا" للمرور إلى قسم الأعمال */}
-            <Link
-              href="#portfolio-grid" // ID القسم المالي لمرور التمرير السلس
-              className="apple-button"
-              scroll={true} // تفعيل التمرير السلس
-            >
-              استكشف أعمالنا
-            </Link>
+          <motion.h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            نصمم هويات بصرية تجعل مشروعك <span className="text-gradient">أوضح وأكثر ثقة</span>
+          </motion.h1>
+          <motion.p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}>
+            من الشعار إلى دليل الهوية والمطبوعات والمحتوى البصري، نساعد الشركات في السعودية ومصر على بناء حضور متناسق وقابل للنمو.
+          </motion.p>
+          <motion.div className="mt-8 flex flex-wrap gap-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
+            <Link href="/#contact-form" className="apple-button px-7 py-3">اطلب عرض سعر</Link>
+            <Link href="/work" className="rounded-full border border-border px-7 py-3 font-semibold text-foreground transition hover:border-primary hover:text-primary">شاهد أعمالنا</Link>
           </motion.div>
-          
-          {/* شريط إحصائيات الثقة */}
-          <motion.div
-            className="mt-16 grid grid-cols-3 gap-4 sm:gap-8 border-t border-border/40 pt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <div>
-              <p className="text-3xl sm:text-4xl font-extrabold text-primary">+10</p>
-              <p className="text-xs sm:text-sm font-semibold text-muted-foreground mt-1">سنوات خبرة</p>
-            </div>
-            <div>
-              <p className="text-3xl sm:text-4xl font-extrabold text-primary">+200</p>
-              <p className="text-xs sm:text-sm font-semibold text-muted-foreground mt-1">عميل سعيد</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold text-primary">الخليج ومصر</p>
-              <p className="text-xs sm:text-sm font-semibold text-muted-foreground mt-1">حضور إقليمي</p>
-            </div>
-          </motion.div>
+          <motion.ul className="mt-10 grid gap-3 text-sm text-muted-foreground sm:grid-cols-3" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.3 }}>
+            {trustPoints.map((point) => <li key={point} className="flex items-start gap-2"><span className="mt-0.5 text-primary" aria-hidden="true">✓</span><span>{point}</span></li>)}
+          </motion.ul>
         </div>
-        <motion.div
-          className="mx-auto mt-16 lg:mt-0"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <div className="relative">
-            <img
-              src="/images/hero-concept.webp"
-              alt="مفهوم تصميم تاج ستوديو"
-              width={600}
-              height={600}
-              className="w-[500px] rounded-2xl shadow-xl ring-1 ring-gray-900/10"
-            />
+        <motion.div className="relative mx-auto w-full max-w-xl" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
+          <div className="relative aspect-square overflow-hidden rounded-3xl border border-border bg-card shadow-xl">
+            <Image src="/images/hero-concept.webp" alt="نماذج من أعمال تاج ستوديو في تصميم الهوية البصرية" fill priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          </div>
+          <div className="absolute -bottom-5 right-5 rounded-2xl border border-border bg-background/95 px-5 py-4 shadow-lg backdrop-blur">
+            <p className="text-sm font-semibold text-foreground">من الفكرة إلى هوية قابلة للتطبيق</p>
+            <p className="mt-1 text-xs text-muted-foreground">استراتيجية، تصميم، وتسليم منظم</p>
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   )
 }

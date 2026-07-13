@@ -1,4 +1,3 @@
-// ✅ NO "use client" — Server Component for SEO
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { blogPosts } from "@/lib/blogData"
@@ -10,27 +9,54 @@ interface Props {
   }
 }
 
-// ✅ Revalidate daily to rebuild pages for newly published articles
+const baseUrl = "https://www.wearetagstudio.com"
+
 export const revalidate = 86400
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const today = new Date().toISOString().split("T")[0]
-  const post = blogPosts.find((p) => p.slug === params.slug && p.date <= today)
-  if (!post) return {}
+  const post = blogPosts.find((item) => item.slug === params.slug && item.date <= today)
+
+  if (!post) {
+    return {}
+  }
+
+  const canonical = `${baseUrl}/blog/${post.slug}`
 
   return {
-    title: `${post.title} | مدونة تاج ستوديو`,
+    title: post.title,
     description: post.excerpt,
-    keywords: [post.category, "تاج ستوديو", "تصميم", post.title.split(" ").slice(0, 3).join(" ")],
+    keywords: [
+      post.category,
+      "تاج ستوديو",
+      "تصميم",
+      ...post.title.split(" ").slice(0, 4),
+    ],
+    authors: [
+      {
+        name: "فريق تاج ستوديو",
+        url: `${baseUrl}/about`,
+      },
+    ],
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: [{ url: post.image }],
+      url: canonical,
+      images: [
+        {
+          url: post.image,
+          alt: post.title,
+        },
+      ],
       type: "article",
       locale: "ar_EG",
       siteName: "تاج ستوديو",
       publishedTime: post.date,
-      authors: [post.author],
+      modifiedTime: post.date,
+      authors: ["فريق تاج ستوديو"],
     },
     twitter: {
       card: "summary_large_image",
@@ -38,14 +64,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.excerpt,
       images: [post.image],
     },
-    alternates: {
-      canonical: `https://www.wearetagstudio.com/blog/${post.slug}`,
-    },
   }
 }
 
 export async function generateStaticParams() {
   const today = new Date().toISOString().split("T")[0]
+
   return blogPosts
     .filter((post) => post.date <= today)
     .map((post) => ({
@@ -55,63 +79,68 @@ export async function generateStaticParams() {
 
 export default function BlogPostPage({ params }: Props) {
   const today = new Date().toISOString().split("T")[0]
-  const post = blogPosts.find((p) => p.slug === params.slug && p.date <= today)
+  const post = blogPosts.find((item) => item.slug === params.slug && item.date <= today)
 
   if (!post) {
     notFound()
   }
 
-  // ✅ Article Schema (JSON-LD) for Rich Results in Google
+  const canonical = `${baseUrl}/blog/${post.slug}`
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": post.title,
-    "description": post.excerpt,
-    "image": `https://www.wearetagstudio.com${post.image}`,
-    "author": {
+    "@id": `${canonical}#article`,
+    headline: post.title,
+    description: post.excerpt,
+    image: [`${baseUrl}${post.image}`],
+    inLanguage: "ar",
+    author: {
       "@type": "Organization",
-      "name": "تاج ستوديو",
-      "url": "https://www.wearetagstudio.com"
+      "@id": `${baseUrl}/#organization`,
+      name: "فريق تاج ستوديو",
+      url: `${baseUrl}/about`,
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "تاج ستوديو",
-      "logo": {
+      "@id": `${baseUrl}/#organization`,
+      name: "تاج ستوديو",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://www.wearetagstudio.com/images/logo.png"
-      }
+        url: `${baseUrl}/images/logo.png`,
+      },
     },
-    "datePublished": post.date,
-    "dateModified": post.date,
-    "mainEntityOfPage": {
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://www.wearetagstudio.com/blog/${post.slug}`
-    }
+      "@id": canonical,
+    },
   }
 
-  // ✅ Breadcrumb Schema for Google breadcrumb display
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "الرئيسية",
-        "item": "https://www.wearetagstudio.com"
+        position: 1,
+        name: "الرئيسية",
+        item: `${baseUrl}/`,
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "المدونة",
-        "item": "https://www.wearetagstudio.com/blog"
+        position: 2,
+        name: "المدونة",
+        item: `${baseUrl}/blog`,
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": post.title
-      }
-    ]
+        position: 3,
+        name: post.title,
+        item: canonical,
+      },
+    ],
   }
 
   return (

@@ -1,45 +1,37 @@
 import Link from "next/link"
 
+const footerLinks = [
+  { href: "/about", label: "من نحن" },
+  { href: "/work", label: "الأعمال" },
+  { href: "/blog", label: "المدونة" },
+  { href: "/faq", label: "الأسئلة الشائعة" },
+  { href: "/#contact-form", label: "تواصل معنا" },
+  { href: "/privacy-policy", label: "سياسة الخصوصية" },
+  { href: "/terms", label: "الشروط والأحكام" },
+  { href: "/cookie-policy", label: "ملفات الارتباط" },
+]
+
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-        <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12 sm:space-x-reverse" aria-label="Footer">
-          {/* تحديث رابط "من نحن" */}
-          <div className="pb-6">
+    <footer className="border-t border-border bg-background">
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-16 lg:px-8">
+        <nav
+          className="flex flex-wrap justify-center gap-x-8 gap-y-5"
+          aria-label="روابط تذييل الموقع"
+        >
+          {footerLinks.map((link) => (
             <Link
-              href="/about" // تم تحديث الرابط هنا ليشير إلى صفحة "من نحن" الجديدة
-              className="text-sm leading-6 text-muted-foreground hover:text-foreground"
+              key={link.href}
+              href={link.href}
+              className="text-sm leading-6 text-muted-foreground transition hover:text-foreground"
             >
-              من نحن
+              {link.label}
             </Link>
-          </div>
-          <div className="pb-6">
-            <Link href="/blog" className="text-sm leading-6 text-muted-foreground hover:text-foreground">
-              المدونة
-            </Link>
-          </div>
-          <div className="pb-6">
-            <Link href="/faq" className="text-sm leading-6 text-muted-foreground hover:text-foreground">
-              الأسئلة الشائعة
-            </Link>
-          </div>
-          <div className="pb-6">
-            <Link
-              href="/#contact-form"
-              className="text-sm leading-6 text-muted-foreground hover:text-foreground"
-            >
-              تواصل معنا
-            </Link>
-          </div>
-          <div className="pb-6">
-            <Link href="/work" className="text-sm leading-6 text-muted-foreground hover:text-foreground">
-              الأعمال
-            </Link>
-          </div>
+          ))}
         </nav>
+
         <p className="mt-10 text-center text-sm leading-5 text-muted-foreground">
-          © {new Date().getFullYear()} تاج ستوديو — جميع الحقوق محفوظة. مصمم ومطور من قبل تاج استوديو
+          © {new Date().getFullYear()} تاج ستوديو — جميع الحقوق محفوظة.
         </p>
       </div>
     </footer>
