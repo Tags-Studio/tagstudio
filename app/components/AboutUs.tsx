@@ -17,7 +17,7 @@ export default function AboutUs() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <p className="font-semibold text-primary">من نحن</p>
-          <h1 className="mt-3 text-4xl font-bold leading-tight text-foreground sm:text-5xl">خبرة بدأت في التصميم عام 2012، وتحولت إلى تاج ستوديو عام 2016</h1>
+          <h1 className="mt-3 text-4xl font-bold leading-normal text-foreground sm:text-5xl">خبرة بدأت في التصميم عام 2012، وتحولت إلى تاج ستوديو عام 2016</h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">تاج ستوديو وكالة تصميم تساعد الشركات والمشروعات على بناء حضور بصري واضح ومتسق. نعمل مع عملاء في السعودية ومصر، ونربط قرارات التصميم بأهداف العلامة والجمهور وطريقة الاستخدام الفعلية.</p>
           <p className="mt-5 leading-8 text-muted-foreground">لا نتعامل مع الهوية باعتبارها شعارًا فقط، بل كنظام يشمل الألوان والخطوط والتطبيقات والمحتوى البصري، ويمنح المشروع صورة أكثر احترافية وثباتًا أمام عملائه.</p>
           <div className="mt-8 flex flex-wrap gap-4"><Link href="/work" className="apple-button px-7 py-3">شاهد أعمالنا</Link><Link href="/#contact-form" className="rounded-full border border-border px-7 py-3 font-semibold text-foreground transition hover:border-primary hover:text-primary">تحدث معنا عن مشروعك</Link></div>
