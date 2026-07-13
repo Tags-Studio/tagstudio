@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next"
 import { blogPosts } from "@/lib/blogData"
+import { caseStudies } from "@/lib/caseStudies"
+import { services } from "@/lib/servicesData"
 
 const baseUrl = "https://www.wearetagstudio.com"
 
@@ -53,5 +55,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }))
 
-  return [...staticRoutes, ...publishedPostRoutes]
+  const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((item) => ({
+    url: `${baseUrl}/work/${item.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }))
+
+  const serviceRoutes: MetadataRoute.Sitemap = services.map((item) => ({
+    url: `${baseUrl}/services/${item.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }))
+
+  return [
+    ...staticRoutes,
+    ...publishedPostRoutes,
+    ...caseStudyRoutes,
+    ...serviceRoutes,
+  ]
 }

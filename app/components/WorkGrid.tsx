@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import ImageModal from "./ImageModal"
+import Link from "next/link"
 
 const projects = [
   {
@@ -396,6 +397,14 @@ export default function WorkGrid() {
                 <div className="p-6">
                   <div className="text-sm font-medium text-primary mb-1">{project.category}</div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
+                  {project.caseStudy ? (
+                    <Link
+                      href={`/work/${project.id === 19 ? "zaatar-w-simsim-brand-identity" : project.id === 20 ? "agricultural-development-association-brand-identity" : "ragy-burger-brand-identity"}`}
+                      className="text-primary hover:underline inline-flex items-center"
+                    >
+                      عرض دراسة الحالة
+                    </Link>
+                  ) : (
                   <button
                     onClick={() => openModal(project)}
                     className="text-primary hover:underline inline-flex items-center"
@@ -416,6 +425,7 @@ export default function WorkGrid() {
                     </svg>
                     عرض المشروع
                   </button>
+                  )}
                 </div>
               </motion.div>
             ))}
