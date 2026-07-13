@@ -6,7 +6,7 @@ import FeatureCarousel from "./components/FeatureCarousel"
 import WhyChoose from "./components/WhyChoose"
 import PortfolioGrid from "./components/PortfolioGrid"
 import Testimonials from "./components/Testimonials"
-import Process from "./components/Process"
+import LogoSelections from "./components/LogoSelections"
 import Partners from "./components/Partners"
 import CTASection from "./components/CTASection"
 import ContactForm from "./components/ContactForm"
@@ -122,9 +122,9 @@ export default function Home() {
       <Hero />
       <WearYourStory />
       <FeatureCarousel />
+      <LogoSelections />
       <WhyChoose />
       <Partners />
-      <Process />
 
       <Suspense fallback={null}>
         <PortfolioGrid />
