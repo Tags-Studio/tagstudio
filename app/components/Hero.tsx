@@ -136,14 +136,14 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1
-            className="text-4xl font-black leading-normal tracking-tight text-foreground sm:text-5xl lg:text-[4rem]"
+            className="text-4xl font-black leading-relaxed sm:leading-normal tracking-tight text-foreground sm:text-5xl lg:text-[4rem]"
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.72, delay: 0.05 }}
           >
-            نصمم هويات بصرية
-            <span className="block">تجعل مشروعك</span>
-            <span className="block text-gradient">أوضح وأكثر ثقة</span>
+            <span className="block">نصمم هويات بصرية</span>
+            <span className="block mt-2 sm:mt-4">تجعل مشروعك</span>
+            <span className="block text-gradient mt-2 sm:mt-4">أوضح وأكثر ثقة</span>
           </motion.h1>
 
           <motion.p
