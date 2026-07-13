@@ -18,7 +18,7 @@ export default function Hero() {
           <motion.p className="mb-5 font-semibold text-primary" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             تاج ستوديو — هوية وتصميم للشركات
           </motion.p>
-          <motion.h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+          <motion.h1 className="text-4xl font-bold leading-normal tracking-tight text-foreground sm:text-6xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             نصمم هويات بصرية تجعل مشروعك <span className="text-gradient">أوضح وأكثر ثقة</span>
           </motion.h1>
           <motion.p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}>
