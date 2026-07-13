@@ -2,15 +2,14 @@ import type { Metadata } from "next"
 import { Suspense } from "react"
 import Hero from "./components/Hero"
 import WearYourStory from "./components/WearYourStory"
-import FeatureCarousel0 from "./components/FeatureCarousel-0"
 import FeatureCarousel from "./components/FeatureCarousel"
+import WhyChoose from "./components/WhyChoose"
 import PortfolioGrid from "./components/PortfolioGrid"
 import Testimonials from "./components/Testimonials"
-import Timeline from "./components/Timeline"
-import Marquee from "./components/Marquee"
-import ContactForm from "./components/ContactForm"
 import Process from "./components/Process"
 import Partners from "./components/Partners"
+import CTASection from "./components/CTASection"
+import ContactForm from "./components/ContactForm"
 
 export const metadata: Metadata = {
   title: "شركة تصميم هوية بصرية وشعارات في السعودية ومصر",
@@ -122,8 +121,8 @@ export default function Home() {
 
       <Hero />
       <WearYourStory />
-      <FeatureCarousel0 />
       <FeatureCarousel />
+      <WhyChoose />
       <Partners />
       <Process />
 
@@ -132,8 +131,7 @@ export default function Home() {
       </Suspense>
 
       <Testimonials />
-      <Timeline />
-      <Marquee />
+      <CTASection />
       <ContactForm />
     </>
   )
