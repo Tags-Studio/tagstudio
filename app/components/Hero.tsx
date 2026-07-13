@@ -92,7 +92,7 @@ export default function Hero() {
 
       <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
         <motion.div
-          className="relative order-2 mx-auto w-full max-w-[590px] lg:order-1 lg:justify-self-start"
+          className="relative order-2 mx-auto w-full max-w-[590px] lg:order-2 lg:justify-self-end"
           initial={{ opacity: 0, x: -28, scale: 0.98 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -125,7 +125,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        <div className="order-1 max-w-2xl text-right lg:order-2 lg:justify-self-end">
+        <div className="order-1 max-w-2xl text-right lg:order-1 lg:justify-self-start">
           <motion.p
             className="mb-6 text-sm font-bold tracking-wide text-primary sm:text-base"
             initial={{ opacity: 0, y: 14 }}
