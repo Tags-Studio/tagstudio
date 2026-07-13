@@ -100,23 +100,23 @@ function ZaatarCaseStudy() {
 
   const applications = [
     {
-      src: "/images/zaatar-identity-portfolio3.webp",
-      alt: "تطبيقات هوية مطعم زعتر وسمسم",
+      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-paper.jpg",
+      alt: "تصميم ورق تغليف معجنات مطعم زعتر وسمسم",
       className: "md:col-span-2 md:row-span-2",
     },
     {
-      src: "/images/social-media-zaatar-1.avif",
-      alt: "تصميم سوشيال ميديا لزعتر وسمسم",
+      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-bag.jpg",
+      alt: "أكياس ورقية مطبوعة بهوية مطعم زعتر وسمسم",
       className: "",
     },
     {
-      src: "/images/social-media-zaatar-2.avif",
-      alt: "تطبيق رقمي لهوية زعتر وسمسم",
+      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-box.jpg",
+      alt: "علب كرتون معجنات وبيتزا مطعم زعتر وسمسم",
       className: "",
     },
     {
-      src: "/images/social-media-zaatar-3.avif",
-      alt: "منشور بصري لعلامة زعتر وسمسم",
+      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-polo-shirt.jpg",
+      alt: "ملابس ويونيفورم موظفي مطعم زعتر وسمسم",
       className: "md:col-span-2",
     },
   ]
