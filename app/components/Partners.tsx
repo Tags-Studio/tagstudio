@@ -57,7 +57,7 @@ export default function Partners() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (index % 6) * 0.05, duration: 0.5 }}
-              className="group flex items-center justify-center p-4 h-24 rounded-2xl bg-card/45 backdrop-blur-sm border border-border/60 hover:border-primary/45 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 select-none cursor-pointer"
+              className="group flex items-center justify-center p-2.5 h-28 rounded-2xl bg-card/45 backdrop-blur-sm border border-border/60 hover:border-primary/45 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 select-none cursor-pointer"
             >
               {/* Logo container (grayscale to normal color on hover) */}
               <div className="relative w-full h-full filter grayscale opacity-50 group-hover:filter-none group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
@@ -66,7 +66,7 @@ export default function Partners() {
                   alt="شريك نجاح تاج ستوديو"
                   fill
                   sizes="(max-width: 768px) 33vw, 16vw"
-                  className="object-contain p-1"
+                  className="object-contain"
                 />
               </div>
             </motion.div>
