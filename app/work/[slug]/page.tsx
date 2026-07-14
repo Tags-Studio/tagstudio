@@ -312,6 +312,105 @@ function ZaatarCaseStudy() {
         </article>
       </section>
 
+      {/* ── Project Story Section ── */}
+      <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div className="mb-14">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
+            Behind the Work
+          </p>
+          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+            قصة المشروع
+          </h2>
+        </div>
+
+        <div className="grid gap-px lg:grid-cols-3">
+          {/* Card 1 — Client Brief */}
+          <article className="relative overflow-hidden bg-[#fbf8f1] p-8 sm:p-12">
+            <span
+              aria-hidden="true"
+              className="absolute -left-4 -top-6 select-none font-serif text-[9rem] font-black leading-none text-[#a8b51d]/[0.06]"
+            >
+              01
+            </span>
+            <p className="relative text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
+              Client Brief
+            </p>
+            <h3 className="relative mt-5 text-2xl font-bold">
+              ما طلبه العميل
+            </h3>
+            <p className="relative mt-5 leading-9 text-[#697166]">
+              جاءنا العميل بطلب واضح: هوية بصرية متكاملة تشمل التغليف
+              والمطبوعات والمحتوى الرقمي. كان يعرف ما يريده من الناحية
+              الوظيفية، لكنه لم يكن يمتلك تصوّرًا بصريًا محددًا للشكل
+              النهائي. جلسنا معه نسمع أكثر مما نتكلم — عن القصة وراء
+              الاسم، وعن الجمهور اللي يحبّ يخدمه، وعن الشعور اللي يريد
+              العميل أن يحمله معه لما يمسك كيسة أو علبة من المطعم.
+            </p>
+          </article>
+
+          {/* Card 2 — Creative Vision */}
+          <article className="relative overflow-hidden bg-[#f6f1e8] p-8 sm:p-12">
+            <span
+              aria-hidden="true"
+              className="absolute -left-4 -top-6 select-none font-serif text-[9rem] font-black leading-none text-[#a8b51d]/[0.06]"
+            >
+              02
+            </span>
+            <p className="relative text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
+              Creative Vision
+            </p>
+            <h3 className="relative mt-5 text-2xl font-bold">
+              رؤيتنا الفنية
+            </h3>
+            <p className="relative mt-5 leading-9 text-[#697166]">
+              قرّرنا أن نذهب باتجاه هوية دافئة تستلهم الطبيعة والأكل الطازج
+              بلمسة عصرية. الاسم نفسه كان كنزًا بصريًا — زعتر وسمسم: مكوّنان
+              من مطبخ المنطقة، كل منهما له شكله وملمسه وحضوره. الفكرة
+              الأساسية كانت: لا نرسم زعتر وسمسم بشكل حرفي، بل نعصرهما في
+              رمز واحد يجمع الشكلين معًا بأسلوب مجرّد وأنيق. الألوان جاءت
+              من الطبيعة مباشرةً — أخضر الزيتون والذهبي الدافئ والعاجي
+              الذي يوحي بالخبز والطحين.
+            </p>
+          </article>
+
+          {/* Card 3 — Breakthrough */}
+          <article className="relative overflow-hidden bg-[#eee8d8] p-8 sm:p-12">
+            <span
+              aria-hidden="true"
+              className="absolute -left-4 -top-6 select-none font-serif text-[9rem] font-black leading-none text-[#a8b51d]/[0.06]"
+            >
+              03
+            </span>
+            <p className="relative text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
+              The Breakthrough
+            </p>
+            <h3 className="relative mt-5 text-2xl font-bold">
+              لحظة الاتفاق
+            </h3>
+            <p className="relative mt-5 leading-9 text-[#697166]">
+              اللحظة الحقيقية جاءت في مرحلتين: أولًا حين اكتشفنا أن اسم
+              المطعم بحد ذاته فيه مادة بصرية غنية — فكرة دمج مكوّنَي الزعتر
+              والسمسم في شكل مجرّد واحد أصبحت الحل الذي لم يكن يتوقعه أحد.
+              وثانيًا لما شاف العميل التطبيقات على التغليف الحقيقي — الأكياس
+              والعلب وأوراق اللف — وانبسط ورأى رؤيتنا متجسدة على شيء ملموس
+              بين يديه. تلك اللحظة أكدت أن الهوية الجيدة لا تُقرأ على
+              الشاشة فقط، بل تُشعر بها لما تمسكها.
+            </p>
+          </article>
+        </div>
+
+        {/* Pull Quote */}
+        <figure className="mt-px bg-[#a8b51d] px-8 py-12 text-center sm:px-16 sm:py-16">
+          <blockquote className="mx-auto max-w-3xl text-2xl font-bold leading-relaxed text-white sm:text-3xl">
+            "الهوية الجيدة لا تُقرأ على الشاشة فقط — بل تُشعر بها لما تمسكها."
+          </blockquote>
+          <figcaption className="mt-5 text-sm font-semibold text-white/70">
+            فريق تاج ستوديو — مشروع زعتر وسمسم
+          </figcaption>
+        </figure>
+      </section>
+
+      {/* ── Applications Section ── */}
       <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
