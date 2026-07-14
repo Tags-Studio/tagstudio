@@ -5,7 +5,7 @@ export const caseStudies = [
     client: "مطعم زعتر وسمسم",
     location: "الأحساء",
     category: "هوية بصرية للمطاعم",
-    image: "/images/zaatar-identity-portfolio3.webp",
+    image: "/images/zaatar-w-simsim-hero-image.jpg",
     service: "تصميم الهوية البصرية",
     problem: "احتاجت العلامة إلى نظام بصري متكامل يجعل حضورها أكثر تميزًا ويسهل تطبيقه على التغليف والمطبوعات.",
     solution: "تم تطوير شعار وهوية بصرية بألوان دافئة وتطبيقات متناسقة تناسب قطاع الأغذية والمطاعم.",
