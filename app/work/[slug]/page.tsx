@@ -410,6 +410,115 @@ function ZaatarCaseStudy() {
         </figure>
       </section>
 
+      {/* ── Design Decisions Section ── */}
+      <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mb-12">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
+            Design Rationale
+          </p>
+          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+            لماذا هذه القرارات؟
+          </h2>
+          <p className="mt-5 max-w-2xl leading-8 text-[#697166]">
+            كل عنصر في الهوية جاء بقرار مدروس، لا باختيار عشوائي — هنا نشرح
+            السبب وراء كل اختيار.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: "🍃",
+              label: "الرمز العضوي",
+              decision: "لماذا الشكل غير الهندسي؟",
+              reason:
+                "المطبخ الشرقي يرتبط بالطبيعة والأصالة — الشكل العضوي المنحني يوحي بالنمو والدفء، بعيداً عن الجمود الهندسي الذي يُشعر بالبرود في قطاع الأغذية.",
+            },
+            {
+              icon: "🎨",
+              label: "لوحة الألوان",
+              decision: "لماذا الأخضر والذهبي معاً؟",
+              reason:
+                "أخضر الزيتون (#A8B51D) يجسّد الطازج والنباتي، والذهبي (#D39B51) يوحي بالخبز المحمص ودفء المطبخ. التوازن بينهما يجعل العلامة تبدو صحية وشهية في آن واحد.",
+            },
+            {
+              icon: "✍️",
+              label: "الخط",
+              decision: "لماذا مزج الطابعين؟",
+              reason:
+                "الخط الإنجليزي ذو النبرة الدافئة (Serif) يعكس الأصالة، بينما الخط العربي ذو المقروئية الواضحة يُيسّر القراءة على التغليف من مسافة. المزيج يخدم لغتين بأسلوب بصري موحّد.",
+            },
+            {
+              icon: "📦",
+              label: "العاجي كخلفية",
+              decision: "لماذا ليس الأبيض النقي؟",
+              reason:
+                "العاجي (#F4EFE5) يُقلل الإجهاد البصري على التغليف المطبوع، ويُعطي إحساساً بالدفء والورق الطبيعي، مما يتناسق مع هوية المطعم القائمة على الأصالة والمكوّنات الطبيعية.",
+            },
+          ].map((item) => (
+            <article
+              key={item.label}
+              className="rounded-3xl border border-black/8 bg-[#fbf8f1] p-7"
+            >
+              <span className="text-3xl" role="img" aria-label={item.label}>
+                {item.icon}
+              </span>
+              <p className="mt-5 text-xs font-bold uppercase tracking-wider text-[#84920b]">
+                {item.label}
+              </p>
+              <h3 className="mt-2 text-lg font-bold text-[#273127]">
+                {item.decision}
+              </h3>
+              <p className="mt-3 leading-8 text-sm text-[#697166]">{item.reason}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Client Conversation Screenshots ── */}
+      <section className="bg-[#fbf8f1]">
+        <div className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mb-12">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
+              The Brief
+            </p>
+            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+              من المحادثة إلى الفكرة
+            </h2>
+            <p className="mt-5 max-w-2xl leading-8 text-[#697166]">
+              بدأ المشروع برسائل واضحة لكن بلا تصوّر بصري — هذه المحادثات
+              هي التي شكّلت نقطة البداية الحقيقية.
+            </p>
+          </div>
+
+          {/* TODO: ضع سكرينات المحادثة هنا — أضف صورك وأزل هذا التعليق */}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { id: "chat-1", label: "سكرين 1 — وصف المطعم والفكرة" },
+              { id: "chat-2", label: "سكرين 2 — طلبات الهوية" },
+              { id: "chat-3", label: "سكرين 3 — ردة فعل العميل" },
+            ].map((slot) => (
+              <figure
+                key={slot.id}
+                id={slot.id}
+                className="group relative min-h-[400px] overflow-hidden rounded-3xl border-2 border-dashed border-[#a8b51d]/30 bg-[#f6f1e8]"
+              >
+                {/* replace this div with: <Image src="/images/SCREENSHOT_NAME.jpg" alt="..." fill className="object-contain object-top" /> */}
+                <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center">
+                  <span className="text-4xl opacity-40">💬</span>
+                  <p className="text-sm font-semibold text-[#8b9387]">
+                    {slot.label}
+                  </p>
+                  <p className="text-xs text-[#a0a89d]">
+                    استبدل هذا المربع بصورة السكرين الحقيقية
+                  </p>
+                </div>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Applications Section ── */}
       <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
@@ -445,6 +554,133 @@ function ZaatarCaseStudy() {
         </div>
       </section>
 
+      {/* ── Social Media After Identity ── */}
+      <section className="bg-[#273127]">
+        <div className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mb-12">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#a8b51d]">
+              Live Results
+            </p>
+            <h2 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
+              الهوية في الحياة الحقيقية
+            </h2>
+            <p className="mt-5 max-w-2xl leading-8 text-white/65">
+              كيف بدت الهوية بعد تطبيقها فعلياً على صفحة المطعم على السوشيال
+              ميديا — مع العلم أن المطعم كان جديداً تماماً ولم تكن له هوية
+              سابقة.
+            </p>
+          </div>
+
+          {/* TODO: ضع سكرينات السوشيال ميديا هنا — أضف صورك وأزل هذا التعليق */}
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              { id: "social-1", label: "صفحة الإنستغرام — الغلاف" },
+              { id: "social-2", label: "منشورات الفيد — الثيم العام" },
+            ].map((slot) => (
+              <figure
+                key={slot.id}
+                id={slot.id}
+                className="relative min-h-[480px] overflow-hidden rounded-3xl border border-white/10 bg-[#1d231d]"
+              >
+                {/* replace this div with: <Image src="/images/SCREENSHOT_NAME.jpg" alt="..." fill className="object-cover object-top" /> */}
+                <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center">
+                  <span className="text-5xl opacity-30">📱</span>
+                  <p className="text-sm font-semibold text-white/50">
+                    {slot.label}
+                  </p>
+                  <p className="text-xs text-white/30">
+                    استبدل هذا المربع بسكرين الصفحة الحقيقية
+                  </p>
+                </div>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Deliverables ── */}
+      <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
+              Deliverables
+            </p>
+            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+              ماذا سُلِّم للعميل؟
+            </h2>
+            <p className="mt-5 leading-8 text-[#697166]">
+              الهوية الكاملة تُسلَّم في حزمة منظمة تضمن سهولة التطبيق من
+              أي جهة — الطباعة، الديجيتال، أو التوظيف الداخلي للفريق.
+            </p>
+
+            <ul className="mt-10 space-y-4">
+              {[
+                { label: "ملفات الشعار", detail: "SVG · AI · PNG بخلفية شفافة · نسخ ألوان متعددة" },
+                { label: "لوحة الألوان والخطوط", detail: "Hex · RGB · CMYK لكل لون رسمي" },
+                { label: "تطبيقات الهوية", detail: "التغليف · الأكياس · العلب · أوراق اللف" },
+                { label: "كتيّب الاستخدام", detail: "قواعد استخدام الشعار · مسافات الحماية · الاستخدامات الخاطئة" },
+                { label: "قوالب السوشيال ميديا", detail: "صور البروفايل · أبعاد الغلاف · قوالب المنشورات" },
+                { label: "ملفات الطباعة الجاهزة", detail: "PDF وTIF عالية الدقة لكل تطبيق" },
+              ].map((item) => (
+                <li key={item.label} className="flex items-start gap-4">
+                  <span className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#a8b51d] text-white">
+                    <svg viewBox="0 0 12 10" className="h-3 w-3" fill="none">
+                      <path d="M1 5l3.5 3.5L11 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <div>
+                    <p className="font-bold text-[#273127]">{item.label}</p>
+                    <p className="mt-1 text-sm text-[#8b9387]">{item.detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <aside className="rounded-3xl border border-[#a8b51d]/25 bg-[#fbf8f1] p-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#84920b]">
+              مدة التنفيذ
+            </p>
+            <p className="mt-3 text-5xl font-black text-[#273127]">
+              3<span className="text-2xl font-bold"> أسابيع</span>
+            </p>
+            <p className="mt-2 text-sm text-[#8b9387]">
+              من جلسة الاستماع الأولى حتى التسليم النهائي
+            </p>
+
+            <hr className="my-8 border-black/10" />
+
+            <p className="text-xs font-bold uppercase tracking-wider text-[#84920b]">
+              مراحل العمل
+            </p>
+            <ol className="mt-4 space-y-3">
+              {[
+                "الاستماع وجمع المعلومات",
+                "البحث والاتجاه الإبداعي",
+                "تصميم الشعار والنظام البصري",
+                "تطوير التطبيقات والتغليف",
+                "التسليم والتوثيق",
+              ].map((step, i) => (
+                <li key={step} className="flex items-center gap-3 text-sm">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#eee8d8] text-xs font-bold text-[#84920b]">
+                    {i + 1}
+                  </span>
+                  <span className="text-[#697166]">{step}</span>
+                </li>
+              ))}
+            </ol>
+
+            <Link
+              href="/#contact-form"
+              className="mt-8 flex w-full items-center justify-center rounded-full bg-[#a8b51d] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              ابدأ مشروعك الآن
+            </Link>
+          </aside>
+        </div>
+      </section>
+
+      {/* ── The Solution Banner ── */}
       <section className="bg-[#a7b317]">
         <div className="mx-auto grid max-w-[1500px] gap-10 px-6 py-14 text-white lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
           <div>
@@ -460,7 +696,6 @@ function ZaatarCaseStudy() {
               شخصيته.
             </p>
           </div>
-
           <Link
             href="/#contact-form"
             className="inline-flex rounded-full bg-white px-8 py-4 font-bold text-[#66720a] transition hover:-translate-y-0.5 hover:shadow-xl"
@@ -470,15 +705,108 @@ function ZaatarCaseStudy() {
         </div>
       </section>
 
+      {/* ── Client Testimonial ── */}
+      <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mb-10">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
+            Client Words
+          </p>
+          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+            قالها العميل
+          </h2>
+        </div>
+
+        {/* TODO: ضع اقتباساً حقيقياً من العميل بعد الحصول عليه */}
+        <figure className="rounded-3xl bg-[#fbf8f1] p-8 sm:p-14">
+          <svg
+            className="mb-6 h-10 w-10 text-[#a8b51d]"
+            fill="currentColor"
+            viewBox="0 0 32 32"
+            aria-hidden="true"
+          >
+            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+          </svg>
+          <blockquote className="text-2xl font-bold leading-relaxed text-[#273127] sm:text-3xl">
+            {/* استبدل هذا النص باقتباس حقيقي من العميل */}
+            ما توقعنا تطلع بهذا الشكل — الأكياس والعلب بقت جزء من تجربة
+            عميلنا في المطعم، الناس بتاخد صور معاهم.
+          </blockquote>
+          <figcaption className="mt-8 flex items-center gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#a8b51d] font-bold text-white">
+              ز
+            </div>
+            <div>
+              <p className="font-bold text-[#273127]">صاحب مطعم زعتر وسمسم</p>
+              <p className="text-sm text-[#8b9387]">عميل تاج ستوديو — القاهرة</p>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
+
+      {/* ── Related Work ── */}
+      <section className="bg-[#fbf8f1]">
+        <div className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mb-10">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
+              More Work
+            </p>
+            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+              أعمال مشابهة
+            </h2>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            {[
+              {
+                slug: "ragy-burger-brand-identity",
+                title: "هوية مطعم برجر راجي",
+                category: "هوية بصرية للمطاعم",
+                image: "/images/ragy-identity-portfolio.webp",
+              },
+              {
+                slug: "agricultural-development-association-brand-identity",
+                title: "هوية جمعية التنمية الزراعية",
+                category: "هوية مؤسسية",
+                image: "/images/agricultural-development-association.avif",
+              },
+            ].map((relatedItem) => (
+              <Link
+                key={relatedItem.slug}
+                href={`/work/${relatedItem.slug}`}
+                className="group relative overflow-hidden rounded-3xl"
+              >
+                <figure className="relative h-64 overflow-hidden bg-[#e6dcc9] sm:h-80">
+                  <Image
+                    src={relatedItem.image}
+                    alt={relatedItem.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover transition duration-700 group-hover:scale-[1.04]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <figcaption className="absolute bottom-0 p-7 text-white">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-white/70">
+                      {relatedItem.category}
+                    </p>
+                    <h3 className="mt-2 text-2xl font-bold">{relatedItem.title}</h3>
+                  </figcaption>
+                </figure>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Footer Nav ── */}
       <section className="mx-auto flex max-w-[1500px] flex-col justify-between gap-6 px-6 py-10 text-sm text-[#72796f] sm:flex-row sm:items-center lg:px-8">
         <Link href="/work" className="font-bold text-[#7f8c0b] hover:underline">
           ← العودة إلى كل الأعمال
         </Link>
         <Link
-          href="/services/restaurant-branding"
+          href="/services/visual-identity"
           className="font-bold text-[#7f8c0b] hover:underline"
         >
-          تعرف على خدمة تصميم هوية المطاعم →
+          تعرف على خدمة تصميم الهوية البصرية →
         </Link>
       </section>
     </main>
