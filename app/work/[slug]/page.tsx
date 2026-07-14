@@ -571,27 +571,24 @@ function ZaatarCaseStudy() {
             </p>
           </div>
 
-          {/* TODO: ضع سكرينات السوشيال ميديا هنا — أضف صورك وأزل هذا التعليق */}
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
-              { id: "social-1", label: "صفحة الإنستغرام — الغلاف" },
-              { id: "social-2", label: "منشورات الفيد — الثيم العام" },
+              { src: "/images/zaatar-social-media-1.jpg", alt: "صفحة المطعم على إنستغرام" },
+              { src: "/images/zaatar-social-media-2.jpg", alt: "منشورات إنستغرام لمطعم زعتر وسمسم" },
+              { src: "/images/zaatar-social-media-3.jpg", alt: "تصميمات السوشيال ميديا لمطعم زعتر وسمسم" },
+              { src: "/images/zaatar-social-media-4.jpeg", alt: "ستوريات إنستغرام لمطعم زعتر وسمسم" },
             ].map((slot) => (
               <figure
-                key={slot.id}
-                id={slot.id}
-                className="relative min-h-[480px] overflow-hidden rounded-3xl border border-white/10 bg-[#1d231d]"
+                key={slot.src}
+                className="relative min-h-[480px] overflow-hidden rounded-3xl border border-white/10 bg-[#1d231d] md:min-h-[600px]"
               >
-                {/* replace this div with: <Image src="/images/SCREENSHOT_NAME.jpg" alt="..." fill className="object-cover object-top" /> */}
-                <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center">
-                  <span className="text-5xl opacity-30">📱</span>
-                  <p className="text-sm font-semibold text-white/50">
-                    {slot.label}
-                  </p>
-                  <p className="text-xs text-white/30">
-                    استبدل هذا المربع بسكرين الصفحة الحقيقية
-                  </p>
-                </div>
+                <Image
+                  src={slot.src}
+                  alt={slot.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover object-top transition duration-700 hover:scale-[1.03]"
+                />
               </figure>
             ))}
           </div>
