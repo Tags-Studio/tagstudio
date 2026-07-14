@@ -238,20 +238,10 @@ function ZaatarCaseStudy() {
         </header>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#fbf8f1]">
         <div className="mx-auto grid max-w-[1500px] lg:grid-cols-2">
-          {/* Left Column: Image */}
-          <div className="relative min-h-[400px] p-8 lg:min-h-[600px]">
-            <Image
-              src="/images/zaatar-logo-concept-explanation.jpg"
-              alt="شرح الفكرة الإبداعية لشعار زعتر وسمسم"
-              fill
-              className="object-contain p-4"
-            />
-          </div>
-
-          {/* Right Column: Explanation */}
-          <div className="bg-[#fbf8f1] p-8 sm:p-12 lg:p-16">
+          {/* Text Column (Appears on the right in RTL) */}
+          <div className="p-8 sm:p-12 lg:p-16">
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
               The Creative Concept
             </p>
@@ -295,6 +285,16 @@ function ZaatarCaseStudy() {
               لذلك تم تصميمه ليظل واضحًا على العبوات والملابس والواجهات والمحتوى
               الرقمي بمقاسات مختلفة.
             </div>
+          </div>
+
+          {/* Image Column (Appears on the left in RTL) */}
+          <div className="relative min-h-[400px] p-8 lg:min-h-[600px]">
+            <Image
+              src="/images/zaatar-logo-concept-explanation.jpg"
+              alt="شرح الفكرة الإبداعية لشعار زعتر وسمسم"
+              fill
+              className="object-contain p-4"
+            />
           </div>
         </div>
       </section>
