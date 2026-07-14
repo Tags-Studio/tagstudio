@@ -120,8 +120,8 @@ function ZaatarCaseStudy() {
       className: "md:col-span-2",
     },
     {
-      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-app-14.jpg",
-      alt: "تطبيقات الهوية البصرية لمطعم زعتر وسمسم 1",
+      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-app-20.jpg",
+      alt: "ملابس الشيف لمطعم زعتر وسمسم",
       className: "md:col-span-2",
     },
     {
@@ -135,8 +135,8 @@ function ZaatarCaseStudy() {
       className: "",
     },
     {
-      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-app-20.jpg",
-      alt: "تطبيقات الهوية البصرية لمطعم زعتر وسمسم 4",
+      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-app-14.jpg",
+      alt: "أظرف ومراسلات مطعم زعتر وسمسم",
       className: "md:col-span-4",
     },
   ]
