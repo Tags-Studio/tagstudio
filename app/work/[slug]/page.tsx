@@ -568,10 +568,10 @@ function ZaatarCaseStudy() {
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
-              { src: "/images/zaatar-social-media-1.jpg", alt: "صفحة المطعم على إنستغرام" },
-              { src: "/images/zaatar-social-media-2.jpg", alt: "منشورات إنستغرام لمطعم زعتر وسمسم" },
-              { src: "/images/zaatar-social-media-3.jpg", alt: "تصميمات السوشيال ميديا لمطعم زعتر وسمسم" },
-              { src: "/images/zaatar-social-media-4.jpeg", alt: "ستوريات إنستغرام لمطعم زعتر وسمسم" },
+              { src: "/images/zaatar-realistic-1.jpg", alt: "صورة واقعية لتغليف مطعم زعتر وسمسم" },
+              { src: "/images/zaatar-realistic-2.jpg", alt: "صورة واقعية لأكياس مطعم زعتر وسمسم" },
+              { src: "/images/zaatar-realistic-3.jpeg", alt: "صورة واقعية لعلب البيتزا لمطعم زعتر وسمسم" },
+              { src: "/images/zaatar-realistic-4.webp", alt: "صورة واقعية لأوراق التغليف لمطعم زعتر وسمسم" },
             ].map((slot) => (
               <figure
                 key={slot.src}
