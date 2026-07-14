@@ -491,28 +491,23 @@ function ZaatarCaseStudy() {
             </p>
           </div>
 
-          {/* TODO: ضع سكرينات المحادثة هنا — أضف صورك وأزل هذا التعليق */}
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
-              { id: "chat-1", label: "سكرين 1 — وصف المطعم والفكرة" },
-              { id: "chat-2", label: "سكرين 2 — طلبات الهوية" },
-              { id: "chat-3", label: "سكرين 3 — ردة فعل العميل" },
+              { src: "/images/zaatar-chat-1.jpeg", alt: "محادثة العميل - طلب تصميم الهوية" },
+              { src: "/images/zaatar-chat-2.jpeg", alt: "محادثة العميل - تفاصيل المطعم" },
+              { src: "/images/zaatar-chat-3.jpeg", alt: "محادثة العميل - الاتفاق على الأفكار" },
             ].map((slot) => (
               <figure
-                key={slot.id}
-                id={slot.id}
-                className="group relative min-h-[400px] overflow-hidden rounded-3xl border-2 border-dashed border-[#a8b51d]/30 bg-[#f6f1e8]"
+                key={slot.src}
+                className="group relative min-h-[400px] overflow-hidden rounded-3xl border border-[#a8b51d]/30 bg-[#f6f1e8] md:min-h-[500px]"
               >
-                {/* replace this div with: <Image src="/images/SCREENSHOT_NAME.jpg" alt="..." fill className="object-contain object-top" /> */}
-                <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center">
-                  <span className="text-4xl opacity-40">💬</span>
-                  <p className="text-sm font-semibold text-[#8b9387]">
-                    {slot.label}
-                  </p>
-                  <p className="text-xs text-[#a0a89d]">
-                    استبدل هذا المربع بصورة السكرين الحقيقية
-                  </p>
-                </div>
+                <Image
+                  src={slot.src}
+                  alt={slot.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-contain object-top transition duration-700 hover:scale-[1.03]"
+                />
               </figure>
             ))}
           </div>
