@@ -493,8 +493,8 @@ function ZaatarCaseStudy() {
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
-              { src: "/images/zaatar-chat-1.jpeg", alt: "محادثة العميل - طلب تصميم الهوية" },
               { src: "/images/zaatar-chat-2.jpeg", alt: "محادثة العميل - تفاصيل المطعم" },
+              { src: "/images/zaatar-chat-1.jpeg", alt: "محادثة العميل - طلب تصميم الهوية" },
               { src: "/images/zaatar-chat-3.jpeg", alt: "محادثة العميل - الاتفاق على الأفكار" },
             ].map((slot) => (
               <figure
