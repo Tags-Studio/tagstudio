@@ -12,6 +12,40 @@ type Props = {
 
 const baseUrl = "https://www.wearetagstudio.com"
 
+const tagMethod = [
+  {
+    letter: "T",
+    title: "Target — نفهم السوق والجمهور",
+    description:
+      "نبدأ بفهم النشاط، الجمهور المستهدف، المنافسين، وأهداف المشروع حتى يكون كل قرار بصري مبنيًا على سياق حقيقي.",
+  },
+  {
+    letter: "A",
+    title: "Alignment — نوحّد الاستراتيجية والتصميم",
+    description:
+      "نحوّل الفكرة والقيم إلى اتجاه بصري واضح، ثم نراجع اتساقه مع شخصية العلامة وطريقة ظهورها أمام العملاء.",
+  },
+  {
+    letter: "G",
+    title: "Growth-ready — نبني نظامًا قابلًا للنمو",
+    description:
+      "نسلّم عناصر وملفات منظمة يمكن تطبيقها وتطويرها عبر المنصات والمطبوعات مع توسع المشروع.",
+  },
+]
+
+const fitPoints = [
+  "تبدأ مشروعًا جديدًا وتحتاج نظامًا بصريًا واضحًا من البداية.",
+  "لديك تصميمات متفرقة أو هوية غير متناسقة بين القنوات المختلفة.",
+  "تخطط للتوسع وتحتاج ملفات وقواعد يسهل على فريقك تطبيقها.",
+  "تريد اتخاذ قرارات التصميم بناءً على الجمهور والسوق وليس الذوق الشخصي فقط.",
+]
+
+const notFitPoints = [
+  "تبحث عن تنفيذ سريع لعنصر واحد دون فهم المشروع أو سياقه.",
+  "لم تحدد بعد طبيعة النشاط أو الجمهور أو الخدمة الأساسية.",
+  "تريد أرخص تنفيذ ممكن بغض النظر عن الاستراتيجية أو قابلية التطبيق.",
+]
+
 export function generateStaticParams() {
   return services.map((service) => ({
     slug: service.slug,
@@ -151,7 +185,10 @@ export default function ServicePage({ params }: Props) {
       <article className="relative isolate overflow-hidden">
         <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
           <div>
-            <nav aria-label="مسار التنقل" className="mb-6 text-sm text-muted-foreground">
+            <nav
+              aria-label="مسار التنقل"
+              className="mb-6 text-sm text-muted-foreground"
+            >
               <Link href="/" className="hover:text-primary">
                 الرئيسية
               </Link>
@@ -226,30 +263,121 @@ export default function ServicePage({ params }: Props) {
 
         <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="max-w-3xl">
-            <p className="font-semibold text-primary">طريقة العمل</p>
-            <h2 className="mt-2 text-3xl font-bold text-foreground">
-              خطوات منظمة من الفكرة إلى التسليم
+            <p className="font-semibold text-primary">منهجية تاج</p>
+            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
+              نظام TAG لبناء علامات أكثر وضوحًا
             </h2>
+            <p className="mt-5 leading-8 text-muted-foreground">
+              لا نبدأ التصميم من الفراغ. نستخدم منهجية تربط فهم السوق
+              والاستراتيجية بالنظام البصري والتطبيق العملي.
+            </p>
           </div>
 
-          <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {service.process.map((step, index) => (
+          <ol className="mt-12 grid gap-6 lg:grid-cols-3">
+            {tagMethod.map((step) => (
               <li
-                key={step.title}
-                className="rounded-2xl border border-border bg-card/50 p-6"
+                key={step.letter}
+                className="relative overflow-hidden rounded-3xl border border-border bg-card/50 p-7"
               >
-                <span className="text-2xl font-bold text-primary">
-                  {String(index + 1).padStart(2, "0")}
+                <span
+                  aria-hidden="true"
+                  className="absolute -left-3 -top-8 text-[9rem] font-black leading-none text-primary/[0.07]"
+                >
+                  {step.letter}
                 </span>
-                <h3 className="mt-4 text-xl font-bold text-foreground">
+                <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-2xl font-black text-primary-foreground">
+                  {step.letter}
+                </span>
+                <h3 className="relative mt-6 text-xl font-bold text-foreground">
                   {step.title}
                 </h3>
-                <p className="mt-3 leading-7 text-muted-foreground">
+                <p className="relative mt-4 leading-7 text-muted-foreground">
                   {step.description}
                 </p>
               </li>
             ))}
           </ol>
+        </section>
+
+        <section className="border-y border-border bg-card/30">
+          <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <div className="max-w-3xl">
+              <p className="font-semibold text-primary">طريقة العمل</p>
+              <h2 className="mt-2 text-3xl font-bold text-foreground">
+                خطوات منظمة من الفكرة إلى التسليم
+              </h2>
+            </div>
+
+            <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {service.process.map((step, index) => (
+                <li
+                  key={step.title}
+                  className="rounded-2xl border border-border bg-background/70 p-6"
+                >
+                  <span className="text-2xl font-bold text-primary">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-4 text-xl font-bold text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 leading-7 text-muted-foreground">
+                    {step.description}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="font-semibold text-primary">قبل أن تبدأ</p>
+            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
+              هل هذه الخدمة مناسبة لمشروعك؟
+            </h2>
+            <p className="mt-5 leading-8 text-muted-foreground">
+              نفضل أن يكون نطاق العمل مناسبًا فعلًا لمرحلة المشروع، لذلك نوضح
+              لك متى تحقق الخدمة أفضل قيمة ومتى قد تحتاج حلًا أبسط.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-7 lg:grid-cols-2">
+            <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/[0.05] p-7">
+              <h3 className="text-2xl font-bold text-foreground">
+                الخدمة مناسبة لك إذا:
+              </h3>
+              <ul className="mt-6 space-y-4">
+                {fitPoints.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 text-lg font-bold text-emerald-600">
+                      ✓
+                    </span>
+                    <span className="leading-7 text-muted-foreground">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="rounded-3xl border border-amber-500/20 bg-amber-500/[0.05] p-7">
+              <h3 className="text-2xl font-bold text-foreground">
+                قد تحتاج خيارًا أبسط إذا:
+              </h3>
+              <ul className="mt-6 space-y-4">
+                {notFitPoints.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 text-lg font-bold text-amber-600">
+                      •
+                    </span>
+                    <span className="leading-7 text-muted-foreground">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
         </section>
 
         <section className="border-y border-border bg-card/30">
@@ -261,8 +389,9 @@ export default function ServicePage({ params }: Props) {
                   لماذا تستثمر في {service.shortTitle}؟
                 </h2>
                 <p className="mt-5 leading-8 text-muted-foreground">
-                  الهدف ليس إنتاج تصميم جميل فقط، بل بناء أصل بصري يدعم التسويق
-                  والمبيعات ويجعل العلامة أكثر وضوحًا واتساقًا أمام جمهورها.
+                  الهدف ليس إنتاج تصميم جميل فقط، بل بناء أصل بصري يدعم
+                  التسويق والمبيعات ويجعل العلامة أكثر وضوحًا واتساقًا أمام
+                  جمهورها.
                 </p>
               </div>
 
