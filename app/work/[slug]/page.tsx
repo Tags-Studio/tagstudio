@@ -119,6 +119,26 @@ function ZaatarCaseStudy() {
       alt: "ملابس ويونيفورم موظفي مطعم زعتر وسمسم",
       className: "md:col-span-2",
     },
+    {
+      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-app-14.jpg",
+      alt: "تطبيقات الهوية البصرية لمطعم زعتر وسمسم 1",
+      className: "md:col-span-2",
+    },
+    {
+      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-app-15.jpg",
+      alt: "تطبيقات الهوية البصرية لمطعم زعتر وسمسم 2",
+      className: "",
+    },
+    {
+      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-app-17.jpg",
+      alt: "تطبيقات الهوية البصرية لمطعم زعتر وسمسم 3",
+      className: "",
+    },
+    {
+      src: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-app-20.jpg",
+      alt: "تطبيقات الهوية البصرية لمطعم زعتر وسمسم 4",
+      className: "md:col-span-4",
+    },
   ]
 
   const palette = [
