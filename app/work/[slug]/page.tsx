@@ -239,7 +239,7 @@ function ZaatarCaseStudy() {
       </section>
 
       <section className="bg-white">
-        <div className="grid lg:grid-cols-2">
+        <div className="mx-auto grid max-w-[1500px] lg:grid-cols-2">
           {/* Left Column: Image */}
           <div className="relative min-h-[400px] p-8 lg:min-h-[600px]">
             <Image
