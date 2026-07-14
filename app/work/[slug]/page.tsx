@@ -356,7 +356,10 @@ function ZaatarCaseStudy() {
               <p className="font-serif text-7xl leading-none text-[#30372f]">Aa</p>
               <div>
                 <p className="text-5xl font-bold leading-none">أب</p>
-                <p className="mt-4 text-sm leading-7 text-[#697166]">
+                <p className="mt-3 text-xs font-bold uppercase tracking-wider text-[#8b9387]">
+                  DG GHAREEB
+                </p>
+                <p className="mt-2 text-sm leading-7 text-[#697166]">
                   مزيج بين طابع دافئ ومقروئية واضحة في اللغتين العربية
                   والإنجليزية.
                 </p>
