@@ -728,8 +728,8 @@ function ZaatarCaseStudy() {
               ز
             </div>
             <div>
-              <p className="font-bold text-[#273127]">صاحب مطعم زعتر وسمسم</p>
-              <p className="text-sm text-[#8b9387]">عميل تاج ستوديو — القاهرة</p>
+              <p className="font-bold text-[#273127]">شيف مطعم زعتر وسمسم</p>
+              <p className="text-sm text-[#8b9387]">عميل تاج ستوديو — الأحساء</p>
             </div>
           </figcaption>
         </figure>

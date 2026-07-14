@@ -3,7 +3,7 @@ export const caseStudies = [
     slug: "zaatar-w-simsim-brand-identity",
     title: "تطوير هوية مطعم زعتر وسمسم",
     client: "مطعم زعتر وسمسم",
-    location: "القاهرة والرياض",
+    location: "الأحساء",
     category: "هوية بصرية للمطاعم",
     image: "/images/zaatar-identity-portfolio3.webp",
     service: "تصميم الهوية البصرية",
