@@ -159,7 +159,12 @@ function ZaatarCaseStudy() {
   ]
 
   return (
-    <main className="bg-[#f6f1e8] text-[#273127]">
+    <main className="bg-[#f6f1e8] text-[#273127] relative">
+      {/* ── Premium Noise Overlay ── */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-50 mix-blend-multiply opacity-[0.03]"
+        style={{ backgroundImage: "url('/noise.svg')" }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
@@ -170,86 +175,110 @@ function ZaatarCaseStudy() {
       />
 
       <section className="mx-auto max-w-[1500px] px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-        <nav className="mb-8 text-sm text-[#66705f]" aria-label="مسار التنقل">
-          <Link href="/" className="hover:text-[#95a20d]">
-            الرئيسية
-          </Link>
-          <span className="mx-2">/</span>
-          <Link href="/work" className="hover:text-[#95a20d]">
-            أعمالنا
-          </Link>
-          <span className="mx-2">/</span>
-          <span aria-current="page">زعتر وسمسم</span>
-        </nav>
+        {/* Project Number — Studio Touch */}
+        <div className="mb-8 flex items-center justify-between">
+          <nav className="text-sm text-[#66705f]" aria-label="مسار التنقل">
+            <Link href="/" className="hover:text-[#95a20d]">
+              الرئيسية
+            </Link>
+            <span className="mx-2">/</span>
+            <Link href="/work" className="hover:text-[#95a20d]">
+              أعمالنا
+            </Link>
+            <span className="mx-2">/</span>
+            <span aria-current="page">زعتر وسمسم</span>
+          </nav>
+          <span className="hidden font-mono text-[10px] uppercase tracking-[0.3em] text-[#b5bfa8] sm:block">
+            Project No. 012
+          </span>
+        </div>>
 
         <FadeIn direction="up" duration={0.8}>
-          <header className="grid overflow-hidden rounded-[2rem] border border-black/5 bg-[#fbf8f1] shadow-[0_25px_80px_rgba(58,55,40,0.10)] lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="flex flex-col justify-between p-8 sm:p-12 lg:p-16">
-            <div>
-              <p className="mb-8 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.28em] text-[#84920b]">
-                <span className="inline-block h-3 w-3 rounded-full bg-[#a8b51d]" />
-                Brand Identity
-              </p>
+          <header className="group overflow-hidden rounded-[2rem] border border-black/5 bg-[#fbf8f1] shadow-[0_25px_80px_rgba(58,55,40,0.10)] lg:grid-cols-[1.05fr_0.95fr] lg:grid">
+            <div className="flex flex-col justify-between p-8 sm:p-12 lg:p-16">
+              <div>
+                {/* Badge — يظهر أول حاجة */}
+                <FadeIn direction="up" duration={0.6} delay={0.1}>
+                  <p className="mb-8 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.28em] text-[#84920b]">
+                    <span className="relative inline-block h-3 w-3 overflow-hidden rounded-full bg-[#a8b51d]">
+                      <span className="absolute inset-0 animate-ping rounded-full bg-[#a8b51d] opacity-40" />
+                    </span>
+                    Brand Identity
+                  </p>
+                </FadeIn>
 
-              <p className="font-serif text-5xl leading-none text-[#a5b315] sm:text-7xl lg:text-8xl">
-                Zaatar w
-                <span className="block text-[#c8914b]">Semsom</span>
-              </p>
+                {/* الاسم الإنجليزي — كبير درامي */}
+                <FadeIn direction="up" duration={1} delay={0.3}>
+                  <p className="font-serif text-5xl leading-none text-[#a5b315] sm:text-7xl lg:text-8xl">
+                    Zaatar w
+                    <span className="block text-[#c8914b]">Semsom</span>
+                  </p>
+                </FadeIn>
 
-              <h1 className="mt-9 max-w-xl text-3xl font-bold leading-tight sm:text-4xl">
-                تطوير هوية مطعم زعتر وسمسم بروح طبيعية معاصرة
-              </h1>
+                {/* العنوان العربي */}
+                <FadeIn direction="up" duration={0.8} delay={0.5}>
+                  <h1 className="mt-9 max-w-xl text-3xl font-bold leading-tight sm:text-4xl">
+                    تطوير هوية مطعم زعتر وسمسم بروح طبيعية معاصرة
+                  </h1>
+                </FadeIn>
 
-              <p className="mt-6 max-w-2xl text-base leading-8 text-[#697166] sm:text-lg">
-                هوية بصرية تستلهم مكوّنات الاسم وطبيعة المطبخ، وتحوّلها إلى
-                نظام مرن يجمع بين البساطة والدفء، ويصلح للتغليف والمطبوعات
-                والمحتوى الرقمي.
-              </p>
+                {/* الوصف */}
+                <FadeIn direction="up" duration={0.8} delay={0.7}>
+                  <p className="mt-6 max-w-2xl text-base leading-8 text-[#697166] sm:text-lg">
+                    هوية بصرية تستلهم مكوّنات الاسم وطبيعة المطبخ، وتحوّلها إلى
+                    نظام مرن يجمع بين البساطة والدفء، ويصلح للتغليف والمطبوعات
+                    والمحتوى الرقمي.
+                  </p>
+                </FadeIn>
+              </div>
+
+              {/* البيانات — تظهر آخر حاجة */}
+              <FadeIn direction="up" duration={0.8} delay={0.9}>
+                <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-7 border-t border-black/10 pt-8 text-sm sm:grid-cols-4">
+                  <div>
+                    <dt className="text-xs font-bold uppercase tracking-wider text-[#8b9387]">
+                      العميل
+                    </dt>
+                    <dd className="mt-2 font-semibold">{project.client}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-bold uppercase tracking-wider text-[#8b9387]">
+                      الخدمة
+                    </dt>
+                    <dd className="mt-2 font-semibold">هوية بصرية</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-bold uppercase tracking-wider text-[#8b9387]">
+                      القطاع
+                    </dt>
+                    <dd className="mt-2 font-semibold">مطاعم وأغذية</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-bold uppercase tracking-wider text-[#8b9387]">
+                      النطاق
+                    </dt>
+                    <dd className="mt-2 font-semibold">{project.location}</dd>
+                  </div>
+                </dl>
+              </FadeIn>
             </div>
 
-            <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-7 border-t border-black/10 pt-8 text-sm sm:grid-cols-4">
-              <div>
-                <dt className="text-xs font-bold uppercase tracking-wider text-[#8b9387]">
-                  العميل
-                </dt>
-                <dd className="mt-2 font-semibold">{project.client}</dd>
+            {/* الصورة — تدخل من اليمين */}
+            <FadeIn direction="left" duration={1.2} delay={0.4} className="relative min-h-[460px] bg-[#d7a15d] lg:min-h-[760px]">
+              <Image
+                src={project.image}
+                alt="الهوية البصرية لمطعم زعتر وسمسم"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 48vw"
+                className="object-cover transition-transform duration-[1.5s] group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+              {/* 3D Animated Scene — layered over the hero image */}
+              <div className="absolute inset-0 z-10" style={{ mixBlendMode: "screen" }}>
+                <ZaatarScene3D />
               </div>
-              <div>
-                <dt className="text-xs font-bold uppercase tracking-wider text-[#8b9387]">
-                  الخدمة
-                </dt>
-                <dd className="mt-2 font-semibold">هوية بصرية</dd>
-              </div>
-              <div>
-                <dt className="text-xs font-bold uppercase tracking-wider text-[#8b9387]">
-                  القطاع
-                </dt>
-                <dd className="mt-2 font-semibold">مطاعم وأغذية</dd>
-              </div>
-              <div>
-                <dt className="text-xs font-bold uppercase tracking-wider text-[#8b9387]">
-                  النطاق
-                </dt>
-                <dd className="mt-2 font-semibold">{project.location}</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div className="relative min-h-[460px] bg-[#d7a15d] lg:min-h-[760px]">
-            <Image
-              src={project.image}
-              alt="الهوية البصرية لمطعم زعتر وسمسم"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 48vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
-            {/* 3D Animated Scene — layered over the hero image */}
-            <div className="absolute inset-0 z-10" style={{ mixBlendMode: "screen" }}>
-              <ZaatarScene3D />
-            </div>
-          </div>
+            </FadeIn>
           </header>
         </FadeIn>
       </section>
@@ -354,17 +383,36 @@ function ZaatarCaseStudy() {
           </p>
           <h2 className="mt-5 text-3xl font-bold">الألوان والخطوط</h2>
 
-          <div className="mt-9 grid grid-cols-2 gap-3">
-            {palette.map((color) => (
-              <div
-                key={color.name}
-                className={`flex aspect-square flex-col justify-end rounded-2xl p-5 ${color.text}`}
-                style={{ backgroundColor: color.value }}
-              >
-                <p className="text-sm font-bold">{color.name}</p>
-                <p className="mt-1 font-mono text-xs opacity-80">{color.value}</p>
+          <div className="mt-9">
+            {/* Large hero swatch */}
+            <div 
+              className="relative flex h-40 items-end overflow-hidden rounded-3xl p-7 sm:h-52"
+              style={{ backgroundColor: palette[0].value }}
+            >
+              <div>
+                <p className="text-2xl font-bold text-white sm:text-3xl">{palette[0].name}</p>
+                <p className="mt-1 font-mono text-sm text-white/60">{palette[0].value}</p>
               </div>
-            ))}
+              {/* Decorative circle */}
+              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full border border-white/10 sm:h-56 sm:w-56" />
+              <div className="absolute -right-4 -top-4 h-28 w-28 rounded-full border border-white/10 sm:h-40 sm:w-40" />
+            </div>
+
+            {/* Smaller swatches */}
+            <div className="mt-3 grid grid-cols-3 gap-3">
+              {palette.slice(1).map((color) => (
+                <div
+                  key={color.name}
+                  className={`group relative flex flex-col justify-end overflow-hidden rounded-2xl p-5 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg ${color.text}`}
+                  style={{ backgroundColor: color.value }}
+                >
+                  <p className="text-sm font-bold">{color.name}</p>
+                  <p className="mt-0.5 font-mono text-xs opacity-70">{color.value}</p>
+                  {/* Subtle inner border */}
+                  <div className="absolute inset-2 rounded-xl border border-current opacity-0 transition-opacity duration-300 group-hover:opacity-10" />
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="mt-8 border-t border-black/10 pt-8">
@@ -487,6 +535,25 @@ function ZaatarCaseStudy() {
           </figcaption>
           </figure>
         </FadeIn>
+      </section>
+
+      {/* ── Cinematic Break ── */}
+      <section className="relative h-[50vh] min-h-[350px] overflow-hidden">
+        <Image
+          src="/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-paper.jpg"
+          alt="تفاصيل التغليف"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f6f1e8] via-transparent to-[#f6f1e8]" />
+        
+        {/* Centered text on the image */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <p className="font-serif text-4xl font-bold text-white/90 drop-shadow-lg sm:text-6xl">
+            "طبيعية · دافئة · أصيلة"
+          </p>
+        </div>
       </section>
 
       {/* ── Design Decisions Section ── */}
@@ -613,7 +680,7 @@ function ZaatarCaseStudy() {
         </div>
 
         <FadeInStaggerContainer className="grid auto-rows-[260px] gap-4 md:grid-cols-4 md:auto-rows-[300px]">
-          {applications.map((application) => (
+          {applications.map((application, index) => (
             <FadeInStaggerItem
               key={application.src}
               direction="up"
@@ -624,12 +691,25 @@ function ZaatarCaseStudy() {
                 alt={application.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                className="object-cover transition-all duration-700 group-hover:scale-[1.05] group-hover:brightness-[0.7]"
               />
+              
+              {/* Corner Registration Marks — إحساس تصميم احترافي */}
+              <div className="absolute left-4 top-4 h-4 w-4 border-l-2 border-t-2 border-white/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute right-4 top-4 h-4 w-4 border-r-2 border-t-2 border-white/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute bottom-4 left-4 h-4 w-4 border-l-2 border-b-2 border-white/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute bottom-4 right-4 h-4 w-4 border-r-2 border-b-2 border-white/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              
+              {/* Number label */}
+              <div className="absolute left-5 top-5 font-mono text-[10px] font-bold tracking-widest text-white/0 transition-colors duration-500 group-hover:text-white/60">
+                {String(index + 1).padStart(2, "0")}
+              </div>
             </FadeInStaggerItem>
           ))}
         </FadeInStaggerContainer>
       </section>
+
+      <div className="h-24 bg-gradient-to-b from-[#f6f1e8] to-[#273127]" />
 
       {/* ── Social Media After Identity ── */}
       <section className="bg-[#273127]">
@@ -672,6 +752,8 @@ function ZaatarCaseStudy() {
           </FadeInStaggerContainer>
         </div>
       </section>
+
+      <div className="h-24 bg-gradient-to-b from-[#273127] to-[#f6f1e8]" />
 
       {/* ── Deliverables ── */}
       <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -728,7 +810,7 @@ function ZaatarCaseStudy() {
             <p className="text-xs font-bold uppercase tracking-wider text-[#84920b]">
               مراحل العمل
             </p>
-            <ol className="mt-4 space-y-3">
+            <ol className="mt-4 space-y-0">
               {[
                 "الاستماع وجمع المعلومات",
                 "البحث والاتجاه الإبداعي",
@@ -736,11 +818,18 @@ function ZaatarCaseStudy() {
                 "تطوير التطبيقات والتغليف",
                 "التسليم والتوثيق",
               ].map((step, i) => (
-                <li key={step} className="flex items-center gap-3 text-sm">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#eee8d8] text-xs font-bold text-[#84920b]">
+                <li key={step} className="relative flex items-start gap-4 pb-5 last:pb-0">
+                  {/* Vertical line */}
+                  {i < 4 && (
+                    <div className="absolute left-3 top-8 h-[calc(100%-16px)] w-px bg-[#a8b51d]/20" />
+                  )}
+                  
+                  {/* Number circle */}
+                  <span className="relative z-10 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#a8b51d] text-xs font-bold text-white">
                     {i + 1}
                   </span>
-                  <span className="text-[#697166]">{step}</span>
+                  
+                  <span className="pt-0.5 text-sm text-[#697166]">{step}</span>
                 </li>
               ))}
             </ol>
@@ -793,29 +882,29 @@ function ZaatarCaseStudy() {
 
         {/* TODO: ضع اقتباساً حقيقياً من العميل بعد الحصول عليه */}
         <FadeIn direction="up">
-          <figure className="rounded-3xl bg-[#fbf8f1] p-8 sm:p-14">
-          <svg
-            className="mb-6 h-10 w-10 text-[#a8b51d]"
-            fill="currentColor"
-            viewBox="0 0 32 32"
-            aria-hidden="true"
-          >
-            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-          </svg>
-          <blockquote className="text-2xl font-bold leading-relaxed text-[#273127] sm:text-3xl">
-            {/* استبدل هذا النص باقتباس حقيقي من العميل */}
-            ما توقعنا تطلع بهذا الشكل — الأكياس والعلب بقت جزء من تجربة
-            عميلنا في المطعم، الناس بتاخد صور معاهم.
-          </blockquote>
-          <figcaption className="mt-8 flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#a8b51d] font-bold text-white">
-              ز
+          <figure className="relative overflow-hidden rounded-3xl bg-[#273127] p-10 sm:p-16 lg:p-20">
+            {/* Large decorative quote mark */}
+            <span 
+              className="absolute -left-4 -top-8 select-none font-serif text-[12rem] font-black leading-none text-[#a8b51d]/[0.08]"
+              aria-hidden="true"
+            >
+              "
+            </span>
+            
+            <blockquote className="relative text-2xl font-bold leading-relaxed text-white sm:text-3xl lg:text-4xl lg:leading-snug">
+              ما توقعنا تطلع بهذا الشكل — الأكياس والعلب بقت جزء من تجربة
+              عميلنا في المطعم، الناس بتاخد صور معاهم.
+            </blockquote>
+            
+            <div className="relative mt-10 flex items-center gap-5 border-t border-white/10 pt-8">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#a8b51d] text-xl font-bold text-white">
+                ز
+              </div>
+              <div>
+                <p className="text-lg font-bold text-white">شيف مطعم زعتر وسمسم</p>
+                <p className="mt-0.5 text-sm text-white/50">عميل تاج ستوديو — الأحساء</p>
+              </div>
             </div>
-            <div>
-              <p className="font-bold text-[#273127]">شيف مطعم زعتر وسمسم</p>
-              <p className="text-sm text-[#8b9387]">عميل تاج ستوديو — الأحساء</p>
-            </div>
-          </figcaption>
           </figure>
         </FadeIn>
       </section>
@@ -855,24 +944,35 @@ function ZaatarCaseStudy() {
                   href={`/work/${relatedItem.slug}`}
                   className="group relative block overflow-hidden rounded-3xl"
                 >
-                <figure className="relative h-64 overflow-hidden bg-[#e6dcc9] sm:h-80">
-                  <Image
-                    src={relatedItem.image}
-                    alt={relatedItem.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover transition duration-700 group-hover:scale-[1.04]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                  <figcaption className="absolute bottom-0 p-7 text-white">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-white/70">
-                      {relatedItem.category}
-                    </p>
-                    <h3 className="mt-2 text-2xl font-bold">{relatedItem.title}</h3>
-                  </figcaption>
-                </figure>
-              </Link>
-            </FadeInStaggerItem>
+                  <figure className="relative h-64 overflow-hidden bg-[#e6dcc9] sm:h-80">
+                    <Image
+                      src={relatedItem.image}
+                      alt={relatedItem.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover transition-all duration-700 group-hover:scale-[1.06] group-hover:brightness-[0.75]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    
+                    {/* Arrow indicator */}
+                    <div className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-500 group-hover:bg-[#a8b51d] group-hover:scale-110">
+                      <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                      </svg>
+                    </div>
+                    
+                    <figcaption className="absolute bottom-0 left-0 right-0 p-7">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-[#a8b51d]">
+                        {relatedItem.category}
+                      </p>
+                      <h3 className="mt-2 text-2xl font-bold text-white transition-transform duration-500 group-hover:translate-x-1">
+                        {relatedItem.title}
+                        <span className="mr-2 inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
+                      </h3>
+                    </figcaption>
+                  </figure>
+                </Link>
+              </FadeInStaggerItem>
             ))}
           </FadeInStaggerContainer>
         </div>
@@ -883,6 +983,9 @@ function ZaatarCaseStudy() {
         <Link href="/work" className="font-bold text-[#7f8c0b] hover:underline">
           ← العودة إلى كل الأعمال
         </Link>
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#b5bfa8]">
+          TAG/012 — Zaatar w Semsom
+        </span>
         <Link
           href="/services/visual-identity"
           className="font-bold text-[#7f8c0b] hover:underline"
