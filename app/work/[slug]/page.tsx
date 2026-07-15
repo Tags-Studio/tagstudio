@@ -540,8 +540,8 @@ function ZaatarCaseStudy() {
       {/* ── Cinematic Break ── */}
       <section className="relative h-[50vh] min-h-[350px] overflow-hidden">
         <Image
-          src="/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-paper.jpg"
-          alt="تفاصيل التغليف"
+          src="/images/zaatar-box-highres.jpg"
+          alt="تفاصيل تغليف علب معجنات مطعم زعتر وسمسم"
           fill
           className="object-cover"
           sizes="100vw"
@@ -550,8 +550,8 @@ function ZaatarCaseStudy() {
         
         {/* Centered text on the image */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <p className="font-serif text-4xl font-bold text-white/90 drop-shadow-lg sm:text-6xl">
-            "طبيعية · دافئة · أصيلة"
+          <p className="font-serif text-4xl font-bold text-white/90 drop-shadow-lg sm:text-6xl text-center leading-snug px-4">
+            "تغليف يفتح الشهية.. ويعكس أصالة المذاق"
           </p>
         </div>
       </section>
