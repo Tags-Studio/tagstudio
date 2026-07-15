@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { caseStudies } from "@/lib/caseStudies"
+import { FadeIn, FadeInStaggerContainer, FadeInStaggerItem } from "@/components/ui/FadeIn"
 
 const baseUrl = "https://www.wearetagstudio.com"
 
@@ -172,7 +173,8 @@ function ZaatarCaseStudy() {
           <span aria-current="page">زعتر وسمسم</span>
         </nav>
 
-        <header className="grid overflow-hidden rounded-[2rem] border border-black/5 bg-[#fbf8f1] shadow-[0_25px_80px_rgba(58,55,40,0.10)] lg:grid-cols-[1.05fr_0.95fr]">
+        <FadeIn direction="up" duration={0.8}>
+          <header className="grid overflow-hidden rounded-[2rem] border border-black/5 bg-[#fbf8f1] shadow-[0_25px_80px_rgba(58,55,40,0.10)] lg:grid-cols-[1.05fr_0.95fr]">
           <div className="flex flex-col justify-between p-8 sm:p-12 lg:p-16">
             <div>
               <p className="mb-8 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.28em] text-[#84920b]">
@@ -235,13 +237,14 @@ function ZaatarCaseStudy() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
           </div>
-        </header>
+          </header>
+        </FadeIn>
       </section>
 
       <section className="bg-[#fbf8f1]">
         <div className="mx-auto grid max-w-[1500px] lg:grid-cols-2">
           {/* Text Column (Appears on the right in RTL) */}
-          <div className="p-8 sm:p-12 lg:p-16">
+          <FadeIn direction="right" duration={0.8} className="p-8 sm:p-12 lg:p-16">
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
               The Creative Concept
             </p>
@@ -285,22 +288,23 @@ function ZaatarCaseStudy() {
               لذلك تم تصميمه ليظل واضحًا على العبوات والملابس والواجهات والمحتوى
               الرقمي بمقاسات مختلفة.
             </div>
-          </div>
+          </FadeIn>
 
           {/* Image Column (Appears on the left in RTL) */}
-          <div className="relative min-h-[400px] p-8 lg:min-h-[600px]">
+          <FadeIn direction="left" duration={0.8} delay={0.2} className="relative min-h-[400px] p-8 lg:min-h-[600px]">
             <Image
               src="/images/zaatar-logo-concept-explanation.jpg"
               alt="شرح الفكرة الإبداعية لشعار زعتر وسمسم"
               fill
               className="object-contain p-4"
             />
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       <section className="mx-auto grid max-w-[1500px] gap-px px-4 pb-px sm:px-6 lg:grid-cols-2 lg:px-8">
-        <article className="min-h-[520px] bg-[#fbf8f1] p-8 sm:p-12">
+        <FadeIn direction="up">
+          <article className="min-h-[520px] bg-[#fbf8f1] p-8 sm:p-12">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
             Logo System
           </p>
@@ -327,9 +331,11 @@ function ZaatarCaseStudy() {
               </div>
             </div>
           </div>
-        </article>
+          </article>
+        </FadeIn>
 
-        <article className="min-h-[520px] bg-[#fbf8f1] p-8 sm:p-12">
+        <FadeIn direction="up" delay={0.2}>
+          <article className="min-h-[520px] bg-[#fbf8f1] p-8 sm:p-12">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">
             Visual Language
           </p>
@@ -366,7 +372,8 @@ function ZaatarCaseStudy() {
               </div>
             </div>
           </div>
-        </article>
+          </article>
+        </FadeIn>
       </section>
 
       {/* ── Project Story Section ── */}
@@ -380,9 +387,9 @@ function ZaatarCaseStudy() {
           </h2>
         </div>
 
-        <div className="grid gap-px lg:grid-cols-3">
+        <FadeInStaggerContainer className="grid gap-px lg:grid-cols-3">
           {/* Card 1 — Client Brief */}
-          <article className="relative overflow-hidden bg-[#fbf8f1] p-8 sm:p-12">
+          <FadeInStaggerItem direction="up" className="relative overflow-hidden bg-[#fbf8f1] p-8 sm:p-12">
             <span
               aria-hidden="true"
               className="absolute -left-4 -top-6 select-none font-serif text-[9rem] font-black leading-none text-[#a8b51d]/[0.06]"
@@ -403,10 +410,10 @@ function ZaatarCaseStudy() {
               الاسم، وعن الجمهور اللي يحبّ يخدمه، وعن الشعور اللي يريد
               العميل أن يحمله معه لما يمسك كيسة أو علبة من المطعم.
             </p>
-          </article>
+          </FadeInStaggerItem>
 
           {/* Card 2 — Creative Vision */}
-          <article className="relative overflow-hidden bg-[#f6f1e8] p-8 sm:p-12">
+          <FadeInStaggerItem direction="up" className="relative overflow-hidden bg-[#f6f1e8] p-8 sm:p-12">
             <span
               aria-hidden="true"
               className="absolute -left-4 -top-6 select-none font-serif text-[9rem] font-black leading-none text-[#a8b51d]/[0.06]"
@@ -428,10 +435,10 @@ function ZaatarCaseStudy() {
               من الطبيعة مباشرةً — أخضر الزيتون والذهبي الدافئ والعاجي
               الذي يوحي بالخبز والطحين.
             </p>
-          </article>
+          </FadeInStaggerItem>
 
           {/* Card 3 — Breakthrough */}
-          <article className="relative overflow-hidden bg-[#eee8d8] p-8 sm:p-12">
+          <FadeInStaggerItem direction="up" className="relative overflow-hidden bg-[#eee8d8] p-8 sm:p-12">
             <span
               aria-hidden="true"
               className="absolute -left-4 -top-6 select-none font-serif text-[9rem] font-black leading-none text-[#a8b51d]/[0.06]"
@@ -453,18 +460,20 @@ function ZaatarCaseStudy() {
               بين يديه. تلك اللحظة أكدت أن الهوية الجيدة لا تُقرأ على
               الشاشة فقط، بل تُشعر بها لما تمسكها.
             </p>
-          </article>
-        </div>
+          </FadeInStaggerItem>
+        </FadeInStaggerContainer>
 
         {/* Pull Quote */}
-        <figure className="mt-px bg-[#a8b51d] px-8 py-12 text-center sm:px-16 sm:py-16">
+        <FadeIn direction="up">
+          <figure className="mt-px bg-[#a8b51d] px-8 py-12 text-center sm:px-16 sm:py-16">
           <blockquote className="mx-auto max-w-3xl text-2xl font-bold leading-relaxed text-white sm:text-3xl">
             "الهوية الجيدة لا تُقرأ على الشاشة فقط — بل تُشعر بها لما تمسكها."
           </blockquote>
           <figcaption className="mt-5 text-sm font-semibold text-white/70">
             فريق تاج ستوديو — مشروع زعتر وسمسم
           </figcaption>
-        </figure>
+          </figure>
+        </FadeIn>
       </section>
 
       {/* ── Design Decisions Section ── */}
@@ -482,7 +491,7 @@ function ZaatarCaseStudy() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <FadeInStaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
               icon: "🍃",
@@ -513,8 +522,9 @@ function ZaatarCaseStudy() {
                 "العاجي (#F4EFE5) يُقلل الإجهاد البصري على التغليف المطبوع، ويُعطي إحساساً بالدفء والورق الطبيعي، مما يتناسق مع هوية المطعم القائمة على الأصالة والمكوّنات الطبيعية.",
             },
           ].map((item) => (
-            <article
+            <FadeInStaggerItem
               key={item.label}
+              direction="up"
               className="rounded-3xl border border-black/8 bg-[#fbf8f1] p-7"
             >
               <span className="text-3xl" role="img" aria-label={item.label}>
@@ -527,9 +537,9 @@ function ZaatarCaseStudy() {
                 {item.decision}
               </h3>
               <p className="mt-3 leading-8 text-sm text-[#697166]">{item.reason}</p>
-            </article>
+            </FadeInStaggerItem>
           ))}
-        </div>
+        </FadeInStaggerContainer>
       </section>
 
       {/* ── Client Conversation Screenshots ── */}
@@ -548,14 +558,15 @@ function ZaatarCaseStudy() {
             </p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <FadeInStaggerContainer className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
               { src: "/images/zaatar-chat-2.jpeg", alt: "محادثة العميل - تفاصيل المطعم" },
               { src: "/images/zaatar-chat-1.jpeg", alt: "محادثة العميل - طلب تصميم الهوية" },
               { src: "/images/zaatar-chat-3.jpeg", alt: "محادثة العميل - الاتفاق على الأفكار" },
             ].map((slot) => (
-              <figure
+              <FadeInStaggerItem
                 key={slot.src}
+                direction="up"
                 className="group relative min-h-[400px] overflow-hidden rounded-3xl border border-[#a8b51d]/30 bg-[#f6f1e8] md:min-h-[500px]"
               >
                 <Image
@@ -565,9 +576,9 @@ function ZaatarCaseStudy() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-contain object-top transition duration-700 hover:scale-[1.03]"
                 />
-              </figure>
+              </FadeInStaggerItem>
             ))}
-          </div>
+          </FadeInStaggerContainer>
         </div>
       </section>
 
@@ -588,10 +599,11 @@ function ZaatarCaseStudy() {
           </p>
         </div>
 
-        <div className="grid auto-rows-[260px] gap-4 md:grid-cols-4 md:auto-rows-[300px]">
+        <FadeInStaggerContainer className="grid auto-rows-[260px] gap-4 md:grid-cols-4 md:auto-rows-[300px]">
           {applications.map((application) => (
-            <figure
+            <FadeInStaggerItem
               key={application.src}
+              direction="up"
               className={`group relative overflow-hidden rounded-3xl bg-[#e6dcc9] ${application.className}`}
             >
               <Image
@@ -601,9 +613,9 @@ function ZaatarCaseStudy() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition duration-700 group-hover:scale-[1.03]"
               />
-            </figure>
+            </FadeInStaggerItem>
           ))}
-        </div>
+        </FadeInStaggerContainer>
       </section>
 
       {/* ── Social Media After Identity ── */}
@@ -623,15 +635,16 @@ function ZaatarCaseStudy() {
             </p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <FadeInStaggerContainer className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
               { src: "/images/zaatar-realistic-1.jpg", alt: "صورة واقعية لتغليف مطعم زعتر وسمسم" },
               { src: "/images/zaatar-realistic-2.jpg", alt: "صورة واقعية لأكياس مطعم زعتر وسمسم" },
               { src: "/images/zaatar-realistic-3.jpeg", alt: "صورة واقعية لعلب البيتزا لمطعم زعتر وسمسم" },
               { src: "/images/zaatar-realistic-4.webp", alt: "صورة واقعية لأوراق التغليف لمطعم زعتر وسمسم" },
             ].map((slot) => (
-              <figure
+              <FadeInStaggerItem
                 key={slot.src}
+                direction="up"
                 className="relative min-h-[480px] overflow-hidden rounded-3xl border border-white/10 bg-[#1d231d] md:min-h-[600px]"
               >
                 <Image
@@ -641,9 +654,9 @@ function ZaatarCaseStudy() {
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover object-top transition duration-700 hover:scale-[1.03]"
                 />
-              </figure>
+              </FadeInStaggerItem>
             ))}
-          </div>
+          </FadeInStaggerContainer>
         </div>
       </section>
 
@@ -662,7 +675,7 @@ function ZaatarCaseStudy() {
               أي جهة — الطباعة، الديجيتال، أو التوظيف الداخلي للفريق.
             </p>
 
-            <ul className="mt-10 space-y-4">
+            <FadeInStaggerContainer className="mt-10 space-y-4">
               {[
                 { label: "ملفات الشعار", detail: "SVG · AI · PNG بخلفية شفافة · نسخ ألوان متعددة" },
                 { label: "لوحة الألوان والخطوط", detail: "Hex · RGB · CMYK لكل لون رسمي" },
@@ -671,7 +684,7 @@ function ZaatarCaseStudy() {
                 { label: "قوالب السوشيال ميديا", detail: "صور البروفايل · أبعاد الغلاف · قوالب المنشورات" },
                 { label: "ملفات الطباعة الجاهزة", detail: "PDF وTIF عالية الدقة لكل تطبيق" },
               ].map((item) => (
-                <li key={item.label} className="flex items-start gap-4">
+                <FadeInStaggerItem key={item.label} direction="up" className="flex items-start gap-4">
                   <span className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#a8b51d] text-white">
                     <svg viewBox="0 0 12 10" className="h-3 w-3" fill="none">
                       <path d="M1 5l3.5 3.5L11 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -681,9 +694,9 @@ function ZaatarCaseStudy() {
                     <p className="font-bold text-[#273127]">{item.label}</p>
                     <p className="mt-1 text-sm text-[#8b9387]">{item.detail}</p>
                   </div>
-                </li>
+                </FadeInStaggerItem>
               ))}
-            </ul>
+            </FadeInStaggerContainer>
           </div>
 
           <aside className="rounded-3xl border border-[#a8b51d]/25 bg-[#fbf8f1] p-8">
@@ -731,7 +744,7 @@ function ZaatarCaseStudy() {
 
       {/* ── The Solution Banner ── */}
       <section className="bg-[#a7b317]">
-        <div className="mx-auto grid max-w-[1500px] gap-10 px-6 py-14 text-white lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+        <FadeIn direction="up" className="mx-auto grid max-w-[1500px] gap-10 px-6 py-14 text-white lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/75">
               The Solution
@@ -751,7 +764,7 @@ function ZaatarCaseStudy() {
           >
             ابدأ مشروع هوية مشابه
           </Link>
-        </div>
+        </FadeIn>
       </section>
 
       {/* ── Client Testimonial ── */}
@@ -766,7 +779,8 @@ function ZaatarCaseStudy() {
         </div>
 
         {/* TODO: ضع اقتباساً حقيقياً من العميل بعد الحصول عليه */}
-        <figure className="rounded-3xl bg-[#fbf8f1] p-8 sm:p-14">
+        <FadeIn direction="up">
+          <figure className="rounded-3xl bg-[#fbf8f1] p-8 sm:p-14">
           <svg
             className="mb-6 h-10 w-10 text-[#a8b51d]"
             fill="currentColor"
@@ -789,7 +803,8 @@ function ZaatarCaseStudy() {
               <p className="text-sm text-[#8b9387]">عميل تاج ستوديو — الأحساء</p>
             </div>
           </figcaption>
-        </figure>
+          </figure>
+        </FadeIn>
       </section>
 
       {/* ── Related Work ── */}
@@ -804,7 +819,7 @@ function ZaatarCaseStudy() {
             </h2>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2">
+          <FadeInStaggerContainer className="grid gap-6 sm:grid-cols-2">
             {[
               {
                 slug: "ragy-burger-brand-identity",
@@ -819,11 +834,14 @@ function ZaatarCaseStudy() {
                 image: "/images/agricultural-development-association.avif",
               },
             ].map((relatedItem) => (
-              <Link
+              <FadeInStaggerItem
                 key={relatedItem.slug}
-                href={`/work/${relatedItem.slug}`}
-                className="group relative overflow-hidden rounded-3xl"
+                direction="up"
               >
+                <Link
+                  href={`/work/${relatedItem.slug}`}
+                  className="group relative block overflow-hidden rounded-3xl"
+                >
                 <figure className="relative h-64 overflow-hidden bg-[#e6dcc9] sm:h-80">
                   <Image
                     src={relatedItem.image}
@@ -841,8 +859,9 @@ function ZaatarCaseStudy() {
                   </figcaption>
                 </figure>
               </Link>
+            </FadeInStaggerItem>
             ))}
-          </div>
+          </FadeInStaggerContainer>
         </div>
       </section>
 
