@@ -1,8 +1,7 @@
 "use client"
 
-import { useRef, useMemo } from "react"
+import { useRef, useMemo, useEffect } from "react"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
-import { MeshDistortMaterial, Sphere, Stars } from "@react-three/drei"
 import * as THREE from "three"
 
 // ── Floating Sesame Seeds ──────────────────────────────────────────
@@ -38,40 +37,70 @@ function SesameSeed({
   )
 }
 
-// ── Central Glowing Orb ───────────────────────────────────────────
+// ── Central Glowing Orb (replaces drei MeshDistortMaterial) ───────
 function GlowOrb() {
-  const orbRef = useRef<THREE.Mesh>(null!)
+  const meshRef = useRef<THREE.Mesh>(null!)
+  const matRef = useRef<THREE.MeshStandardMaterial>(null!)
   const { viewport, pointer } = useThree()
 
-  useFrame((state) => {
-    if (!orbRef.current) return
-    orbRef.current.rotation.y += 0.003
-    orbRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1
+  // Inject vertex distortion into the standard material shader
+  useEffect(() => {
+    if (!matRef.current) return
+    matRef.current.onBeforeCompile = (shader) => {
+      shader.uniforms.uTime = { value: 0 }
+      shader.vertexShader = shader.vertexShader.replace(
+        "#include <begin_vertex>",
+        /* glsl */ `
+        #include <begin_vertex>
+        float noise = sin(position.x * 3.0 + uTime) * cos(position.y * 3.0 + uTime * 0.7) * sin(position.z * 3.0 + uTime * 1.3);
+        transformed += normal * noise * 0.3;
+        `
+      )
+      // Store shader ref so we can update uTime each frame
+      matRef.current!.userData.shader = shader
+    }
+    // Force material recompilation
+    matRef.current.needsUpdate = true
+  }, [])
 
-    orbRef.current.position.x = THREE.MathUtils.lerp(
-      orbRef.current.position.x,
+  useFrame((state) => {
+    if (!meshRef.current) return
+
+    // Update distortion time
+    const shader = matRef.current?.userData?.shader
+    if (shader) {
+      shader.uniforms.uTime.value = state.clock.elapsedTime * 1.5
+    }
+
+    // Slow auto-rotation
+    meshRef.current.rotation.y += 0.003
+    meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1
+
+    // Subtle parallax with pointer
+    meshRef.current.position.x = THREE.MathUtils.lerp(
+      meshRef.current.position.x,
       (pointer.x * viewport.width) / 10,
       0.05
     )
-    orbRef.current.position.y = THREE.MathUtils.lerp(
-      orbRef.current.position.y,
+    meshRef.current.position.y = THREE.MathUtils.lerp(
+      meshRef.current.position.y,
       (pointer.y * viewport.height) / 10,
       0.05
     )
   })
 
   return (
-    <Sphere ref={orbRef} args={[1.4, 64, 64]} position={[0, 0, 0]}>
-      <MeshDistortMaterial
+    <mesh ref={meshRef}>
+      <sphereGeometry args={[1.4, 64, 64]} />
+      <meshStandardMaterial
+        ref={matRef}
         color="#a8b51d"
-        distort={0.3}
-        speed={1.5}
         roughness={0.1}
         metalness={0.4}
         opacity={0.85}
         transparent
       />
-    </Sphere>
+    </mesh>
   )
 }
 
@@ -90,7 +119,10 @@ function ParticleRing() {
       positions[i * 3 + 2] = Math.sin(angle) * radius
     }
     const geo = new THREE.BufferGeometry()
-    geo.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3))
+    geo.setAttribute(
+      "position",
+      new THREE.Float32BufferAttribute(positions, 3)
+    )
     return geo
   }, [])
 
@@ -113,11 +145,53 @@ function ParticleRing() {
   )
 }
 
+// ── Stars Field (replaces drei Stars) ──────────────────────────────
+function StarsField() {
+  const geometry = useMemo(() => {
+    const count = 300
+    const positions = new Float32Array(count * 3)
+    for (let i = 0; i < count; i++) {
+      const radius = 12 + Math.random() * 5
+      const theta = Math.random() * Math.PI * 2
+      const phi = Math.acos(2 * Math.random() - 1)
+      positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta)
+      positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta)
+      positions[i * 3 + 2] = radius * Math.cos(phi)
+    }
+    const geo = new THREE.BufferGeometry()
+    geo.setAttribute(
+      "position",
+      new THREE.Float32BufferAttribute(positions, 3)
+    )
+    return geo
+  }, [])
+
+  const pointsRef = useRef<THREE.Points>(null!)
+
+  useFrame((state) => {
+    if (pointsRef.current) {
+      pointsRef.current.rotation.y = state.clock.elapsedTime * 0.02
+    }
+  })
+
+  return (
+    <points ref={pointsRef} geometry={geometry}>
+      <pointsMaterial
+        color="#ffffff"
+        size={0.04}
+        sizeAttenuation
+        transparent
+        opacity={0.5}
+      />
+    </points>
+  )
+}
+
 // ── Seeds Cluster ─────────────────────────────────────────────────
 function SeedsCluster() {
   const seeds = useMemo(
     () =>
-      Array.from({ length: 8 }, (_, i) => ({
+      Array.from({ length: 8 }, () => ({
         position: [
           (Math.random() - 0.5) * 5,
           (Math.random() - 0.5) * 4,
@@ -150,15 +224,7 @@ function Scene() {
       <GlowOrb />
       <ParticleRing />
       <SeedsCluster />
-      <Stars
-        radius={15}
-        depth={5}
-        count={300}
-        factor={0.5}
-        saturation={0}
-        fade
-        speed={0.3}
-      />
+      <StarsField />
     </>
   )
 }
