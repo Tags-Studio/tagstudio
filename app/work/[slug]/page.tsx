@@ -4,6 +4,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { caseStudies } from "@/lib/caseStudies"
 import { FadeIn, FadeInStaggerContainer, FadeInStaggerItem } from "@/components/ui/FadeIn"
+import ZaatarScene3D from "@/components/ui/ZaatarScene3D"
 
 const baseUrl = "https://www.wearetagstudio.com"
 
@@ -236,6 +237,10 @@ function ZaatarCaseStudy() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+            {/* 3D Animated Scene — layered over the hero image */}
+            <div className="absolute inset-0 z-10" style={{ mixBlendMode: "screen" }}>
+              <ZaatarScene3D />
+            </div>
           </div>
           </header>
         </FadeIn>
