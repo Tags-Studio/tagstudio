@@ -4,6 +4,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { caseStudies } from "@/lib/caseStudies"
 import { FadeIn, FadeInStaggerContainer, FadeInStaggerItem } from "@/components/ui/FadeIn"
+import PizzaBoxWrapper from "@/components/ui/PizzaBoxWrapper"
 import dynamic from "next/dynamic"
 
 const ZaatarScene3D = dynamic(
@@ -709,7 +710,36 @@ function ZaatarCaseStudy() {
         </FadeInStaggerContainer>
       </section>
 
-      <div className="h-24 bg-gradient-to-b from-[#f6f1e8] to-[#273127]" />
+      {/* ── Cinematic Pizza Box Reveal ── */}
+      <section className="relative">
+        {/* Gradient fade into the section */}
+        <div className="h-24 bg-gradient-to-b from-[#f6f1e8] to-[#2a2f2a]" />
+        
+        <div className="bg-[#2a2f2a]">
+          <div className="mx-auto max-w-[1500px] px-4 pt-8 sm:px-6 lg:px-8">
+            <FadeIn direction="up">
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#a8b51d]">
+                The Experience
+              </p>
+              <h2 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
+                الهوية تشعّر قبل ما تتذوّق
+              </h2>
+              <p className="mt-4 max-w-xl text-base leading-8 text-white/50">
+                اسكرول لتحت وكشف الصندوق — التصميم مش بس شكله حلو، بيخلّي 
+                الشخص يتشوق يفتح الصندوق فعلاً.
+              </p>
+            </FadeIn>
+          </div>
+
+          {/* 3D Canvas */}
+          <div className="mt-8 relative z-10">
+            <PizzaBoxWrapper />
+          </div>
+
+          {/* Bottom fade out to match the next section's #273127 */}
+          <div className="h-24 bg-gradient-to-b from-[#2a2f2a] to-[#273127]" />
+        </div>
+      </section>
 
       {/* ── Social Media After Identity ── */}
       <section className="bg-[#273127]">
