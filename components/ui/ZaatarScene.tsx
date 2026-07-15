@@ -41,22 +41,22 @@ function SesameSeed({
 // ── Central Glowing Orb ───────────────────────────────────────────
 function GlowOrb() {
   const orbRef = useRef<THREE.Mesh>(null!)
-  const { viewport, mouse } = useThree()
+  const { viewport, pointer } = useThree()
 
   useFrame((state) => {
     // Slow auto-rotation
     orbRef.current.rotation.y += 0.003
     orbRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1
 
-    // Subtle parallax with mouse
+    // Subtle parallax with pointer
     orbRef.current.position.x = THREE.MathUtils.lerp(
       orbRef.current.position.x,
-      (mouse.x * viewport.width) / 10,
+      (pointer.x * viewport.width) / 10,
       0.05
     )
     orbRef.current.position.y = THREE.MathUtils.lerp(
       orbRef.current.position.y,
-      (mouse.y * viewport.height) / 10,
+      (pointer.y * viewport.height) / 10,
       0.05
     )
   })
