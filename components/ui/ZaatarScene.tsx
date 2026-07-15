@@ -19,6 +19,7 @@ function SesameSeed({
   const initialY = position[1]
 
   useFrame((state) => {
+    if (!meshRef.current) return
     const t = state.clock.elapsedTime * speed
     meshRef.current.position.y = initialY + Math.sin(t) * 0.3
     meshRef.current.rotation.x += 0.005
@@ -27,7 +28,6 @@ function SesameSeed({
 
   return (
     <mesh ref={meshRef} position={position} scale={scale}>
-      {/* Ellipsoid shape (sesame seed) */}
       <sphereGeometry args={[1, 8, 8]} />
       <meshStandardMaterial
         color="#d39b51"
@@ -44,11 +44,10 @@ function GlowOrb() {
   const { viewport, pointer } = useThree()
 
   useFrame((state) => {
-    // Slow auto-rotation
+    if (!orbRef.current) return
     orbRef.current.rotation.y += 0.003
     orbRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1
 
-    // Subtle parallax with pointer
     orbRef.current.position.x = THREE.MathUtils.lerp(
       orbRef.current.position.x,
       (pointer.x * viewport.width) / 10,
@@ -80,7 +79,7 @@ function GlowOrb() {
 function ParticleRing() {
   const pointsRef = useRef<THREE.Points>(null!)
 
-  const particles = useMemo(() => {
+  const geometry = useMemo(() => {
     const count = 120
     const positions = new Float32Array(count * 3)
     for (let i = 0; i < count; i++) {
@@ -90,7 +89,9 @@ function ParticleRing() {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 1.5
       positions[i * 3 + 2] = Math.sin(angle) * radius
     }
-    return positions
+    const geo = new THREE.BufferGeometry()
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3))
+    return geo
   }, [])
 
   useFrame(() => {
@@ -100,15 +101,7 @@ function ParticleRing() {
   })
 
   return (
-    <points ref={pointsRef}>
-      <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          array={particles}
-          count={particles.length / 3}
-          itemSize={3}
-        />
-      </bufferGeometry>
+    <points ref={pointsRef} geometry={geometry}>
       <pointsMaterial
         color="#a8b51d"
         size={0.04}

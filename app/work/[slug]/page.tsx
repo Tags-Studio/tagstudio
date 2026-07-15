@@ -4,7 +4,15 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { caseStudies } from "@/lib/caseStudies"
 import { FadeIn, FadeInStaggerContainer, FadeInStaggerItem } from "@/components/ui/FadeIn"
-import ZaatarScene3D from "@/components/ui/ZaatarScene3D"
+import dynamic from "next/dynamic"
+
+const ZaatarScene3D = dynamic(
+  () => import("@/components/ui/ZaatarScene3D"),
+  {
+    ssr: false,
+    loading: () => <div className="absolute inset-0" />,
+  }
+)
 
 const baseUrl = "https://www.wearetagstudio.com"
 
