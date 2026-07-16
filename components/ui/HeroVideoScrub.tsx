@@ -6,7 +6,6 @@ export default function HeroVideoScrub({ src, className }: { src: string, classN
   const videoRef = useRef<HTMLVideoElement>(null)
   const raf = useRef(0)
   const prevTime = useRef(-1)
-  const [loaded, setLoaded] = useState(false)
 
   const tick = useCallback(() => {
     cancelAnimationFrame(raf.current)
@@ -15,8 +14,7 @@ export default function HeroVideoScrub({ src, className }: { src: string, classN
       if (!v || !v.duration) return
 
       // Map scroll from 0 to slightly before the hero leaves the screen
-      // innerHeight * 0.8 ensures the video finishes playing just as it scrolls out of view
-      const p = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 0.8)))
+      const p = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 0.85)))
       
       const targetTime = p * v.duration
 
@@ -29,28 +27,29 @@ export default function HeroVideoScrub({ src, className }: { src: string, classN
   }, [])
 
   useEffect(() => {
-    if (!loaded) return
+    const v = videoRef.current
+    if (v && v.dataset.src) {
+      v.src = v.dataset.src
+      v.load()
+    }
+
     window.addEventListener("scroll", tick, { passive: true })
     tick()
     return () => {
       window.removeEventListener("scroll", tick)
       cancelAnimationFrame(raf.current)
     }
-  }, [loaded, tick])
+  }, [tick])
 
   return (
     <video
       ref={videoRef}
-      src={src}
+      data-src={src}
       className={className}
       muted
       playsInline
       preload="auto"
-      onLoadedMetadata={() => {
-        setLoaded(true)
-        // give it a tiny delay to ensure first frame is drawn
-        setTimeout(tick, 50)
-      }}
+      onLoadedMetadata={tick}
     />
   )
 }
