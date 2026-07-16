@@ -342,16 +342,74 @@ export default function AgriculturalCaseStudy() {
               <div>
                 <p className="text-5xl font-bold leading-none text-[#2d452b]">أب</p>
                 <p className="mt-3 text-xs font-bold uppercase tracking-wider text-[#9cae99]">
-                  Institutional Kufi
+                  Saudi Font
                 </p>
                 <p className="mt-2 text-sm leading-7 text-[#50684e]">
-                  خط كوفي هندسي يعكس الرسمية والاستقرار في المخاطبات الرسمية للجمعية.
+                  خط وطني يعبر عن الأصالة والخير، يعكس الهوية السعودية ويضفي طابعاً مؤسسياً رسمياً وموثوقاً.
                 </p>
               </div>
             </div>
           </div>
           </article>
         </FadeIn>
+      </section>
+
+      {/* ── Design Decisions Section ── */}
+      <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mb-12">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#6ba642]">
+            Design Rationale
+          </p>
+          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+            فلسفة الألوان والخطوط
+          </h2>
+          <p className="mt-5 max-w-2xl leading-8 text-[#50684e]">
+            لم تكن الاختيارات عشوائية، بل جاءت لتعبر عن قيم الجمعية وارتباطها بالمجتمع والبيئة.
+          </p>
+        </div>
+
+        <FadeInStaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              icon: "🌴",
+              label: "الأخضر الزراعي والحيوي",
+              decision: "رمزية النماء",
+              reason:
+                "الأخضر الداكن يعبر عن الاستقرار المؤسسي والرسوخ، بينما يعبر الأخضر الحيوي عن النماء المستمر والتجدد الذي تستهدفه الجمعية في مشاريعها الزراعية.",
+            },
+            {
+              icon: "🏜️",
+              label: "الترابي والرملي",
+              decision: "الارتباط بالأرض",
+              reason:
+                "ألوان مستلهمة من بيئة الأحساء وطبيعتها الزراعية لتؤكد على أصالة الجمعية وارتباطها الوثيق بأرض النخيل والمجتمع المحلي.",
+            },
+            {
+              icon: "✍️",
+              label: "Saudi Font",
+              decision: "خط وطني للأصالة والخير",
+              reason:
+                "اختيار خط Saudi Font لم يكن لمجرد الشكل، بل لأنه خط وطني يعبر عن الأصالة والخير، ويدعم الهوية السعودية بخطوط واضحة ومقروئية عالية في المخاطبات الرسمية.",
+            },
+          ].map((item) => (
+            <FadeInStaggerItem
+              key={item.label}
+              direction="up"
+              className="rounded-3xl border border-black/5 bg-[#ffffff] shadow-sm p-7"
+            >
+              <span className="text-3xl" role="img" aria-label={item.label}>
+                {item.icon}
+              </span>
+              <p className="mt-5 text-xs font-bold uppercase tracking-wider text-[#6ba642]">
+                {item.label}
+              </p>
+              <h3 className="mt-2 text-lg font-bold text-[#2d452b]">
+                {item.decision}
+              </h3>
+              <p className="mt-3 leading-8 text-sm text-[#50684e]">{item.reason}</p>
+            </FadeInStaggerItem>
+          ))}
+        </FadeInStaggerContainer>
       </section>
 
       {/* ── Applications Section ── */}
