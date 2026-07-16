@@ -4,6 +4,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { caseStudies } from "@/lib/caseStudies"
 import { FadeIn, FadeInStaggerContainer, FadeInStaggerItem } from "@/components/ui/FadeIn"
+import { Fredoka } from "next/font/google"
+
+const fredoka = Fredoka({ subsets: ["latin"], weight: ["700"] })
 
 const baseUrl = "https://www.wearetagstudio.com"
 
@@ -126,10 +129,16 @@ export default function RagyBurgerCaseStudy() {
             <p className="mb-4 inline-block bg-[#E31E24] px-4 py-1.5 text-xs font-black uppercase tracking-[0.3em] text-white">
               Project No. 015
             </p>
-            <h1 className="font-serif text-[4rem] font-black leading-[0.85] tracking-tight sm:text-[7rem] lg:text-[10rem]">
-              RAGY
+            <h1 
+              className={`${fredoka.className} text-[5rem] font-black leading-[0.85] tracking-tight sm:text-[8rem] lg:text-[11rem] text-[#E31E24]`}
+              style={{ 
+                textShadow: "3px 3px 0px #fff, -1px -1px 0px #fff, 1px -1px 0px #fff, -1px 1px 0px #fff, 0px 3px 0px #fff, 0px 0px 15px rgba(227,30,36,0.5)",
+                WebkitTextStroke: "1px #E31E24"
+              }}
+            >
+              BURGER
               <br />
-              <span className="text-[#E31E24] italic pr-4">BURGER</span>
+              <span className="pl-4 sm:pl-8">RAGY</span>
             </h1>
             <p className="mt-8 max-w-2xl text-xl font-bold leading-relaxed text-white/80 sm:text-3xl">
               هوية جريئة، صاخبة، وتخطف الأنظار في شارع مزدحم بالمنافسين.
