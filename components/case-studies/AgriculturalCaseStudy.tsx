@@ -109,7 +109,7 @@ export default function AgriculturalCaseStudy() {
   ]
 
   return (
-    <main className="bg-[#F7F4EC] text-[#2D452B] relative">
+    <main className="bg-[#f0f5ec] text-[#2D452B] relative">
       {/* ── Premium Noise Overlay ── */}
       <div 
         className="pointer-events-none fixed inset-0 z-50 mix-blend-multiply opacity-[0.03]"
@@ -157,11 +157,11 @@ export default function AgriculturalCaseStudy() {
                   </p>
                 </FadeIn>
 
-                {/* الاسم الإنجليزي */}
+                {/* الاسم العربي */}
                 <FadeIn direction="up" duration={1} delay={0.3}>
-                  <p className="font-serif text-5xl leading-none text-[#2d452b] sm:text-6xl lg:text-7xl">
-                    Agricultural
-                    <span className="block text-[#6ba642]">Development</span>
+                  <p className="font-serif text-5xl font-black leading-none text-[#2d452b] sm:text-6xl lg:text-7xl">
+                    جمعية التنمية
+                    <span className="block text-[#6ba642] mt-3">الزراعية</span>
                   </p>
                 </FadeIn>
 
@@ -281,17 +281,17 @@ export default function AgriculturalCaseStudy() {
           <h2 className="mt-5 text-3xl font-bold">هيكل الشعار</h2>
 
           <div className="mt-10 space-y-8">
-            <div className="rounded-2xl border border-black/5 bg-[#f7f4ec] p-7 text-center">
+            <div className="rounded-2xl border border-black/5 bg-[#ffffff] p-7 text-center shadow-sm">
               <p className="font-serif text-3xl text-[#2d452b]">Agri-Dev Association</p>
               <p className="mt-3 text-xl font-bold text-[#6ba642]">جمعية التنمية الزراعية</p>
               <p className="mt-4 text-xs text-[#9cae99]">التركيب النصي الأساسي</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-black/5 bg-[#f7f4ec] p-6 flex flex-col items-center justify-center">
+              <div className="rounded-2xl border border-black/5 bg-[#ffffff] shadow-sm p-6 flex flex-col items-center justify-center">
                 <div className="h-16 w-16 bg-[#6ba642] rounded-[50%_0_50%_50%] transform rotate-45" />
                 <p className="mt-4 text-xs text-[#9cae99]">رمز النمو</p>
               </div>
-              <div className="rounded-2xl border border-black/5 bg-[#f7f4ec] p-6 flex flex-col items-center justify-center">
+              <div className="rounded-2xl border border-black/5 bg-[#ffffff] shadow-sm p-6 flex flex-col items-center justify-center">
                 <div className="h-16 w-16 rounded-full border-4 border-[#2d452b] border-t-[#6ba642]" />
                 <p className="mt-4 text-xs text-[#9cae99]">التكامل المستدام</p>
               </div>
@@ -392,6 +392,50 @@ export default function AgriculturalCaseStudy() {
           ))}
         </FadeInStaggerContainer>
       </section>
+
+      {/* ── Social Media After Identity ── */}
+      <div className="h-24 bg-gradient-to-b from-[#f0f5ec] to-[#2d452b]" />
+
+      <section className="bg-[#2d452b]">
+        <div className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mb-12">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#6ba642]">
+              Live Results
+            </p>
+            <h2 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
+              الهوية في الحياة الحقيقية
+            </h2>
+            <p className="mt-5 max-w-2xl leading-8 text-white/65">
+              كيف بدت الهوية بعد تطبيقها فعلياً في الفعاليات واللقاءات الرسمية وعلى منصات التواصل الاجتماعي.
+            </p>
+          </div>
+
+          <FadeInStaggerContainer className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { src: project.image, alt: "تطبيق واقعي لجمعية التنمية الزراعية 1" },
+              { src: project.image, alt: "تطبيق واقعي لجمعية التنمية الزراعية 2" },
+              { src: project.image, alt: "تطبيق واقعي لجمعية التنمية الزراعية 3" },
+              { src: project.image, alt: "تطبيق واقعي لجمعية التنمية الزراعية 4" },
+            ].map((slot, i) => (
+              <FadeInStaggerItem
+                key={`${slot.src}-${i}`}
+                direction="up"
+                className="relative min-h-[480px] overflow-hidden rounded-3xl border border-white/10 bg-[#1e2e1c] md:min-h-[600px]"
+              >
+                <Image
+                  src={slot.src}
+                  alt={slot.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover object-top transition duration-700 hover:scale-[1.03]"
+                />
+              </FadeInStaggerItem>
+            ))}
+          </FadeInStaggerContainer>
+        </div>
+      </section>
+
+      <div className="h-24 bg-gradient-to-b from-[#2d452b] to-[#f0f5ec]" />
 
       {/* ── Deliverables ── */}
       <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
