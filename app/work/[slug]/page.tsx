@@ -713,12 +713,12 @@ function ZaatarCaseStudy() {
       {/* ── Cinematic Pizza Box Video ── */}
       <section className="relative">
         {/* Fade into dark */}
-        <div className="h-32 bg-gradient-to-b from-[#f6f1e8] to-[#efeef0]" />
+        <div className="h-32 bg-gradient-to-b from-[#f6f1e8] to-black" />
 
         <PizzaBoxVideo />
 
         {/* Fade out to next section */}
-        <div className="h-32 bg-gradient-to-t from-[#273127] to-[#efeef0]" />
+        <div className="h-32 bg-gradient-to-t from-[#273127] to-black" />
       </section>
 
       {/* ── Social Media After Identity ── */}
