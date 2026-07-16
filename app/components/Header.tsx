@@ -57,6 +57,27 @@ export default function Header() {
           >
             الأعمال
           </Link>
+          <div className="relative group">
+            <button className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap flex items-center gap-1">
+              دراسات حالة
+              <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div className="absolute right-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pt-2">
+              <div className="bg-background rounded-xl shadow-lg border border-primary/10 overflow-hidden flex flex-col">
+                <Link href="/work/zaatar-w-simsim-brand-identity" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5">
+                  هوية مطعم زعتر وسمسم
+                </Link>
+                <Link href="/work/ragy-burger-brand-identity" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5">
+                  هوية برجر راجي
+                </Link>
+                <Link href="/work/agricultural-development-association-brand-identity" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors">
+                  هوية الجمعية الزراعية
+                </Link>
+              </div>
+            </div>
+          </div>
           <Link
             href="/about"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"
