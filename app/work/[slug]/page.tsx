@@ -7,6 +7,7 @@ import { FadeIn, FadeInStaggerContainer, FadeInStaggerItem } from "@/components/
 import HeroVideoScrub from "@/components/ui/HeroVideoScrub"
 import ZaatarCaseStudy from "@/components/case-studies/ZaatarCaseStudy"
 import AgriculturalCaseStudy from "@/components/case-studies/AgriculturalCaseStudy"
+import RagyBurgerCaseStudy from "@/components/case-studies/RagyBurgerCaseStudy"
 
 const baseUrl = "https://www.wearetagstudio.com"
 
@@ -148,6 +149,10 @@ export default function CaseStudyPage({
 
   if (params.slug === "agricultural-development-association-brand-identity") {
     return <AgriculturalCaseStudy />
+  }
+
+  if (params.slug === "ragy-burger-brand-identity") {
+    return <RagyBurgerCaseStudy />
   }
 
   return <StandardCaseStudy slug={params.slug} />
