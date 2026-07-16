@@ -4,16 +4,6 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { caseStudies } from "@/lib/caseStudies"
 import { FadeIn, FadeInStaggerContainer, FadeInStaggerItem } from "@/components/ui/FadeIn"
-import PizzaBoxVideo from "@/components/ui/PizzaBoxVideo"
-import dynamic from "next/dynamic"
-
-const ZaatarScene3D = dynamic(
-  () => import("@/components/ui/ZaatarScene3D"),
-  {
-    ssr: false,
-    loading: () => <div className="absolute inset-0" />,
-  }
-)
 
 const baseUrl = "https://www.wearetagstudio.com"
 
@@ -264,21 +254,17 @@ function ZaatarCaseStudy() {
               </FadeIn>
             </div>
 
-            {/* الصورة — تدخل من اليمين */}
-            <FadeIn direction="left" duration={1.2} delay={0.4} className="relative min-h-[460px] bg-[#d7a15d] lg:min-h-[760px]">
-              <Image
-                src={project.image}
-                alt="الهوية البصرية لمطعم زعتر وسمسم"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 48vw"
-                className="object-cover transition-transform duration-[1.5s] group-hover:scale-[1.03]"
+            {/* الفيديو — يدخل من اليمين */}
+            <FadeIn direction="left" duration={1.2} delay={0.4} className="relative min-h-[460px] bg-[#efeef0] lg:min-h-[760px] overflow-hidden">
+              <video
+                src="/videos/pizza-box.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.5s] group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
-              {/* 3D Animated Scene — layered over the hero image */}
-              <div className="absolute inset-0 z-10" style={{ mixBlendMode: "screen" }}>
-                <ZaatarScene3D />
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
             </FadeIn>
           </header>
         </FadeIn>
@@ -710,16 +696,8 @@ function ZaatarCaseStudy() {
         </FadeInStaggerContainer>
       </section>
 
-      {/* ── Cinematic Pizza Box Video ── */}
-      <section className="relative">
-        {/* Fade into dark */}
-        <div className="h-32 bg-gradient-to-b from-[#f6f1e8] to-black" />
-
-        <PizzaBoxVideo />
-
-        {/* Fade out to next section */}
-        <div className="h-32 bg-gradient-to-t from-[#273127] to-black" />
-      </section>
+      {/* ── Removed Cinematic Section ── */}
+      <div className="h-24 bg-gradient-to-b from-[#f6f1e8] to-[#273127]" />
 
       {/* ── Social Media After Identity ── */}
       <section className="bg-[#273127]">
