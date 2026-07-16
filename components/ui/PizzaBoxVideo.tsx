@@ -2,99 +2,125 @@
 
 import { useRef, useEffect, useState, useCallback } from "react"
 
-const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v))
+const clamp = (v: number, min: number, max: number) =>
+  Math.max(min, Math.min(max, v))
+
 const smoothstep = (v: number, min: number, max: number) => {
   const t = clamp((v - min) / (max - min), 0, 1)
   return t * t * (3 - 2 * t)
 }
 
 export default function PizzaBoxVideo() {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [isInView, setIsInView] = useState(false)
+  const rafRef = useRef(0)
 
-  // ── Start loading when section is near ──
+  const [ready, setReady] = useState(false)
+  const [near, setNear] = useState(false)
+  const [ratio, setRatio] = useState(9 / 16)
+  const [dur, setDur] = useState(5)
+
+  /* ── Detect when section is close to viewport ── */
   useEffect(() => {
-    const el = containerRef.current
+    const el = sectionRef.current
     if (!el) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isInView) {
-          setIsInView(true)
-          if (videoRef.current && videoRef.current.dataset.src) {
-            videoRef.current.src = videoRef.current.dataset.src
-            videoRef.current.load()
-          }
-        }
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) setNear(true)
       },
-      { rootMargin: "300px 0px" }
+      { rootMargin: "600px 0px" }
     )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
 
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [isInView])
-
-  // ── Scroll → video time ──
-  const handleScroll = useCallback(() => {
-    const container = containerRef.current
-    const video = videoRef.current
-    const overlay = overlayRef.current
-    if (!container || !video || !video.duration) return
-
-    const rect = container.getBoundingClientRect()
-    const vh = window.innerHeight
-
-    // 0 = section enters from bottom, 1 = section exits from top
-    const progress = clamp((vh - rect.top) / (vh + rect.height), 0, 1)
-
-    video.currentTime = progress * video.duration
-
-    // Overlay: black at start/end, transparent in middle
-    const fadeIn = smoothstep(progress, 0, 0.12)
-    const fadeOut = 1 - smoothstep(progress, 0.88, 1)
-    if (overlay) {
-      overlay.style.opacity = String(1 - fadeIn * fadeOut)
+  /* ── Attach video src only when near ── */
+  useEffect(() => {
+    if (!near || !videoRef.current) return
+    const v = videoRef.current
+    if (v.dataset.src) {
+      v.src = v.dataset.src
+      v.load()
     }
+  }, [near])
+
+  /* ── Get video dimensions & duration ── */
+  const onMeta = useCallback(() => {
+    const v = videoRef.current
+    if (!v) return
+    setDur(v.duration || 5)
+    setRatio((v.videoWidth || 9) / (v.videoHeight || 16))
+    setReady(true)
+  }, [])
+
+  /* ── Scroll → video time (with rAF for smoothness) ── */
+  const onScroll = useCallback(() => {
+    cancelAnimationFrame(rafRef.current)
+    rafRef.current = requestAnimationFrame(() => {
+      const sec = sectionRef.current
+      const vid = videoRef.current
+      const ovl = overlayRef.current
+      if (!sec || !vid || !vid.duration) return
+
+      const r = sec.getBoundingClientRect()
+      const p = clamp(
+        (innerHeight - r.top) / (innerHeight + r.height),
+        0,
+        1
+      )
+
+      vid.currentTime = p * vid.duration
+
+      if (ovl) {
+        const fi = smoothstep(p, 0, 0.12)
+        const fo = 1 - smoothstep(p, 0.88, 1)
+        ovl.style.opacity = String(1 - fi * fo)
+      }
+    })
   }, [])
 
   useEffect(() => {
-    if (!isLoaded) return
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [isLoaded, handleScroll])
+    if (!ready) return
+    addEventListener("scroll", onScroll, { passive: true })
+    onScroll()
+    return () => {
+      removeEventListener("scroll", onScroll)
+      cancelAnimationFrame(rafRef.current)
+    }
+  }, [ready, onScroll])
+
+  /* ── Dynamic height: ~150vh per 10s of video, min 100vh ── */
+  const heightVh = Math.max(dur * 15, 100)
 
   return (
     <div
-      ref={containerRef}
-      className="relative h-[120vh] w-full overflow-hidden bg-black"
+      ref={sectionRef}
+      className="relative w-full overflow-hidden bg-black"
+      style={{ height: `${heightVh}vh` }}
     >
-      {/* ── Video: object-contain shows FULL frame ── */}
-      <video
-        ref={videoRef}
-        data-src="/videos/pizza-box.mp4"
-        className="absolute inset-0 h-full w-full object-contain"
-        muted
-        playsInline
-        preload="none"
-        onCanPlay={() => {
-          setIsLoaded(true)
-          handleScroll()
-        }}
-      />
+      {/* ── Video container: sized to video aspect ratio ── */}
+      <div className="absolute inset-0 flex items-center justify-center px-4 py-[4vh]">
+        <video
+          ref={videoRef}
+          data-src="/videos/pizza-box.mp4"
+          onLoadedMetadata={onMeta}
+          className="h-full max-h-[92vh] w-full object-contain rounded-sm"
+          style={{ aspectRatio: `${ratio}` }}
+          muted
+          playsInline
+          preload="none"
+        />
+      </div>
 
-      {/* ── Black overlay fades with scroll ── */}
+      {/* ── Black overlay (fades with scroll) ── */}
       <div
         ref={overlayRef}
         className="absolute inset-0 bg-black"
-        style={{ opacity: 1 }}
       />
 
-      {/* ── Loading ── */}
-      {!isLoaded && (
+      {/* ── Loading spinner ── */}
+      {!ready && near && (
         <div className="absolute inset-0 z-20 flex items-center justify-center bg-black">
           <div className="text-center">
             <div className="mx-auto h-8 w-8 animate-spin rounded-full border border-[#a8b51d] border-t-transparent" />
@@ -105,12 +131,12 @@ export default function PizzaBoxVideo() {
         </div>
       )}
 
-      {/* ── Cinematic vignette ── */}
+      {/* ── Subtle vignette ── */}
       <div
         className="pointer-events-none absolute inset-0 z-10"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%)",
+            "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.45) 100%)",
         }}
       />
     </div>
