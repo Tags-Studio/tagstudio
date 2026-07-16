@@ -78,7 +78,7 @@ export default function PizzaBoxVideo() {
       <video
         ref={videoRef}
         data-src="/videos/pizza-box.mp4"
-        className="absolute inset-0 h-full w-full object-contain"
+        className="absolute left-1/2 top-1/2 h-full w-auto min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
         muted
         playsInline
         preload="none"
@@ -114,6 +114,18 @@ export default function PizzaBoxVideo() {
         </div>
       )}
 
+      {/* Top gradient fade */}
+      <div className="pointer-events-none absolute left-0 right-0 top-0 h-32 bg-gradient-to-b from-[#efeef0] to-transparent z-10" />
+
+      {/* Bottom gradient fade */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#efeef0] to-transparent z-10" />
+
+      {/* Side vignette for cinematic feel */}
+      <div className="pointer-events-none absolute inset-0 z-10"
+        style={{
+          background: "radial-gradient(ellipse at center, transparent 50%, rgba(239,238,240,0.8) 100%)"
+        }}
+      />
     </div>
   )
 }
