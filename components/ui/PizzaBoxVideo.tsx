@@ -50,8 +50,9 @@ export default function PizzaBoxVideo() {
       1
     )
 
-    // Map progress to video time
-    video.currentTime = progress * video.duration
+    // Map progress to video time (double speed)
+    const fastProgress = THREE.MathUtils.clamp(progress * 2, 0, 1)
+    video.currentTime = fastProgress * video.duration
 
     // Overlay opacity: fully visible at start/end, transparent in middle
     const fadeIn = THREE.MathUtils.smoothstep(progress, 0, 0.15)
@@ -71,7 +72,7 @@ export default function PizzaBoxVideo() {
   return (
     <div
       ref={containerRef}
-      className="relative h-[120vh] w-full overflow-hidden bg-black"
+      className="relative h-[120vh] w-full overflow-hidden bg-[#efeef0]"
     >
       {/* Video */}
       <video
@@ -90,23 +91,23 @@ export default function PizzaBoxVideo() {
       {/* Black overlay that fades with scroll */}
       <div
         ref={overlayRef}
-        className="absolute inset-0 bg-black transition-none"
+        className="absolute inset-0 bg-[#efeef0] transition-none"
         style={{ opacity: 1 }}
       />
 
       {/* Cinematic text overlay */}
       <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center">
-        <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-white/30">
+        <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#84920b]/50">
           Zaatar w Semsom
         </p>
       </div>
 
       {/* Loading state */}
       {!isLoaded && (
-        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black">
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-[#efeef0]">
           <div className="text-center">
             <div className="mx-auto h-8 w-8 animate-spin rounded-full border border-[#a8b51d] border-t-transparent" />
-            <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-white/20">
+            <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-[#84920b]/50">
               Loading
             </p>
           </div>
@@ -114,15 +115,15 @@ export default function PizzaBoxVideo() {
       )}
 
       {/* Top gradient fade */}
-      <div className="pointer-events-none absolute left-0 right-0 top-0 h-32 bg-gradient-to-b from-black to-transparent z-10" />
+      <div className="pointer-events-none absolute left-0 right-0 top-0 h-32 bg-gradient-to-b from-[#efeef0] to-transparent z-10" />
 
       {/* Bottom gradient fade */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-10" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#efeef0] to-transparent z-10" />
 
       {/* Side vignette for cinematic feel */}
       <div className="pointer-events-none absolute inset-0 z-10"
         style={{
-          background: "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6) 100%)"
+          background: "radial-gradient(ellipse at center, transparent 50%, rgba(239,238,240,0.8) 100%)"
         }}
       />
     </div>
