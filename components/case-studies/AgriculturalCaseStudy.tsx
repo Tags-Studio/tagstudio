@@ -552,6 +552,135 @@ export default function AgriculturalCaseStudy() {
         </div>
       </section>
 
+      {/* ── The Solution Banner ── */}
+      <section className="bg-[#6ba642]">
+        <FadeIn direction="up" className="mx-auto grid max-w-[1500px] gap-10 px-6 py-14 text-white lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/75">
+              The Solution
+            </p>
+            <h2 className="mt-4 text-3xl font-bold sm:text-4xl">
+              هوية مؤسسية تعكس النماء والاستقرار
+            </h2>
+            <p className="mt-5 max-w-3xl leading-8 text-white/85">
+              {project.solution} النتيجة هي نظام بصري مرن وموثوق، يُعزز من مكانة الجمعية في المخاطبات الرسمية والفعاليات المجتمعية.
+            </p>
+          </div>
+          <Link
+            href="/#contact-form"
+            className="inline-flex rounded-full bg-white px-8 py-4 font-bold text-[#2d452b] transition hover:-translate-y-0.5 hover:shadow-xl"
+          >
+            ابدأ مشروع جمعيتك الآن
+          </Link>
+        </FadeIn>
+      </section>
+
+      {/* ── Client Testimonial ── */}
+      <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mb-10">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#6ba642]">
+            Client Words
+          </p>
+          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+            قالها العميل
+          </h2>
+        </div>
+
+        <FadeIn direction="up">
+          <figure className="relative overflow-hidden rounded-3xl bg-[#ffffff] border border-black/5 p-10 sm:p-16 lg:p-20 shadow-sm">
+            <span 
+              className="absolute -left-4 -top-8 select-none font-serif text-[12rem] font-black leading-none text-[#6ba642]/[0.08]"
+              aria-hidden="true"
+            >
+              "
+            </span>
+            
+            <blockquote className="relative text-2xl font-bold leading-relaxed text-[#2d452b] sm:text-3xl lg:text-4xl lg:leading-snug">
+              الهوية الجديدة أعطت الجمعية طابعاً رسمياً يعكس مكانتنا ودورنا الحقيقي في التنمية المستدامة، وأصبح حضورنا في المخاطبات الرسمية أقوى بكثير.
+            </blockquote>
+            
+            <div className="relative mt-10 flex items-center gap-5 border-t border-black/5 pt-8">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#6ba642] text-xl font-bold text-white">
+                إ
+              </div>
+              <div>
+                <p className="text-lg font-bold text-[#2d452b]">إدارة جمعية التنمية الزراعية</p>
+                <p className="mt-0.5 text-sm text-[#9cae99]">عميل تاج ستوديو — الأحساء</p>
+              </div>
+            </div>
+          </figure>
+        </FadeIn>
+      </section>
+
+      {/* ── Related Work ── */}
+      <section className="bg-[#ffffff] border-t border-black/5">
+        <div className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mb-10">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#6ba642]">
+              More Work
+            </p>
+            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+              أعمال مشابهة
+            </h2>
+          </div>
+
+          <FadeInStaggerContainer className="grid gap-6 sm:grid-cols-2">
+            {[
+              {
+                slug: "zaatar-w-simsim-brand-identity",
+                title: "هوية مطعم زعتر وسمسم",
+                category: "هوية بصرية للمطاعم",
+                image: "/images/zaatar-box-highres.jpg",
+              },
+              {
+                slug: "ragy-burger-brand-identity",
+                title: "هوية مطعم برجر راجي",
+                category: "هوية بصرية للمطاعم",
+                image: "/images/ragy-identity-portfolio.webp",
+              },
+            ].map((relatedItem) => (
+              <FadeInStaggerItem
+                key={relatedItem.slug}
+                direction="up"
+              >
+                <Link
+                  href={`/work/${relatedItem.slug}`}
+                  className="group relative block overflow-hidden rounded-3xl"
+                >
+                  <figure className="relative h-64 overflow-hidden bg-[#e6dcc9] sm:h-80">
+                    <Image
+                      src={relatedItem.image}
+                      alt={relatedItem.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover transition-all duration-700 group-hover:scale-[1.06] group-hover:brightness-[0.75]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    
+                    {/* Arrow indicator */}
+                    <div className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-500 group-hover:bg-[#6ba642] group-hover:scale-110">
+                      <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                      </svg>
+                    </div>
+                    
+                    <figcaption className="absolute bottom-0 left-0 right-0 p-7">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-[#6ba642]">
+                        {relatedItem.category}
+                      </p>
+                      <h3 className="mt-2 text-2xl font-bold text-white transition-transform duration-500 group-hover:translate-x-1">
+                        {relatedItem.title}
+                        <span className="mr-2 inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
+                      </h3>
+                    </figcaption>
+                  </figure>
+                </Link>
+              </FadeInStaggerItem>
+            ))}
+          </FadeInStaggerContainer>
+        </div>
+      </section>
+
       {/* ── Footer Nav ── */}
       <section className="mx-auto flex max-w-[1500px] flex-col justify-between gap-6 px-6 py-10 text-sm text-[#9cae99] sm:flex-row sm:items-center lg:px-8 border-t border-black/5">
         <Link href="/work" className="font-bold text-[#6ba642] hover:underline">
