@@ -72,13 +72,13 @@ export default function PizzaBoxVideo() {
   return (
     <div
       ref={containerRef}
-      className="relative h-[120vh] w-full overflow-hidden bg-[#efeef0]"
+      className="relative h-[100vh] w-full overflow-hidden bg-[#efeef0]"
     >
       {/* Video */}
       <video
         ref={videoRef}
         data-src="/videos/pizza-box.mp4"
-        className="absolute inset-0 h-full w-full object-contain"
+        className="absolute left-1/2 top-1/2 h-[100vh] w-auto min-w-[100vw] -translate-x-1/2 -translate-y-1/2 object-cover"
         muted
         playsInline
         preload="none"
