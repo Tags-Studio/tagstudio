@@ -154,41 +154,76 @@ export default function AgriculturalCaseStudy() {
         </div>
       </section>
 
-      {/* ── THE APPROACH (AGRITECH STYLE) ── */}
-      <section className="relative mx-auto max-w-[1500px] px-4 py-24 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-[3rem] border border-slate-100 shadow-[0_20px_60px_rgb(0,0,0,0.03)] p-10 sm:p-16 lg:p-24 overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#84CC16]/20 to-transparent rounded-full blur-3xl" />
+      {/* ── THE BRIEF ── */}
+      <section className="relative mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-12 bg-white rounded-[3rem] border border-slate-100 shadow-[0_20px_60px_rgb(0,0,0,0.02)] p-10 sm:p-16">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#84CC16]">The Brief</p>
+            <h2 className="mt-4 text-4xl font-black text-[#0F172A]">التحدي</h2>
+          </div>
+          <div>
+            <p className="text-xl leading-loose text-[#475569]">
+              {project.problem} معظم الجمعيات الزراعية تتبنى هويات كلاسيكية تركز على التراث فقط. التحدي كان كيف نصنع هوية للجمعية تعبر عن جذورها في الأحساء، ولكن تضعها في مصاف المؤسسات الحديثة المهتمة بالتقنية الزراعية، الاستدامة، والمستقبل الأخضر. كان المطلوب هوية رسمية، لكنها مشعة بالحيوية والتطور.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── THE CREATIVE CONCEPT ── */}
+      <section className="relative mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="bg-[#0F172A] text-white rounded-[3rem] border border-white/10 shadow-[0_20px_60px_rgb(0,0,0,0.2)] p-10 sm:p-16 lg:p-24 overflow-hidden relative">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#84CC16]/20 to-transparent rounded-full blur-3xl" />
           
           <div className="grid lg:grid-cols-2 gap-16 relative z-10">
             <div>
-              <div className="w-16 h-16 bg-[#F0FDF4] rounded-2xl flex items-center justify-center mb-8 text-[#22C55E]">
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h2 className="text-4xl sm:text-5xl font-black text-[#0F172A] leading-tight">
-                من التقليد إلى الابتكار
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#84CC16] mb-4">The Creative Concept</p>
+              <h2 className="text-4xl sm:text-5xl font-black leading-tight mb-8">
+                من التقليد إلى الابتكار الأخضر
               </h2>
+              <p className="text-xl leading-loose text-white/70">
+                الحل لم يكن في رسم "نخلة" أخرى، بل في تصميم نظام بصري ديناميكي يعتمد على الإضاءة، الشفافية، والألوان المشعة التي تعطي انطباعاً بأن هذه الجمعية تقود المستقبل الأخضر. مزجنا بين الخطوط الهندسية الحديثة والانحناءات العضوية للطبيعة لإنتاج أيقونة تقنية خضراء.
+              </p>
             </div>
             
-            <div className="flex flex-col justify-center">
-              <p className="text-xl leading-loose text-[#475569]">
-                المؤسسات الزراعية تواجه تحدياً في الظهور بمظهر عصري يواكب رؤية الاستدامة العالمية. لم نرد أن تكون الهوية مجرد "نخلة ولون أخضر غامق". أردنا أن تعبر عن التكنولوجيا، الكفاءة، والنماء الذكي.
-              </p>
-              <div className="mt-8 p-6 bg-[#F8FAFC] rounded-2xl border border-slate-100">
-                <p className="text-[#334155] font-medium leading-relaxed">
-                  الحل هو نظام بصري ديناميكي يعتمد على الإضاءة، الشفافية، والألوان المشعة التي تعطي انطباعاً بأن هذه الجمعية تقود المستقبل الأخضر.
-                </p>
-              </div>
+            <div className="relative aspect-square rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md p-6">
+               <Image
+                  src={project.image}
+                  alt="الفكرة الإبداعية"
+                  fill
+                  className="object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+                />
             </div>
           </div>
         </div>
       </section>
 
+      {/* ── LOGO SYSTEM ── */}
+      <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#84CC16] mb-4">Logo System</p>
+          <h2 className="text-4xl sm:text-5xl font-black text-[#0F172A]">هيكل الشعار</h2>
+        </div>
+
+        <FadeInStaggerContainer className="grid md:grid-cols-3 gap-8">
+          {[
+            { title: "الرمز الآيقوني", desc: "أشكال هندسية متداخلة ترمز للنمو، المياه، والطاقة المستدامة بأسلوب مجرد وحديث." },
+            { title: "التركيب النصي", desc: "تم بناء الاسم باستخدام خطوط خالية من التذييل (Sans-Serif) لضمان الوضوح التام في التطبيقات الرقمية." },
+            { title: "المرونة والاستخدام", desc: "تصميم متجاوب (Responsive) يعمل بكفاءة سواء كأيقونة تطبيق أو على لوحة إعلانية ضخمة." },
+          ].map((item, i) => (
+            <FadeInStaggerItem key={i} direction="up" className="bg-white rounded-[2rem] p-10 border border-slate-100 shadow-sm text-center">
+              <div className="w-16 h-16 bg-[#F0FDF4] rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#22C55E] text-2xl font-black">
+                0{i+1}
+              </div>
+              <h3 className="text-xl font-black text-[#0F172A] mb-4">{item.title}</h3>
+              <p className="text-[#64748B] leading-relaxed">{item.desc}</p>
+            </FadeInStaggerItem>
+          ))}
+        </FadeInStaggerContainer>
+      </section>
+
       {/* ── VISUAL SYSTEM (DATA DRIVEN) ── */}
       <section className="mx-auto max-w-[1500px] px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-3 gap-8">
-          
           {/* Colors Card */}
           <FadeIn direction="up" className="lg:col-span-2 bg-[#0F172A] rounded-[3rem] p-10 sm:p-16 text-white relative overflow-hidden">
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#84CC16]/20 rounded-full blur-[80px]" />
@@ -225,18 +260,18 @@ export default function AgriculturalCaseStudy() {
               <p className="mt-4 font-bold text-[#475569]">Modern Geometric</p>
             </div>
           </FadeIn>
-
         </div>
       </section>
 
-      {/* ── DIGITAL APPLICATIONS ── */}
+      {/* ── LIVE RESULTS ── */}
       <section className="relative mx-auto max-w-[1500px] px-4 py-24 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#84CC16] mb-4">Live Results</p>
           <h2 className="text-4xl sm:text-5xl font-black text-[#0F172A] leading-tight mb-6">
-            تطبيقات تواكب العصر الرقمي
+            الهوية في الحياة الحقيقية
           </h2>
           <p className="text-xl text-[#64748B]">
-            تم تصميم الهوية لتكون مثالية على الشاشات أولاً (Digital First)، مما يسهل تواصل الجمعية مع جمهورها بشكل عصري عبر المنصات المختلفة.
+            تم تصميم الهوية لتكون مثالية على الشاشات أولاً (Digital First)، مما يسهل تواصل الجمعية مع جمهورها بشكل عصري عبر المنصات المختلفة وفي الفعاليات الرسمية.
           </p>
         </div>
 
@@ -260,6 +295,27 @@ export default function AgriculturalCaseStudy() {
         </FadeInStaggerContainer>
       </section>
 
+      {/* ── BEHIND THE WORK ── */}
+      <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-[3rem] border border-slate-100 p-10 sm:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-12 shadow-sm">
+          <div className="flex-1">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#84CC16] mb-4">Behind the Work</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0F172A] mb-6">خلف الكواليس</h2>
+            <p className="text-lg leading-relaxed text-[#475569]">
+              العمل على هوية تمزج بين القطاع المؤسسي الحكومي وقطاع التقنية تطلب ورش عمل مكثفة مع إدارة الجمعية. تم تجربة أكثر من 4 اتجاهات بصرية، حتى استقررنا على هذا التوجه (AgriTech) الذي يعكس طموحات الجمعية المستقبلية بشكل لا يقبل المساومة على الجودة والاحترافية.
+            </p>
+          </div>
+          <div className="w-full md:w-1/3 aspect-square relative rounded-[2rem] bg-slate-100 overflow-hidden border border-slate-200">
+             <Image
+                src={project.image}
+                alt="كواليس العمل"
+                fill
+                className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+              />
+          </div>
+        </div>
+      </section>
+
       {/* ── THE IMPACT (DELIVERABLES) ── */}
       <section className="bg-white border-t border-slate-100 mt-12">
         <div className="mx-auto max-w-[1500px] px-4 py-24 sm:px-6 lg:px-8">
@@ -269,6 +325,7 @@ export default function AgriculturalCaseStudy() {
             
             <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
               <div>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#84CC16] mb-4">Deliverables</p>
                 <h2 className="text-4xl sm:text-5xl font-black mb-6">ماذا سلمنا للجمعية؟</h2>
                 <p className="text-lg text-white/70 leading-relaxed mb-12">
                   نظام تصميم شامل (Design System) جاهز للتشغيل الرقمي والمطبوع، يدعم تحول الجمعية لكيان يعتمد على التقنية في برامجه.
@@ -289,7 +346,7 @@ export default function AgriculturalCaseStudy() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-10 sm:p-14 border border-white/10 text-center">
+              <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-10 sm:p-14 border border-white/10 text-center flex flex-col justify-center h-full">
                 <div className="w-20 h-20 bg-[#84CC16]/20 rounded-full flex items-center justify-center mx-auto mb-6 text-[#84CC16]">
                   <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -297,23 +354,84 @@ export default function AgriculturalCaseStudy() {
                 </div>
                 <p className="text-sm font-bold text-white/50 uppercase tracking-widest mb-2">مدة التنفيذ</p>
                 <p className="text-6xl font-black mb-8 text-transparent bg-clip-text bg-gradient-to-br from-white to-white/50">4 أسابيع</p>
-                <Link
-                  href="/#contact-form"
-                  className="inline-block w-full bg-[#84CC16] hover:bg-[#65A30D] text-[#0F172A] font-black py-5 rounded-2xl transition-colors text-lg"
-                >
-                  ابدأ تحديث مؤسستك
-                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ── THE SOLUTION BANNER ── */}
+      <section className="bg-[#84CC16] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-10 mix-blend-overlay" />
+        <FadeIn direction="up" className="relative z-10 mx-auto grid max-w-[1500px] gap-10 px-6 py-16 text-[#0F172A] lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0F172A]/60">
+              The Solution
+            </p>
+            <h2 className="mt-4 text-3xl font-black sm:text-4xl">
+              هوية مؤسسية تعكس التقنية والاستدامة
+            </h2>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-[#0F172A]/80 font-medium">
+              {project.solution} النتيجة هي نظام بصري مرن وموثوق، يعزز من مكانة الجمعية محلياً وعالمياً كرائدة في الابتكار الزراعي والتنمية المستدامة.
+            </p>
+          </div>
+          <Link
+            href="/#contact-form"
+            className="inline-flex rounded-full bg-[#0F172A] px-10 py-5 font-bold text-white transition hover:-translate-y-1 hover:shadow-2xl shadow-xl text-lg items-center gap-2"
+          >
+            ابدأ مشروع مؤسستك 
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+          </Link>
+        </FadeIn>
+      </section>
+
+      {/* ── CLIENT WORDS ── */}
+      <section className="mx-auto max-w-[1500px] px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mb-10 text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#84CC16]">
+            Client Words
+          </p>
+          <h2 className="mt-4 text-4xl font-black sm:text-5xl text-[#0F172A]">
+            قالها العميل
+          </h2>
+        </div>
+
+        <FadeIn direction="up">
+          <figure className="relative overflow-hidden rounded-[3rem] bg-white border border-slate-100 p-10 sm:p-16 lg:p-20 shadow-xl shadow-[#84CC16]/5 max-w-4xl mx-auto">
+            <span 
+              className="absolute -left-4 -top-8 select-none font-serif text-[12rem] font-black leading-none text-[#84CC16]/10"
+              aria-hidden="true"
+            >
+              "
+            </span>
+            
+            <blockquote className="relative text-2xl font-bold leading-relaxed text-[#1E293B] sm:text-3xl lg:leading-snug text-center">
+              الهوية الجديدة أعطت الجمعية طابعاً مؤسسياً يعكس مكانتنا ودورنا الحقيقي في التنمية المستدامة واستخدام التقنية. أصبح حضورنا في المخاطبات الرسمية أقوى بكثير وأكثر انسجاماً مع رؤية المملكة.
+            </blockquote>
+            
+            <div className="relative mt-12 flex flex-col items-center gap-4 pt-8 border-t border-slate-100">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#84CC16] text-2xl font-black text-white shadow-lg shadow-[#84CC16]/30">
+                إ
+              </div>
+              <div className="text-center">
+                <p className="text-xl font-bold text-[#0F172A]">إدارة جمعية التنمية الزراعية</p>
+                <p className="mt-1 text-sm text-[#64748B] font-medium uppercase tracking-wider">عميل تاج ستوديو — الأحساء</p>
+              </div>
+            </div>
+          </figure>
+        </FadeIn>
+      </section>
+
       {/* ── MORE WORK ── */}
-      <section className="bg-[#f4f6f8] pt-12 pb-24">
+      <section className="bg-[#f4f6f8] pt-12 pb-24 border-t border-slate-200">
         <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl font-black text-[#0F172A]">مشاريع أخرى</h2>
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#84CC16] mb-2">More Work</p>
+              <h2 className="text-4xl font-black text-[#0F172A]">أعمال مشابهة</h2>
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-8">
@@ -336,13 +454,22 @@ export default function AgriculturalCaseStudy() {
                 href={`/work/${relatedItem.slug}`}
                 className="group block"
               >
-                <div className="relative aspect-[16/9] rounded-[2rem] overflow-hidden bg-white border border-slate-200 mb-6 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                <div className="relative aspect-[16/9] rounded-[2rem] overflow-hidden bg-white border border-slate-200 mb-6 shadow-sm group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500">
                   <Image
                     src={relatedItem.image}
                     alt={relatedItem.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
+                  
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                  
+                  {/* Arrow indicator */}
+                  <div className="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm transition-all duration-500 group-hover:bg-[#84CC16] group-hover:scale-110 shadow-lg opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0">
+                    <svg className="h-5 w-5 text-[#0F172A] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                  </div>
                 </div>
                 <p className="text-xs font-bold text-[#84CC16] mb-2 uppercase tracking-widest">{relatedItem.category}</p>
                 <h3 className="text-2xl font-black text-[#0F172A] group-hover:text-[#84CC16] transition-colors">{relatedItem.title}</h3>
