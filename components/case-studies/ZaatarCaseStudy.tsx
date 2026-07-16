@@ -652,7 +652,6 @@ export default function ZaatarCaseStudy() {
       </section>
 
       {/* ── Removed Cinematic Section ── */}
-      <div className="h-24 bg-gradient-to-b from-[#f6f1e8] to-[#273127]" />
 
       {/* ── Social Media After Identity ── */}
       <section className="bg-[#273127]">
@@ -695,8 +694,6 @@ export default function ZaatarCaseStudy() {
           </FadeInStaggerContainer>
         </div>
       </section>
-
-      <div className="h-24 bg-gradient-to-b from-[#273127] to-[#f6f1e8]" />
 
       {/* ── Deliverables ── */}
       <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">

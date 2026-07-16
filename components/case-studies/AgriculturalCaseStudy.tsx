@@ -452,7 +452,6 @@ export default function AgriculturalCaseStudy() {
       </section>
 
       {/* ── Social Media After Identity ── */}
-      <div className="h-24 bg-gradient-to-b from-[#f0f5ec] to-[#2d452b]" />
 
       <section className="bg-[#2d452b]">
         <div className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -492,8 +491,6 @@ export default function AgriculturalCaseStudy() {
           </FadeInStaggerContainer>
         </div>
       </section>
-
-      <div className="h-24 bg-gradient-to-b from-[#2d452b] to-[#f0f5ec]" />
 
       {/* ── Deliverables ── */}
       <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
