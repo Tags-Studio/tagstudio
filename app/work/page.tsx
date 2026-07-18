@@ -3,8 +3,8 @@ import Link from "next/link"
 import WorkGrid from "../components/WorkGrid"
 
 export const metadata: Metadata = {
-  title: "أعمالنا في الهوية البصرية والتصميم",
-  description: "استعرض مختارات من أعمال تاج ستوديو في تصميم الهويات البصرية والمطبوعات والسوشيال ميديا والموشن جرافيك لعملاء في السعودية ومصر.",
+  title: "معرض الأعمال | استكشف أقوى الهويات البصرية للشركات والمطاعم 🔥",
+  description: "شاهد كيف حوّلنا أفكار عملائنا في السعودية ومصر إلى هويات بصرية جذابة ومشاريع ناجحة. تصفح سابقة أعمال تاج ستوديو واستلهم فكرة مشروعك القادم.",
   alternates: { canonical: "https://www.wearetagstudio.com/work" },
 }
 

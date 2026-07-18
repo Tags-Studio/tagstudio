@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import AboutUs from "../components/AboutUs"
 
 export const metadata: Metadata = {
-  title: "من نحن — وكالة تصميم هوية بصرية",
-  description: "تعرف على قصة تاج ستوديو ومنهجنا في تصميم الهويات البصرية والشعارات والمحتوى البصري للشركات في السعودية ومصر.",
+  title: "لماذا تاج ستوديو؟ وكالة تصميم الهوية البصرية التي تضاعف أرباحك 🚀",
+  description: "لا نصمم مجرد شعارات! نبتكر هويات بصرية متكاملة تبني الثقة وتزيد مبيعاتك في السعودية ومصر. اكتشف قصة تاج ستوديو وكيف نصنع الفارق لعلامتك التجارية.",
   alternates: { canonical: "https://www.wearetagstudio.com/about" },
 }
 
