@@ -709,5 +709,6 @@ export default function PaletteGenerator() {
         </div>
       </div>
     </div>
+    </div>
   )
 }

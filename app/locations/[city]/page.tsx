@@ -2,10 +2,8 @@ import { notFound } from "next/navigation"
 import { Metadata } from "next"
 import Link from "next/link"
 import { getLocationBySlug, getAllLocations } from "@/lib/locationsData"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
-import CtaSection from "@/components/CtaSection"
-import ContactSection from "@/components/ContactSection"
+import CTASection from "@/app/components/CTASection"
+import Contact from "@/app/components/Contact"
 
 type Props = {
   params: { city: string }
@@ -43,8 +41,8 @@ export default function LocationPage({ params }: Props) {
     "@type": "ProfessionalService",
     name: "تاج ستوديو للتصميم - Tag Studio",
     image: "https://wearetagstudio.com/images/logo.png",
-    "@id": \`https://wearetagstudio.com/locations/\${location.slug}\`,
-    url: \`https://wearetagstudio.com/locations/\${location.slug}\`,
+    "@id": `https://wearetagstudio.com/locations/${location.slug}`,
+    url: `https://wearetagstudio.com/locations/${location.slug}`,
     telephone: "+201009215131",
     priceRange: "$$",
     address: {
@@ -63,8 +61,6 @@ export default function LocationPage({ params }: Props) {
 
   return (
     <>
-      <Navbar />
-      
       {/* Schema Injection */}
       <script
         type="application/ld+json"
@@ -117,13 +113,12 @@ export default function LocationPage({ params }: Props) {
             </div>
           </div>
 
-          <CtaSection />
+          <CTASection />
           
         </div>
       </main>
       
-      <ContactSection />
-      <Footer />
+      <Contact />
     </>
   )
 }

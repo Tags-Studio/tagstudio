@@ -109,7 +109,7 @@ export default function BrandAuditClient() {
             className="text-center"
           >
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">نتيجة التقييم:</h2>
-            <h3 className={\`text-4xl font-black \${getResult().color} mb-6\`}>
+            <h3 className={`text-4xl font-black ${getResult().color} mb-6`}>
               {getResult().title}
             </h3>
             <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
@@ -121,9 +121,9 @@ export default function BrandAuditClient() {
               </p>
             </div>
             <a
-              href={\`https://wa.me/201009215131?text=\${encodeURIComponent(
-                \`مرحباً تاج ستوديو، لقد قمت بعمل تقييم الهوية البصرية وحصلت على (\${getResult().title}). أود مناقشة كيفية تحسين هويتي.\`
-              )}\`}
+              href={`https://wa.me/201009215131?text=${encodeURIComponent(
+                `مرحباً تاج ستوديو، لقد قمت بعمل تقييم الهوية البصرية وحصلت على (${getResult().title}). أود مناقشة كيفية تحسين هويتي.`
+              )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform"

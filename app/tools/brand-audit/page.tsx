@@ -1,6 +1,4 @@
 import { Metadata } from "next"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import BrandAuditClient from "./BrandAuditClient"
 
 export const metadata: Metadata = {
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function BrandAuditPage() {
   return (
     <>
-      <Navbar />
       <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 pt-32 pb-16">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -27,7 +24,6 @@ export default function BrandAuditPage() {
           <BrandAuditClient />
         </div>
       </main>
-      <Footer />
     </>
   )
 }
