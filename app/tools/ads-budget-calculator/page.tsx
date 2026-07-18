@@ -573,6 +573,20 @@ export default function AdsBudgetCalculator() {
             </div>
           </section>
 
+          {/* Footer */}
+          <footer className="relative z-10 px-6 py-8 text-center" style={{ borderTop: "1px solid var(--border)" }}>
+            <div className="flex items-center justify-center gap-2.5 mb-3">
+              <div className="tag-logo-mark" style={{ width: 18, height: 18 }}>
+                <span style={{ width: 9, height: 2, borderRadius: 1 }}></span>
+                <span style={{ width: 9, height: 2, borderRadius: 1 }}></span>
+                <span style={{ width: 9, height: 2, borderRadius: 1 }}></span>
+                <span style={{ width: 9, height: 2, borderRadius: 1 }}></span>
+              </div>
+              <span className="text-xs font-medium font-dm" style={{ color: "var(--blue)" }}>TAG STUDIO</span>
+            </div>
+            <p className="text-[11px]" style={{ color: "var(--txt3)" }}>هذه الأرقام تقديرية مبنية على متوسطات القطاع وقد تختلف حسب السوق والمنطقة الجغرافية</p>
+          </footer>
+
         </main>
       </div>
     </>
