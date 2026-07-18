@@ -383,8 +383,9 @@ export default function SafeAreaPreviewer() {
                       <div className={`bg-opt bg-img ${bg === "image" ? "on" : ""}`} onClick={() => { if(!bgImage) fileInputRef.current?.click(); else setBg("image") }}>
                         <i className="fas fa-image text-white text-[10px]"></i>
                       </div>
-                      <label className="bg-opt flex items-center justify-center cursor-pointer" style={{ background: "var(--surface-2)", borderStyle: "dashed" }}>
-                        <i className="fas fa-plus text-[10px]" style={{ color: "var(--txt3)" }}></i>
+                      <label className="flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer transition-all hover:bg-gray-50" style={{ background: "var(--surface-2)", border: "1px dashed var(--border-h)" }}>
+                        <i className="fas fa-upload text-[10px]" style={{ color: "var(--txt3)" }}></i>
+                        <span className="text-xs font-medium" style={{ color: "var(--txt2)" }}>رفع صورة</span>
                         <input type="file" accept="image/*" ref={fileInputRef} onChange={handleImageUpload} className="hidden" />
                       </label>
                     </div>
