@@ -455,6 +455,27 @@ export default function ServicePage({ params }: Props) {
             </a>
           </div>
         </section>
+
+        {/* FAQ Schema */}
+        {service.faq && service.faq.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: service.faq.map((item) => ({
+                  "@type": "Question",
+                  name: item.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: item.answer,
+                  },
+                })),
+              }),
+            }}
+          />
+        )}
       </article>
     </>
   )

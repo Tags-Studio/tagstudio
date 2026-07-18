@@ -105,6 +105,30 @@ export default function RootLayout({
             gtag('config', 'G-7EET2GCC8N');
           `}
         </Script>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "تاج ستوديو - Tag Studio",
+              url: "https://www.wearetagstudio.com",
+              logo: "https://www.wearetagstudio.com/images/logo.png",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+201009215131",
+                contactType: "customer service",
+                areaServed: ["SA", "EG", "KW", "AE"],
+                availableLanguage: ["Arabic", "English"]
+              },
+              sameAs: [
+                "https://www.instagram.com/wearetagstudio",
+                "https://www.behance.net/wearetagstudio"
+              ]
+            })
+          }}
+        />
       </body>
     </html>
   )
