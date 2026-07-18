@@ -197,15 +197,19 @@ export default function PaletteGenerator() {
           مُولّد ألوان وخطوط الهوية البصرية
         </motion.h1>
         
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-3xl mx-auto text-lg text-muted-foreground"
+          className="max-w-4xl mx-auto space-y-4"
         >
-          اختر مجال عملك وشخصية براندك، ودع الأداة تولّد لك توليفة ألوان متناسقة وفقاً لسيكولوجية الألوان وقاعدة التوزيع العالمية (60-30-10) لتشاهدها فوراً على نماذج واقعية حية.
-        </motion.p>
-      </div>
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed text-justify">
+            اختيار ألوان الهوية البصرية ليس مجرد مسألة ذوق شخصي، بل هو علم يعتمد على سيكولوجية الألوان (Color Psychology) ومدى تأثيرها على قرارات الشراء لدى جمهورك المستهدف في السعودية ومصر. لذلك، صممنا لك "مُولّد لوحات ألوان الهوية البصرية الذكي" ليكون مرجعك الأساسي قبل اعتماد ألوان علامتك التجارية.
+          </p>
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed text-justify">
+            اختر مجال عملك وشخصية براندك (سواء كانت رسمية، ودودة، فاخرة، أو مبتكرة)، ودع الأداة تولّد لك توليفة ألوان متناسقة احترافية. تعتمد الأداة على قاعدة التوزيع العالمية في التصميم (60% للون الأساسي، 30% للون الثانوي، و10% للون التأكيدي) لضمان توازن مريح للعين، بالإضافة لاقتراح أفضل الخطوط العربية (مثل كايرو وتجوال) التي تتوافق مع شخصية هذه الألوان. يمكنك معاينة هذه الألوان فوراً على نماذج واقعية ككروت العمل، بوستات السوشيال ميديا، وواجهات المواقع لتتخيل النتيجة النهائية بدقة.
+          </p>
+        </motion.div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         

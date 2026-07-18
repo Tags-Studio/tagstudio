@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/*?category=*"],
     },
     sitemap: "https://www.wearetagstudio.com/sitemap.xml",
   }

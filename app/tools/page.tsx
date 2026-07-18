@@ -136,14 +136,19 @@ export default function ToolsIndex() {
           أدوات تصميم وتسويق <span className="text-primary">تفاعلية مجانية</span>
         </motion.h1>
         
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto"
+          className="space-y-4 max-w-3xl mx-auto"
         >
-          أدوات رقمية مجانية تم تطويرها بواسطة فريق تاج ستوديو الإبداعي لمساعدتك على اتخاذ القرارات الصحيحة بشأن تصميم هويتك وإدارة ميزانيتك الإعلانية.
-        </motion.p>
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed text-justify">
+            لقد قمنا في تاج ستوديو بتطوير هذه المجموعة الحصرية من الأدوات الرقمية المجانية لمساعدة أصحاب المشاريع، العيادات، والشركات في السعودية ومصر على اتخاذ قرارات دقيقة ومبنية على أسس علمية قبل بدء أي حملة إعلانية أو إطلاق هوية بصرية جديدة. 
+          </p>
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed text-justify">
+            سواء كنت تبحث عن حساب ميزانية الإعلانات بدقة، أو اختبار تباين ألوان هويتك البصرية للتأكد من سهولة قراءتها، أو توليد لوحة ألوان احترافية لمشروعك الناشئ؛ فإن هذه الأدوات التفاعلية تضع بين يديك خبرة سنوات من التصميم والتسويق في واجهة بسيطة وسهلة الاستخدام، لضمان نمو عملك وتفوقك على منافسيك.
+          </p>
+        </motion.div>
       </div>
 
       {/* Controls Section: Search & Category Filter Tabs */}

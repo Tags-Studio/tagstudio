@@ -12,9 +12,9 @@ export default function WearYourStory() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">حياكم الله في تاج ستوديو</h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            نحن نؤمن بأن التصميم ليس مجرد أشكال وألوان؛ بل هو منظومة بصرية متكاملة تبني الثقة، وتصنع هوية قوية تعزز نمو أعمالكم وتترك انطباعاً أولاً لا يُنسى في السوق السعودي والمصري.
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">تاج ستوديو — نظام بصري احترافي</h2>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            هويتك البصرية هي أول انطباع بيكسبه عميلك المحتمل. لو الشكل مش واضح أو مش موحّد، بتخسر ثقة قبل ما حتى تبدأ المحادثة. إحنا في تاج ستوديو بنبني لك نظام بصري كامل ومتناسق يخليك تظهر باحترافية في كل نقطة تواصل مع عملائك — من الشعار للمطبوعات للسوشيال ميديا.
           </p>
           {/* تم حذف زر "استكشف المجموعة" بالكامل */}
         </motion.div>
