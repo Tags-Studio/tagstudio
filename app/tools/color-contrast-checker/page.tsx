@@ -275,7 +275,7 @@ export default function ColorContrastChecker() {
                   <div className="bar bar-h"></div>
                   <div className="bar bar-v"></div>
               </div>
-              <span className="logo-text ml-2">TAG STUDIO</span>
+              <span className="logo-text ml-2 tracking-wide font-medium">Color Contrast Checker</span>
           </div>
           <div className="flex items-center gap-3">
               <span className="hidden sm:flex items-center gap-2 mr-3" style={{color:'var(--subtle)',fontSize:'11px',fontWeight:500}}>
