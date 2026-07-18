@@ -1,38 +1,22 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { useState, useEffect, useRef } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { 
-  Paintbrush, 
   RefreshCw, 
   Copy, 
   Check, 
   Send, 
-  Sparkles, 
-  Briefcase, 
-  Heart, 
-  Layers, 
-  Palette, 
-  FileText,
-  CreditCard,
+  Sparkles,
+  ChevronLeft,
+  Shuffle,
   Globe,
+  CreditCard,
   Instagram,
-  ChevronLeft
+  Type,
+  Wand2,
+  ArrowRight
 } from "lucide-react"
-
-// Types definitions
-interface IndustryPreset {
-  name: string
-  icon: any
-  desc: string
-  colorTheme: string
-}
-
-interface PersonalityPreset {
-  name: string
-  desc: string
-  value: "premium" | "friendly" | "official" | "innovative"
-}
 
 interface ColorPalette {
   primary: string
@@ -40,7 +24,6 @@ interface ColorPalette {
   accent: string
 }
 
-// Preset color palettes mapping
 const PALETTE_PRESETS: Record<string, Record<string, ColorPalette>> = {
   medical: {
     official: { primary: "#1e3a8a", secondary: "#3b82f6", accent: "#10b981" },
@@ -74,7 +57,6 @@ const PALETTE_PRESETS: Record<string, Record<string, ColorPalette>> = {
   }
 }
 
-// Recommended Fonts Mapping
 const FONT_PRESETS: Record<string, { heading: string, body: string, desc: string }> = {
   medical: { heading: "Cairo", body: "Readex Pro", desc: "توليفة نظيفة ومريحة تعطي ثقة وأمان للمريض" },
   restaurant: { heading: "Tajawal", body: "IBM Plex Sans Arabic", desc: "توليفة ودودة ومشهية تعبر عن الحيوية والسرعة" },
@@ -83,30 +65,110 @@ const FONT_PRESETS: Record<string, { heading: string, body: string, desc: string
   agriculture: { heading: "Cairo", body: "Readex Pro", desc: "توليفة طبيعية انسيابية ممتازة للبيئة والنمو" }
 }
 
+const industries = [
+  { label: "عيادات ومراكز طبية", emoji: "🩺", theme: "medical" },
+  { label: "مطاعم وكافيهات", emoji: "🍔", theme: "restaurant" },
+  { label: "شركات ناشئة وتقنية", emoji: "🚀", theme: "startup" },
+  { label: "مؤسسات وشركات رسمية", emoji: "🏢", theme: "corporate" },
+  { label: "قطاع زراعي وتنموي", emoji: "🌾", theme: "agriculture" },
+]
+
+const personalities = [
+  { label: "فخمة وراقية", sublabel: "Premium", value: "premium" as const, emoji: "👑" },
+  { label: "ودودة وقريبة", sublabel: "Friendly", value: "friendly" as const, emoji: "🤝" },
+  { label: "رسمية وجادة", sublabel: "Official", value: "official" as const, emoji: "🏛️" },
+  { label: "عصرية ومبتكرة", sublabel: "Innovative", value: "innovative" as const, emoji: "⚡" },
+]
+
+function hexToRgb(hex: string) {
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+  return { r, g, b }
+}
+
+function ColorSwatch({ color, label, pct, colorKey, copiedColor, onCopy, onChange }: {
+  color: string, label: string, pct: string, colorKey: string,
+  copiedColor: string | null, onCopy: (c: string, k: string) => void,
+  onChange: (k: string, v: string) => void
+}) {
+  const rgb = hexToRgb(color)
+  const isCopied = copiedColor === colorKey
+
+  return (
+    <motion.div
+      layout
+      className="relative group"
+    >
+      {/* Color block */}
+      <div
+        className="relative h-28 rounded-2xl overflow-hidden cursor-pointer shadow-lg mb-3"
+        style={{ background: color }}
+      >
+        {/* Subtle inner glow */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
+
+        {/* Percentage badge */}
+        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/20 backdrop-blur-md">
+          <span className="text-white/90 text-xs font-bold tracking-widest">{pct}</span>
+        </div>
+
+        {/* Copy overlay on hover */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/20 backdrop-blur-[2px]">
+          <button
+            onClick={() => onCopy(color, colorKey)}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/90 text-black text-xs font-semibold shadow-lg hover:scale-105 transition-transform"
+          >
+            {isCopied ? <Check className="h-3 w-3 text-emerald-600" /> : <Copy className="h-3 w-3" />}
+            {isCopied ? "تم النسخ!" : "نسخ الكود"}
+          </button>
+        </div>
+
+        {/* Color picker input (invisible) */}
+        <input
+          type="color"
+          value={color}
+          onChange={(e) => onChange(colorKey, e.target.value)}
+          className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
+          title="انقر لتغيير اللون"
+        />
+      </div>
+
+      {/* Info row */}
+      <div className="flex items-center justify-between px-1">
+        <div>
+          <p className="text-xs text-muted-foreground font-medium">{label}</p>
+          <p className="font-mono text-sm font-bold text-foreground tracking-wider mt-0.5">{color.toUpperCase()}</p>
+        </div>
+        <div className="text-right text-[10px] text-muted-foreground">
+          <p>rgb({rgb.r}, {rgb.g}, {rgb.b})</p>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function PaletteGenerator() {
-  const [industry, setIndustry] = useState<string>("medical")
+  const [industry, setIndustry] = useState("medical")
   const [personality, setPersonality] = useState<"premium" | "friendly" | "official" | "innovative">("premium")
-  const [colors, setColors] = useState<ColorPalette>({
-    primary: "#1e3a8a",
-    secondary: "#3b82f6",
-    accent: "#10b981"
-  })
-  const [activeTab, setActiveTab] = useState<"card" | "web" | "post">("web")
+  const [colors, setColors] = useState<ColorPalette>({ primary: "#0f172a", secondary: "#0284c7", accent: "#eab308" })
+  const [activeTab, setActiveTab] = useState<"web" | "card" | "post">("web")
   const [copiedColor, setCopiedColor] = useState<string | null>(null)
-  
-  // Set initial colors on mount and whenever industry/personality changes
+  const [isGenerating, setIsGenerating] = useState(false)
+
   useEffect(() => {
-    const selectedPalette = PALETTE_PRESETS[industry]?.[personality]
-    if (selectedPalette) {
-      setColors(selectedPalette)
+    const p = PALETTE_PRESETS[industry]?.[personality]
+    if (p) {
+      setIsGenerating(true)
+      setTimeout(() => {
+        setColors(p)
+        setIsGenerating(false)
+      }, 150)
     }
   }, [industry, personality])
 
-  const handleColorChange = (key: keyof ColorPalette, value: string) => {
-    setColors(prev => ({
-      ...prev,
-      [key]: value
-    }))
+  const handleColorChange = (key: string, value: string) => {
+    setColors(prev => ({ ...prev, [key]: value }))
   }
 
   const copyToClipboard = (text: string, label: string) => {
@@ -115,600 +177,488 @@ export default function PaletteGenerator() {
     setTimeout(() => setCopiedColor(null), 2000)
   }
 
-  const generateRandomPalette = () => {
-    const hexChars = "0123456789ABCDEF"
-    const randomHex = () => {
-      let color = "#"
-      for (let i = 0; i < 6; i++) {
-        color += hexChars[Math.floor(Math.random() * 16)]
-      }
-      return color
-    }
-    setColors({
-      primary: randomHex(),
-      secondary: randomHex(),
-      accent: randomHex()
-    })
+  const generateRandom = () => {
+    const rand = () => "#" + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, "0").toUpperCase()
+    setIsGenerating(true)
+    setTimeout(() => {
+      setColors({ primary: rand(), secondary: rand(), accent: rand() })
+      setIsGenerating(false)
+    }, 150)
   }
-
-  // Pre-configured options
-  const industries: IndustryPreset[] = [
-    { name: "🩺 عيادات ومراكز طبية", icon: Heart, desc: "أزرق ودرجات التهدئة والثقة", colorTheme: "medical" },
-    { name: "🍔 مطاعم وكافيهات", icon: Sparkles, desc: "ألوان مشهية ودافئة", colorTheme: "restaurant" },
-    { name: "🚀 شركات ناشئة وتقنية", icon: Layers, desc: "درجات عصرية ومستقبلية", colorTheme: "startup" },
-    { name: "🏢 مؤسسات وشركات رسمية", icon: Briefcase, desc: "ألوان جادة وموثوقة", colorTheme: "corporate" },
-    { name: "🌾 قطاع زراعي وتنموي", icon: Palette, desc: "درجات مستوحاة من الأرض والنماء", colorTheme: "agriculture" }
-  ]
-
-  const personalities: PersonalityPreset[] = [
-    { name: "👑 فخمة وراقية (Premium)", desc: "تعبر عن الجودة والندرة والفخامة", value: "premium" },
-    { name: "🤝 ودودة وقريبة (Friendly)", desc: "سهلة الوصول واقتصادية ومحبوبة", value: "friendly" },
-    { name: "🏛️ رسمية وجادة (Official)", desc: "تنقل الموثوقية والمؤسسية الصارمة", value: "official" },
-    { name: "⚡ عصرية ومبتكرة (Innovative)", desc: "ترمز للمستقبل والإبداع والتقنية", value: "innovative" }
-  ]
 
   const selectedFonts = FONT_PRESETS[industry] || FONT_PRESETS.medical
 
-  // Construct dynamic WhatsApp Link
-  const waNumber = "201009215131"
   const waText = encodeURIComponent(
-    `مرحباً تاج ستوديو، قمت بتوليد لوحة ألوان لهويتي البصرية عبر موقعكم:\n` +
-    `- القطاع: ${industries.find(i => i.colorTheme === industry)?.name || industry}\n` +
-    `- الشخصية: ${personalities.find(p => p.value === personality)?.name || personality}\n` +
-    `- اللون الأساسي (60%): ${colors.primary}\n` +
-    `- اللون الثانوي (30%): ${colors.secondary}\n` +
-    `- اللون التأكيدي (10%): ${colors.accent}\n` +
-    `- الخطوط المقترحة: العناوين (${selectedFonts.heading}) | الفقرات (${selectedFonts.body})\n\n` +
-    `أرغب في الحصول على استشارة مجانية وعرض سعر لتصميم الهوية البصرية لمشروعي.`
+    `مرحباً تاج ستوديو، قمت بتوليد لوحة ألوان لهويتي البصرية:\n` +
+    `- القطاع: ${industries.find(i => i.theme === industry)?.label || industry}\n` +
+    `- الشخصية: ${personalities.find(p => p.value === personality)?.label || personality}\n` +
+    `- الأساسي (60%): ${colors.primary}\n` +
+    `- الثانوي (30%): ${colors.secondary}\n` +
+    `- التأكيدي (10%): ${colors.accent}\n` +
+    `- الخطوط: ${selectedFonts.heading} | ${selectedFonts.body}\n\n` +
+    `أريد استشارة مجانية وعرض سعر.`
   )
-  const whatsappUrl = `https://wa.me/${waNumber}?text=${waText}`
+  const waUrl = `https://wa.me/201009215131?text=${waText}`
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background/95 to-background/90 text-foreground">
-      {/* Back Button */}
-      <div className="max-w-7xl mx-auto mb-6">
-        <a 
-          href="/tools" 
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-border bg-card hover:bg-accent text-sm font-semibold transition-colors"
-        >
-          <ChevronLeft className="h-4 w-4 rotate-180" />
-          <span>العودة لصفحة الأدوات</span>
-        </a>
+    <div dir="rtl" className="min-h-screen bg-background text-foreground" style={{
+      background: "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59,130,246,0.08), transparent)"
+    }}>
+
+      {/* ── Top Nav Bar ── */}
+      <div className="sticky top-0 z-50 border-b border-border/40 bg-background/70 backdrop-blur-2xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+          <a
+            href="/tools"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+          >
+            <ArrowRight className="h-4 w-4 group-hover:-translate-x-0.5 transition-transform" />
+            <span>العودة للأدوات</span>
+          </a>
+          <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+            <div className="w-5 h-5 rounded-md bg-primary flex items-center justify-center">
+              <Wand2 className="h-3 w-3 text-white" />
+            </div>
+            <span>Palette Generator</span>
+          </div>
+        </div>
       </div>
 
-      {/* Header */}
-      <div className="max-w-7xl mx-auto text-center mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 space-y-16">
+
+        {/* ── Hero ── */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4"
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center space-y-5 pt-4"
         >
-          <Paintbrush className="h-4 w-4" />
-          <span>أدوات مجانية تفاعلية لعملائنا</span>
-        </motion.div>
-        
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4"
-        >
-          مُولّد ألوان وخطوط الهوية البصرية
-        </motion.h1>
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-4xl mx-auto space-y-4"
-        >
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed text-justify">
-            اختيار ألوان الهوية البصرية ليس مجرد مسألة ذوق شخصي، بل هو علم يعتمد على سيكولوجية الألوان (Color Psychology) ومدى تأثيرها على قرارات الشراء لدى جمهورك المستهدف في السعودية ومصر. لذلك، صممنا لك "مُولّد لوحات ألوان الهوية البصرية الذكي" ليكون مرجعك الأساسي قبل اعتماد ألوان علامتك التجارية.
-          </p>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed text-justify">
-            اختر مجال عملك وشخصية براندك (سواء كانت رسمية، ودودة، فاخرة، أو مبتكرة)، ودع الأداة تولّد لك توليفة ألوان متناسقة احترافية. تعتمد الأداة على قاعدة التوزيع العالمية في التصميم (60% للون الأساسي، 30% للون الثانوي، و10% للون التأكيدي) لضمان توازن مريح للعين، بالإضافة لاقتراح أفضل الخطوط العربية (مثل كايرو وتجوال) التي تتوافق مع شخصية هذه الألوان. يمكنك معاينة هذه الألوان فوراً على نماذج واقعية ككروت العمل، بوستات السوشيال ميديا، وواجهات المواقع لتتخيل النتيجة النهائية بدقة.
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-semibold">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>أداة مجانية — مُولّد لوحات الألوان</span>
+          </div>
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+            ألوان تتحدث{" "}
+            <span className="bg-gradient-to-l from-primary to-blue-400 bg-clip-text text-transparent">
+              بلغة جمهورك
+            </span>
+          </h1>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            اختر قطاعك وشخصية براندك — وسنولّد لك لوحة ألوان احترافية مبنية على علم سيكولوجية الألوان ومعايير التصميم العالمية.
           </p>
         </motion.div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        {/* Left Column: Interactive Controls */}
-        <div className="lg:col-span-5 bg-card border border-border/60 rounded-3xl p-6 sm:p-8 shadow-xl backdrop-blur-sm space-y-8">
-          
-          {/* Step 1: Industry */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold flex items-center gap-2 border-b border-border/50 pb-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/20 text-primary text-sm font-bold">1</span>
-              <span>ما هو قطاع أو مجال مشروعك؟</span>
-            </h3>
-            
-            <div className="grid grid-cols-1 gap-2">
-              {industries.map((ind) => {
-                const Icon = ind.icon
-                const isSelected = industry === ind.colorTheme
-                return (
-                  <button
-                    key={ind.colorTheme}
-                    onClick={() => setIndustry(ind.colorTheme)}
-                    className={`flex items-center gap-4 p-3 rounded-2xl border text-right transition-all duration-300 hover:bg-accent/40 ${
-                      isSelected 
-                        ? "border-primary bg-primary/5 text-foreground ring-1 ring-primary/45 shadow-sm" 
-                        : "border-border/60 bg-transparent text-muted-foreground"
-                    }`}
-                  >
-                    <div className={`p-2.5 rounded-xl ${isSelected ? 'bg-primary/20 text-primary' : 'bg-muted text-muted-foreground'}`}>
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-foreground text-sm">{ind.name}</div>
-                      <div className="text-xs text-muted-foreground mt-0.5">{ind.desc}</div>
-                    </div>
-                  </button>
-                )
-              })}
-            </div>
-          </div>
+        {/* ── Main Grid ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
 
-          {/* Step 2: Brand Personality */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold flex items-center gap-2 border-b border-border/50 pb-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/20 text-primary text-sm font-bold">2</span>
-              <span>ما هي شخصية أو طابع علامتك التجارية؟</span>
-            </h3>
-            
-            <div className="grid grid-cols-2 gap-2">
-              {personalities.map((pers) => {
-                const isSelected = personality === pers.value
-                return (
-                  <button
-                    key={pers.value}
-                    onClick={() => setPersonality(pers.value)}
-                    className={`p-3 rounded-2xl border text-right transition-all duration-300 hover:bg-accent/40 ${
-                      isSelected 
-                        ? "border-primary bg-primary/5 text-foreground ring-1 ring-primary/45 shadow-sm" 
-                        : "border-border/60 bg-transparent text-muted-foreground"
-                    }`}
-                  >
-                    <div className="font-bold text-foreground text-sm">{pers.name}</div>
-                    <div className="text-xs text-muted-foreground mt-1 leading-relaxed hidden sm:block">{pers.desc}</div>
-                  </button>
-                )
-              })}
-            </div>
-          </div>
+          {/* ── Left Panel: Controls ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-2 space-y-6"
+          >
 
-          {/* Step 3: Color Palette & Color Pickers */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between border-b border-border/50 pb-2">
-              <h3 className="text-lg font-bold flex items-center gap-2">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/20 text-primary text-sm font-bold">3</span>
-                <span>الألوان الناتجة (60-30-10)</span>
-              </h3>
-              <button
-                onClick={generateRandomPalette}
-                className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-accent text-xs font-semibold text-foreground hover:bg-accent/80 transition-colors"
-                title="توليد عشوائي"
-              >
-                <RefreshCw className="h-3 w-3" />
-                <span>عشوائي</span>
-              </button>
-            </div>
-
-            <div className="space-y-3">
-              {/* Primary Color Picker */}
-              <div className="flex items-center justify-between p-3 rounded-2xl bg-muted/30 border border-border/40">
-                <div className="flex items-center gap-3">
-                  <div className="relative h-10 w-10 rounded-xl overflow-hidden shadow-inner border border-black/10">
-                    <input 
-                      type="color" 
-                      value={colors.primary} 
-                      onChange={(e) => handleColorChange("primary", e.target.value)}
-                      className="absolute inset-0 cursor-pointer scale-150"
-                    />
-                  </div>
-                  <div>
-                    <span className="text-xs text-muted-foreground block">اللون الأساسي (60%)</span>
-                    <span className="font-bold text-sm select-all">{colors.primary.toUpperCase()}</span>
-                  </div>
-                </div>
-                <button 
-                  onClick={() => copyToClipboard(colors.primary, "primary")}
-                  className="p-2 rounded-xl hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {copiedColor === "primary" ? <Check className="h-4 w-4 text-emerald-500" /> : <Copy className="h-4 w-4" />}
-                </button>
+            {/* Industry */}
+            <div className="rounded-3xl border border-border/50 bg-card/60 backdrop-blur-sm p-6 space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
+                <h2 className="text-sm font-bold text-foreground">قطاع أو مجال مشروعك</h2>
               </div>
-
-              {/* Secondary Color Picker */}
-              <div className="flex items-center justify-between p-3 rounded-2xl bg-muted/30 border border-border/40">
-                <div className="flex items-center gap-3">
-                  <div className="relative h-10 w-10 rounded-xl overflow-hidden shadow-inner border border-black/10">
-                    <input 
-                      type="color" 
-                      value={colors.secondary} 
-                      onChange={(e) => handleColorChange("secondary", e.target.value)}
-                      className="absolute inset-0 cursor-pointer scale-150"
-                    />
-                  </div>
-                  <div>
-                    <span className="text-xs text-muted-foreground block">اللون الثانوي (30%)</span>
-                    <span className="font-bold text-sm select-all">{colors.secondary.toUpperCase()}</span>
-                  </div>
-                </div>
-                <button 
-                  onClick={() => copyToClipboard(colors.secondary, "secondary")}
-                  className="p-2 rounded-xl hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {copiedColor === "secondary" ? <Check className="h-4 w-4 text-emerald-500" /> : <Copy className="h-4 w-4" />}
-                </button>
-              </div>
-
-              {/* Accent Color Picker */}
-              <div className="flex items-center justify-between p-3 rounded-2xl bg-muted/30 border border-border/40">
-                <div className="flex items-center gap-3">
-                  <div className="relative h-10 w-10 rounded-xl overflow-hidden shadow-inner border border-black/10">
-                    <input 
-                      type="color" 
-                      value={colors.accent} 
-                      onChange={(e) => handleColorChange("accent", e.target.value)}
-                      className="absolute inset-0 cursor-pointer scale-150"
-                    />
-                  </div>
-                  <div>
-                    <span className="text-xs text-muted-foreground block">اللون التأكيدي (10%)</span>
-                    <span className="font-bold text-sm select-all">{colors.accent.toUpperCase()}</span>
-                  </div>
-                </div>
-                <button 
-                  onClick={() => copyToClipboard(colors.accent, "accent")}
-                  className="p-2 rounded-xl hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {copiedColor === "accent" ? <Check className="h-4 w-4 text-emerald-500" /> : <Copy className="h-4 w-4" />}
-                </button>
+              <div className="space-y-2">
+                {industries.map((ind) => {
+                  const active = industry === ind.theme
+                  return (
+                    <button
+                      key={ind.theme}
+                      onClick={() => setIndustry(ind.theme)}
+                      className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl border text-sm font-semibold transition-all duration-200 text-right ${
+                        active
+                          ? "border-primary/60 bg-primary/8 text-foreground shadow-sm ring-1 ring-primary/20"
+                          : "border-border/50 bg-transparent text-muted-foreground hover:border-border hover:bg-muted/40 hover:text-foreground"
+                      }`}
+                    >
+                      <span className="text-lg shrink-0">{ind.emoji}</span>
+                      <span className="flex-1">{ind.label}</span>
+                      {active && (
+                        <motion.div
+                          layoutId="industry-check"
+                          className="w-4 h-4 rounded-full bg-primary flex items-center justify-center shrink-0"
+                        >
+                          <Check className="h-2.5 w-2.5 text-white" />
+                        </motion.div>
+                      )}
+                    </button>
+                  )
+                })}
               </div>
             </div>
-          </div>
 
-          {/* Step 4: Font Recommendation */}
-          <div className="space-y-3 p-4 rounded-2xl bg-primary/5 border border-primary/20">
-            <h4 className="font-bold text-sm text-primary flex items-center gap-1.5">
-              <Sparkles className="h-4 w-4" />
-              <span>الخطوط المقترحة للهوية:</span>
-            </h4>
-            <div className="text-sm">
-              <div className="flex justify-between items-center mb-1">
-                <span className="text-muted-foreground text-xs">العناوين الرئيسية:</span>
-                <span className="font-bold text-foreground" style={{ fontFamily: selectedFonts.heading }}>{selectedFonts.heading}</span>
+            {/* Personality */}
+            <div className="rounded-3xl border border-border/50 bg-card/60 backdrop-blur-sm p-6 space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
+                <h2 className="text-sm font-bold text-foreground">شخصية علامتك التجارية</h2>
               </div>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-muted-foreground text-xs">الفقرات والنصوص:</span>
-                <span className="font-semibold text-foreground" style={{ fontFamily: selectedFonts.body }}>{selectedFonts.body}</span>
+              <div className="grid grid-cols-2 gap-2">
+                {personalities.map((pers) => {
+                  const active = personality === pers.value
+                  return (
+                    <button
+                      key={pers.value}
+                      onClick={() => setPersonality(pers.value)}
+                      className={`flex flex-col items-start gap-1 p-3.5 rounded-2xl border text-right transition-all duration-200 ${
+                        active
+                          ? "border-primary/60 bg-primary/8 ring-1 ring-primary/20"
+                          : "border-border/50 bg-transparent hover:border-border hover:bg-muted/40"
+                      }`}
+                    >
+                      <span className="text-xl">{pers.emoji}</span>
+                      <span className={`text-xs font-bold leading-tight ${active ? "text-foreground" : "text-muted-foreground"}`}>{pers.label}</span>
+                      <span className="text-[10px] text-muted-foreground font-mono">{pers.sublabel}</span>
+                    </button>
+                  )
+                })}
               </div>
-              <p className="text-xs text-muted-foreground mt-2 border-t border-primary/10 pt-2 leading-relaxed">
-                {selectedFonts.desc}
-              </p>
             </div>
-          </div>
 
-          {/* Lead Capture CTA */}
-          <div className="pt-2">
+            {/* CTA */}
             <a
-              href={whatsappUrl}
+              href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-base shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+              className="flex items-center justify-center gap-2.5 w-full py-4 rounded-2xl font-bold text-sm text-white shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl active:scale-[0.98]"
+              style={{ background: "linear-gradient(135deg, #25D366 0%, #128C7E 100%)" }}
             >
-              <Send className="h-5 w-5" />
-              <span>أرسل هذه اللوحة للتصميم عبر واتساب</span>
+              <Send className="h-4 w-4" />
+              <span>أرسل اللوحة عبر واتساب</span>
             </a>
-            <span className="block text-center text-[10px] text-muted-foreground mt-2">
-              سوف يفتح الرابط محادثة مباشرة مع مستشاري تاج ستوديو بالخيارات المحددة لتجهيز عرض سعر مجاني لمشروعك.
-            </span>
-          </div>
 
-        </div>
+          </motion.div>
 
-        {/* Right Column: Live Mockups Preview */}
-        <div className="lg:col-span-7 space-y-6">
-          {/* Tabs Selector */}
-          <div className="flex p-1.5 rounded-2xl bg-card border border-border/60 shadow-md">
-            <button
-              onClick={() => setActiveTab("web")}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all duration-300 ${
-                activeTab === "web" 
-                  ? "bg-primary text-white shadow-sm" 
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <Globe className="h-4 w-4" />
-              <span>واجهة موقع إلكتروني</span>
-            </button>
-            
-            <button
-              onClick={() => setActiveTab("card")}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all duration-300 ${
-                activeTab === "card" 
-                  ? "bg-primary text-white shadow-sm" 
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <CreditCard className="h-4 w-4" />
-              <span>كارت عمل (Business Card)</span>
-            </button>
+          {/* ── Right Panel: Colors + Preview ── */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-3 space-y-6"
+          >
 
-            <button
-              onClick={() => setActiveTab("post")}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all duration-300 ${
-                activeTab === "post" 
-                  ? "bg-primary text-white shadow-sm" 
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <Instagram className="h-4 w-4" />
-              <span>بوست سوشيال ميديا</span>
-            </button>
-          </div>
-
-          {/* Visual Previews Window */}
-          <div className="bg-card border border-border/60 rounded-3xl shadow-xl overflow-hidden min-h-[500px] flex flex-col">
-            {/* Window bar */}
-            <div className="flex items-center justify-between px-6 py-4 bg-muted/20 border-b border-border/60">
-              <div className="flex gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-rose-500/80"></span>
-                <span className="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                <span className="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            {/* Color Swatches */}
+            <div className="rounded-3xl border border-border/50 bg-card/60 backdrop-blur-sm p-6 space-y-5">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
+                  <h2 className="text-sm font-bold text-foreground">لوحة الألوان الناتجة</h2>
+                </div>
+                <button
+                  onClick={generateRandom}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-muted hover:bg-muted/80 text-xs font-semibold text-muted-foreground hover:text-foreground transition-all"
+                >
+                  <Shuffle className="h-3.5 w-3.5" />
+                  <span>عشوائي</span>
+                </button>
               </div>
-              <span className="text-xs text-muted-foreground font-semibold">
-                معاينة لوحة الهوية البصرية الحية
-              </span>
-              <div className="w-12"></div> {/* Spacer to center title */}
+
+              {/* Big palette banner */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`${colors.primary}-${colors.secondary}-${colors.accent}`}
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
+                  transition={{ duration: 0.25 }}
+                  className="h-20 rounded-2xl overflow-hidden flex shadow-lg"
+                >
+                  <div className="flex-[6] relative" style={{ background: colors.primary }}>
+                    <span className="absolute bottom-2 right-3 text-[10px] text-white/70 font-bold">60%</span>
+                  </div>
+                  <div className="flex-[3] relative" style={{ background: colors.secondary }}>
+                    <span className="absolute bottom-2 right-3 text-[10px] text-white/70 font-bold">30%</span>
+                  </div>
+                  <div className="flex-[1] relative" style={{ background: colors.accent }}>
+                    <span className="absolute bottom-2 right-1 text-[10px] text-white/70 font-bold rotate-90 origin-left" style={{writingMode:"vertical-rl"}}>10%</span>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Three swatches */}
+              <div className="grid grid-cols-3 gap-3">
+                <ColorSwatch
+                  color={colors.primary} label="اللون الأساسي" pct="60%"
+                  colorKey="primary" copiedColor={copiedColor}
+                  onCopy={copyToClipboard} onChange={handleColorChange}
+                />
+                <ColorSwatch
+                  color={colors.secondary} label="اللون الثانوي" pct="30%"
+                  colorKey="secondary" copiedColor={copiedColor}
+                  onCopy={copyToClipboard} onChange={handleColorChange}
+                />
+                <ColorSwatch
+                  color={colors.accent} label="اللون التأكيدي" pct="10%"
+                  colorKey="accent" copiedColor={copiedColor}
+                  onCopy={copyToClipboard} onChange={handleColorChange}
+                />
+              </div>
+
+              {/* Font recommendation strip */}
+              <div className="flex items-center justify-between px-4 py-3 rounded-2xl bg-muted/40 border border-border/30">
+                <div className="flex items-center gap-2 text-primary">
+                  <Type className="h-3.5 w-3.5" />
+                  <span className="text-xs font-bold">الخطوط المقترحة</span>
+                </div>
+                <div className="text-right text-xs">
+                  <span className="font-bold text-foreground">{selectedFonts.heading}</span>
+                  <span className="text-muted-foreground mx-2">·</span>
+                  <span className="text-muted-foreground">{selectedFonts.body}</span>
+                </div>
+              </div>
             </div>
 
-            {/* Content Preview Rendering */}
-            <div className="flex-1 p-6 sm:p-8 flex items-center justify-center bg-muted/10 relative overflow-hidden">
-              
-              {/* Tab 1: Web landing page preview */}
-              {activeTab === "web" && (
-                <motion.div
-                  key="web"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-full max-w-xl rounded-2xl bg-white dark:bg-zinc-900 border border-border shadow-2xl overflow-hidden"
-                >
-                  {/* Miniature Browser Navbar */}
-                  <div className="px-4 py-3 border-b border-border flex items-center justify-between" style={{ backgroundColor: colors.primary + '10' }}>
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded-full" style={{ backgroundColor: colors.secondary }}></div>
-                      <span className="text-xs font-black" style={{ color: colors.primary }}>علامتي</span>
-                    </div>
-                    <div className="flex gap-3 text-[10px] font-semibold text-muted-foreground">
-                      <span>الرئيسية</span>
-                      <span>خدماتنا</span>
-                      <span>تواصل معنا</span>
-                    </div>
-                  </div>
+            {/* Live Preview */}
+            <div className="rounded-3xl border border-border/50 bg-card/60 backdrop-blur-sm overflow-hidden">
+              {/* Tab bar */}
+              <div className="flex border-b border-border/40 bg-muted/20 px-4 pt-4 gap-1">
+                {[
+                  { id: "web" as const, label: "موقع إلكتروني", icon: Globe },
+                  { id: "card" as const, label: "كارت عمل", icon: CreditCard },
+                  { id: "post" as const, label: "بوست سوشيال", icon: Instagram },
+                ].map(({ id, label, icon: Icon }) => (
+                  <button
+                    key={id}
+                    onClick={() => setActiveTab(id)}
+                    className={`flex items-center gap-1.5 px-4 py-2 rounded-t-xl text-xs font-semibold border-b-2 transition-all duration-200 ${
+                      activeTab === id
+                        ? "border-primary text-primary bg-card"
+                        : "border-transparent text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                    {label}
+                  </button>
+                ))}
+              </div>
 
-                  {/* Browser Hero Content */}
-                  <div className="p-8 space-y-6 text-center">
-                    <div className="space-y-3">
-                      <h3 
-                        className="text-2xl sm:text-3xl font-black leading-tight" 
-                        style={{ color: colors.primary, fontFamily: selectedFonts.heading }}
-                      >
-                        نحن نصنع القيمة الحقيقية لمشروعك
-                      </h3>
-                      <p 
-                        className="text-xs text-muted-foreground max-w-sm mx-auto leading-relaxed"
-                        style={{ fontFamily: selectedFonts.body }}
-                      >
-                        دليل متكامل لتطوير الأعمال بأعلى جودة وتصميم يهدف لزيادة ثقة عملائك وبناء حضور متناسق في السوق.
-                      </p>
-                    </div>
+              {/* Preview canvas */}
+              <div className="p-6 sm:p-8 flex items-center justify-center min-h-[380px] relative overflow-hidden bg-muted/5">
 
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-                      {/* Secondary button */}
-                      <button 
-                        className="px-4 py-2 rounded-xl text-xs font-bold border transition-transform hover:scale-[1.02]"
-                        style={{ 
-                          color: colors.primary, 
-                          borderColor: colors.secondary, 
-                          fontFamily: selectedFonts.body 
-                        }}
-                      >
-                        قراءة المزيد
-                      </button>
-                      
-                      {/* Main action button (Accent Color) */}
-                      <button 
-                        className="px-4 py-2 rounded-xl text-xs font-bold text-white shadow-md transition-all hover:opacity-90 hover:scale-[1.02]"
-                        style={{ 
-                          backgroundColor: colors.accent, 
-                          fontFamily: selectedFonts.body 
-                        }}
-                      >
-                        احجز موعداً الآن
-                      </button>
-                    </div>
+                {/* macOS dots */}
+                <div className="absolute top-4 right-4 flex gap-1.5 z-10">
+                  <span className="w-2.5 h-2.5 rounded-full bg-rose-400/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
+                </div>
 
-                    {/* Accent border highlight */}
-                    <div className="pt-4 flex justify-center">
-                      <div className="flex items-center gap-6 p-3 rounded-xl bg-muted/40 border-r-4" style={{ borderRightColor: colors.accent }}>
-                        <div className="text-right">
-                          <span className="block text-[10px] text-muted-foreground">عدد المستخدمين</span>
-                          <span className="text-sm font-bold" style={{ color: colors.primary }}>+10,000 عميل</span>
+                <AnimatePresence mode="wait">
+
+                  {/* ── Web Preview ── */}
+                  {activeTab === "web" && (
+                    <motion.div
+                      key="web"
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -12 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl border border-black/5"
+                      style={{ background: "#fff" }}
+                    >
+                      {/* Navbar */}
+                      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100" style={{ background: colors.primary + "10" }}>
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-4 h-4 rounded-md" style={{ background: colors.primary }} />
+                          <span className="text-[11px] font-black" style={{ color: colors.primary }}>علامتي</span>
+                        </div>
+                        <div className="flex gap-3 text-[9px] font-semibold text-gray-400">
+                          <span>الرئيسية</span><span>الخدمات</span><span>تواصل</span>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Tab 2: Business Card Preview */}
-              {activeTab === "card" && (
-                <motion.div
-                  key="card"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-full flex flex-col md:flex-row gap-6 justify-center items-center max-w-2xl"
-                >
-                  {/* Card Front */}
-                  <div 
-                    className="w-[320px] h-[190px] rounded-2xl p-6 relative shadow-2xl flex flex-col justify-between overflow-hidden border border-black/5"
-                    style={{ backgroundColor: colors.primary, color: '#ffffff' }}
-                  >
-                    {/* Background abstract element (secondary color) */}
-                    <div 
-                      className="absolute -top-10 -left-10 w-24 h-24 rounded-full opacity-20 blur-xl"
-                      style={{ backgroundColor: colors.secondary }}
-                    ></div>
-                    {/* Accent strip */}
-                    <div 
-                      className="absolute top-0 right-0 w-2 h-full"
-                      style={{ backgroundColor: colors.accent }}
-                    ></div>
-
-                    <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: colors.accent }}></div>
-                      </div>
-                      <span className="text-xs font-bold tracking-wider" style={{ fontFamily: selectedFonts.heading }}>العلامة التجارية</span>
-                    </div>
-
-                    <div className="space-y-1">
-                      <span className="text-[9px] text-white/60 block">المدير التنفيذي</span>
-                      <h4 className="text-base font-bold" style={{ fontFamily: selectedFonts.heading }}>أ. محمد زهران</h4>
-                      <p className="text-[10px] text-white/80 leading-relaxed" style={{ fontFamily: selectedFonts.body }}>
-                        تطوير الهوية البصرية وإدارة السوشيال ميديا للمراكز الطبية والمطاعم
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Card Back */}
-                  <div 
-                    className="w-[320px] h-[190px] rounded-2xl relative shadow-2xl flex items-center justify-center overflow-hidden border border-black/5"
-                    style={{ backgroundColor: '#ffffff', color: colors.primary }}
-                  >
-                    {/* Abstract circles */}
-                    <div 
-                      className="absolute -bottom-8 -right-8 w-20 h-20 rounded-full opacity-10"
-                      style={{ backgroundColor: colors.secondary }}
-                    ></div>
-                    
-                    <div className="text-center space-y-3">
-                      <div className="flex items-center justify-center gap-2">
-                        <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ backgroundColor: colors.primary }}>
-                          <div className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: colors.accent }}></div>
+                      {/* Hero */}
+                      <div className="px-6 py-8 text-center space-y-4">
+                        <div className="inline-block px-3 py-1 rounded-full text-[9px] font-bold" style={{ background: colors.accent + "20", color: colors.accent }}>
+                          خدمات احترافية ✦
                         </div>
-                        <span className="text-sm font-black" style={{ color: colors.primary, fontFamily: selectedFonts.heading }}>علامتي</span>
+                        <h3 className="text-xl font-black leading-tight" style={{ color: colors.primary, fontFamily: selectedFonts.heading }}>
+                          نحن نصنع هوية تجارية تدوم
+                        </h3>
+                        <p className="text-[11px] text-gray-400 leading-relaxed" style={{ fontFamily: selectedFonts.body }}>
+                          من الشعار إلى التصميم الشامل — كل شيء يعبر عن قيمة علامتك التجارية الحقيقية.
+                        </p>
+                        <div className="flex gap-2 justify-center pt-1">
+                          <button className="px-4 py-2 rounded-xl text-white text-[10px] font-bold shadow-md" style={{ background: colors.accent }}>
+                            احجز موعداً
+                          </button>
+                          <button className="px-4 py-2 rounded-xl text-[10px] font-bold border" style={{ color: colors.primary, borderColor: colors.secondary }}>
+                            قراءة المزيد
+                          </button>
+                        </div>
                       </div>
-                      
-                      <div className="space-y-1 text-center">
-                        <span className="text-[9px] text-muted-foreground block">البريد الإلكتروني: info@brand.com</span>
-                        <span className="text-[9px] text-muted-foreground block">الموقع الإلكتروني: www.brand.com</span>
+                      {/* Stats bar */}
+                      <div className="flex border-t border-gray-100 divide-x divide-gray-100 text-center">
+                        {[["٢٠٠+", "عميل"], ["٩٨٪", "رضا"], ["٥ سنوات", "خبرة"]].map(([n, l]) => (
+                          <div key={l} className="flex-1 py-3">
+                            <p className="text-sm font-black" style={{ color: colors.primary }}>{n}</p>
+                            <p className="text-[9px] text-gray-400">{l}</p>
+                          </div>
+                        ))}
                       </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
+                    </motion.div>
+                  )}
 
-              {/* Tab 3: Social Media Post Preview */}
-              {activeTab === "post" && (
-                <motion.div
-                  key="post"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-[320px] h-[320px] rounded-2xl shadow-2xl bg-white dark:bg-zinc-900 border border-border overflow-hidden flex flex-col justify-between p-6 relative"
-                >
-                  {/* Decorative accent shape in top corner */}
-                  <div 
-                    className="absolute -top-16 -left-16 w-36 h-36 rounded-full opacity-10"
-                    style={{ backgroundColor: colors.secondary }}
-                  ></div>
-                  
-                  {/* Top Bar (Logo & Profile) */}
-                  <div className="flex items-center justify-between z-10">
-                    <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary }}>
-                        <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: colors.accent }}></div>
+                  {/* ── Business Card Preview ── */}
+                  {activeTab === "card" && (
+                    <motion.div
+                      key="card"
+                      initial={{ opacity: 0, rotateY: -10 }}
+                      animate={{ opacity: 1, rotateY: 0 }}
+                      exit={{ opacity: 0, rotateY: 10 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="flex flex-col sm:flex-row gap-4 items-center"
+                      style={{ perspective: "800px" }}
+                    >
+                      {/* Front */}
+                      <div
+                        className="w-72 h-40 rounded-2xl p-5 flex flex-col justify-between relative overflow-hidden shadow-2xl"
+                        style={{ background: colors.primary }}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
+                        <div className="absolute -top-8 -left-8 w-24 h-24 rounded-full opacity-20" style={{ background: colors.secondary }} />
+                        <div className="absolute top-0 left-0 w-1.5 h-full rounded-l-2xl" style={{ background: colors.accent }} />
+                        <div className="flex items-center gap-2 z-10">
+                          <div className="w-7 h-7 rounded-lg bg-white/15 flex items-center justify-center">
+                            <div className="w-3 h-3 rounded-full" style={{ background: colors.accent }} />
+                          </div>
+                          <span className="text-[11px] text-white font-black tracking-widest" style={{ fontFamily: selectedFonts.heading }}>
+                            العلامة التجارية
+                          </span>
+                        </div>
+                        <div className="z-10 space-y-1">
+                          <p className="text-white/50 text-[9px]">المدير التنفيذي</p>
+                          <h4 className="text-white text-base font-bold" style={{ fontFamily: selectedFonts.heading }}>أ. محمد زهران</h4>
+                          <p className="text-white/70 text-[9px]" style={{ fontFamily: selectedFonts.body }}>تطوير الهوية البصرية والسوشيال ميديا</p>
+                        </div>
                       </div>
-                      <span className="text-[10px] font-bold" style={{ color: colors.primary, fontFamily: selectedFonts.heading }}>حساب العيادة</span>
-                    </div>
-                    <span className="text-[8px] text-muted-foreground" style={{ fontFamily: selectedFonts.body }}>نصائح طبية</span>
-                  </div>
+                      {/* Back */}
+                      <div
+                        className="w-72 h-40 rounded-2xl p-5 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl border border-border"
+                        style={{ background: "#fff" }}
+                      >
+                        <div className="absolute -bottom-6 -right-6 w-20 h-20 rounded-full opacity-10" style={{ background: colors.secondary }} />
+                        <div className="space-y-2 text-center">
+                          <div className="flex items-center justify-center gap-1.5">
+                            <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ background: colors.primary }}>
+                              <div className="w-3.5 h-3.5 rounded-full" style={{ background: colors.accent }} />
+                            </div>
+                            <span className="text-sm font-black" style={{ color: colors.primary, fontFamily: selectedFonts.heading }}>علامتي</span>
+                          </div>
+                          <p className="text-[9px] text-gray-400">info@brand.com</p>
+                          <p className="text-[9px] text-gray-400">www.brand.com</p>
+                          <div className="mt-1 h-px w-12 mx-auto rounded" style={{ background: colors.accent }} />
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
 
-                  {/* Main Slogan Body */}
-                  <div className="my-auto py-4 space-y-3 z-10">
-                    <h3 
-                      className="text-lg font-black leading-snug text-right"
-                      style={{ color: colors.primary, fontFamily: selectedFonts.heading }}
+                  {/* ── Social Post Preview ── */}
+                  {activeTab === "post" && (
+                    <motion.div
+                      key="post"
+                      initial={{ opacity: 0, scale: 0.93 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.93 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="w-[300px] h-[300px] rounded-2xl shadow-2xl overflow-hidden flex flex-col relative border border-black/5"
+                      style={{ background: "#fff" }}
                     >
-                      كيف تحافظ على هدوء أعصابك أثناء العمل اليومي؟
-                    </h3>
-                    <p 
-                      className="text-[10px] text-muted-foreground leading-relaxed text-right"
-                      style={{ fontFamily: selectedFonts.body }}
-                    >
-                      سيكولوجية الألوان وتصميم بيئتك المحيطة تلعب دوراً مهماً في صحتك النفسية...
-                    </p>
-                  </div>
+                      {/* Top accent strip */}
+                      <div className="h-1.5 w-full" style={{ background: `linear-gradient(to left, ${colors.primary}, ${colors.accent})` }} />
 
-                  {/* Bottom Strip (CTA & Brand Info) */}
-                  <div className="flex items-center justify-between border-t border-muted pt-4 z-10">
-                    <span className="text-[8px] text-muted-foreground">تاج ستوديو للتصميم</span>
-                    <button 
-                      className="px-3 py-1.5 rounded-lg text-[9px] font-bold text-white transition-transform hover:scale-105"
-                      style={{ 
-                        backgroundColor: colors.accent, 
-                        fontFamily: selectedFonts.body 
-                      }}
-                    >
-                      اقرأ المزيد
-                    </button>
-                  </div>
-                </motion.div>
-              )}
+                      <div className="flex-1 p-5 flex flex-col justify-between">
+                        {/* Header */}
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="w-7 h-7 rounded-xl flex items-center justify-center" style={{ background: colors.primary }}>
+                              <div className="w-3 h-3 rounded-full" style={{ background: colors.accent }} />
+                            </div>
+                            <span className="text-[11px] font-black" style={{ color: colors.primary, fontFamily: selectedFonts.heading }}>
+                              حساب العيادة
+                            </span>
+                          </div>
+                          <span className="text-[9px] text-gray-300 bg-gray-50 px-2 py-0.5 rounded-full">نصائح طبية</span>
+                        </div>
 
+                        {/* Content */}
+                        <div className="space-y-2">
+                          <div className="w-8 h-1 rounded-full" style={{ background: colors.accent }} />
+                          <h3 className="text-base font-black leading-snug" style={{ color: colors.primary, fontFamily: selectedFonts.heading }}>
+                            كيف تحافظ على هدوء أعصابك أثناء العمل اليومي؟
+                          </h3>
+                          <p className="text-[10px] text-gray-400 leading-relaxed" style={{ fontFamily: selectedFonts.body }}>
+                            سيكولوجية الألوان وتصميم بيئتك المحيطة تلعب دوراً مهماً في صحتك النفسية اليومية.
+                          </p>
+                        </div>
+
+                        {/* Footer */}
+                        <div className="flex items-center justify-between border-t border-gray-50 pt-3">
+                          <span className="text-[9px] text-gray-300">تاج ستوديو للتصميم</span>
+                          <button
+                            className="px-3 py-1.5 rounded-lg text-[9px] text-white font-bold"
+                            style={{ background: colors.accent }}
+                          >
+                            اقرأ المزيد
+                          </button>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+
+                </AnimatePresence>
+              </div>
             </div>
-          </div>
+
+          </motion.div>
         </div>
 
+        {/* ── Tips Section ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="rounded-3xl border border-border/50 bg-card/40 backdrop-blur-sm p-8"
+        >
+          <div className="flex items-center gap-2 mb-8">
+            <div className="p-2 rounded-xl bg-primary/10">
+              <Sparkles className="h-5 w-5 text-primary" />
+            </div>
+            <h2 className="text-xl font-bold">كيف تستخدم لوحة الألوان باحترافية؟</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              {
+                title: "قاعدة 60-30-10",
+                body: "60% للون الأساسي في الخلفيات والمساحات الكبرى • 30% للثانوي في العناوين والأيقونات • 10% للتأكيدي فقط في أزرار الاتصال لجذب الانتباه."
+              },
+              {
+                title: "التباين والقراءة",
+                body: "تأكد من وجود تباين كافٍ بين النص والخلفية وفق معايير WCAG. للعربية، اضبط تباعد الأسطر بين 1.6 و 1.8 لمنع تداخل الحروف."
+              },
+              {
+                title: "قوالب Canva مخصصة",
+                body: "بعد استلام هويتك البصرية من تاج ستوديو، نعد لك قوالب Canva جاهزة بألوانك وخطوطك الثابتة لإنتاج محتواك اليومي بسهولة."
+              }
+            ].map((tip, i) => (
+              <div key={i} className="p-5 rounded-2xl bg-muted/30 border border-border/30 space-y-2">
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center text-primary text-[10px] font-black">{i + 1}</div>
+                  <h3 className="font-bold text-sm">{tip.title}</h3>
+                </div>
+                <p className="text-muted-foreground text-xs leading-relaxed">{tip.body}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
       </div>
-
-      {/* Guide & Tips Section */}
-      <div className="max-w-7xl mx-auto mt-16 bg-card border border-border/60 rounded-3xl p-8 space-y-6">
-        <h3 className="text-xl font-bold flex items-center gap-2 text-primary">
-          <Palette className="h-5 w-5" />
-          <span>كيف تستخدم لوحة الألوان الخاصة بك باحترافية؟</span>
-        </h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-          <div className="space-y-2 p-4 rounded-2xl bg-muted/30 border border-border/30">
-            <h4 className="font-bold text-foreground">قاعدة التوزيع 60-30-10:</h4>
-            <p className="text-muted-foreground text-xs leading-relaxed">
-              استخدم **اللون الأساسي (60%)** في الخلفيات والمساحات الكبرى لتمنح العين راحة واسترخاء. بينما استخدم **اللون الثانوي (30%)** في العناوين والرموز والقرطاسية لتثبت شخصية البراند، وخصص **اللون التأكيدي (10%)** فقط لأزرار الاتصال (CTA) والمعلومات الحرجة لجذب الانتباه.
-            </p>
-          </div>
-
-          <div className="space-y-2 p-4 rounded-2xl bg-muted/30 border border-border/30">
-            <h4 className="font-bold text-foreground">الخط واللون وارتفاع الأسطر:</h4>
-            <p className="text-muted-foreground text-xs leading-relaxed">
-              تأكد من وجود تباين (Contrast) كافٍ بين لون النص ولون الخلفية لضمان القراءة السهلة. بالنسبة للمحتوى العربي، اضبط تباعد الأسطر (line-height) بين **1.6 إلى 1.8** لتفادي تداخل الحروف العربية.
-            </p>
-          </div>
-
-          <div className="space-y-2 p-4 rounded-2xl bg-muted/30 border border-border/30">
-            <h4 className="font-bold text-foreground">تصميم قوالب Canva مخصصة:</h4>
-            <p className="text-muted-foreground text-xs leading-relaxed">
-              بمجرد استلام هويتك البصرية من تاج ستوديو، نعد لك قوالب Canva جاهزة ومخصصة بألوانك وخطوطك الثابتة، لتتمكن من إنتاج محتواك اليومي بسهولة وسرعة مع الحفاظ التام على هوية البراند.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
     </div>
   )
 }
