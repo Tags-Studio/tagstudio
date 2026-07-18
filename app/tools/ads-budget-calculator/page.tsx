@@ -107,7 +107,7 @@ function calculateMetrics(budg: number, plat: string, gl: string, ind: string, s
   return { impressions, clicks, conversions, cpc: effCPC, cpm: effCPM, cpa: effCPA, ctr: effCTR, cvr: effCVR }
 }
 
-function DonutChart({ data }: { data: [number, number, number] }) {
+function DonutChart({ data, budget, pulse }: { data: [number, number, number], budget: number, pulse: boolean }) {
   const r = 40
   const circ = 2 * Math.PI * r
   
@@ -117,27 +117,62 @@ function DonutChart({ data }: { data: [number, number, number] }) {
     const color = i === 0 ? "var(--blue)" : i === 1 ? "var(--green)" : "var(--pink)"
     const strokeDasharray = `${len} ${circ - len}`
     const strokeDashoffset = -offset
+    
+    // Calculate angle for text placement
+    const angleStart = (offset / circ) * 360
+    const angleSweep = (len / circ) * 360
+    const angleMid = angleStart + angleSweep / 2
+    
+    // The angle in radians is (angleMid - 90) * PI / 180 to start from top
+    const rad = (angleMid - 90) * Math.PI / 180
+    const tx = 50 + r * Math.cos(rad)
+    const ty = 50 + r * Math.sin(rad)
+
     offset += len
+
     return (
-      <circle
-        key={i}
-        r={r} cx="50" cy="50"
-        fill="transparent"
-        stroke={color}
-        strokeWidth="16"
-        strokeDasharray={strokeDasharray}
-        strokeDashoffset={strokeDashoffset}
-        style={{ transition: "all 1s cubic-bezier(0.4, 0, 0.2, 1)" }}
-        transform="rotate(-90 50 50)"
-      />
+      <g key={i}>
+        <circle
+          r={r} cx="50" cy="50"
+          fill="transparent"
+          stroke={color}
+          strokeWidth="16"
+          strokeDasharray={strokeDasharray}
+          strokeDashoffset={strokeDashoffset}
+          style={{ transition: "all 1s cubic-bezier(0.4, 0, 0.2, 1)" }}
+          transform="rotate(-90 50 50)"
+        />
+        {val > 0 && (
+          <text 
+            x={tx} y={ty} 
+            fill="#ffffff" 
+            fontSize="5.5" 
+            fontWeight="bold" 
+            fontFamily="'DM Sans', sans-serif"
+            textAnchor="middle" 
+            dominantBaseline="central"
+            style={{ pointerEvents: "none" }}
+          >
+            {val}%
+          </text>
+        )}
+      </g>
     )
   })
 
   return (
-    <svg width="160" height="160" viewBox="0 0 100 100" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.08))" }}>
-      <circle r={r} cx="50" cy="50" fill="transparent" stroke="var(--surface-3)" strokeWidth="16" />
-      {segments}
-    </svg>
+    <div className="relative flex items-center justify-center">
+      <svg width="180" height="180" viewBox="0 0 100 100" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.08))" }}>
+        <circle r={r} cx="50" cy="50" fill="transparent" stroke="var(--surface-3)" strokeWidth="16" />
+        {segments}
+      </svg>
+      <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none mt-1">
+        <div className={`font-dm font-bold text-xl ${pulse ? "nupd inline-block" : "inline-block"}`} style={{ color: "var(--blue)", lineHeight: 1 }}>
+          ${budget.toLocaleString("en")}
+        </div>
+        <div className="text-[10px] font-medium mt-1" style={{ color: "var(--txt3)" }}>إجمالي الميزانية</div>
+      </div>
+    </div>
   )
 }
 
@@ -412,7 +447,7 @@ export default function AdsBudgetCalculator() {
                     {/* Funnel Donut */}
                     <div className="ads-card p-6 flex flex-col items-center justify-center">
                       <div className="text-xs font-medium mb-4" style={{ color: "var(--txt3)" }}>توزيع الميزانية على القمع</div>
-                      <DonutChart data={FUNNEL[goal]} />
+                      <DonutChart data={FUNNEL[goal]} budget={budget} pulse={pulse} />
                       <div className="flex flex-wrap justify-center gap-4 mt-5">
                         <div className="flex items-center gap-2 text-[11px]" style={{ color: "var(--txt2)" }}><span className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--blue)" }}></span> أعلى القمع</div>
                         <div className="flex items-center gap-2 text-[11px]" style={{ color: "var(--txt2)" }}><span className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--green)" }}></span> منتصف القمع</div>
