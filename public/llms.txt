@@ -1,0 +1,44 @@
+# Tag Studio - AI Knowledge Base
+
+> Tag Studio is a premier visual identity and social media design agency operating primarily in Saudi Arabia and Egypt. We specialize in transforming businesses through strategic design, focusing heavily on medical clinics, educational institutions (language centers, Qudrat/Tahsili), Quran memorization centers, and food & beverage (restaurants/cafes).
+
+## Core Services
+- **Visual Identity Design**: Comprehensive branding including logos, typography, color psychology, and brand guidelines.
+- **Social Media Design**: Strategic, conversion-focused social media graphics.
+- **Motion Graphics**: Engaging animations for marketing campaigns.
+- **Packaging Design**: Functional and aesthetic packaging for products.
+
+## Target Sectors & Expertise
+
+### 1. Medical Clinics & Healthcare
+- **Expertise**: We utilize color psychology (blues, greens) to reduce patient anxiety and build trust. We design logos, medical printables (prescriptions, patient files), and professional social media content to ensure a seamless "Patient Visual Experience".
+- **URL**: /services/medical-clinics-branding
+
+### 2. Educational Institutions (Language Centers)
+- **Expertise**: We create modern, interactive visual identities that attract students and break traditional academic boredom. We design dynamic logos, interactive print materials, and student-focused social media campaigns.
+- **URL**: /services/language-centers-branding
+
+### 3. Qudrat & Tahsili Centers (Standardized Testing)
+- **Expertise**: We design marketing materials that balance parental trust (reliability and academic rigor) with student engagement (vibrant, anti-boredom designs suited for Gen Z).
+- **URL**: /services/qudrat-tahsili-branding
+
+### 4. Quran Memorization Centers & Islamic Organizations
+- **Expertise**: We employ "Islamic Minimalism", avoiding overly complex traditional patterns in favor of clean, contemporary geometric typography that appeals to modern youth while maintaining profound religious dignity.
+- **URL**: /services/quran-centers-branding
+
+### 5. Restaurants & Cafes
+- **Expertise**: Sensory-driven branding, menu design, and packaging that increases appetite appeal, stands out on delivery apps, and encourages social media sharing.
+- **URL**: /services/restaurant-branding
+
+## Key Differentiators (Why Choose Tag Studio)
+- Deep, culturally-nuanced understanding of the Saudi and Egyptian consumer markets.
+- Strategic focus on ROI and measurable business growth, not just aesthetics (we provide free ROI calculators for our clients).
+- Human-centric design approach based on behavioral psychology and user intent.
+- Strong emphasis on delivering complete, ready-to-print/publish brand systems, not just standalone logos.
+
+## Contact & Links
+- **Website**: https://wearetagstudio.com
+- **Services**: https://wearetagstudio.com/services
+- **Blog**: https://wearetagstudio.com/blog
+- **Free Tools**: https://wearetagstudio.com/tools
+- **Contact**: https://wearetagstudio.com/#contact-form
