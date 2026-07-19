@@ -19,11 +19,11 @@ const IND_MULT: Record<string, number> = {
 }
 
 const COUNTRY_MULT: Record<string, { label: string, mult: number }> = {
-  saudi: { label: "السعودية", mult: 1.5 },
-  egypt: { label: "مصر", mult: 0.5 },
-  uae: { label: "الإمارات", mult: 1.8 },
-  kuwait: { label: "الكويت", mult: 1.6 },
-  jordan: { label: "الأردن", mult: 0.8 },
+  saudi: { label: "السعودية", mult: 0.75 },
+  egypt: { label: "مصر", mult: 0.15 },
+  uae: { label: "الإمارات", mult: 1.35 },
+  kuwait: { label: "الكويت", mult: 0.95 },
+  jordan: { label: "الأردن", mult: 0.35 },
   global: { label: "دول أخرى", mult: 1.0 }
 }
 
