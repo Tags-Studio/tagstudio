@@ -170,7 +170,7 @@ function DonutChart({ data, budget, pulse }: { data: [number, number, number], b
         <div className={`font-dm font-bold text-xl ${pulse ? "nupd inline-block" : "inline-block"}`} style={{ color: "var(--blue)", lineHeight: 1 }}>
           ${budget.toLocaleString("en")}
         </div>
-        <div className="text-[10px] font-medium mt-1" style={{ color: "var(--txt3)" }}>إجمالي الميزانية</div>
+        <div className="text-[10px] font-medium mt-1" style={{ color: "var(--txt3)" }}>الميزانية الشهرية</div>
       </div>
     </div>
   )
@@ -480,7 +480,7 @@ export default function AdsBudgetCalculator() {
                             <span style={{ color: "var(--txt2)" }}>تكلفة التحويل (CPA)</span>
                             <span className={`font-dm font-semibold ${pulse ? 'nupd inline-block' : 'inline-block'}`} style={{ color: "var(--txt)" }}>${fmtCurrency(res.cpa)}</span>
                           </div>
-                          <div className="comp-bar"><div className="comp-fill" style={{ width: `${Math.min(100, (BENCHMARKS[platform].avgCPA / Math.max(res.cpa, 1)) * 100)}%`, background: "var(--pink)" }}></div></div>
+                          <div className="comp-bar"><div className="comp-fill" style={{ width: `${Math.min(100, (BENCHMARKS[platform].avgCPA / Math.max(res.cpa, 1)) * 100)}%`, background: "var(--green)" }}></div></div>
                           <div className="text-[10px] mt-1 font-dm" style={{ color: "var(--txt3)" }}>المتوسط: ${BENCHMARKS[platform].avgCPA.toFixed(2)}</div>
                         </div>
                       </div>
@@ -489,27 +489,27 @@ export default function AdsBudgetCalculator() {
 
                   {/* Summary Bar */}
                   <div className="ads-card p-5 flex flex-wrap items-center justify-between gap-4">
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-row-reverse text-start">
                       <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "var(--blue-dim)" }}>
                         <i className="fas fa-chart-line text-sm" style={{ color: "var(--blue)" }}></i>
                       </div>
                       <div>
-                        <div className="text-[11px]" style={{ color: "var(--txt3)" }}>الإنفاق اليومي المتوقع</div>
-                        <div className={`font-dm font-bold text-lg ${pulse ? 'nupd inline-block' : 'inline-block'}`}>${fmtMetric(dailySpend)}</div>
+                        <div className="text-[11px] text-end" style={{ color: "var(--txt3)" }}>الإنفاق اليومي المتوقع</div>
+                        <div className={`font-dm font-bold text-lg text-end ${pulse ? 'nupd inline-block' : 'inline-block'}`}>${fmtMetric(dailySpend)}</div>
                       </div>
                     </div>
                     <div className="h-8 w-px" style={{ background: "var(--border)" }}></div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-row-reverse text-start">
                       <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(16,185,129,0.08)" }}>
                         <i className="fas fa-arrow-trend-up text-sm" style={{ color: "var(--green)" }}></i>
                       </div>
                       <div>
-                        <div className="text-[11px]" style={{ color: "var(--txt3)" }}>معدل العائد المتوقع</div>
-                        <div className="font-dm font-bold text-lg" style={{ color: "var(--green)" }}>{roiEst}x</div>
+                        <div className="text-[11px] text-end" style={{ color: "var(--txt3)" }}>معدل العائد المتوقع</div>
+                        <div className="font-dm font-bold text-lg text-end" style={{ color: "var(--green)" }}>{roiEst}x</div>
                       </div>
                     </div>
                     <div className="h-8 w-px hidden sm:block" style={{ background: "var(--border)" }}></div>
-                    <div className="flex items-center gap-4 hidden sm:flex">
+                    <div className="flex items-center gap-4 flex-row-reverse text-start hidden sm:flex">
                       <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(236,72,153,0.08)" }}>
                         <i className="fas fa-clock text-sm" style={{ color: "var(--pink)" }}></i>
                       </div>
@@ -529,12 +529,15 @@ export default function AdsBudgetCalculator() {
                       <span className="text-sm font-bold">نصائح مخصصة لتحسين أدائك</span>
                     </div>
                     <div className="space-y-3">
-                      {TIPS[platform][goal].map((t, i) => (
-                        <div key={i} className="p-[14px_18px] rounded-xl flex items-start gap-[14px]" style={{ border: "1px solid var(--border)", background: "var(--surface)", transition: "all .3s" }}>
-                          <i className="fas fa-check mt-1 text-[11px]" style={{ color: "var(--green)" }}></i>
-                          <div className="text-[13px] leading-relaxed" style={{ color: "var(--txt2)" }}>{t}</div>
-                        </div>
-                      ))}
+                      {TIPS[platform][goal].map((t, i) => {
+                        const colors = ["var(--blue)", "var(--green)", "var(--pink)"]
+                        return (
+                          <div key={i} className="p-[14px_18px] rounded-xl flex items-start gap-[14px]" style={{ border: "1px solid var(--border)", background: "var(--surface)", transition: "all .3s" }}>
+                            <div className="font-dm font-bold text-sm mt-0.5" style={{ color: colors[i % 3] }}>{i + 1}</div>
+                            <div className="text-[13px] leading-relaxed" style={{ color: "var(--txt2)" }}>{t}</div>
+                          </div>
+                        )
+                      })}
                     </div>
                   </div>
 
@@ -564,13 +567,13 @@ export default function AdsBudgetCalculator() {
                                 <div className="flex items-center gap-2.5">
                                   <i className={BENCHMARKS[c.id].icon} style={{ color: BENCHMARKS[c.id].color, fontSize: "16px" }}></i>
                                   <span className="font-bold">{c.name}</span>
-                                  {c.id === platform && <span style={{ fontSize: "9px", background: "var(--blue)", color: "#fff", padding: "2px 6px", borderRadius: "100px" }}>محدد</span>}
+                                  {c.id === platform && <span style={{ fontSize: "9px", background: "var(--blue)", color: "#fff", padding: "2px 6px", borderRadius: "100px" }}>الحالي</span>}
                                 </div>
                               </td>
-                              <td className="text-center py-3.5 font-dm font-semibold">{fmtMetric(c.clicks)}</td>
-                              <td className="text-center py-3.5 font-dm font-semibold" style={{ color: "var(--blue)" }}>{fmtMetric(c.conversions)}</td>
-                              <td className="text-center py-3.5 font-dm">${fmtCurrency(c.cpc)}</td>
-                              <td className="text-center py-3.5 font-dm">${fmtCurrency(c.cpa)}</td>
+                              <td className="text-center py-3.5 font-dm font-semibold" style={{ color: "var(--txt2)" }}>{fmtMetric(c.clicks)}</td>
+                              <td className="text-center py-3.5 font-dm font-semibold" style={{ color: c.id === platform ? "var(--blue)" : "var(--txt2)" }}>{fmtMetric(c.conversions)}</td>
+                              <td className="text-center py-3.5 font-dm" style={{ color: "var(--txt2)" }}>${fmtCurrency(c.cpc)}</td>
+                              <td className="text-center py-3.5 font-dm" style={{ color: c.id === platform ? "var(--pink)" : "var(--txt2)" }}>${fmtCurrency(c.cpa)}</td>
                             </tr>
                           ))}
                         </tbody>
