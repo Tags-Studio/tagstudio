@@ -18,6 +18,15 @@ const IND_MULT: Record<string, number> = {
   health: 1.5, restaurants: 0.7, realestate: 1.2, fashion: 0.85
 }
 
+const COUNTRY_MULT: Record<string, { label: string, mult: number }> = {
+  saudi: { label: "السعودية", mult: 1.5 },
+  egypt: { label: "مصر", mult: 0.5 },
+  uae: { label: "الإمارات", mult: 1.8 },
+  kuwait: { label: "الكويت", mult: 1.6 },
+  jordan: { label: "الأردن", mult: 0.8 },
+  global: { label: "دول أخرى", mult: 1.0 }
+}
+
 const GOAL_ADJ: Record<string, { impM: number, cvrM: number, roiM: number, label: string, icon: string }> = {
   awareness:   { impM: 1.5,  cvrM: 0.4,  roiM: 1.8, label: "زيادة الوعي", icon: "fa-eye" },
   traffic:     { impM: 1.1,  cvrM: 0.7,  roiM: 2.5, label: "زيارة الموقع", icon: "fa-arrow-pointer" },
@@ -86,13 +95,14 @@ function fmtMetric(n: number) {
 function fmtCurrency(n: number) {
   return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 }
-function calculateMetrics(budg: number, plat: string, gl: string, ind: string, duration: number, scen: string) {
+function calculateMetrics(budg: number, plat: string, gl: string, ind: string, duration: number, scen: string, cntry: string) {
   const b = BENCHMARKS[plat]
   const im = IND_MULT[ind]
   const ga = GOAL_ADJ[gl]
   const sm = SCEN_MULT[scen].val
+  const cm = COUNTRY_MULT[cntry]?.mult || 1.0
 
-  const adjustedCPM = b.cpm * im * sm
+  const adjustedCPM = b.cpm * im * sm * cm
   const adjustedCVR = b.cvr * ga.cvrM
   const adjustedCTR = b.ctr
 
@@ -193,6 +203,7 @@ export default function AdsBudgetCalculator() {
   const [platform, setPlatform] = useState("meta")
   const [goal, setGoal] = useState("conversions")
   const [industry, setIndustry] = useState("ecommerce")
+  const [country, setCountry] = useState("saudi")
   const [duration, setDuration] = useState(30)
   const [scenario, setScenario] = useState("realistic")
 
@@ -202,16 +213,16 @@ export default function AdsBudgetCalculator() {
     setPulse(true)
     const t = setTimeout(() => setPulse(false), 300)
     return () => clearTimeout(t)
-  }, [budget, platform, goal, industry, duration, scenario])
+  }, [budget, platform, goal, industry, duration, scenario, country])
 
-  const res = useMemo(() => calculateMetrics(budget, platform, goal, industry, duration, scenario), [budget, platform, goal, industry, duration, scenario])
+  const res = useMemo(() => calculateMetrics(budget, platform, goal, industry, duration, scenario, country), [budget, platform, goal, industry, duration, scenario, country])
   
   const compData = useMemo(() => {
     return Object.keys(BENCHMARKS).map(k => {
-      const m = calculateMetrics(budget, k, goal, industry, duration, scenario)
+      const m = calculateMetrics(budget, k, goal, industry, duration, scenario, country)
       return { id: k, name: BENCHMARKS[k].name, ...m }
     })
-  }, [budget, goal, industry, duration, scenario])
+  }, [budget, goal, industry, duration, scenario, country])
 
   return (
     <>
@@ -383,6 +394,16 @@ export default function AdsBudgetCalculator() {
                         </div>
                       ))}
                     </div>
+                  </div>
+
+                  {/* Target Country */}
+                  <div className="mb-8">
+                    <label className="text-sm font-medium block mb-3" style={{ color: "var(--txt2)" }}>البلد المستهدف</label>
+                    <select className="sel" value={country} onChange={e => setCountry(e.target.value)}>
+                      {Object.entries(COUNTRY_MULT).map(([k, v]) => (
+                        <option key={k} value={k}>{v.label}</option>
+                      ))}
+                    </select>
                   </div>
 
                   {/* Industry */}
