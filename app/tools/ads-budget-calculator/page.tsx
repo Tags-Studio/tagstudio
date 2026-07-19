@@ -86,25 +86,35 @@ function fmtMetric(n: number) {
 function fmtCurrency(n: number) {
   return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 }
-function calculateMetrics(budg: number, plat: string, gl: string, ind: string, scen: string) {
-  const base = BENCHMARKS[plat]
+function calculateMetrics(budg: number, plat: string, gl: string, ind: string, duration: number, scen: string) {
+  const b = BENCHMARKS[plat]
   const im = IND_MULT[ind]
   const ga = GOAL_ADJ[gl]
   const sm = SCEN_MULT[scen].val
 
-  const effCPM = (base.cpm * im * sm) / ga.impM
-  const effCPC = base.cpc * im * sm
-  const effCVR = base.cvr * ga.cvrM * (1 / sm)
-  const effCPA = effCPC / (effCVR / 100)
-  
-  // To avoid ctr being derived inconsistently:
-  const effCTR = (effCPM / 1000) / effCPC * 100
+  const adjustedCPM = b.cpm * im * sm
+  const adjustedCVR = b.cvr * ga.cvrM
+  const adjustedCTR = b.ctr
 
-  const impressions = (budg / effCPM) * 1000
-  const clicks = budg / effCPC
-  const conversions = budg / effCPA
+  const dailyBudget = budg / duration
+  const dailyImpressions = (dailyBudget / adjustedCPM) * 1000 * ga.impM
+  const totalImpressions = Math.round(dailyImpressions * duration)
+  const totalClicks = Math.round(totalImpressions * (adjustedCTR / 100))
+  const totalConversions = Math.round(totalClicks * (adjustedCVR / 100))
 
-  return { impressions, clicks, conversions, cpc: effCPC, cpm: effCPM, cpa: effCPA, ctr: effCTR, cvr: effCVR }
+  return {
+    impressions: totalImpressions,
+    clicks: totalClicks,
+    conversions: totalConversions,
+    cpc: budg / Math.max(1, totalClicks),
+    cpm: (budg / Math.max(1, totalImpressions)) * 1000,
+    cpa: budg / Math.max(1, totalConversions),
+    ctr: adjustedCTR,
+    cvr: adjustedCVR,
+    dailyBudget: dailyBudget,
+    roi: ga.roiM * (1 / sm),
+    avgCPA: b.avgCPA * im
+  }
 }
 
 function DonutChart({ data, budget, pulse }: { data: [number, number, number], budget: number, pulse: boolean }) {
@@ -194,17 +204,14 @@ export default function AdsBudgetCalculator() {
     return () => clearTimeout(t)
   }, [budget, platform, goal, industry, duration, scenario])
 
-  const res = useMemo(() => calculateMetrics(budget, platform, goal, industry, scenario), [budget, platform, goal, industry, scenario])
+  const res = useMemo(() => calculateMetrics(budget, platform, goal, industry, duration, scenario), [budget, platform, goal, industry, duration, scenario])
   
-  const dailySpend = budget / duration
-  const roiEst = (GOAL_ADJ[goal].roiM * (1 / SCEN_MULT[scenario].val) * (1 / IND_MULT[industry])).toFixed(1)
-
   const compData = useMemo(() => {
     return Object.keys(BENCHMARKS).map(k => {
-      const m = calculateMetrics(budget, k, goal, industry, scenario)
+      const m = calculateMetrics(budget, k, goal, industry, duration, scenario)
       return { id: k, name: BENCHMARKS[k].name, ...m }
     })
-  }, [budget, goal, industry, scenario])
+  }, [budget, goal, industry, duration, scenario])
 
   return (
     <>
@@ -464,7 +471,7 @@ export default function AdsBudgetCalculator() {
                             <span style={{ color: "var(--txt2)" }}>معدل النقر (CTR)</span>
                             <span className={`font-dm font-semibold ${pulse ? 'nupd inline-block' : 'inline-block'}`} style={{ color: "var(--txt)" }}>{res.ctr.toFixed(2)}%</span>
                           </div>
-                          <div className="comp-bar"><div className="comp-fill" style={{ width: `${Math.min(100, (res.ctr / (BENCHMARKS[platform].ctr * 1.5)) * 100)}%`, background: "var(--blue)" }}></div></div>
+                          <div className="comp-bar"><div className="comp-fill" style={{ width: `${Math.min(100, (res.ctr / (BENCHMARKS[platform].ctr * 1.3)) * 100)}%`, background: res.ctr >= BENCHMARKS[platform].ctr ? 'var(--blue)' : 'var(--pink)' }}></div></div>
                           <div className="text-[10px] mt-1 font-dm" style={{ color: "var(--txt3)" }}>المتوسط: {BENCHMARKS[platform].ctr.toFixed(2)}%</div>
                         </div>
                         <div>
@@ -472,7 +479,7 @@ export default function AdsBudgetCalculator() {
                             <span style={{ color: "var(--txt2)" }}>معدل التحويل (CVR)</span>
                             <span className={`font-dm font-semibold ${pulse ? 'nupd inline-block' : 'inline-block'}`} style={{ color: "var(--txt)" }}>{res.cvr.toFixed(2)}%</span>
                           </div>
-                          <div className="comp-bar"><div className="comp-fill" style={{ width: `${Math.min(100, (res.cvr / (BENCHMARKS[platform].cvr * 1.5)) * 100)}%`, background: "var(--green)" }}></div></div>
+                          <div className="comp-bar"><div className="comp-fill" style={{ width: `${Math.min(100, (res.cvr / 8) * 100)}%`, background: res.cvr >= BENCHMARKS[platform].cvr ? 'var(--green)' : 'var(--pink)' }}></div></div>
                           <div className="text-[10px] mt-1 font-dm" style={{ color: "var(--txt3)" }}>المتوسط: {BENCHMARKS[platform].cvr.toFixed(2)}%</div>
                         </div>
                         <div>
@@ -480,8 +487,8 @@ export default function AdsBudgetCalculator() {
                             <span style={{ color: "var(--txt2)" }}>تكلفة التحويل (CPA)</span>
                             <span className={`font-dm font-semibold ${pulse ? 'nupd inline-block' : 'inline-block'}`} style={{ color: "var(--txt)" }}>${fmtCurrency(res.cpa)}</span>
                           </div>
-                          <div className="comp-bar"><div className="comp-fill" style={{ width: `${Math.min(100, (BENCHMARKS[platform].avgCPA / Math.max(res.cpa, 1)) * 100)}%`, background: "var(--green)" }}></div></div>
-                          <div className="text-[10px] mt-1 font-dm" style={{ color: "var(--txt3)" }}>المتوسط: ${BENCHMARKS[platform].avgCPA.toFixed(2)}</div>
+                          <div className="comp-bar"><div className="comp-fill" style={{ width: `${Math.min(100, (BENCHMARKS[platform].avgCPA * IND_MULT[industry] / Math.max(1, res.cpa)) * 100)}%`, background: res.cpa <= (BENCHMARKS[platform].avgCPA * IND_MULT[industry]) ? 'var(--green)' : 'var(--pink)' }}></div></div>
+                          <div className="text-[10px] mt-1 font-dm" style={{ color: "var(--txt3)" }}>المتوسط: ${(BENCHMARKS[platform].avgCPA * IND_MULT[industry]).toFixed(2)}</div>
                         </div>
                       </div>
                     </div>
@@ -495,7 +502,7 @@ export default function AdsBudgetCalculator() {
                       </div>
                       <div>
                         <div className="text-[11px] text-end" style={{ color: "var(--txt3)" }}>الإنفاق اليومي المتوقع</div>
-                        <div className={`font-dm font-bold text-lg text-end ${pulse ? 'nupd inline-block' : 'inline-block'}`}>${fmtMetric(dailySpend)}</div>
+                        <div className={`font-dm font-bold text-lg text-end ${pulse ? 'nupd inline-block' : 'inline-block'}`}>${fmtMetric(res.dailyBudget)}</div>
                       </div>
                     </div>
                     <div className="h-8 w-px" style={{ background: "var(--border)" }}></div>
@@ -505,7 +512,7 @@ export default function AdsBudgetCalculator() {
                       </div>
                       <div>
                         <div className="text-[11px] text-end" style={{ color: "var(--txt3)" }}>معدل العائد المتوقع</div>
-                        <div className="font-dm font-bold text-lg text-end" style={{ color: "var(--green)" }}>{roiEst}x</div>
+                        <div className="font-dm font-bold text-lg text-end" style={{ color: "var(--green)" }}>{res.roi.toFixed(1)}x</div>
                       </div>
                     </div>
                     <div className="h-8 w-px hidden sm:block" style={{ background: "var(--border)" }}></div>
