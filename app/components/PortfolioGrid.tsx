@@ -469,6 +469,41 @@ export default function PortfolioGrid() {
           </AnimatePresence>
         </motion.div>
 
+        {filter !== "الكل" && (
+          <div className="mt-12 text-center">
+            <a
+              href={
+                filter === "الهوية البصرية"
+                  ? "/services/visual-identity"
+                  : filter === "تصميمات السوشيال ميديا"
+                  ? "/services/social-media-design"
+                  : filter === "تصاميم المطبوعات"
+                  ? "/services/print-design"
+                  : filter === "فيديو موشن جرافيك"
+                  ? "/services/motion-graphics"
+                  : "#"
+              }
+              className="inline-flex items-center text-primary hover:text-primary/80 font-bold text-lg hover:underline transition-all"
+            >
+              اقرأ المزيد عن {filter}
+              <svg
+                className="w-5 h-5 mr-2 rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+          </div>
+        )}
+
         <ImageModal
           imageUrl={selectedProject?.imageUrl || null}
           title={selectedProject?.title || ""}
