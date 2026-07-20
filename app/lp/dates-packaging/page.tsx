@@ -49,7 +49,7 @@ export default function DatesPackagingLandingPage() {
   ]
 
   return (
-    <div className="bg-[#FAFAFA] text-[#1D1D1F] overflow-x-hidden pb-10 font-['Noto_Kufi_Arabic','Inter',sans-serif]" dir="rtl">
+    <div className="bg-[#FAFAFA] text-[#1D1D1F] overflow-x-hidden pb-10 font-tajawal" dir="rtl">
       {/* Hide global header/footer so it stays a focused landing page */}
       <style dangerouslySetInnerHTML={{ __html: `
         header, footer, #floating-contact { display: none !important; }
@@ -92,16 +92,14 @@ export default function DatesPackagingLandingPage() {
         <div className="max-w-[1024px] mx-auto px-5">
           <div className="flex items-center justify-between h-14">
             <a href="https://www.wearetagstudio.com/" className="flex items-center gap-2 no-underline">
-              <svg width="30" height="30" viewBox="0 0 120 120" fill="none">
-                <line x1="20" y1="20" x2="100" y2="100" stroke="#FFD600" strokeWidth="10" strokeLinecap="round" />
-                <line x1="100" y1="20" x2="20" y2="100" stroke="#00C853" strokeWidth="10" strokeLinecap="round" />
-                <line x1="60" y1="10" x2="60" y2="110" stroke="#1565C0" strokeWidth="10" strokeLinecap="round" />
-                <line x1="10" y1="60" x2="110" y2="60" stroke="#FF1744" strokeWidth="10" strokeLinecap="round" />
-              </svg>
-              <div className="leading-none">
-                <div className="text-[14px] font-bold text-[#1565C0] font-sans tracking-tight">TAG</div>
-                <div className="text-[8px] font-medium text-[#6E6E73] font-sans tracking-widest">STUDIO</div>
-              </div>
+              <Image
+                className="h-10 w-auto object-contain"
+                src="/images/logo.png"
+                alt="شعار تاج ستوديو"
+                width={120}
+                height={40}
+                priority
+              />
             </a>
             <a href="#cta" className="bg-[#1565C0] hover:bg-[#0D47A1] text-white px-5 py-2 rounded-full text-xs font-semibold transition-all shadow-[0_4px_18px_rgba(21,101,192,0.25)] hover:scale-105 active:scale-95">
               احجز استشارة مجانية
@@ -166,7 +164,7 @@ export default function DatesPackagingLandingPage() {
           {/* Hero Image */}
           <motion.div variants={scaleUp} className="mt-12 relative">
             <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.06)] bg-white relative h-[clamp(200px,40vw,440px)] w-full">
-              <Image src="https://picsum.photos/seed/luxury-dates-boxes-premium-showcase/1200/600.jpg" alt="بوكسات تمور فاخرة" fill className="object-cover block" unoptimized />
+              <Image src="/images/print-design-2.avif" alt="بوكسات تمور فاخرة" fill className="object-cover block" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent"></div>
             </div>
             <div className="absolute bottom-3 right-3 left-3 flex gap-2">
@@ -239,16 +237,16 @@ export default function DatesPackagingLandingPage() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5">
             {[
-              { img: "gold-luxury-dates-box-v2", title: "بوكس تمور المدينة", desc: "فاخر — 3 أحجام" },
-              { img: "elegant-gift-dates-v2", title: "بوكس هدايا نخيل", desc: "هدايا — 5 تصاميم" },
-              { img: "black-premium-dates-v2", title: "بوكس دار التمور", desc: "هوية + تغليف" },
-              { img: "export-clean-dates-v2", title: "تمور الخليج", desc: "تصديري — إنجليزي" },
-              { img: "wooden-premium-dates-v2", title: "بستان النخيل", desc: "علب خشبية فاخرة" },
-              { img: "ramadan-colorful-box-v2", title: "بوكس رمضان", desc: "موسمي محدود" }
+              { img: "/images/print-design-2.avif", title: "بوكس تمور المدينة", desc: "فاخر — 3 أحجام" },
+              { img: "/images/print-design-3.avif", title: "بوكس هدايا نخيل", desc: "هدايا — 5 تصاميم" },
+              { img: "/images/print-design-4.avif", title: "بوكس دار التمور", desc: "هوية + تغليف" },
+              { img: "/images/zaatar-box-highres.jpg", title: "تمور الخليج", desc: "تصديري — إنجليزي" },
+              { img: "/images/agricultural-development-association.avif", title: "بستان النخيل", desc: "علب خشبية فاخرة" },
+              { img: "/images/tasmim-hawiyah-basariyah-zaatar-w-simsim-box.jpg", title: "بوكس رمضان", desc: "موسمي محدود" }
             ].map((work, i) => (
               <motion.div key={i} variants={fadeInUp} className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group cursor-pointer">
                 <div className="relative w-full h-[180px] overflow-hidden">
-                  <Image src={`https://picsum.photos/seed/${work.img}/500/600.jpg`} alt={work.title} fill className="object-cover block group-hover:scale-105 transition-transform duration-500" unoptimized />
+                  <Image src={work.img} alt={work.title} fill className="object-cover block group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-3">
                   <h3 className="font-bold text-[12px]">{work.title}</h3>
@@ -283,7 +281,7 @@ export default function DatesPackagingLandingPage() {
                 <span className="text-[11px] font-bold text-[#6E6E73]">قبل التعامل معانا</span>
               </div>
               <div className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5 relative h-[200px] w-full">
-                <Image src="https://picsum.photos/seed/old-plain-dates-packaging-v3/700/400.jpg" alt="قبل" fill className="object-cover opacity-50" unoptimized />
+                <Image src="/images/print-design-7.avif" alt="قبل" fill className="object-cover opacity-50" />
               </div>
               <div className="grid grid-cols-3 gap-2 mt-2.5 text-center">
                 <div className="bg-white rounded-xl p-3 border border-black/5">
@@ -308,7 +306,7 @@ export default function DatesPackagingLandingPage() {
                 <span className="text-[11px] font-bold text-[#6E6E73]">بعد التصميم الجديد</span>
               </div>
               <div className="rounded-xl overflow-hidden bg-white shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-black/5 relative h-[200px] w-full">
-                <Image src="https://picsum.photos/seed/new-designed-premium-dates-v3/700/400.jpg" alt="بعد" fill className="object-cover" unoptimized />
+                <Image src="/images/print-design-2.avif" alt="بعد" fill className="object-cover" />
                 <div className="absolute top-2.5 left-2.5 text-white text-[10px] font-bold py-1.5 px-3 rounded-full bg-gradient-to-r from-[#00C853] to-[#1565C0]">+35% سعر • +100% مبيعات</div>
               </div>
               <div className="grid grid-cols-3 gap-2 mt-2.5 text-center">
