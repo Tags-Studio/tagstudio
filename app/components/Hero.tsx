@@ -101,7 +101,7 @@ export default function Hero() {
 
           <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-border/80 bg-card/70 shadow-[0_24px_70px_rgba(15,23,42,0.12)]">
             <Image
-              src="/images/hero-concept.webp"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero%20%281%29-jXZYCcyHksBSCvu8tybL2Kq31yvQW4.avif"
               alt="تصميم ثلاثي الأبعاد يرمز إلى خدمات الهوية البصرية في تاج ستوديو"
               fill
               priority
