@@ -89,16 +89,19 @@ export default function Hero() {
           <motion.div
             className="relative aspect-square"
             initial={{ opacity: 0, x: -28, scale: 0.98 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            whileInView={{
+            animate={{ 
+              opacity: 1, 
+              x: 0, 
+              scale: 1,
               y: [0, -12, 0],
               rotateX: [0, 8, 0],
             }}
             transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
+              opacity: { duration: 0.8, ease: "easeOut" },
+              x: { duration: 0.8, ease: "easeOut" },
+              scale: { duration: 0.8, ease: "easeOut" },
+              y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              rotateX: { duration: 4, repeat: Infinity, ease: "easeInOut" },
             }}
             style={{
               perspective: "1200px",
