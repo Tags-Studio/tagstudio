@@ -80,15 +80,7 @@ export default function Hero() {
         <div className="absolute right-[-10rem] top-[10rem] h-[26rem] w-[26rem] rounded-full bg-blue-500/5 blur-3xl" />
       </div>
 
-      <div
-        className="pointer-events-none absolute left-[3%] top-[7%] -z-10 hidden h-52 w-52 opacity-40 lg:block"
-        aria-hidden="true"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, hsl(var(--primary) / 0.22) 1.5px, transparent 1.5px)",
-          backgroundSize: "18px 18px",
-        }}
-      />
+
 
       <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
         <motion.div
@@ -97,10 +89,8 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="absolute inset-8 -z-10 rounded-[42%_58%_56%_44%/42%_44%_56%_58%] bg-gradient-to-br from-primary/10 via-blue-500/10 to-transparent blur-sm" />
-
           <motion.div
-            className="relative aspect-square overflow-hidden rounded-[2rem] bg-transparent shadow-[0_32px_96px_rgba(15,23,42,0.25),0_16px_48px_rgba(15,23,42,0.15)]"
+            className="relative aspect-square overflow-visible"
             animate={{
               y: [0, -12, 0],
               rotateX: [0, 8, 0],
@@ -112,6 +102,7 @@ export default function Hero() {
             }}
             style={{
               perspective: "1200px",
+              filter: "drop-shadow(0 32px 96px rgba(15,23,42,0.25)) drop-shadow(0 16px 48px rgba(15,23,42,0.15))",
             }}
           >
             <Image
