@@ -99,7 +99,21 @@ export default function Hero() {
         >
           <div className="absolute inset-8 -z-10 rounded-[42%_58%_56%_44%/42%_44%_56%_58%] bg-gradient-to-br from-primary/10 via-blue-500/10 to-transparent blur-sm" />
 
-          <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-border/80 bg-card/70 shadow-[0_24px_70px_rgba(15,23,42,0.12)]">
+          <motion.div
+            className="relative aspect-square overflow-hidden rounded-[2rem] bg-transparent shadow-[0_32px_96px_rgba(15,23,42,0.25),0_16px_48px_rgba(15,23,42,0.15)]"
+            animate={{
+              y: [0, -12, 0],
+              rotateX: [0, 8, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            style={{
+              perspective: "1200px",
+            }}
+          >
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero%20%281%29-jXZYCcyHksBSCvu8tybL2Kq31yvQW4.avif"
               alt="تصميم ثلاثي الأبعاد يرمز إلى خدمات الهوية البصرية في تاج ستوديو"
@@ -108,7 +122,7 @@ export default function Hero() {
               sizes="(max-width: 1024px) 92vw, 48vw"
               className="object-contain p-3 sm:p-6"
             />
-          </div>
+          </motion.div>
 
           <motion.div
             className="absolute -bottom-5 right-4 rounded-2xl border border-border/80 bg-background/95 px-5 py-4 shadow-xl backdrop-blur-md sm:right-8"
