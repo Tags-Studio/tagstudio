@@ -80,35 +80,43 @@ export default function Hero() {
         <div className="absolute right-[-10rem] top-[10rem] h-[26rem] w-[26rem] rounded-full bg-blue-500/5 blur-3xl" />
       </div>
 
-      <div
-        className="pointer-events-none absolute left-[3%] top-[7%] -z-10 hidden h-52 w-52 opacity-40 lg:block"
-        aria-hidden="true"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, hsl(var(--primary) / 0.22) 1.5px, transparent 1.5px)",
-          backgroundSize: "18px 18px",
-        }}
-      />
+
 
       <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
-        <motion.div
+        <div
           className="relative order-2 mx-auto w-full max-w-[590px] lg:order-2 lg:justify-self-end"
-          initial={{ opacity: 0, x: -28, scale: 0.98 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="absolute inset-8 -z-10 rounded-[42%_58%_56%_44%/42%_44%_56%_58%] bg-gradient-to-br from-primary/10 via-blue-500/10 to-transparent blur-sm" />
-
-          <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-border/80 bg-card/70 shadow-[0_24px_70px_rgba(15,23,42,0.12)]">
+          <motion.div
+            className="relative aspect-square"
+            initial={{ opacity: 0, x: -28, scale: 0.98 }}
+            animate={{ 
+              opacity: 1, 
+              x: 0, 
+              scale: 1,
+              y: [0, -12, 0],
+              rotateX: [0, 8, 0],
+            }}
+            transition={{
+              opacity: { duration: 0.8, ease: "easeOut" },
+              x: { duration: 0.8, ease: "easeOut" },
+              scale: { duration: 0.8, ease: "easeOut" },
+              y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              rotateX: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            }}
+            style={{
+              perspective: "1200px",
+              filter: "drop-shadow(0 32px 96px rgba(15,23,42,0.25)) drop-shadow(0 16px 48px rgba(15,23,42,0.15))",
+            }}
+          >
             <Image
-              src="/images/hero-concept.webp"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero%20%281%29-vxdjBwoZLOZsobDpLRP7NFtu6Jccc8.avif"
               alt="تصميم ثلاثي الأبعاد يرمز إلى خدمات الهوية البصرية في تاج ستوديو"
               fill
               priority
               sizes="(max-width: 1024px) 92vw, 48vw"
               className="object-contain p-3 sm:p-6"
             />
-          </div>
+          </motion.div>
 
           <motion.div
             className="absolute -bottom-5 right-4 rounded-2xl border border-border/80 bg-background/95 px-5 py-4 shadow-xl backdrop-blur-md sm:right-8"
@@ -123,7 +131,7 @@ export default function Hero() {
               استراتيجية، تصميم، وتسليم منظم
             </p>
           </motion.div>
-        </motion.div>
+        </div>
 
         <div className="order-1 max-w-2xl text-right lg:order-1 lg:justify-self-start">
           <motion.p
