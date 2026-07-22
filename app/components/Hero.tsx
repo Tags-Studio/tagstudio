@@ -106,7 +106,7 @@ export default function Hero() {
             }}
           >
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero%20%281%29-jXZYCcyHksBSCvu8tybL2Kq31yvQW4.avif"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero%20%281%29-vxdjBwoZLOZsobDpLRP7NFtu6Jccc8.avif"
               alt="تصميم ثلاثي الأبعاد يرمز إلى خدمات الهوية البصرية في تاج ستوديو"
               fill
               priority
