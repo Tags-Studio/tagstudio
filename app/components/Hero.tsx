@@ -109,12 +109,12 @@ export default function Hero() {
             }}
           >
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero%20%281%29-vxdjBwoZLOZsobDpLRP7NFtu6Jccc8.avif"
-              alt="تصميم ثلاثي الأبعاد يرمز إلى خدمات الهوية البصرية في تاج ستوديو"
+              src="/images/hero.avif"
+              alt="تصميم يرمز إلى خدمات الهوية البصرية في تاج ستوديو"
               fill
               priority
               sizes="(max-width: 1024px) 92vw, 48vw"
-              className="object-contain p-3 sm:p-6"
+              className="object-cover"
             />
           </motion.div>
 
