@@ -1,6 +1,10 @@
 import Link from "next/link"
 
 const footerLinks = [
+  { href: "/services/visual-identity", label: "تصميم هوية بصرية" },
+  { href: "/services/social-media-design", label: "تصميم السوشيال ميديا" },
+  { href: "/services/print-design", label: "تصاميم المطبوعات" },
+  { href: "/services/motion-graphics", label: "فيديو موشن جرافيك" },
   { href: "/about", label: "من نحن" },
   { href: "/work", label: "الأعمال" },
   { href: "/blog", label: "المدونة" },

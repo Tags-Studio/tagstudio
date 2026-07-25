@@ -51,6 +51,30 @@ export default function Header() {
           >
             الرئيسية
           </Link>
+          <div className="relative group">
+            <button className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap flex items-center gap-1">
+              خدماتنا
+              <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div className="absolute right-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pt-2">
+              <div className="bg-background rounded-xl shadow-lg border border-primary/10 overflow-hidden flex flex-col">
+                <Link href="/services/visual-identity" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5">
+                  تصميم هوية بصرية
+                </Link>
+                <Link href="/services/social-media-design" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5">
+                  تصميمات السوشيال ميديا
+                </Link>
+                <Link href="/services/print-design" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5">
+                  تصاميم المطبوعات
+                </Link>
+                <Link href="/services/motion-graphics" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors">
+                  فيديو موشن جرافيك
+                </Link>
+              </div>
+            </div>
+          </div>
           <Link
             href="/work"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"

@@ -11,28 +11,28 @@ const features = [
     description:
       "هوية بصرية تخلي عميلك يميّزك من أول نظرة في السوق السعودي والمصري — نظام متكامل جاهز يشتغل على كل نقاط التواصل بشكل موحّد.",
     icon: "/images/identity.avif",
-    href: "/?category=الهوية البصرية#portfolio-grid",
+    href: "/services/visual-identity",
   },
   {
     title: "تصميمات السوشيال ميديا",
     description:
       "محتوى بصري يخلي صفحتك تبان احترافية وتضاعف تفاعل ومبيعاتك في الرياض والقاهرة من أول سكرول.",
     icon: "/images/social-media.avif",
-    href: "/?category=تصميمات السوشيال ميديا#portfolio-grid",
+    href: "/services/social-media-design",
   },
   {
     title: "تصاميم المطبوعات",
     description:
       "مطبوعات فاخرة وجاهزة تسلّمها لعميلك أو تستخدمها في اجتماعاتك في المملكة ومصر من غير أي تعديل.",
     icon: "/images/prints.avif",
-    href: "/?category=تصاميم المطبوعات#portfolio-grid",
+    href: "/services/print-design",
   },
   {
     title: "فيديو موشن جرافيك",
     description:
       "فيديو احترافي بيشرح فكرتك في ثواني ويخلي جمهورك المستهدف يفهمك ويتخذ قرار الشراء فوراً.",
     icon: "/images/motion.avif",
-    href: "/?category=فيديو موشن جرافيك#portfolio-grid",
+    href: "/services/motion-graphics",
   },
 ]
 

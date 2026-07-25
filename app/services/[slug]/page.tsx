@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getServiceBySlug, services } from "@/lib/servicesData"
+import { blogPosts } from "@/lib/blogData"
 
 type Props = {
   params: {
@@ -439,6 +440,83 @@ export default function ServicePage({ params }: Props) {
             ))}
           </div>
         </section>
+
+        {/* Related Articles Section */}
+        {(() => {
+          const relatedPosts = blogPosts
+            .filter((post) =>
+              post.category?.includes(service.shortTitle) ||
+              post.title?.includes(service.shortTitle) ||
+              service.keywords?.some((kw) => post.title?.includes(kw) || post.excerpt?.includes(kw))
+            )
+            .slice(0, 3)
+
+          if (relatedPosts.length === 0) return null
+
+          return (
+            <section className="border-t border-border bg-card/20 py-20">
+              <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                  <div>
+                    <p className="font-semibold text-primary">المعرفة والإرشادات</p>
+                    <h2 className="mt-2 text-3xl font-bold text-foreground">
+                      مقالات وكتيبات إرشادية حول {service.shortTitle}
+                    </h2>
+                  </div>
+                  <Link
+                    href="/blog"
+                    className="mt-4 md:mt-0 font-semibold text-primary hover:underline inline-flex items-center gap-1"
+                  >
+                    تصفح كافة مقالات المدونة ←
+                  </Link>
+                </div>
+
+                <div className="grid gap-8 md:grid-cols-3">
+                  {relatedPosts.map((post) => (
+                    <article
+                      key={post.id}
+                      className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-background transition hover:border-primary/30 shadow-sm"
+                    >
+                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover transition duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="flex flex-1 flex-col justify-between p-6">
+                        <div>
+                          <p className="text-xs font-semibold text-primary mb-2">
+                            {post.category}
+                          </p>
+                          <h3 className="text-lg font-bold leading-snug text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                            <Link href={`/blog/${post.slug}`}>
+                              {post.title}
+                            </Link>
+                          </h3>
+                          <p className="mt-3 text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+                            {post.excerpt}
+                          </p>
+                        </div>
+                        <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between text-xs text-muted-foreground">
+                          <span>{post.readTime}</span>
+                          <Link
+                            href={`/blog/${post.slug}`}
+                            className="font-semibold text-primary hover:underline"
+                          >
+                            اقرأ المقال الكامل ←
+                          </Link>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )
+        })()}
 
         <section className="mx-auto max-w-5xl px-6 pb-24 text-center lg:px-8">
           <div className="rounded-3xl border border-primary/20 bg-card p-10">
