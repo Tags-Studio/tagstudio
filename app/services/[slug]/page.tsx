@@ -4,6 +4,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getServiceBySlug, services } from "@/lib/servicesData"
 import { blogPosts } from "@/lib/blogData"
+import ServicePortfolioGrid from "@/app/components/ServicePortfolioGrid"
 
 type Props = {
   params: {
@@ -415,6 +416,9 @@ export default function ServicePage({ params }: Props) {
             </div>
           </div>
         </section>
+
+        {/* Full Portfolio Gallery Grid for Service */}
+        <ServicePortfolioGrid serviceSlug={service.slug} serviceTitle={service.shortTitle} />
 
         <section className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
           <div className="text-center">

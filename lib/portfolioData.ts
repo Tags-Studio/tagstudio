@@ -1,12 +1,35 @@
-"use client"
+export interface CaseStudy {
+  client: string
+  problem: string
+  solution: string
+  results: string
+}
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import ImageModal from "./ImageModal"
-import { useSearchParams, useRouter, usePathname } from "next/navigation" // استيراد useRouter و usePathname
+export interface ProjectItem {
+  id: number
+  title: string
+  description: string
+  imageUrl: string
+  category: "الهوية البصرية" | "تصميمات السوشيال ميديا" | "تصاميم المطبوعات" | "فيديو موشن جرافيك"
+  caseStudy?: CaseStudy
+  externalLink?: string
+}
 
-const projects = [
+export const serviceSlugToCategory: Record<string, string> = {
+  "visual-identity": "الهوية البصرية",
+  "social-media-design": "تصميمات السوشيال ميديا",
+  "print-design": "تصاميم المطبوعات",
+  "motion-graphics": "فيديو موشن جرافيك",
+}
+
+export const categoryToServiceSlug: Record<string, string> = {
+  "الهوية البصرية": "visual-identity",
+  "تصميمات السوشيال ميديا": "social-media-design",
+  "تصاميم المطبوعات": "print-design",
+  "فيديو موشن جرافيك": "motion-graphics",
+}
+
+export const projects: ProjectItem[] = [
   {
     id: 19,
     title: "هوية زعتر و سمسم",
@@ -193,7 +216,6 @@ const projects = [
     imageUrl: "/images/print-design-21.avif",
     category: "تصاميم المطبوعات",
   },
-  // مشاريع السوشيال ميديا
   {
     id: 45,
     title: "الامتياز التجاري",
@@ -310,213 +332,19 @@ const projects = [
     id: 23,
     title: "فيديو موشن جرافيك - VOKO ERP",
     description: "فيديو موشن جرافيك احترافي لنظام VOKO ERP، يعرض بيئة العمل الحديثة والتقنيات المتطورة.",
-    imageUrl: "/images/voko-erp-motion-graphic-thumbnail.jpg", // تم تحديث الصورة هنا
+    imageUrl: "/images/voko-erp-motion-graphic-thumbnail.jpg",
     category: "فيديو موشن جرافيك",
     externalLink: "https://youtu.be/PlwOtO7kPuM",
   },
 ]
 
-const categories = ["الكل", "الهوية البصرية", "تصميمات السوشيال ميديا", "تصاميم المطبوعات", "فيديو موشن جرافيك"]
+export function getProjectsByCategory(categoryName: string): ProjectItem[] {
+  if (categoryName === "الكل") return projects
+  return projects.filter((item) => item.category === categoryName)
+}
 
-export default function PortfolioGrid() {
-  const searchParams = useSearchParams()
-  const router = useRouter()
-  const pathname = usePathname()
-
-  // استخلاص الفلتر مباشرة من معلمات URL
-  const currentCategoryFromUrl = searchParams.get("category")
-  const filter =
-    currentCategoryFromUrl && categories.includes(currentCategoryFromUrl) ? currentCategoryFromUrl : "الهوية البصرية" // الفلتر الافتراضي
-
-  const [selectedProject, setSelectedProject] = useState<any>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  // دالة للتنقل المباشر لصفحات الخدمات حسب القسم عند النقر
-  const setCategoryFilter = (category: string) => {
-    if (category === "الهوية البصرية") {
-      router.push("/services/visual-identity")
-    } else if (category === "تصميمات السوشيال ميديا") {
-      router.push("/services/social-media-design")
-    } else if (category === "تصاميم المطبوعات") {
-      router.push("/services/print-design")
-    } else if (category === "فيديو موشن جرافيك") {
-      router.push("/services/motion-graphics")
-    } else if (category === "الكل") {
-      router.push("/work")
-    }
-  }
-
-  const filteredProjects = filter === "الكل" ? projects : projects.filter((project) => project.category === filter)
-
-  const openModal = (project: any) => {
-    setSelectedProject(project)
-    setIsModalOpen(true)
-  }
-
-  const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedProject(null)
-  }
-
-  return (
-    <section id="portfolio-grid" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">أعمالنا</h2>
-          <p className="mt-4 text-lg text-muted-foreground">عرض لتصاميمنا البسيطة وحلولنا الإبداعية.</p>
-        </motion.div>
-
-        <div className="flex justify-center space-x-4 mb-8 space-x-reverse flex-wrap gap-2">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setCategoryFilter(category)} // استخدام الدالة الجديدة هنا
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                filter === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence>
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-background rounded-3xl shadow-lg overflow-hidden hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
-              >
-                <div
-                  className={`relative overflow-hidden ${
-                    project.category === "تصميمات السوشيال ميديا" ? "h-[400px]" : "h-64"
-                  }`}
-                >
-                  <Image
-                    src={project.imageUrl || "/placeholder.svg"}
-                    alt={project.title}
-                    layout="fill"
-                    objectFit={project.category === "تصميمات السوشيال ميديا" ? "contain" : "cover"}
-                    className="transition-transform duration-300 ease-in-out group-hover:scale-105"
-                  />
-                  <motion.div
-                    className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300"
-                    whileHover={{ opacity: 1 }}
-                  >
-                    <p className="text-white text-center px-4">{project.description}</p>
-                  </motion.div>
-                </div>
-                <div className="p-6">
-                  <div className="text-sm font-medium text-primary mb-1">{project.category}</div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
-                  {project.externalLink ? (
-                    <a
-                      href={project.externalLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline inline-flex items-center"
-                    >
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                        />
-                      </svg>
-                      عرض المشروع
-                    </a>
-                  ) : (
-                    <button
-                      onClick={() => openModal(project)}
-                      className="text-primary hover:underline inline-flex items-center"
-                    >
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                        />
-                      </svg>
-                      عرض المشروع
-                    </button>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-        {filter !== "الكل" && (
-          <div className="mt-12 text-center">
-            <a
-              href={
-                filter === "الهوية البصرية"
-                  ? "/services/visual-identity"
-                  : filter === "تصميمات السوشيال ميديا"
-                  ? "/services/social-media-design"
-                  : filter === "تصاميم المطبوعات"
-                  ? "/services/print-design"
-                  : filter === "فيديو موشن جرافيك"
-                  ? "/services/motion-graphics"
-                  : "#"
-              }
-              className="inline-flex items-center text-primary hover:text-primary/80 font-bold text-lg hover:underline transition-all"
-            >
-              اقرأ المزيد عن {filter}
-              <svg
-                className="w-5 h-5 mr-2 rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </a>
-          </div>
-        )}
-
-        <ImageModal
-          imageUrl={selectedProject?.imageUrl || null}
-          title={selectedProject?.title || ""}
-          category={selectedProject?.category}
-          description={selectedProject?.description}
-          caseStudy={selectedProject?.caseStudy}
-          isOpen={isModalOpen}
-          onClose={closeModal}
-        />
-      </div>
-    </section>
-  )
+export function getProjectsByServiceSlug(slug: string): ProjectItem[] {
+  const cat = serviceSlugToCategory[slug]
+  if (!cat) return projects
+  return projects.filter((item) => item.category === cat)
 }
