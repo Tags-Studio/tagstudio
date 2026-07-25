@@ -443,11 +443,14 @@ export default function ServicePage({ params }: Props) {
 
         {/* Related Articles Section */}
         {(() => {
+          const todayStr = new Date().toISOString().split("T")[0]
           const relatedPosts = blogPosts
             .filter((post) =>
-              post.category?.includes(service.shortTitle) ||
-              post.title?.includes(service.shortTitle) ||
-              service.keywords?.some((kw) => post.title?.includes(kw) || post.excerpt?.includes(kw))
+              post.date <= todayStr && (
+                post.category?.includes(service.shortTitle) ||
+                post.title?.includes(service.shortTitle) ||
+                service.keywords?.some((kw) => post.title?.includes(kw) || post.excerpt?.includes(kw))
+              )
             )
             .slice(0, 3)
 
