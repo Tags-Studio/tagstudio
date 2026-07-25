@@ -3121,20 +3121,6 @@ export const blogPosts: BlogPost[] = [
 
 💬 **[ابدأ رحلتك لتصميم هويتك البصرية وتحديد لوحة ألوانك الاحترافية مع تاج ستوديو اليوم، وتواصل معنا على رقم الواتساب للحصول على استشارتك المجانية وعرض سعر مخصص لمشروعك القادم: https://wa.me/201009215131](https://wa.me/201009215131)**`
   },
-{
-  id: string
-  title: string
-  slug: string
-  excerpt: string
-  content: string
-  image: string
-  category: string
-  author: string
-  date: string
-  readTime: number
-}
-
-export const blogPosts: BlogPost[] = [
   {
     id: "saeed-1",
     title: "لماذا تدفع الشركات الكبرى ملايين الدولارات على تصميم شعار؟ 💰",
