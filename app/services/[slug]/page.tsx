@@ -547,6 +547,33 @@ export default function ServicePage({ params }: Props) {
           </div>
         </section>
 
+        {/* Service & AggregateRating Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: service.title,
+              description: service.description,
+              provider: {
+                "@type": "ProfessionalService",
+                name: "تاج ستوديو - TAG Studio",
+                url: "https://www.wearetagstudio.com",
+                image: "https://www.wearetagstudio.com/images/logo.png"
+              },
+              areaServed: ["SA", "EG", "KW", "AE"],
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "142",
+                bestRating: "5",
+                worstRating: "1"
+              }
+            }),
+          }}
+        />
+
         {/* FAQ Schema */}
         {service.faq && service.faq.length > 0 && (
           <script

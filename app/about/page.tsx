@@ -15,4 +15,33 @@ export const metadata: Metadata = {
   },
 }
 
-export default function AboutPage() { return <AboutUs /> }
+export default function AboutPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "الرئيسية",
+        item: "https://www.wearetagstudio.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "من نحن",
+        item: "https://www.wearetagstudio.com/about",
+      },
+    ],
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <AboutUs />
+    </>
+  )
+}
