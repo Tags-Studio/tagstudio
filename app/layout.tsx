@@ -8,6 +8,7 @@ import type { Metadata } from "next"
 import type React from "react"
 import Script from "next/script"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import LocalBusinessSchema from "./components/LocalBusinessSchema"
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
