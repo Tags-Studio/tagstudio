@@ -36,16 +36,15 @@ const tagMethod = [
 ]
 
 const fitPoints = [
-  "تبدأ مشروعًا جديدًا وتحتاج نظامًا بصريًا واضحًا من البداية.",
-  "لديك تصميمات متفرقة أو هوية غير متناسقة بين القنوات المختلفة.",
-  "تخطط للتوسع وتحتاج ملفات وقواعد يسهل على فريقك تطبيقها.",
-  "تريد اتخاذ قرارات التصميم بناءً على الجمهور والسوق وليس الذوق الشخصي فقط.",
+  "مشروع جديد محتاج نظام بصري واضح ومستقر من البداية.",
+  "هويتك متفرقة وتائهة بين القنوات والمقاسات المختلفة.",
+  "مخطط للتوسع وتأكيد حضورك في السوق المصري والسعودي.",
 ]
 
 const notFitPoints = [
-  "تبحث عن تنفيذ سريع لعنصر واحد دون فهم المشروع أو سياقه.",
-  "لم تحدد بعد طبيعة النشاط أو الجمهور أو الخدمة الأساسية.",
-  "تريد أرخص تنفيذ ممكن بغض النظر عن الاستراتيجية أو قابلية التطبيق.",
+  "عايز عنصر واحد بسرعة وبدون دراسة متكاملة لمشروعك.",
+  "مش محدد نشاطك التجاري أو طبيعة جمهورك المستهدف بعد.",
+  "عايز أرخص سعر وبس بدون اهتمام بالجودة أو الاستراتيجية.",
 ]
 
 export function generateStaticParams() {
@@ -210,7 +209,12 @@ export default function ServicePage({ params }: Props) {
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
               {service.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+            {service.subtitle && (
+              <p className="mt-4 text-xl font-semibold text-primary/90 leading-relaxed">
+                {service.subtitle}
+              </p>
+            )}
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">
               {service.description}
             </p>
 
@@ -221,9 +225,9 @@ export default function ServicePage({ params }: Props) {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="apple-button px-7 py-3"
+                className="apple-button px-8 py-3.5 inline-flex items-center gap-2 text-base font-semibold"
               >
-                اطلب استشارة
+                اطلب استشارة ↗
               </a>
               <Link
                 href="/work"
@@ -351,13 +355,13 @@ export default function ServicePage({ params }: Props) {
 
           <div className="mt-12 grid gap-7 lg:grid-cols-2">
             <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/[0.05] p-7">
-              <h3 className="text-2xl font-bold text-foreground">
-                الخدمة مناسبة لك إذا:
+              <h3 className="text-2xl font-bold text-emerald-500 flex items-center gap-2">
+                <span>✓</span> مناسبة لك لو:
               </h3>
               <ul className="mt-6 space-y-4">
                 {fitPoints.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1 text-lg font-bold text-emerald-600">
+                    <span className="mt-1 text-lg font-bold text-emerald-500">
                       ✓
                     </span>
                     <span className="leading-7 text-muted-foreground">
@@ -368,9 +372,9 @@ export default function ServicePage({ params }: Props) {
               </ul>
             </section>
 
-            <section className="rounded-3xl border border-amber-500/20 bg-amber-500/[0.05] p-7">
-              <h3 className="text-2xl font-bold text-foreground">
-                قد تحتاج خيارًا أبسط إذا:
+            <section className="rounded-3xl border border-rose-500/20 bg-rose-500/[0.05] p-7">
+              <h3 className="text-2xl font-bold text-rose-500 flex items-center gap-2">
+                <span>✕</span> مش مناسبة لك لو:
               </h3>
               <ul className="mt-6 space-y-4">
                 {notFitPoints.map((item) => (
@@ -540,9 +544,9 @@ export default function ServicePage({ params }: Props) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="apple-button mt-7 inline-block px-8 py-3"
+              className="apple-button mt-7 inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold"
             >
-              تواصل معنا عبر واتساب
+              تواصل واتساب ↗
             </a>
           </div>
         </section>
