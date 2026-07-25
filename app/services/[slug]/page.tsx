@@ -105,7 +105,7 @@ export default function ServicePage({ params }: Props) {
 
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Product", // Changed to Product to reliably trigger Google Star Ratings
+    "@type": "Product",
     "@id": `${canonical}#product`,
     name: service.shortTitle,
     description: service.metaDescription,
@@ -189,267 +189,304 @@ export default function ServicePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <article className="relative isolate overflow-hidden">
-        <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
-          <div>
-            <nav
-              aria-label="مسار التنقل"
-              className="mb-6 text-sm text-muted-foreground"
-            >
-              <Link href="/" className="hover:text-primary">
-                الرئيسية
-              </Link>
+      <article className="relative isolate overflow-hidden bg-background text-foreground">
+        
+        {/* HERO SECTION */}
+        <section className="relative pt-24 lg:pt-32 pb-20 border-b border-border/60 overflow-hidden">
+          {/* Ambient Background Glows */}
+          <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-primary/15 blur-[120px] pointer-events-none z-[-1]" />
+          <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[140px] pointer-events-none z-[-1]" />
+
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <nav aria-label="مسار التنقل" className="mb-6 text-sm text-muted-foreground">
+              <Link href="/" className="hover:text-primary transition-colors">الرئيسية</Link>
               <span className="mx-2">/</span>
-              <span>الخدمات</span>
+              <Link href="/#services" className="hover:text-primary transition-colors">الخدمات</Link>
               <span className="mx-2">/</span>
-              <span aria-current="page">{service.shortTitle}</span>
+              <span aria-current="page" className="text-foreground font-semibold">{service.shortTitle}</span>
             </nav>
 
-            <p className="mb-4 font-semibold text-primary">خدمات تاج ستوديو</p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
-              {service.title}
-            </h1>
-            {service.subtitle && (
-              <p className="mt-4 text-xl font-semibold text-primary/90 leading-relaxed">
-                {service.subtitle}
-              </p>
-            )}
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">
-              {service.description}
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href={`https://wa.me/201009215131?text=${encodeURIComponent(
-                  `مرحبًا، أريد الاستفسار عن خدمة ${service.shortTitle}`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="apple-button px-8 py-3.5 inline-flex items-center gap-2 text-base font-semibold"
-              >
-                اطلب استشارة ↗
-              </a>
-              <Link
-                href="/work"
-                className="rounded-full border border-border px-7 py-3 font-semibold text-foreground transition hover:border-primary hover:text-primary"
-              >
-                شاهد أعمالنا
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative mx-auto aspect-square w-full max-w-xl overflow-hidden rounded-3xl border border-border bg-card">
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-        </section>
-
-        <section className="border-y border-border bg-card/30">
-          <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="font-semibold text-primary">ما الذي تحصل عليه؟</p>
-              <h2 className="mt-2 text-3xl font-bold text-foreground">
-                مخرجات واضحة قابلة للاستخدام
-              </h2>
-            </div>
-
-            <ul className="mt-10 grid gap-5 md:grid-cols-2">
-              {service.deliverables.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-2xl border border-border bg-background/70 p-6 text-foreground"
-                >
-                  <span className="ml-3 font-bold text-primary">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="font-semibold text-primary">منهجية تاج</p>
-            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-              نظام TAG لبناء علامات أكثر وضوحًا
-            </h2>
-            <p className="mt-5 leading-8 text-muted-foreground">
-              لا نبدأ التصميم من الفراغ. نستخدم منهجية تربط فهم السوق
-              والاستراتيجية بالنظام البصري والتطبيق العملي.
-            </p>
-          </div>
-
-          <ol className="mt-12 grid gap-6 lg:grid-cols-3">
-            {tagMethod.map((step) => (
-              <li
-                key={step.letter}
-                className="relative overflow-hidden rounded-3xl border border-border bg-card/50 p-7"
-              >
-                <span
-                  aria-hidden="true"
-                  className="absolute -left-3 -top-8 text-[9rem] font-black leading-none text-primary/[0.07]"
-                >
-                  {step.letter}
-                </span>
-                <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-2xl font-black text-primary-foreground">
-                  {step.letter}
-                </span>
-                <h3 className="relative mt-6 text-xl font-bold text-foreground">
-                  {step.title}
-                </h3>
-                <p className="relative mt-4 leading-7 text-muted-foreground">
-                  {step.description}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        <section className="border-y border-border bg-card/30">
-          <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="font-semibold text-primary">طريقة العمل</p>
-              <h2 className="mt-2 text-3xl font-bold text-foreground">
-                خطوات منظمة من الفكرة إلى التسليم
-              </h2>
-            </div>
-
-            <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {service.process.map((step, index) => (
-                <li
-                  key={step.title}
-                  className="rounded-2xl border border-border bg-background/70 p-6"
-                >
-                  <span className="text-2xl font-bold text-primary">
-                    {String(index + 1).padStart(2, "0")}
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-7">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-semibold mb-6">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
                   </span>
-                  <h3 className="mt-4 text-xl font-bold text-foreground">
-                    {step.title}
-                  </h3>
-                  <p className="mt-3 leading-7 text-muted-foreground">
-                    {step.description}
+                  <span>متاح لمشاريع جديدة — 2026</span>
+                </div>
+
+                <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+                  {service.title}
+                </h1>
+
+                {service.subtitle && (
+                  <p className="mt-5 text-xl sm:text-2xl font-bold text-primary leading-snug">
+                    {service.subtitle}
                   </p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
+                )}
 
-        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="font-semibold text-primary">قبل أن تبدأ</p>
-            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-              هل هذه الخدمة مناسبة لمشروعك؟
-            </h2>
-            <p className="mt-5 leading-8 text-muted-foreground">
-              نفضل أن يكون نطاق العمل مناسبًا فعلًا لمرحلة المشروع، لذلك نوضح
-              لك متى تحقق الخدمة أفضل قيمة ومتى قد تحتاج حلًا أبسط.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-7 lg:grid-cols-2">
-            <section className="rounded-3xl border border-emerald-500/20 bg-emerald-500/[0.05] p-7">
-              <h3 className="text-2xl font-bold text-emerald-500 flex items-center gap-2">
-                <span>✓</span> مناسبة لك لو:
-              </h3>
-              <ul className="mt-6 space-y-4">
-                {fitPoints.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1 text-lg font-bold text-emerald-500">
-                      ✓
-                    </span>
-                    <span className="leading-7 text-muted-foreground">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section className="rounded-3xl border border-rose-500/20 bg-rose-500/[0.05] p-7">
-              <h3 className="text-2xl font-bold text-rose-500 flex items-center gap-2">
-                <span>✕</span> مش مناسبة لك لو:
-              </h3>
-              <ul className="mt-6 space-y-4">
-                {notFitPoints.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1 text-lg font-bold text-amber-600">
-                      •
-                    </span>
-                    <span className="leading-7 text-muted-foreground">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </div>
-        </section>
-
-        <section className="border-y border-border bg-card/30">
-          <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-            <div className="grid gap-12 lg:grid-cols-2">
-              <div>
-                <p className="font-semibold text-primary">القيمة للمشروع</p>
-                <h2 className="mt-2 text-3xl font-bold text-foreground">
-                  لماذا تستثمر في {service.shortTitle}؟
-                </h2>
-                <p className="mt-5 leading-8 text-muted-foreground">
-                  الهدف ليس إنتاج تصميم جميل فقط، بل بناء أصل بصري يدعم
-                  التسويق والمبيعات ويجعل العلامة أكثر وضوحًا واتساقًا أمام
-                  جمهورها.
+                <p className="mt-5 text-lg leading-relaxed text-muted-foreground max-w-2xl">
+                  {service.description}
                 </p>
+
+                <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <a
+                    href={`https://wa.me/201009215131?text=${encodeURIComponent(
+                      `مرحبًا، أريد الاستفسار عن خدمة ${service.shortTitle}`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="apple-button px-8 py-4 inline-flex items-center gap-2 text-base font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all"
+                  >
+                    <span>اطلب استشارة</span>
+                    <span>↗</span>
+                  </a>
+                  <a
+                    href="#service-portfolio"
+                    className="rounded-full border border-border/80 bg-card/60 px-8 py-4 text-base font-bold text-foreground transition hover:border-primary hover:text-primary hover:bg-card"
+                  >
+                    شاهد الأعمال
+                  </a>
+                </div>
+
+                {/* Mini Stats Grid */}
+                <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border/80 max-w-xl">
+                  <div>
+                    <div className="text-3xl font-extrabold text-primary sm:text-4xl">+120</div>
+                    <div className="text-sm text-muted-foreground mt-1">مشروع منجز</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-extrabold text-foreground sm:text-4xl">2-4</div>
+                    <div className="text-sm text-muted-foreground mt-1">أسابيع تسليم</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-extrabold text-foreground sm:text-4xl">EG<span className="text-primary">/</span>SA</div>
+                    <div className="text-sm text-muted-foreground mt-1">السوق العربي</div>
+                  </div>
+                </div>
               </div>
 
-              <ul className="grid gap-4">
-                {service.benefits.map((benefit) => (
-                  <li
-                    key={benefit}
-                    className="rounded-2xl border border-border bg-background/70 p-5 font-semibold text-foreground"
-                  >
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
+              {/* Hero Image Showcase */}
+              <div className="lg:col-span-5 relative">
+                <div className="relative mx-auto aspect-square w-full max-w-lg overflow-hidden rounded-3xl border border-border/80 bg-card shadow-2xl group">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80" />
+                  
+                  {/* Floating badge inside image */}
+                  <div className="absolute bottom-6 right-6 left-6 p-4 rounded-2xl bg-background/80 backdrop-blur-md border border-border/80 text-foreground">
+                    <p className="text-xs text-primary font-bold">تاج ستوديو • TAG Studio</p>
+                    <p className="text-sm font-bold mt-1">{service.shortTitle} احترافية عالية الجودة</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Full Portfolio Gallery Grid for Service */}
-        <ServicePortfolioGrid serviceSlug={service.slug} serviceTitle={service.shortTitle} />
-
-        <section className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
-          <div className="text-center">
-            <p className="font-semibold text-primary">الأسئلة الشائعة</p>
-            <h2 className="mt-2 text-3xl font-bold text-foreground">
-              معلومات مهمة قبل بدء المشروع
-            </h2>
-          </div>
-
-          <div className="mt-12 space-y-5">
-            {service.faq.map((item) => (
-              <section
-                key={item.question}
-                className="rounded-2xl border border-border bg-card/40 p-6"
-              >
-                <h3 className="text-lg font-bold text-foreground">
-                  {item.question}
-                </h3>
-                <p className="mt-3 leading-7 text-muted-foreground">
-                  {item.answer}
-                </p>
-              </section>
-            ))}
+        {/* MARQUEE TICKER SECTION */}
+        <section className="py-6 border-b border-border bg-card/20 overflow-hidden select-none">
+          <div className="flex whitespace-nowrap overflow-hidden gap-12">
+            <div className="flex shrink-0 animate-marquee items-center gap-12 text-lg font-bold text-muted-foreground">
+              <span className="flex items-center gap-3 text-foreground">✦ الهوية البصرية</span>
+              <span className="flex items-center gap-3">✦ استراتيجية العلامة</span>
+              <span className="flex items-center gap-3 text-foreground">✦ تصميم الشعار</span>
+              <span className="flex items-center gap-3">✦ دليل قواعد الهوية (Brand Guidelines)</span>
+              <span className="flex items-center gap-3 text-foreground">✦ تطبيقات التغليف والمطبوعات</span>
+              <span className="flex items-center gap-3">✦ مصر والسعودية</span>
+            </div>
+            <div aria-hidden="true" className="flex shrink-0 animate-marquee items-center gap-12 text-lg font-bold text-muted-foreground">
+              <span className="flex items-center gap-3 text-foreground">✦ الهوية البصرية</span>
+              <span className="flex items-center gap-3">✦ استراتيجية العلامة</span>
+              <span className="flex items-center gap-3 text-foreground">✦ تصميم الشعار</span>
+              <span className="flex items-center gap-3">✦ دليل قواعد الهوية (Brand Guidelines)</span>
+              <span className="flex items-center gap-3 text-foreground">✦ تطبيقات التغليف والمطبوعات</span>
+              <span className="flex items-center gap-3">✦ مصر والسعودية</span>
+            </div>
           </div>
         </section>
 
-        {/* Related Articles Section */}
+        {/* PROCESS SECTION (4 STEPS) */}
+        <section className="py-24 border-b border-border bg-card/10">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="max-w-3xl mb-16">
+              <p className="font-semibold text-primary text-sm tracking-wider uppercase">طريقة العمل — Process</p>
+              <h2 className="mt-2 text-3xl font-extrabold text-foreground sm:text-5xl">
+                أربع خطوات تفصلك عن <span className="text-primary">هوية بصرية</span> جاهزة للتطبيق
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                عملية واضحة ومدروسة تضمن أن كل قرار بصري مبني على استراتيجية، لا على ذوق عشوائي.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {service.process.map((step, index) => (
+                <div
+                  key={step.title}
+                  className="relative rounded-3xl border border-border/80 bg-card/60 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5"
+                >
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-2xl font-black text-primary">0{index + 1}</span>
+                    <span className="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">
+                      خطوة {index + 1}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FIT / NOT FIT COMPARISON SECTION */}
+        <section className="py-24 border-b border-border bg-background">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <p className="font-semibold text-primary text-sm tracking-wider uppercase">شفافية كاملة — Fit Check</p>
+              <h2 className="mt-2 text-3xl font-extrabold text-foreground sm:text-4xl">
+                هل نحن <span class="text-primary">مناسبون</span> لمشروعك؟
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                قبل أي التزام، خذ نظرة صادقة على متى تكون خدمتنا الاستثمار الصحيح لمشروعك — ومتى لا تكون.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* FIT */}
+              <div className="rounded-3xl border border-emerald-500/30 bg-emerald-500/[0.04] p-8 lg:p-10 relative overflow-hidden">
+                <div className="absolute top-0 right-0 left-0 h-1.5 bg-emerald-500" />
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl font-bold">
+                    ✓
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold text-emerald-400 tracking-wider">SUITABLE</span>
+                    <h3 className="text-2xl font-extrabold text-foreground">مناسبة لك لو...</h3>
+                  </div>
+                </div>
+                <ul className="space-y-5">
+                  {fitPoints.map((point) => (
+                    <li key={point} className="flex items-start gap-4 text-foreground text-base leading-relaxed">
+                      <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm shrink-0 mt-1 font-bold">✓</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* NOT FIT */}
+              <div className="rounded-3xl border border-rose-500/30 bg-rose-500/[0.04] p-8 lg:p-10 relative overflow-hidden">
+                <div className="absolute top-0 right-0 left-0 h-1.5 bg-rose-500" />
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl font-bold">
+                    ✕
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold text-rose-400 tracking-wider">UNSUITABLE</span>
+                    <h3 className="text-2xl font-extrabold text-foreground">مش مناسبة لك لو...</h3>
+                  </div>
+                </div>
+                <ul className="space-y-5">
+                  {notFitPoints.map((point) => (
+                    <li key={point} className="flex items-start gap-4 text-foreground text-base leading-relaxed">
+                      <span className="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center text-sm shrink-0 mt-1 font-bold">✕</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* DELIVERABLES SECTION */}
+        <section className="py-24 border-b border-border bg-card/20">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid lg:grid-cols-12 gap-12 items-start">
+              <div className="lg:col-span-5">
+                <p className="font-semibold text-primary text-sm tracking-wider uppercase">ماذا تستلم — Deliverables</p>
+                <h2 className="mt-2 text-3xl font-extrabold text-foreground sm:text-5xl">
+                  مخرجات واضحة <span className="text-primary">قابلة للاستخدام</span>
+                </h2>
+                <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                  نهاية المشروع مش بس "شعار" — تستلم منظومة كاملة جاهزة تُطبَّق على أي قناة، مطبوعة أو رقمية.
+                </p>
+
+                {/* Formats Badge Box */}
+                <div className="mt-8 p-6 rounded-2xl border border-border bg-card/80">
+                  <p className="text-xs font-bold text-primary mb-3 uppercase tracking-wider">صيغ الملفات المسلّمة للمشروع</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1.5 bg-background rounded-lg text-sm font-mono border border-border">.AI</span>
+                    <span className="px-3 py-1.5 bg-background rounded-lg text-sm font-mono border border-border">.EPS</span>
+                    <span className="px-3 py-1.5 bg-background rounded-lg text-sm font-mono border border-border">.PDF</span>
+                    <span className="px-3 py-1.5 bg-background rounded-lg text-sm font-mono border border-border">.SVG</span>
+                    <span className="px-3 py-1.5 bg-background rounded-lg text-sm font-mono border border-border">.PNG</span>
+                    <span className="px-3 py-1.5 bg-primary text-primary-foreground rounded-lg text-sm font-mono font-bold">+ Brand Guidelines PDF</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7">
+                <div className="rounded-3xl border border-border bg-card/50 p-8 space-y-6">
+                  {service.deliverables.map((item, idx) => (
+                    <div key={item} className="flex items-start gap-4 pb-5 border-b border-border/60 last:border-0 last:pb-0 group">
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-lg shrink-0 group-hover:rotate-12 transition-transform">
+                        0{idx + 1}
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-foreground">{item}</h3>
+                        <p className="text-sm text-muted-foreground mt-1">تجهيز دقيق بمواصفات قياسية للطباعة والاستخدام الرقمي.</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TAG METHODOLOGY (T-A-G) SECTION */}
+        <section className="py-24 border-b border-border bg-card/40 relative overflow-hidden">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <p className="font-semibold text-primary text-sm tracking-wider uppercase">منهجية تاج — TAG Methodology</p>
+              <h2 className="mt-2 text-3xl font-extrabold text-foreground sm:text-5xl">
+                ليه <span className="text-primary">TAG</span>؟
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                ثلاث كلمات بيمثّلوا منهجيتنا في بناء كل هوية — من أول سؤال استراتيجي لحد آخر ملف مُسلَّم.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {tagMethod.map((step) => (
+                <div
+                  key={step.letter}
+                  className="rounded-3xl border border-border/80 bg-background/80 p-8 lg:p-10 transition-all duration-500 hover:border-primary hover:bg-card group"
+                >
+                  <span className="text-8xl font-black text-primary/40 group-hover:text-primary transition-colors block mb-4" style={{ fontFamily: 'Cairo' }}>
+                    {step.letter}
+                  </span>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICE PORTFOLIO GALLERY GRID */}
+        <ServicePortfolioGrid serviceSlug={service.slug} serviceTitle={service.shortTitle} />
+
+        {/* RELATED ARTICLES SECTION */}
         {(() => {
           const todayStr = new Date().toISOString().split("T")[0]
           const relatedPosts = blogPosts
@@ -465,7 +502,7 @@ export default function ServicePage({ params }: Props) {
           if (relatedPosts.length === 0) return null
 
           return (
-            <section className="border-t border-border bg-card/20 py-20">
+            <section className="border-b border-border bg-card/20 py-20">
               <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
                   <div>
@@ -476,49 +513,41 @@ export default function ServicePage({ params }: Props) {
                   </div>
                   <Link
                     href="/blog"
-                    className="mt-4 md:mt-0 font-semibold text-primary hover:underline inline-flex items-center gap-1"
+                    className="mt-4 md:mt-0 font-semibold text-primary hover:underline"
                   >
-                    تصفح كافة مقالات المدونة ←
+                    تصفح جميع المقالات ←
                   </Link>
                 </div>
 
                 <div className="grid gap-8 md:grid-cols-3">
                   {relatedPosts.map((post) => (
                     <article
-                      key={post.id}
-                      className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-background transition hover:border-primary/30 shadow-sm"
+                      key={post.slug}
+                      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition hover:border-primary/40"
                     >
-                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
+                      <div className="relative aspect-[16/9] overflow-hidden bg-muted">
                         <Image
                           src={post.image}
                           alt={post.title}
                           fill
                           sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover transition duration-300 group-hover:scale-105"
+                          className="object-cover transition duration-500 group-hover:scale-105"
                         />
                       </div>
                       <div className="flex flex-1 flex-col justify-between p-6">
                         <div>
-                          <p className="text-xs font-semibold text-primary mb-2">
+                          <p className="text-xs font-semibold text-primary">
                             {post.category}
                           </p>
-                          <h3 className="text-lg font-bold leading-snug text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                            <Link href={`/blog/${post.slug}`}>
-                              {post.title}
-                            </Link>
+                          <h3 className="mt-2 text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                           </h3>
-                          <p className="mt-3 text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+                          <p className="mt-3 text-sm leading-6 text-muted-foreground line-clamp-2">
                             {post.excerpt}
                           </p>
                         </div>
-                        <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between text-xs text-muted-foreground">
-                          <span>{post.readTime}</span>
-                          <Link
-                            href={`/blog/${post.slug}`}
-                            className="font-semibold text-primary hover:underline"
-                          >
-                            اقرأ المقال الكامل ←
-                          </Link>
+                        <div className="mt-6 pt-4 border-t border-border text-xs text-muted-foreground">
+                          {post.date}
                         </div>
                       </div>
                     </article>
@@ -529,75 +558,65 @@ export default function ServicePage({ params }: Props) {
           )
         })()}
 
-        <section className="mx-auto max-w-5xl px-6 pb-24 text-center lg:px-8">
-          <div className="rounded-3xl border border-primary/20 bg-card p-10">
-            <h2 className="text-3xl font-bold text-foreground">
-              جاهز لبناء حضور بصري أقوى؟
+        {/* FAQ SECTION */}
+        <section className="mx-auto max-w-4xl px-6 py-24 lg:px-8">
+          <div className="text-center">
+            <p className="font-semibold text-primary text-sm tracking-wider uppercase">الأسئلة الشائعة — FAQ</p>
+            <h2 className="mt-2 text-3xl font-extrabold text-foreground sm:text-4xl">
+              معلومات مهمة قبل بدء المشروع
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl leading-8 text-muted-foreground">
-              شاركنا تفاصيل مشروعك وسنساعدك على تحديد النطاق الأنسب بدل شراء
-              عناصر لا يحتاجها المشروع.
-            </p>
-            <a
-              href={`https://wa.me/201009215131?text=${encodeURIComponent(
-                `مرحبًا، أريد عرض سعر لخدمة ${service.shortTitle}`
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="apple-button mt-7 inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold"
-            >
-              تواصل واتساب ↗
-            </a>
+          </div>
+
+          <div className="mt-12 space-y-6">
+            {service.faq.map((item) => (
+              <details
+                key={item.question}
+                className="group rounded-2xl border border-border bg-card/40 p-6 transition-all [&_summary::-webkit-details-marker]:none"
+              >
+                <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground text-lg">
+                  <span>{item.question}</span>
+                  <span className="ml-3 font-bold text-primary group-open:rotate-45 transition-transform text-xl">+</span>
+                </summary>
+                <p className="mt-4 leading-relaxed text-muted-foreground text-base border-t border-border/60 pt-4">
+                  {item.answer}
+                </p>
+              </details>
+            ))}
           </div>
         </section>
 
-        {/* Service & AggregateRating Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              name: service.title,
-              description: service.description,
-              provider: {
-                "@type": "ProfessionalService",
-                name: "تاج ستوديو - TAG Studio",
-                url: "https://www.wearetagstudio.com",
-                image: "https://www.wearetagstudio.com/images/logo.png"
-              },
-              areaServed: ["SA", "EG", "KW", "AE"],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.9",
-                reviewCount: "142",
-                bestRating: "5",
-                worstRating: "1"
-              }
-            }),
-          }}
-        />
+        {/* FINAL CONTACT CTA SECTION */}
+        <section className="mx-auto max-w-5xl px-6 pb-24 text-center lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-card p-10 lg:p-16 shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+            <h2 className="text-3xl font-extrabold text-foreground sm:text-5xl">
+              جاهز لبناء <span className="text-primary">حضور بصري أقوى؟</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              شاركنا تفاصيل مشروعك وسنساعدك على تحديد النطاق الأنسب بدل شراء عناصر لا يحتاجها المشروع.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href={`https://wa.me/201009215131?text=${encodeURIComponent(
+                  `مرحبًا، أريد عرض سعر لخدمة ${service.shortTitle}`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="apple-button px-8 py-4 inline-flex items-center gap-2 text-base font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all"
+              >
+                <span>تواصل واتساب</span>
+                <span>↗</span>
+              </a>
+              <a
+                href="mailto:wearetagstudio@gmail.com"
+                className="rounded-full border border-border px-8 py-4 text-base font-bold text-foreground transition hover:border-primary hover:text-primary"
+              >
+                راسلنا بالإيميل
+              </a>
+            </div>
+          </div>
+        </section>
 
-        {/* FAQ Schema */}
-        {service.faq && service.faq.length > 0 && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                mainEntity: service.faq.map((item) => ({
-                  "@type": "Question",
-                  name: item.question,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: item.answer,
-                  },
-                })),
-              }),
-            }}
-          />
-        )}
       </article>
     </>
   )
