@@ -79,6 +79,42 @@ const replaceIcons = (text: string): React.ReactNode => {
   })
 }
 
+// ✅ دالة جديدة لمعالجة المارك داون البسيط (النصوص العريضة والأكواد المضمنة) مع استدعاء الأيقونات
+const parseMarkdownInline = (text: string): React.ReactNode => {
+  if (!text) return ""
+  
+  // 1. تقسيم النص بناءً على النجوم الثنائية ** لتحديد الكلمات العريضة
+  const boldParts = text.split(/\*\*(.*?)\*\*/g)
+  
+  return boldParts.map((boldPart, boldIndex) => {
+    const isBold = boldIndex % 2 === 1
+    
+    // 2. تقسيم النص بناءً على الباك تيك ` لتحديد الأكواد المضمنة
+    const codeParts = boldPart.split(/`([^`]+)`/g)
+    const renderedCodeParts = codeParts.map((codePart, codeIndex) => {
+      const isCode = codeIndex % 2 === 1
+      if (isCode) {
+        return (
+          <code key={`code-${codeIndex}`} className="px-1.5 py-0.5 mx-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-rose-600 dark:text-rose-400 font-mono text-[14px] font-semibold break-all">
+            {codePart}
+          </code>
+        )
+      }
+      return replaceIcons(codePart)
+    })
+    
+    if (isBold) {
+      return (
+        <strong key={`bold-${boldIndex}`} className="font-extrabold text-neutral-900 dark:text-neutral-100">
+          {renderedCodeParts}
+        </strong>
+      )
+    }
+    
+    return renderedCodeParts
+  })
+}
+
 interface Props {
   post: BlogPost
 }
@@ -251,7 +287,7 @@ export default function ArticleClient({ post }: Props) {
                     <span className={`mt-2.5 text-xs flex-shrink-0 ${theme.text.split(" ")[0]}`}>●</span>
                     <p>
                       <strong className="text-neutral-900 dark:text-neutral-100 font-bold">{boldText}:</strong>
-                      {replaceIcons(normalText)}
+                      {parseMarkdownInline(normalText)}
                     </p>
                   </li>
                 )
@@ -259,7 +295,7 @@ export default function ArticleClient({ post }: Props) {
               return (
                 <li key={i} className="flex items-start gap-3 text-[17px] md:text-[18px] text-neutral-700 dark:text-neutral-300 leading-loose">
                   <span className={`mt-2.5 text-xs flex-shrink-0 ${theme.text.split(" ")[0]}`}>●</span>
-                  <span>{replaceIcons(item)}</span>
+                  <span>{parseMarkdownInline(item)}</span>
                 </li>
               )
             })}
@@ -364,7 +400,7 @@ export default function ArticleClient({ post }: Props) {
                 </h3>
                 {description && (
                   <p className="text-[16px] md:text-[17px] text-neutral-600 dark:text-neutral-400 leading-relaxed text-justify">
-                    {replaceIcons(description)}
+                    {parseMarkdownInline(description)}
                   </p>
                 )}
               </div>
@@ -402,7 +438,7 @@ export default function ArticleClient({ post }: Props) {
         renderedElements.push(
           <div key={`callout-${i}`} className={`my-8 p-6 rounded-l-2xl border-r-4 ${calloutStyle.border} ${calloutStyle.bg} text-[17px] md:text-[18px] leading-relaxed shadow-sm`}>
             <strong className={`block ${calloutStyle.text} mb-2 font-black text-lg`}>{title}</strong>
-            <span className="text-neutral-700 dark:text-neutral-300">{replaceIcons(text)}</span>
+            <span className="text-neutral-700 dark:text-neutral-300">{parseMarkdownInline(text)}</span>
           </div>
         )
         continue
@@ -624,7 +660,7 @@ export default function ArticleClient({ post }: Props) {
                   <tr>
                     {headers.map((header, idx) => (
                       <th key={idx} className="px-6 py-4 text-sm font-black text-neutral-900 dark:text-neutral-100 tracking-wider">
-                        {replaceIcons(header)}
+                        {parseMarkdownInline(header)}
                       </th>
                     ))}
                   </tr>
@@ -634,7 +670,7 @@ export default function ArticleClient({ post }: Props) {
                     <tr key={rowIdx} className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/20 transition-colors">
                       {row.map((cell, cellIdx) => (
                         <td key={cellIdx} className="px-6 py-4 text-[15px] text-neutral-700 dark:text-neutral-300 font-medium">
-                          {replaceIcons(cell)}
+                          {parseMarkdownInline(cell)}
                         </td>
                       ))}
                     </tr>
@@ -677,7 +713,7 @@ export default function ArticleClient({ post }: Props) {
           key={`p-${i}`} 
           className="text-[17px] md:text-[18px] leading-loose text-neutral-700 dark:text-neutral-300 mb-6 text-justify font-normal"
         >
-          {replaceIcons(line)}
+          {parseMarkdownInline(line)}
         </p>
       )
     }
