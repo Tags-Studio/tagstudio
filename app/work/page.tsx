@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "معرض الأعمال | استكشف أقوى الهويات البصرية للشركات والمطاعم 🔥",
   description: "شاهد كيف حوّلنا أفكار عملائنا في السعودية ومصر إلى هويات بصرية جذابة ومشاريع ناجحة. تصفح سابقة أعمال تاج ستوديو واستلهم فكرة مشروعك القادم.",
   alternates: { canonical: "https://www.wearetagstudio.com/work" },
+  openGraph: {
+    url: "https://www.wearetagstudio.com/work",
+  },
 }
 
 export default function WorkPage() {

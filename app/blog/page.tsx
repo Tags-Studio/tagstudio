@@ -4,34 +4,42 @@ import { blogPosts } from "@/lib/blogData"
 import BlogClientSection from "@/app/blog/BlogClientSection"
 
 // ✅ SEO Metadata - Google will read this
-export const metadata: Metadata = {
-  title: "أسرار التسويق والهوية البصرية | مدونة تاج ستوديو لرواد الأعمال 💡",
-  description:
-    "دليلك الشامل لتصدر السوق! اكتشف أسرار وتكتيكات بناء الهوية البصرية، والموشن جرافيك، ومضاعفة التفاعل على السوشيال ميديا. مقالات حصرية من خبراء تاج ستوديو.",
-  keywords: [
-    "مدونة تصميم",
-    "هوية بصرية",
-    "تصميم جرافيك",
-    "تصميم سوشيال ميديا",
-    "موشن جرافيك",
-    "تاج ستوديو",
-  ],
-  openGraph: {
-    title: "مدونة تاج ستوديو | نصائح التصميم والتسويق",
+interface Props {
+  searchParams: { category?: string }
+}
+
+export function generateMetadata({ searchParams }: Props): Metadata {
+  const hasCategory = !!searchParams?.category
+
+  return {
+    title: "أسرار التسويق والهوية البصرية | مدونة تاج ستوديو لرواد الأعمال 💡",
     description:
-      "نصائح احترافية في التصميم الجرافيكي والتسويق الرقمي من فريق تاج ستوديو",
-    url: "https://www.wearetagstudio.com/blog",
-    siteName: "تاج ستوديو",
-    locale: "ar_EG",
-    type: "website",
-  },
-  alternates: {
-    canonical: "https://www.wearetagstudio.com/blog",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+      "دليلك الشامل لتصدر السوق! اكتشف أسرار وتكتيكات بناء الهوية البصرية، والموشن جرافيك، ومضاعفة التفاعل على السوشيال ميديا. مقالات حصرية من خبراء تاج ستوديو.",
+    keywords: [
+      "مدونة تصميم",
+      "هوية بصرية",
+      "تصميم جرافيك",
+      "تصميم سوشيال ميديا",
+      "موشن جرافيك",
+      "تاج ستوديو",
+    ],
+    openGraph: {
+      title: "مدونة تاج ستوديو | نصائح التصميم والتسويق",
+      description:
+        "نصائح احترافية في التصميم الجرافيكي والتسويق الرقمي من فريق تاج ستوديو",
+      url: "https://www.wearetagstudio.com/blog",
+      siteName: "تاج ستوديو",
+      locale: "ar_EG",
+      type: "website",
+    },
+    alternates: {
+      canonical: "https://www.wearetagstudio.com/blog",
+    },
+    robots: {
+      index: !hasCategory,
+      follow: true,
+    },
+  }
 }
 
 // ✅ Revalidate the page daily to auto-publish scheduled articles
