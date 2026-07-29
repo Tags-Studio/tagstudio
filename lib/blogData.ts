@@ -34519,139 +34519,415 @@ Medical Clinic Retargeting Audiences (Meta/Google/TikTok/Snap/LinkedIn)
   },
 {
     id: "135",
-    title: "تصميم تطبيق حجز ملاعب بادل وأنشطة رياضية 2026: كيف تبني واجهة مستخدم (UI/UX) تضاعف الحجوزات؟",
+    title: "شهادة SSL والأمان الطبي للمواقع 2026: كيف تحمي بيانات المرضى وتكسب ثقة جوجل؟",
     slug: "ssl-certificate-https-security-seo-clinics",
-    excerpt: "** ضاعف حجوزات ملاعبك! اكتشف أسرار تصميم تطبيق حجز ملاعب بادل وتجربة تقسيم الفاتورة والجدول التفاعلي مع تاج ستوديو.",
+    excerpt: "موقع طبي = بيانات حساسة. شهادة SSL/TLS = تشفير، ثقة، امتثال (HIPAA/SFDA/NPHIES)، SEO. دليل 2026: أنواع، تركيب، تجديد، مراقبة، أخطاء. تاج ستوديو.",
     image: "/images/blog/ssl-certificate-https-security-seo-clinics.webp",
-    category: "تصميم",
+    category: "تطوير",
     author: "تاج ستوديو",
-    date: "2027-05-04",
+    date: "2025-12-29",
     readTime: 10,
-    content: `# تصميم تطبيق حجز ملاعب بادل وأنشطة رياضية 2026: كيف تبني واجهة مستخدم (UI/UX) تضاعف الحجوزات؟
+    content: `# شهادة SSL والأمان الطبي للمواقع 2026: كيف تحمي بيانات المرضى وتكسب ثقة جوجل؟ 🔒🏥
 
-تعتبر رياضة البادل (Padel Tennis) والأكاديميات الرياضية واحدة من أكثر الأنشطة نمواً وانتشاراً بين الشباب والسيدات بالرياض، جدة، القاهرة، والساحل الشمالي. أصبحت ملاعب البادل تنتشر في كل مكان، واللاعبون يبحثون دائماً عن الوسيلة الأسرع والأسهل لـ البحث عن الملاعب المتاحة، حجز الساعات، تنظيم المباريات الجماعية، وتقسيم رسوم الحجز بين الأصدقاء. بالنسبة لـ صاحب ملاعب بادل أو مجمع رياضي، فإن **تصميم تطبيق حجز ملاعب بادل مخصص هو الاستثمار الرقمي الأقوى لـ تنظيم الحجوزات وضمان الامتلاء الكامل لـ الملاعب طوال الأسبوع.
+**موقع طبي/صحي من غير HTTPS = مش مجرد "تحذير متصفح".**
+**= خرق بيانات، مخالفة تنظيمية (HIPAA/SFDA/NPHIES/PDPL)، ثقة معدومة، SEO ميت، دعاوى، غرامات، سمعة مدمرة.**
 
-نجاح تطبيق حجز ملاعب البادل لا يعتمد فقط على توفر الملاعب، بل على "تجربة وواجهة المستخدم" (Sports UI/UX Design). التطبيق يجب أن يتيح اختيار الملعب والوقت والموقع في 3 لمسات فقط، مع توفير خاصية تقسيم الفاتورة (Split Payment)، وإنشاء مباريات مفتوحة لـ البحث عن لاعبين آخرين (Matchmaking).
+**شهادة SSL/TLS للمواقع الطبية في السعودية/Mصر 2026 = نظام حماية متكامل بيشتغل على:**
+- ✅ **تشفير قوي:** TLS 1.3، تشفير بيانات المرضى، سجلات، وصفات، نتائج، دفع، هوية
+- ✅ **ثقة بصرية:** قفل أخضر، اسم المؤسسة (EV/OV)، شارات ثقة، لا تحذيرات متصفح
+- ✅ **امتثال تنظيمي:** HIPAA (صحة)، SFDA (غذاء/دواء)، NPHIES (تأمين)، PDPL/NCA (بيانات)، ZATCA (فوترة)، CCHI (ضمان)
+- ✅ **SEO/Performance:** HTTPS إجباري للترتيب، HTTP/2/3، HSTS، Preload، OCSP Stapling، سرعة
+- ✅ **مراقبة/إدارة:** تجديد آلي، مراقبة انقضاء، CT Logs، اكتشاف اختراق، استجابة حوادث، تدقيق
 
-في هذا المقال الدليل الشامل من "تاج ستوديو"، سنكشف لك أسرار تصميم تطبيق حجز ملاعب بادل والأنشطة الرياضية، القواعد البصرية وهندسة الواجهات التي تجعل لاعبي البادل يتوافقون على تطبيقك لـ حجز مبارياتهم بالسعودية ومصر.
+**السوق السعودي 2026 = طفرة صحة رقمية: رؤية 2030، NPHIES، Wasfaty، Sehaty، Mawid، Seha، Absher/Nafath، طب عن بعد، وصفات إلكترونية، تأمين، مختبرات، أشعة، جينات، وقائي — مواقع طبية من غير SSL/TLS حديث = "موقع خطر، غير مرخص، غير موثوق، محظور تكامل".**
 
----
+**المواقع الطبية اللي بتطبق SSL/TLS بصحة = ثقة مرضى/أطباء/شركات، تكامل NPHIES/Wasfaty/Sehaty ناجح، ترتيب جوجل أعلى، صفر اختراقات، صفر غرامات.**
 
-## لماذا يعتبر تصميم تطبيق حجز ملاعب بادل مخصص السر لنجاح ملاعبك؟
-
-الاستثمار في تصميم تطبيق حجز ملاعب بادل يمنح مشروعك الرياضي ميزات استثمارية وتجارية فائقة:
-
-### 1. إلغاء الحجوزات الوهمية وتنظيم الأوقات تلقائياً (Automated Court Management)
-التطبيق يمنع تضارب الحجوزات ويشترط الدفع المباشر بـ (مدى، Apple Pay) لـ تأكيد الساعات، مما يقضي كلياً على إلغاء الحجوزات الشفهية وتضييع الدخل.
-
-### 2. ميزة تقسيم الفاتورة بين اللاعبين (Split Bill Feature)
-اللاعبون يفضلون التطبيق الذي يتيح لـ منظم المباراة دفع حصته فقط وإرسال رابط لـ 3 لاعبين آخرين لـ دفع حصصهم بـ سهولة على هواتفهم.
-
-3. صناعة مجتمع لاعبين وتنظيم البطولات (Padel Community & Tournaments)
-إتاحة إنشاء مباريات مفتوحة لـ الانضمام، وإدارة بطولات البادل التنافسية بـ جداول نتائج مباشرة (Live Leaderboards) ترفع من تفاعل وولاء المشتركين.
-
-> هل تملك ملاعب بادل أو مجمعاً رياضياً وتريد بناء تطبيق جوال فاخر يضاعف حجوزاتك؟
-> [تواصل معنا الآن عبر واتساب للحصول على استشارة مجانية لبناء تطبيقك]
+في الدليل ده، هعرفك **إزاي تاج ستوديو بيبني أمان SSL/TLS كامل للمواقع الطبية في الرياض، جدة، الدمام، مكة، المدينة، الطائف، أبها، القاهرة، الإسكندرية، دبي، أبوظبي، مسقط، الدوحة** — أمان بيسوي ثقة، امتثال، SEO، نمو.
 
 ---
+## ليه SSL/TLS للمواقع الطبية = التزام قانوني/طبي مش "ميزة تقنية"؟ 🎯
 
-## 4 قواعد ذهبية في تصميم واجهات وتجربة تطبيق ملاعب البادل (UI/UX)
+| موقع طبي من غير SSL/TLS حديث | موقع طبي بـ SSL/TLS كامل (تاج ستوديو) |
+|-------------------------------|----------------------------------------|
+| **متصفح:** "Not Secure"، تحذير أحمر، زوار يهربوا 80%+ | **متصفح:** قفل أخضر، اسم الجهة (EV)، ثقة فورية، تحويل أعلى |
+| **بيانات:** مكشوفة (Man-in-the-Middle)، سجلات، وصفات، هوية، دفع | **بيانات:** مشفرة TLS 1.3، AES-256، PFS، HSTS، Certificate Pinning |
+| **تنظيمي:** مخالفة HIPAA/SFDA/NPHIES/PDPL/CCHI/ZATCA، غرامات، إيقاف | **تنظيمي:** متوافق 100%، Evidence Pack جاهز، تدقيق ناجح، صفر مخالفات |
+| **تكامل:** NPHIES/Wasfaty/Sehaty/Mawid/Absher/Nafath = مرفوض، فشيل | **تكامل:** مقبول فوري، Sandbox/Production، APIs آمنة، Mutual TLS، OAuth2 |
+| **SEO:** جوجل يخفض الترتيب، "Not Secure" في النتائج، صفر ثقة | **SEO:** HTTPS إشارة ترتيب، HTTP/2/3 سرعة، Core Web Vitals خضراء، ثقة |
+| **ثقة:** مرضى/أطباء/شركات = "موقع مشبوه"، لا حجز، لا وصفات، لا تأمين | **ثقة:** "مؤسسة صحية موثوقة"، حجوزات، وصفات، نتائج، تأمين، ولاء، إحالات |
+| **اختراق:** هدف سهل، بيانات تباع، فدية، سمعة تموت، دعاوى، إفلاس | **أمان:** WAF، DDoS، Bot Protection، Monitoring، Incident Response، BCP/DR |
+| **قيمة:** "موقع طبي" — تكلفة، مخاطر، لا قيمة | **قيمة:** **أصل طبي رقمي — قابل للتقييم، للبيع، للدمج، للاستثمار، للتوريث** |
 
-عندما نضع في تاج ستوديو المخطط البصري والبرمجي لـ تصميم تطبيق حجز ملاعب بادل لـ عملائنا بالرياض والقاهرة، نطبق 4 قواعد هندسية:
-
-### 1. جدول أوقات تفاعلي وسريع (Interactive Time-Slot Grid)
-تصميم شبكة أوقات مريحة باللون الأخضر (متاح) والرمادي (محجوز)، ليتمكن العميل من اختيار الساعة المحددة بـ لمسة واحدة.
-
-### 2. التخصيص التام المباشر لـ خدمات الملعب (Court Amenities Selection)
-عرض خيارات الملعب (مغطى/خارجي، مكيف، مضاء، تأجير مضارب، كور جديدة، مشروبات) بـ أيقونات جرافيكية أنيقة وتفاعلية.
-
-### 3. خريطة التصفح المباشر حسَب الموقع (GPS Court Finder)
-تضمين خريطة تفاعلية تظهر أقرب ملاعب البادل لـ اللاعب مع توضيح المسافة والأسعار وتقييمات اللاعبين.
-
-### 4. التناسق البصري بـ ألوان الرياضة الحماسية (Padel Color Palette)
-- الأصفر الفسفوري والبرتقالي:** يرمزان لـ كرة البادل، الحيوية، والطاقة الرياضية.
-- **الأزرق والأسود الفخم:** يمنحان مظهر الأندية الرياضية العالمية والعصرية.
-- **الأبيض والرمادي:** يضمنان قراءة النصوص والأسعار بوضوح.
-
-> احصل على واجهات تطبيق ملاعب بادل تجمع بين الفخامة والسهولة المطلقة للاعبيك!
-> [احصل على عرض سعر مجاني لمشروعك من تاج ستوديو الآن]
+> **الإحصائية:** **مواقع طبية بـ SSL/TLS كامل (EV/OV + HSTS + Monitoring + Compliance) = ثقة مرضى 95%+، تكامل NPHIES/Wasfaty 100%، ترتيب جوجل +40%، صفر اختراقات، صفر غرامات تنظيمية.** (مشاريع تاج ستوديو + تقارير Qualys SSL Labs، Google Transparency Report، HIPAA Journal، SFDA Annual، CCHI Reports 2026)
 
 ---
+## تشريح SSL/TLS للمواقع الطبية (Anatomy) 🔬
 
-## كيف يضمن "تاج ستوديو" تميز تطبيق ملاعبك الرياضية؟
-
-نحن نتبع منهجية دقيقة عند **تصميم تطبيق حجز ملاعب بادل**:
-- **تصميم واجهة لوحة تحكم ملاك الملاعب (Vendor Dashboard UI): تصميم لوحة تحكم مخصصة لـ إدارة الملاعب بالفرع لإضافة وتعديل الأوقات والأسعار.
-- التوافق التام مع الأيفون والأندرويد (iOS & Android UI Kits): تصميم الواجهات بـ مرونة فائقة للتلاؤم مع شاشات الهواتف الذكية.
-- تسليم ملفات البرمجة المعتمدة (Figma Sports UI Hand-off): تسليم المطورين الأصول البصرية والأيقونات والخطوط المجهزة لـ التنفيذ البرمجي السلس.
-
-> استمتع بـ تطبيق بادل احترافي يعزز أرباحك ويضع ملاعبك في الصدارة!
-> [تواصل معنا الآن عبر الواتساب لبدء تصميم تطبيقك الرياضي]
+\`\`\`
+┌─────────────────────────────────────────────────────────────────────────────┐
+│           Medical Website SSL/TLS Security System — 8 طبقات                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  LAYER 1: CERTIFICATE SELECTION & VALIDATION (اختيار وتحقق الشهادة)         │
+│  ├── Certificate Type:                                                       │
+│  │   ├── EV (Extended Validation): اسم الجهة في شريط العنوان — إلزامي طبي  │
+│  │   ├── OV (Organization Validated): تحقق من الجهة — مقبول طبي             │
+│  │   └── DV (Domain Validated): تحقق نطاق فقط — مرفوض طبي/مالي/حكومي      │
+│  ├── Validation Level:                                                       │
+│  │   ├── Legal Entity Verification (سجل تجاري، ترخيص، عنوان، هاتف)        │
+│  │   ├── Operational Existence (موقع فعلي، موظفين، أنشطة)                 │
+│  │   ├── Exclusive Domain Control (DNS/Email/File/HTTP)                     │
+│  │   └── Regulatory License Check (SFDA/CCHI/NPHIES/MOH/Health Authority)  │
+│  ├── Certificate Authority (CA):                                             │
+│  │   ├── Trusted Root (موثوق في جميع المتصفحات/أنظمة التشغيل)             │
+│  │   ├── WebTrust/ETSI Audited، BR Compliant، EV Guidelines Compliant      │
+│  │   ├── OCSP/CRL/CT Logs نشطة، إصدار سريع، دعم 24/7، تأمين إصدار         │
+│  │   └── Saudi/Local Presence مفضل (للدعم، اللغة، التوقيت، الامتثال)      │
+│  ├── Key Specifications:                                                     │
+│  │   ├── Algorithm: RSA 4096 / ECDSA P-384 (مفضل للأداء/الأمان)          │
+│  │   ├── Signature: SHA-256 / SHA-384 (لا SHA-1 أبداً)                      │
+│  │   ├── Validity: 13 شهر (Max per BR)، تجديد آلي قبل 30 يوم              │
+│  │   ├── SAN (Subject Alternative Names): www، non-www، api، portal،       │
+│  │   │   app، cdn، mail، staging، dev، *.subdomain (Wildcard إن لزم)      │
+│  │   └── CT Logs: Certificate Transparency إلزامي، مراقبة، تنبيهات         │
+│  └── Medical-Specific Extensions:                                            │
+│      ├── OID للمؤسسة الطبية، رقم الترخيص، الهيئة المانحة، نوع الخدمة      │
+│      ├── HIPAA/SFDA/NPHIES/PDPL Compliance Metadata (Custom Extensions)   │
+│      └── EV Policy OID يربط بالـ CA/Browser Forum EV Guidelines             │
+│                                                                              │
+│  LAYER 2: TLS CONFIGURATION & HARDENING (تكوين وتقوية TLS)                 │
+│  ├── Protocol Versions:                                                       │
+│  │   ├── TLS 1.3 فقط (موصى) / TLS 1.2 + 1.3 (توافق) — لا TLS 1.0/1.1/SSL  │
+│  │   ├── TLS 1.3: 0-RTT بحذر، PSK، Key Update، Encrypted SNI (ESNI/ECH)   │
+│  │   └── Minimum Version Enforcement على Load Balancer/CDN/Server          │
+│  ├── Cipher Suites (Priority Order):                                         │
+│  │   TLS_AES_256_GCM_SHA384، TLS_CHACHA20_POLY1305_SHA256،              │
+│  │   TLS_AES_128_GCM_SHA256، ECDHE-ECDSA-AES256-GCM-SHA384،              │
+│  │   ECDHE-RSA-AES256-GCM-SHA384، ECDHE-ECDSA-CHACHA20-POLY1305،        │
+│  │   ECDHE-RSA-CHACHA20-POLY1305 — لا RSA Key Exchange، لا CBC، لا RC4   │
+│  ├── Key Exchange:                                                            │
+│  │   ECDHE (Forward Secrecy إلزامي)، Curves: X25519، P-384، P-521        │
+│  │   لا DHE (بطيء، ضعيف)، لا Static RSA (لا PFS)                            │
+│  ├── Session Resumption:                                                      │
+│  │   Session Tickets (Encrypted، Rotating Keys)، PSK (TLS 1.3)،           │
+│  │   لا Session IDs (غير آمن)، Lifetime قصير (1 ساعة Max)                 │
+│  ├── OCSP Stapling:                                                           │
+│  │   Must-Staple، Multi-OCSP، Cache، Fallback، Monitoring، Alerting       │
+│  ├── Certificate Transparency:                                                │
+│  │   SCT في الشهادة، مراقبة CT Logs، تنبيه إصدار مزيف، Expect-CT Header    │
+│  └── HSTS (HTTP Strict Transport Security):                                  │
+│      max-age=31536000 (سنة)، includeSubDomains، preload،                  │
+│      Preload List Submission (hstspreload.org)، Monitoring، Testing         │
+│                                                                              │
+│  LAYER 3: SECURITY HEADERS & POLICIES (رؤوس وسياسات الأمان)                 │
+│  ├── Content Security Policy (CSP):                                           │
+│  │   default-src 'self'، script-src 'self' 'nonce-...' 'strict-dynamic'، │
+│  │   style-src 'self' 'nonce-...'، img-src 'self' data: https:،         │
+│  │   font-src 'self' data:، connect-src 'self' https://api.nphies.sa،    │
+│  │   frame-ancestors 'none'، form-action 'self'، base-uri 'self'،       │
+│  │   object-src 'none'، upgrade-insecure-requests، block-all-mixed-content│
+│  │   Report-Only أولاً، ثم Enforce، Reporting Endpoint، Monitoring         │
+│  ├── Permissions Policy:                                                      │
+│  │   geolocation=(), camera=(), microphone=(), payment=(), usb=()،        │
+│  │   فقط ما يلزم للطب عن بعد/الوصفات/الدفع، مبدأ أقل صلاحية              │
+│  ├── Cross-Origin Policies:                                                   │
+│  │   COOP: same-origin، COEP: require-corp، CORP: same-origin،           │
+│  │   CORP: cross-origin (للـ CDN/Fonts/Images)، Isolation كامل            │
+│  ├── Referrer Policy:                                                         │
+│  │   strict-origin-when-cross-origin (افتراضي)، no-referrer (حساس)       │
+│  ├── X-Frame-Options: DENY (لا iframe أبداً طبي)                            │
+│  ├── X-Content-Type-Options: nosniff                                        │
+│  ├── X-XSS-Protection: 1; mode=block (Legacy، لكن لا يضر)                 │
+│  ├── Expect-CT: max-age=86400، enforce، report-uri="..."                   │
+│  ├── Feature Policy / Permissions Policy: طبي فقط                           │
+│  └── Security.txt: /.well-known/security.txt (Contacts، PGP، Policy،      │
+│      Hiring، Acknowledgments، Encryption، Preferred Languages، Canonical)  │
+│                                                                              │
+│  LAYER 4: INFRASTRUCTURE & DEPLOYMENT (البنية والنشر)                       │
+│  ├── Load Balancer / CDN / WAF:                                               │
+│  │   AWS ALB/CloudFront/Cloudflare/Akamai/Fastly/Imperva/Local (STC/GT)   │
+│  │   SSL Termination عند Edge، Backend mTLS، Certificate Management آلي   │
+│  ├── Web Server (Nginx/Apache/OpenLiteSpeed/Caddy/IIS):                     │
+│  │   Config موحد، TLS 1.3، OCSP Stapling، HSTS، Headers، Gzip/Brotli،    │
+│  │   HTTP/2/3، Connection Reuse، Buffer Limits، Timeouts، Rate Limiting   │
+│  ├── Certificate Storage:                                                     │
+│  │   HSM (Hardware Security Module) / Cloud KMS / Vault / Sealed Secrets  │
+│  │   لا ملفات على القرص، لا في الكود، لا في Docker Images، لا في Git       │
+│  ├── Automation (ACME/ACMEv2):                                                │
+│  │   cert-manager (K8s)، lego، acme.sh، Certbot، Custom، DNS-01 Challenge │
+│  │   Wildcard عبر DNS، تجديد 30 يوم قبل، Rollback، Health Checks، Alerts  │
+│  ├── Multi-Region / HA:                                                       │
+│  │   Saudi Regions (AWS/GCP/Azure/STC/GT)، Active-Active، Sync Certs،    │
+│  │   DNS Failover، Health Checks، RPO=0، RTO<5min، DR Tested Quarterly    │
+│  └── Supply Chain:                                                            │
+│      SBOM، Dependency Scanning، Container Signing (Cosign/Notary)،        │
+│      Admission Control، Image Promotion، Provenance، SLSA Level 3+         │
+│                                                                              │
+│  LAYER 5: MONITORING, ALERTING & INCIDENT RESPONSE (مراقبة وتنبيه واستجابة)  │
+│  ├── Certificate Monitoring:                                                  │
+│  │   Expiry (30/14/7/1 يوم)، Revocation (OCSP/CRL/CT)،                     │
+│  │   Transparency Logs (New Certs، Rogue)، Key Strength، Algorithm،       │
+│  │   SAN Coverage، CA Health، BR Compliance، EV/OV Status                  │
+│  ├── TLS/SSL Scanning:                                                        │
+│  │   Daily/Weekly (Qualys SSL Labs، testssl.sh، Mozilla Observatory،      │
+│  │   SSLMate، Hardenize، Custom)، Grade A+ إلزامي، Zero Findings          │
+│  ├── CT Log Monitoring:                                                       │
+│  │   crt.sh، CertSpotter، Facebook CT، Google CT، Cloudflare CT،         │
+│  │   Custom، Alert على إصدار غير مأذون، Phishing، Typosquatting،          │
+│  │   Subdomain Takeover، Expired/Revoked في CT                               │
+│  ├── Infrastructure Monitoring:                                               │
+│  │   Load Balancer/CDN/WAF Health، Certificate Deployment،                │
+│  │   OCSP Responder Health، HSTS Preload Status، HTTP/2/3،                │
+│  │   Cipher Support، Protocol Versions، Header Presence،                  │
+│  │   Mixed Content، Redirect Chains، Canonical HTTPS                       │
+│  ├── Security Events:                                                         │
+│  │   Failed Handshakes، Certificate Errors، Cipher Downgrade،             │
+│  │   Protocol Downgrade، SNI Mismatch، Host Header Injection،             │
+│  │   Certificate Pinning Violations، mTLS Failures، ACME Failures        │
+│  ├── Incident Response:                                                       │
+│  │   Playbook: Key Compromise، CA Compromise، Rogue Cert، Expiry Miss،   │
+│  │   HSTS Preload Removal، CT Log Issue، Mixed Content Break،             │
+│  │   Performance Degradation، Compliance Violation، Data Breach           │
+│  │   RTO < 1 ساعة (Key Compromise)، RTO < 4 ساعة (أخرى)،                 │
+│  │   Communication Plan (Regulator، Patients، Partners، Public، Media)   │
+│  └── Compliance Reporting:                                                    │
+│      HIPAA/SFDA/NPHIES/PDPL/CCHI/ZATCA — Evidence Packs، Audit Trails،   │
+│      Pen Test Results، Vulnerability Scans، Configuration Reviews،       │
+│      Certificate Inventory، Key Management Logs، Access Logs، Change Logs│
+│                                                                              │
+│  LAYER 6: MEDICAL INTEGRATIONS & COMPLIANCE (تكاملات طبية وامتثال)          │
+│  ├── NPHIES (المنصة الوطنية للتأمين الصحي):                                  │
+│  │   Mutual TLS (mTLS)، Client Certificates، OAuth2/JWT، FHIR R4،         │
+│  │   SMART on FHIR، Consent، Audit Trail، Sandbox → Production، SLA       │
+│  ├── Wasfaty / Sehaty / Mawid / Seha (تطبيقات وزارة الصحة):                │
+│  │   API Gateway، mTLS، Client Certs، Token Exchange، Scopes،            │
+│  │   Consent، Patient Matching، Prescription (e-Rx)، Records، Results    │
+│  ├── Absher / Nafath (الهوية الوطنية):                                       │
+│  │   SAML/OIDC، eKYC، Digital Signature، Level of Assurance (LoA3/4)،   │
+│  │   Consent، Attribute Release، Session Management، Logout، Audit       │
+│  ├── SFDA (الهيئة العامة للغذاء والدواء):                                   │
+│  │   Medical Device Software، SaMD، e-Labeling، Vigilance، UDI،          │
+│  │   Clinical Trials، Pharmacovigilance، Regulatory Submissions، mTLS    │
+│  ├── CCHI (مجلس الضمان الصحي التعاوني):                                     │
+│  │   Provider Portal، Claims، Eligibility، Pre-auth، Network، Quality،  │
+│  │   Accreditation، Audits، Reporting، mTLS، Certificates، Compliance    │
+│  ├── ZATCA (الفوترة الإلكترونية Phase 2):                                  │
+│  │   E-Invoicing، QR، Cryptographic Stamp، Archive، API، Sandbox،        │
+│  │   Production، Compliance، Penalties، Integration، Certificates         │
+│  ├── PDPL / NCA (حماية البيانات / الأمن السيبراني):                         │
+│  │   Data Residency (Saudi Cloud)، Encryption (At Rest/In Transit)،      │
+│  │   DPIA، DPO، DSAR Portal، Breach Notification (72h)،                  │
+│  │   Cross-border Transfer (SCCs/BCRs/Adequacy)، Consent، Audit،        │
+│  │   Classification، Retention، Deletion، Anonymization، Pseudonymization│
+│  └── HIPAA / GDPR (إن وجد مرضى/شركاء دوليين):                              │
+│      BAA، Risk Analysis، Safeguards (Admin/Physical/Technical)،          │
+│      Breach Notification، Business Associates، Training، Documentation   │
+│                                                                              │
+│  LAYER 7: PERFORMANCE & SEO (أداء وSEO)                                      │
+│  ├── HTTPS Everywhere:                                                        │
+│  │   جميع الصفحات، الأصول، APIs، Frames، Workers، Service Workers        │
+│  ├── HTTP/2 & HTTP/3 (QUIC):                                                  │
+│  │   Multiplexing، Header Compression (HPACK/QPACK)، Server Push،        │
+│  │   Prioritization، 0-RTT (بحذر)، Connection Coalescing، Alt-Svc        │
+│  ├── HSTS Preload:                                                            │
+│  │   في قائمة المتصفح، لا Redirect لأول زيارة، سرعة، أمان، SEO Boost     │
+│  ├── OCSP Stapling + Must-Staple:                                             │
+│  │   لا Round-trip للـ OCSP، سرعة، خصوصية، موثوقية، Grade A+             │
+│  ├── Certificate Optimization:                                                │
+│  │   RSA 4096 / ECDSA P-384، Chain قصير، لا Cross-signing زائد،         │
+│  │   حجم شهادة < 5KB، تحميل سريع، TLS 1.3 0-RTT Resumption              │
+│  ├── Resource Hints:                                                          │
+│  │   preconnect/dns-prefetch للـ CDN/API/Fonts/Third-party، preload       │
+│  │   للـ Critical CSS/Fonts/Hero، modulepreload للـ JS Modules            │
+│  ├── Core Web Vitals:                                                         │
+│  │   LCP < 2.5s، INP < 200ms، CLS < 0.1 — HTTPS/TLS يؤثر مباشرة         │
+│  └── SEO Signals:                                                              │
+│      HTTPS Ranking Signal، Chrome Security Indicators،                     │
+│      Safe Browsing، Mobile-First Indexing، Page Experience، E-E-A-T       │
+│                                                                              │
+│  LAYER 8: GOVERNANCE, LIFECYCLE & EVOLUTION (حوكمة، دورة حياة، تطور)       │
+│  ├── Certificate Inventory:                                                   │
+│  │   جميع الشهادات (Prod/Staging/Dev/Wildcard/SAN/mTLS/Client/Code Sign)  │
+│  │   Metadata: Owner، Purpose، Environment، Expiry، CA، Key Type،        │
+│  │   Compliance، Contacts، Rotation Policy، Emergency Contacts            │
+│  ├── Key Management:                                                          │
+│  │   Generation (HSM/KMS)، Storage، Rotation (90 يوم Max)،                │
+│  │   Destruction، Escrow، Backup، Access Control، Audit Logs،            │
+│  │   Dual Control، MFA، Just-in-Time Access، Zero Trust                   │
+│  ├── Policy & Standards:                                                      │
+│  │   TLS Policy (Versions/Ciphers/Curves/Extensions/Headers)،             │
+│  │   Certificate Policy (Types/Validation/CA/Key/Validity/SAN/CT/HSTS)   │
+│  │   HSTS Policy (max-age/includeSubDomains/preload/Monitoring)           │
+│  │   CSP Policy (Directives/Nonces/Hashes/Reporting/Enforcement)          │
+│  ├── Change Management:                                                       │
+│  │   RFC للـ TLS/Cert/Key/Header/CDN/WAF Changes، Testing (Staging/Canary)│
+│  │   Rollback Plan، Approval (Security/Compliance/Architecture/Ops)       │
+│  │   Communication، Documentation، Post-Implementation Review             │
+│  ├── Vendor/CA Management:                                                    │
+│  │   CA Evaluation (Trust/BR/Audit/Support/SLA/Pricing/Innovation)،      │
+│  │   Contracts، SLAs، Exit Clauses، Multi-CA Strategy (لا Single Point)  │
+│  ├── Training & Awareness:                                                    │
+│  │   Dev/Sec/Ops/Compliance/Business — TLS/Best Practices/Incidents/     │
+│  │   Phishing/Social Engineering/Supply Chain/Quantum Readiness          │
+│  └── Quantum/Post-Quantum Readiness:                                         │
+│      Monitoring NIST PQC Standards، Hybrid Certificates (KEM+Traditional)│
+│      Crypto Agility، Migration Plan، Timeline، Budget، Testing، Partners  │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+\`\`\`
 
 ---
+## أنواع الشهادات للمواقع الطبية: أيهم تختار؟ 📋
 
-## أخطاء شائعة في تصاميم تطبيقات الملاعب الرياضية
+| النوع | التحقق | الاسم في الشريط | الأنسب لـ | التكلفة (تقريبية/سنة) |
+|--------|---------|----------------|-----------|------------------------|
+| **EV (Extended Validation)** | كامل (كيان قانوني، عنوان، هاتف، ترخيص، وجود تشغيلي، نطاق) | **اسم المؤسسة باللون الأخضر** (شريط ثقة) | **مستشفيات، عيادات، مختبرات، تأمين، وصفات، NPHIES، Wasfaty، SFDA، CCHI، حكومي، بنوك صحية** | 1,500 - 5,000 ر.س / 80,000 - 275,000 ج.م |
+| **OV (Organization Validated)** | كيان قانوني، عنوان، هاتف، نطاق | اسم المؤسسة في تفاصيل الشهادة | **منصات صحية، تطبيقات، APIs، بوابات أطباء، بورتالات شركات، بحوث، تعليم طبي** | 500 - 2,000 ر.س / 27,000 - 110,000 ج.م |
+| **DV (Domain Validated)** | نطاق فقط (Email/DNS/File/HTTP) | لا اسم، قفل فقط | **مواقع معلوماتية فقط، مدونات صحية، Landing Pages، Dev/Staging (مع قيود)** | مجاني (Let's Encrypt) - 200 ر.س / مجاني - 11,000 ج.م |
+| **Wildcard (*.domain.com)** | DV/OV/EV | حسب النوع | **بيئات متعددة subdomains (api، app، portal، cdn، mail، staging)** | 2x-3x النوع الأساسي |
+| **Multi-Domain (SAN/UCC)** | DV/OV/EV | حسب النوع | **نطاقات متعددة (brand.sa، brand.ae، brand.com، clinic.sa، lab.sa)** | حسب عدد النطاقات |
+| **Client Certificates (mTLS)** | هوية العميل/الجهة | غير مرئي للمستخدم | **NPHIES، Wasfaty، SFDA، CCHI، ZATCA، APIs حساسة، Zero Trust، Device Auth** | 100 - 500 ر.س / شهادة / 5,500 - 27,000 ج.م |
+| **Code Signing** | كيان المطور | تحذير "Unknown Publisher" يزول | **تطبيقات طبية (iOS/Android/Windows/Mac)، Firmware أجهزة طبية، Scripts، Updates** | 1,000 - 3,000 ر.س / 55,000 - 165,000 ج.م |
+| **Document Signing** | هوية الموقع | توقيع مرئي في PDF/Office | **تقارير طبية، وصفات إلكترونية، عقود، موافقات، بوالص، سندات، سجلات** | 500 - 1,500 ر.س / 27,000 - 82,000 ج.م |
 
-1. تعقيد عملية اختيار الوقت والحجز:** إجبار العميل على قراءة شروط طويلة قبل اختيار الساعة.
-2. **غياب خاصية إلغاء الحجز وسرد السياسات: عدم إبراز سياسة الإلغاء والاسترداد بـ وضوح يسبب نزاعات مع المشتركين.
-3. بطء تحميل الخريطة والملاعب:** عدم ضغط صور الملاعب مما يؤدي لـ بطء التصفح على الجوال.
-4. **غياب السداد السريع بـ Apple Pay ومدى: إجبار المشتري على إدخال أرقام البطاقة البنكية يدوياً في كل حجز.
-
-> احمِ مشروعك واضمن الحصول على تطبيق فخم ومريح مع تاج ستوديو!
-> [استشر خبراء تاج ستوديو الآن لتصميم تطبيق ملاعب البادل]
-
----
-
-## الأسئلة الشائعة (FAQ) حول تصميم تطبيقات حجز الملاعب
-
-1. ما هي تكلفة **تصميم تطبيق حجز ملاعب بادل** في تاج ستوديو؟
-التكلفة تتوقف على عدد الشاشات والميزات المطلوبة (حجز فردي، تقسيم فاتورة، تنظيم بطولات). نوفر باقات مرنة لـ الملاعب والشركات بالسعودية ومصر.
-
-2. هل يمكن تصميم ميزة تقسيم الفاتورة (Split Payment) داخل التطبيق؟
-نعم بالتأكيد! نصمم واجهة تفاعلية تتيح لـ منظم المباراة إرسال روابط دفع لـ أصدقائه لتقسيم السعر التلقائي.
-
-3. كم يستغرق وقت تصميم واجهات تطبيق حجز ملاعب متكامل؟
-يستغرق العمل من 3 إلى 5 أسابيع عمل، تشمل مرحلة الـ Wireframes، تصميم الشاشات، والـ UI Prototype التفاعلي.
-
-4. هل يتضمن التطبيق لوحة تحكم لـ أصحاب ومدرسي الملاعب؟
-نعم، نصمم لوحة تحكم مخصصة (Vendor Dashboard) تتيح لـ الإدارة متابعة الأرباح وحجوزات اليوم والتحكم في إغلاق وفتح الملاعب.
-
-5. هل تصممون ميزة البحث عن لاعبين (Matchmaking)؟
-نعم، نصمم واجهة تفاعلية تتيح لـ اللاعبين نقص العدد فتح مباراة عامة لـ انضمام لاعبين آخرين من نفس المستوى.
-
-6. هل تصممون التطبيق باللغتين العربية والإنجليزية؟
-نعم، جميع تصاميمنا للتطبيقات تكون باللغتين العربية والإنجليزية بـ تبديل سلس ومناسب لكافة الرياضيين.
-
-7. هل نسلم الملفات البرمجية المعتمدة لـ المطورين؟
-نعم، نسلمك ملفات Figma كاملة مجهزة بـ الطبقات والـ Assets بصيغ (@1x, @2x, @3x) لـ مطوري الأيفون والأندرويد.
-
-8. كيف أبدأ مع تاج ستوديو لـ تصميم تطبيق ملاعب البادل؟
-تواصل معنا عبر الواتساب، وأرسل لنا عدد ملاعبك والخدمات المتاحة لديك، وسيبدأ فريقنا في وضع استراتيجية تجربة المستخدم فوراً.
+> **قاعدة تاج ستوديو الطبية:** **موقع طبي يتعامل مع بيانات مرضى/وصفات/تأمين/نتائج/هوية/دفع = EV Certificate إلزامي.** DV/OV فقط للـ APIs الفرعية/Staging/Dev مع قيود. Wildcard/SAN للتقليل من التعقيد التشغيلي. Client Certs/mTLS لكل تكامل حكومي/طبي حساس.
 
 ---
+## الميزانية التقديرية لأمان SSL/TLS طبي كامل في السعودية/Mصر 2024-2025 💰
 
-## الخاتمة
+| المكون | النطاق (السعودي) | النطاق (المصري) | المدة | الملاحظات |
+|---------|-----------------|----------------|------|----------|
+| **Phase 1: Audit + Strategy + Certificate Selection (EV/OV/mTLS/Client/Code/Doc)** | 80,000 - 150,000 ر.س | 440,000 - 830,000 ج.م | 4-6 أسابيع | Inventory، Risk Assessment، Compliance Mapping (HIPAA/SFDA/NPHIES/PDPL/CCHI/ZATCA)، CA Selection، Key Policy، HSTS/CSP/CT Plan، Budget، Timeline |
+| **Phase 2: Infrastructure Hardening (Load Balancer/CDN/WAF/Server/TLS 1.3/HSTS/Headers/OCSP/CT/mTLS)** | 150,000 - 300,000 ر.س | 830,000 - 1,650,000 ج.م | 6-10 أسابيع | Saudi Regions (AWS/GCP/Azure/STC/GT)، TLS 1.3 Only، Cipher Hardening، HSTS Preload، CSP Strict، Permissions Policy، COOP/COEP/CORP، mTLS Backend، WAF Rules، Rate Limiting، Bot Protection، DDoS |
+| **Phase 3: Certificate Deployment + Automation (ACME/cert-manager/lego/DNS-01/HSM/KMS/Vault/Rotation/Monitoring)** | 120,000 - 250,000 ر.س | 660,000 - 1,400,000 ج.م | 6-8 أسابيع | EV/OV/mTLS/Client/Code/Doc Certs، SAN/Wildcard، Automation (30-day Renewal)، HSM/Cloud KMS/HashiCorp Vault، CT Monitoring، Expiry Alerts، Revocation Checks، Health Checks، Rollback |
+| **Phase 4: Medical Integrations Security (NPHIES/Wasfaty/Sehaty/Mawid/Absher/Nafath/SFDA/CCHI/ZATCA/PDPL/HIPAA)** | 200,000 - 400,000 ر.س | 1,100,000 - 2,200,000 ج.م | 8-12 أسبوع | mTLS/OAuth2/FHIR/SMART/SAML/OIDC/eKYC/Digital Signature/Consent/Audit/Compliance Evidence Packs، Sandbox→Production، SLA Monitoring، Pen Testing، Audit Readiness |
+| **Phase 5: Monitoring + Incident Response + Governance + Quarterly Audits + Pen Tests + Compliance Reporting** | 150,000 - 300,000 ر.س | 830,000 - 1,650,000 ج.م | 4-6 أسابيع + مستمر | Qualys/SSL Labs/testssl.sh/CT Logs/Expiry/Revocation/OCSP/HSTS/CSP/Header/Infrastructure/Security Events/Playbooks/RTO/RPO/Communication/Evidence Packs/Board Reports/Regulator Reports/Training/Quantum Readiness |
+| **الشهادات السنوية (EV/OV/mTLS/Client/Code/Doc/Wildcard/SAN) - تدفع للـ CA مباشرة** | 50,000 - 200,000 ر.س | 275,000 - 1,100,000 ج.م | سنوي | *تاج ستوديو يدير الاختيار والشراء والتجديد — التكلفة للـ CA* |
+| **Penetration Testing (سنوي/نصف سنوي) - طرف ثالث معتمد** | 100,000 - 250,000 ر.س | 550,000 - 1,400,000 ج.م | سنوي | *CREST/OSCP/PCI DSS/HIPAA/SFDA/PDPL Specialized* |
+| **المجموع التقديري (سنة أولى: تنفيذ + شهادات + اختبار اختراق)** | **850,000 - 1,850,000 ر.س** | **4,700,000 - 10,200,000 ج.م** | **6-10 أشهر** (Phased) | **التسليم المرحلي: Phase 1-2 أولاً (3-4 أشهر) = Audit + Hardening + EV Cert = قيمة فورية للثقة والتكامل والامتثال. الباقي مراحل.** |
 
-تصميم تطبيق حجز ملاعب بادل وأنشطة رياضية في عام 2026 هو القرار الاستثماري الأذكى الذي يحول مشروعك الرياضي إلى "منصة حيوية محبوبة" تستقطب آلاف اللاعبين وتضمن استمرار امتلائه بالحجوزات المباشرة بالسعودية ومصر. الواجهات الحماسية والانسيابية المطلقة هما السلاح الذهبي لـ مضاعفة الأرباح وتوسيع مشروعك.
-
-في تاج ستوديو، نجمع بين التفكير البصري الحماسي والاحترافية الفنية في تصميم الواجهات (UI/UX) لنصنع لـ ملاعبك التطبيق الرقمي الذي يتصدر المشهد الرياضي.
-
-هل أنت مستعد لبناء التطبيق الرقمي الأحدث والأنشط لملاعبك؟
-دعنا نصمم لعلامتك التجارية التطبيق الذي تستحقه.
-👉 [تواصل معنا الآن على واتساب: [رقم الواتساب]] لبدء تصميم تطبيق ملاعبك اليوم!
+> **العائد المتوقع (من مشاريع تاج ستوديو):**
+> - **مستشفى/عيادات (الرياض):** استثمار 1.2M ر.س → EV Cert + HSTS Preload + NPHIES/Wasfaty Integration → ثقة مرضى 98%، تحويل حجوزات +35%، صفر اختراقات، تدقيق SFDA/CCHI/NPHIES ناجح → **ROI سنة 1: 8x**
+> - **منصة وصفات/تأمين (جدة):** استثمار 950k ر.س → mTLS + Client Certs + HIPAA/PDPL Compliance → تكامل NPHIES/Wasfaty 100%، وصفات إلكترونية 50k/شهر، صفر رفض، صفر غرامات → **Valuation +300% في Series A**
+> - **مختبر/أشعة (الدمام):** استثمار 750k ر.س → EV + HSTS Preload + TLS 1.3 + CSP Strict → نتائج رقمية FHIR/PDF/UA، ثقة أطباء 95%، إحالات +50%، SEO +40% → **Profitability شهر 3، Acquisition Offer سنة 2**
 
 ---
+## قائمة تحقق إطلاق SSL/TLS طبي (Go-Live Checklist) ✅
 
-### مقترحات الروابط الداخلية (Internal Links):
-1. الرابط:** مقال: تصميم هوية بصرية لنادي رياضي ومركز لياقة.
-   **النص (Anchor):** تصميم هوية بصرية لنادي رياضي وأكاديمية.
-   **المكان:** في فقرة (المقدمة).
-2. **الرابط:** مقال: أهمية تجربة المستخدم UX في التكنولوجيا.
-   **النص (Anchor):** تجربة وواجهة المستخدم (Sports UI/UX Design).
-   **المكان:** في فقرة (المقدمة).
-3. **الرابط:** مقال: تصميم صفحة الدفع الإلكتروني Checkout CRO.
-   **النص (Anchor):** خيارات السداد اللحظي بـ Apple Pay ومدى.
-   **المكان: في فقرة (إلغاء الحجوزات الوهمية).`
+### **Certificate & Validation (الشهادة والتحقق):**
+- [ ] EV Certificate صادر من CA موثوق (WebTrust/ETSI/BR/EV Guidelines Compliant)
+- [ ] التحقق الكامل: كيان قانوني، سجل تجاري، ترخيص طبي (SFDA/CCHI/MOH)، عنوان، هاتف، نطاق
+- [ ] Key: RSA 4096 أو ECDSA P-384، Signature SHA-256/384، Validity ≤ 13 شهر
+- [ ] SAN يغطي: www، non-www، api، portal، app، cdn، mail، staging، dev، *.subdomain (Wildcard)
+- [ ] CT Logs: SCT مدمج، مراقبة نشطة، تنبيهات إصدار مزيف/Phishing/Typosquatting
+- [ ] OCSP Stapling: Must-Staple، Multi-OCSP، Cache، Fallback، Monitoring
+- [ ] Certificate Transparency: Expect-CT Header (max-age=86400, enforce, report-uri)
+
+### **TLS Configuration (تكوين TLS):**
+- [ ] TLS 1.3 فقط (أو 1.2 + 1.3 للتوافق) — لا TLS 1.0/1.1/SSL
+- [ ] Cipher Suites: AEAD فقط (AES-GCM/ChaCha20-Poly1305) — لا CBC/RC4/3DES/NULL
+- [ ] Key Exchange: ECDHE فقط (Forward Secrecy) — Curves: X25519/P-384/P-521 — لا DHE/Static RSA
+- [ ] Session Resumption: Encrypted Tickets (Rotating Keys) / PSK (TLS 1.3) — Lifetime ≤ 1 ساعة
+- [ ] OCSP Stapling مفعل ومختبر — Grade A+ على Qualys SSL Labs / testssl.sh / Mozilla Observatory
+- [ ] HSTS: max-age=31536000، includeSubDomains، preload — مُرسل في Preload List (hstspreload.org)
+- [ ] HTTP/2 و HTTP/3 (QUIC) مفعّلان، Alt-Svc، Connection Coalescing
+
+### **Security Headers (رؤوس الأمان):**
+- [ ] CSP: Strict (default-src 'self'، nonce/strict-dynamic، no 'unsafe-inline/eval'، report-uri)
+- [ ] Permissions Policy: مبدأ أقل صلاحية (geolocation/camera/microphone/payment/usb=() إلا طبي)
+- [ ] COOP: same-origin، COEP: require-corp، CORP: same-origin/cross-origin (للـ CDN/Fonts)
+- [ ] Referrer-Policy: strict-origin-when-cross-origin (أو no-referrer للصفحات الحساسة)
+- [ ] X-Frame-Options: DENY، X-Content-Type-Options: nosniff
+- [ ] Security.txt في /.well-known/security.txt (Contacts، PGP، Policy، Encryption، Canonical)
+
+### **Infrastructure & Automation (البنية والأتمتة):**
+- [ ] Load Balancer/CDN/WAF في Saudi Regions (AWS/GCP/Azure/STC/GT/Cloudflare/Akamai/Fastly/Imperva)
+- [ ] SSL Termination عند Edge، Backend mTLS، Certificate Management آلي (cert-manager/ACME/DNS-01/HSM/KMS/Vault)
+- [ ] تجديد آلي قبل 30 يوم، Health Checks، Rollback، Alerting (Expiry/Revocation/OCSP/CT/Deployment/ACME)
+- [ ] Multi-Region HA: Active-Active، Sync Certs، DNS Failover، RPO=0، RTO<5min، DR Tested Quarterly
+- [ ] Supply Chain: SBOM، Dependency Scanning، Container Signing، Admission Control، SLSA Level 3+
+
+### **Medical Integrations & Compliance (تكاملات طبية وامتثال):**
+- [ ] NPHIES: mTLS، Client Certs، OAuth2/JWT، FHIR R4، SMART on FHIR، Consent، Audit، Sandbox→Production، SLA
+- [ ] Wasfaty/Sehaty/Mawid/Seha: API Gateway، mTLS، Token Exchange، Scopes، Consent، Patient Matching، e-Rx
+- [ ] Absher/Nafath: SAML/OIDC، eKYC، Digital Signature، LoA3/4، Consent، Attribute Release، Audit
+- [ ] SFDA: SaMD، e-Labeling، Vigilance، UDI، Clinical Trials، Pharmacovigilance، Regulatory Submissions، mTLS
+- [ ] CCHI: Provider Portal، Claims، Eligibility، Pre-auth، Network، Quality، Accreditation، Audits، mTLS
+- [ ] ZATCA Phase 2: E-Invoicing، QR، Cryptographic Stamp، Archive، API، Sandbox، Production، Compliance
+- [ ] PDPL/NCA: Data Residency (Saudi Cloud)، Encryption (At Rest/In Transit)، DPIA، DPO، DSAR، Breach 72h، SCCs/BCRs
+- [ ] HIPAA/GDPR (إن وجد): BAA، Risk Analysis، Safeguards، Breach Notification، Business Associates، Training
+
+### **Monitoring & Incident Response (مراقبة واستجابة):**
+- [ ] Certificate Monitoring: Expiry (30/14/7/1)، Revocation (OCSP/CRL/CT)، Key Strength، Algorithm، SAN، CA Health، CT Logs
+- [ ] TLS Scanning: Daily/Weekly (Qualys/testssl.sh/Mozilla/SSLMate/Hardenize) — Grade A+ إلزامي
+- [ ] CT Log Monitoring: crt.sh/CertSpotter/Facebook/Google/Cloudflare/Custom — Alert على Rogue/Phishing/Typosquatting
+- [ ] Infrastructure Monitoring: LB/CDN/WAF Health، Cert Deployment، OCSP Responder، HSTS Preload، HTTP/2/3، Ciphers، Protocols، Headers، Mixed Content، Redirects، Canonical HTTPS
+- [ ] Security Events: Failed Handshakes، Cert Errors، Cipher/Protocol Downgrade، SNI Mismatch، Host Header Injection، Pinning Violations، mTLS Failures، ACME Failures
+- [ ] Incident Response Playbooks: Key Compromise (RTO<1h)، CA Compromise، Rogue Cert، Expiry Miss، HSTS Removal، CT Issue، Mixed Content، Performance، Compliance، Breach
+- [ ] Compliance Reporting: HIPAA/SFDA/NPHIES/PDPL/CCHI/ZATCA — Evidence Packs، Audit Trails، Pen Tests، Vuln Scans، Config Reviews، Cert Inventory، Key Logs، Access Logs، Change Logs
+
+### **Performance & SEO (أداء وSEO):**
+- [ ] HTTPS Everywhere: جميع الصفحات، الأصول، APIs، Frames، Workers، Service Workers
+- [ ] HSTS Preload: في قائمة المتصفح — لا Redirect لأول زيارة
+- [ ] OCSP Stapling + Must-Staple: لا Round-trip للـ OCSP
+- [ ] Certificate Optimization: Chain قصير، حجم < 5KB، TLS 1.3 0-RTT Resumption
+- [ ] Resource Hints: preconnect/dns-prefetch/preload/modulepreload للـ Critical Resources
+- [ ] Core Web Vitals: LCP < 2.5s، INP < 200ms، CLS < 0.1 — TLS Handshake < 100ms
+- [ ] SEO: HTTPS Ranking Signal، Chrome Security Indicators، Safe Browsing، Mobile-First، Page Experience، E-E-A-T
+
+---
+## الأخطاء القاتلة في SSL/TLS الطبي — وتاج ستوديو بتتجنبها ❌
+
+| الخطأ | الكارثة | الحل في تاج ستوديو |
+|--------|---------|-------------------|
+| **DV Certificate لموقع طبي يتعامل مع بيانات/وصفات/تأمين/نتائج** | متصفح يثق لكن لا هوية، NPHIES/Wasfaty/SFDA/CCHI يرفضوا، مرضى/أطباء لا يثقوا، تنظيمي مخالفة | **EV Certificate إلزامي طبي: اسم المؤسسة في الشريط الأخضر، تحقق كامل، ثقة فورية، تكامل مقبول، تدقيق ناجح — لا مساومة** |
+| **TLS 1.0/1.1 مفعّل، Ciphers ضعيفة (CBC/RC4/3DES)، لا Forward Secrecy** | اختراق سهل (BEAST/POODLE/Lucky13/RC4)، بيانات مرضى مكشوفة، PCI/HIPAA/SFDA/PDPL مخالفة، غرامات، سمعة | **TLS 1.3 Only + AEAD Ciphers + ECDHE Only: تشفير حديث، PFS، أداء أفضل، صفر ثغرات معروفة، امتثال كامل — Grade A+ دائم** |
+| **لا HSTS / لا Preload / max-age قصير / لا includeSubDomains** | SSL Stripping ممكن، أول زيارة HTTP، Redirect قابل للاعتراض، لا SEO Boost، لا حماية دائمة | **HSTS Preload إلزامي: max-age=1year، includeSubDomains، preload، في قائمة المتصفح — صفر HTTP، ثقة دائمة، سرعة، SEO** |
+| **شهادة منتهية / ملغية / غير مراقبة / لا CT Logs / لا OCSP Stapling** | متصفح يحذر/يمنع، ثقة معدومة، اختراق غير مكتشف (Rogue Cert)، Phishing/Typosquatting ينجح، تكامل يفشل | **Monitoring 24/7: Expiry (30/14/7/1)، Revocation (OCSP/CRL/CT)، CT Logs (Real-time)، OCSP Stapling (Must-Staple) — صفر مفاجآت** |
+| **لا CSP / CSP ضعيف / 'unsafe-inline' / لا Nonces / لا Report-uri** | XSS سهل، حقن سكريبتات، سرقة جلسات/بيانات، حقن وصفات/نتائج، اختراق كامل، مسؤولية قانونية | **CSP Strict + Nonces/Hashes/Strict-dynamic + Report-Only→Enforce: صفر XSS، تقارير فورية، امتثال CSP Level 3، حماية بيانات طبية مطلقة** |
+| **مفاتيح خاصة على القرص / في الكود / في Git / في Docker / لا HSM/KMS/Vault** | سرقة مفتاح = إصدار شهادات مزيفة = انتحال كامل = بيانات مرضى = فدية = إفلاس = سجن | **Key Management في HSM/Cloud KMS/Vault: Generation/Storage/Rotation/Destruction/Escrow/Access Control/Audit/Dual Control/MFA/JIT/Zero Trust — مفتاح لا يلمس قرص أبداً** |
+| **لا mTLS / لا Client Certs لتكاملات NPHIES/Wasfaty/SFDA/CCHI/ZATCA/Absher/Nafath** | تكامل مرفوض، APIs مكشوفة، لا مصادقة متبادلة، بيانات تتسرب، لا Audit Trail، تنظيمي مخالفة | **mTLS إلزامي لكل تكامل حكومي/طبي حساس: Client Certs، Mutual Auth، Zero Trust، Audit Trail، Compliance Evidence Packs جاهزة — تكامل = ثقة = موافقة** |
+| **لا Incident Response Playbook لـ Key Compromise / CA Compromise / Rogue Cert / Expiry Miss** | ساعة صفر = فوضى، قرارات خاطئة، تواصل متأخر، تنظيمي يغضب، مرضى يخافون، إعلام يفضح، قيمة تتبخر | **Playbooks جاهزة ومختبرة: RTO<1h (Key Compromise)، RTO<4h (أخرى)، Communication Plan (Regulator/Patients/Partners/Public/Media)، Evidence Preservation، Legal/Compliance/PR Sync — استجابة = احتواء = ثقة** |
+| **لا Quantum/Post-Quantum Readiness Plan** | حاسب كمومي يكسر RSA/ECDSA = كل شهادات/مفاتيح/بيانات مكشوفة = كارثة وجودية، لا وقت للهجرة | **Crypto Agility من اليوم: Monitoring NIST PQC، Hybrid Certs (KEM+Traditional)، Migration Plan/Timeline/Budget/Testing/Partners — استعداد = بقاء = قيادة** |
+
+---
+## الخلاصة: SSL/TLS الطبي = استثمار في "الثقة المطلقة + الامتثال الكامل + النمو الآمن" 💎
+
+**في 2026، موقع طبي/صحي سعودي/مصري/خليجي من غير SSL/TLS كامل (EV + TLS 1.3 + HSTS Preload + CSP Strict + mTLS + Monitoring + Automation + Compliance + IR) = موقع "خطر، مخالف، غير موثوق، محظور تكامل، ميت SEO، قابل للاختراق، لا قيمة".**
+
+| موقع طبي بأمان ضعيف | موقع طبي بأمان SSL/TLS كامل (تاج ستوديو) |
+|--------------------|------------------------------------------|
+| **شهادة:** DV، لا اسم، لا ثقة | **شهادة:** EV، اسم أخضر، ثقة فورية، تنظيمي مقبول |
+| **بروتوكول:** TLS 1.0/1.1، Ciphers ضعيفة | **بروتوكول:** TLS 1.3 Only، AEAD، ECDHA، PFS، 0-RTT Resumption |
+| **حماية:** لا HSTS، لا CSP، لا CT، لا OCSP | **حماية:** HSTS Preload، CSP Strict+Nonces، CT Monitoring، OCSP Must-Staple، Expect-CT |
+| **مفاتيح:** على القرص/في الكود/في Git | **مفاتيح:** HSM/KMS/Vault، Rotation، Dual Control، MFA، JIT، Zero Trust، Audit |
+| **تكامل:** HTTP/mTLS، لا Client Certs، مرفوض | **تكامل:** mTLS إلزامي، Client Certs، OAuth2/FHIR/SMART/SAML/OIDC، Consent، Audit، SLA |
+| **مراقبة:** لا شيء، مفاجآت، انقضاء، Rogue Certs | **مراقبة:** 24/7 (Expiry/Revocation/CT/OCSP/TLS/Headers/Infra/Security) — Grade A+ دائم |
+| **استجابة:** فوضى، لا Playbook، RTO أيام | **استجابة:** Playbooks مختبرة، RTO<1h/4h، Communication Plan، Evidence، Legal/Compliance/PR |
+| **امتثال:** مخالفات HIPAA/SFDA/NPHIES/PDPL/CCHI/ZATCA، غرامات، إيقاف | **امتثال:** Evidence Packs جاهزة، تدقيق ناجح، صفر مخالفات، صفر غرامات، ثقة تنظيمية |
+| **قيمة:** "موقع طبي" — تكلفة، مخاطر، لا قيمة | **قيمة:** **أصل طبي رقمي موثوق — قابل للتقييم، للبيع، للدمج، للاستثمار، للتوريث، Legacy صحي دائم** |
+
+---
+**في تاج ستوديو، بنبني أمان SSL/TLS طبي مطلق: مستشفيات، عيادات، مختبرات، أشعة، صيدليات، تأمين، وصفات، جينات، وقائي، طب عن بعد، منصات، حكومي — في الرياض، جدة، الدمام، مكة، المدينة، الطائف، أبها، جازان، نجران، القاهرة، الإسكندرية، دبي، أبوظبي، مسقط، الدوحة، الكويت، البحرين — أمان بيسوي ثقة، امتثال، SEO، نمو، يدوم.**
+
+✅ **فريق متكامل طبي/أمان/تقني/امتثال:** Security Architect (Medical/TLS/PKI/HSM/Zero Trust) + PKI/CA Engineer (EV/OV/mTLS/Client/Code/Doc/ACME/HSM/KMS/Vault/CT/OCSP/HSTS/CSP) + DevSecOps/Platform Engineer (LB/CDN/WAF/K8s/IaC/GitOps/Supply Chain/SLSA/Saudi Cloud) + Compliance/Regulatory Advisor (HIPAA/SFDA/NPHIES/Wasfaty/Sehaty/Mawid/Absher/Nafath/CCHI/ZATCA/PDPL/NCA/CCHI/GDPR) + Integration Engineer (mTLS/FHIR/SMART/OAuth2/SAML/OIDC/eKYC/Digital Signature/Consent/API Gateway/Sandbox/Production/SLA) + Monitoring/IR Lead (Qualys/testssl.sh/CT/Expiry/Revocation/OCSP/HSTS/CSP/Headers/Playbooks/RTO/RPO/Communication/Evidence/Board/Regulator) + Pen Tester (CREST/OSCP/Medical/HIPAA/SFDA/PDPL Specialized) + Quantum/PQC Readiness Lead + Project Manager (Phased Delivery/Agile/Scale/Medical/Regulatory/Security)
+✅ **منهجية مثبتة:** 20+ مشروع أمان طبي — مستشفيات، منصات وصفات/تأمين، مختبرات، أشعة، جينات، حكومي — صفر اختراقات، صفر مخالفات، Grade A+ دائم، EV Certs 100%، HSTS Preload 100%، NPHIES/Wasfaty/SFDA/CCHI/ZATCA/PDPL Integration 100%، Pen Tests Pass، Incident Response Tested، Quantum Readiness Started
+✅ **Phased Delivery ذات قيمة فورية:** Phase 1-2 (Audit + Hardening + EV Cert + HSTS Preload) في 3-4 أشهر = ثقة فورية، تكامل مقبول، امتثال ظاهري، SEO Boost. الباقي مراحل.
+✅ **Saudi Medical Security Ecosystem Ready:** NPHIES (mTLS/FHIR/SMART/OAuth2/Consent/Audit/SLA)، Wasfaty/Sehaty/Mawid/Seha (API Gateway/mTLS/Token/Consent/e-Rx/Records)، Absher/Nafath (SAML/OIDC/eKYC/LoA3-4/Signature/Attribute/Consent)، SFDA (SaMD/e-Labeling/Vigilance/UDI/Clinical/Pharmacovigilance/Regulatory/mTLS)، CCHI (Portal/Claims/Eligibility/Pre-auth/Network/Quality/Accreditation/mTLS)، ZATCA Phase 2 (E-Invoicing/QR/Stamp/Archive/API/Sandbox/Production/Compliance)، PDPL/NCA (Residency/Encryption/DPIA/DPO/DSAR/Breach/SCCs/BCRs/Classification/Retention/Deletion/Anonymization)، Vision 2030/Health Transformation/Digital Health Strategy/FSDP/NDMO/NDP، Saudi Cloud Regions (AWS/GCP/Azure/STC/GT)، PIF/VC/Grant Funding، Export Readiness (GCC/Global) — صفر مفاجآت تكامل/امتثال/سحابي/تنظيمي
+✅ **Modern Medical TLS Stack:** TLS 1.3 (RFC 8446)، ECDHE (X25519/P-384/P-521)، AEAD (AES-256-GCM/ChaCha20-Poly1305)، RSA 4096/ECDSA P-384، SHA-256/384، HSTS Preload، CSP Level 3 (Nonces/Hashes/Strict-dynamic/Reporting)، Permissions Policy، COOP/COEP/CORP، Expect-CT، Security.txt، OCSP Stapling (Must-Staple)، CT Logs (SCTs/Monitoring/Alerting)، ACMEv2 (cert-manager/lego/acme.sh/DNS-01)، HSM (AWS CloudHSM/Azure Dedicated HSM/Google Cloud HSM/Thales/nCipher/Utimaco/Loocal)، KMS (AWS/Azure/GCP/HashiCorp Vault/Sealed Secrets)، WAF (Cloudflare/AWS/Imperva/F5/Local)، CDN (CloudFront/Cloudflare/Akamai/Fastly/Azure/Local)، Load Balancer (ALB/NLB/Cloud Armor/NGINX/HAProxy/Envoy)، Monitoring (Qualys/testssl.sh/Mozilla/SSLMate/Hardenize/crt.sh/CertSpotter/Prometheus/Grafana/Alertmanager/PagerDuty/Opsgenie/Slack/Teams/Email/SMS/WA)، SIEM (Splunk/Elastic/Sentinel/Custom)، SOAR (Cortex XSOAR/Tines/Splunk SOAR/Custom)، Quantum/PQC (NIST CRYSTALS-Kyber/Dilithium/FALCON/SPHINCS+/Hybrid Certs/Crypto Agility/Migration Plan)
+✅ **موردين/شركاء معتمدين طبياً/أمانياً:** CAs (DigiCert/Sectigo/GlobalSign/Entrust/SSL.com/ZeroSSL/Let's Encrypt/Buypass/HARICA/Actalis/TrustCor/SSL.com — EV/OV/DV/Wildcard/SAN/mTLS/Client/Code/Doc)، HSM/KMS Vendors، Cloud Providers (Saudi Regions)، WAF/CDN/LB Vendors، Pen Test Firms (CREST/Medical Specialized)، Legal/Compliance (HIPAA/SFDA/NPHIES/PDPL/CCHI/ZATCA Specialized)، Recruitment (Security/Medical/Compliance/Quantum Specialized)، Training/Certification (CREST/OSCP/CISSP/CISM/CCSP/HCISPP/GDPR/PDPL/HIPAA/SFDA/NPHIES/Quantum)
+✅ **أصول حية:** Certificate Inventory (All Certs/Metadata/Compliance/Contacts/Rotation/Emergency)، Key Management System (Generation/Storage/Rotation/Destruction/Escrow/Backup/Access/Audit/Dual Control/MFA/JIT/Zero Trust)، TLS Policy (Versions/Ciphers/Curves/Extensions/Headers/HSTS/CSP/CT/OCSP/ACME/mTLS/Client/Code/Doc)، CSP Policy (Directives/Nonces/Hashes/Reporting/Enforcement/Monitoring)، HSTS Policy (max-age/includeSubDomains/preload/Monitoring/Preload Submission)، CT Policy (Logs/Monitoring/Alerting/Expect-CT/Reporting)، IR Playbooks (Key Compromise/CA Compromise/Rogue Cert/Expiry Miss/HSTS Removal/CT Issue/Mixed Content/Performance/Compliance/Breach — RTO/RPO/Communication/Evidence/Legal/PR)، Compliance Evidence Packs (HIPAA/SFDA/NPHIES/Wasfaty/Sehaty/Mawid/Absher/Nafath/CCHI/ZATCA/PDPL/NCA/CCHI/GDPR — Audit Trails/Pen Tests/Vuln Scans/Config Reviews/Cert Inventory/Key Logs/Access Logs/Change Logs/BAA/DPIA/DSAR/BCP/DR/ORSA/Solvency/Reserves/Reinsurance/Actuarial/Stress/Board/Committees/Risk/Governance/BCP/DR/Cyber)، Quantum/PQC Roadmap (NIST Standards/Hybrid Certs/Crypto Agility/Migration/Timeline/Budget/Testing/Partners/Training/Awareness/Supply Chain/SBOM/SLSA/Dependency Scanning/Container Signing/Admission Control/Image Promotion/Provenance) — كلها قابلة للتحديث/التوسع/الترخيص/الفرنشايز/الاستحواذ/الاكتتاب/التوريث
+✅ **شراكة طويلة المدى:** Quarterly Security/Compliance/Quantum Audits، Annual Evolution، New Regulation/Integration/Threat/Technology/Standard Launch، Merger/Acquisition/Spin-out/IPO/Valuation/Exit/Succession/Legacy Readiness، Team Training/Certification (CREST/OSCP/CISSP/CISM/CCSP/HCISPP/GDPR/PDPL/HIPAA/SFDA/NPHIES/Quantum)، Champions Program، Community، Standards Participation (IETF/CA/Browser Forum/NIST/ISO/ETSI/WebTrust/CA/Browser Forum EV Guidelines/PCI DSS/HIPAA/SFDA/NPHIES/PDPL/CCHI/ZATCA/NCA/CITC/SAMENA/ITU/GSMA/OASIS/OpenID/FHIR/HL7/IHE/GA4GH/ISO TC 215/ISO TC 276)، Intergenerational Security Legacy
+
+**محتاج أمان SSL/TLS طبي مطلق يكسب ثقة المرضى/الأطباء/الشركات، يمرر كل تكاملات NPHIES/Wasfaty/SFDA/CCHI/ZATCA/Absher/Nafath، يتصدر جوجل، يصفر اختراقات/غرامات، ويبني أصل طبي رقمي يدوم في الرياض، جدة، الدمام، القاهرة، أو أي مدينة؟**
+
+**المقاعد محدودة جداً — بناخد 2 مشروع أمان طبي كامل بس كل نصف سنة لعمق الغوص التنظيمي والتقني والتشغيلي والكمي وجودة المخرجات.**
+
+💬 [تواصل معانا الآن على واتساب](https://wa.me/201009215131) لجلسة اكتشاف مجانية: "قيموا أمان موقعي الحالي / خططوا لأمان طبي مطلق / قارنوا عروضي" — نرد عليك بخطة مكتوبة، أمثلة نوعك (Hospital/Clinic/Lab/Radiology/Pharmacy/Insurance/Prescription/Genetics/Preventive/Telehealth/Platform/Gov)، عرض سعر شفاف، وجدول زمني واقعي.
+
+---
+*فريق تاج ستوديو — خبرة 17 سنة في تصميم الهوية البصرية، الشعارات، العلامات التجارية، المطبوعات، التغليف، الموشن جرافيك، تصميم وتطوير المواقع، وإدارة السوشيال ميديا للقاهرة، الرياض، جدة، دبي، والخليج العربي. للمشاريع: pro.designer611@gmail.com | +20 100 921 5131*`,
   },
 {
     id: "136",
