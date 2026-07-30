@@ -439,7 +439,7 @@ export default function ToolsIndex() {
                           <i className="fas fa-arrow-left text-xs" style={{ color: tool.color }}></i>
                         </div>
                       </div>
-                      <h3 className="text-base font-bold mb-2 leading-snug" style={{ color: 'var(--txt)' }}>{tool.name}</h3>
+                      <h2 className="text-base font-bold mb-2 leading-snug" style={{ color: 'var(--txt)' }}>{tool.name}</h2>
                       <p className="text-[12.5px] leading-relaxed mb-4" style={{ color: 'var(--txt2)' }}>{tool.desc}</p>
                       <div className="flex flex-wrap gap-1.5">
                         {tool.features.map((f, idx) => (

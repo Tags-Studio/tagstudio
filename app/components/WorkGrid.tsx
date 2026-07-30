@@ -343,7 +343,7 @@ export default function WorkGrid() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold text-foreground sm:text-5xl">أعمالنا</h1>
+          <h2 className="text-4xl font-bold text-foreground sm:text-5xl">أعمالنا</h2>
           <p className="mt-4 text-lg text-muted-foreground">استكشف مجموعة واسعة من مشاريعنا الإبداعية.</p>
         </motion.div>
 

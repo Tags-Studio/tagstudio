@@ -55,9 +55,9 @@ export default function BlogCard({ post }: BlogCardProps) {
           <span className={`inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full mb-3 ${styles.badge}`}>
             {post.category}
           </span>
-          <h3 className={`text-lg font-bold line-clamp-2 mb-2 transition-colors ${styles.hoverText}`}>
+          <h2 className={`text-lg font-bold line-clamp-2 mb-2 transition-colors ${styles.hoverText}`}>
             {post.title}
-          </h3>
+          </h2>
           <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
             {post.excerpt}
           </p>

@@ -13,6 +13,45 @@ const baseUrl = "https://www.wearetagstudio.com"
 
 export const revalidate = 86400
 
+function getSeoTitle(title: string): string {
+  // If title is already short enough to fit inside 60 characters with layout template (which adds " | تاج ستوديو" -> 13 chars)
+  if (title.length <= 47) {
+    return title
+  }
+  
+  // Try splitting by common separators like ' — ', ' - ', ' | '
+  const separators = [' — ', ' - ', ' | ']
+  for (const sep of separators) {
+    if (title.includes(sep)) {
+      const parts = title.split(sep)
+      const firstPart = parts[0].trim()
+      if (firstPart.length >= 25 && firstPart.length <= 47) {
+        return firstPart
+      }
+    }
+  }
+  
+  // Truncate cleanly at a space boundary to fit within 47 chars
+  const truncated = title.substring(0, 44).trim()
+  const lastSpace = truncated.lastIndexOf(' ')
+  if (lastSpace > 20) {
+    return truncated.substring(0, lastSpace).trim() + '...'
+  }
+  return truncated + '...'
+}
+
+function getSeoDescription(description: string): string {
+  if (description.length <= 157) {
+    return description
+  }
+  const truncated = description.substring(0, 154).trim()
+  const lastSpace = truncated.lastIndexOf(' ')
+  if (lastSpace > 100) {
+    return truncated.substring(0, lastSpace).trim() + '...'
+  }
+  return truncated + '...'
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const today = new Date().toISOString().split("T")[0]
   const post = blogPosts.find((item) => item.slug === params.slug && item.date <= today)
@@ -22,10 +61,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const canonical = `${baseUrl}/blog/${post.slug}`
+  const seoTitle = getSeoTitle(post.title)
+  const seoDesc = getSeoDescription(post.excerpt)
 
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: seoTitle,
+    description: seoDesc,
     keywords: [
       post.category,
       "تاج ستوديو",
@@ -42,8 +83,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical,
     },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: seoTitle,
+      description: seoDesc,
       url: canonical,
       images: [
         {
@@ -60,8 +101,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
+      title: seoTitle,
+      description: seoDesc,
       images: [post.image],
     },
   }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "تصميم هوية بصرية في الرياض | تصميم شعارات احترافية بالسعودية | تاج ستوديو",
+  title: "تصميم هوية بصرية بالرياض وشعارات احترافية",
   description: "وكالة تصميم هوية بصرية في الرياض وجدة. نقدم خدمات تصميم شعارات احترافية، تصميم سوشيال ميديا، وموشن جرافيك متوافق مع رؤية السعودية 2030 وبأسعار منافسة.",
   alternates: {
     canonical: "https://www.wearetagstudio.com/tasmim-huwiya-basariya-saudi",

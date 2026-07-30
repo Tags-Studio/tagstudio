@@ -395,9 +395,9 @@ export default function ArticleClient({ post }: Props) {
                 </svg>
               </div>
               <div className="flex-1">
-                <h3 className="text-xl md:text-[22px] font-extrabold text-neutral-900 dark:text-neutral-100 mb-3 leading-snug">
+                <p className="text-xl md:text-[22px] font-extrabold text-neutral-900 dark:text-neutral-100 mb-3 leading-snug">
                   {optionTitle}
-                </h3>
+                </p>
                 {description && (
                   <p className="text-[16px] md:text-[17px] text-neutral-600 dark:text-neutral-400 leading-relaxed text-justify">
                     {parseMarkdownInline(description)}
@@ -612,7 +612,7 @@ export default function ArticleClient({ post }: Props) {
                       {/* Package header */}
                       <div className={`${c.headerBg} px-5 py-4 text-white`}>
                         <span className="text-[10px] font-bold uppercase tracking-widest opacity-80">{c.label}</span>
-                        <h3 className="text-lg font-black mt-0.5 leading-tight">{pkgName}</h3>
+                        <p className="text-lg font-black mt-0.5 leading-tight">{pkgName}</p>
                       </div>
                       {/* Features list */}
                       <div className="divide-y divide-neutral-100 dark:divide-neutral-800/60">
@@ -799,9 +799,9 @@ export default function ArticleClient({ post }: Props) {
             {/* Table of Contents Box (Active link highlights in respective heading's brand color) */}
             {headings.length > 0 && (
               <div className="p-6 rounded-2xl border border-border/60 bg-neutral-50/50 dark:bg-neutral-900/30 backdrop-blur-sm shadow-sm">
-                <h4 className="text-md font-bold text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-border/50">
+                <p className="text-md font-bold text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-border/50">
                   فهرس المحتوى
-                </h4>
+                </p>
                 <nav className="space-y-3">
                   {headings.map((heading, idx) => {
                     const isActive = activeHeading === heading.id
@@ -830,7 +830,7 @@ export default function ArticleClient({ post }: Props) {
               {/* Premium top accent line with logo color spectrum */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-500 via-cyan-500 via-amber-500 to-rose-500" />
               <div className="absolute top-0 right-0 w-20 h-20 bg-blue-500/5 rounded-full blur-xl pointer-events-none" />
-              <h4 className="text-xl font-black text-neutral-900 dark:text-neutral-100 mb-3 leading-snug">هل تريد تصميم شعار وهوية بصرية تُميّزك حقاً؟</h4>
+              <p className="text-xl font-black text-neutral-900 dark:text-neutral-100 mb-3 leading-snug">هل تريد تصميم شعار وهوية بصرية تُميّزك حقاً؟</p>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
                 فريق تاج ستوديو يساعدك في تحويل فكرة مشروعك إلى علامة تجارية قوية وجذابة تجذب عملائك المثاليين.
               </p>

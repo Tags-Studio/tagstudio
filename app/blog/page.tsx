@@ -12,7 +12,7 @@ export function generateMetadata({ searchParams }: Props): Metadata {
   const hasCategory = !!searchParams?.category
 
   return {
-    title: "أسرار التسويق والهوية البصرية | مدونة تاج ستوديو لرواد الأعمال 💡",
+    title: "مدونة التصميم والهوية البصرية",
     description:
       "دليلك الشامل لتصدر السوق! اكتشف أسرار وتكتيكات بناء الهوية البصرية، والموشن جرافيك، ومضاعفة التفاعل على السوشيال ميديا. مقالات حصرية من خبراء تاج ستوديو.",
     keywords: [
