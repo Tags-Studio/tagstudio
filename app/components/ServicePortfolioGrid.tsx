@@ -103,7 +103,15 @@ export default function ServicePortfolioGrid({ serviceSlug, serviceTitle }: Prop
       </div>
 
       {isModalOpen && selectedProject && (
-        <ImageModal project={selectedProject} onClose={closeModal} />
+        <ImageModal
+          imageUrl={selectedProject.imageUrl}
+          title={selectedProject.title}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          category={selectedProject.category}
+          description={selectedProject.description}
+          caseStudy={selectedProject.caseStudy}
+        />
       )}
     </section>
   )

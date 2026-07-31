@@ -1,0 +1,1271 @@
+﻿
+C:\Users\zahran\.gemini\antigravity\brain\96008217-4abb-4027-acf1-505921affcc3\.system_generated\logs\transcript_full.j
+sonl:7733:{"step_index":7943,"source":"USER_EXPLICIT","type":"USER_INPUT","status":"DONE","created_at":"2026-07-18T17:4
+1:16Z","content":"<USER_REQUEST>\nخد دا كمان لحاسبة الاعلانات 
+https://www.wearetagstudio.com/tools/ads-budget-calculator  : <!DOCTYPE html>\n<html lang=\"ar\" 
+dir=\"rtl\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, 
+initial-scale=1.0\">\n    <title>حاسبة ميزانية الإعلانات | Tag Studio</title>\n    <script 
+src=\"https://cdn.tailwindcss.com\"></script>\n    <link href=\"https://fonts.googleapis.com/css2?family=Tajawal:wght@2
+00;300;400;500;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap\" 
+rel=\"stylesheet\">\n    <link rel=\"stylesheet\" 
+href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\">\n    <script>\n    tailwind.config 
+= {\n        theme: {\n            extend: {\n                fontFamily: {\n                    tajawal: ['Tajawal', 
+'sans-serif'],\n                    dm: ['DM Sans', 'sans-serif'],\n                }\n            }\n        }\n    
+}\n    </script>\n    <style>\n        :root {\n            --blue: #2563EB;\n            --blue-light: #60A5FA;\n     
+       --blue-dim: rgba(37,99,235,0.06);\n            --green: #10B981;\n            --yellow: #F59E0B;\n            
+--pink: #EC4899;\n            --purple: #8B5CF6;\n            --bg: #FAFBFF;\n            --surface: #FFFFFF;\n        
+    --surface-2: #F1F3F9;\n            --surface-3: #E8EAF2;\n            --border: rgba(0,0,0,0.06);\n            
+--border-h: rgba(0,0,0,0.12);\n            --txt: #0F172A;\n            --txt2: #64748B;\n            --txt3: 
+#94A3B8;\n        }\n\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        html { scroll-behavior: 
+smooth; }\n        body { background: var(--bg); color: var(--txt); overflow-x: hidden; }\n\n        
+::-webkit-scrollbar { width: 5px; }\n        ::-webkit-scrollbar-track { background: transparent; }\n        
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 3px; }\n\n        /* === التدرج متعدد الألوان 
+من الشعار === */\n        .brand-gradient {\n            background: linear-gradient(135deg, #F59E0B 0%, #10B981 30%, 
+#2563EB 65%, #EC4899 100%);\n            -webkit-background-clip: text;\n            -webkit-text-fill-color: 
+transparent;\n            background-clip: text;\n        }\n        .brand-gradient-bg {\n            background: 
+linear-gradient(135deg, #F59E0B 0%, #10B981 30%, #2563EB 65%, #EC4899 100%);\n        }\n        
+.brand-gradient-bg-soft {\n            background: linear-gradient(135deg, rgba(245,158,11,0.08) 0%, 
+rgba(16,185,129,0.08) 30%, rgba(37,99,235,0.08) 65%, rgba(236,72,153,0.08) 100%);\n        }\n\n        /* === الأجسام 
+المتحركة === */\n        .orb {\n            position: fixed; border-radius: 50%; filter: blur(100px);\n            
+pointer-events: none; z-index: 0; will-change: transform;\n        }\n        .orb-1 {\n            width: 500px; 
+height: 500px;\n            background: rgba(245,158,11,0.08);\n            top: -200px; right: -150px;\n            
+animation: orbA 25s ease-in-out infinite;\n        }\n        .orb-2 {\n            width: 400px; height: 400px;\n     
+       background: rgba(37,99,235,0.06);\n            bottom: -100px; left: -100px;\n            animation: orbB 30s 
+ease-in-out infinite;\n        }\n        .orb-3 {\n            width: 300px; height: 300px;\n            background: 
+rgba(236,72,153,0.05);\n            top: 50%; left: 50%;\n            animation: orbC 20s ease-in-out infinite;\n      
+  }\n        @keyframes orbA {\n            0%,100% { transform: translate(0,0) scale(1); }\n            33% { 
+transform: translate(-80px,60px) scale(1.1); }\n            66% { transform: translate(40px,-30px) scale(0.9); }\n     
+   }\n        @keyframes orbB {\n            0%,100% { transform: translate(0,0) scale(1); }\n            33% { 
+transform: translate(70px,-50px) scale(1.08); }\n            66% { transform: translate(-40px,30px) scale(0.92); }\n   
+     }\n        @keyframes orbC {\n            0%,100% { transform: translate(-50%,-50%) scale(1); }\n            50% 
+{ transform: translate(-30%,-60%) scale(1.2); }\n        }\n\n        /* === بطاقة محدثة للثيم الفاتح === */\n        
+.card {\n            background: var(--surface);\n            border: 1px solid var(--border);\n            
+border-radius: 20px;\n            box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 8px 24px rgba(0,0,0,0.04);\n            
+transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;\n        }\n        .card:hover {\n            
+box-shadow: 0 2px 6px rgba(0,0,0,0.04), 0 12px 32px rgba(0,0,0,0.06);\n        }\n        .card-sticky {\n            
+background: var(--surface);\n            border: 1px solid var(--border);\n            border-radius: 20px;\n          
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);\n        }\n\n        /* === الشريط المنزلق === */\n        
+input[type=\"range\"] {\n            -webkit-appearance: none; appearance: none;\n            width: 100%; height: 
+6px; border-radius: 3px;\n            outline: none; cursor: pointer; direction: ltr;\n            background: 
+linear-gradient(\n                to right,\n                var(--blue) 0%, var(--blue) var(--fill, 45%),\n           
+     var(--surface-3) var(--fill, 45%),\n                var(--surface-3) 100%\n            );\n            
+transition: background 0.15s;\n        }\n        input[type=\"range\"]::-webkit-slider-thumb {\n            
+-webkit-appearance: none; appearance: none;\n            width: 24px; height: 24px; border-radius: 50%;\n            
+background: var(--surface);\n            border: 3px solid var(--blue);\n            cursor: pointer;\n            
+box-shadow: 0 2px 8px rgba(37,99,235,0.2);\n            transition: box-shadow 0.25s, transform 0.25s;\n        }\n    
+    input[type=\"range\"]::-webkit-slider-thumb:hover {\n            box-shadow: 0 2px 12px rgba(37,99,235,0.35);\n    
+        transform: scale(1.15);\n        }\n        input[type=\"range\"]::-moz-range-thumb {\n            width: 
+24px; height: 24px; border-radius: 50%;\n            background: var(--surface); border: 3px solid var(--blue);\n      
+      cursor: pointer;\n            box-shadow: 0 2px 8px rgba(37,99,235,0.2);\n        }\n        
+input[type=\"range\"]::-moz-range-track {\n            height: 6px; border-radius: 3px; background: transparent;\n     
+   }\n\n        /* === حبوب المنصة === */\n        .plat-pill {\n            display: inline-flex; align-items: 
+center; gap: 8px;\n            padding: 10px 18px; border-radius: 12px;\n            border: 1px solid var(--border); 
+background: var(--surface);\n            cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);\n            
+font-size: 13.5px; color: var(--txt2); user-select: none;\n        }\n        .plat-pill:hover { border-color: 
+var(--border-h); color: var(--txt); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }\n        .plat-pill.on {\n            
+border-color: var(--blue); background: var(--blue-dim);\n            color: var(--blue); box-shadow: 0 2px 12px 
+rgba(37,99,235,0.1);\n        }\n        .plat-pill i { font-size: 16px; }\n\n        /* === بطاقة الهدف === */\n      
+  .goal-card {\n            padding: 18px 12px; border-radius: 14px;\n            border: 1px solid var(--border); 
+background: var(--surface);\n            cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);\n            
+text-align: center; user-select: none;\n        }\n        .goal-card:hover { border-color: var(--border-h); 
+transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.04); }\n        .goal-card.on {\n            
+border-color: var(--blue); background: var(--blue-dim);\n            box-shadow: 0 2px 16px rgba(37,99,235,0.08);\n    
+    }\n        .goal-card.on .g-icon { color: var(--blue); }\n\n        /* === حبوب المدة === */\n        .dur-pill 
+{\n            padding: 7px 18px; border-radius: 10px; font-size: 13px;\n            border: 1px solid var(--border); 
+background: var(--surface);\n            color: var(--txt2); cursor: pointer; transition: all 0.3s;\n            
+font-family: 'DM Sans', sans-serif; user-select: none;\n        }\n        .dur-pill:hover { color: var(--txt); 
+border-color: var(--border-h); }\n        .dur-pill.on { background: var(--blue); border-color: var(--blue); color: 
+#fff; }\n\n        /* === القائمة المنسدلة === */\n        .sel {\n            appearance: none; -webkit-appearance: 
+none;\n            width: 100%; padding: 13px 42px 13px 16px;\n            border-radius: 12px; border: 1px solid 
+var(--border);\n            background: var(--surface) url(\"data:image/svg+xml,%3Csvg 
+xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' 
+stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\") no-repeat 
+left 16px center;\n            color: var(--txt); font-family: 'Tajawal', sans-serif;\n            font-size: 14.5px; 
+cursor: pointer; transition: all 0.3s; outline: none;\n        }\n        .sel:focus { border-color: var(--blue); 
+box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }\n        .sel option { background: #fff; color: var(--txt); }\n\n        
+/* === بطاقة المقياس === */\n        .met-card {\n            padding: 22px; border-radius: 16px;\n            border: 
+1px solid var(--border); background: var(--surface);\n            transition: all 0.35s; position: relative; overflow: 
+hidden;\n        }\n        .met-card::before {\n            content: ''; position: absolute; top: 0; right: 0; left: 
+0; height: 3px;\n            border-radius: 16px 16px 0 0;\n            opacity: 0; transition: opacity 0.35s;\n       
+ }\n        .met-card:nth-child(1)::before { background: linear-gradient(90deg, #F59E0B, #10B981); }\n        
+.met-card:nth-child(2)::before { background: linear-gradient(90deg, #10B981, #2563EB); }\n        
+.met-card:nth-child(3)::before { background: linear-gradient(90deg, #2563EB, #8B5CF6); }\n        
+.met-card:nth-child(4)::before { background: linear-gradient(90deg, #8B5CF6, #EC4899); }\n        
+.met-card:nth-child(5)::before { background: linear-gradient(90deg, #EC4899, #F59E0B); }\n        
+.met-card:nth-child(6)::before { background: linear-gradient(90deg, #F59E0B, #EC4899); }\n        .met-card:hover { 
+transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }\n        .met-card:hover::before { opacity: 1; 
+}\n\n        /* === زر السيناريو === */\n        .sc-btn {\n            padding: 7px 16px; border-radius: 8px; 
+font-size: 12.5px;\n            border: 1px solid var(--border); background: var(--surface);\n            color: 
+var(--txt2); cursor: pointer; transition: all 0.3s;\n            font-family: 'Tajawal', sans-serif; user-select: 
+none;\n        }\n        .sc-btn:hover { color: var(--txt); border-color: var(--border-h); }\n        .sc-btn.on { 
+background: var(--blue); border-color: var(--blue); color: #fff; }\n\n        /* === بطاقة النصيحة === */\n        
+.tip-card {\n            padding: 18px 22px; border-radius: 14px;\n            border: 1px solid var(--border); 
+background: var(--surface);\n            transition: all 0.3s; display: flex; gap: 14px; align-items: flex-start;\n    
+    }\n        .tip-card:hover { border-color: var(--border-h); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }\n\n        
+/* === ظهور تدريجي === */\n        .fup {\n            opacity: 0; transform: translateY(28px);\n            
+transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);\n        }\n        
+.fup.vis { opacity: 1; transform: translateY(0); }\n\n        /* === نبض الرقم === */\n        @keyframes npulse { 
+0%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(0.97)} 100%{opacity:1;transform:scale(1)} }\n        
+.nupd { animation: npulse 0.25s ease; }\n\n        /* === شريط المقارنة === */\n        .comp-bar {\n            
+height: 6px; border-radius: 3px;\n            background: var(--surface-3); overflow: hidden;\n        }\n        
+.comp-fill {\n            height: 100%; border-radius: 3px;\n            transition: width 0.8s 
+cubic-bezier(0.4,0,0.2,1);\n        }\n\n        /* === شعار Tag Studio === */\n        .tag-logo-mark {\n            
+width: 32px; height: 32px; position: relative;\n        }\n        .tag-logo-mark span {\n            position: 
+absolute; width: 16px; height: 4px; border-radius: 2px;\n            top: 50%; left: 50%;\n        }\n        
+.tag-logo-mark span:nth-child(1) { background: #F59E0B; transform: translate(-50%,-50%) rotate(45deg); }\n        
+.tag-logo-mark span:nth-child(2) { background: #10B981; transform: translate(-50%,-50%) rotate(-15deg); }\n        
+.tag-logo-mark span:nth-child(3) { background: #2563EB; transform: translate(-50%,-50%) rotate(-45deg); }\n        
+.tag-logo-mark span:nth-child(4) { background: #EC4899; transform: translate(-50%,-50%) rotate(15deg); }\n\n        /* 
+=== جدول === */\n        .comp-table tr { transition: background 0.2s; }\n        .comp-table tbody tr:hover { 
+background: rgba(37,99,235,0.03); }\n\n        /* === خط فاصل متدرج === */\n        .brand-line {\n            width: 
+40px; height: 2px; border-radius: 1px;\n        }\n\n        @media (prefers-reduced-motion: reduce) {\n            *, 
+*::before, *::after {\n                animation-duration: 0.01ms !important;\n                
+animation-iteration-count: 1 !important;\n                transition-duration: 0.01ms !important;\n            }\n     
+   }\n    </style>\n</head>\n<body class=\"font-tajawal min-h-screen relative\">\n\n    <!-- الأجسام المتحركة -->\n    
+<div class=\"orb orb-1\" aria-hidden=\"true\"></div>\n    <div class=\"orb orb-2\" aria-hidden=\"true\"></div>\n    
+<div class=\"orb orb-3\" aria-hidden=\"true\"></div>\n\n    <!-- شريط التنقل -->\n    <nav class=\"fixed top-0 
+inset-x-0 z-50 flex items-center justify-between px-6 md:px-10 py-4\" style=\"background:rgba(250,251,255,0.8);backdrop
+-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);\">\n        <a href=\"#\" 
+class=\"flex items-center gap-3\" aria-label=\"Tag Studio\">\n            <div class=\"tag-logo-mark\">\n              
+  <span></span><span></span><span></span><span></span>\n            </div>\n            <span class=\"font-dm 
+font-bold text-base tracking-tight\" style=\"color:var(--blue);\">TAG STUDIO</span>\n        </a>\n        <a 
+href=\"#calculator\" class=\"hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium 
+transition-all duration-300 hover:scale-105 hover:shadow-lg\" style=\"background:var(--blue);color:#fff;box-shadow:0 
+2px 12px rgba(37,99,235,0.25);\">\n            <i class=\"fas fa-calculator text-xs\"></i>\n            ابدأ الحساب\n  
+      </a>\n    </nav>\n\n    <main class=\"relative z-10\">\n\n        <!-- قسم البطل -->\n        <header 
+class=\"pt-32 pb-16 md:pt-40 md:pb-24 px-6 text-center max-w-4xl mx-auto fup\">\n            <!-- شارة صغيرة -->\n     
+       <div class=\"inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-8\" 
+style=\"background:var(--blue-dim);color:var(--blue);border:1px solid rgba(37,99,235,0.12);\">\n                <i 
+class=\"fas fa-bolt text-[10px]\"></i>\n                أدوات التسويق الرقمي\n            </div>\n            <h1 
+class=\"text-4xl sm:text-5xl md:text-7xl font-black leading-tight mb-6\">\n                <span 
+class=\"brand-gradient\">حاسبة ميزانية</span><br>\n                <span style=\"color:var(--txt);\">الإعلانات 
+المدفوعة</span>\n            </h1>\n            <p class=\"text-base md:text-lg font-light leading-relaxed max-w-2xl 
+mx-auto\" style=\"color:var(--txt2);\">\n                قدّر نتائج حملاتك الإعلانية بدقة قبل إنفاق دولار واحد. اختر 
+منصتك، حدد ميزانيتك، واحصل على توقعات واقعية فوراً.\n            </p>\n            <div class=\"mt-10 flex 
+items-center justify-center gap-3 text-xs\" style=\"color:var(--txt3);\">\n                <div class=\"brand-line 
+brand-gradient-bg\" style=\"width:30px;height:1.5px;\"></div>\n                <span class=\"font-dm 
+tracking-wider\">SCROLL</span>\n                <div class=\"brand-line brand-gradient-bg\" 
+style=\"width:30px;height:1.5px;\"></div>\n            </div>\n        </header>\n\n        <!-- قسم الحاسبة -->\n     
+   <section id=\"calculator\" class=\"px-4 md:px-8 lg:px-12 pb-24 max-w-7xl mx-auto\">\n            <div class=\"grid 
+grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8\">\n\n                <!-- عمود المدخلات -->\n                <div 
+class=\"lg:col-span-5 fup\" style=\"transition-delay:0.1s;\">\n                    <div class=\"card-sticky p-6 md:p-8 
+sticky top-24\">\n                        <h2 class=\"text-lg font-bold mb-1\" style=\"color:var(--txt);\">إعدادات 
+الحملة</h2>\n                        <p class=\"text-xs mb-8\" style=\"color:var(--txt3);\">عدّل القيم وشاهد النتائج 
+تتحدث لحظياً</p>\n\n                        <!-- الميزانية -->\n                        <div class=\"mb-8\">\n         
+                   <div class=\"flex items-baseline justify-between mb-4\">\n                                <label 
+class=\"text-sm font-medium\" style=\"color:var(--txt2);\">الميزانية الشهرية</label>\n                                
+<div class=\"font-dm font-bold text-2xl\" style=\"color:var(--blue);\">\n                                    $<span 
+id=\"budgetVal\">5,000</span>\n                                </div>\n                            </div>\n            
+                <input type=\"range\" id=\"budgetSlider\" min=\"500\" max=\"100000\" step=\"500\" value=\"5000\" 
+aria-label=\"الميزانية الشهرية\">\n                            <div class=\"flex justify-between mt-2.5 text-[11px] 
+font-dm\" style=\"color:var(--txt3);\">\n                                <span>$500</span>\n                           
+     <span>$100,000</span>\n                            </div>\n                        </div>\n\n                     
+   <!-- المنصة -->\n                        <div class=\"mb-8\">\n                            <label class=\"text-sm 
+font-medium block mb-3\" style=\"color:var(--txt2);\">المنصة الإعلانية</label>\n                            <div 
+class=\"flex flex-wrap gap-2\" id=\"platformWrap\">\n                                <button class=\"plat-pill on\" 
+data-val=\"meta\"><i class=\"fa-brands fa-meta\"></i> ميتا</button>\n                                <button 
+class=\"plat-pill\" data-val=\"google\"><i class=\"fa-brands fa-google\"></i> جوجل</button>\n                          
+      <button class=\"plat-pill\" data-val=\"tiktok\"><i class=\"fa-brands fa-tiktok\"></i> تيك توك</button>\n         
+                       <button class=\"plat-pill\" data-val=\"linkedin\"><i class=\"fa-brands fa-linkedin-in\"></i> 
+لينكد إن</button>\n                                <button class=\"plat-pill\" data-val=\"snapchat\"><i 
+class=\"fa-brands fa-snapchat\"></i> سناب شات</button>\n                            </div>\n                        
+</div>\n\n                        <!-- الهدف -->\n                        <div class=\"mb-8\">\n                       
+     <label class=\"text-sm font-medium block mb-3\" style=\"color:var(--txt2);\">هدف الحملة</label>\n                 
+           <div class=\"grid grid-cols-2 gap-2.5\" id=\"goalWrap\">\n                                <div 
+class=\"goal-card\" data-val=\"awareness\">\n                                    <div class=\"g-icon text-xl mb-2\" 
+style=\"color:var(--txt3);\"><i class=\"fas fa-eye\"></i></div>\n                                    <div 
+class=\"text-sm font-medium\">زيادة الوعي</div>\n                                </div>\n                              
+  <div class=\"goal-card\" data-val=\"traffic\">\n                                    <div class=\"g-icon text-xl 
+mb-2\" style=\"color:var(--txt3);\"><i class=\"fas fa-arrow-pointer\"></i></div>\n                                    
+<div class=\"text-sm font-medium\">زيارة الموقع</div>\n                                </div>\n                        
+        <div class=\"goal-card on\" data-val=\"conversions\">\n                                    <div class=\"g-icon 
+text-xl mb-2\" style=\"color:var(--txt3);\"><i class=\"fas fa-bullseye\"></i></div>\n                                  
+  <div class=\"text-sm font-medium\">تحويلات</div>\n                                </div>\n                           
+     <div class=\"goal-card\" data-val=\"engagement\">\n                                    <div class=\"g-icon 
+text-xl mb-2\" style=\"color:var(--txt3);\"><i class=\"fas fa-heart\"></i></div>\n                                    
+<div class=\"text-sm font-medium\">تفاعل</div>\n                                </div>\n                            
+</div>\n                        </div>\n\n                        <!-- القطاع -->\n                        <div 
+class=\"mb-8\">\n                            <label class=\"text-sm font-medium block mb-3\" 
+style=\"color:var(--txt2);\">القطاع الصناعي</label>\n                            <select class=\"sel\" 
+id=\"industrySel\" aria-label=\"القطاع الصناعي\">\n                                <option value=\"ecommerce\">تجارة 
+إلكترونية</option>\n                                <option value=\"technology\">تكنولوجيا وبرمجيات</option>\n         
+                       <option value=\"services\">خدمات مهنية</option>\n                                <option 
+value=\"education\">تعليم وتدريب</option>\n                                <option value=\"health\">صحة 
+وعافية</option>\n                                <option value=\"restaurants\">مطاعم وأغذية</option>\n                 
+               <option value=\"realestate\">عقارات</option>\n                                <option 
+value=\"fashion\">أزياء وموضة</option>\n                            </select>\n                        </div>\n\n      
+                  <!-- المدة -->\n                        <div>\n                            <label class=\"text-sm 
+font-medium block mb-3\" style=\"color:var(--txt2);\">مدة الحملة</label>\n                            <div 
+class=\"flex flex-wrap gap-2\" id=\"durWrap\">\n                                <button class=\"dur-pill\" 
+data-val=\"7\">7 أيام</button>\n                                <button class=\"dur-pill\" data-val=\"14\">14 
+يوم</button>\n                                <button class=\"dur-pill on\" data-val=\"30\">30 يوم</button>\n          
+                      <button class=\"dur-pill\" data-val=\"60\">60 يوم</button>\n                                
+<button class=\"dur-pill\" data-val=\"90\">90 يوم</button>\n                            </div>\n                       
+ </div>\n                    </div>\n                </div>\n\n                <!-- عمود النتائج -->\n                
+<div class=\"lg:col-span-7 fup\" style=\"transition-delay:0.25s;\">\n                    <div class=\"space-y-6\">\n\n 
+                       <!-- تبديل السيناريو -->\n                        <div class=\"flex items-center 
+justify-between flex-wrap gap-3\">\n                            <h2 class=\"text-lg font-bold\" 
+style=\"color:var(--txt);\">النتائج المتوقعة</h2>\n                            <div class=\"flex gap-1.5\" 
+id=\"scenarioWrap\">\n                                <button class=\"sc-btn\" 
+data-val=\"optimistic\">متفائل</button>\n                                <button class=\"sc-btn on\" 
+data-val=\"realistic\">واقعي</button>\n                                <button class=\"sc-btn\" 
+data-val=\"conservative\">محافظ</button>\n                            </div>\n                        </div>\n\n       
+                 <!-- بطاقات المقاييس -->\n                        <div class=\"grid grid-cols-2 md:grid-cols-3 
+gap-3\" id=\"metricsGrid\">\n                            <div class=\"met-card\">\n                                
+<div class=\"text-[11px] font-medium mb-2\" style=\"color:var(--txt3);\">الانطباعات</div>\n                            
+    <div class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--txt);\" 
+id=\"mImpressions\">417.5K</div>\n                                <div class=\"text-[11px] mt-1.5 font-dm\" 
+style=\"color:var(--green);\">شهرياً</div>\n                            </div>\n                            <div 
+class=\"met-card\">\n                                <div class=\"text-[11px] font-medium mb-2\" 
+style=\"color:var(--txt3);\">النقرات</div>\n                                <div class=\"font-dm font-bold text-xl 
+md:text-2xl\" style=\"color:var(--txt);\" id=\"mClicks\">3,333</div>\n                                <div 
+class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--green);\">شهرياً</div>\n                            </div>\n  
+                          <div class=\"met-card\">\n                                <div class=\"text-[11px] 
+font-medium mb-2\" style=\"color:var(--txt3);\">التحويلات</div>\n                                <div class=\"font-dm 
+font-bold text-xl md:text-2xl\" style=\"color:var(--blue);\" id=\"mConversions\">117</div>\n                           
+     <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--blue);\">شهرياً</div>\n                            
+</div>\n                            <div class=\"met-card\">\n                                <div class=\"text-[11px] 
+font-medium mb-2\" style=\"color:var(--txt3);\">تكلفة النقرة</div>\n                                <div 
+class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--txt);\" id=\"mCPC\">$1.50</div>\n                  
+              <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--txt3);\">CPC</div>\n                       
+     </div>\n                            <div class=\"met-card\">\n                                <div 
+class=\"text-[11px] font-medium mb-2\" style=\"color:var(--txt3);\">تكلفة الألف ظهور</div>\n                           
+     <div class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--txt);\" id=\"mCPM\">$11.98</div>\n       
+                         <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--txt3);\">CPM</div>\n            
+                </div>\n                            <div class=\"met-card\">\n                                <div 
+class=\"text-[11px] font-medium mb-2\" style=\"color:var(--txt3);\">تكلفة التحويل</div>\n                              
+  <div class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--pink);\" id=\"mCPA\">$42.74</div>\n         
+                       <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--pink);\">CPA</div>\n              
+              </div>\n                        </div>\n\n                        <!-- مخطط الدونات + توزيع القمع -->\n  
+                      <div class=\"grid grid-cols-1 md:grid-cols-2 gap-6\">\n                            <div 
+class=\"card p-6 flex flex-col items-center justify-center\">\n                                <div class=\"text-xs 
+font-medium mb-4\" style=\"color:var(--txt3);\">توزيع الميزانية على القمع</div>\n                                
+<canvas id=\"donutCanvas\" width=\"200\" height=\"200\" style=\"width:200px;height:200px;\"></canvas>\n                
+                <div class=\"flex flex-wrap justify-center gap-4 mt-5\">\n                                    <div 
+class=\"flex items-center gap-2 text-[11px]\" style=\"color:var(--txt2);\">\n                                        
+<span class=\"w-2.5 h-2.5 rounded-full\" style=\"background:var(--blue);\"></span> أعلى القمع\n                        
+            </div>\n                                    <div class=\"flex items-center gap-2 text-[11px]\" 
+style=\"color:var(--txt2);\">\n                                        <span class=\"w-2.5 h-2.5 rounded-full\" 
+style=\"background:var(--green);\"></span> منتصف القمع\n                                    </div>\n                   
+                 <div class=\"flex items-center gap-2 text-[11px]\" style=\"color:var(--txt2);\">\n                    
+                    <span class=\"w-2.5 h-2.5 rounded-full\" style=\"background:var(--pink);\"></span> أسفل القمع\n    
+                                </div>\n                                </div>\n                            </div>\n\n 
+                           <!-- مقارنة الأداء -->\n                            <div class=\"card p-6\">\n              
+                  <div class=\"text-xs font-medium mb-5\" style=\"color:var(--txt3);\">مقارنة مع متوسط القطاع</div>\n  
+                              <div class=\"space-y-5\" id=\"compBars\">\n                                    <div>\n   
+                                     <div class=\"flex justify-between text-[11px] mb-1.5\">\n                         
+                   <span style=\"color:var(--txt2);\">معدل النقر (CTR)</span>\n                                        
+    <span class=\"font-dm font-semibold\" style=\"color:var(--txt);\" id=\"compCTR\">0.80%</span>\n                    
+                    </div>\n                                        <div class=\"comp-bar\"><div class=\"comp-fill\" 
+id=\"barCTR\" style=\"width:60%;background:var(--blue);\"></div></div>\n                                        <div 
+class=\"text-[10px] mt-1 font-dm\" style=\"color:var(--txt3);\">المتوسط: 0.90%</div>\n                                 
+   </div>\n                                    <div>\n                                        <div class=\"flex 
+justify-between text-[11px] mb-1.5\">\n                                            <span 
+style=\"color:var(--txt2);\">معدل التحويل (CVR)</span>\n                                            <span 
+class=\"font-dm font-semibold\" style=\"color:var(--txt);\" id=\"compCVR\">3.50%</span>\n                              
+          </div>\n                                        <div class=\"comp-bar\"><div class=\"comp-fill\" 
+id=\"barCVR\" style=\"width:70%;background:var(--green);\"></div></div>\n                                        <div 
+class=\"text-[10px] mt-1 font-dm\" style=\"color:var(--txt3);\">المتوسط: 2.80%</div>\n                                 
+   </div>\n                                    <div>\n                                        <div class=\"flex 
+justify-between text-[11px] mb-1.5\">\n                                            <span 
+style=\"color:var(--txt2);\">تكلفة التحويل (CPA)</span>\n                                            <span 
+class=\"font-dm font-semibold\" style=\"color:var(--txt);\" id=\"compCPA\">$42.74</span>\n                             
+           </div>\n                                        <div class=\"comp-bar\"><div class=\"comp-fill\" 
+id=\"barCPA\" style=\"width:45%;background:var(--pink);\"></div></div>\n                                        <div 
+class=\"text-[10px] mt-1 font-dm\" style=\"color:var(--txt3);\">المتوسط: $55.00</div>\n                                
+    </div>\n                                </div>\n                            </div>\n                        
+</div>\n\n                        <!-- الإنفاق اليومي + ملخص سريع -->\n                        <div class=\"card p-5 
+flex flex-wrap items-center justify-between gap-4\">\n                            <div class=\"flex items-center 
+gap-4\">\n                                <div class=\"w-10 h-10 rounded-xl flex items-center justify-center\" 
+style=\"background:var(--blue-dim);\">\n                                    <i class=\"fas fa-chart-line text-sm\" 
+style=\"color:var(--blue);\"></i>\n                                </div>\n                                <div>\n     
+                               <div class=\"text-[11px]\" style=\"color:var(--txt3);\">الإنفاق اليومي المتوقع</div>\n  
+                                  <div class=\"font-dm font-bold text-lg\" id=\"dailySpend\">$167</div>\n              
+                  </div>\n                            </div>\n                            <div class=\"h-8 w-px\" 
+style=\"background:var(--border);\"></div>\n                            <div class=\"flex items-center gap-4\">\n      
+                          <div class=\"w-10 h-10 rounded-xl flex items-center justify-center\" 
+style=\"background:rgba(16,185,129,0.08);\">\n                                    <i class=\"fas fa-arrow-trend-up 
+text-sm\" style=\"color:var(--green);\"></i>\n                                </div>\n                                
+<div>\n                                    <div class=\"text-[11px]\" style=\"color:var(--txt3);\">معدل العائد 
+المتوقع</div>\n                                    <div class=\"font-dm font-bold text-lg\" 
+style=\"color:var(--green);\" id=\"roiEst\">3.2x</div>\n                                </div>\n                       
+     </div>\n                            <div class=\"h-8 w-px hidden sm:block\" 
+style=\"background:var(--border);\"></div>\n                            <div class=\"flex items-center gap-4 hidden 
+sm:flex\">\n                                <div class=\"w-10 h-10 rounded-xl flex items-center justify-center\" 
+style=\"background:rgba(236,72,153,0.08);\">\n                                    <i class=\"fas fa-clock text-sm\" 
+style=\"color:var(--pink);\"></i>\n                                </div>\n                                <div>\n     
+                               <div class=\"text-[11px]\" style=\"color:var(--txt3);\">فترة التعلم المتوقعة</div>\n    
+                                <div class=\"font-dm font-bold text-lg\" id=\"learnPeriod\">3-5 أيام</div>\n           
+                     </div>\n                            </div>\n                        </div>\n\n                    
+    <!-- نصائح مخصصة -->\n                        <div class=\"card p-6\">\n                            <div 
+class=\"flex items-center gap-2 mb-5\">\n                                <div class=\"w-6 h-6 rounded-lg flex 
+items-center justify-center\" style=\"background:rgba(245,158,11,0.12);\">\n                                    <i 
+class=\"fas fa-lightbulb text-[10px]\" style=\"color:var(--yellow);\"></i>\n                                </div>\n   
+                             <span class=\"text-sm font-bold\">نصائح مخصصة لتحسين أدائك</span>\n                       
+     </div>\n                            <div class=\"space-y-3\" id=\"tipsContainer\"></div>\n                        
+</div>\n\n                        <!-- مقارنة المنصات -->\n                        <div class=\"card p-6\">\n          
+                  <div class=\"flex items-center gap-2 mb-5\">\n                                <div class=\"w-6 h-6 
+rounded-lg flex items-center justify-center\" style=\"background:rgba(139,92,246,0.1);\">\n                            
+        <i class=\"fas fa-scale-balanced text-[10px]\" style=\"color:var(--purple);\"></i>\n                           
+     </div>\n                                <span class=\"text-sm font-bold\">كيف ستبدو نفس الميزانية على منصات 
+أخرى</span>\n                            </div>\n                            <div class=\"overflow-x-auto\">\n         
+                       <table class=\"w-full text-[12px] min-w-[520px] comp-table\">\n                                 
+   <thead>\n                                        <tr style=\"color:var(--txt3);border-bottom:1px solid 
+var(--border);\">\n                                            <th class=\"text-start py-3 font-medium\">المنصة</th>\n 
+                                           <th class=\"text-center py-3 font-medium font-dm\">النقرات</th>\n           
+                                 <th class=\"text-center py-3 font-medium font-dm\">التحويلات</th>\n                   
+                         <th class=\"text-center py-3 font-medium font-dm\">CPC</th>\n                                 
+           <th class=\"text-center py-3 font-medium font-dm\">CPA</th>\n                                        
+</tr>\n                                    </thead>\n                                    <tbody 
+id=\"compTable\"></tbody>\n                                </table>\n                            </div>\n              
+          </div>\n                    </div>\n                </div>\n            </div>\n        </section>\n\n       
+ <!-- دعوة للتواصل -->\n        <section class=\"px-6 pb-24 max-w-3xl mx-auto text-center fup\">\n            <div 
+class=\"card p-10 md:p-14 relative overflow-hidden\">\n                <!-- خلفية تزيينية -->\n                <div 
+class=\"absolute top-0 left-0 w-64 h-64 rounded-full opacity-[0.04]\" 
+style=\"background:var(--blue);filter:blur(80px);transform:translate(-40%,-40%);\"></div>\n                <div 
+class=\"absolute bottom-0 right-0 w-48 h-48 rounded-full opacity-[0.04]\" 
+style=\"background:var(--pink);filter:blur(60px);transform:translate(40%,40%);\"></div>\n                <div 
+class=\"relative z-10\">\n                    <div class=\"inline-flex items-center gap-2 mb-6\">\n                    
+    <div class=\"tag-logo-mark\" style=\"width:24px;height:24px;\">\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                        </div>\n                        
+<span class=\"font-dm font-bold text-xs tracking-tight\" style=\"color:var(--blue);\">TAG STUDIO</span>\n              
+      </div>\n                    <h2 class=\"text-2xl md:text-3xl font-bold mb-4\">تحتاج خطة إعلانية متكاملة؟</h2>\n  
+                  <p class=\"text-sm font-light leading-relaxed mb-8 max-w-lg mx-auto\" 
+style=\"color:var(--txt2);\">\n                        فريقنا في Tag Studio يصمم حملات إعلانية مدفوعة تحقق أعلى عائد 
+على الاستثمار. من الاستراتيجية إلى التنفيذ والتحسين المستمر.\n                    </p>\n                    <a 
+href=\"https://www.wearetagstudio.com\" target=\"_blank\" rel=\"noopener\" class=\"inline-flex items-center gap-2.5 
+px-8 py-3.5 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl\" 
+style=\"background:var(--blue);color:#fff;box-shadow:0 4px 20px rgba(37,99,235,0.3);\">\n                        تواصل 
+معنا\n                        <i class=\"fas fa-arrow-left text-xs\"></i>\n                    </a>\n                
+</div>\n            </div>\n        </section>\n    </main>\n\n    <!-- التذييل -->\n    <footer class=\"relative z-10 
+px-6 py-8 text-center\" style=\"border-top:1px solid var(--border);\">\n        <div class=\"flex items-center 
+justify-center gap-2.5 mb-3\">\n            <div class=\"tag-logo-mark\" style=\"width:18px;height:18px;\">\n          
+      <span style=\"width:9px;height:2px;border-radius:1px;\"></span>\n                <span 
+style=\"width:9px;height:2px;border-radius:1px;\"></span>\n                <span 
+style=\"width:9px;height:2px;border-radius:1px;\"></span>\n                <span 
+style=\"width:9px;height:2px;border-radius:1px;\"></span>\n            </div>\n            <span class=\"text-xs 
+font-medium font-dm\" style=\"color:var(--blue);\">TAG STUDIO</span>\n        </div>\n        <p class=\"text-[11px]\" 
+style=\"color:var(--txt3);\">هذه الأرقام تقديرية مبنية على متوسطات القطاع وقد تختلف حسب السوق والمنطقة الجغرافية</p>\n 
+   </footer>\n\n    <script>\n    /* ============================================\n       بيانات الأسعار المرجعية لكل 
+منصة\n       ============================================ */\n    const BENCHMARKS = {\n        meta:     { cpm: 10,  
+cpc: 1.2,  cvr: 3.5,  ctr: 0.80, icon: 'fa-brands fa-meta',       name: 'ميتا',      avgCPA: 42, color: '#1877F2' },\n 
+       google:   { cpm: 20,  cpc: 2.5,  cvr: 5.0,  ctr: 1.20, icon: 'fa-brands fa-google',     name: 'جوجل',      
+avgCPA: 50, color: '#4285F4' },\n        tiktok:   { cpm: 7,   cpc: 0.6,  cvr: 2.0,  ctr: 1.10, icon: 'fa-brands 
+fa-tiktok',     name: 'تيك توك',   avgCPA: 30, color: '#000000' },\n        linkedin: { cpm: 50,  cpc: 8.0,  cvr: 3.0, 
+ ctr: 0.45, icon: 'fa-brands fa-linkedin-in',name: 'لينكد إن',  avgCPA: 180, color: '#0A66C2' },\n        snapchat: { 
+cpm: 5,   cpc: 0.8,  cvr: 1.5,  ctr: 0.95, icon: 'fa-brands fa-snapchat',   name: 'سناب شات',  avgCPA: 53, color: 
+'#FFFC00' }\n    };\n\n    const IND_MULT = {\n        ecommerce: 1.0, technology: 1.3, services: 0.95, education: 
+0.8,\n        health: 1.5, restaurants: 0.7, realestate: 1.2, fashion: 0.85\n    };\n\n    const GOAL_ADJ = {\n        
+awareness:   { impM: 1.5,  cvrM: 0.4,  roiM: 1.8 },\n        traffic:     { impM: 1.1,  cvrM: 0.7,  roiM: 2.5 },\n     
+   conversions: { impM: 0.9,  cvrM: 1.3,  roiM: 3.2 },\n        engagement:  { impM: 1.2,  cvrM: 0.5,  roiM: 2.0 }\n   
+ };\n\n    const FUNNEL = {\n        awareness:   [60, 30, 10],\n        traffic:     [40, 40, 20],\n        
+conversions: [20, 30, 50],\n        engagement:  [50, 35, 15]\n    };\n\n    const SCEN_MULT = { optimistic: 0.75, 
+realistic: 1.0, conservative: 1.35 };\n\n    const LEARN = {\n        meta: '3-5 أيام', google: '5-7 أيام', tiktok: 
+'2-4 أيام',\n        linkedin: '7-10 أيام', snapchat: '2-3 أيام'\n    };\n\n    const TIPS = {\n        meta: {\n      
+      awareness:   ['استخدم فيديوهات قصيرة بتصميم احترافي — أول 3 ثوانٍ هي الأهم','جرّب إعلانات Carousel لعرض قصة 
+المنتج بطريقة تفاعلية','استهدف Lookalike Audiences بناءً على عملائك الحاليين الأفضل'],\n            traffic:     
+['استخدم CTA مباشر مثل \"تسوق الآن\" بدلاً من \"اعرف المزيد\"','جرّب Collection Ads لتجربة تسوق سلسة داخل 
+التطبيق','أعد استهداف زوار الموقع بتصاميم مختلفة لرفع النقر'],\n            conversions: ['استخدم Dynamic Product Ads 
+لإعادة استهداف الزوار بالمنتجات التي شاهدوها','طبّق استراتيجية Retargeting متعددة المراحل — يمكن أن ترفع التحويلات 
+70%','جرّب Advantage+ Shopping Campaigns للاستفادة من الذكاء الاصطناعي'],\n            engagement:  ['أنشئ محتوى 
+تفاعلي كالاستطلاعات والأسئلة لزيادة التفاعل العضوي','استخدم Reels Ads للوصول لجمهور أوسع بتكلفة أقل','حافظ على تواصل 
+يومي عبر Stories تفاعلية تبني المجتمع']\n        },\n        google: {\n            awareness:   ['استخدم Display 
+Network مع تصميمات بصري جذابة للوعي بالعلامة','جرّب YouTube Bumper Ads (6 ثوانٍ) لرسائل قصيرة وقوية','استهدف جماهير 
+متخصصة عبر Affinity و In-Market Audiences'],\n            traffic:     ['ركّز على Extended Text Ads مع كلمات مفتاحية 
+Transactional','أضف Site Links و Callouts لزيادة مساحة الإعلان وتحسين النقر','استخدم Negative Keywords لتقليل النقرات 
+غير المفيدة'],\n            conversions: ['طبّق Performance Max للاستفادة من جميع قنوات جوجل معاً','استخدم Smart 
+Bidding مع Target CPA لتحسين التحويلات تلقائياً','أنشئ صفحات هبوط مخصصة لكل مجموعة إعلانية'],\n            engagement: 
+ ['استخدم Discovery Ads للوصول للمستخدمين أثناء تصفحهم','جرّب إعلانات Gmail Sponsored لتفاعل مباشر في الصندوق 
+الوارد','أنشئ محتوى Gallery Ads تفاعلي يعرض المنتج بزاوية 360°']\n        },\n        tiktok: {\n            
+awareness:   ['أنشئ محتوى يبدو طبيعياً وليس كإعلان — جمهور تيك توك يكره الإعلانات التقليدية','استخدم الموسيقى الرائجة 
+والتحديات لزيادة الانتشار','جرّب TopView Ads لظهور في أول مقطع يشاهده المستخدم'],\n            traffic:     ['أضف رابط 
+مباشر في الإعلان مع CTA واضح \"تسوق من الرابط\"','استخدم Spark Ads لتعزيز المحتوى العضوي الأداء','أنشئ سلسلة مقاطع 
+مترابطة تبني الفضول وتدفع للنقر'],\n            conversions: ['استخدم TikTok Shop لتحويل مباشر داخل المنصة','طبّق 
+استراتيجية Retargeting عبر Pixel لاستهداف المهتمين','جرّب Live Shopping لخلق تجربة شراء تفاعلية فورية'],\n            
+engagement:  ['شارك في التحديات الرائجة وأضف لمستك الإبداعية','استخدم Duets و Stitches للتفاعل مع محتوى المجتمع','أنشئ 
+محتوى سريع ومثير — أول ثانية تحدد البقاء أو التخطي']\n        },\n        linkedin: {\n            awareness:   
+['استخدم Document Ads لعرض تقارير ودراسات حالة تبني المصداقية','استهدف حسب الوظيفة والصناعة وحجم الشركة بدقة 
+عالية','جرّب Thought Leader Ads لنشر محتوى من حسابات القادة في الشركة'],\n            traffic:     ['استخدم Lead Gen 
+Forms المدمجة لتقليل فرك التسرب','أنشئ إعلانات Single Image مع عنوان قوي يثير الفضول','استهدف مجموعة Decision Makers 
+بمحتوى مخصص لهم'],\n            conversions: ['استخدم Matched Audiences لإعادة استهداف زوار الموقع','أنشئ حملات ABM 
+(Account-Based) للشركات الكبى المستهدفة','جرّب Conversation Ads للتواصل المباشر مع prospects عبر الإعلان'],\n          
+  engagement:  ['انشر محتوى تفكير قيادي يثير النقاش في التعليقات','استخدم Poll Ads لجمع بيانات وتفاعل في نفس 
+الوقت','أنشئ مجموعة LinkedIn متخصصة وبنِ مجتمعاً حول علامتك']\n        },\n        snapchat: {\n            awareness: 
+  ['استخدم AR Lenses المخصصة — المستخدمون يحبون تجربتها ومشاركتها','جرّب Story Ads بتصميم عمودي كامل الشاشة','استهدف 
+الجماهير حسب الاهتمامات والموقع والسلوك'],\n            traffic:     ['أضف Web View attachment لتجربة تصفح سلسة داخل 
+التطبيق','استخدم Deep Links لتوجيه المستخدمين مباشرة للصفحة المطلوبة','جرّب Collection Ads لعرض منتجات متعددة بقصة 
+بصرية'],\n            conversions: ['استخدم Dynamic Product Ads لإعادة استهداف المشاهدين','طبّق استراتيجية Retargeting 
+عبر Snap Pixel','جرّب Shoppable Ads للتحويل المباشر داخل سناب'],\n            engagement:  ['أنشئ Snap Games أو 
+Filters تفاعلية تبني الوعي بالعلامة','استخدم Geofilters للمحتاجات المحلية والأحداث','شارك في Highlight Stories للوصول 
+لجمهور أوسع عضوياً']\n        }\n    };\n\n    /* ============================================\n       حالة التطبيق\n  
+     ============================================ */\n    const state = {\n        budget: 5000,\n        platform: 
+'meta',\n        goal: 'conversions',\n        industry: 'ecommerce',\n        duration: 30,\n        scenario: 
+'realistic'\n    };\n\n    /* ============================================\n       عناصر DOM\n       
+============================================ */\n    const $ = (s) => document.querySelector(s);\n    const $$ = (s) 
+=> document.querySelectorAll(s);\n\n    const budgetSlider = $('#budgetSlider');\n    const budgetVal    = 
+$('#budgetVal');\n    const mImpressions = $('#mImpressions');\n    const mClicks      = $('#mClicks');\n    const 
+mConversions = $('#mConversions');\n    const mCPC         = $('#mCPC');\n    const mCPM         = $('#mCPM');\n    
+const mCPA         = $('#mCPA');\n    const dailySpend   = $('#dailySpend');\n    const roiEst       = $('#roiEst');\n 
+   const learnPeriod  = $('#learnPeriod');\n    const compCTR      = $('#compCTR');\n    const compCVR      = 
+$('#compCVR');\n    const compCPA      = $('#compCPA');\n    const barCTR       = $('#barCTR');\n    const barCVR      
+ = $('#barCVR');\n    const barCPA       = $('#barCPA');\n    const donutCanvas  = $('#donutCanvas');\n    const 
+tipsContainer= $('#tipsContainer');\n    const compTable    = $('#compTable');\n\n    /* 
+============================================\n       دوال مساعدة\n       ============================================ 
+*/\n    function fmtMetric(n) {\n        if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';\n        if (n >= 
+1000) return (n / 1000).toFixed(1) + 'K';\n        return n.toLocaleString('en');\n    }\n    function fmtCurrency(n) 
+{\n        return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });\n    }\n    
+function fmtBudget(n) {\n        return n.toLocaleStrin\n<truncated 13625 bytes>\n\nNOTE: The output was truncated 
+because it was too long. Use a more targeted query or a smaller range to get the information you need."}
+C:\Users\zahran\.gemini\antigravity\brain\96008217-4abb-4027-acf1-505921affcc3\.system_generated\logs\transcript_full.j
+sonl:8035:{"step_index":8249,"source":"USER_EXPLICIT","type":"USER_INPUT","status":"DONE","created_at":"2026-07-18T18:1
+5:31Z","content":"<USER_REQUEST>\nدا الكود الكامل عشان تقرن صح : <!DOCTYPE html>\n<html lang=\"ar\" 
+dir=\"rtl\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, 
+initial-scale=1.0\">\n    <title>حاسبة ميزانية الإعلانات | Tag Studio</title>\n    <script 
+src=\"https://cdn.tailwindcss.com\"></script>\n    <link href=\"https://fonts.googleapis.com/css2?family=Tajawal:wght@2
+00;300;400;500;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap\" 
+rel=\"stylesheet\">\n    <link rel=\"stylesheet\" 
+href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\">\n    <script>\n    tailwind.config 
+= {\n        theme: {\n            extend: {\n                fontFamily: {\n                    tajawal: ['Tajawal', 
+'sans-serif'],\n                    dm: ['DM Sans', 'sans-serif'],\n                }\n            }\n        }\n    
+}\n    </script>\n    <style>\n        :root {\n            --blue: #2563EB;\n            --blue-light: #60A5FA;\n     
+       --blue-dim: rgba(37,99,235,0.06);\n            --green: #10B981;\n            --yellow: #F59E0B;\n            
+--pink: #EC4899;\n            --purple: #8B5CF6;\n            --bg: #FAFBFF;\n            --surface: #FFFFFF;\n        
+    --surface-2: #F1F3F9;\n            --surface-3: #E8EAF2;\n            --border: rgba(0,0,0,0.06);\n            
+--border-h: rgba(0,0,0,0.12);\n            --txt: #0F172A;\n            --txt2: #64748B;\n            --txt3: 
+#94A3B8;\n        }\n\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        html { scroll-behavior: 
+smooth; }\n        body { background: var(--bg); color: var(--txt); overflow-x: hidden; }\n\n        
+::-webkit-scrollbar { width: 5px; }\n        ::-webkit-scrollbar-track { background: transparent; }\n        
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 3px; }\n\n        /* === التدرج متعدد الألوان 
+من الشعار === */\n        .brand-gradient {\n            background: linear-gradient(135deg, #F59E0B 0%, #10B981 30%, 
+#2563EB 65%, #EC4899 100%);\n            -webkit-background-clip: text;\n            -webkit-text-fill-color: 
+transparent;\n            background-clip: text;\n        }\n        .brand-gradient-bg {\n            background: 
+linear-gradient(135deg, #F59E0B 0%, #10B981 30%, #2563EB 65%, #EC4899 100%);\n        }\n        
+.brand-gradient-bg-soft {\n            background: linear-gradient(135deg, rgba(245,158,11,0.08) 0%, 
+rgba(16,185,129,0.08) 30%, rgba(37,99,235,0.08) 65%, rgba(236,72,153,0.08) 100%);\n        }\n\n        /* === الأجسام 
+المتحركة === */\n        .orb {\n            position: fixed; border-radius: 50%; filter: blur(100px);\n            
+pointer-events: none; z-index: 0; will-change: transform;\n        }\n        .orb-1 {\n            width: 500px; 
+height: 500px;\n            background: rgba(245,158,11,0.08);\n            top: -200px; right: -150px;\n            
+animation: orbA 25s ease-in-out infinite;\n        }\n        .orb-2 {\n            width: 400px; height: 400px;\n     
+       background: rgba(37,99,235,0.06);\n            bottom: -100px; left: -100px;\n            animation: orbB 30s 
+ease-in-out infinite;\n        }\n        .orb-3 {\n            width: 300px; height: 300px;\n            background: 
+rgba(236,72,153,0.05);\n            top: 50%; left: 50%;\n            animation: orbC 20s ease-in-out infinite;\n      
+  }\n        @keyframes orbA {\n            0%,100% { transform: translate(0,0) scale(1); }\n            33% { 
+transform: translate(-80px,60px) scale(1.1); }\n            66% { transform: translate(40px,-30px) scale(0.9); }\n     
+   }\n        @keyframes orbB {\n            0%,100% { transform: translate(0,0) scale(1); }\n            33% { 
+transform: translate(70px,-50px) scale(1.08); }\n            66% { transform: translate(-40px,30px) scale(0.92); }\n   
+     }\n        @keyframes orbC {\n            0%,100% { transform: translate(-50%,-50%) scale(1); }\n            50% 
+{ transform: translate(-30%,-60%) scale(1.2); }\n        }\n\n        /* === بطاقة محدثة للثيم الفاتح === */\n        
+.card {\n            background: var(--surface);\n            border: 1px solid var(--border);\n            
+border-radius: 20px;\n            box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 8px 24px rgba(0,0,0,0.04);\n            
+transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;\n        }\n        .card:hover {\n            
+box-shadow: 0 2px 6px rgba(0,0,0,0.04), 0 12px 32px rgba(0,0,0,0.06);\n        }\n        .card-sticky {\n            
+background: var(--surface);\n            border: 1px solid var(--border);\n            border-radius: 20px;\n          
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);\n        }\n\n        /* === الشريط المنزلق === */\n        
+input[type=\"range\"] {\n            -webkit-appearance: none; appearance: none;\n            width: 100%; height: 
+6px; border-radius: 3px;\n            outline: none; cursor: pointer; direction: ltr;\n            background: 
+linear-gradient(\n                to right,\n                var(--blue) 0%, var(--blue) var(--fill, 45%),\n           
+     var(--surface-3) var(--fill, 45%),\n                var(--surface-3) 100%\n            );\n            
+transition: background 0.15s;\n        }\n        input[type=\"range\"]::-webkit-slider-thumb {\n            
+-webkit-appearance: none; appearance: none;\n            width: 24px; height: 24px; border-radius: 50%;\n            
+background: var(--surface);\n            border: 3px solid var(--blue);\n            cursor: pointer;\n            
+box-shadow: 0 2px 8px rgba(37,99,235,0.2);\n            transition: box-shadow 0.25s, transform 0.25s;\n        }\n    
+    input[type=\"range\"]::-webkit-slider-thumb:hover {\n            box-shadow: 0 2px 12px rgba(37,99,235,0.35);\n    
+        transform: scale(1.15);\n        }\n        input[type=\"range\"]::-moz-range-thumb {\n            width: 
+24px; height: 24px; border-radius: 50%;\n            background: var(--surface); border: 3px solid var(--blue);\n      
+      cursor: pointer;\n            box-shadow: 0 2px 8px rgba(37,99,235,0.2);\n        }\n        
+input[type=\"range\"]::-moz-range-track {\n            height: 6px; border-radius: 3px; background: transparent;\n     
+   }\n\n        /* === حبوب المنصة === */\n        .plat-pill {\n            display: inline-flex; align-items: 
+center; gap: 8px;\n            padding: 10px 18px; border-radius: 12px;\n            border: 1px solid var(--border); 
+background: var(--surface);\n            cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);\n            
+font-size: 13.5px; color: var(--txt2); user-select: none;\n        }\n        .plat-pill:hover { border-color: 
+var(--border-h); color: var(--txt); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }\n        .plat-pill.on {\n            
+border-color: var(--blue); background: var(--blue-dim);\n            color: var(--blue); box-shadow: 0 2px 12px 
+rgba(37,99,235,0.1);\n        }\n        .plat-pill i { font-size: 16px; }\n\n        /* === بطاقة الهدف === */\n      
+  .goal-card {\n            padding: 18px 12px; border-radius: 14px;\n            border: 1px solid var(--border); 
+background: var(--surface);\n            cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);\n            
+text-align: center; user-select: none;\n        }\n        .goal-card:hover { border-color: var(--border-h); 
+transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.04); }\n        .goal-card.on {\n            
+border-color: var(--blue); background: var(--blue-dim);\n            box-shadow: 0 2px 16px rgba(37,99,235,0.08);\n    
+    }\n        .goal-card.on .g-icon { color: var(--blue); }\n\n        /* === حبوب المدة === */\n        .dur-pill 
+{\n            padding: 7px 18px; border-radius: 10px; font-size: 13px;\n            border: 1px solid var(--border); 
+background: var(--surface);\n            color: var(--txt2); cursor: pointer; transition: all 0.3s;\n            
+font-family: 'DM Sans', sans-serif; user-select: none;\n        }\n        .dur-pill:hover { color: var(--txt); 
+border-color: var(--border-h); }\n        .dur-pill.on { background: var(--blue); border-color: var(--blue); color: 
+#fff; }\n\n        /* === القائمة المنسدلة === */\n        .sel {\n            appearance: none; -webkit-appearance: 
+none;\n            width: 100%; padding: 13px 42px 13px 16px;\n            border-radius: 12px; border: 1px solid 
+var(--border);\n            background: var(--surface) url(\"data:image/svg+xml,%3Csvg 
+xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' 
+stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\") no-repeat 
+left 16px center;\n            color: var(--txt); font-family: 'Tajawal', sans-serif;\n            font-size: 14.5px; 
+cursor: pointer; transition: all 0.3s; outline: none;\n        }\n        .sel:focus { border-color: var(--blue); 
+box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }\n        .sel option { background: #fff; color: var(--txt); }\n\n        
+/* === بطاقة المقياس === */\n        .met-card {\n            padding: 22px; border-radius: 16px;\n            border: 
+1px solid var(--border); background: var(--surface);\n            transition: all 0.35s; position: relative; overflow: 
+hidden;\n        }\n        .met-card::before {\n            content: ''; position: absolute; top: 0; right: 0; left: 
+0; height: 3px;\n            border-radius: 16px 16px 0 0;\n            opacity: 0; transition: opacity 0.35s;\n       
+ }\n        .met-card:nth-child(1)::before { background: linear-gradient(90deg, #F59E0B, #10B981); }\n        
+.met-card:nth-child(2)::before { background: linear-gradient(90deg, #10B981, #2563EB); }\n        
+.met-card:nth-child(3)::before { background: linear-gradient(90deg, #2563EB, #8B5CF6); }\n        
+.met-card:nth-child(4)::before { background: linear-gradient(90deg, #8B5CF6, #EC4899); }\n        
+.met-card:nth-child(5)::before { background: linear-gradient(90deg, #EC4899, #F59E0B); }\n        
+.met-card:nth-child(6)::before { background: linear-gradient(90deg, #F59E0B, #EC4899); }\n        .met-card:hover { 
+transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }\n        .met-card:hover::before { opacity: 1; 
+}\n\n        /* === زر السيناريو === */\n        .sc-btn {\n            padding: 7px 16px; border-radius: 8px; 
+font-size: 12.5px;\n            border: 1px solid var(--border); background: var(--surface);\n            color: 
+var(--txt2); cursor: pointer; transition: all 0.3s;\n            font-family: 'Tajawal', sans-serif; user-select: 
+none;\n        }\n        .sc-btn:hover { color: var(--txt); border-color: var(--border-h); }\n        .sc-btn.on { 
+background: var(--blue); border-color: var(--blue); color: #fff; }\n\n        /* === بطاقة النصيحة === */\n        
+.tip-card {\n            padding: 18px 22px; border-radius: 14px;\n            border: 1px solid var(--border); 
+background: var(--surface);\n            transition: all 0.3s; display: flex; gap: 14px; align-items: flex-start;\n    
+    }\n        .tip-card:hover { border-color: var(--border-h); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }\n\n        
+/* === ظهور تدريجي === */\n        .fup {\n            opacity: 0; transform: translateY(28px);\n            
+transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);\n        }\n        
+.fup.vis { opacity: 1; transform: translateY(0); }\n\n        /* === نبض الرقم === */\n        @keyframes npulse { 
+0%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(0.97)} 100%{opacity:1;transform:scale(1)} }\n        
+.nupd { animation: npulse 0.25s ease; }\n\n        /* === شريط المقارنة === */\n        .comp-bar {\n            
+height: 6px; border-radius: 3px;\n            background: var(--surface-3); overflow: hidden;\n        }\n        
+.comp-fill {\n            height: 100%; border-radius: 3px;\n            transition: width 0.8s 
+cubic-bezier(0.4,0,0.2,1);\n        }\n\n        /* === شعار Tag Studio === */\n        .tag-logo-mark {\n            
+width: 32px; height: 32px; position: relative;\n        }\n        .tag-logo-mark span {\n            position: 
+absolute; width: 16px; height: 4px; border-radius: 2px;\n            top: 50%; left: 50%;\n        }\n        
+.tag-logo-mark span:nth-child(1) { background: #F59E0B; transform: translate(-50%,-50%) rotate(45deg); }\n        
+.tag-logo-mark span:nth-child(2) { background: #10B981; transform: translate(-50%,-50%) rotate(-15deg); }\n        
+.tag-logo-mark span:nth-child(3) { background: #2563EB; transform: translate(-50%,-50%) rotate(-45deg); }\n        
+.tag-logo-mark span:nth-child(4) { background: #EC4899; transform: translate(-50%,-50%) rotate(15deg); }\n\n        /* 
+=== جدول === */\n        .comp-table tr { transition: background 0.2s; }\n        .comp-table tbody tr:hover { 
+background: rgba(37,99,235,0.03); }\n\n        /* === خط فاصل متدرج === */\n        .brand-line {\n            width: 
+40px; height: 2px; border-radius: 1px;\n        }\n\n        @media (prefers-reduced-motion: reduce) {\n            *, 
+*::before, *::after {\n                animation-duration: 0.01ms !important;\n                
+animation-iteration-count: 1 !important;\n                transition-duration: 0.01ms !important;\n            }\n     
+   }\n    </style>\n</head>\n<body class=\"font-tajawal min-h-screen relative\">\n\n    <!-- الأجسام المتحركة -->\n    
+<div class=\"orb orb-1\" aria-hidden=\"true\"></div>\n    <div class=\"orb orb-2\" aria-hidden=\"true\"></div>\n    
+<div class=\"orb orb-3\" aria-hidden=\"true\"></div>\n\n    <!-- شريط التنقل -->\n    <nav class=\"fixed top-0 
+inset-x-0 z-50 flex items-center justify-between px-6 md:px-10 py-4\" style=\"background:rgba(250,251,255,0.8);backdrop
+-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);\">\n        <a href=\"#\" 
+class=\"flex items-center gap-3\" aria-label=\"Tag Studio\">\n            <div class=\"tag-logo-mark\">\n              
+  <span></span><span></span><span></span><span></span>\n            </div>\n            <span class=\"font-dm 
+font-bold text-base tracking-tight\" style=\"color:var(--blue);\">TAG STUDIO</span>\n        </a>\n        <a 
+href=\"#calculator\" class=\"hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium 
+transition-all duration-300 hover:scale-105 hover:shadow-lg\" style=\"background:var(--blue);color:#fff;box-shadow:0 
+2px 12px rgba(37,99,235,0.25);\">\n            <i class=\"fas fa-calculator text-xs\"></i>\n            ابدأ الحساب\n  
+      </a>\n    </nav>\n\n    <main class=\"relative z-10\">\n\n        <!-- قسم البطل -->\n        <header 
+class=\"pt-32 pb-16 md:pt-40 md:pb-24 px-6 text-center max-w-4xl mx-auto fup\">\n            <!-- شارة صغيرة -->\n     
+       <div class=\"inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-8\" 
+style=\"background:var(--blue-dim);color:var(--blue);border:1px solid rgba(37,99,235,0.12);\">\n                <i 
+class=\"fas fa-bolt text-[10px]\"></i>\n                أدوات التسويق الرقمي\n            </div>\n            <h1 
+class=\"text-4xl sm:text-5xl md:text-7xl font-black leading-tight mb-6\">\n                <span 
+class=\"brand-gradient\">حاسبة ميزانية</span><br>\n                <span style=\"color:var(--txt);\">الإعلانات 
+المدفوعة</span>\n            </h1>\n            <p class=\"text-base md:text-lg font-light leading-relaxed max-w-2xl 
+mx-auto\" style=\"color:var(--txt2);\">\n                قدّر نتائج حملاتك الإعلانية بدقة قبل إنفاق دولار واحد. اختر 
+منصتك، حدد ميزانيتك، واحصل على توقعات واقعية فوراً.\n            </p>\n            <div class=\"mt-10 flex 
+items-center justify-center gap-3 text-xs\" style=\"color:var(--txt3);\">\n                <div class=\"brand-line 
+brand-gradient-bg\" style=\"width:30px;height:1.5px;\"></div>\n                <span class=\"font-dm 
+tracking-wider\">SCROLL</span>\n                <div class=\"brand-line brand-gradient-bg\" 
+style=\"width:30px;height:1.5px;\"></div>\n            </div>\n        </header>\n\n        <!-- قسم الحاسبة -->\n     
+   <section id=\"calculator\" class=\"px-4 md:px-8 lg:px-12 pb-24 max-w-7xl mx-auto\">\n            <div class=\"grid 
+grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8\">\n\n                <!-- عمود المدخلات -->\n                <div 
+class=\"lg:col-span-5 fup\" style=\"transition-delay:0.1s;\">\n                    <div class=\"card-sticky p-6 md:p-8 
+sticky top-24\">\n                        <h2 class=\"text-lg font-bold mb-1\" style=\"color:var(--txt);\">إعدادات 
+الحملة</h2>\n                        <p class=\"text-xs mb-8\" style=\"color:var(--txt3);\">عدّل القيم وشاهد النتائج 
+تتحدث لحظياً</p>\n\n                        <!-- الميزانية -->\n                        <div class=\"mb-8\">\n         
+                   <div class=\"flex items-baseline justify-between mb-4\">\n                                <label 
+class=\"text-sm font-medium\" style=\"color:var(--txt2);\">الميزانية الشهرية</label>\n                                
+<div class=\"font-dm font-bold text-2xl\" style=\"color:var(--blue);\">\n                                    $<span 
+id=\"budgetVal\">5,000</span>\n                                </div>\n                            </div>\n            
+                <input type=\"range\" id=\"budgetSlider\" min=\"500\" max=\"100000\" step=\"500\" value=\"5000\" 
+aria-label=\"الميزانية الشهرية\">\n                            <div class=\"flex justify-between mt-2.5 text-[11px] 
+font-dm\" style=\"color:var(--txt3);\">\n                                <span>$500</span>\n                           
+     <span>$100,000</span>\n                            </div>\n                        </div>\n\n                     
+   <!-- المنصة -->\n                        <div class=\"mb-8\">\n                            <label class=\"text-sm 
+font-medium block mb-3\" style=\"color:var(--txt2);\">المنصة الإعلانية</label>\n                            <div 
+class=\"flex flex-wrap gap-2\" id=\"platformWrap\">\n                                <button class=\"plat-pill on\" 
+data-val=\"meta\"><i class=\"fa-brands fa-meta\"></i> ميتا</button>\n                                <button 
+class=\"plat-pill\" data-val=\"google\"><i class=\"fa-brands fa-google\"></i> جوجل</button>\n                          
+      <button class=\"plat-pill\" data-val=\"tiktok\"><i class=\"fa-brands fa-tiktok\"></i> تيك توك</button>\n         
+                       <button class=\"plat-pill\" data-val=\"linkedin\"><i class=\"fa-brands fa-linkedin-in\"></i> 
+لينكد إن</button>\n                                <button class=\"plat-pill\" data-val=\"snapchat\"><i 
+class=\"fa-brands fa-snapchat\"></i> سناب شات</button>\n                            </div>\n                        
+</div>\n\n                        <!-- الهدف -->\n                        <div class=\"mb-8\">\n                       
+     <label class=\"text-sm font-medium block mb-3\" style=\"color:var(--txt2);\">هدف الحملة</label>\n                 
+           <div class=\"grid grid-cols-2 gap-2.5\" id=\"goalWrap\">\n                                <div 
+class=\"goal-card\" data-val=\"awareness\">\n                                    <div class=\"g-icon text-xl mb-2\" 
+style=\"color:var(--txt3);\"><i class=\"fas fa-eye\"></i></div>\n                                    <div 
+class=\"text-sm font-medium\">زيادة الوعي</div>\n                                </div>\n                              
+  <div class=\"goal-card\" data-val=\"traffic\">\n                                    <div class=\"g-icon text-xl 
+mb-2\" style=\"color:var(--txt3);\"><i class=\"fas fa-arrow-pointer\"></i></div>\n                                    
+<div class=\"text-sm font-medium\">زيارة الموقع</div>\n                                </div>\n                        
+        <div class=\"goal-card on\" data-val=\"conversions\">\n                                    <div class=\"g-icon 
+text-xl mb-2\" style=\"color:var(--txt3);\"><i class=\"fas fa-bullseye\"></i></div>\n                                  
+  <div class=\"text-sm font-medium\">تحويلات</div>\n                                </div>\n                           
+     <div class=\"goal-card\" data-val=\"engagement\">\n                                    <div class=\"g-icon 
+text-xl mb-2\" style=\"color:var(--txt3);\"><i class=\"fas fa-heart\"></i></div>\n                                    
+<div class=\"text-sm font-medium\">تفاعل</div>\n                                </div>\n                            
+</div>\n                        </div>\n\n                        <!-- القطاع -->\n                        <div 
+class=\"mb-8\">\n                            <label class=\"text-sm font-medium block mb-3\" 
+style=\"color:var(--txt2);\">القطاع الصناعي</label>\n                            <select class=\"sel\" 
+id=\"industrySel\" aria-label=\"القطاع الصناعي\">\n                                <option value=\"ecommerce\">تجارة 
+إلكترونية</option>\n                                <option value=\"technology\">تكنولوجيا وبرمجيات</option>\n         
+                       <option value=\"services\">خدمات مهنية</option>\n                                <option 
+value=\"education\">تعليم وتدريب</option>\n                                <option value=\"health\">صحة 
+وعافية</option>\n                                <option value=\"restaurants\">مطاعم وأغذية</option>\n                 
+               <option value=\"realestate\">عقارات</option>\n                                <option 
+value=\"fashion\">أزياء وموضة</option>\n                            </select>\n                        </div>\n\n      
+                  <!-- المدة -->\n                        <div>\n                            <label class=\"text-sm 
+font-medium block mb-3\" style=\"color:var(--txt2);\">مدة الحملة</label>\n                            <div 
+class=\"flex flex-wrap gap-2\" id=\"durWrap\">\n                                <button class=\"dur-pill\" 
+data-val=\"7\">7 أيام</button>\n                                <button class=\"dur-pill\" data-val=\"14\">14 
+يوم</button>\n                                <button class=\"dur-pill on\" data-val=\"30\">30 يوم</button>\n          
+                      <button class=\"dur-pill\" data-val=\"60\">60 يوم</button>\n                                
+<button class=\"dur-pill\" data-val=\"90\">90 يوم</button>\n                            </div>\n                       
+ </div>\n                    </div>\n                </div>\n\n                <!-- عمود النتائج -->\n                
+<div class=\"lg:col-span-7 fup\" style=\"transition-delay:0.25s;\">\n                    <div class=\"space-y-6\">\n\n 
+                       <!-- تبديل السيناريو -->\n                        <div class=\"flex items-center 
+justify-between flex-wrap gap-3\">\n                            <h2 class=\"text-lg font-bold\" 
+style=\"color:var(--txt);\">النتائج المتوقعة</h2>\n                            <div class=\"flex gap-1.5\" 
+id=\"scenarioWrap\">\n                                <button class=\"sc-btn\" 
+data-val=\"optimistic\">متفائل</button>\n                                <button class=\"sc-btn on\" 
+data-val=\"realistic\">واقعي</button>\n                                <button class=\"sc-btn\" 
+data-val=\"conservative\">محافظ</button>\n                            </div>\n                        </div>\n\n       
+                 <!-- بطاقات المقاييس -->\n                        <div class=\"grid grid-cols-2 md:grid-cols-3 
+gap-3\" id=\"metricsGrid\">\n                            <div class=\"met-card\">\n                                
+<div class=\"text-[11px] font-medium mb-2\" style=\"color:var(--txt3);\">الانطباعات</div>\n                            
+    <div class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--txt);\" 
+id=\"mImpressions\">417.5K</div>\n                                <div class=\"text-[11px] mt-1.5 font-dm\" 
+style=\"color:var(--green);\">شهرياً</div>\n                            </div>\n                            <div 
+class=\"met-card\">\n                                <div class=\"text-[11px] font-medium mb-2\" 
+style=\"color:var(--txt3);\">النقرات</div>\n                                <div class=\"font-dm font-bold text-xl 
+md:text-2xl\" style=\"color:var(--txt);\" id=\"mClicks\">3,333</div>\n                                <div 
+class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--green);\">شهرياً</div>\n                            </div>\n  
+                          <div class=\"met-card\">\n                                <div class=\"text-[11px] 
+font-medium mb-2\" style=\"color:var(--txt3);\">التحويلات</div>\n                                <div class=\"font-dm 
+font-bold text-xl md:text-2xl\" style=\"color:var(--blue);\" id=\"mConversions\">117</div>\n                           
+     <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--blue);\">شهرياً</div>\n                            
+</div>\n                            <div class=\"met-card\">\n                                <div class=\"text-[11px] 
+font-medium mb-2\" style=\"color:var(--txt3);\">تكلفة النقرة</div>\n                                <div 
+class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--txt);\" id=\"mCPC\">$1.50</div>\n                  
+              <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--txt3);\">CPC</div>\n                       
+     </div>\n                            <div class=\"met-card\">\n                                <div 
+class=\"text-[11px] font-medium mb-2\" style=\"color:var(--txt3);\">تكلفة الألف ظهور</div>\n                           
+     <div class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--txt);\" id=\"mCPM\">$11.98</div>\n       
+                         <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--txt3);\">CPM</div>\n            
+                </div>\n                            <div class=\"met-card\">\n                                <div 
+class=\"text-[11px] font-medium mb-2\" style=\"color:var(--txt3);\">تكلفة التحويل</div>\n                              
+  <div class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--pink);\" id=\"mCPA\">$42.74</div>\n         
+                       <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--pink);\">CPA</div>\n              
+              </div>\n                        </div>\n\n                        <!-- مخطط الدونات + توزيع القمع -->\n  
+                      <div class=\"grid grid-cols-1 md:grid-cols-2 gap-6\">\n                            <div 
+class=\"card p-6 flex flex-col items-center justify-center\">\n                                <div class=\"text-xs 
+font-medium mb-4\" style=\"color:var(--txt3);\">توزيع الميزانية على القمع</div>\n                                
+<canvas id=\"donutCanvas\" width=\"200\" height=\"200\" style=\"width:200px;height:200px;\"></canvas>\n                
+                <div class=\"flex flex-wrap justify-center gap-4 mt-5\">\n                                    <div 
+class=\"flex items-center gap-2 text-[11px]\" style=\"color:var(--txt2);\">\n                                        
+<span class=\"w-2.5 h-2.5 rounded-full\" style=\"background:var(--blue);\"></span> أعلى القمع\n                        
+            </div>\n                                    <div class=\"flex items-center gap-2 text-[11px]\" 
+style=\"color:var(--txt2);\">\n                                        <span class=\"w-2.5 h-2.5 rounded-full\" 
+style=\"background:var(--green);\"></span> منتصف القمع\n                                    </div>\n                   
+                 <div class=\"flex items-center gap-2 text-[11px]\" style=\"color:var(--txt2);\">\n                    
+                    <span class=\"w-2.5 h-2.5 rounded-full\" style=\"background:var(--pink);\"></span> أسفل القمع\n    
+                                </div>\n                                </div>\n                            </div>\n\n 
+                           <!-- مقارنة الأداء -->\n                            <div class=\"card p-6\">\n              
+                  <div class=\"text-xs font-medium mb-5\" style=\"color:var(--txt3);\">مقارنة مع متوسط القطاع</div>\n  
+                              <div class=\"space-y-5\" id=\"compBars\">\n                                    <div>\n   
+                                     <div class=\"flex justify-between text-[11px] mb-1.5\">\n                         
+                   <span style=\"color:var(--txt2);\">معدل النقر (CTR)</span>\n                                        
+    <span class=\"font-dm font-semibold\" style=\"color:var(--txt);\" id=\"compCTR\">0.80%</span>\n                    
+                    </div>\n                                        <div class=\"comp-bar\"><div class=\"comp-fill\" 
+id=\"barCTR\" style=\"width:60%;background:var(--blue);\"></div></div>\n                                        <div 
+class=\"text-[10px] mt-1 font-dm\" style=\"color:var(--txt3);\">المتوسط: 0.90%</div>\n                                 
+   </div>\n                                    <div>\n                                        <div class=\"flex 
+justify-between text-[11px] mb-1.5\">\n                                            <span 
+style=\"color:var(--txt2);\">معدل التحويل (CVR)</span>\n                                            <span 
+class=\"font-dm font-semibold\" style=\"color:var(--txt);\" id=\"compCVR\">3.50%</span>\n                              
+          </div>\n                                        <div class=\"comp-bar\"><div class=\"comp-fill\" 
+id=\"barCVR\" style=\"width:70%;background:var(--green);\"></div></div>\n                                        <div 
+class=\"text-[10px] mt-1 font-dm\" style=\"color:var(--txt3);\">المتوسط: 2.80%</div>\n                                 
+   </div>\n                                    <div>\n                                        <div class=\"flex 
+justify-between text-[11px] mb-1.5\">\n                                            <span 
+style=\"color:var(--txt2);\">تكلفة التحويل (CPA)</span>\n                                            <span 
+class=\"font-dm font-semibold\" style=\"color:var(--txt);\" id=\"compCPA\">$42.74</span>\n                             
+           </div>\n                                        <div class=\"comp-bar\"><div class=\"comp-fill\" 
+id=\"barCPA\" style=\"width:45%;background:var(--pink);\"></div></div>\n                                        <div 
+class=\"text-[10px] mt-1 font-dm\" style=\"color:var(--txt3);\">المتوسط: $55.00</div>\n                                
+    </div>\n                                </div>\n                            </div>\n                        
+</div>\n\n                        <!-- الإنفاق اليومي + ملخص سريع -->\n                        <div class=\"card p-5 
+flex flex-wrap items-center justify-between gap-4\">\n                            <div class=\"flex items-center 
+gap-4\">\n                                <div class=\"w-10 h-10 rounded-xl flex items-center justify-center\" 
+style=\"background:var(--blue-dim);\">\n                                    <i class=\"fas fa-chart-line text-sm\" 
+style=\"color:var(--blue);\"></i>\n                                </div>\n                                <div>\n     
+                               <div class=\"text-[11px]\" style=\"color:var(--txt3);\">الإنفاق اليومي المتوقع</div>\n  
+                                  <div class=\"font-dm font-bold text-lg\" id=\"dailySpend\">$167</div>\n              
+                  </div>\n                            </div>\n                            <div class=\"h-8 w-px\" 
+style=\"background:var(--border);\"></div>\n                            <div class=\"flex items-center gap-4\">\n      
+                          <div class=\"w-10 h-10 rounded-xl flex items-center justify-center\" 
+style=\"background:rgba(16,185,129,0.08);\">\n                                    <i class=\"fas fa-arrow-trend-up 
+text-sm\" style=\"color:var(--green);\"></i>\n                                </div>\n                                
+<div>\n                                    <div class=\"text-[11px]\" style=\"color:var(--txt3);\">معدل العائد 
+المتوقع</div>\n                                    <div class=\"font-dm font-bold text-lg\" 
+style=\"color:var(--green);\" id=\"roiEst\">3.2x</div>\n                                </div>\n                       
+     </div>\n                            <div class=\"h-8 w-px hidden sm:block\" 
+style=\"background:var(--border);\"></div>\n                            <div class=\"flex items-center gap-4 hidden 
+sm:flex\">\n                                <div class=\"w-10 h-10 rounded-xl flex items-center justify-center\" 
+style=\"background:rgba(236,72,153,0.08);\">\n                                    <i class=\"fas fa-clock text-sm\" 
+style=\"color:var(--pink);\"></i>\n                                </div>\n                                <div>\n     
+                               <div class=\"text-[11px]\" style=\"color:var(--txt3);\">فترة التعلم المتوقعة</div>\n    
+                                <div class=\"font-dm font-bold text-lg\" id=\"learnPeriod\">3-5 أيام</div>\n           
+                     </div>\n                            </div>\n                        </div>\n\n                    
+    <!-- نصائح مخصصة -->\n                        <div class=\"card p-6\">\n                            <div 
+class=\"flex items-center gap-2 mb-5\">\n                                <div class=\"w-6 h-6 rounded-lg flex 
+items-center justify-center\" style=\"background:rgba(245,158,11,0.12);\">\n                                    <i 
+class=\"fas fa-lightbulb text-[10px]\" style=\"color:var(--yellow);\"></i>\n                                </div>\n   
+                             <span class=\"text-sm font-bold\">نصائح مخصصة لتحسين أدائك</span>\n                       
+     </div>\n                            <div class=\"space-y-3\" id=\"tipsContainer\"></div>\n                        
+</div>\n\n                        <!-- مقارنة المنصات -->\n                        <div class=\"card p-6\">\n          
+                  <div class=\"flex items-center gap-2 mb-5\">\n                                <div class=\"w-6 h-6 
+rounded-lg flex items-center justify-center\" style=\"background:rgba(139,92,246,0.1);\">\n                            
+        <i class=\"fas fa-scale-balanced text-[10px]\" style=\"color:var(--purple);\"></i>\n                           
+     </div>\n                                <span class=\"text-sm font-bold\">كيف ستبدو نفس الميزانية على منصات 
+أخرى</span>\n                            </div>\n                            <div class=\"overflow-x-auto\">\n         
+                       <table class=\"w-full text-[12px] min-w-[520px] comp-table\">\n                                 
+   <thead>\n                                        <tr style=\"color:var(--txt3);border-bottom:1px solid 
+var(--border);\">\n                                            <th class=\"text-start py-3 font-medium\">المنصة</th>\n 
+                                           <th class=\"text-center py-3 font-medium font-dm\">النقرات</th>\n           
+                                 <th class=\"text-center py-3 font-medium font-dm\">التحويلات</th>\n                   
+                         <th class=\"text-center py-3 font-medium font-dm\">CPC</th>\n                                 
+           <th class=\"text-center py-3 font-medium font-dm\">CPA</th>\n                                        
+</tr>\n                                    </thead>\n                                    <tbody 
+id=\"compTable\"></tbody>\n                                </table>\n                            </div>\n              
+          </div>\n                    </div>\n                </div>\n            </div>\n        </section>\n\n       
+ <!-- دعوة للتواصل -->\n        <section class=\"px-6 pb-24 max-w-3xl mx-auto text-center fup\">\n            <div 
+class=\"card p-10 md:p-14 relative overflow-hidden\">\n                <!-- خلفية تزيينية -->\n                <div 
+class=\"absolute top-0 left-0 w-64 h-64 rounded-full opacity-[0.04]\" 
+style=\"background:var(--blue);filter:blur(80px);transform:translate(-40%,-40%);\"></div>\n                <div 
+class=\"absolute bottom-0 right-0 w-48 h-48 rounded-full opacity-[0.04]\" 
+style=\"background:var(--pink);filter:blur(60px);transform:translate(40%,40%);\"></div>\n                <div 
+class=\"relative z-10\">\n                    <div class=\"inline-flex items-center gap-2 mb-6\">\n                    
+    <div class=\"tag-logo-mark\" style=\"width:24px;height:24px;\">\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                        </div>\n                        
+<span class=\"font-dm font-bold text-xs tracking-tight\" style=\"color:var(--blue);\">TAG STUDIO</span>\n              
+      </div>\n                    <h2 class=\"text-2xl md:text-3xl font-bold mb-4\">تحتاج خطة إعلانية متكاملة؟</h2>\n  
+                  <p class=\"text-sm font-light leading-relaxed mb-8 max-w-lg mx-auto\" 
+style=\"color:var(--txt2);\">\n                        فريقنا في Tag Studio يصمم حملات إعلانية مدفوعة تحقق أعلى عائد 
+على الاستثمار. من الاستراتيجية إلى التنفيذ والتحسين المستمر.\n                    </p>\n                    <a 
+href=\"https://www.wearetagstudio.com\" target=\"_blank\" rel=\"noopener\" class=\"inline-flex items-center gap-2.5 
+px-8 py-3.5 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl\" 
+style=\"background:var(--blue);color:#fff;box-shadow:0 4px 20px rgba(37,99,235,0.3);\">\n                        تواصل 
+معنا\n                        <i class=\"fas fa-arrow-left text-xs\"></i>\n                    </a>\n                
+</div>\n            </div>\n        </section>\n    </main>\n\n    <!-- التذييل -->\n    <footer class=\"relative z-10 
+px-6 py-8 text-center\" style=\"border-top:1px solid var(--border);\">\n        <div class=\"flex items-center 
+justify-center gap-2.5 mb-3\">\n            <div class=\"tag-logo-mark\" style=\"width:18px;height:18px;\">\n          
+      <span style=\"width:9px;height:2px;border-radius:1px;\"></span>\n                <span 
+style=\"width:9px;height:2px;border-radius:1px;\"></span>\n                <span 
+style=\"width:9px;height:2px;border-radius:1px;\"></span>\n                <span 
+style=\"width:9px;height:2px;border-radius:1px;\"></span>\n            </div>\n            <span class=\"text-xs 
+font-medium font-dm\" style=\"color:var(--blue);\">TAG STUDIO</span>\n        </div>\n        <p class=\"text-[11px]\" 
+style=\"color:var(--txt3);\">هذه الأرقام تقديرية مبنية على متوسطات القطاع وقد تختلف حسب السوق والمنطقة الجغرافية</p>\n 
+   </footer>\n\n    <script>\n    /* ============================================\n       بيانات الأسعار المرجعية لكل 
+منصة\n       ============================================ */\n    const BENCHMARKS = {\n        meta:     { cpm: 10,  
+cpc: 1.2,  cvr: 3.5,  ctr: 0.80, icon: 'fa-brands fa-meta',       name: 'ميتا',      avgCPA: 42, color: '#1877F2' },\n 
+       google:   { cpm: 20,  cpc: 2.5,  cvr: 5.0,  ctr: 1.20, icon: 'fa-brands fa-google',     name: 'جوجل',      
+avgCPA: 50, color: '#4285F4' },\n        tiktok:   { cpm: 7,   cpc: 0.6,  cvr: 2.0,  ctr: 1.10, icon: 'fa-brands 
+fa-tiktok',     name: 'تيك توك',   avgCPA: 30, color: '#000000' },\n        linkedin: { cpm: 50,  cpc: 8.0,  cvr: 3.0, 
+ ctr: 0.45, icon: 'fa-brands fa-linkedin-in',name: 'لينكد إن',  avgCPA: 180, color: '#0A66C2' },\n        snapchat: { 
+cpm: 5,   cpc: 0.8,  cvr: 1.5,  ctr: 0.95, icon: 'fa-brands fa-snapchat',   name: 'سناب شات',  avgCPA: 53, color: 
+'#FFFC00' }\n    };\n\n    const IND_MULT = {\n        ecommerce: 1.0, technology: 1.3, services: 0.95, education: 
+0.8,\n        health: 1.5, restaurants: 0.7, realestate: 1.2, fashion: 0.85\n    };\n\n    const GOAL_ADJ = {\n        
+awareness:   { impM: 1.5,  cvrM: 0.4,  roiM: 1.8 },\n        traffic:     { impM: 1.1,  cvrM: 0.7,  roiM: 2.5 },\n     
+   conversions: { impM: 0.9,  cvrM: 1.3,  roiM: 3.2 },\n        engagement:  { impM: 1.2,  cvrM: 0.5,  roiM: 2.0 }\n   
+ };\n\n    const FUNNEL = {\n        awareness:   [60, 30, 10],\n        traffic:     [40, 40, 20],\n        
+conversions: [20, 30, 50],\n        engagement:  [50, 35, 15]\n    };\n\n    const SCEN_MULT = { optimistic: 0.75, 
+realistic: 1.0, conservative: 1.35 };\n\n    const LEARN = {\n        meta: '3-5 أيام', google: '5-7 أيام', tiktok: 
+'2-4 أيام',\n        linkedin: '7-10 أيام', snapchat: '2-3 أيام'\n    };\n\n    const TIPS = {\n        meta: {\n      
+      awareness:   ['استخدم فيديوهات قصيرة بتصميم احترافي — أول 3 ثوانٍ هي الأهم','جرّب إعلانات Carousel لعرض قصة 
+المنتج بطريقة تفاعلية','استهدف Lookalike Audiences بناءً على عملائك الحاليين الأفضل'],\n            traffic:     
+['استخدم CTA مباشر مثل \"تسوق الآن\" بدلاً من \"اعرف المزيد\"','جرّب Collection Ads لتجربة تسوق سلسة داخل 
+التطبيق','أعد استهداف زوار الموقع بتصاميم مختلفة لرفع النقر'],\n            conversions: ['استخدم Dynamic Product Ads 
+لإعادة استهداف الزوار بالمنتجات التي شاهدوها','طبّق استراتيجية Retargeting متعددة المراحل — يمكن أن ترفع التحويلات 
+70%','جرّب Advantage+ Shopping Campaigns للاستفادة من الذكاء الاصطناعي'],\n            engagement:  ['أنشئ محتوى 
+تفاعلي كالاستطلاعات والأسئلة لزيادة التفاعل العضوي','استخدم Reels Ads للوصول لجمهور أوسع بتكلفة أقل','حافظ على تواصل 
+يومي عبر Stories تفاعلية تبني المجتمع']\n        },\n        google: {\n            awareness:   ['استخدم Display 
+Network مع تصميمات بصري جذابة للوعي بالعلامة','جرّب YouTube Bumper Ads (6 ثوانٍ) لرسائل قصيرة وقوية','استهدف جماهير 
+متخصصة عبر Affinity و In-Market Audiences'],\n            traffic:     ['ركّز على Extended Text Ads مع كلمات مفتاحية 
+Transactional','أضف Site Links و Callouts لزيادة مساحة الإعلان وتحسين النقر','استخدم Negative Keywords لتقليل النقرات 
+غير المفيدة'],\n            conversions: ['طبّق Performance Max للاستفادة من جميع قنوات جوجل معاً','استخدم Smart 
+Bidding مع Target CPA لتحسين التحويلات تلقائياً','أنشئ صفحات هبوط مخصصة لكل مجموعة إعلانية'],\n            engagement: 
+ ['استخدم Discovery Ads للوصول للمستخدمين أثناء تصفحهم','جرّب إعلانات Gmail Sponsored لتفاعل مباشر في الصندوق 
+الوارد','أنشئ محتوى Gallery Ads تفاعلي يعرض المنتج بزاوية 360°']\n        },\n        tiktok: {\n            
+awareness:   ['أنشئ محتوى يبدو طبيعياً وليس كإعلان — جمهور تيك توك يكره الإعلانات التقليدية','استخدم الموسيقى الرائجة 
+والتحديات لزيادة الانتشار','جرّب TopView Ads لظهور في أول مقطع يشاهده المستخدم'],\n            traffic:     ['أضف رابط 
+مباشر في الإعلان مع CTA واضح \"تسوق من الرابط\"','استخدم Spark Ads لتعزيز المحتوى العضوي الأداء','أنشئ سلسلة مقاطع 
+مترابطة تبني الفضول وتدفع للنقر'],\n            conversions: ['استخدم TikTok Shop لتحويل مباشر داخل المنصة','طبّق 
+استراتيجية Retargeting عبر Pixel لاستهداف المهتمين','جرّب Live Shopping لخلق تجربة شراء تفاعلية فورية'],\n            
+engagement:  ['شارك في التحديات الرائجة وأضف لمستك الإبداعية','استخدم Duets و Stitches للتفاعل مع محتوى المجتمع','أنشئ 
+محتوى سريع ومثير — أول ثانية تحدد البقاء أو التخطي']\n        },\n        linkedin: {\n            awareness:   
+['استخدم Document Ads لعرض تقارير ودراسات حالة تبني المصداقية','استهدف حسب الوظيفة والصناعة وحجم الشركة بدقة 
+عالية','جرّب Thought Leader Ads لنشر محتوى من حسابات القادة في الشركة'],\n            traffic:     ['استخدم Lead Gen 
+Forms المدمجة لتقليل فرك التسرب','أنشئ إعلانات Single Image مع عنوان قوي يثير الفضول','استهدف مجموعة Decision Makers 
+بمحتوى مخصص لهم'],\n            conversions: ['استخدم Matched Audiences لإعادة استهداف زوار الموقع','أنشئ حملات ABM 
+(Account-Based) للشركات الكبى المستهدفة','جرّب Conversation Ads للتواصل المباشر مع prospects عبر الإعلان'],\n          
+  engagement:  ['انشر محتوى تفكير قيادي يثير النقاش في التعليقات','استخدم Poll Ads لجمع بيانات وتفاعل في نفس 
+الوقت','أنشئ مجموعة LinkedIn متخصصة وبنِ مجتمعاً حول علامتك']\n        },\n        snapchat: {\n            awareness: 
+  ['استخدم AR Lenses المخصصة — المستخدمون يحبون تجربتها ومشاركتها','جرّب Story Ads بتصميم عمودي كامل الشاشة','استهدف 
+الجماهير حسب الاهتمامات والموقع والسلوك'],\n            traffic:     ['أضف Web View attachment لتجربة تصفح سلسة داخل 
+التطبيق','استخدم Deep Links لتوجيه المستخدمين مباشرة للصفحة المطلوبة','جرّب Collection Ads لعرض منتجات متعددة بقصة 
+بصرية'],\n            conversions: ['استخدم Dynamic Product Ads لإعادة استهداف المشاهدين','طبّق استراتيجية Retargeting 
+عبر Snap Pixel','جرّب Shoppable Ads للتحويل المباشر داخل سناب'],\n            engagement:  ['أنشئ Snap Games أو 
+Filters تفاعلية تبني الوعي بالعلامة','استخدم Geofilters للمحتاجات المحلية والأحداث','شارك في Highlight Stories للوصول 
+لجمهور أوسع عضوياً']\n        }\n    };\n\n    /* ============================================\n       حالة التطبيق\n  
+     ============================================ */\n    const state = {\n        budget: 5000,\n        platform: 
+'meta',\n        goal: 'conversions',\n        industry: 'ecommerce',\n        duration: 30,\n        scenario: 
+'realistic'\n    };\n\n    /* ============================================\n       عناصر DOM\n       
+============================================ */\n    const $ = (s) => document.querySelector(s);\n    const $$ = (s) 
+=> document.querySelectorAll(s);\n\n    const budgetSlider = $('#budgetSlider');\n    const budgetVal    = 
+$('#budgetVal');\n    const mImpressions = $('#mImpressions');\n    const mClicks      = $('#mClicks');\n    const 
+mConversions = $('#mConversions');\n    const mCPC         = $('#mCPC');\n    const mCPM         = $('#mCPM');\n    
+const mCPA         = $('#mCPA');\n    const dailySpend   = $('#dailySpend');\n    const roiEst       = $('#roiEst');\n 
+   const learnPeriod  = $('#learnPeriod');\n    const compCTR      = $('#compCTR');\n    const compCVR      = 
+$('#compCVR');\n    const compCPA      = $('#compCPA');\n    const barCTR       = $('#barCTR');\n    const barCVR      
+ = $('#barCVR');\n    const barCPA       = $('#barCPA');\n    const donutCanvas  = $('#donutCanvas');\n    const 
+tipsContainer= $('#tipsContainer');\n    const compTable    = $('#compTable');\n\n    /* 
+============================================\n       دوال مساعدة\n       ============================================ 
+*/\n    function fmtMetric(n) {\n        if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';\n        if (n >= 
+1000) return (n / 1000).toFixed(1) + 'K';\n        return n.toLocaleString('en');\n    }\n    function fmtCurrency(n) 
+{\n        return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });\n    }\n    
+function fmtBudget(n) {\n        return n.toLocaleString('en-US');\n    }\n\n    /* 
+=================================\n<truncated 13566 bytes>\n\nNOTE: The output was truncated because it was too long. 
+Use a more targeted query or a smaller range to get the information you need."}
+C:\Users\zahran\.gemini\antigravity\brain\96008217-4abb-4027-acf1-505921affcc3\.system_generated\logs\transcript_full.j
+sonl:8133:{"step_index":8351,"source":"USER_EXPLICIT","type":"USER_INPUT","status":"DONE","created_at":"2026-07-19T09:5
+0:18Z","content":"<USER_REQUEST>\nممكن تراجع تاني صفحة حاسبة ميزانية الاعلانات : ودا الكود تاني من المصدر : <!DOCTYPE 
+html>\n<html lang=\"ar\" dir=\"rtl\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" 
+content=\"width=device-width, initial-scale=1.0\">\n    <title>حاسبة ميزانية الإعلانات | Tag Studio</title>\n    
+<script src=\"https://cdn.tailwindcss.com\"></script>\n    <link href=\"https://fonts.googleapis.com/css2?family=Tajawa
+l:wght@200;300;400;500;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=s
+wap\" rel=\"stylesheet\">\n    <link rel=\"stylesheet\" 
+href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\">\n    <script>\n    tailwind.config 
+= {\n        theme: {\n            extend: {\n                fontFamily: {\n                    tajawal: ['Tajawal', 
+'sans-serif'],\n                    dm: ['DM Sans', 'sans-serif'],\n                }\n            }\n        }\n    
+}\n    </script>\n    <style>\n        :root {\n            --blue: #2563EB;\n            --blue-light: #60A5FA;\n     
+       --blue-dim: rgba(37,99,235,0.06);\n            --green: #10B981;\n            --yellow: #F59E0B;\n            
+--pink: #EC4899;\n            --purple: #8B5CF6;\n            --bg: #FAFBFF;\n            --surface: #FFFFFF;\n        
+    --surface-2: #F1F3F9;\n            --surface-3: #E8EAF2;\n            --border: rgba(0,0,0,0.06);\n            
+--border-h: rgba(0,0,0,0.12);\n            --txt: #0F172A;\n            --txt2: #64748B;\n            --txt3: 
+#94A3B8;\n        }\n\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        html { scroll-behavior: 
+smooth; }\n        body { background: var(--bg); color: var(--txt); overflow-x: hidden; }\n\n        
+::-webkit-scrollbar { width: 5px; }\n        ::-webkit-scrollbar-track { background: transparent; }\n        
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 3px; }\n\n        .brand-gradient {\n          
+  background: linear-gradient(135deg, #F59E0B 0%, #10B981 30%, #2563EB 65%, #EC4899 100%);\n            
+-webkit-background-clip: text;\n            -webkit-text-fill-color: transparent;\n            background-clip: 
+text;\n        }\n        .brand-gradient-bg {\n            background: linear-gradient(135deg, #F59E0B 0%, #10B981 
+30%, #2563EB 65%, #EC4899 100%);\n        }\n\n        .orb {\n            position: fixed; border-radius: 50%; 
+filter: blur(100px);\n            pointer-events: none; z-index: 0; will-change: transform;\n        }\n        .orb-1 
+{\n            width: 500px; height: 500px;\n            background: rgba(245,158,11,0.08);\n            top: -200px; 
+right: -150px;\n            animation: orbA 25s ease-in-out infinite;\n        }\n        .orb-2 {\n            width: 
+400px; height: 400px;\n            background: rgba(37,99,235,0.06);\n            bottom: -100px; left: -100px;\n      
+      animation: orbB 30s ease-in-out infinite;\n        }\n        .orb-3 {\n            width: 300px; height: 
+300px;\n            background: rgba(236,72,153,0.05);\n            top: 50%; left: 50%;\n            animation: orbC 
+20s ease-in-out infinite;\n        }\n        @keyframes orbA {\n            0%,100% { transform: translate(0,0) 
+scale(1); }\n            33% { transform: translate(-80px,60px) scale(1.1); }\n            66% { transform: 
+translate(40px,-30px) scale(0.9); }\n        }\n        @keyframes orbB {\n            0%,100% { transform: 
+translate(0,0) scale(1); }\n            33% { transform: translate(70px,-50px) scale(1.08); }\n            66% { 
+transform: translate(-40px,30px) scale(0.92); }\n        }\n        @keyframes orbC {\n            0%,100% { 
+transform: translate(-50%,-50%) scale(1); }\n            50% { transform: translate(-30%,-60%) scale(1.2); }\n        
+}\n\n        .card {\n            background: var(--surface);\n            border: 1px solid var(--border);\n          
+  border-radius: 20px;\n            box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 8px 24px rgba(0,0,0,0.04);\n            
+transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;\n        }\n        .card:hover {\n            
+box-shadow: 0 2px 6px rgba(0,0,0,0.04), 0 12px 32px rgba(0,0,0,0.06);\n        }\n        .card-sticky {\n            
+background: var(--surface);\n            border: 1px solid var(--border);\n            border-radius: 20px;\n          
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);\n        }\n\n        input[type=\"range\"] {\n            
+-webkit-appearance: none; appearance: none;\n            width: 100%; height: 6px; border-radius: 3px;\n            
+outline: none; cursor: pointer; direction: ltr;\n            background: linear-gradient(\n                to right,\n 
+               var(--blue) 0%, var(--blue) var(--fill, 45%),\n                var(--surface-3) var(--fill, 45%),\n     
+           var(--surface-3) 100%\n            );\n            transition: background 0.15s;\n        }\n        
+input[type=\"range\"]::-webkit-slider-thumb {\n            -webkit-appearance: none; appearance: none;\n            
+width: 24px; height: 24px; border-radius: 50%;\n            background: var(--surface);\n            border: 3px solid 
+var(--blue);\n            cursor: pointer;\n            box-shadow: 0 2px 8px rgba(37,99,235,0.2);\n            
+transition: box-shadow 0.25s, transform 0.25s;\n        }\n        input[type=\"range\"]::-webkit-slider-thumb:hover 
+{\n            box-shadow: 0 2px 12px rgba(37,99,235,0.35);\n            transform: scale(1.15);\n        }\n        
+input[type=\"range\"]::-moz-range-thumb {\n            width: 24px; height: 24px; border-radius: 50%;\n            
+background: var(--surface); border: 3px solid var(--blue);\n            cursor: pointer;\n            box-shadow: 0 
+2px 8px rgba(37,99,235,0.2);\n        }\n        input[type=\"range\"]::-moz-range-track {\n            height: 6px; 
+border-radius: 3px; background: transparent;\n        }\n\n        .plat-pill {\n            display: inline-flex; 
+align-items: center; gap: 8px;\n            padding: 10px 18px; border-radius: 12px;\n            border: 1px solid 
+var(--border); background: var(--surface);\n            cursor: pointer; transition: all 0.3s 
+cubic-bezier(0.4,0,0.2,1);\n            font-size: 13.5px; color: var(--txt2); user-select: none;\n        }\n        
+.plat-pill:hover { border-color: var(--border-h); color: var(--txt); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }\n       
+ .plat-pill.on {\n            border-color: var(--blue); background: var(--blue-dim);\n            color: var(--blue); 
+box-shadow: 0 2px 12px rgba(37,99,235,0.1);\n        }\n        .plat-pill i { font-size: 16px; }\n\n        
+.goal-card {\n            padding: 18px 12px; border-radius: 14px;\n            border: 1px solid var(--border); 
+background: var(--surface);\n            cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);\n            
+text-align: center; user-select: none;\n        }\n        .goal-card:hover { border-color: var(--border-h); 
+transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.04); }\n        .goal-card.on {\n            
+border-color: var(--blue); background: var(--blue-dim);\n            box-shadow: 0 2px 16px rgba(37,99,235,0.08);\n    
+    }\n        .goal-card.on .g-icon { color: var(--blue); }\n\n        .dur-pill {\n            padding: 7px 18px; 
+border-radius: 10px; font-size: 13px;\n            border: 1px solid var(--border); background: var(--surface);\n      
+      color: var(--txt2); cursor: pointer; transition: all 0.3s;\n            font-family: 'DM Sans', sans-serif; 
+user-select: none;\n        }\n        .dur-pill:hover { color: var(--txt); border-color: var(--border-h); }\n        
+.dur-pill.on { background: var(--blue); border-color: var(--blue); color: #fff; }\n\n        .sel {\n            
+appearance: none; -webkit-appearance: none;\n            width: 100%; padding: 13px 42px 13px 16px;\n            
+border-radius: 12px; border: 1px solid var(--border);\n            background: var(--surface) 
+url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' 
+fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 
+6-6'/%3E%3C/svg%3E\") no-repeat left 16px center;\n            color: var(--txt); font-family: 'Tajawal', 
+sans-serif;\n            font-size: 14.5px; cursor: pointer; transition: all 0.3s; outline: none;\n        }\n        
+.sel:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }\n        .sel option { 
+background: #fff; color: var(--txt); }\n\n        .met-card {\n            padding: 22px; border-radius: 16px;\n       
+     border: 1px solid var(--border); background: var(--surface);\n            transition: all 0.35s; position: 
+relative; overflow: hidden;\n        }\n        .met-card::before {\n            content: ''; position: absolute; top: 
+0; right: 0; left: 0; height: 3px;\n            border-radius: 16px 16px 0 0;\n            opacity: 0; transition: 
+opacity 0.35s;\n        }\n        .met-card:nth-child(1)::before { background: linear-gradient(90deg, #F59E0B, 
+#10B981); }\n        .met-card:nth-child(2)::before { background: linear-gradient(90deg, #10B981, #2563EB); }\n        
+.met-card:nth-child(3)::before { background: linear-gradient(90deg, #2563EB, #8B5CF6); }\n        
+.met-card:nth-child(4)::before { background: linear-gradient(90deg, #8B5CF6, #EC4899); }\n        
+.met-card:nth-child(5)::before { background: linear-gradient(90deg, #EC4899, #F59E0B); }\n        
+.met-card:nth-child(6)::before { background: linear-gradient(90deg, #F59E0B, #EC4899); }\n        .met-card:hover { 
+transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }\n        .met-card:hover::before { opacity: 1; 
+}\n\n        .sc-btn {\n            padding: 7px 16px; border-radius: 8px; font-size: 12.5px;\n            border: 1px 
+solid var(--border); background: var(--surface);\n            color: var(--txt2); cursor: pointer; transition: all 
+0.3s;\n            font-family: 'Tajawal', sans-serif; user-select: none;\n        }\n        .sc-btn:hover { color: 
+var(--txt); border-color: var(--border-h); }\n        .sc-btn.on { background: var(--blue); border-color: var(--blue); 
+color: #fff; }\n\n        .tip-card {\n            padding: 18px 22px; border-radius: 14px;\n            border: 1px 
+solid var(--border); background: var(--surface);\n            transition: all 0.3s; display: flex; gap: 14px; 
+align-items: flex-start;\n        }\n        .tip-card:hover { border-color: var(--border-h); box-shadow: 0 4px 12px 
+rgba(0,0,0,0.03); }\n\n        .fup {\n            opacity: 0; transform: translateY(28px);\n            transition: 
+opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);\n        }\n        .fup.vis { 
+opacity: 1; transform: translateY(0); }\n\n        @keyframes npulse { 0%{opacity:1;transform:scale(1)} 
+50%{opacity:.5;transform:scale(0.97)} 100%{opacity:1;transform:scale(1)} }\n        .nupd { animation: npulse 0.25s 
+ease; }\n\n        .comp-bar {\n            height: 6px; border-radius: 3px;\n            background: 
+var(--surface-3); overflow: hidden;\n        }\n        .comp-fill {\n            height: 100%; border-radius: 3px;\n  
+          transition: width 0.8s cubic-bezier(0.4,0,0.2,1);\n        }\n\n        .tag-logo-mark {\n            width: 
+32px; height: 32px; position: relative;\n        }\n        .tag-logo-mark span {\n            position: absolute; 
+width: 16px; height: 4px; border-radius: 2px;\n            top: 50%; left: 50%;\n        }\n        .tag-logo-mark 
+span:nth-child(1) { background: #F59E0B; transform: translate(-50%,-50%) rotate(45deg); }\n        .tag-logo-mark 
+span:nth-child(2) { background: #10B981; transform: translate(-50%,-50%) rotate(-15deg); }\n        .tag-logo-mark 
+span:nth-child(3) { background: #2563EB; transform: translate(-50%,-50%) rotate(-45deg); }\n        .tag-logo-mark 
+span:nth-child(4) { background: #EC4899; transform: translate(-50%,-50%) rotate(15deg); }\n\n        .comp-table tr { 
+transition: background 0.2s; }\n        .comp-table tbody tr:hover { background: rgba(37,99,235,0.03); }\n\n        
+.brand-line {\n            width: 40px; height: 2px; border-radius: 1px;\n        }\n\n        @media 
+(prefers-reduced-motion: reduce) {\n            *, *::before, *::after {\n                animation-duration: 0.01ms 
+!important;\n                animation-iteration-count: 1 !important;\n                transition-duration: 0.01ms 
+!important;\n            }\n        }\n    </style>\n</head>\n<body class=\"font-tajawal min-h-screen relative\">\n\n  
+  <div class=\"orb orb-1\" aria-hidden=\"true\"></div>\n    <div class=\"orb orb-2\" aria-hidden=\"true\"></div>\n    
+<div class=\"orb orb-3\" aria-hidden=\"true\"></div>\n\n    <nav class=\"fixed top-0 inset-x-0 z-50 flex items-center 
+justify-between px-6 md:px-10 py-4\" style=\"background:rgba(250,251,255,0.8);backdrop-filter:blur(24px);-webkit-backdr
+op-filter:blur(24px);border-bottom:1px solid var(--border);\">\n        <a href=\"#\" class=\"flex items-center 
+gap-3\" aria-label=\"Tag Studio\">\n            <div class=\"tag-logo-mark\">\n                
+<span></span><span></span><span></span><span></span>\n            </div>\n            <span class=\"font-dm font-bold 
+text-base tracking-tight\" style=\"color:var(--blue);\">TAG STUDIO</span>\n        </a>\n        <a 
+href=\"#calculator\" class=\"hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium 
+transition-all duration-300 hover:scale-105 hover:shadow-lg\" style=\"background:var(--blue);color:#fff;box-shadow:0 
+2px 12px rgba(37,99,235,0.25);\">\n            <i class=\"fas fa-calculator text-xs\"></i>\n            ابدأ الحساب\n  
+      </a>\n    </nav>\n\n    <main class=\"relative z-10\">\n\n        <header class=\"pt-32 pb-16 md:pt-40 md:pb-24 
+px-6 text-center max-w-4xl mx-auto fup\">\n            <div class=\"inline-flex items-center gap-2 px-4 py-1.5 
+rounded-full text-xs font-medium mb-8\" style=\"background:var(--blue-dim);color:var(--blue);border:1px solid 
+rgba(37,99,235,0.12);\">\n                <i class=\"fas fa-bolt text-[10px]\"></i>\n                أدوات التسويق 
+الرقمي\n            </div>\n            <h1 class=\"text-4xl sm:text-5xl md:text-7xl font-black leading-tight 
+mb-6\">\n                <span class=\"brand-gradient\">حاسبة ميزانية</span><br>\n                <span 
+style=\"color:var(--txt);\">الإعلانات المدفوعة</span>\n            </h1>\n            <p class=\"text-base md:text-lg 
+font-light leading-relaxed max-w-2xl mx-auto\" style=\"color:var(--txt2);\">\n                قدّر نتائج حملاتك 
+الإعلانية بدقة قبل إنفاق دولار واحد. اختر منصتك، حدد ميزانيتك، واحصل على توقعات واقعية فوراً.\n            </p>\n      
+      <div class=\"mt-10 flex items-center justify-center gap-3 text-xs\" style=\"color:var(--txt3);\">\n              
+  <div class=\"brand-line brand-gradient-bg\" style=\"width:30px;height:1.5px;\"></div>\n                <span 
+class=\"font-dm tracking-wider\">SCROLL</span>\n                <div class=\"brand-line brand-gradient-bg\" 
+style=\"width:30px;height:1.5px;\"></div>\n            </div>\n        </header>\n\n        <section id=\"calculator\" 
+class=\"px-4 md:px-8 lg:px-12 pb-24 max-w-7xl mx-auto\">\n            <div class=\"grid grid-cols-1 lg:grid-cols-12 
+gap-6 lg:gap-8\">\n\n                <div class=\"lg:col-span-5 fup\" style=\"transition-delay:0.1s;\">\n              
+      <div class=\"card-sticky p-6 md:p-8 sticky top-24\">\n                        <h2 class=\"text-lg font-bold 
+mb-1\" style=\"color:var(--txt);\">إعدادات الحملة</h2>\n                        <p class=\"text-xs mb-8\" 
+style=\"color:var(--txt3);\">عدّل القيم وشاهد النتائج تتحدث لحظياً</p>\n\n                        <div 
+class=\"mb-8\">\n                            <div class=\"flex items-baseline justify-between mb-4\">\n                
+                <label class=\"text-sm font-medium\" style=\"color:var(--txt2);\">الميزانية الشهرية</label>\n          
+                      <div class=\"font-dm font-bold text-2xl\" style=\"color:var(--blue);\">\n                        
+            $<span id=\"budgetVal\">5,000</span>\n                                </div>\n                            
+</div>\n                            <input type=\"range\" id=\"budgetSlider\" min=\"500\" max=\"100000\" step=\"500\" 
+value=\"5000\" aria-label=\"الميزانية الشهرية\">\n                            <div class=\"flex justify-between mt-2.5 
+text-[11px] font-dm\" style=\"color:var(--txt3);\">\n                                <span>$500</span>\n               
+                 <span>$100,000</span>\n                            </div>\n                        </div>\n\n         
+               <div class=\"mb-8\">\n                            <label class=\"text-sm font-medium block mb-3\" 
+style=\"color:var(--txt2);\">المنصة الإعلانية</label>\n                            <div class=\"flex flex-wrap gap-2\" 
+id=\"platformWrap\">\n                                <button class=\"plat-pill on\" data-val=\"meta\"><i 
+class=\"fa-brands fa-meta\"></i> ميتا</button>\n                                <button class=\"plat-pill\" 
+data-val=\"google\"><i class=\"fa-brands fa-google\"></i> جوجل</button>\n                                <button 
+class=\"plat-pill\" data-val=\"tiktok\"><i class=\"fa-brands fa-tiktok\"></i> تيك توك</button>\n                       
+         <button class=\"plat-pill\" data-val=\"linkedin\"><i class=\"fa-brands fa-linkedin-in\"></i> لينكد 
+إن</button>\n                                <button class=\"plat-pill\" data-val=\"snapchat\"><i class=\"fa-brands 
+fa-snapchat\"></i> سناب شات</button>\n                            </div>\n                        </div>\n\n           
+             <div class=\"mb-8\">\n                            <label class=\"text-sm font-medium block mb-3\" 
+style=\"color:var(--txt2);\">هدف الحملة</label>\n                            <div class=\"grid grid-cols-2 gap-2.5\" 
+id=\"goalWrap\">\n                                <div class=\"goal-card\" data-val=\"awareness\">\n                   
+                 <div class=\"g-icon text-xl mb-2\" style=\"color:var(--txt3);\"><i class=\"fas fa-eye\"></i></div>\n  
+                                  <div class=\"text-sm font-medium\">زيادة الوعي</div>\n                               
+ </div>\n                                <div class=\"goal-card\" data-val=\"traffic\">\n                              
+      <div class=\"g-icon text-xl mb-2\" style=\"color:var(--txt3);\"><i class=\"fas fa-arrow-pointer\"></i></div>\n   
+                                 <div class=\"text-sm font-medium\">زيارة الموقع</div>\n                               
+ </div>\n                                <div class=\"goal-card on\" data-val=\"conversions\">\n                       
+             <div class=\"g-icon text-xl mb-2\" style=\"color:var(--txt3);\"><i class=\"fas fa-bullseye\"></i></div>\n 
+                                   <div class=\"text-sm font-medium\">تحويلات</div>\n                                
+</div>\n                                <div class=\"goal-card\" data-val=\"engagement\">\n                            
+        <div class=\"g-icon text-xl mb-2\" style=\"color:var(--txt3);\"><i class=\"fas fa-heart\"></i></div>\n         
+                           <div class=\"text-sm font-medium\">تفاعل</div>\n                                </div>\n    
+                        </div>\n                        </div>\n\n                        <div class=\"mb-8\">\n       
+                     <label class=\"text-sm font-medium block mb-3\" style=\"color:var(--txt2);\">القطاع 
+الصناعي</label>\n                            <select class=\"sel\" id=\"industrySel\" aria-label=\"القطاع الصناعي\">\n 
+                               <option value=\"ecommerce\">تجارة إلكترونية</option>\n                                
+<option value=\"technology\">تكنولوجيا وبرمجيات</option>\n                                <option 
+value=\"services\">خدمات مهنية</option>\n                                <option value=\"education\">تعليم 
+وتدريب</option>\n                                <option value=\"health\">صحة وعافية</option>\n                        
+        <option value=\"restaurants\">مطاعم وأغذية</option>\n                                <option 
+value=\"realestate\">عقارات</option>\n                                <option value=\"fashion\">أزياء وموضة</option>\n 
+                           </select>\n                        </div>\n\n                        <div>\n                
+            <label class=\"text-sm font-medium block mb-3\" style=\"color:var(--txt2);\">مدة الحملة</label>\n          
+                  <div class=\"flex flex-wrap gap-2\" id=\"durWrap\">\n                                <button 
+class=\"dur-pill\" data-val=\"7\">7 أيام</button>\n                                <button class=\"dur-pill\" 
+data-val=\"14\">14 يوم</button>\n                                <button class=\"dur-pill on\" data-val=\"30\">30 
+يوم</button>\n                                <button class=\"dur-pill\" data-val=\"60\">60 يوم</button>\n             
+                   <button class=\"dur-pill\" data-val=\"90\">90 يوم</button>\n                            </div>\n    
+                    </div>\n                    </div>\n                </div>\n\n                <div 
+class=\"lg:col-span-7 fup\" style=\"transition-delay:0.25s;\">\n                    <div class=\"space-y-6\">\n\n      
+                  <div class=\"flex items-center justify-between flex-wrap gap-3\">\n                            <h2 
+class=\"text-lg font-bold\" style=\"color:var(--txt);\">النتائج المتوقعة</h2>\n                            <div 
+class=\"flex gap-1.5\" id=\"scenarioWrap\">\n                                <button class=\"sc-btn\" 
+data-val=\"optimistic\">متفائل</button>\n                                <button class=\"sc-btn on\" 
+data-val=\"realistic\">واقعي</button>\n                                <button class=\"sc-btn\" 
+data-val=\"conservative\">محافظ</button>\n                            </div>\n                        </div>\n\n       
+                 <div class=\"grid grid-cols-2 md:grid-cols-3 gap-3\" id=\"metricsGrid\">\n                            
+<div class=\"met-card\">\n                                <div class=\"text-[11px] font-medium mb-2\" 
+style=\"color:var(--txt3);\">الانطباعات</div>\n                                <div class=\"font-dm font-bold text-xl 
+md:text-2xl\" style=\"color:var(--txt);\" id=\"mImpressions\">417.5K</div>\n                                <div 
+class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--green);\">شهرياً</div>\n                            </div>\n  
+                          <div class=\"met-card\">\n                                <div class=\"text-[11px] 
+font-medium mb-2\" style=\"color:var(--txt3);\">النقرات</div>\n                                <div class=\"font-dm 
+font-bold text-xl md:text-2xl\" style=\"color:var(--txt);\" id=\"mClicks\">3,333</div>\n                               
+ <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--green);\">شهرياً</div>\n                            
+</div>\n                            <div class=\"met-card\">\n                                <div class=\"text-[11px] 
+font-medium mb-2\" style=\"color:var(--txt3);\">التحويلات</div>\n                                <div class=\"font-dm 
+font-bold text-xl md:text-2xl\" style=\"color:var(--blue);\" id=\"mConversions\">117</div>\n                           
+     <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--blue);\">شهرياً</div>\n                            
+</div>\n                            <div class=\"met-card\">\n                                <div class=\"text-[11px] 
+font-medium mb-2\" style=\"color:var(--txt3);\">تكلفة النقرة</div>\n                                <div 
+class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--txt);\" id=\"mCPC\">$1.50</div>\n                  
+              <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--txt3);\">CPC</div>\n                       
+     </div>\n                            <div class=\"met-card\">\n                                <div 
+class=\"text-[11px] font-medium mb-2\" style=\"color:var(--txt3);\">تكلفة الألف ظهور</div>\n                           
+     <div class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--txt);\" id=\"mCPM\">$11.98</div>\n       
+                         <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--txt3);\">CPM</div>\n            
+                </div>\n                            <div class=\"met-card\">\n                                <div 
+class=\"text-[11px] font-medium mb-2\" style=\"color:var(--txt3);\">تكلفة التحويل</div>\n                              
+  <div class=\"font-dm font-bold text-xl md:text-2xl\" style=\"color:var(--pink);\" id=\"mCPA\">$42.74</div>\n         
+                       <div class=\"text-[11px] mt-1.5 font-dm\" style=\"color:var(--pink);\">CPA</div>\n              
+              </div>\n                        </div>\n\n                        <div class=\"grid grid-cols-1 
+md:grid-cols-2 gap-6\">\n                            <div class=\"card p-6 flex flex-col items-center 
+justify-center\">\n                                <div class=\"text-xs font-medium mb-4\" 
+style=\"color:var(--txt3);\">توزيع الميزانية على القمع</div>\n                                <canvas 
+id=\"donutCanvas\" width=\"200\" height=\"200\" style=\"width:200px;height:200px;\"></canvas>\n                        
+        <div class=\"flex flex-wrap justify-center gap-4 mt-5\">\n                                    <div 
+class=\"flex items-center gap-2 text-[11px]\" style=\"color:var(--txt2);\">\n                                        
+<span class=\"w-2.5 h-2.5 rounded-full\" style=\"background:var(--blue);\"></span> أعلى القمع\n                        
+            </div>\n                                    <div class=\"flex items-center gap-2 text-[11px]\" 
+style=\"color:var(--txt2);\">\n                                        <span class=\"w-2.5 h-2.5 rounded-full\" 
+style=\"background:var(--green);\"></span> منتصف القمع\n                                    </div>\n                   
+                 <div class=\"flex items-center gap-2 text-[11px]\" style=\"color:var(--txt2);\">\n                    
+                    <span class=\"w-2.5 h-2.5 rounded-full\" style=\"background:var(--pink);\"></span> أسفل القمع\n    
+                                </div>\n                                </div>\n                            </div>\n\n 
+                           <div class=\"card p-6\">\n                                <div class=\"text-xs font-medium 
+mb-5\" style=\"color:var(--txt3);\">مقارنة مع متوسط القطاع</div>\n                                <div 
+class=\"space-y-5\" id=\"compBars\">\n                                    <div>\n                                      
+  <div class=\"flex justify-between text-[11px] mb-1.5\">\n                                            <span 
+style=\"color:var(--txt2);\">معدل النقر (CTR)</span>\n                                            <span 
+class=\"font-dm font-semibold\" style=\"color:var(--txt);\" id=\"compCTR\">0.80%</span>\n                              
+          </div>\n                                        <div class=\"comp-bar\"><div class=\"comp-fill\" 
+id=\"barCTR\" style=\"width:60%;background:var(--blue);\"></div></div>\n                                        <div 
+class=\"text-[10px] mt-1 font-dm\" style=\"color:var(--txt3);\">المتوسط: 0.90%</div>\n                                 
+   </div>\n                                    <div>\n                                        <div class=\"flex 
+justify-between text-[11px] mb-1.5\">\n                                            <span 
+style=\"color:var(--txt2);\">معدل التحويل (CVR)</span>\n                                            <span 
+class=\"font-dm font-semibold\" style=\"color:var(--txt);\" id=\"compCVR\">3.50%</span>\n                              
+          </div>\n                                        <div class=\"comp-bar\"><div class=\"comp-fill\" 
+id=\"barCVR\" style=\"width:70%;background:var(--green);\"></div></div>\n                                        <div 
+class=\"text-[10px] mt-1 font-dm\" style=\"color:var(--txt3);\">المتوسط: 2.80%</div>\n                                 
+   </div>\n                                    <div>\n                                        <div class=\"flex 
+justify-between text-[11px] mb-1.5\">\n                                            <span 
+style=\"color:var(--txt2);\">تكلفة التحويل (CPA)</span>\n                                            <span 
+class=\"font-dm font-semibold\" style=\"color:var(--txt);\" id=\"compCPA\">$42.74</span>\n                             
+           </div>\n                                        <div class=\"comp-bar\"><div class=\"comp-fill\" 
+id=\"barCPA\" style=\"width:45%;background:var(--pink);\"></div></div>\n                                        <div 
+class=\"text-[10px] mt-1 font-dm\" style=\"color:var(--txt3);\">المتوسط: $55.00</div>\n                                
+    </div>\n                                </div>\n                            </div>\n                        
+</div>\n\n                        <div class=\"card p-5 flex flex-wrap items-center justify-between gap-4\">\n         
+                   <div class=\"flex items-center gap-4\">\n                                <div class=\"w-10 h-10 
+rounded-xl flex items-center justify-center\" style=\"background:var(--blue-dim);\">\n                                 
+   <i class=\"fas fa-chart-line text-sm\" style=\"color:var(--blue);\"></i>\n                                </div>\n  
+                              <div>\n                                    <div class=\"text-[11px]\" 
+style=\"color:var(--txt3);\">الإنفاق اليومي المتوقع</div>\n                                    <div class=\"font-dm 
+font-bold text-lg\" id=\"dailySpend\">$167</div>\n                                </div>\n                            
+</div>\n                            <div class=\"h-8 w-px\" style=\"background:var(--border);\"></div>\n               
+             <div class=\"flex items-center gap-4\">\n                                <div class=\"w-10 h-10 
+rounded-xl flex items-center justify-center\" style=\"background:rgba(16,185,129,0.08);\">\n                           
+         <i class=\"fas fa-arrow-trend-up text-sm\" style=\"color:var(--green);\"></i>\n                               
+ </div>\n                                <div>\n                                    <div class=\"text-[11px]\" 
+style=\"color:var(--txt3);\">معدل العائد المتوقع</div>\n                                    <div class=\"font-dm 
+font-bold text-lg\" style=\"color:var(--green);\" id=\"roiEst\">3.2x</div>\n                                </div>\n   
+                         </div>\n                            <div class=\"h-8 w-px hidden sm:block\" 
+style=\"background:var(--border);\"></div>\n                            <div class=\"flex items-center gap-4 hidden 
+sm:flex\">\n                                <div class=\"w-10 h-10 rounded-xl flex items-center justify-center\" 
+style=\"background:rgba(236,72,153,0.08);\">\n                                    <i class=\"fas fa-clock text-sm\" 
+style=\"color:var(--pink);\"></i>\n                                </div>\n                                <div>\n     
+                               <div class=\"text-[11px]\" style=\"color:var(--txt3);\">فترة التعلم المتوقعة</div>\n    
+                                <div class=\"font-dm font-bold text-lg\" id=\"learnPeriod\">3-5 أيام</div>\n           
+                     </div>\n                            </div>\n                        </div>\n\n                    
+    <div class=\"card p-6\">\n                            <div class=\"flex items-center gap-2 mb-5\">\n               
+                 <div class=\"w-6 h-6 rounded-lg flex items-center justify-center\" 
+style=\"background:rgba(245,158,11,0.12);\">\n                                    <i class=\"fas fa-lightbulb 
+text-[10px]\" style=\"color:var(--yellow);\"></i>\n                                </div>\n                            
+    <span class=\"text-sm font-bold\">نصائح مخصصة لتحسين أدائك</span>\n                            </div>\n            
+                <div class=\"space-y-3\" id=\"tipsContainer\"></div>\n                        </div>\n\n               
+         <div class=\"card p-6\">\n                            <div class=\"flex items-center gap-2 mb-5\">\n          
+                      <div class=\"w-6 h-6 rounded-lg flex items-center justify-center\" 
+style=\"background:rgba(139,92,246,0.1);\">\n                                    <i class=\"fas fa-scale-balanced 
+text-[10px]\" style=\"color:var(--purple);\"></i>\n                                </div>\n                            
+    <span class=\"text-sm font-bold\">كيف ستبدو نفس الميزانية على منصات أخرى</span>\n                            
+</div>\n                            <div class=\"overflow-x-auto\">\n                                <table 
+class=\"w-full text-[12px] min-w-[520px] comp-table\">\n                                    <thead>\n                  
+                      <tr style=\"color:var(--txt3);border-bottom:1px solid var(--border);\">\n                        
+                    <th class=\"text-start py-3 font-medium\">المنصة</th>\n                                            
+<th class=\"text-center py-3 font-medium font-dm\">النقرات</th>\n                                            <th 
+class=\"text-center py-3 font-medium font-dm\">التحويلات</th>\n                                            <th 
+class=\"text-center py-3 font-medium font-dm\">CPC</th>\n                                            <th 
+class=\"text-center py-3 font-medium font-dm\">CPA</th>\n                                        </tr>\n               
+                     </thead>\n                                    <tbody id=\"compTable\"></tbody>\n                  
+              </table>\n                            </div>\n                        </div>\n                    
+</div>\n                </div>\n            </div>\n        </section>\n\n        <section class=\"px-6 pb-24 
+max-w-3xl mx-auto text-center fup\">\n            <div class=\"card p-10 md:p-14 relative overflow-hidden\">\n         
+       <div class=\"absolute top-0 left-0 w-64 h-64 rounded-full opacity-[0.04]\" 
+style=\"background:var(--blue);filter:blur(80px);transform:translate(-40%,-40%);\"></div>\n                <div 
+class=\"absolute bottom-0 right-0 w-48 h-48 rounded-full opacity-[0.04]\" 
+style=\"background:var(--pink);filter:blur(60px);transform:translate(40%,40%);\"></div>\n                <div 
+class=\"relative z-10\">\n                    <div class=\"inline-flex items-center gap-2 mb-6\">\n                    
+    <div class=\"tag-logo-mark\" style=\"width:24px;height:24px;\">\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                            <span 
+style=\"width:12px;height:3px;border-radius:1.5px;\"></span>\n                        </div>\n                        
+<span class=\"font-dm font-bold text-xs tracking-tight\" style=\"color:var(--blue);\">TAG STUDIO</span>\n              
+      </div>\n                    <h2 class=\"text-2xl md:text-3xl font-bold mb-4\">تحتاج خطة إعلانية متكاملة؟</h2>\n  
+                  <p class=\"text-sm font-light leading-relaxed mb-8 max-w-lg mx-auto\" 
+style=\"color:var(--txt2);\">\n                        فريقنا في Tag Studio يصمم حملات إعلانية مدفوعة تحقق أعلى عائد 
+على الاستثمار. من الاستراتيجية إلى التنفيذ والتحسين المستمر.\n                    </p>\n                    <a 
+href=\"https://www.wearetagstudio.com\" target=\"_blank\" rel=\"noopener\" class=\"inline-flex items-center gap-2.5 
+px-8 py-3.5 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl\" 
+style=\"background:var(--blue);color:#fff;box-shadow:0 4px 20px rgba(37,99,235,0.3);\">\n                        تواصل 
+معنا\n                        <i class=\"fas fa-arrow-left text-xs\"></i>\n                    </a>\n                
+</div>\n            </div>\n        </section>\n    </main>\n\n    <footer class=\"relative z-10 px-6 py-8 
+text-center\" style=\"border-top:1px solid var(--border);\">\n        <div class=\"flex items-center justify-center 
+gap-2.5 mb-3\">\n            <div class=\"tag-logo-mark\" style=\"width:18px;height:18px;\">\n                <span 
+style=\"width:9px;height:2px;border-radius:1px;\"></span>\n                <span 
+style=\"width:9px;height:2px;border-radius:1px;\"></span>\n                <span 
+style=\"width:9px;height:2px;border-radius:1px;\"></span>\n                <span 
+style=\"width:9px;height:2px;border-radius:1px;\"></span>\n            </div>\n            <span class=\"text-xs 
+font-medium font-dm\" style=\"color:var(--blue);\">TAG STUDIO</span>\n        </div>\n        <p class=\"text-[11px]\" 
+style=\"color:var(--txt3);\">هذه الأرقام تقديرية مبنية على متوسطات القطاع وقد تختلف حسب السوق والمنطقة الجغرافية</p>\n 
+   </footer>\n\n    <script>\n    const BENCHMARKS = {\n        meta:     { cpm: 10,  cpc: 1.2,  cvr: 3.5,  ctr: 0.80, 
+icon: 'fa-brands fa-meta',       name: 'ميتا',      avgCPA: 42, color: '#1877F2' },\n        google:   { cpm: 20,  
+cpc: 2.5,  cvr: 5.0,  ctr: 1.20, icon: 'fa-brands fa-google',     name: 'جوجل',      avgCPA: 50, color: '#4285F4' },\n 
+       tiktok:   { cpm: 7,   cpc: 0.6,  cvr: 2.0,  ctr: 1.10, icon: 'fa-brands fa-tiktok',     name: 'تيك توك',   
+avgCPA: 30, color: '#000000' },\n        linkedin: { cpm: 50,  cpc: 8.0,  cvr: 3.0,  ctr: 0.45, icon: 'fa-brands 
+fa-linkedin-in',name: 'لينكد إن',  avgCPA: 180, color: '#0A66C2' },\n        snapchat: { cpm: 5,   cpc: 0.8,  cvr: 
+1.5,  ctr: 0.95, icon: 'fa-brands fa-snapchat',   name: 'سناب شات',  avgCPA: 53, color: '#FFFC00' }\n    };\n\n    
+const IND_MULT = {\n        ecommerce: 1.0, technology: 1.3, services: 0.95, education: 0.8,\n        health: 1.5, 
+restaurants: 0.7, realestate: 1.2, fashion: 0.85\n    };\n\n    const GOAL_ADJ = {\n        awareness:   { impM: 1.5,  
+cvrM: 0.4,  roiM: 1.8 },\n        traffic:     { impM: 1.1,  cvrM: 0.7,  roiM: 2.5 },\n        conversions: { impM: 
+0.9,  cvrM: 1.3,  roiM: 3.2 },\n        engagement:  { impM: 1.2,  cvrM: 0.5,  roiM: 2.0 }\n    };\n\n    const FUNNEL 
+= {\n        awareness:   [60, 30, 10],\n        traffic:     [40, 40, 20],\n        conversions: [20, 30, 50],\n      
+  engagement:  [50, 35, 15]\n    };\n\n    const SCEN_MULT = { optimistic: 0.75, realistic: 1.0, conservative: 1.35 
+};\n\n    const LEARN = {\n        meta: '3-5 أيام', google: '5-7 أيام', tiktok: '2-4 أيام',\n        linkedin: '7-10 
+أيام', snapchat: '2-3 أيام'\n    };\n\n    const TIPS = {\n        meta: {\n            awareness:   ['استخدم فيديوهات 
+قصيرة بتصميم احترافي — أول 3 ثوانٍ هي الأهم','جرّب إعلانات Carousel لعرض قصة المنتج بطريقة تفاعلية','استهدف Lookalike 
+Audiences بناءً على عملائك الحاليين الأفضل'],\n            traffic:     ['استخدم CTA مباشر مثل \"تسوق الآن\" بدلاً من 
+\"اعرف المزيد\"','جرّب Collection Ads لتجربة تسوق سلسة داخل التطبيق','أعد استهداف زوار الموقع بتصاميم مختلفة لرفع 
+النقر'],\n            conversions: ['استخدم Dynamic Product Ads لإعادة استهداف الزوار بالمنتجات التي شاهدوها','طبّق 
+استراتيجية Retargeting متعددة المراحل — يمكن أن ترفع التحويلات 70%','جرّب Advantage+ Shopping Campaigns للاستفادة من 
+الذكاء الاصطناعي'],\n            engagement:  ['أنشئ محتوى تفاعلي كالاستطلاعات والأسئلة لزيادة التفاعل العضوي','استخدم 
+Reels Ads للوصول لجمهور أوسع بتكلفة أقل','حافظ على تواصل يومي عبر Stories تفاعلية تبني المجتمع']\n        },\n        
+google: {\n            awareness:   ['استخدم Display Network مع تصميمات بصري جذابة للوعي بالعلامة','جرّب YouTube 
+Bumper Ads (6 ثوانٍ) لرسائل قصيرة وقوية','استهدف جماهير متخصصة عبر Affinity و In-Market Audiences'],\n            
+traffic:     ['ركّز على Extended Text Ads مع كلمات مفتاحية Transactional','أضف Site Links و Callouts لزيادة مساحة 
+الإعلان وتحسين النقر','استخدم Negative Keywords لتقليل النقرات غير المفيدة'],\n            conversions: ['طبّق 
+Performance Max للاستفادة من جميع قنوات جوجل معاً','استخدم Smart Bidding مع Target CPA لتحسين التحويلات 
+تلقائياً','أنشئ صفحات هبوط مخصصة لكل مجموعة إعلانية'],\n            engagement:  ['استخدم Discovery Ads للوصول 
+للمستخدمين أثناء تصفحهم','جرّب إعلانات Gmail Sponsored لتفاعل مباشر في الصندوق الوارد','أنشئ محتوى Gallery Ads تفاعلي 
+يعرض المنتج بزاوية 360°']\n        },\n        tiktok: {\n            awareness:   ['أنشئ محتوى يبدو طبيعياً وليس 
+كإعلان — جمهور تيك توك يكره الإعلانات التقليدية','استخدم الموسيقى الرائجة والتحديات لزيادة الانتشار','جرّب TopView Ads 
+لظهور في أول مقطع يشاهده المستخدم'],\n            traffic:     ['أضف رابط مباشر في الإعلان مع CTA واضح \"تسوق من 
+الرابط\"','استخدم Spark Ads لتعزيز المحتوى العضوي الأداء','أنشئ سلسلة مقاطع مترابطة تبني الفضول وتدفع للنقر'],\n       
+     conversions: ['استخدم TikTok Shop لتحويل مباشر داخل المنصة','طبّق استراتيجية Retargeting عبر Pixel لاستهداف 
+المهتمين','جرّب Live Shopping لخلق تجربة شراء تفاعلية فورية'],\n            engagement:  ['شارك في التحديات الرائجة 
+وأضف لمستك الإبداعية','استخدم Duets و Stitches للتفاعل مع محتوى المجتمع','أنشئ محتوى سريع ومثير — أول ثانية تحدد 
+البقاء أو التخطي']\n        },\n        linkedin: {\n            awareness:   ['استخدم Document Ads لعرض تقارير 
+ودراسات حالة تبني المصداقية','استهدف حسب الوظيفة والصناعة وحجم الشركة بدقة عالية','جرّب Thought Leader Ads لنشر محتوى 
+من حسابات القادة في الشركة'],\n            traffic:     ['استخدم Lead Gen Forms المدمجة لتقليل فرك التسرب','أنشئ 
+إعلانات Single Image مع عنوان قوي يثير الفضول','استهدف مجموعة Decision Makers بمحتوى مخصص لهم'],\n            
+conversions: ['استخدم Matched Audiences لإعادة استهداف زوار الموقع','أنشئ حملات ABM (Account-Based) للشركات الكبى 
+المستهدفة','جرّب Conversation Ads للتواصل المباشر مع prospects عبر الإعلان'],\n            engagement:  ['انشر محتوى 
+تفكير قيادي يثير النقاش في التعليقات','استخدم Poll Ads لجمع بيانات وتفاعل في نفس الوقت','أنشئ مجموعة LinkedIn متخصصة 
+وبنِ مجتمعاً حول علامتك']\n        },\n        snapchat: {\n            awareness:   ['استخدم AR Lenses المخصصة — 
+المستخدمون يحبون تجربتها ومشاركتها','جرّب Story Ads بتصميم عمودي كامل الشاشة','استهدف الجماهير حسب الاهتمامات والموقع 
+والسلوك'],\n            traffic:     ['أضف Web View attachment لتجربة تصفح سلسة داخل التطبيق','استخدم Deep Links 
+لتوجيه المستخدمين مباشرة للصفحة المطلوبة','جرّب Collection Ads لعرض منتجات متعددة بقصة بصرية'],\n            
+conversions: ['استخدم Dynamic Product Ads لإعادة استهداف المشاهدين','طبّق استراتيجية Retargeting عبر Snap Pixel','جرّب 
+Shoppable Ads للتحويل المباشر داخل سناب'],\n            engagement:  ['أنشئ Snap Games أو Filters تفاعلية تبني الوعي 
+بالعلامة','استخدم Geofilters للمحتاجات المحلية والأحداث','شارك في Highlight Stories للوصول لجمهور أوسع عضوياً']\n      
+  }\n    };\n\n    const state = {\n        budget: 5000,\n        platform: 'meta',\n        goal: 'conversions',\n   
+     industry: 'ecommerce',\n        duration: 30,\n        scenario: 'realistic'\n    };\n\n    const $ = (s) => 
+document.querySelector(s);\n    const $$ = (s) => document.querySelectorAll(s);\n\n    const budgetSlider = 
+$('#budgetSlider');\n    const budgetVal    = $('#budgetVal');\n    const mImpressions = $('#mImpressions');\n    
+const mClicks      = $('#mClicks');\n    const mConversions = $('#mConversions');\n    const mCPC         = 
+$('#mCPC');\n    const mCPM         = $('#mCPM');\n    const mCPA         = $('#mCPA');\n    const dailySpend   = 
+$('#dailySpend');\n    const roiEst       = $('#roiEst');\n    const learnPeriod  = $('#learnPeriod');\n    const 
+compCTR      = $('#compCTR');\n    const compCVR      = $('#compCVR');\n    const compCPA      = $('#compCPA');\n    
+const barCTR       = $('#barCTR');\n    const barCVR       = $('#barCVR');\n    const barCPA       = $('#barCPA');\n   
+ const donutCanvas  = $('#donutCanvas');\n    const tipsContainer= $('#tipsContainer');\n    const compTable    = 
+$('#compTable');\n\n    function fmtMetric(n) {\n        if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';\n    
+    if (n >= 1000) return (n / 1000).toFixed(1) + 'K';\n        return n.toLocaleString('en');\n    }\n    function 
+fmtCurrency(n) {\n        return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });\n  
+  }\n    function fmtBudget(n) {\n        return n.toLocaleString('en-US');\n    }\n\n    function calculate(platform, 
+goal, industry, budget, duration, scenario) {\n        const b = BENCHMARKS[platform];\n        const im = 
+IND_MULT[industry];\n        const ga = GOAL_ADJ[goal];\n        const sm = SCEN_MULT[scenario];\n\n        const 
+adjustedCPM = b.cpm * im * sm;\n        const adjustedCVR = b.cvr * ga.cvrM;\n        const adjustedCTR = b.ctr;\n\n   
+     const dailyBudget = budget / duration;\n        const dailyImpressions = (dailyBudget / adjustedCPM) * 1000 * 
+ga.impM;\n        const totalImpressions = Math.round(dailyImpressions * duration);\n        const totalClicks = 
+Math.round(totalImpressions * (adjustedCTR / 100));\n        const totalConversions = Math.round(totalClicks * 
+(adjustedCVR / 100));\n\n        return {\n            impressions: totalImpressions,\n            clicks: 
+totalClicks,\n            conversions: totalConversions,\n            cpc: budget / Math.max(1, totalClicks),\n        
+    cpm: (budget / Math.max(1, totalImpressions)) * 1000,\n            cpa: budget / Math.max(1, totalConversions),\n  
+          ctr: adjustedCTR,\n            cvr: adjustedCVR,\n            dailyBudget: dailyBudget,\n            roi: 
+ga.roiM * (1 / sm),\n            avgCPA: b.avgCPA * im\n        };\n    }\n\n    let donutAnim = 0;\n    let 
+donutTarget = 1;\n    let donutRAF = null;\n\n    function updateAll() {\n        const r = calculate(state.platform, 
+state.goal, state.industry, state.budget, state.duration, state.scenario);\n\n        animateText(mImpressions, 
+fmtMetric(r.impressions));\n        animateText(mClicks, fmtMetric(r.clicks));\n        animateText(mConversions, 
+fmtMetric(r.conversions));\n        animateText(mCPC, '$' + fmtCurrency(r.cpc));\n        animateText(mCPM, '$' + 
+fmtCurrency(r.cpm));\n        animateText(mCPA, '$' + fmtCurrency(r.cpa));\n\n        dailySpend.textContent = '$' + 
+fmtBudget(Math.round(r.dailyBudget));\n        roiEst.textContent = r.roi.toFixed(1) + 'x';\n        
+learnPeriod.textContent = LEARN[state.platform];\n\n        const b = BENCHMARKS[state.platform];\n        
+compCTR.textContent = r.ctr.toFixed(2) + '%';\n        compCVR.textContent = r.cvr.toFixed(2) + '%';\n        
+compCPA.textContent = '$' + fmtCurrency(r.cpa);\n\n        const ctrPct = Math.min(100, (r.ctr / (b.ctr * 1.3)) * 
+100);\n        const cvrPct = Math.min(100, (r.cvr / 8) * 100);\n        const cpaPct = Math.min(100, (b.avgCPA * 
+IND_MULT[state.industry] / Math.max(1, r.cpa)) * 100);\n\n        barCTR.style.width = ctrPct + '%';\n        
+barCTR.style.background = r.ctr >= b.ctr ? 'var(--blue)' : 'var(--pink)';\n        barCVR.style.width = cvrPct + 
+'%';\n        barCVR.style.background = r.cvr >= b.cvr ? 'var(--green)' : 'var(--pink)';\n        barCPA.style.width = 
+\n<truncated 9300 bytes>\n\nNOTE: The output was truncated because it was too long. Use a more targeted query or a 
+smaller range to get the information you need."}
+C:\Users\zahran\.gemini\antigravity\brain\96008217-4abb-4027-acf1-505921affcc3\.system_generated\logs\transcript_full.j
+sonl:8171:{"step_index":8390,"source":"USER_EXPLICIT","type":"USER_INPUT","status":"DONE","created_at":"2026-07-19T09:5
+3:13Z","content":"<USER_REQUEST>\nطيب انت مش ملاحظ ان فيه سيكشن تحت اسمه النتائج المتوقعة وداخلة اقسام كتير 
+؟\r\n\n</USER_REQUEST>\n<ADDITIONAL_METADATA>\nThe current local time is: 
+2026-07-19T12:53:13+03:00.\n</ADDITIONAL_METADATA>"}
+
+

@@ -352,7 +352,7 @@ export default function ServicePage({ params }: Props) {
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="font-semibold text-primary text-sm tracking-wider uppercase">شفافية كاملة — Fit Check</p>
               <h2 className="mt-2 text-3xl font-extrabold text-foreground sm:text-4xl">
-                هل نحن <span class="text-primary">مناسبون</span> لمشروعك؟
+                هل نحن <span className="text-primary">مناسبون</span> لمشروعك؟
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 قبل أي التزام، خذ نظرة صادقة على متى تكون خدمتنا الاستثمار الصحيح لمشروعك — ومتى لا تكون.

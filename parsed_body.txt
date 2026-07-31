@@ -1,172 +1,12 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import Head from "next/head";
-import Script from "next/script";
 
-export default function AlAmeenCaseStudy() {
-    const [activeLine, setActiveLine] = useState("daily");
 
-    useEffect(() => {
-        if (typeof window !== "undefined" && (window as any).lucide) {
-            (window as any).lucide.createIcons();
-        }
-
-        const ro = new IntersectionObserver(e => { e.forEach(en => { if(en.isIntersecting){ en.target.classList.add("vis"); ro.unobserve(en.target); } }); }, {rootMargin:"0px 0px -50px 0px",threshold:.1});
-        document.querySelectorAll(".sr,.sr-l,.sr-r,.sr-s").forEach(el => ro.observe(el));
-
-        function animC(c:any,t:any,d:any){ const s=performance.now(); (function u(n){ const p=Math.min((n-s)/d,1), e=1-Math.pow(1-p,3); c.textContent=Math.round(t*e); if(p<1) requestAnimationFrame(u); else c.textContent=t; })(s); }
-        const co = new IntersectionObserver(e => { e.forEach(en => { if(en.isIntersecting){ animC(en.target,parseInt((en.target as any).dataset.target),2000); co.unobserve(en.target); } }); }, {threshold:.5});
-        document.querySelectorAll(".counter-w").forEach(el => co.observe(el));
-
-        document.querySelectorAll(".scene").forEach(sc => {
-            const card = sc.querySelector(".tilt-card") as HTMLElement;
-            if(!card) return;
-            sc.addEventListener("mousemove", (e:any) => {
-                const r = sc.getBoundingClientRect(), x = e.clientX-r.left, y = e.clientY-r.top;
-                const rx = ((y-r.height/2)/r.height/2)*-10, ry = ((x-r.width/2)/r.width/2)*10;
-                card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(10px)`;
-            });
-            sc.addEventListener("mouseleave", () => { card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) translateZ(0)"; });
-        });
-
-        const compSlider = document.getElementById("compSlider");
-        const compBefore = document.getElementById("compBefore");
-        const compBeforeImg = document.getElementById("compBeforeImg");
-        const compHandle = document.getElementById("compHandle");
-        let isDragging = false;
-
-        if(compSlider && compBefore && compBeforeImg && compHandle) {
-            function updateSlider(x:any) {
-                if(!compSlider) return;
-                const rect = compSlider.getBoundingClientRect();
-                let pos = (rect.right - x) / rect.width * 100;
-                pos = Math.max(5, Math.min(95, pos));
-                compBefore!.style.width = pos + "%";
-                compBeforeImg!.style.width = (rect.width / (pos/100)) + "px";
-                compHandle!.style.right = `calc(${pos}% - 2px)`;
-            }
-
-            compSlider.addEventListener("mousedown", (e:any) => { isDragging = true; updateSlider(e.clientX); });
-            window.addEventListener("mousemove", (e:any) => { if(isDragging) updateSlider(e.clientX); });
-            window.addEventListener("mouseup", () => { isDragging = false; });
-            compSlider.addEventListener("touchstart", (e:any) => { isDragging = true; updateSlider(e.touches[0].clientX); }, {passive:true});
-            window.addEventListener("touchmove", (e:any) => { if(isDragging) updateSlider(e.touches[0].clientX); }, {passive:true});
-            window.addEventListener("touchend", () => { isDragging = false; });
-
-            function initSlider() {
-                if(!compSlider) return;
-                const rect = compSlider.getBoundingClientRect();
-                compBeforeImg!.style.width = (rect.width / 0.5) + "px";
-            }
-            initSlider();
-            window.addEventListener("resize", initSlider);
-        }
-
-        const navHandler = () => {
-            const navbar = document.getElementById("navbar");
-            if(navbar) navbar.style.boxShadow = window.scrollY > 50 ? "0 4px 30px rgba(0,0,0,.08)" : "none";
-        };
-        window.addEventListener("scroll", navHandler);
-
-        document.querySelectorAll("a[href^='#']").forEach(a => {
-            a.addEventListener("click", function(this:any, e) {
-                if(this.getAttribute("href") === "#") return;
-                e.preventDefault();
-                const t = document.querySelector(this.getAttribute("href"));
-                if(t) t.scrollIntoView({behavior:"smooth",block:"start"});
-            });
-        });
-
-        return () => {
-            window.removeEventListener("scroll", navHandler);
-        };
-    }, [activeLine]); // added activeLine dependency so tilt re-attaches if needed on render
-
-    return (
-        <div className="bg-[#fafbfc] text-gray-900 overflow-x-hidden font-sans" dir="rtl">
-            <Script src="https://unpkg.com/lucide@latest" strategy="beforeInteractive" />
-            <Script id="lucide-init" strategy="lazyOnload">
-                {`if(window.lucide) window.lucide.createIcons();`}
-            </Script>
-
-            <style dangerouslySetInnerHTML={{__html: `
-        *{font-family:'Noto Kufi Arabic','Inter',sans-serif}
-        .gradient-text{background:linear-gradient(135deg,#004D40,#00C853,#009624);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-
-        /* 3D */
-        .scene{perspective:1200px}
-        .tilt-card{transform-style:preserve-3d;transition:transform .4s ease}
-        .float-3d{transform-style:preserve-3d;animation:float3d 8s ease-in-out infinite}
-        @keyframes float3d{0%,100%{transform:translateY(0) rotateX(0) rotateY(0)}25%{transform:translateY(-12px) rotateX(4deg) rotateY(8deg)}50%{transform:translateY(-6px) rotateX(-2deg) rotateY(-4deg)}75%{transform:translateY(-16px) rotateX(6deg) rotateY(-6deg)}}
-        .float-3d-d{animation:float3d 7s ease-in-out infinite 2s;transform-style:preserve-3d}
-        .cube-wrap{perspective:800px;width:60px;height:60px}
-        .cube{width:100%;height:100%;transform-style:preserve-3d;animation:rc 14s linear infinite}
-        .cf{position:absolute;width:60px;height:60px;border:1.5px solid rgba(0,200,83,.25);background:rgba(0,200,83,.04);border-radius:10px}
-        .cf:nth-child(1){transform:rotateY(0) translateZ(30px)}.cf:nth-child(2){transform:rotateY(90deg) translateZ(30px)}.cf:nth-child(3){transform:rotateY(180deg) translateZ(30px)}.cf:nth-child(4){transform:rotateY(270deg) translateZ(30px)}.cf:nth-child(5){transform:rotateX(90deg) translateZ(30px)}.cf:nth-child(6){transform:rotateX(-90deg) translateZ(30px)}
-        @keyframes rc{from{transform:rotateX(-15deg) rotateY(0)}to{transform:rotateX(-15deg) rotateY(360deg)}}
-        .sphere-3d{width:160px;height:160px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(0,200,83,.25),rgba(0,200,83,.04) 60%,transparent);box-shadow:inset -15px -15px 30px rgba(0,200,83,.08),0 15px 40px rgba(0,200,83,.08);transform-style:preserve-3d;animation:sf 6s ease-in-out infinite}
-        @keyframes sf{0%,100%{transform:translateZ(0)}50%{transform:translateZ(25px) rotateX(8deg)}}
-
-        /* Comparison Slider */
-        .comparison-container{position:relative;overflow:hidden;cursor:col-resize;user-select:none}
-        .comparison-before,.comparison-after{position:absolute;inset:0}
-        .comparison-after img{width:100%;height:100%;object-fit:cover}
-        .comparison-before{z-index:2;overflow:hidden}
-        .comparison-before img{width:100%;height:100%;object-fit:cover;position:absolute;top:0;right:0;height:100%}
-        .comparison-slider{position:absolute;top:0;bottom:0;width:4px;background:white;z-index:3;cursor:col-resize;box-shadow:0 0 20px rgba(0,0,0,.3)}
-        .comparison-slider::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:white;border-radius:50%;box-shadow:0 4px 20px rgba(0,0,0,.2)}
-        .comparison-slider::after{content:'‹ ›';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:14px;font-weight:800;color:#374151;letter-spacing:4px;white-space:nowrap}
-        .comparison-label{position:absolute;bottom:16px;z-index:4;padding:6px 16px;border-radius:9999px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
-
-        /* Scroll reveal */
-        .sr{opacity:0;transform:translateY(35px);transition:all .8s cubic-bezier(.23,1,.32,1)}
-        .sr.vis{opacity:1;transform:translateY(0)}
-        .sr-l{opacity:0;transform:translateX(-35px);transition:all .8s cubic-bezier(.23,1,.32,1)}
-        .sr-l.vis{opacity:1;transform:translateX(0)}
-        .sr-r{opacity:0;transform:translateX(35px);transition:all .8s cubic-bezier(.23,1,.32,1)}
-        .sr-r.vis{opacity:1;transform:translateX(0)}
-        .sr-s{opacity:0;transform:scale(.88);transition:all .8s cubic-bezier(.23,1,.32,1)}
-        .sr-s.vis{opacity:1;transform:scale(1)}
-
-        /* Cards */
-        .service-card{transition:all .4s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden}
-        .service-card::before{content:'';position:absolute;top:0;right:0;width:100%;height:4px;background:linear-gradient(to left,#00C853,#69F0AE);transform:scaleX(0);transform-origin:right;transition:transform .4s ease}
-        .service-card:hover::before{transform:scaleX(1)}
-        .service-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -12px rgba(0,200,83,.12)}
-
-        .btn-primary{background:linear-gradient(135deg,#009624,#00C853);color:white;transition:all .3s ease;box-shadow:0 4px 15px -3px rgba(0,200,83,.4)}
-        .btn-primary:hover{box-shadow:0 8px 25px -3px rgba(0,200,83,.5);transform:translateY(-2px)}
-        .btn-dark{background:#0a0a0a;color:white;transition:all .3s ease}
-        .btn-dark:hover{background:#1a1a1a;transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.2)}
-
-        /* Before/After Card */
-        .ba-card{transition:all .5s cubic-bezier(.23,1,.32,1)}
-        .ba-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -10px rgba(0,0,0,.1)}
-        .ba-card img{transition:transform .6s ease}
-        .ba-card:hover img{transform:scale(1.03)}
-
-        /* Timeline */
-        .timeline-line{position:absolute;right:23px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#00C853,#00C853 30%,#e5e7eb 30%,#e5e7eb)}
-
-        /* Stat card glow */
-        .stat-glow{box-shadow:0 0 0 0 rgba(0,200,83,0);transition:box-shadow .4s ease}
-        .stat-glow:hover{box-shadow:0 0 40px rgba(0,200,83,.12)}
-
-        html{scroll-behavior:smooth}
-        ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f9fafb}::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:3px}::-webkit-scrollbar-thumb:hover{background:#9ca3af}
-    
-header, footer, #floating-contact { display: none !important; }
-`}} />
-
-            
-
-{/* BG Decorations */}
+<!-- BG Decorations -->
 <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
     <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full bg-brand-100/50 blur-[120px]"></div>
     <div className="absolute bottom-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full bg-amber-100/30 blur-[120px]"></div>
 </div>
 
-{/* Nav */}
+<!-- Nav -->
 <nav className="fixed top-0 left-0 right-0 z-50 pt-4 px-4 md:px-6">
     <div className="max-w-7xl mx-auto">
         <div id="navbar" className="bg-white/85 backdrop-blur-xl border border-gray-100 rounded-2xl px-6 py-3 flex items-center justify-between transition-all duration-300">
@@ -187,9 +27,9 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </nav>
 
-{/* ==================== HERO ==================== */}
+<!-- ==================== HERO ==================== -->
 <section className="min-h-screen flex items-center pt-28 pb-16 px-6 relative" style={{backgroundImage: "radial-gradient(circle at 1px 1px,rgba(16,185,129,.06) 1px,transparent 0)", backgroundSize: "40px 40px"}}>
-    {/* 3D Deco */}
+    <!-- 3D Deco -->
     <div className="absolute top-32 left-10 opacity-50 hidden lg:block"><div className="cube-wrap"><div className="cube"><div className="cf"></div><div className="cf"></div><div className="cf"></div><div className="cf"></div><div className="cf"></div><div className="cf"></div></div></div></div>
     <div className="absolute bottom-32 right-16 opacity-30 hidden lg:block"><div className="sphere-3d float-3d-d" style={{width: "120px", height: "120px"}}></div></div>
 
@@ -237,7 +77,7 @@ header, footer, #floating-contact { display: none !important; }
                 </div>
             </div>
 
-            {/* Hero Visual */}
+            <!-- Hero Visual -->
             <div className="sr-s scene" style={{transitionDelay: ".2s"}}>
                 <div className="tilt-card relative">
                     <div className="rounded-3xl overflow-hidden shadow-2xl shadow-brand-500/10 border border-gray-100">
@@ -256,7 +96,7 @@ header, footer, #floating-contact { display: none !important; }
                         </div>
                     </div>
 
-                    {/* Floating badge */}
+                    <!-- Floating badge -->
                     <div className="absolute -top-4 -left-4 bg-white rounded-2xl p-3 shadow-xl float-3d" style={{transformStyle: "preserve-3d"}}>
                         <div className="flex items-center gap-2">
                             <div className="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center">
@@ -274,7 +114,7 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </section>
 
-{/* ==================== OVERVIEW ==================== */}
+<!-- ==================== OVERVIEW ==================== -->
 <section id="overview" className="py-24 px-6 bg-white">
     <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
@@ -327,7 +167,7 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </section>
 
-{/* ==================== BEFORE ==================== */}
+<!-- ==================== BEFORE ==================== -->
 <section id="before" className="py-24 px-6 relative overflow-hidden">
     <div className="absolute top-10 right-10 opacity-10 hidden lg:block"><div className="sphere-3d float-3d" style={{width: "100px", height: "100px"}}></div></div>
 
@@ -338,7 +178,7 @@ header, footer, #floating-contact { display: none !important; }
             <p className="sr text-gray-500 max-w-2xl mx-auto" style={{transitionDelay: ".15s"}}>هذه هي التصاميم والتغليف الذي كان مصنع الأمين يستخدمه قبل التعاون معنا. لاحظ الفجوة بين جودة المنتج وجودة العرض.</p>
         </div>
 
-        {/* Before Grid */}
+        <!-- Before Grid -->
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <div className="sr scene">
                 <div className="tilt-card ba-card bg-white rounded-3xl overflow-hidden border border-gray-100">
@@ -378,7 +218,7 @@ header, footer, #floating-contact { display: none !important; }
             </div>
         </div>
 
-        {/* Problems Analysis */}
+        <!-- Problems Analysis -->
         <div className="sr bg-white rounded-3xl p-8 md:p-10 border border-gray-100">
             <h3 className="text-lg font-extrabold mb-6 flex items-center gap-3">
                 <i data-lucide="scan-eye" className="w-5 h-5 text-red-500"></i>
@@ -410,7 +250,7 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </section>
 
-{/* ==================== OUR APPROACH ==================== */}
+<!-- ==================== OUR APPROACH ==================== -->
 <section className="py-24 px-6 bg-white relative overflow-hidden">
     <div className="absolute bottom-10 left-10 opacity-10 hidden lg:block"><div className="cube-wrap"><div className="cube" style={{animationDuration: "20s"}}><div className="cf"></div><div className="cf"></div><div className="cf"></div><div className="cf"></div><div className="cf"></div><div className="cf"></div></div></div></div>
 
@@ -422,7 +262,7 @@ header, footer, #floating-contact { display: none !important; }
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-            {/* Timeline */}
+            <!-- Timeline -->
             <div className="relative">
                 <div className="timeline-line"></div>
 
@@ -470,7 +310,7 @@ header, footer, #floating-contact { display: none !important; }
                 </div>
             </div>
 
-            {/* Visual Side */}
+            <!-- Visual Side -->
             <div className="sr-r space-y-6" style={{transitionDelay: ".1s"}}>
                 <div className="scene">
                     <div className="tilt-card rounded-3xl overflow-hidden shadow-lg">
@@ -498,7 +338,7 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </section>
 
-{/* ==================== AFTER ==================== */}
+<!-- ==================== AFTER ==================== -->
 <section id="after" className="py-24 px-6 relative overflow-hidden">
     <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
@@ -507,7 +347,7 @@ header, footer, #floating-contact { display: none !important; }
             <p className="sr text-gray-500 max-w-2xl mx-auto" style={{transitionDelay: ".15s"}}>تصاميم تحكي قصة الجودة وتُبرز هوية مصنع الأمين بكل فخر.</p>
         </div>
 
-        {/* After Grid */}
+        <!-- After Grid -->
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             <div className="sr scene">
                 <div className="tilt-card ba-card bg-white rounded-3xl overflow-hidden border border-gray-100">
@@ -550,7 +390,7 @@ header, footer, #floating-contact { display: none !important; }
             </div>
         </div>
 
-        {/* Comparison Slider */}
+        <!-- Comparison Slider -->
         <div className="sr-s max-w-4xl mx-auto">
             <h3 className="text-xl font-extrabold text-center mb-8">قارن بنفسك — اسحب المؤشر</h3>
             <div className="comparison-container rounded-3xl shadow-xl shadow-black/5 border border-gray-100" style={{height: "450px"}} id="compSlider">
@@ -568,7 +408,7 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </section>
 
-{/* ==================== IDENTITY SHOWCASE ==================== */}
+<!-- ==================== IDENTITY SHOWCASE ==================== -->
 <section className="py-24 px-6 bg-white">
     <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
@@ -618,7 +458,7 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </section>
 
-{/* ==================== RESULTS ==================== */}
+<!-- ==================== RESULTS ==================== -->
 <section id="results" className="py-24 px-6 relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-l from-brand-700 via-brand-600 to-brand-800"></div>
     <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(circle at 1px 1px,white 1px,transparent 0)", backgroundSize: "30px 30px"}}></div>
@@ -657,7 +497,7 @@ header, footer, #floating-contact { display: none !important; }
             </div>
         </div>
 
-        {/* Detailed Results */}
+        <!-- Detailed Results -->
         <div className="grid md:grid-cols-3 gap-6">
             <div className="sr bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4"><i data-lucide="trending-up" className="w-5 h-5 text-brand-200"></i></div>
@@ -678,7 +518,7 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </section>
 
-{/* ==================== CLIENT TESTIMONIAL ==================== */}
+<!-- ==================== CLIENT TESTIMONIAL ==================== -->
 <section className="py-24 px-6 bg-white">
     <div className="max-w-4xl mx-auto">
         <div className="sr-s scene">
@@ -712,7 +552,7 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </section>
 
-{/* ==================== PRODUCT RANGE ==================== */}
+<!-- ==================== PRODUCT RANGE ==================== -->
 <section className="py-24 px-6">
     <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
@@ -720,34 +560,34 @@ header, footer, #floating-contact { display: none !important; }
             <h2 className="sr text-3xl md:text-4xl font-extrabold tracking-tight mb-4" style={{transitionDelay: ".1s"}}>8 عبوات — 3 خطوط متنوعة</h2>
         </div>
 
-        {/* Line Tabs */}
+        <!-- Line Tabs -->
         <div className="sr flex justify-center gap-3 mb-12" style={{transitionDelay: ".1s"}}>
-            <button className={`line-tab px-6 py-2.5 rounded-xl text-xs font-bold transition-all ${activeLine === "daily" ? "bg-gray-900 text-white active" : "bg-gray-100 text-gray-500 hover:bg-gray-200"}`} onClick={() => setActiveLine("daily")}>خط الاستهلاك اليومي</button>
-            <button className={`line-tab px-6 py-2.5 rounded-xl text-xs font-bold transition-all ${activeLine === "luxury" ? "bg-gray-900 text-white active" : "bg-gray-100 text-gray-500 hover:bg-gray-200"}`} onClick={() => setActiveLine("luxury")}>خط الفخامة</button>
-            <button className={`line-tab px-6 py-2.5 rounded-xl text-xs font-bold transition-all ${activeLine === "gift" ? "bg-gray-900 text-white active" : "bg-gray-100 text-gray-500 hover:bg-gray-200"}`} onClick={() => setActiveLine("gift")}>خط الهدايا</button>
+            <button className="line-tab active bg-gray-900 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition-all" onClick="switchLine('daily',this)">خط الاستهلاك اليومي</button>
+            <button className="line-tab bg-gray-100 text-gray-500 px-6 py-2.5 rounded-xl text-xs font-bold transition-all hover:bg-gray-200" onClick="switchLine('luxury',this)">خط الفخامة</button>
+            <button className="line-tab bg-gray-100 text-gray-500 px-6 py-2.5 rounded-xl text-xs font-bold transition-all hover:bg-gray-200" onClick="switchLine('gift',this)">خط الهدايا</button>
         </div>
 
-        {/* Products */}
-        <div id="line-daily" className={`product-line grid sm:grid-cols-3 gap-6 ${activeLine === "daily" ? "" : "hidden"}`}>
+        <!-- Products -->
+        <div id="line-daily" className="product-line grid sm:grid-cols-3 gap-6">
             <div className="sr scene"><div className="tilt-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow"><img src="https://picsum.photos/seed/product-sukari-daily/500/350.jpg" alt="سكري يومي" className="w-full h-[200px] object-cover" /><div className="p-5"><div className="text-[10px] font-bold text-brand-600 uppercase tracking-wider">500 جرام</div><h4 className="font-bold text-sm mt-1">سكري يومي</h4><p className="text-xs text-gray-400 mt-1">كرتون مقوّى بطباعة واحدة</p></div></div></div>
             <div className="sr scene" style={{transitionDelay: ".05s"}}><div className="tilt-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow"><img src="https://picsum.photos/seed/product-majdool-daily/500/350.jpg" alt="مجضول يومي" className="w-full h-[200px] object-cover" /><div className="p-5"><div className="text-[10px] font-bold text-brand-600 uppercase tracking-wider">1 كجم</div><h4 className="font-bold text-sm mt-1">مجضول يومي</h4><p className="text-xs text-gray-400 mt-1">كيس معدني مطبوع</p></div></div></div>
             <div className="sr scene" style={{transitionDelay: ".1s"}}><div className="tilt-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow"><img src="https://picsum.photos/seed/product-barhi-daily/500/350.jpg" alt="برحي يومي" className="w-full h-[200px] object-cover" /><div className="p-5"><div className="text-[10px] font-bold text-brand-600 uppercase tracking-wider">1 كجم</div><h4 className="font-bold text-sm mt-1">برحي يومي</h4><p className="text-xs text-gray-400 mt-1">كيس شفاف مع ملصق فاخر</p></div></div></div>
         </div>
 
-        <div id="line-luxury" className={`product-line grid sm:grid-cols-3 gap-6 ${activeLine === "luxury" ? "" : "hidden"}`}>
+        <div id="line-luxury" className="product-line hidden grid sm:grid-cols-3 gap-6">
             <div className="scene"><div className="tilt-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow"><img src="https://picsum.photos/seed/product-sukari-luxury-royal/500/350.jpg" alt="سكري ملكي" className="w-full h-[200px] object-cover" /><div className="p-5"><div className="text-[10px] font-bold text-amber-600 uppercase tracking-wider">500 جرام</div><h4 className="font-bold text-sm mt-1">سكري ملكي</h4><p className="text-xs text-gray-400 mt-1">كرتون فاخر بلمسة ذهبية</p></div></div></div>
             <div className="scene"><div className="tilt-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow"><img src="https://picsum.photos/seed/product-majdool-luxury-premium/500/350.jpg" alt="مجضول بريميوم" className="w-full h-[200px] object-cover" /><div className="p-5"><div className="text-[10px] font-bold text-amber-600 uppercase tracking-wider">750 جرام</div><h4 className="font-bold text-sm mt-1">مجضول بريميوم</h4><p className="text-xs text-gray-400 mt-1">علبة مغلفة بورق ذهبي</p></div></div></div>
             <div className="scene"><div className="tilt-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow"><img src="https://picsum.photos/seed/product-mixed-luxury-box/500/350.jpg" alt="مكس فاخر" className="w-full h-[200px] object-cover" /><div className="p-5"><div className="text-[10px] font-bold text-amber-600 uppercase tracking-wider">1 كجم</div><h4 className="font-bold text-sm mt-1">مكس فاخر</h4><p className="text-xs text-gray-400 mt-1">علبة مقسمة بأقسام</p></div></div></div>
         </div>
 
-        <div id="line-gift" className={`product-line grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto ${activeLine === "gift" ? "" : "hidden"}`}>
+        <div id="line-gift" className="product-line hidden grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             <div className="scene"><div className="tilt-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow"><img src="https://picsum.photos/seed/product-gift-corporate-box/500/350.jpg" alt="هدية مؤسسية" className="w-full h-[220px] object-cover" /><div className="p-5"><div className="text-[10px] font-bold text-purple-600 uppercase tracking-wider">1.5 كجم</div><h4 className="font-bold text-sm mt-1">هدية مؤسسية</h4><p className="text-xs text-gray-400 mt-1">صندوق صلب بغطاء قماشي وشريط ذهبي</p></div></div></div>
             <div className="scene"><div className="tilt-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow"><img src="https://picsum.photos/seed/product-gift-special-edition/500/350.jpg" alt="إصدار خاص" className="w-full h-[220px] object-cover" /><div className="p-5"><div className="text-[10px] font-bold text-purple-600 uppercase tracking-wider">2 كجم</div><h4 className="font-bold text-sm mt-1">إصدار رمضان خاص</h4><p className="text-xs text-gray-400 mt-1">صندوق جلدي مع بطاقة مطبوعة وشمع</p></div></div></div>
         </div>
     </div>
 </section>
 
-{/* ==================== CTA ==================== */}
+<!-- ==================== CTA ==================== -->
 <section id="contact" className="py-24 px-6 bg-white relative overflow-hidden">
     <div className="absolute bottom-0 right-0 opacity-10 hidden lg:block"><div className="sphere-3d float-3d-d" style={{width: "140px", height: "140px"}}></div></div>
 
@@ -775,7 +615,7 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </section>
 
-{/* Footer */}
+<!-- Footer -->
 <footer className="bg-gray-900 py-14 px-6">
     <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -789,13 +629,9 @@ header, footer, #floating-contact { display: none !important; }
     </div>
 </footer>
 
-{/* WhatsApp Float */}
+<!-- WhatsApp Float -->
 <a href="https://wa.me/966500000000" target="_blank" className="fixed bottom-6 left-6 z-40 w-14 h-14 bg-brand-500 hover:bg-brand-600 rounded-2xl flex items-center justify-center shadow-lg shadow-brand-500/30 transition-all hover:scale-110 hover:-translate-y-1 group">
     <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <span className="absolute left-full mr-3 bg-gray-900 text-white text-xs font-bold px-3 py-2 rounded-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">تواصل معنا</span>
 </a>
 
-
-        </div>
-    );
-}
