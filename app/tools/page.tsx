@@ -5,6 +5,18 @@ import Link from "next/link"
 
 const TOOLS = [
   {
+    id: 'company-stamp-generator',
+    name: 'مولّد الأختام الرسمية مجاناً',
+    desc: 'صمم وأنشئ ختماً رسمياً لشركتك أو مؤسستك مجاناً وبثوانٍ معدودة. خصّص النصوص، الألوان، الأشكال والخطوط، وحمل الختم بصيغ PNG و SVG عالية الدقة.',
+    cat: 'design',
+    badge: 'new',
+    color: '#3B82F6',
+    colorDim: 'rgba(59,130,246,0.06)',
+    icon: 'fas fa-stamp',
+    url: '/tools/company-stamp-generator',
+    features: ['أشكال دائرية ومستطيلة', 'ألوان رسمية متعددة', 'تأثير تآكل الحبر (Grunge)', 'تصدير PNG و SVG']
+  },
+  {
     id: 'ads-budget-calculator',
     name: 'حاسبة ميزانية الإعلانات',
     desc: 'قدّر نتائج حملاتك الإعلانية بدقة. أدخل ميزانيتك واختر منصتك واحصل على توقعات واقعية للنقرات والتحويلات والتكاليف.',
