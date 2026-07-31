@@ -27,6 +27,8 @@ const ICON_PRESETS = [
 const FONTS = [
   { id: "cairo", name: "خط القاهرة (Cairo)", className: "font-cairo" },
   { id: "amiri", name: "الخط الأميري (Amiri)", className: "font-amiri" },
+  { id: "almateen", name: "خط المتين (Al-Meteen)", className: "font-almateen" },
+  { id: "sultanbold", name: "خط سلطان بولد (Sultan Bold)", className: "font-sultanbold" },
   { id: "outfit", name: "مودرن إنجليزي (Outfit)", className: "font-outfit" },
   { id: "inter", name: "سلك إنجليزي (Inter)", className: "font-inter" },
 ]
@@ -66,8 +68,14 @@ export default function StampGeneratorClient() {
   const [textLetterSpacing, setTextLetterSpacing] = useState(2) // custom spacing multiplier
   const [textSize, setTextSize] = useState(15)
 
+  // New Font Adjustments
+  const [fontScale, setFontScale] = useState(1.0)
+  const [fontWidthScale, setFontWidthScale] = useState(1.0)
+  const [fontWeight, setFontWeight] = useState("bold")
+
   // Distress / Grunge Filter
   const [grungeLevel, setGrungeLevel] = useState(4) // 0 to 10
+  const [isGrungeEnabled, setIsGrungeEnabled] = useState(true)
   
   // Preview Backing Mode
   const [backing, setBacking] = useState<"grid" | "light" | "dark">("light")
@@ -82,7 +90,7 @@ export default function StampGeneratorClient() {
   }
 
   // Generate dynamic filter attributes based on grungeLevel state
-  const hasFilter = grungeLevel > 0
+  const hasFilter = isGrungeEnabled && grungeLevel > 0
   const wobbleScale = grungeLevel * 0.7
   const grungeContrast = 12 + grungeLevel * 2.5
   const grungeOffset = grungeContrast / 2.1 - 0.2
@@ -492,20 +500,90 @@ export default function StampGeneratorClient() {
                 <select
                   value={fontFamily}
                   onChange={(e) => setFontFamily(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white text-sm outline-none"
+                  className="w-full px-3 py-2 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white text-sm outline-none font-bold"
                 >
                   {FONTS.map((f) => (
-                    <option key={f.id} value={f.id}>{f.name}</option>
+                    <option key={f.id} value={f.id} className={f.className}>{f.name}</option>
                   ))}
                 </select>
               </div>
 
-              {/* Letter Spacing & sizes (Circle only) */}
-              {shape === "circle" && (
-                <div className="grid grid-cols-2 gap-4 border-t border-zinc-200 dark:border-zinc-800 pt-4">
+              {/* Font Adjustments (Size, Width, Weight) */}
+              <div className="border-t border-zinc-200 dark:border-zinc-800 pt-4 space-y-4">
+                <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">تعديلات الخطوط</h4>
+                
+                <div className="grid grid-cols-2 gap-4">
                   <div>
                     <div className="flex justify-between text-xs font-bold text-zinc-500 mb-1">
-                      <span>حجم الخط</span>
+                      <span>مقياس حجم الخط</span>
+                      <span>{Math.round(fontScale * 100)}%</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="0.6"
+                      max="1.8"
+                      step="0.05"
+                      value={fontScale}
+                      onChange={(e) => setFontScale(parseFloat(e.target.value))}
+                      className="w-full accent-blue-600"
+                    />
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between text-xs font-bold text-zinc-500 mb-1">
+                      <span>عرض وتمدد الخط</span>
+                      <span>{Math.round(fontWidthScale * 100)}%</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="0.5"
+                      max="2.0"
+                      step="0.05"
+                      value={fontWidthScale}
+                      onChange={(e) => setFontWidthScale(parseFloat(e.target.value))}
+                      className="w-full accent-blue-600"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-500 mb-1.5">سمك الخط (Weight)</label>
+                    <select
+                      value={fontWeight}
+                      onChange={(e) => setFontWeight(e.target.value)}
+                      className="w-full px-2 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white text-xs outline-none font-bold"
+                    >
+                      <option value="normal">عادي (Normal)</option>
+                      <option value="500">متوسط (Medium)</option>
+                      <option value="bold">عريض (Bold)</option>
+                      <option value="900">عريض جداً (Black)</option>
+                    </select>
+                  </div>
+
+                  {shape === "circle" && (
+                    <div>
+                      <div className="flex justify-between text-xs font-bold text-zinc-500 mb-1">
+                        <span>تباعد الأحرف</span>
+                        <span>{textLetterSpacing}px</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="-2"
+                        max="10"
+                        step="0.5"
+                        value={textLetterSpacing}
+                        onChange={(e) => setTextLetterSpacing(parseFloat(e.target.value))}
+                        className="w-full accent-blue-600"
+                      />
+                    </div>
+                  )}
+                </div>
+
+                {shape === "circle" && (
+                  <div>
+                    <div className="flex justify-between text-xs font-bold text-zinc-500 mb-1">
+                      <span>الحجم الأساسي للنصوص الدائرية</span>
                       <span>{textSize}px</span>
                     </div>
                     <input
@@ -518,40 +596,46 @@ export default function StampGeneratorClient() {
                       className="w-full accent-blue-600"
                     />
                   </div>
+                )}
+              </div>
+
+              {/* Grunge / Ink distress effect */}
+              <div className="border-t border-zinc-200 dark:border-zinc-800 pt-4 space-y-3">
+                <div className="flex items-center justify-between">
                   <div>
+                    <span className="block text-sm font-bold text-zinc-700 dark:text-zinc-300">نمط فيكتور نظيف (كامل بدون تأثير)</span>
+                    <span className="block text-xs text-zinc-400">إيقاف التقطيع ليكون الختم حاداً ومناسباً للتكبير الفيكتور</span>
+                  </div>
+                  <input
+                    type="checkbox"
+                    checked={!isGrungeEnabled}
+                    onChange={(e) => setIsGrungeEnabled(!e.target.checked)}
+                    className="w-10 h-5 rounded-full bg-zinc-200 dark:bg-zinc-700 checked:bg-blue-600 cursor-pointer appearance-none relative before:content-[''] before:absolute before:h-4 before:w-4 before:rounded-full before:bg-white before:top-0.5 before:left-0.5 before:transition-all checked:before:translate-x-5"
+                  />
+                </div>
+
+                {isGrungeEnabled && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    className="space-y-2 pt-2"
+                  >
                     <div className="flex justify-between text-xs font-bold text-zinc-500 mb-1">
-                      <span>تباعد الأحرف</span>
-                      <span>{textLetterSpacing}px</span>
+                      <span>محاكاة أثر الحبر (Grunge Level)</span>
+                      <span className="text-blue-600 dark:text-blue-400 font-black">مستوى {grungeLevel}</span>
                     </div>
                     <input
                       type="range"
-                      min="-2"
+                      min="1"
                       max="10"
-                      step="0.5"
-                      value={textLetterSpacing}
-                      onChange={(e) => setTextLetterSpacing(parseFloat(e.target.value))}
+                      step="1"
+                      value={grungeLevel}
+                      onChange={(e) => setGrungeLevel(parseInt(e.target.value))}
                       className="w-full accent-blue-600"
                     />
-                  </div>
-                </div>
-              )}
-
-              {/* Grunge / Ink distress effect */}
-              <div className="border-t border-zinc-200 dark:border-zinc-800 pt-4">
-                <div className="flex justify-between text-sm font-bold text-zinc-700 dark:text-zinc-300 mb-2">
-                  <span>محاكاة أثر الحبر (Grunge Effect)</span>
-                  <span className="text-blue-600 dark:text-blue-400 font-black">مستوى {grungeLevel}</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="10"
-                  step="1"
-                  value={grungeLevel}
-                  onChange={(e) => setGrungeLevel(parseInt(e.target.value))}
-                  className="w-full accent-blue-600"
-                />
-                <span className="block text-xs text-zinc-400 mt-1">يضيف خدوشاً وخشونة حقيقية على حواف الختم ليبدو كأنه طبع على ورق فعلي.</span>
+                    <span className="block text-xs text-zinc-400">يضيف خدوشاً وخشونة حقيقية على حواف الختم ليبدو كأنه طبع على ورق فعلي.</span>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
           )}
@@ -777,9 +861,10 @@ export default function StampGeneratorClient() {
                   {/* Curved Top text */}
                   <text
                     fill={color}
-                    fontSize={textSize}
-                    fontWeight="bold"
+                    fontSize={textSize * fontScale}
+                    fontWeight={fontWeight}
                     style={getLetterSpacingStyle()}
+                    transform={`translate(200, 200) scale(${fontWidthScale}, 1) translate(-200, -200)`}
                   >
                     <textPath href="#text-path-top" startOffset="50%" textAnchor="middle">
                       {topText}
@@ -789,9 +874,10 @@ export default function StampGeneratorClient() {
                   {/* Curved Bottom text */}
                   <text
                     fill={color}
-                    fontSize={textSize}
-                    fontWeight="bold"
+                    fontSize={textSize * fontScale}
+                    fontWeight={fontWeight}
                     style={getLetterSpacingStyle()}
+                    transform={`translate(200, 200) scale(${fontWidthScale}, 1) translate(-200, -200)`}
                   >
                     <textPath href="#text-path-bottom" startOffset="50%" textAnchor="middle">
                       {bottomText}
@@ -805,10 +891,10 @@ export default function StampGeneratorClient() {
                       <text
                         x={200 - textRadius}
                         y="204"
-                        fontSize={textSize * 1.1}
+                        fontSize={textSize * 1.1 * fontScale}
                         fill={color}
                         textAnchor="middle"
-                        fontWeight="bold"
+                        fontWeight={fontWeight}
                       >
                         ★
                       </text>
@@ -816,10 +902,10 @@ export default function StampGeneratorClient() {
                       <text
                         x={200 + textRadius}
                         y="204"
-                        fontSize={textSize * 1.1}
+                        fontSize={textSize * 1.1 * fontScale}
                         fill={color}
                         textAnchor="middle"
-                        fontWeight="bold"
+                        fontWeight={fontWeight}
                       >
                         ★
                       </text>
@@ -875,10 +961,11 @@ export default function StampGeneratorClient() {
                     <text
                       x="200"
                       y={centerIcon !== "none" ? "205" : "195"}
-                      fontSize="20"
-                      fontWeight="900"
+                      fontSize={20 * fontScale}
+                      fontWeight={fontWeight === "normal" ? "bold" : "900"}
                       fill={color}
                       textAnchor="middle"
+                      transform={`translate(200, 0) scale(${fontWidthScale}, 1) translate(-200, 0)`}
                     >
                       {centerLine1}
                     </text>
@@ -887,11 +974,12 @@ export default function StampGeneratorClient() {
                     <text
                       x="200"
                       y={centerIcon !== "none" ? "232" : "222"}
-                      fontSize="11"
-                      fontWeight="bold"
+                      fontSize={11 * fontScale}
+                      fontWeight={fontWeight}
                       fill={color}
                       textAnchor="middle"
                       style={{ letterSpacing: "1px" }}
+                      transform={`translate(200, 0) scale(${fontWidthScale}, 1) translate(-200, 0)`}
                     >
                       {centerLine2}
                     </text>
@@ -963,10 +1051,11 @@ export default function StampGeneratorClient() {
                   <text
                     x="200"
                     y="160"
-                    fontSize="17"
-                    fontWeight="bold"
+                    fontSize={17 * fontScale}
+                    fontWeight={fontWeight}
                     fill={color}
                     textAnchor="middle"
+                    transform={`translate(200, 0) scale(${fontWidthScale}, 1) translate(-200, 0)`}
                   >
                     {rectLine1}
                   </text>
@@ -985,10 +1074,11 @@ export default function StampGeneratorClient() {
                   <text
                     x="200"
                     y="218"
-                    fontSize="22"
-                    fontWeight="900"
+                    fontSize={22 * fontScale}
+                    fontWeight={fontWeight === "normal" ? "bold" : "900"}
                     fill={color}
                     textAnchor="middle"
+                    transform={`translate(200, 0) scale(${fontWidthScale}, 1) translate(-200, 0)`}
                   >
                     {rectLine2}
                   </text>
@@ -997,10 +1087,11 @@ export default function StampGeneratorClient() {
                   <text
                     x="200"
                     y="258"
-                    fontSize="13"
-                    fontWeight="bold"
+                    fontSize={13 * fontScale}
+                    fontWeight={fontWeight}
                     fill={color}
                     textAnchor="middle"
+                    transform={`translate(200, 0) scale(${fontWidthScale}, 1) translate(-200, 0)`}
                   >
                     {rectLine3}
                   </text>
