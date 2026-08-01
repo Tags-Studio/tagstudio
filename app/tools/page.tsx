@@ -29,6 +29,18 @@ const TOOLS = [
     features: ['5 منصات إعلانية', '8 قطاعات صناعية', '3 سيناريوهات أداء', 'نصائح مخصصة']
   },
   {
+    id: 'ecommerce-calculator',
+    name: 'حاسبة التجارة الإلكترونية والتسعير',
+    desc: 'حلّل أسعار منتجاتك واعرف أرباحك وتكاليفك بالتفصيل. احسب تعادل عائد الإعلانات (BE ROAS) وأقصى تكلفة طلب (BE CPS) بدقة بناءً على نسبة الإلغاء والمرتجع.',
+    cat: 'marketing',
+    badge: 'new',
+    color: '#10B981',
+    colorDim: 'rgba(16,185,129,0.06)',
+    icon: 'fas fa-wallet',
+    url: '/tools/ecommerce-calculator',
+    features: ['نمطي ECOM و DROP', 'حساب تعادل ROAS / CPS', 'تحليل نسب التسليم والمرتجع', 'حفظ البيانات تلقائياً']
+  },
+  {
     id: 'safe-area-previewer',
     name: 'عارض المنطقة الآمنة',
     desc: 'تحقق من تصميماتك ضد مناطق الآمان لجميع أجهزة Apple. شاهد بالضبط أين تضع عناصرك التفاعلية بأمان.',
@@ -183,6 +195,15 @@ export default function ToolsIndex() {
             <div style={{ height: 8, borderRadius: 2, background: dimColor, width: '25%' }}></div>
             <div style={{ height: 8, borderRadius: 2, background: dimColor, width: '20%' }}></div>
             <div style={{ height: 8, borderRadius: 2, background: dimColor, width: '15%' }}></div>
+          </div>
+        )
+      case 'ecommerce-calculator':
+        return (
+          <div className="absolute bottom-2 left-2 right-2 flex gap-1 items-end justify-center h-8">
+            <div style={{ height: 12, borderRadius: 2, background: '#10B981', width: '20%' }}></div>
+            <div style={{ height: 24, borderRadius: 2, background: '#10B981', width: '20%' }}></div>
+            <div style={{ height: 8, borderRadius: 2, background: '#EF4444', width: '20%' }}></div>
+            <div style={{ height: 16, borderRadius: 2, background: '#10B981', width: '20%' }}></div>
           </div>
         )
       case 'safe-area-previewer':
