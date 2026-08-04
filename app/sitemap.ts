@@ -24,8 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog`,
-      changeFrequency: "weekly",
-      priority: 0.8,
+      changeFrequency: "daily",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/faq`,
@@ -34,33 +34,69 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/tools`,
-      changeFrequency: "monthly",
-      priority: 0.6,
+      changeFrequency: "weekly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/tasmim-huwiya-basariya-saudi`,
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.9,
     },
   ]
 
-  const today = new Date().toISOString().split("T")[0]
+  // Tools routes
+  const toolSlugs = [
+    "company-stamp-generator",
+    "ads-budget-calculator",
+    "ecommerce-calculator",
+    "safe-area-previewer",
+    "color-contrast-checker",
+    "medical-roi-calculator",
+    "brand-audit",
+    "palette-generator",
+    "instagram-grid-splitter"
+  ]
 
-  const publishedPostRoutes: MetadataRoute.Sitemap = blogPosts
-    .filter((post) => post.date <= today)
-    .map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.date),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    }))
+  const toolRoutes: MetadataRoute.Sitemap = toolSlugs.map((slug) => ({
+    url: `${baseUrl}/tools/${slug}`,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }))
 
+  // Locations routes
+  const locationSlugs = [
+    "riyadh",
+    "jeddah",
+    "dammam",
+    "khobar",
+    "mecca",
+    "medina",
+    "cairo",
+    "alexandria"
+  ]
+
+  const locationRoutes: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
+    url: `${baseUrl}/locations/${slug}`,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }))
+
+  // All Published Blog Posts
+  const publishedPostRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }))
+
+  // Case Studies
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((item) => ({
     url: `${baseUrl}/work/${item.slug}`,
     changeFrequency: "monthly",
     priority: 0.8,
   }))
 
+  // Services
   const serviceRoutes: MetadataRoute.Sitemap = services.map((item) => ({
     url: `${baseUrl}/services/${item.slug}`,
     changeFrequency: "monthly",
@@ -69,6 +105,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
+    ...toolRoutes,
+    ...locationRoutes,
     ...publishedPostRoutes,
     ...caseStudyRoutes,
     ...serviceRoutes,
