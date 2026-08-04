@@ -1,42 +1,78 @@
-import Link from "next/link"
+"use client"
 
-const footerLinks = [
-  { href: "/services/visual-identity", label: "تصميم هوية بصرية" },
-  { href: "/services/social-media-design", label: "تصميم السوشيال ميديا" },
-  { href: "/services/print-design", label: "تصاميم المطبوعات" },
-  { href: "/services/motion-graphics", label: "فيديو موشن جرافيك" },
-  { href: "/about", label: "من نحن" },
-  { href: "/work", label: "الأعمال" },
-  { href: "/blog", label: "المدونة" },
-  { href: "/faq", label: "الأسئلة الشائعة" },
-  { href: "/#contact-form", label: "تواصل معنا" },
-  { href: "/privacy-policy", label: "سياسة الخصوصية" },
-  { href: "/terms", label: "الشروط والأحكام" },
-  { href: "/cookie-policy", label: "ملفات الارتباط" },
-]
+import Link from "next/link"
+import { useLanguage } from "@/context/LanguageContext"
 
 export default function Footer() {
+  const { language, t } = useLanguage()
+
+  const footerLinks = [
+    {
+      href: "/services/visual-identity",
+      label: language === "en" ? "Visual Identity Design" : "تصميم هوية بصرية",
+    },
+    {
+      href: "/services/social-media-design",
+      label: language === "en" ? "Social Media Design" : "تصميم السوشيال ميديا",
+    },
+    {
+      href: "/services/print-design",
+      label: language === "en" ? "Print & Packaging" : "تصاميم المطبوعات والتغليف",
+    },
+    {
+      href: "/services/motion-graphics",
+      label: language === "en" ? "Motion Graphics" : "فيديو موشن جرافيك",
+    },
+    { href: "/about", label: t.nav.about },
+    { href: "/work", label: t.nav.work },
+    { href: "/tools", label: t.nav.tools },
+    { href: "/blog", label: t.nav.blog },
+    { href: "/faq", label: language === "en" ? "FAQ" : "الأسئلة الشائعة" },
+    { href: "/#contact-form", label: t.nav.contact },
+    {
+      href: "/privacy-policy",
+      label: language === "en" ? "Privacy Policy" : "سياسة الخصوصية",
+    },
+    {
+      href: "/terms",
+      label: language === "en" ? "Terms & Conditions" : "الشروط والأحكام",
+    },
+  ]
+
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-16 lg:px-8">
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-12 lg:px-8">
+        <div className="mb-8 text-center max-w-xl mx-auto">
+          <h3 className="font-bold text-lg text-foreground">
+            {language === "en" ? "Tag Studio" : "تاج ستوديو"}
+          </h3>
+          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            {t.footer.description}
+          </p>
+        </div>
+
         <nav
-          className="flex flex-wrap justify-center gap-x-8 gap-y-5"
-          aria-label="روابط تذييل الموقع"
+          className="flex flex-wrap justify-center gap-x-6 gap-y-4 border-t border-border/40 pt-8"
+          aria-label="Footer Navigation"
         >
           {footerLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm leading-6 text-muted-foreground transition hover:text-foreground"
+              className="text-sm text-muted-foreground transition hover:text-primary"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <p className="mt-10 text-center text-sm leading-5 text-muted-foreground">
-          © {new Date().getFullYear()} تاج ستوديو — جميع الحقوق محفوظة.
-        </p>
+        <div className="mt-8 pt-6 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground gap-4">
+          <p>{t.footer.rights}</p>
+          <div className="flex gap-4">
+            <span>📍 {t.footer.saudiBranch}</span>
+            <span>📍 {t.footer.egyptBranch}</span>
+          </div>
+        </div>
       </div>
     </footer>
   )

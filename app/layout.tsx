@@ -9,6 +9,7 @@ import type React from "react"
 import Script from "next/script"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import LocalBusinessSchema from "./components/LocalBusinessSchema"
+import { LanguageProvider } from "@/context/LanguageContext"
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -19,7 +20,7 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.wearetagstudio.com"),
   title: {
-    default: "تاج ستوديو | تصميم هوية بصرية وشعارات احترافية",
+    default: "تاج ستوديو | تصميم هوية بصرية وشعارات احترافية | Tag Studio",
     template: "%s | تاج ستوديو",
   },
   description:
@@ -29,17 +30,25 @@ export const metadata: Metadata = {
     "تصميم شعار",
     "وكالة تصميم",
     "تاج ستوديو",
+    "Tag Studio",
+    "brand identity design",
+    "logo design saudi",
     "موشن جرافيك",
     "تصميم سوشيال ميديا",
-    "تصميم مطبوعات",
-    "هوية تجارية",
   ],
+  alternates: {
+    canonical: "https://www.wearetagstudio.com",
+    languages: {
+      "ar": "https://www.wearetagstudio.com",
+      "en": "https://www.wearetagstudio.com",
+    },
+  },
   openGraph: {
-    title: "تاج ستوديو | تصميم هوية بصرية وشعارات احترافية",
+    title: "تاج ستوديو | تصميم هوية بصرية وشعارات احترافية | Tag Studio",
     description:
       "نصمم هويات بصرية وشعارات وتصميمات سوشيال ميديا ومطبوعات وموشن جرافيك للشركات في مصر والسعودية.",
     url: "https://www.wearetagstudio.com",
-    siteName: "تاج ستوديو",
+    siteName: "تاج ستوديو - Tag Studio",
     locale: "ar_EG",
     type: "website",
     images: [
@@ -53,7 +62,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "تاج ستوديو | تصميم هوية بصرية وشعارات احترافية",
+    title: "تاج ستوديو | Tag Studio",
     description:
       "نصمم هويات بصرية وشعارات وتصميمات سوشيال ميديا ومطبوعات وموشن جرافيك للشركات.",
     images: ["/images/logo.png"],
@@ -79,13 +88,15 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
-        <LocalBusinessSchema />
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-          <FloatingContactButtons />
-        </ThemeProvider>
+        <LanguageProvider>
+          <LocalBusinessSchema />
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            <Header />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+            <FloatingContactButtons />
+          </ThemeProvider>
+        </LanguageProvider>
         <SpeedInsights />
 
         {/* Google Analytics Script */}
