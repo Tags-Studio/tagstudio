@@ -81,8 +81,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // All Published Blog Posts
-  const publishedPostRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+  // All Published Blog Posts (Filter out future scheduled posts)
+  const today = new Date().toISOString().split("T")[0]
+  const publishedPosts = blogPosts.filter((post) => post.date <= today)
+
+  const publishedPostRoutes: MetadataRoute.Sitemap = publishedPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "monthly",
