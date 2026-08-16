@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { caseStudies } from "@/lib/caseStudies"
 import { FadeIn, FadeInStaggerContainer, FadeInStaggerItem } from "@/components/ui/FadeIn"
-import HeroVideoScrub from "@/components/ui/HeroVideoScrub"
+
 
 const baseUrl = "https://www.wearetagstudio.com"
 
@@ -213,10 +213,14 @@ export default function ZaatarCaseStudy() {
               </FadeIn>
             </div>
 
-            {/* الفيديو — يدخل من اليمين (يتفاعل مع السكرول) */}
+            {/* الفيديو — لوب تلقائي وسلس */}
             <FadeIn direction="left" duration={1.2} delay={0.4} className="relative min-h-[460px] bg-[#efeef0] lg:min-h-[760px] overflow-hidden group">
-              <HeroVideoScrub
+              <video
                 src="/videos/pizza-box.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.5s] group-hover:scale-[1.03]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
