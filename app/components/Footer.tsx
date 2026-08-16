@@ -34,6 +34,10 @@ export default function Footer() {
       label: language === "en" ? "Privacy Policy" : "سياسة الخصوصية",
     },
     {
+      href: "/cookie-policy",
+      label: language === "en" ? "Cookie Policy" : "سياسة ملفات الارتباط",
+    },
+    {
       href: "/terms",
       label: language === "en" ? "Terms & Conditions" : "الشروط والأحكام",
     },

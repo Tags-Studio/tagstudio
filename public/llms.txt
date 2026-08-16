@@ -42,3 +42,5 @@
 - **Blog**: https://wearetagstudio.com/blog
 - **Free Tools**: https://wearetagstudio.com/tools
 - **Contact**: https://wearetagstudio.com/#contact-form
+- **Full Knowledge Base**: https://wearetagstudio.com/llms-full.txt
+
