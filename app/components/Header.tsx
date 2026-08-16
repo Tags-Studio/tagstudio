@@ -64,11 +64,14 @@ export default function Header() {
                 <Link href="/services/visual-identity" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5">
                   {language === "en" ? "Visual Identity Design" : "تصميم هوية بصرية"}
                 </Link>
+                <Link href="/services/packaging-design" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5">
+                  {language === "en" ? "Packaging & Box Design" : "تصميم باكنج وتغليف"}
+                </Link>
+                <Link href="/services/company-profile-design" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5">
+                  {language === "en" ? "Company Profile Design" : "تصميم بروفايل شركات"}
+                </Link>
                 <Link href="/services/social-media-design" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5">
                   {language === "en" ? "Social Media Design" : "تصميمات السوشيال ميديا"}
-                </Link>
-                <Link href="/services/print-design" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5">
-                  {language === "en" ? "Print & Packaging Design" : "تصاميم المطبوعات والتغليف"}
                 </Link>
                 <Link href="/services/motion-graphics" className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors">
                   {language === "en" ? "Motion Graphics Video" : "فيديو موشن جرافيك"}

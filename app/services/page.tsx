@@ -38,14 +38,28 @@ export const metadata: Metadata = {
 
 const icons: Record<string, string> = {
   "visual-identity": "🎨",
+  "packaging-design": "📦",
+  "company-profile-design": "📑",
+  "product-catalog-design": "📖",
   "social-media-design": "📱",
   "print-design": "🖨️",
   "motion-graphics": "🎬",
+  "branding-agency-saudi": "🇸🇦",
+  "restaurant-branding": "🍔",
+  "medical-clinics-branding": "🏥",
+  "dates-packaging-design": "🌴",
+  "annual-reports-design": "📊",
 }
 
 const serviceDescriptions: Record<string, string> = {
   "visual-identity":
     "شعار، ألوان، خطوط، ودليل هوية متكامل — نبني علامتك من الصفر حتى تسليم الملفات الجاهزة للطباعة والنشر.",
+  "packaging-design":
+    "تصميم علب وعبوات وتغليف للمنتجات والمطاعم مع مخططات Dieline هندسية دقيقة للمطابع.",
+  "company-profile-design":
+    "ملفات تعريفية مؤسسية فاخرة تبرز سابقة أعمالك للمناقصات والجهات الحكومية والشركات.",
+  "product-catalog-design":
+    "كتالوجات وفهارس منتجات تفاعلية للمصانع والمتاجر مع كود QR وروابط شراء مباشرة.",
   "social-media-design":
     "قوالب سوشيال ميديا مخصصة وجذابة لإنستغرام، فيسبوك، وسناب شات تعكس هويتك وتزيد التفاعل.",
   "print-design":

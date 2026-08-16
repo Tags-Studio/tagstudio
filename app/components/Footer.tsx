@@ -16,8 +16,12 @@ export default function Footer() {
       label: language === "en" ? "Social Media Design" : "تصميم السوشيال ميديا",
     },
     {
-      href: "/services/print-design",
-      label: language === "en" ? "Print & Packaging" : "تصاميم المطبوعات والتغليف",
+      href: "/services/packaging-design",
+      label: language === "en" ? "Packaging & Box Design" : "تصميم باكنج وتغليف",
+    },
+    {
+      href: "/services/company-profile-design",
+      label: language === "en" ? "Company Profile Design" : "تصميم بروفايل شركات",
     },
     {
       href: "/services/motion-graphics",
