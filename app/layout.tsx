@@ -61,10 +61,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "تاج ستوديو | Tag Studio",
     description:
-      "نصمم هويات بصرية وشعارات وتصميمات سوشيال ميديا ومطبوعات وموشن جرافيك للشركات.",
+      "نصمم هويات بصرية وشعارات وتصميمات سوشيال ميديا ومطبوعات وموشن جرافيك للشركات في السعودية ومصر.",
     images: ["/images/logo.png"],
   },
   icons: {

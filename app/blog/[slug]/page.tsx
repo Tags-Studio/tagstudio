@@ -137,10 +137,12 @@ export default function BlogPostPage({ params }: Props) {
     image: [`${baseUrl}${post.image}`],
     inLanguage: "ar",
     author: {
-      "@type": "Organization",
-      "@id": `${baseUrl}/#organization`,
+      "@type": "Person",
       name: "فريق تاج ستوديو",
       url: `${baseUrl}/about`,
+      worksFor: {
+        "@id": `${baseUrl}/#organization`,
+      },
     },
     publisher: {
       "@type": "Organization",
@@ -150,6 +152,10 @@ export default function BlogPostPage({ params }: Props) {
         "@type": "ImageObject",
         url: `${baseUrl}/images/logo.png`,
       },
+      sameAs: [
+        "https://www.instagram.com/tagstudio.co",
+        "https://www.facebook.com/tagstudio.co",
+      ],
     },
     datePublished: post.date,
     dateModified: post.date,

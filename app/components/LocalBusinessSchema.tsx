@@ -47,9 +47,9 @@ export default function LocalBusinessSchema() {
           closes: "18:00"
         },
         sameAs: [
-          "https://www.facebook.com/wearetagstudio",
-          "https://www.instagram.com/wearetagstudio",
-          "https://www.linkedin.com/company/wearetagstudio"
+          "https://www.instagram.com/tagstudio.co",
+          "https://www.facebook.com/tagstudio.co",
+          "https://wa.me/201009215131"
         ],
         aggregateRating: {
           "@type": "AggregateRating",

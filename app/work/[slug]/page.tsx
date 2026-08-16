@@ -1,13 +1,12 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { caseStudies } from "@/lib/caseStudies"
 import { FadeIn, FadeInStaggerContainer, FadeInStaggerItem } from "@/components/ui/FadeIn"
-import HeroVideoScrub from "@/components/ui/HeroVideoScrub"
 import ZaatarCaseStudy from "@/components/case-studies/ZaatarCaseStudy"
 import AgriculturalCaseStudy from "@/components/case-studies/AgriculturalCaseStudy"
 import RagyBurgerCaseStudy from "@/components/case-studies/RagyBurgerCaseStudy"
+import Image from "next/image"
 
 const baseUrl = "https://www.wearetagstudio.com"
 
@@ -59,10 +58,12 @@ function StandardCaseStudy({ slug }: { slug: string }) {
     notFound()
   }
 
+  const canonical = `${baseUrl}/work/${item.slug}`
+
   const creativeWorkSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "@id": `${baseUrl}/work/${item.slug}#creative-work`,
+    "@id": `${canonical}#creative-work`,
     name: item.title,
     creator: {
       "@type": "Organization",
@@ -72,7 +73,19 @@ function StandardCaseStudy({ slug }: { slug: string }) {
     },
     image: `${baseUrl}${item.image}`,
     description: item.solution,
-    mainEntityOfPage: `${baseUrl}/work/${item.slug}`,
+    about: item.service,
+    mainEntityOfPage: canonical,
+    isPartOf: { "@id": `${baseUrl}/#website` },
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "الرئيسية", item: `${baseUrl}/` },
+      { "@type": "ListItem", position: 2, name: "أعمالنا", item: `${baseUrl}/work/` },
+      { "@type": "ListItem", position: 3, name: item.title, item: canonical },
+    ],
   }
 
   return (
@@ -81,9 +94,17 @@ function StandardCaseStudy({ slug }: { slug: string }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
       />
-      <Link href="/work" className="font-semibold text-primary">
-        ← العودة للأعمال
-      </Link>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <nav aria-label="مسار التنقل" className="breadcrumb-nav mb-8">
+        <Link href="/">الرئيسية</Link>
+        <span className="breadcrumb-sep">/</span>
+        <Link href="/work/">أعمالنا</Link>
+        <span className="breadcrumb-sep">/</span>
+        <span className="breadcrumb-current" aria-current="page">{item.title}</span>
+      </nav>
 
       <section className="mt-8 grid items-center gap-10 lg:grid-cols-2">
         <div>

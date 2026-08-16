@@ -30,12 +30,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/faq`,
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/tools`,
       changeFrequency: "weekly",
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services`,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/tasmim-huwiya-basariya-saudi`,

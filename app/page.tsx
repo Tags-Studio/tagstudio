@@ -36,10 +36,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "شركة تصميم هوية بصرية وشعارات في السعودية ومصر | تاج ستوديو",
     description:
-      "نصمم هويات بصرية وشعارات وتصميمات سوشيال ميديا ومطبوعات وموشن جرافيك للشركات.",
+      "نصمم هويات بصرية وشعارات وتصميمات سوشيال ميديا ومطبوعات وموشن جرافيك للشركات في السعودية ومصر.",
     images: ["/images/logo.png"],
   },
 }
@@ -78,6 +78,7 @@ const professionalServiceSchema = {
   sameAs: [
     "https://www.instagram.com/tagstudio.co",
     "https://www.facebook.com/tagstudio.co",
+    "https://wa.me/201009215131",
   ],
   knowsAbout: [
     "تصميم هوية بصرية",
