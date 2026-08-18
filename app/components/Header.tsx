@@ -88,12 +88,57 @@ export default function Header() {
             {t.nav.work}
           </Link>
 
-          <Link
-            href="/work"
-            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"
-          >
-            {language === "en" ? "Case Studies" : "دراسات الحالة"}
-          </Link>
+          <div className="relative group">
+            <Link
+              href="/work"
+              className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap flex items-center gap-1"
+            >
+              {language === "en" ? "Case Studies" : "دراسات الحالة"}
+              <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </Link>
+            <div className="absolute right-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pt-2">
+              <div className="bg-background rounded-xl shadow-lg border border-primary/10 overflow-hidden flex flex-col">
+                <Link
+                  href="/work/zaatar-w-simsim-brand-identity"
+                  className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5 flex items-center gap-2"
+                >
+                  <span>🫓</span>
+                  <div>
+                    <div className="font-semibold text-foreground">{language === "en" ? "Zaatar w Simsim" : "مطعم زعتر وسمسم"}</div>
+                    <div className="text-[11px] text-muted-foreground">{language === "en" ? "Identity & Packaging" : "هوية وتغليف مطاعم"}</div>
+                  </div>
+                </Link>
+                <Link
+                  href="/work/agricultural-development-association-brand-identity"
+                  className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5 flex items-center gap-2"
+                >
+                  <span>🌾</span>
+                  <div>
+                    <div className="font-semibold text-foreground">{language === "en" ? "Agricultural Dev. Assoc." : "جمعية التنمية الزراعية"}</div>
+                    <div className="text-[11px] text-muted-foreground">{language === "en" ? "Corporate Identity" : "هوية مؤسسية وتقارير"}</div>
+                  </div>
+                </Link>
+                <Link
+                  href="/work/ragy-burger-brand-identity"
+                  className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5 flex items-center gap-2"
+                >
+                  <span>🍔</span>
+                  <div>
+                    <div className="font-semibold text-foreground">{language === "en" ? "Ragy Burger" : "مطعم راجي برجر"}</div>
+                    <div className="text-[11px] text-muted-foreground">{language === "en" ? "Fast Food Branding" : "براندنج وتغليف وجبات"}</div>
+                  </div>
+                </Link>
+                <Link
+                  href="/work"
+                  className="px-4 py-2.5 text-xs text-primary font-bold hover:bg-primary/10 transition-colors bg-primary/5 text-center"
+                >
+                  {language === "en" ? "View All Case Studies →" : "عرض كل دراسات الحالة ←"}
+                </Link>
+              </div>
+            </div>
+          </div>
 
           <Link
             href="/about"
