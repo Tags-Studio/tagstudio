@@ -81,10 +81,18 @@ export default function Header() {
           </div>
 
           <Link
-            href="/work"
+            href="/#portfolio-grid"
+            scroll={true}
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"
           >
             {t.nav.work}
+          </Link>
+
+          <Link
+            href="/work"
+            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors whitespace-nowrap"
+          >
+            {language === "en" ? "Case Studies" : "دراسات الحالة"}
           </Link>
 
           <Link
