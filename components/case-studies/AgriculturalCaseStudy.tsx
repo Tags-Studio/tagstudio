@@ -427,6 +427,43 @@ export default function AgriculturalCaseStudy() {
       {/* ── MORE WORK ── */}
       <section className="bg-[#f4f6f8] pt-12 pb-24 border-t border-slate-200">
         <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
+          {/* ── Related Commercial Services & Case Study Context ── */}
+          <div className="mb-16 rounded-3xl bg-white border border-slate-200 p-8 sm:p-10 shadow-sm">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#84CC16]/10 text-[#84CC16] mb-3">
+                  🏢 الخدمات المنفذة في هذا المشروع
+                </span>
+                <h3 className="text-2xl font-black text-[#0F172A] mb-2">
+                  هل تدير جمعية خيرية، زراعية، أو مؤسسة في السعودية؟
+                </h3>
+                <p className="text-sm text-slate-600 max-w-2xl leading-relaxed">
+                  نقدم باقات متكاملة تشمل تصميم الهوية المؤسسية، صياغة وتصميم التقارير السنوية الفاخرة للجهات المانحة، وتصميم المطبوعات الرسمية بما يتوافق مع معايير المركز الوطني للقطاع غير الربحي (نماء).
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/services/annual-reports-design"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-100 hover:bg-[#84CC16] text-[#0F172A] hover:text-white font-bold text-xs transition-all"
+                >
+                  <span>📊</span> تصميم التقارير السنوية
+                </Link>
+                <Link
+                  href="/services/company-profile-design"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-100 hover:bg-[#84CC16] text-[#0F172A] hover:text-white font-bold text-xs transition-all"
+                >
+                  <span>📑</span> بروفايل الشركات والمؤسسات
+                </Link>
+                <Link
+                  href="/services/visual-identity"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#84CC16] text-white font-bold text-xs transition-all shadow-md shadow-[#84CC16]/20 hover:scale-105"
+                >
+                  <span>🎨</span> تصميم الهوية البصرية
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <div className="flex items-center justify-between mb-12">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#84CC16] mb-2">More Work</p>

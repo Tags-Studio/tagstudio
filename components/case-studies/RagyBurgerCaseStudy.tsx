@@ -377,6 +377,43 @@ export default function RagyBurgerCaseStudy() {
       {/* ── RELATED WORK ── */}
       <section className="bg-[#111] border-t border-white/10">
         <div className="mx-auto max-w-[1500px] px-4 py-24 sm:px-6 lg:px-8">
+          {/* ── Related Commercial Services & Case Study Context ── */}
+          <div className="mb-20 rounded-3xl bg-neutral-900 border border-neutral-800 p-8 sm:p-12 text-white shadow-2xl">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#E31E24]/20 text-[#FFC222] mb-4 border border-[#E31E24]/30">
+                  🍟 قطاع المطاعم والـ Fast Food
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black mb-3">
+                  عايز براند برجر أو مطعم يجذب الطوابير من أول يوم؟
+                </h3>
+                <p className="text-sm sm:text-base text-neutral-400 max-w-2xl leading-relaxed">
+                  نصمم هويات مطاعم برجر شابة وجريئة، مع بوكسات وجبات وأكياس تيك أواي وتصاميم سوشيال ميديا تفتح النفس وتزيد الطلبات على تطبيقات التوصيل (جاهز، هنقرستيشن، طلبات).
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/services/packaging-design"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#E31E24] text-white font-black text-sm transition-all hover:bg-[#ff3b41] hover:scale-105 shadow-lg shadow-[#E31E24]/20"
+                >
+                  <span>📦</span> تصميم بوكسات وعلب البرجر
+                </Link>
+                <Link
+                  href="/services/restaurant-branding"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-neutral-800 hover:bg-[#FFC222] text-white hover:text-black font-bold text-sm transition-all"
+                >
+                  <span>🍔</span> هوية المطاعم
+                </Link>
+                <Link
+                  href="/services/visual-identity"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-neutral-800 hover:bg-white text-white hover:text-black font-bold text-sm transition-all"
+                >
+                  <span>🎨</span> باقة الهوية الكاملة
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <div className="flex justify-between items-end mb-12">
             <h2 className="text-5xl font-black">مشاريع أخرى</h2>
           </div>

@@ -610,6 +610,43 @@ export default function ZaatarCaseStudy() {
 
       {/* ── Applications Section ── */}
       <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        {/* ── Related Commercial Services & Case Study Context ── */}
+        <div className="mb-20 rounded-3xl bg-[#1d2218] border border-[#2a3023] p-8 sm:p-12 text-white shadow-2xl">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+            <div>
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#a8b51d]/15 text-[#c4d422] mb-4 border border-[#a8b51d]/20">
+                🍔 الخدمات التجارية المنفذة في مشروع زعتر وسمسم
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black mb-3">
+                تخطط لإطلاق مطعم، كافيه، أو علامة سريعة في السعودية ومصر؟
+              </h3>
+              <p className="text-sm sm:text-base text-[#b5bfa8] max-w-2xl leading-relaxed">
+                نحن لا نصمم شعارات فقط — بل نبني منظومة هوية وتغليف كاملة تشمل: هندسة علب الوجبات (Dieline)، أكواب القهوة، أكياس التوصيل، المنيو، وقوالب السوشيال ميديا المحفزة للطلب.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/services/packaging-design"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#a8b51d] text-[#131610] font-black text-sm transition-all hover:bg-[#c4d422] hover:scale-105 shadow-lg shadow-[#a8b51d]/20"
+              >
+                <span>📦</span> تصميم الباكنج والتغليف
+              </Link>
+              <Link
+                href="/services/restaurant-branding"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#2a3023] hover:bg-[#a8b51d] text-white hover:text-[#131610] font-bold text-sm transition-all"
+              >
+                <span>🍽️</span> هوية المطاعم والكافيهات
+              </Link>
+              <Link
+                href="/services/visual-identity"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#2a3023] hover:bg-[#a8b51d] text-white hover:text-[#131610] font-bold text-sm transition-all"
+              >
+                <span>🎨</span> باقات الهوية الكاملة
+              </Link>
+            </div>
+          </div>
+        </div>
+
         <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#84920b]">

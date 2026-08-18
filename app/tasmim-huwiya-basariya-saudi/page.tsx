@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "تصميم هوية بصرية بالرياض وشعارات احترافية",
-  description: "وكالة تصميم هوية بصرية في الرياض وجدة. نقدم خدمات تصميم شعارات احترافية، تصميم سوشيال ميديا، وموشن جرافيك متوافق مع رؤية السعودية 2030 وبأسعار منافسة.",
+  title: "تصميم هوية بصرية في السعودية (الرياض وجدة) | تاج ستوديو",
+  description: "خدمة تصميم هوية بصرية وشعارات متكاملة للشركات والمطاعم والمراكز الطبية في السعودية. من الشعار حتى ملفات الطباعة والـ Brand Guidelines مع باقات شفافة.",
   alternates: {
     canonical: "https://www.wearetagstudio.com/tasmim-huwiya-basariya-saudi",
   },
@@ -13,21 +14,40 @@ export default function SaudiDesignPage() {
     <div className="relative isolate overflow-hidden bg-background pt-16">
       {/* Hero Section */}
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl max-w-4xl mx-auto">
-          تصميم هوية بصرية في <span className="text-gradient">الرياض وجدة</span>
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="breadcrumb-nav justify-center mb-8">
+          <Link href="/">الرئيسية</Link>
+          <span className="breadcrumb-sep">/</span>
+          <Link href="/services">الخدمات</Link>
+          <span className="breadcrumb-sep">/</span>
+          <span className="breadcrumb-current">الهوية البصرية في السعودية</span>
+        </nav>
+
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-primary/10 text-primary mb-6 border border-primary/20">
+          🇸🇦 استوديو تصميم معتمد للشركات والمشاريع في السعودية
+        </span>
+
+        <h1 className="text-4xl font-black tracking-tight text-foreground sm:text-6xl max-w-4xl mx-auto leading-tight">
+          نبني لشركتك <span className="text-gradient">هوية بصرية كاملة</span> تصنع الثقة وتثبت حضورك في السوق
         </h1>
-        <p className="mt-6 text-xl leading-8 text-muted-foreground max-w-3xl mx-auto">
-          نحن في تاج ستوديو نصنع منظومة بصرية متكاملة وشعارات احترافية ترتقي بمشروعك الطبي أو التجاري وتلبي طموحات وتوجهات رؤية المملكة 2030. نوفر لك تصميم هوية بصرية بالرياض يبني الثقة ويحقق انطباعاً أولاً لا يُنسى.
+        <p className="mt-6 text-lg sm:text-xl leading-8 text-muted-foreground max-w-3xl mx-auto">
+          سواء كنت تؤسس علامة جديدة في الرياض أو تعيد هيكلة هوية قائمة (Rebranding) في جدة والشرقية — نسلمك منظومة تصميم عملية تجمع بين الشعار الفاخر، الدليل الإرشادي (Brand Guidelines)، وملفات المطبوعات والتغليف الجاهزة فوراً للمطبعة.
         </p>
-        <div className="mt-10 flex items-center justify-center gap-x-6">
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://wa.me/201009215131"
+            href="https://wa.me/201009215131?text=مرحباً%20تاج%20ستوديو،%20أرغب%20في%20استشارة%20لتصميم%20هوية%20بصرية%20في%20السعودية"
             target="_blank"
             rel="noopener noreferrer"
-            className="apple-button text-lg px-8 py-3"
+            className="apple-button text-lg px-8 py-4 shadow-lg shadow-primary/20 hover:scale-105"
           >
-            احصل على استشارة مجانية على واتساب
+            احصل على استشارة مجانية على واتساب →
           </a>
+          <Link
+            href="/work"
+            className="px-8 py-4 rounded-full bg-secondary hover:bg-secondary/80 text-foreground font-bold text-base transition-all"
+          >
+            شاهد سابقة الأعمال الفعلية
+          </Link>
         </div>
       </div>
 
