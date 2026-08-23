@@ -403,8 +403,8 @@ export default function AgriculturalCaseStudy() {
                 <span className="inline-block px-3 py-1 bg-[#84CC16]/10 text-[#84CC16] text-[11px] font-bold rounded-full mb-2 uppercase tracking-wider">
                   {app.tag}
                 </span>
-                <h3 className="text-base font-bold text-[#0F172A] leading-snug group-hover:text-[#84CC16] transition-colors">
-                  {app.title}
+                <h3 className="text-base font-bold text-[#0F172A] leading-snug group-hover:text-[#84CC16] transition-colors flex items-center gap-2">
+                  <span>{app.title}</span>
                 </h3>
               </div>
             </FadeInStaggerItem>
