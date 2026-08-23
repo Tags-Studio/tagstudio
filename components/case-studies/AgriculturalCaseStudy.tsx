@@ -174,23 +174,46 @@ export default function AgriculturalCaseStudy() {
         <div className="bg-[#0F172A] text-white rounded-[3rem] border border-white/10 shadow-[0_20px_60px_rgb(0,0,0,0.2)] p-10 sm:p-16 lg:p-24 overflow-hidden relative">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#84CC16]/20 to-transparent rounded-full blur-3xl" />
           
-          <div className="grid lg:grid-cols-2 gap-16 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#84CC16] mb-4">The Creative Concept</p>
               <h2 className="text-4xl sm:text-5xl font-black leading-tight mb-8">
-                من التقليد إلى الابتكار الأخضر
+                قصة نمو وازدهار تنطلق من أرض الأحساء
               </h2>
-              <p className="text-xl leading-loose text-white/70">
-                الحل لم يكن في رسم "نخلة" أخرى، بل في تصميم نظام بصري ديناميكي يعتمد على الإضاءة، الشفافية، والألوان المشعة التي تعطي انطباعاً بأن هذه الجمعية تقود المستقبل الأخضر. مزجنا بين الخطوط الهندسية الحديثة والانحناءات العضوية للطبيعة لإنتاج أيقونة تقنية خضراء.
+              <p className="text-xl leading-loose text-white/70 mb-6">
+                بُني الشعار ليروي رحلة التنمية الزراعية عبر 3 مراحل متصاعدة متصلة بالأرض:
               </p>
+              <div className="space-y-4 text-white/80">
+                <div className="flex items-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+                  <span className="w-8 h-8 rounded-full bg-[#84CC16]/20 text-[#84CC16] font-bold flex items-center justify-center flex-shrink-0 text-sm">1</span>
+                  <div>
+                    <strong className="text-white block">الجزء السفلي (زراعة):</strong>
+                    <span className="text-sm text-white/70">بداية العمل الزراعي الحقيقي والانطلاق من جذور الأرض.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+                  <span className="w-8 h-8 rounded-full bg-[#22C55E]/20 text-[#22C55E] font-bold flex items-center justify-center flex-shrink-0 text-sm">2</span>
+                  <div>
+                    <strong className="text-white block">الجزء الأوسط (نمو):</strong>
+                    <span className="text-sm text-white/70">مرحلة التطور، التدريب، وبناء القدرات الزراعية الحديثة.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+                  <span className="w-8 h-8 rounded-full bg-[#84CC16]/20 text-[#84CC16] font-bold flex items-center justify-center flex-shrink-0 text-sm">3</span>
+                  <div>
+                    <strong className="text-white block">الجزء العلوي (ازدهار):</strong>
+                    <span className="text-sm text-white/70">القمة، وفرة المحصول، وتحقيق الاستدامة والأثر الاقتصادي.</span>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="relative aspect-square rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md p-6">
+            <div className="relative aspect-square rounded-[2.5rem] overflow-hidden bg-white shadow-2xl p-2 sm:p-4 border border-white/20">
                <Image
-                  src={project.image}
-                  alt="الفكرة الإبداعية"
+                  src="/images/agricultural-logo-concept-explanation.webp"
+                  alt="شرح فكرة شعار جمعية التنمية الزراعية - زراعة نمو ازدهار"
                   fill
-                  className="object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+                  className="object-contain p-2 hover:scale-105 transition-transform duration-700"
                 />
             </div>
           </div>
