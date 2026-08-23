@@ -61,40 +61,94 @@ export default function AgriculturalCaseStudy() {
 
   const applications = [
     { 
-      src: "/images/agricultural-dates-box-luxury.webp", 
+      src: "/images/agricultural-showcase-1.webp", 
       alt: "تصميم علبة تمور فاخرة لجمعية التنمية الزراعية بالأحساء",
       title: "صندوق التمور الفاخر للضيافة والإهداء",
       tag: "Packaging Design"
     },
     { 
-      src: "/images/agricultural-medjool-dates-box.webp", 
+      src: "/images/agricultural-showcase-2.webp", 
+      alt: "تصميم علبة تمر فاخر من الورق المقوى",
+      title: "علبة توزيعات التمور الورقية الفاخرة",
+      tag: "Box Packaging"
+    },
+    { 
+      src: "/images/agricultural-showcase-3.webp", 
+      alt: "تصميم علبة تمور خضراء مع نافذة عرض",
+      title: "علبة تمور بتصميم أخضر وزخارف الشعار",
+      tag: "Dates Box"
+    },
+    { 
+      src: "/images/agricultural-showcase-4.webp", 
       alt: "تصميم عبوة تمر مجدول فاخر",
       title: "عبوة تمر مجدول فاخر مع نافذة عرض",
       tag: "Retail Packaging"
     },
     { 
-      src: "/images/agricultural-almond-dates-packaging.webp", 
-      alt: "تصميم باكنج تمر باللوز مع مقبض كرتوني",
-      title: "حقيبة وتغليف تمر باللوز للمناسبات",
-      tag: "Gift Packaging"
-    },
-    { 
-      src: "/images/agricultural-brochure-guide.webp", 
-      alt: "بروشور ومطوية آفات وأمراض النخيل التوعوية",
-      title: "مطوية إرشادية وتوعوية لمزارعي النخيل",
-      tag: "Print & Editorial"
-    },
-    { 
-      src: "/images/agricultural-roll-up-banner.webp", 
-      alt: "تصميم رول اب وبانر فعاليات التنمية الزراعية",
-      title: "رول اب وبانر رسمي للملتقيات الزراعية",
-      tag: "Signage & Events"
-    },
-    { 
-      src: "/images/agricultural-exhibition-booth.webp", 
+      src: "/images/agricultural-showcase-5.webp", 
       alt: "تصميم منصة عرض وبوث المعارض لجمعية التنمية الزراعية",
       title: "منصة وبوث المعارض والمؤتمرات الرسمية",
       tag: "Exhibition Booth"
+    },
+    { 
+      src: "/images/agricultural-showcase-6.webp", 
+      alt: "تصميم حقيبة هدايا التمور في واحة الأحساء",
+      title: "حقيبة وتغليف فاخر مع خلفية واحة النخيل",
+      tag: "Eco Branding"
+    },
+    { 
+      src: "/images/agricultural-showcase-7.webp", 
+      alt: "تصميم علبة تمور محمولة بمقبض",
+      title: "بوكس تمور محمول للإهداء والفعاليات",
+      tag: "Gift Packaging"
+    },
+    { 
+      src: "/images/agricultural-showcase-8.webp", 
+      alt: "علبة تمور الأحساء بتصميم مميز",
+      title: "تغليف تمور مدمج مع هوية الجمعية",
+      tag: "Product Packaging"
+    },
+    { 
+      src: "/images/agricultural-showcase-9.webp", 
+      alt: "تصميم رول اب وبانر فعاليات الجمعية الزراعية",
+      title: "رول اب وبانر التنمية الزراعية المستدامة",
+      tag: "Signage & Events"
+    },
+    { 
+      src: "/images/agricultural-showcase-10.webp", 
+      alt: "رول اب تعريفي للجمعية الزراعية في الهواء الطلق",
+      title: "رول اب وبانر رسمي للملتقيات الزراعية",
+      tag: "Event Display"
+    },
+    { 
+      src: "/images/agricultural-showcase-11.webp", 
+      alt: "تصميم بوكس تمور الجمعية الزراعية بنقوش الشعار",
+      title: "صندوق تمور متميز بطابع مؤسسي عصري",
+      tag: "Custom Packaging"
+    },
+    { 
+      src: "/images/agricultural-showcase-12.webp", 
+      alt: "بانر إرشادي للمزارعين والفعاليات",
+      title: "بانر توعوي لمبادرات أرض العطاء",
+      tag: "Field Marketing"
+    },
+    { 
+      src: "/images/agricultural-showcase-13.webp", 
+      alt: "تصميم باكنج تمر باللوز مع مقبض كرتوني",
+      title: "حقيبة وتغليف تمر باللوز للمناسبات",
+      tag: "Gift Box"
+    },
+    { 
+      src: "/images/agricultural-showcase-14.webp", 
+      alt: "صندوق تمور كلاسيكي فاخر بنقوش ذهبية وخضراء",
+      title: "صندوق التمور الملكي بنقوش الشعار الدقيقة",
+      tag: "Luxury Box"
+    },
+    { 
+      src: "/images/agricultural-showcase-15.webp", 
+      alt: "بروشور ومطوية آفات وأمراض النخيل التوعوية",
+      title: "مطوية إرشادية وتوعوية لمزارعي النخيل",
+      tag: "Print & Editorial"
     },
   ]
 
