@@ -131,6 +131,16 @@ export default function Header() {
                   </div>
                 </Link>
                 <Link
+                  href="/work/saken-corporate-housing-brand-identity"
+                  className="px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-primary/5 flex items-center gap-2"
+                >
+                  <span>🏢</span>
+                  <div>
+                    <div className="font-semibold text-foreground">{language === "en" ? "Saken Corporate Housing" : "ساكن للإسكان المؤسسي"}</div>
+                    <div className="text-[11px] text-muted-foreground">{language === "en" ? "Real Estate Branding" : "هوية عقارية ومؤسسية"}</div>
+                  </div>
+                </Link>
+                <Link
                   href="/work"
                   className="px-4 py-2.5 text-xs text-primary font-bold hover:bg-primary/10 transition-colors bg-primary/5 text-center"
                 >
