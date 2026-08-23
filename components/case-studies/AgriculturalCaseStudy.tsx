@@ -62,93 +62,93 @@ export default function AgriculturalCaseStudy() {
   const applications = [
     { 
       src: "/images/agricultural-showcase-1.webp", 
-      alt: "علبة تمور فاخرة بهوية جمعية التنمية الزراعية بالأحساء",
-      title: "علبة الضيافة — تمر الأحساء",
-      tag: "Packaging"
+      alt: "صندوق تمور للضيافة والهدايا الفاخرة - جمعية التنمية الزراعية بالأحساء",
+      title: "صندوق تمور للضيافة والهدايا الفاخرة",
+      tag: "📦 Packaging"
     },
     { 
       src: "/images/agricultural-showcase-2.webp", 
-      alt: "عبوة تمر فاخر من الكرتون بشعار الجمعية",
-      title: "تمر فاخر — Luxury Dates",
-      tag: "Box Design"
+      alt: "علبة توزيعات تمر ورقية - جمعية التنمية الزراعية",
+      title: "علبة توزيعات تمر ورقية",
+      tag: "📦 Box Design"
     },
     { 
       src: "/images/agricultural-showcase-3.webp", 
-      alt: "علبة تمور خضراء بنقوش مستوحاة من شعار الجمعية",
-      title: "صندوق الإهداء الأخضر",
-      tag: "Gift Box"
+      alt: "علبة تمور - تصميم أخضر بزخارف الشعار",
+      title: "علبة تمور - تصميم أخضر بزخارف الشعار",
+      tag: "🌴 Dates Box"
     },
     { 
       src: "/images/agricultural-showcase-4.webp", 
-      alt: "عبوة تمر مجدول بنافذة عرض شفافة وشعار الجمعية",
-      title: "تمر مجدول — Medjool Dates",
-      tag: "Retail Pack"
+      alt: "عبوة تمر مجدول بنافذة عرض - جمعية التنمية الزراعية",
+      title: "عبوة تمر مجدول بنافذة عرض",
+      tag: "🏷️ Retail Pack"
     },
     { 
       src: "/images/agricultural-showcase-5.webp", 
-      alt: "بوث ومنصة عرض الجمعية الزراعية في المعارض",
-      title: "بوث الجمعية في المعارض",
-      tag: "Exhibition"
+      alt: "بوث معارض ومؤتمرات - جمعية التنمية الزراعية",
+      title: "بوث معارض ومؤتمرات",
+      tag: "🏢 Exhibition"
     },
     { 
       src: "/images/agricultural-showcase-6.webp", 
-      alt: "حقيبة تمور فاخرة بخلفية واحة النخيل الأحساء",
-      title: "حقيبة التمور — واحة الأحساء",
-      tag: "Eco Pack"
+      alt: "عبوة فاخرة بخلفية واحة نخيل الأحساء",
+      title: "عبوة فاخرة بخلفية واحة نخيل",
+      tag: "🌿 Eco Pack"
     },
     { 
       src: "/images/agricultural-showcase-7.webp", 
-      alt: "علبة تمور كرتونية بمقبض وشعار الجمعية",
-      title: "علبة الإهداء بالمقبض",
-      tag: "Carry Box"
+      alt: "بوكس تمور للهدايا والفعاليات بمقبض",
+      title: "بوكس تمور للهدايا والفعاليات",
+      tag: "🎁 Gift Pack"
     },
     { 
       src: "/images/agricultural-showcase-8.webp", 
-      alt: "تغليف تمور مع هوية جمعية التنمية الزراعية",
-      title: "تغليف إنتاج الجمعية",
-      tag: "Brand Pack"
+      alt: "عبوة تمور بهوية الجمعية الزراعية",
+      title: "عبوة تمور بهوية الجمعية",
+      tag: "📦 Brand Pack"
     },
     { 
       src: "/images/agricultural-showcase-9.webp", 
-      alt: "رول اب للجمعية الزراعية في ملتقى زراعي",
-      title: "رول اب الملتقى الزراعي",
-      tag: "Roll-up"
+      alt: "رول اب - تنمية زراعية مستدامة",
+      title: "رول اب - تنمية زراعية مستدامة",
+      tag: "🚩 Roll-up"
     },
     { 
       src: "/images/agricultural-showcase-10.webp", 
-      alt: "بانر خارجي للجمعية الزراعية في الهواء الطلق",
-      title: "نحو تنمية مستدامة — بانر الفعاليات",
-      tag: "Outdoor Banner"
+      alt: "رول اب ملتقيات زراعية خارجية",
+      title: "رول اب ملتقيات زراعية خارجية",
+      tag: "🎯 Outdoor Banner"
     },
     { 
       src: "/images/agricultural-showcase-11.webp", 
-      alt: "صندوق تمور بنقوشٍ مستوحاة من شعار الجمعية",
-      title: "صندوق النخيل — بنقوش الهوية",
-      tag: "Luxury Pack"
+      alt: "صندوق تمور بطابع مؤسسي - جمعية التنمية الزراعية",
+      title: "صندوق تمور بطابع مؤسسي",
+      tag: "📦 Custom Box"
     },
     { 
       src: "/images/agricultural-showcase-12.webp", 
-      alt: "بانر توعوي للمزارعين عن مبادرات الجمعية",
-      title: "أرض العطاء — بانر الحملات الميدانية",
-      tag: "Field Banner"
+      alt: "بانر توعوي - مبادرة أرض العطاء",
+      title: "بانر توعوي - مبادرة أرض العطاء",
+      tag: "🌾 Field Banner"
     },
     { 
       src: "/images/agricultural-showcase-13.webp", 
-      alt: "حقيبة تمر باللوز بمقبض كرتوني وشعار الجمعية",
-      title: "تمر باللوز — Almond Dates",
-      tag: "Gift Bag"
+      alt: "حقيبة تمر باللوز بمقبض، للمناسبات",
+      title: "حقيبة تمر باللوز بمقبض، للمناسبات",
+      tag: "🛍️ Gift Bag"
     },
     { 
       src: "/images/agricultural-showcase-14.webp", 
-      alt: "صندوق تمور كلاسيكي فاخر بهوية الجمعية",
-      title: "صندوق تمور كلاسيكي",
-      tag: "Classic Box"
+      alt: "صندوق تمور فخم بنقوش دقيقة",
+      title: "صندوق تمور فخم بنقوش دقيقة",
+      tag: "👑 Luxury Box"
     },
     { 
       src: "/images/agricultural-showcase-15.webp", 
-      alt: "مطوية مطبوعة عن آفات النخيل بهوية الجمعية الزراعية",
-      title: "آفات النخيل — مطوية ميدانية للمزارعين",
-      tag: "Print"
+      alt: "مطوية توعوية لمزارعي النخيل - آفات وأمراض",
+      title: "مطوية توعوية لمزارعي النخيل - آفات وأمراض",
+      tag: "📄 Print & Editorial"
     },
   ]
 
