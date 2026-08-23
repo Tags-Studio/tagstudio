@@ -60,10 +60,42 @@ export default function AgriculturalCaseStudy() {
   }
 
   const applications = [
-    { src: project.image, alt: "تطبيق الهوية الرقمي 1" },
-    { src: project.image, alt: "تطبيق الهوية الرقمي 2" },
-    { src: project.image, alt: "تطبيق الهوية الرقمي 3" },
-    { src: project.image, alt: "تطبيق الهوية الرقمي 4" },
+    { 
+      src: "/images/agricultural-dates-box-luxury.webp", 
+      alt: "تصميم علبة تمور فاخرة لجمعية التنمية الزراعية بالأحساء",
+      title: "صندوق التمور الفاخر للضيافة والإهداء",
+      tag: "Packaging Design"
+    },
+    { 
+      src: "/images/agricultural-medjool-dates-box.webp", 
+      alt: "تصميم عبوة تمر مجدول فاخر",
+      title: "عبوة تمر مجدول فاخر مع نافذة عرض",
+      tag: "Retail Packaging"
+    },
+    { 
+      src: "/images/agricultural-almond-dates-packaging.webp", 
+      alt: "تصميم باكنج تمر باللوز مع مقبض كرتوني",
+      title: "حقيبة وتغليف تمر باللوز للمناسبات",
+      tag: "Gift Packaging"
+    },
+    { 
+      src: "/images/agricultural-brochure-guide.webp", 
+      alt: "بروشور ومطوية آفات وأمراض النخيل التوعوية",
+      title: "مطوية إرشادية وتوعوية لمزارعي النخيل",
+      tag: "Print & Editorial"
+    },
+    { 
+      src: "/images/agricultural-roll-up-banner.webp", 
+      alt: "تصميم رول اب وبانر فعاليات التنمية الزراعية",
+      title: "رول اب وبانر رسمي للملتقيات الزراعية",
+      tag: "Signage & Events"
+    },
+    { 
+      src: "/images/agricultural-exhibition-booth.webp", 
+      alt: "تصميم منصة عرض وبوث المعارض لجمعية التنمية الزراعية",
+      title: "منصة وبوث المعارض والمؤتمرات الرسمية",
+      tag: "Exhibition Booth"
+    },
   ]
 
   const palette = [
@@ -298,20 +330,28 @@ export default function AgriculturalCaseStudy() {
           </p>
         </div>
 
-        <FadeInStaggerContainer className="grid md:grid-cols-2 gap-8">
+        <FadeInStaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {applications.map((app, i) => (
             <FadeInStaggerItem 
               key={i} 
               direction="up" 
-              className="group relative bg-white rounded-[2.5rem] p-4 border border-slate-100 shadow-sm hover:shadow-[0_30px_60px_rgb(132,204,22,0.08)] transition-all duration-500"
+              className="group relative bg-white rounded-[2.5rem] p-4 border border-slate-100 shadow-sm hover:shadow-[0_30px_60px_rgb(132,204,22,0.12)] transition-all duration-500 flex flex-col justify-between"
             >
-              <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-slate-50">
+              <div className="relative aspect-square rounded-[2rem] overflow-hidden bg-slate-50 mb-4">
                 <Image 
                   src={app.src} 
                   alt={app.alt} 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-700" 
                 />
+              </div>
+              <div className="px-2 pb-2">
+                <span className="inline-block px-3 py-1 bg-[#84CC16]/10 text-[#84CC16] text-[11px] font-bold rounded-full mb-2 uppercase tracking-wider">
+                  {app.tag}
+                </span>
+                <h3 className="text-base font-bold text-[#0F172A] leading-snug group-hover:text-[#84CC16] transition-colors">
+                  {app.title}
+                </h3>
               </div>
             </FadeInStaggerItem>
           ))}
