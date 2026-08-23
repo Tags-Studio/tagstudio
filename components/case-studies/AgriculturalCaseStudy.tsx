@@ -147,10 +147,10 @@ export default function AgriculturalCaseStudy() {
   ]
 
   const palette = [
-    { name: "Neon Lime", value: "#84CC16", text: "text-white" },
-    { name: "Eco Green", value: "#22C55E", text: "text-white" },
-    { name: "Slate Dark", value: "#1E293B", text: "text-white" },
-    { name: "Cloud White", value: "#F8FAFC", text: "text-[#1E293B]" },
+    { name: "Forest Green", value: "#0C3B25", text: "text-white" },
+    { name: "Lime Green", value: "#94C73D", text: "text-white" },
+    { name: "Golden Yellow", value: "#FDAA2C", text: "text-white" },
+    { name: "Light Gray", value: "#F7F8F9", text: "text-[#0C3B25]" },
   ]
 
   return (
