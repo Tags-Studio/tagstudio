@@ -91,12 +91,6 @@ export default function AgriculturalCaseStudy() {
       tag: "🏢 Exhibition"
     },
     { 
-      src: "/images/agricultural-showcase-6.webp", 
-      alt: "عبوة فاخرة بخلفية واحة نخيل الأحساء",
-      title: "عبوة فاخرة بخلفية واحة نخيل",
-      tag: "🌿 Eco Pack"
-    },
-    { 
       src: "/images/agricultural-showcase-7.webp", 
       alt: "بوكس تمور للهدايا والفعاليات بمقبض",
       title: "بوكس تمور للهدايا والفعاليات",
@@ -122,9 +116,9 @@ export default function AgriculturalCaseStudy() {
     },
     { 
       src: "/images/agricultural-showcase-11.webp", 
-      alt: "صندوق تمور بطابع مؤسسي - جمعية التنمية الزراعية",
-      title: "صندوق تمور بطابع مؤسسي",
-      tag: "📦 Custom Box"
+      alt: "بوب اب بانر لايفينت - جمعية التنمية الزراعية",
+      title: "بوب اب بانر لايفينت",
+      tag: "🎪 Event Display"
     },
     { 
       src: "/images/agricultural-showcase-12.webp", 
