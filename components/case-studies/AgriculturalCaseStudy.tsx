@@ -354,13 +354,13 @@ export default function AgriculturalCaseStudy() {
               </div>
               <h3 className="text-3xl font-black text-[#0F172A] mb-4">الخطوط</h3>
               <p className="text-[#64748B] leading-relaxed">
-                استخدمنا خطوطاً خالية من التذييل (Sans-Serif) هندسية بالكامل، تبرز البيانات بوضوح تام وتدعم المظهر التقني للهوية.
+                تم اعتماد خطوط <strong>SAUDI FONTS</strong> الرسمية لإبراز الطابع المؤسسي الموثوق، وضمان الوضوح التام في المراسلات الرسمية والمنصات الرقمية.
               </p>
             </div>
             
             <div className="mt-12 bg-[#F8FAFC] rounded-2xl p-8 border border-slate-200 text-center">
               <span className="text-7xl font-black text-[#0F172A]">Aa</span>
-              <p className="mt-4 font-bold text-[#475569]">Modern Geometric</p>
+              <p className="mt-4 font-bold text-[#475569]">SAUDI FONTS</p>
             </div>
           </FadeIn>
         </div>
