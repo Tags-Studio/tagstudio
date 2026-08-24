@@ -122,6 +122,39 @@ export default function SakenCaseStudy() {
     },
   ]
 
+  const signageApplications = [
+    {
+      src: "/images/saken/saken-exhibition-booth-mockup.webp",
+      alt: "تصميم بوث معارض ومؤتمرات عقارية - هوية مجمع ساكن",
+      title: "بوث المعارض والملتقيات — Exhibition Booth",
+      tag: "Event & Booth"
+    },
+    {
+      src: "/images/saken/saken-rollup-banner-mockup.webp",
+      alt: "تصميم رول اب وبنر تعريفي - مجمع ساكن السكني",
+      title: "رول أب تعريفي واستقبال — Rollup Banner",
+      tag: "Indoor Display"
+    },
+    {
+      src: "/images/saken/saken-outdoor-directional-signage.webp",
+      alt: "لوحات إرشادية خارجية وتوجيه مروري - ساكن الجبيل",
+      title: "لوحات توجيهية خارجية — Directional Signage",
+      tag: "Outdoor Wayfinding"
+    },
+    {
+      src: "/images/saken/saken-indoor-wayfinding-signage.webp",
+      alt: "لوحات إرشادية جدارية داخلية للمرافق والمسابح - مجمع ساكن",
+      title: "لوحات إرشادية داخلية — Indoor Wayfinding",
+      tag: "Facility Signage"
+    },
+    {
+      src: "/images/saken/saken-hanging-restaurant-signage.webp",
+      alt: "لوحة معلقة لمطعم ومقهى المجمع السكني - هوية ساكن",
+      title: "لوحة معلقة للمطعم — Hanging Signage",
+      tag: "Interior Sign"
+    },
+  ]
+
   return (
     <main className="bg-[#FAF8F5] text-[#2C241E] relative overflow-hidden selection:bg-[#664936] selection:text-white">
       {/* ── Warm Background Glowing Orbs ── */}
@@ -426,6 +459,50 @@ export default function SakenCaseStudy() {
                 </span>
                 <h3 className="text-base font-bold text-[#2C241E] leading-snug group-hover:text-[#664936] transition-colors">
                   {app.title}
+                </h3>
+              </div>
+            </FadeInStaggerItem>
+          ))}
+        </FadeInStaggerContainer>
+      </section>
+
+      {/* ── INDOOR & OUTDOOR SECTION ── */}
+      <section className="relative mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 border-t border-[#E8E2D8]/80">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="inline-block px-4 py-1.5 bg-[#AB9678]/15 text-[#664936] text-xs font-bold rounded-full mb-3 uppercase tracking-widest border border-[#AB9678]/30">
+            Signage & Event Branding
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-[#2C241E] mb-3">
+            Indoor & Outdoor
+          </h2>
+          <p className="text-sm sm:text-base text-[#6B5E54]">
+            منظومة التوجيه المكاني، اللوحات الإرشادية، والبوثات الترويجية داخل المجمع السكني وفي الفعاليات والمعارض
+          </p>
+        </div>
+
+        <FadeInStaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {signageApplications.map((item, i) => (
+            <FadeInStaggerItem
+              key={i}
+              direction="up"
+              className={`group relative bg-white rounded-[2rem] p-4 border border-[#E8E2D8] shadow-sm hover:shadow-[0_20px_40px_rgb(102,73,54,0.1)] transition-all duration-300 flex flex-col justify-between ${
+                i === 0 ? "sm:col-span-2 lg:col-span-2 aspect-[16/9] sm:aspect-auto" : ""
+              }`}
+            >
+              <div className="relative aspect-[16/10] sm:aspect-video rounded-2xl overflow-hidden bg-[#FAF8F5] mb-3">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="px-1 pb-1">
+                <span className="inline-block px-2.5 py-0.5 bg-[#FAF8F5] text-[#664936] border border-[#E8E2D8] text-[10px] font-bold rounded-md mb-1.5 uppercase">
+                  {item.tag}
+                </span>
+                <h3 className="text-sm font-bold text-[#2C241E] group-hover:text-[#664936] transition-colors">
+                  {item.title}
                 </h3>
               </div>
             </FadeInStaggerItem>
