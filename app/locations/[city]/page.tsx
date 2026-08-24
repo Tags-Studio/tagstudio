@@ -14,10 +14,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!location) {
     return { title: "غير موجود" }
   }
+  const canonicalUrl = `https://www.wearetagstudio.com/locations/${location.slug}`
   return {
     title: location.metaTitle,
     description: location.metaDescription,
     keywords: location.keywords,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      title: location.metaTitle,
+      description: location.metaDescription,
+      url: canonicalUrl,
+      siteName: "تاج ستوديو",
+      locale: "ar_EG",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: location.metaTitle,
+      description: location.metaDescription,
+    },
   }
 }
 
@@ -40,9 +55,9 @@ export default function LocationPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "تاج ستوديو للتصميم - Tag Studio",
-    image: "https://wearetagstudio.com/images/logo.png",
-    "@id": `https://wearetagstudio.com/locations/${location.slug}`,
-    url: `https://wearetagstudio.com/locations/${location.slug}`,
+    image: "https://www.wearetagstudio.com/images/logo.png",
+    "@id": `https://www.wearetagstudio.com/locations/${location.slug}`,
+    url: `https://www.wearetagstudio.com/locations/${location.slug}`,
     telephone: "+201009215131",
     priceRange: "$$",
     address: {

@@ -169,7 +169,7 @@ const projects = [
     id: 41,
     title: "بوكسات للأمين للتمور",
     description: "تصميم بطاقة عمل أو دعوة، مع استخدام عناصر تصميم بسيطة وأنيقة.",
-    imageUrl: "/images/print-design-18.avif",
+    imageUrl: "/images/print-design-1.avif",
     category: "تصاميم المطبوعات",
   },
   {
