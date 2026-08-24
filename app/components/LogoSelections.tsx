@@ -51,16 +51,16 @@ export default function LogoSelections() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (index % 3) * 0.08, duration: 0.6 }}
-              className="group flex items-center justify-center p-6 h-40 sm:h-52 md:h-60 rounded-3xl bg-card/40 backdrop-blur-sm border border-border/60 hover:border-primary/45 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 select-none cursor-pointer"
+              className="group flex items-center justify-center p-4 sm:p-5 h-44 sm:h-56 md:h-64 rounded-3xl bg-card/40 backdrop-blur-sm border border-border/60 hover:border-primary/45 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 select-none cursor-pointer"
             >
               {/* Image container with scale-up on hover */}
-              <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-105 flex items-center justify-center">
+              <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-105 flex items-center justify-center p-2">
                 <Image
                   src={`/images/logo-designs/${logo}`}
                   alt="تصميم شعار من تاج ستوديو"
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-contain"
+                  className="object-contain p-1"
                 />
               </div>
             </motion.div>
