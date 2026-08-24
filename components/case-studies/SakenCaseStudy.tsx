@@ -155,6 +155,39 @@ export default function SakenCaseStudy() {
     },
   ]
 
+  const uniformAndRoomSet = [
+    {
+      src: "/images/saken/saken-reception-staff-uniform-mockup.webp",
+      alt: "تصميم زي موظفي الاستقبال والضيافة - مجمع ساكن السكني",
+      title: "زي موظفي الاستقبال والضيافة — Front Desk Uniform",
+      tag: "Hospitality Team"
+    },
+    {
+      src: "/images/saken/saken-security-team-uniform-mockup.webp",
+      alt: "تصميم زي الأمن والحراسة والمشرفين - هوية ساكن",
+      title: "زي فريق الأمن والسلامة — Security Staff Uniform",
+      tag: "Security Team"
+    },
+    {
+      src: "/images/saken/saken-landscape-gardener-uniform-mockup.webp",
+      alt: "تصميم زي طاقم الزراعة والعناية بالحدائق - مجمع ساكن",
+      title: "زي فريق البستنة والمساحات الخضراء — Landscape Uniform",
+      tag: "Facilities Team"
+    },
+    {
+      src: "/images/saken/saken-room-slippers-mockup.webp",
+      alt: "تصميم خف وأحذية الغرف الفندقية الفاخرة Room Slippers - ساكن",
+      title: "خف الغرف الفندقية الفاخرة — Luxury Room Slippers",
+      tag: "Room Amenities"
+    },
+    {
+      src: "/images/saken/saken-luxury-bathrobe-mockup.webp",
+      alt: "تصميم رداء الحمام الفندقي الفاخر Bathrobe مع تطريز شعار ساكن",
+      title: "رداء الاستحمام الفندقي المطرز — Hotel Bathrobe",
+      tag: "Suite Luxury"
+    },
+  ]
+
   return (
     <main className="bg-[#FAF8F5] text-[#2C241E] relative overflow-hidden selection:bg-[#664936] selection:text-white">
       {/* ── Warm Background Glowing Orbs ── */}
@@ -482,6 +515,50 @@ export default function SakenCaseStudy() {
 
         <FadeInStaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {signageApplications.map((item, i) => (
+            <FadeInStaggerItem
+              key={i}
+              direction="up"
+              className={`group relative bg-white rounded-[2rem] p-4 border border-[#E8E2D8] shadow-sm hover:shadow-[0_20px_40px_rgb(102,73,54,0.1)] transition-all duration-300 flex flex-col justify-between ${
+                i === 0 ? "sm:col-span-2 lg:col-span-2 aspect-[16/9] sm:aspect-auto" : ""
+              }`}
+            >
+              <div className="relative aspect-[16/10] sm:aspect-video rounded-2xl overflow-hidden bg-[#FAF8F5] mb-3">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="px-1 pb-1">
+                <span className="inline-block px-2.5 py-0.5 bg-[#FAF8F5] text-[#664936] border border-[#E8E2D8] text-[10px] font-bold rounded-md mb-1.5 uppercase">
+                  {item.tag}
+                </span>
+                <h3 className="text-sm font-bold text-[#2C241E] group-hover:text-[#664936] transition-colors">
+                  {item.title}
+                </h3>
+              </div>
+            </FadeInStaggerItem>
+          ))}
+        </FadeInStaggerContainer>
+      </section>
+
+      {/* ── STAFF UNIFORM & ROOM SET SECTION ── */}
+      <section className="relative mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8 border-t border-[#E8E2D8]/80">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="inline-block px-4 py-1.5 bg-[#664936]/10 text-[#664936] text-xs font-bold rounded-full mb-3 uppercase tracking-widest border border-[#664936]/15">
+            Hospitality & Suite Amenities
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-[#2C241E] mb-3">
+            Staff Uniform & Room Set
+          </h2>
+          <p className="text-sm sm:text-base text-[#6B5E54]">
+            الأزياء الموحدة لطواقم العمل ومستلزمات الغرف والفلل الفندقية الفاخرة بطابع ودفء هوية ساكن
+          </p>
+        </div>
+
+        <FadeInStaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {uniformAndRoomSet.map((item, i) => (
             <FadeInStaggerItem
               key={i}
               direction="up"
