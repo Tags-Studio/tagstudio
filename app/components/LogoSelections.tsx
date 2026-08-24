@@ -5,6 +5,11 @@ import Image from "next/image"
 
 export default function LogoSelections() {
   const logos = [
+    "saken-corporate-housing-logo.webp",
+    "agricultural-medicine-unit-logo.webp",
+    "circle-oven-pastries-restaurant-logo.webp",
+    "aryaf-dimashq-restaurant-logo.webp",
+    "al-naqi-poultry-farms-logo.webp",
     "bvkbvcllaq0joa4yqq21.avif",
     "byyq04x2vaedujyoy3xh.avif",
     "fganx6cgjhtrabu0xra9.avif",
