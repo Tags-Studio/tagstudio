@@ -253,13 +253,13 @@ export default function SakenCaseStudy() {
           </FadeIn>
 
           <FadeIn direction="left" duration={1} delay={0.2} className="relative aspect-square lg:aspect-auto lg:h-[620px] w-full">
-            <div className="absolute inset-0 bg-white/50 backdrop-blur-2xl rounded-[3rem] border border-[#E8E2D8] shadow-[0_20px_50px_rgb(102,73,54,0.08)] p-6 sm:p-8 transform rotate-2 hover:rotate-0 transition-transform duration-700">
-              <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden bg-[#ECE5D3]/50 flex items-center justify-center p-6">
+            <div className="absolute inset-0 bg-white/70 backdrop-blur-2xl rounded-[3rem] border border-[#E8E2D8] shadow-[0_20px_50px_rgb(102,73,54,0.08)] p-6 sm:p-8 transform rotate-2 hover:rotate-0 transition-transform duration-700">
+              <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden bg-white flex items-center justify-center p-8 border border-[#E8E2D8]/60">
                 <Image
-                  src="/images/saken-color-palette-guide.webp"
-                  alt="دليل الهوية البصرية ونظام الألوان لمجمع ساكن السكني"
+                  src="/images/logo-designs/saken-corporate-housing-logo.webp"
+                  alt="شعار مجمع ساكن للإسكان المؤسسي - Saken Corporate Housing Logo"
                   fill
-                  className="object-contain p-4 transition-transform duration-[3s] hover:scale-105"
+                  className="object-contain p-8 transition-transform duration-[3s] hover:scale-105"
                   priority
                 />
               </div>
@@ -285,52 +285,58 @@ export default function SakenCaseStudy() {
 
       {/* ── THE CREATIVE CONCEPT ── */}
       <section className="relative mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="bg-[#2C241E] text-white rounded-[3rem] border border-[#AB9678]/20 shadow-[0_20px_60px_rgb(0,0,0,0.25)] p-10 sm:p-16 lg:p-24 overflow-hidden relative">
+        <div className="bg-[#2C241E] text-white rounded-[3rem] border border-[#AB9678]/20 shadow-[0_20px_60px_rgb(0,0,0,0.25)] p-10 sm:p-16 lg:p-20 overflow-hidden relative">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#AB9678]/25 to-transparent rounded-full blur-3xl" />
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+          <div className="grid lg:grid-cols-2 gap-14 items-center relative z-10">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#AB9678] mb-4">The Creative Concept</p>
-              <h2 className="text-4xl sm:text-5xl font-black leading-tight mb-8">
-                فلسفة السكينة والأناقة المعمارية
+              <h2 className="text-4xl sm:text-5xl font-black leading-tight mb-6">
+                فلسفة الشعار: رمز السكن والاستقرار
               </h2>
-              <p className="text-xl leading-loose text-white/80 mb-6">
-                استوحينا الهوية من المعنى اللغوي لـ ساكن — الاستقرار، الهدوء، والسكينة. دمجنا بين الخطوط المعمارية الهندسية الصريحة للفلل والوحدات السكنية وبين درجات الألوان الطبيعية الترابية، لخلق تجربة بصرية تشعر النزيل بالألفة والراحة من اللحظة الأولى.
+              <p className="text-xl leading-loose text-white/90 mb-6 font-medium">
+                الشكل العام مستوحى من مفتاح بشكل تجريدي، يرمز إلى الوصول للسكن والاستقرار.
               </p>
+              <p className="text-lg leading-relaxed text-white/75 mb-8">
+                كما توحي الوحدات المترابطة بـ المساكن والمجتمع والتكامل.
+              </p>
+
+              {/* Flow Steps */}
+              <div className="inline-flex flex-wrap items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/15 mb-8 font-bold text-base sm:text-lg text-white">
+                <span className="text-[#C4BAA4]">مفتاح</span>
+                <span className="text-[#AB9678]">←</span>
+                <span className="text-[#C4BAA4]">سكن</span>
+                <span className="text-[#AB9678]">←</span>
+                <span className="text-white">استقرار</span>
+              </div>
+
               <div className="space-y-4 text-white/80">
                 <div className="flex items-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
                   <span className="w-8 h-8 rounded-full bg-[#AB9678]/20 text-[#AB9678] font-bold flex items-center justify-center flex-shrink-0 text-sm">1</span>
                   <div>
-                    <strong className="text-white block">رمزية الملاذ السكني:</strong>
-                    <span className="text-sm text-white/70">أشكال تعبر عن الأمان والاستقرار والاحتواء المنزلي.</span>
+                    <strong className="text-white block">مفتاح تجريدي ومسار الوصول:</strong>
+                    <span className="text-sm text-white/70">رمزية فتح أبواب الملاذ السكني والشعور بالأمان والراحة.</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
                   <span className="w-8 h-8 rounded-full bg-[#C4BAA4]/20 text-[#C4BAA4] font-bold flex items-center justify-center flex-shrink-0 text-sm">2</span>
                   <div>
-                    <strong className="text-white block">العصرية المؤسسية (Corporate Elegance):</strong>
-                    <span className="text-sm text-white/70">خطوط وأسلوب يلائم خطابات التعاقد الرسمية وعروض الشركات.</span>
+                    <strong className="text-white block">الوحدات المترابطة (المجتمع والتكامل):</strong>
+                    <span className="text-sm text-white/70">تكامل المرافق السكنية والترفيهية والخدمية في مجتمع متناسق.</span>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="relative aspect-square rounded-[2.5rem] overflow-hidden bg-white/10 shadow-2xl p-6 border border-white/20 backdrop-blur-md flex flex-col justify-center items-center text-center">
-              <div className="w-24 h-24 rounded-full bg-[#AB9678]/20 border border-[#AB9678]/40 flex items-center justify-center text-4xl mb-6">
-                🏛️
+            <div className="relative aspect-square rounded-[2.5rem] overflow-hidden bg-white shadow-2xl p-4 sm:p-6 border border-white/20 flex flex-col justify-center items-center">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/saken/saken-logo-concept-explanation.webp"
+                  alt="فلسفة وتفاصيل تصميم شعار ساكن - مفتاح تجريدي ومسار الوصول والوحدات المترابطة"
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <h3 className="text-3xl font-black text-white mb-3">Saken Corporate Housing</h3>
-              <p className="text-white/70 text-base max-w-sm">
-                مجمع سكني راقٍ في الجبيل يجمع بين الفلل، الشقق المفروشة، والخدمات الترفيهية المتكاملة
-              </p>
-              <a
-                href="https://saken.sa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#AB9678] text-[#2C241E] font-bold hover:bg-white transition-colors text-sm"
-              >
-                زيارة موقع ساكن الرسمي ↗
-              </a>
             </div>
           </div>
         </div>
