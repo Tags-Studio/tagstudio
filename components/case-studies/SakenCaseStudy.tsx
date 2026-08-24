@@ -171,6 +171,18 @@ export default function SakenCaseStudy() {
       title: "لوحة معلقة للمطعم — Hanging Signage",
       tag: "Interior Sign"
     },
+    {
+      src: "/images/saken/saken-outdoor-flags-banners-mockup.webp",
+      alt: "تصميم أعلام وسواري خارجية للمجمع السكني - هوية ساكن",
+      title: "أعلام وبنرات خارجية — Outdoor Street Flags",
+      tag: "Outdoor Flags"
+    },
+    {
+      src: "/images/saken/saken-branded-ceramic-mugs-mockup.webp",
+      alt: "تصميم أكواب سيراميك فاخرة بشعار ساكن - ضيافة الغرف والاستقبال",
+      title: "أكواب الضيافة والقهوة — Branded Ceramic Mugs",
+      tag: "Hospitality & Amenities"
+    },
   ]
 
   const uniformAndRoomSet = [
