@@ -89,6 +89,38 @@ export default function SakenCaseStudy() {
       desc: "قوالب عروض أسعار وبروفايلات تعاقدية مصممة خصيصاً للتفاوض مع كبرى الجهات الحكومية والشركات."
     }
   ]
+  const applications = [
+    {
+      src: "/images/saken/saken-business-cards-mockup.webp",
+      alt: "تصميم بطاقة عمل وكارت شخصي فاخر - هوية مجمع ساكن السكني",
+      title: "بطاقة عمل تنفيذية — Business Card",
+      tag: "Executive Stationery"
+    },
+    {
+      src: "/images/saken/saken-letterhead-stationery-mockup.webp",
+      alt: "تصميم ورق المراسلات والخطابات الرسمية - هوية ساكن للإسكان المؤسسي",
+      title: "ورق المراسلات الرسمي — Letterhead",
+      tag: "Official Paper"
+    },
+    {
+      src: "/images/saken/saken-official-invoice-mockup.webp",
+      alt: "تصميم فاتورة رسمية وقالب حسابات - شركة ساكن العقارية",
+      title: "فاتورة ومستندات التعاقد — Invoice Design",
+      tag: "Financial Documents"
+    },
+    {
+      src: "/images/saken/saken-payment-voucher-mockup.webp",
+      alt: "تصميم دفتر سند صرف وسندات مالية - مجمع ساكن",
+      title: "دفتر سندات الصرف — Payment Voucher",
+      tag: "Voucher Book"
+    },
+    {
+      src: "/images/saken/saken-employee-id-badge-mockup.webp",
+      alt: "تصميم بطاقة هوية الموظفين والبطاقة التعريفية ID Badge - ساكن",
+      title: "بطاقة تعريف الموظفين — ID Badge",
+      tag: "Staff Identity"
+    },
+  ]
 
   return (
     <main className="bg-[#FAF8F5] text-[#2C241E] relative overflow-hidden selection:bg-[#664936] selection:text-white">
@@ -357,6 +389,48 @@ export default function SakenCaseStudy() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ── IDENTITY APPLICATIONS (تطبيقات الهوية) ── */}
+      <section className="relative mx-auto max-w-[1500px] px-4 py-24 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block px-4 py-1.5 bg-[#664936]/10 text-[#664936] text-xs font-bold rounded-full mb-4 uppercase tracking-widest border border-[#664936]/15">
+            Brand Stationery & Print
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-black text-[#2C241E] leading-tight mb-4">
+            تطبيقات الهوية
+          </h2>
+          <p className="text-lg text-[#6B5E54]">
+            نماذج ومطبوعات الهوية الرسمية لمجمع ساكن السكني — صُممت بأعلى معايير الدقة والاتساق البصري للمراسلات والتعاقدات الرسمية
+          </p>
+        </div>
+
+        <FadeInStaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {applications.map((app, i) => (
+            <FadeInStaggerItem 
+              key={i} 
+              direction="up" 
+              className="group relative bg-white rounded-[2.5rem] p-4 border border-[#E8E2D8] shadow-sm hover:shadow-[0_30px_60px_rgb(102,73,54,0.12)] transition-all duration-500 flex flex-col justify-between"
+            >
+              <div className="relative aspect-[16/10] sm:aspect-square rounded-[2rem] overflow-hidden bg-[#FAF8F5] mb-4">
+                <Image 
+                  src={app.src} 
+                  alt={app.alt} 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                />
+              </div>
+              <div className="px-2 pb-2">
+                <span className="inline-block px-3 py-1 bg-[#664936]/10 text-[#664936] text-[11px] font-bold rounded-full mb-2 uppercase tracking-wider">
+                  {app.tag}
+                </span>
+                <h3 className="text-base font-bold text-[#2C241E] leading-snug group-hover:text-[#664936] transition-colors">
+                  {app.title}
+                </h3>
+              </div>
+            </FadeInStaggerItem>
+          ))}
+        </FadeInStaggerContainer>
       </section>
 
       {/* ── THE SOLUTION BANNER ── */}
