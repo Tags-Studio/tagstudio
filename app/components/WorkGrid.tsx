@@ -50,7 +50,7 @@ const projects = [
     id: 22,
     title: "هوية ساكن للإسكان المؤسسي",
     description: "تصميم هوية بصرية فاخرة لمجمع ساكن السكني في الجبيل، مع لوحة ألوان ترابية متناسقة وتطبيقات للشركات والفلل المفروشة.",
-    imageUrl: "/images/saken-color-palette-guide.webp",
+    imageUrl: "/images/saken-identity-showcase-thumbnail.webp",
     category: "الهوية البصرية",
     caseStudy: {
       client: "مجمع ساكن السكني (الجبيل الصناعية)",
