@@ -120,6 +120,24 @@ export default function SakenCaseStudy() {
       title: "بطاقة تعريف الموظفين — ID Badge",
       tag: "Staff Identity"
     },
+    {
+      src: "/images/saken/saken-official-envelope-mockup.webp",
+      alt: "تصميم ظرف المراسلات والخطابات الرسمية الفاخر - شركة ساكن",
+      title: "ظرف المراسلات الرسمي — Official Envelope",
+      tag: "Executive Stationery"
+    },
+    {
+      src: "/images/saken/saken-branded-pens-stationery-mockup.webp",
+      alt: "تصميم أقلام فاخرة محفورة بشعار ساكن - أدوات مكتبية",
+      title: "الأقلام المكتبية الفاخرة — Branded Luxury Pens",
+      tag: "Office Stationery"
+    },
+    {
+      src: "/images/saken/saken-email-signature-mockup.webp",
+      alt: "تصميم التوقيع الإلكتروني للإيميل - شركة ساكن العقارية",
+      title: "التوقيع الإلكتروني للإيميلات — Email Signature",
+      tag: "Digital Branding"
+    },
   ]
 
   const signageApplications = [
@@ -433,16 +451,18 @@ export default function SakenCaseStudy() {
                   منظومة تصميم متكاملة تدعم العمليات التسويقية والتشغيلية للمجمع السكني وتعزز المبيعات المؤسسية.
                 </p>
                 
-                <div className="space-y-5">
+                <div className="space-y-4">
                   {[
-                    { icon: "🏛️", text: "الشعار العقاري ونظام الخطوط والألوان الطبيعية المتناسقة" },
-                    { icon: "📂", text: "بروفايل تعريفي فاخر (Company Profile) لعروض الشركات والمناقصات" },
-                    { icon: "🪧", text: "تصاميم اللوحات الإرشادية والتوجيه المكاني داخل المجمع والفلل" },
-                    { icon: "📱", text: "أصول وبوستات منصات التواصل الاجتماعي والموقع الإلكتروني" },
+                    { icon: "🗝️", text: "الشعار العقاري وفلسفة المفتاح التجريدي مع الخط المدني (Madani Font) ونظام الألوان الترابية" },
+                    { icon: "📄", text: "المطبوعات والمراسلات الرسمية (كروت شخصية، ورق خطابات، فواتير، سندات صرف، وأظرف رسمية)" },
+                    { icon: "🪧", text: "منظومة التوجيه المكاني واللوحات الإرشادية (Wayfinding & Directional Signage) الداخلية والخارجية" },
+                    { icon: "🎪", text: "جناح المعارض والمؤتمرات العقارية (Exhibition Booth) ورول اب الاستقبال والترويج (Rollups)" },
+                    { icon: "👔", text: "الزي الموحد لطواقم العمل (فريق الاستقبال، الأمن والسلامة، وفريق البستنة والمساحات الخضراء)" },
+                    { icon: "🩴", text: "مستلزمات الغرف والفلل الفندقية الفاخرة (أرواب الاستحمام المطرزة وخف الغرف)" },
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-5 bg-white/5 backdrop-blur-md p-5 rounded-2xl border border-white/10">
-                      <span className="text-2xl">{item.icon}</span>
-                      <p className="font-bold text-white/90">{item.text}</p>
+                    <div key={i} className="flex items-center gap-4 bg-white/5 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                      <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                      <p className="font-bold text-white/90 text-sm sm:text-base leading-snug">{item.text}</p>
                     </div>
                   ))}
                 </div>
@@ -525,10 +545,12 @@ export default function SakenCaseStudy() {
               key={i}
               direction="up"
               className={`group relative bg-white rounded-[2rem] p-4 border border-[#E8E2D8] shadow-sm hover:shadow-[0_20px_40px_rgb(102,73,54,0.1)] transition-all duration-300 flex flex-col justify-between ${
-                i === 0 ? "sm:col-span-2 lg:col-span-2 aspect-[16/9] sm:aspect-auto" : ""
+                i === 0 || i === 1 ? "sm:col-span-2 lg:col-span-2" : ""
               }`}
             >
-              <div className="relative aspect-[16/10] sm:aspect-video rounded-2xl overflow-hidden bg-[#FAF8F5] mb-3">
+              <div className={`relative rounded-2xl overflow-hidden bg-[#FAF8F5] mb-3 ${
+                i === 0 || i === 1 ? "aspect-[16/9]" : "aspect-[16/10] sm:aspect-video"
+              }`}>
                 <Image
                   src={item.src}
                   alt={item.alt}
