@@ -388,34 +388,79 @@ export default function WorkGrid() {
                 transition={{ duration: 0.5 }}
                 className="bg-background rounded-3xl shadow-lg overflow-hidden hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
               >
-                <div
-                  className={`relative overflow-hidden ${
-                    project.category === "تصميمات السوشيال ميديا" ? "h-[400px]" : "h-64"
-                  }`}
-                >
-                  <Image
-                    src={project.imageUrl || "/placeholder.svg"}
-                    alt={project.title}
-                    layout="fill"
-                    objectFit={project.category === "تصميمات السوشيال ميديا" ? "contain" : "cover"}
-                    className="transition-transform duration-300 ease-in-out group-hover:scale-105"
-                  />
-                  <motion.div
-                    className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300"
-                    whileHover={{ opacity: 1 }}
+                {project.caseStudy ? (
+                  <Link
+                    href={`/work/${
+                      project.id === 19
+                        ? "zaatar-w-simsim-brand-identity"
+                        : project.id === 20
+                        ? "agricultural-development-association-brand-identity"
+                        : project.id === 21
+                        ? "ragy-burger-brand-identity"
+                        : "saken-corporate-housing-brand-identity"
+                    }`}
+                    className="block relative overflow-hidden h-64 group/img cursor-pointer"
                   >
-                    <p className="text-white text-center px-4">{project.description}</p>
-                  </motion.div>
-                </div>
+                    <Image
+                      src={project.imageUrl || "/placeholder.svg"}
+                      alt={project.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    <motion.div
+                      className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"
+                    >
+                      <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full font-bold text-sm shadow-lg flex items-center gap-1.5">
+                        عرض دراسة الحالة
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                      </span>
+                    </motion.div>
+                  </Link>
+                ) : (
+                  <div
+                    onClick={() => openModal(project)}
+                    className={`relative overflow-hidden cursor-pointer group/img ${
+                      project.category === "تصميمات السوشيال ميديا" ? "h-[400px]" : "h-64"
+                    }`}
+                  >
+                    <Image
+                      src={project.imageUrl || "/placeholder.svg"}
+                      alt={project.title}
+                      layout="fill"
+                      objectFit={project.category === "تصميمات السوشيال ميديا" ? "contain" : "cover"}
+                      className="transition-transform duration-300 ease-in-out group-hover:scale-105"
+                    />
+                    <motion.div
+                      className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300"
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <p className="text-white text-center px-4">{project.description}</p>
+                    </motion.div>
+                  </div>
+                )}
                 <div className="p-6">
                   <div className="text-sm font-medium text-primary mb-1">{project.category}</div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
                   {project.caseStudy ? (
                     <Link
-                      href={`/work/${project.id === 19 ? "zaatar-w-simsim-brand-identity" : project.id === 20 ? "agricultural-development-association-brand-identity" : "ragy-burger-brand-identity"}`}
-                      className="text-primary hover:underline inline-flex items-center"
+                      href={`/work/${
+                        project.id === 19
+                          ? "zaatar-w-simsim-brand-identity"
+                          : project.id === 20
+                          ? "agricultural-development-association-brand-identity"
+                          : project.id === 21
+                          ? "ragy-burger-brand-identity"
+                          : "saken-corporate-housing-brand-identity"
+                      }`}
+                      className="text-primary font-bold hover:underline inline-flex items-center gap-1.5"
                     >
                       عرض دراسة الحالة
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                      </svg>
                     </Link>
                   ) : (
                   <button
