@@ -1,4 +1,4 @@
-﻿import Image from "next/image"
+import Image from "next/image"
 import Link from "next/link"
 import { caseStudies } from "@/lib/caseStudies"
 import { FadeIn, FadeInStaggerContainer, FadeInStaggerItem } from "@/components/ui/FadeIn"
@@ -238,39 +238,54 @@ export default function SakenCaseStudy() {
         </div>
       </section>
 
-      {/* ── COLOR PALETTE SYSTEM (OFFICIAL) ── */}
+      {/* ── COLOR PALETTE & TYPOGRAPHY SYSTEM ── */}
       <section className="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#664936] mb-4">Color Harmony</p>
-          <h2 className="text-4xl sm:text-5xl font-black text-[#2C241E]">
-            لوحة ألوان ترابية مستوحاة من العمارة والطبيعة
-          </h2>
-          <p className="mt-4 text-lg text-[#6B5E54]">
-            نظام لوني متوازن يعتمد على التناغم الطبيعي (Earth Tones) لإضفاء الفخامة والراحة النفسية
-          </p>
-        </div>
-
-        <FadeInStaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {palette.map((color, i) => (
-            <FadeInStaggerItem
-              key={color.name}
-              direction="up"
-              className="bg-white rounded-[2rem] p-6 border border-[#E8E2D8] shadow-sm hover:shadow-md transition-shadow flex items-center gap-6"
-            >
-              <div
-                className="w-16 h-16 rounded-2xl flex-shrink-0 shadow-inner border border-black/5"
-                style={{ backgroundColor: color.value }}
-              />
-              <div>
-                <h3 className="font-bold text-lg text-[#2C241E]">{color.name}</h3>
-                <p className="text-xs text-[#8C827A] mt-0.5">{color.desc}</p>
-                <p className="text-xs font-mono font-bold text-[#664936] mt-2 bg-[#FAF8F5] px-2.5 py-1 rounded-md inline-block">
-                  {color.value}
-                </p>
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Colors Card */}
+          <FadeIn direction="up" className="lg:col-span-2 bg-[#2C241E] rounded-[3rem] p-10 sm:p-14 text-white relative overflow-hidden">
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#AB9678]/20 rounded-full blur-[80px]" />
+            <div className="relative z-10">
+              <div className="inline-flex px-3.5 py-1 bg-white/10 text-[#C4BAA4] rounded-full text-xs font-bold mb-6">
+                Color System
               </div>
-            </FadeInStaggerItem>
-          ))}
-        </FadeInStaggerContainer>
+              <h3 className="text-3xl font-black mb-4">نظام ألوان ترابي مستوحى من الطبيعة</h3>
+              <p className="text-white/70 text-sm leading-relaxed mb-8 max-w-xl">
+                نظام لوني متوازن يعتمد على التناغم الطبيعي (Earth Tones) لإضفاء الفخامة، السكينة، والراحة النفسية للنزلاء والشركات.
+              </p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {palette.map((color) => (
+                  <div key={color.name} className="bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/10 flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl flex-shrink-0 shadow-inner border border-white/20" style={{ backgroundColor: color.value }} />
+                    <div>
+                      <p className="font-bold text-sm text-white">{color.name}</p>
+                      <p className="text-xs text-[#C4BAA4]">{color.desc}</p>
+                      <p className="text-[11px] text-white/50 font-mono mt-0.5">{color.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Typography Card */}
+          <FadeIn direction="up" delay={0.2} className="bg-white rounded-[3rem] p-10 sm:p-14 border border-[#E8E2D8] shadow-[0_20px_40px_rgb(102,73,54,0.04)] flex flex-col justify-between">
+            <div>
+              <div className="inline-flex px-3.5 py-1 bg-[#FAF8F5] border border-[#E8E2D8] rounded-full text-xs font-bold text-[#664936] mb-6">
+                Typography
+              </div>
+              <h3 className="text-3xl font-black text-[#2C241E] mb-4">الخط الطباعي الرسمي</h3>
+              <p className="text-[#6B5E54] text-sm leading-relaxed">
+                تم اعتماد خط <strong>MADANI FONT</strong> كخط رسمي للهوية؛ ليمزج بين هندسية الحروف العربية الأصيلة والعصرية التي تعكس الفخامة المعمارية والاستقرار المؤسسي.
+              </p>
+            </div>
+            
+            <div className="mt-8 bg-[#FAF8F5] rounded-2xl p-8 border border-[#E8E2D8] text-center">
+              <span className="text-6xl font-black text-[#2C241E]">ساكن</span>
+              <p className="mt-3 font-bold text-[#664936] tracking-wide text-sm">MADANI FONT — مدني</p>
+              <p className="text-xs text-[#8C827A] mt-1">العناوين الرئيسية والنصوص المؤسسية</p>
+            </div>
+          </FadeIn>
+        </div>
       </section>
 
       {/* ── PILLARS & VALUE PROPOSITION ── */}
