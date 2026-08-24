@@ -10,15 +10,15 @@ export default function LogoSelections() {
     "circle-oven-pastries-restaurant-logo.webp",
     "aryaf-dimashq-restaurant-logo.webp",
     "al-naqi-poultry-farms-logo.webp",
-    "bvkbvcllaq0joa4yqq21.avif",
-    "byyq04x2vaedujyoy3xh.avif",
-    "fganx6cgjhtrabu0xra9.avif",
-    "hfxbwfzzzjyuml4vqjs3.avif",
-    "kfgxf74ohbpnv6cey3og.avif",
-    "nldht6g9nsjltufcd01m.avif",
-    "qvr7j1tenquu6swqzdeq.avif",
-    "wdvorof0aowg6x3bvtbj.avif",
-    "xnrjf7apqajuxlfjlnqs.avif"
+    "bvkbvcllaq0joa4yqq21.webp",
+    "byyq04x2vaedujyoy3xh.webp",
+    "fganx6cgjhtrabu0xra9.webp",
+    "hfxbwfzzzjyuml4vqjs3.webp",
+    "kfgxf74ohbpnv6cey3og.webp",
+    "nldht6g9nsjltufcd01m.webp",
+    "qvr7j1tenquu6swqzdeq.webp",
+    "wdvorof0aowg6x3bvtbj.webp",
+    "xnrjf7apqajuxlfjlnqs.webp"
   ]
 
   return (
