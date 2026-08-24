@@ -216,6 +216,12 @@ export default function SakenCaseStudy() {
       title: "رداء الاستحمام الفندقي المطرز — Hotel Bathrobe",
       tag: "Suite Luxury"
     },
+    {
+      src: "/images/saken/saken-room-phone-book-directory-mockup.webp",
+      alt: "تصميم دليل الهاتف والخدمات الداخلية للغرف والفلل Phone Book - ساكن",
+      title: "دليل أرقام وخدمات الغرف — Room Phone Book",
+      tag: "Room Directory"
+    },
   ]
 
   return (
@@ -603,10 +609,12 @@ export default function SakenCaseStudy() {
               key={i}
               direction="up"
               className={`group relative bg-white rounded-[2rem] p-4 border border-[#E8E2D8] shadow-sm hover:shadow-[0_20px_40px_rgb(102,73,54,0.1)] transition-all duration-300 flex flex-col justify-between ${
-                i === 0 ? "sm:col-span-2 lg:col-span-2 aspect-[16/9] sm:aspect-auto" : ""
+                i === 0 || i === 1 ? "sm:col-span-2 lg:col-span-2" : ""
               }`}
             >
-              <div className="relative aspect-[16/10] sm:aspect-video rounded-2xl overflow-hidden bg-[#FAF8F5] mb-3">
+              <div className={`relative rounded-2xl overflow-hidden bg-[#FAF8F5] mb-3 ${
+                i === 0 || i === 1 ? "aspect-[16/9]" : "aspect-[16/10] sm:aspect-video"
+              }`}>
                 <Image
                   src={item.src}
                   alt={item.alt}
