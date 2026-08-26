@@ -1,6 +1,5 @@
-"use client"
+﻿"use client"
 
-import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -61,9 +60,8 @@ const trustPoints = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M6 19c4.5-1 8.5-5 9.5-9.5L18 7l-1-4-4 1-2.5 2.5C6 7.5 2 11.5 1 16l5 3z"
+          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
         />
-        <path strokeLinecap="round" d="M7.5 16.5l-2 2M14 6l4 4" />
       </svg>
     ),
   },
@@ -80,31 +78,13 @@ export default function Hero() {
         <div className="absolute right-[-10rem] top-[10rem] h-[26rem] w-[26rem] rounded-full bg-blue-500/5 blur-3xl" />
       </div>
 
-
-
       <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
         <div
           className="relative order-2 mx-auto w-full max-w-[590px] lg:order-2 lg:justify-self-end"
         >
-          <motion.div
+          <div
             className="relative aspect-square"
-            initial={{ opacity: 0, x: -28, scale: 0.98 }}
-            animate={{ 
-              opacity: 1, 
-              x: 0, 
-              scale: 1,
-              y: [0, -12, 0],
-              rotateX: [0, 8, 0],
-            }}
-            transition={{
-              opacity: { duration: 0.8, ease: "easeOut" },
-              x: { duration: 0.8, ease: "easeOut" },
-              scale: { duration: 0.8, ease: "easeOut" },
-              y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-              rotateX: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-            }}
             style={{
-              perspective: "1200px",
               filter: "drop-shadow(0 32px 96px rgba(15,23,42,0.25)) drop-shadow(0 16px 48px rgba(15,23,42,0.15))",
             }}
           >
@@ -117,13 +97,10 @@ export default function Hero() {
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw"
               className="object-cover"
             />
-          </motion.div>
+          </div>
 
-          <motion.div
+          <div
             className="absolute -bottom-5 right-4 rounded-2xl border border-border/80 bg-background/95 px-5 py-4 shadow-xl backdrop-blur-md sm:right-8"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
           >
             <p className="text-sm font-bold text-foreground">
               من الفكرة إلى هوية قابلة للتطبيق
@@ -131,46 +108,26 @@ export default function Hero() {
             <p className="mt-1 text-xs text-muted-foreground">
               استراتيجية، تصميم، وتسليم منظم
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="order-1 max-w-2xl text-right lg:order-1 lg:justify-self-start">
-          <motion.p
-            className="mb-6 text-sm font-bold tracking-wide text-primary sm:text-base"
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <p className="mb-6 text-sm font-bold tracking-wide text-primary sm:text-base">
             تاج ستوديو — هوية وتصميم للشركات
-          </motion.p>
+          </p>
 
-          <motion.h1
-            className="text-4xl font-black leading-relaxed sm:leading-normal tracking-tight text-foreground sm:text-5xl lg:text-[4rem]"
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.72, delay: 0.05 }}
-          >
+          <h1 className="text-4xl font-black leading-relaxed sm:leading-normal tracking-tight text-foreground sm:text-5xl lg:text-[4rem]">
             <span className="block">نصمم هويات بصرية</span>
             <span className="block mt-2 sm:mt-4">تجعل مشروعك</span>
             <span className="block text-gradient mt-2 sm:mt-4">أوضح وأكثر ثقة</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.68, delay: 0.14 }}
-          >
+          <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
             من الشعار إلى دليل الهوية والمطبوعات والمحتوى البصري، نبني
             للشركات في السعودية ومصر حضورًا متناسقًا وواضحًا وقابلًا للنمو.
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="mt-9 flex flex-wrap items-center justify-start gap-4"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.68, delay: 0.22 }}
-          >
+          <div className="mt-9 flex flex-wrap items-center justify-start gap-4">
             <Link
               href="/#contact-form"
               className="apple-button min-w-[170px] px-8 py-3 text-center"
@@ -198,14 +155,9 @@ export default function Hero() {
                 />
               </svg>
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.ul
-            className="mt-11 grid gap-5 border-t border-border/70 pt-7 sm:grid-cols-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.32 }}
-          >
+          <ul className="mt-11 grid gap-5 border-t border-border/70 pt-7 sm:grid-cols-3">
             {trustPoints.map((point) => (
               <li key={point.title} className="flex items-start gap-3">
                 <span className="mt-0.5 shrink-0 text-primary">
@@ -221,7 +173,7 @@ export default function Hero() {
                 </span>
               </li>
             ))}
-          </motion.ul>
+          </ul>
         </div>
       </div>
     </section>
