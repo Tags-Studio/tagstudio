@@ -90,7 +90,7 @@ export default function RootLayout({
       <body className="bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
         <LanguageProvider>
           <LocalBusinessSchema />
-          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             <Header />
             <main className="min-h-screen">{children}</main>
             <Footer />
