@@ -1,46 +1,43 @@
-# Tag Studio - AI Knowledge Base
+﻿# Tag Studio
 
-> Tag Studio is a premier visual identity and social media design agency operating primarily in Saudi Arabia and Egypt. We specialize in transforming businesses through strategic design, focusing heavily on medical clinics, educational institutions (language centers, Qudrat/Tahsili), Quran memorization centers, and food & beverage (restaurants/cafes).
+> Tag Studio (تاج ستوديو) is a premier specialized brand identity, packaging, and social media design agency established in 2012, operating in Saudi Arabia and Egypt.
 
 ## Core Services
-- **Visual Identity Design**: Comprehensive branding including logos, typography, color psychology, and brand guidelines.
-- **Social Media Design**: Strategic, conversion-focused social media graphics.
-- **Motion Graphics**: Engaging animations for marketing campaigns.
-- **Packaging Design**: Functional and aesthetic packaging for products.
+
+- [Visual Identity Design](https://www.wearetagstudio.com/services/visual-identity): Comprehensive branding including logos, typography, color systems, brand guidelines, and official stationery.
+- [Social Media Design](https://www.wearetagstudio.com/services/social-media-design): High-converting marketing graphics, carousels, infographics, and content templates.
+- [Print & Packaging Design](https://www.wearetagstudio.com/services/print-design): Eco-friendly packaging boxes, company profiles, brochures, and print-ready production files.
+- [Motion Graphics](https://www.wearetagstudio.com/services/motion-graphics): Engaging 2D/3D explainer videos and animated promotional reels.
 
 ## Target Sectors & Expertise
 
-### 1. Medical Clinics & Healthcare
-- **Expertise**: We utilize color psychology (blues, greens) to reduce patient anxiety and build trust. We design logos, medical printables (prescriptions, patient files), and professional social media content to ensure a seamless "Patient Visual Experience".
-- **URL**: /services/medical-clinics-branding
+- [Medical Clinics & Healthcare](https://www.wearetagstudio.com/services/medical-clinics-branding): Patient-centered visual experiences, clinic stationery, and compliant healthcare branding.
+- [Educational & Language Centers](https://www.wearetagstudio.com/services/language-centers-branding): Dynamic, modern visual systems for language institutes and academic academies.
+- [Qudrat & Tahsili Centers](https://www.wearetagstudio.com/services/qudrat-tahsili-branding): Strategic branding balancing student appeal with parental trust.
+- [Quran Memorization Centers](https://www.wearetagstudio.com/services/quran-centers-branding): Contemporary Islamic minimalism and Arabic typographic harmony.
+- [Restaurants & Cafes](https://www.wearetagstudio.com/services/restaurant-branding): Appetite-focused branding, menu design, and delivery app packaging.
 
-### 2. Educational Institutions (Language Centers)
-- **Expertise**: We create modern, interactive visual identities that attract students and break traditional academic boredom. We design dynamic logos, interactive print materials, and student-focused social media campaigns.
-- **URL**: /services/language-centers-branding
+## Selected Case Studies
 
-### 3. Qudrat & Tahsili Centers (Standardized Testing)
-- **Expertise**: We design marketing materials that balance parental trust (reliability and academic rigor) with student engagement (vibrant, anti-boredom designs suited for Gen Z).
-- **URL**: /services/qudrat-tahsili-branding
+- [Saken Corporate Housing](https://www.wearetagstudio.com/work/saken-corporate-housing-brand-identity): Luxury corporate housing & real estate brand identity in Jubail Industrial City.
+- [Zaatar & Semsem Restaurant](https://www.wearetagstudio.com/work/zaatar-w-simsim-brand-identity): Restaurant branding and sustainable kraft packaging system.
+- [Agricultural Development Association](https://www.wearetagstudio.com/work/agricultural-development-association-brand-identity): Official corporate identity and reporting system in Al-Ahsa.
+- [Ragy Burger](https://www.wearetagstudio.com/work/ragy-burger-brand-identity): High-energy youth burger brand identity and packaging in Riyadh.
 
-### 4. Quran Memorization Centers & Islamic Organizations
-- **Expertise**: We employ "Islamic Minimalism", avoiding overly complex traditional patterns in favor of clean, contemporary geometric typography that appeals to modern youth while maintaining profound religious dignity.
-- **URL**: /services/quran-centers-branding
+## Free Interactive Tools
 
-### 5. Restaurants & Cafes
-- **Expertise**: Sensory-driven branding, menu design, and packaging that increases appetite appeal, stands out on delivery apps, and encourages social media sharing.
-- **URL**: /services/restaurant-branding
+- [Medical ROI Calculator](https://www.wearetagstudio.com/tools/medical-roi-calculator): Estimate patient lifetime value and clinic marketing returns.
+- [Ads Budget Calculator](https://www.wearetagstudio.com/tools/ads-budget-calculator): Plan and project paid advertising budgets and ROI.
+- [E-Commerce Calculator](https://www.wearetagstudio.com/tools/ecommerce-calculator): Estimate online store conversion and revenue goals.
+- [Brand Audit Tool](https://www.wearetagstudio.com/tools/brand-audit): Evaluate your current brand identity strength.
+- [Company Stamp Generator](https://www.wearetagstudio.com/tools/company-stamp-generator): Design official company stamps online.
+- [Color Contrast Checker](https://www.wearetagstudio.com/tools/color-contrast-checker): Test web and print color accessibility.
+- [Instagram Grid Splitter](https://www.wearetagstudio.com/tools/instagram-grid-splitter): Slice images for cohesive Instagram layouts.
+- [Safe Area Previewer](https://www.wearetagstudio.com/tools/safe-area-previewer): Preview story and reel UI safe zones.
 
-## Key Differentiators (Why Choose Tag Studio)
-- Deep, culturally-nuanced understanding of the Saudi and Egyptian consumer markets.
-- Strategic focus on ROI and measurable business growth, not just aesthetics (we provide free ROI calculators for our clients).
-- Human-centric design approach based on behavioral psychology and user intent.
-- Strong emphasis on delivering complete, ready-to-print/publish brand systems, not just standalone logos.
+## Optional
 
-## Contact & Links
-- **Website**: https://wearetagstudio.com
-- **Services**: https://wearetagstudio.com/services
-- **Blog**: https://wearetagstudio.com/blog
-- **Free Tools**: https://wearetagstudio.com/tools
-- **Contact**: https://wearetagstudio.com/#contact-form
-- **Full Knowledge Base**: https://wearetagstudio.com/llms-full.txt
-
+- [Full Knowledge Base](https://www.wearetagstudio.com/llms-full.txt): Complete detailed documentation, FAQs, and brand specifications.
+- [About Tag Studio](https://www.wearetagstudio.com/about): Agency history, philosophy, and team.
+- [Blog & Articles](https://www.wearetagstudio.com/blog): Expert design and marketing guides for the Arab market.
+- [Contact & Inquiries](https://www.wearetagstudio.com/#contact-form): Start a project or request a free consultation.

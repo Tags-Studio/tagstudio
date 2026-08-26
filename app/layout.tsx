@@ -108,6 +108,8 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" className={`${cairo.variable} ${amiri.variable} ${inter.variable} ${outfit.variable} ${cairo.className}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="alternate" type="text/plain" href="https://www.wearetagstudio.com/llms.txt" title="LLMs.txt" />
+        <link rel="alternate" type="text/plain" href="https://www.wearetagstudio.com/llms-full.txt" title="LLMs-full.txt" />
       </head>
       <body className="bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
         <LanguageProvider>
