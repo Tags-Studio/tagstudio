@@ -1,5 +1,5 @@
 import "./globals.css"
-import { Cairo } from "next/font/google"
+import { Cairo, Amiri, Inter, Outfit } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -15,6 +15,28 @@ const cairo = Cairo({
   subsets: ["arabic", "latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
+  variable: "--font-cairo",
+})
+
+const amiri = Amiri({
+  subsets: ["arabic", "latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  variable: "--font-amiri",
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-inter",
+})
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-outfit",
 })
 
 export const metadata: Metadata = {
@@ -83,7 +105,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ar" dir="rtl" className={cairo.className}>
+    <html lang="ar" dir="rtl" className={`${cairo.variable} ${amiri.variable} ${inter.variable} ${outfit.variable} ${cairo.className}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>

@@ -113,7 +113,8 @@ export default function Hero() {
               alt="تصميم يرمز إلى خدمات الهوية البصرية في تاج ستوديو"
               fill
               priority
-              sizes="(max-width: 1024px) 92vw, 48vw"
+              fetchPriority="high"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw"
               className="object-cover"
             />
           </motion.div>

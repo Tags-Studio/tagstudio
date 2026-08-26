@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
-
 @font-face {
   font-family: 'AlMateen';
   src: url('/fonts/ae_AlMateen.ttf') format('truetype');
@@ -25,19 +23,19 @@
 }
 
 .font-cairo {
-  font-family: 'Cairo', sans-serif;
+  font-family: var(--font-cairo), sans-serif;
 }
 
 .font-amiri {
-  font-family: 'Amiri', serif;
+  font-family: var(--font-amiri), serif;
 }
 
 .font-inter {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
 .font-outfit {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-outfit), sans-serif;
 }
 
 @tailwind base;
