@@ -5,6 +5,7 @@ import { notFound } from "next/navigation"
 import { getServiceBySlug, services } from "@/lib/servicesData"
 import { blogPosts } from "@/lib/blogData"
 import ServicePortfolioGrid from "@/app/components/ServicePortfolioGrid"
+import CompanyProfilePage from "@/components/case-studies/CompanyProfilePage"
 
 type Props = {
   params: {
@@ -187,7 +188,10 @@ export default function ServicePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <article className="relative isolate overflow-hidden bg-background text-foreground">
+      {service.slug === "company-profile-design" ? (
+        <CompanyProfilePage service={service} />
+      ) : (
+        <article className="relative isolate overflow-hidden bg-background text-foreground">
         
         {/* HERO SECTION */}
         <section className="relative pt-24 lg:pt-32 pb-20 border-b border-border/60 overflow-hidden">
@@ -835,6 +839,7 @@ export default function ServicePage({ params }: Props) {
         </section>
 
       </article>
+      )}
     </>
   )
 }
