@@ -1,10 +1,11 @@
-﻿# Tag Studio
+# Tag Studio
 
 > Tag Studio (تاج ستوديو) is a premier specialized brand identity, packaging, and social media design agency established in 2012, operating in Saudi Arabia and Egypt.
 
 ## Core Services
 
 - [Visual Identity Design](https://www.wearetagstudio.com/services/visual-identity): Comprehensive branding including logos, typography, color systems, brand guidelines, and official stationery.
+- [Company Profile Design](https://www.wearetagstudio.com/services/company-profile-design): Professional corporate profiles, pre-qualification portfolios, and project matrices for procurement and tenders in Saudi Arabia.
 - [Social Media Design](https://www.wearetagstudio.com/services/social-media-design): High-converting marketing graphics, carousels, infographics, and content templates.
 - [Print & Packaging Design](https://www.wearetagstudio.com/services/print-design): Eco-friendly packaging boxes, company profiles, brochures, and print-ready production files.
 - [Motion Graphics](https://www.wearetagstudio.com/services/motion-graphics): Engaging 2D/3D explainer videos and animated promotional reels.

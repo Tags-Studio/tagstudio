@@ -20,6 +20,7 @@ export const serviceSlugToCategory: Record<string, string> = {
   "social-media-design": "تصميمات السوشيال ميديا",
   "print-design": "تصاميم المطبوعات",
   "motion-graphics": "فيديو موشن جرافيك",
+  "company-profile-design": "تصاميم المطبوعات",
 }
 
 export const categoryToServiceSlug: Record<string, string> = {

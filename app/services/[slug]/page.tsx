@@ -484,6 +484,213 @@ export default function ServicePage({ params }: Props) {
         {/* SERVICE PORTFOLIO GALLERY GRID */}
         <ServicePortfolioGrid serviceSlug={service.slug} serviceTitle={service.shortTitle} />
 
+        {/* SPECIALIZED B2B SECTIONS FOR COMPANY PROFILE DESIGN */}
+        {service.slug === "company-profile-design" && (
+          <>
+            {/* REGULATORY & OPERATIONAL CLARITY */}
+            <section className="py-20 border-t border-border bg-card/10">
+              <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="max-w-3xl">
+                  <p className="font-semibold text-primary text-sm tracking-wider uppercase">الوضوح والحدود المهنية</p>
+                  <h2 className="mt-2 text-3xl font-extrabold text-foreground sm:text-4xl">
+                    كيف يُستخدم البروفايل المؤسسي ضمن ملفات التأهيل والمنافسات؟
+                  </h2>
+                  <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                    نؤمن بالشفافية الكاملة مع عملائنا في قطاع الأعمال: البروفايل المؤسسي هو وثيقة استعراض بصرية وتنظيمية تخدم لجان الفحص لإبراز مؤهلات شركتكم بدقة وسرعة.
+                  </p>
+                </div>
+
+                <div className="mt-10 grid gap-6 md:grid-cols-2">
+                  <div className="rounded-2xl border border-border bg-background/80 p-8 shadow-sm">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">
+                      01
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">أداة تنظيمية واستعراضية مطلوبة</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      يُطلب الملف التعريفي ضمن مرفقات التأهيل المسبق للموردين (Vendor Pre-qualification) بجانب السجلات والقوائم المالية والتصنيف وشهادات الآيزو، لتسهيل مراجعة قدرات وخبرات الشركة من قِبل لجان المشتريات.
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-border bg-background/80 p-8 shadow-sm">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">
+                      02
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">الحدود القانونية والإجرائية</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      لا توجد جهة حكومية (مثل منصة اعتماد) تصدر شهادة تسمى "بروفايل معتمد"، لكن وجود ملف احترافي يعرض سياسات السلامة (HSE) والجودة والهيكل الإداري يمنح ملف تأهيلكم الموثوقية والسرعة في اتخاذ القرار.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTOR SPECIFIC MODULE: CONTRACTING & SUPPLY (ANTI-CANNIBALIZATION) */}
+            <section className="py-20 border-t border-border bg-card/30">
+              <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="max-w-3xl">
+                  <p className="font-semibold text-primary text-sm tracking-wider uppercase">التخصص القطاعي في المملكة</p>
+                  <h2 className="mt-2 text-3xl font-extrabold text-foreground sm:text-4xl">
+                    بروفايلات متخصصة لقطاعات المقاولات، التوريد، والخدمات الفنية
+                  </h2>
+                  <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                    تختلف حاجة شركة الإنشاءات والمقاولات عن المؤسسات التجارية؛ لذلك نخصص لكل قطاع هيكله الفني الملائم لمتطلبات مشاريعه:
+                  </p>
+                </div>
+
+                <div className="mt-10 grid gap-6 md:grid-cols-3">
+                  <div className="rounded-2xl border border-border bg-background p-6">
+                    <h3 className="text-lg font-bold text-foreground mb-2">شركات المقاولات والإنشاءات</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      نركز على استعراض تصنيف المقاولين، أسطول المعدات والآليات، سجل ساعات العمل بدون حوادث، ومصفوفة المشاريع المنفذة (بنية تحتية، مباني، أعمال كهروميكانيكية).
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-border bg-background p-6">
+                    <h3 className="text-lg font-bold text-foreground mb-2">مؤسسات التوريد والخدمات اللوجستية</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      إبراز عقود التوزيع، الطاقة الاستيعابية للمستودعات، أسطول النقل والتوزيع، وأنظمة الجودة ومطابقة المواصفات القياسية.
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-border bg-background p-6">
+                    <h3 className="text-lg font-bold text-foreground mb-2">الشركات التقنية والاستشارية</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      عرض منهجيات العمل، خبرات الكوادر الاستشارية والشهادات المهنية، ونماذج التحول الرقمي وحلول الأعمال المنفذة للعملاء.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* REAL PROOF SECTION: SAKEN CASE STUDY */}
+            <section className="py-24 border-t border-border bg-card/50 relative overflow-hidden">
+              <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="grid lg:grid-cols-12 gap-12 items-center">
+                  <div className="lg:col-span-6">
+                    <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20 mb-4">
+                      نموذج إثبات واقعي • Verified Case Study
+                    </span>
+                    <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl leading-tight">
+                      تنظيم وإخراج الوثائق المؤسسية لمجمع «ساكن» بالجبيل الصناعية
+                    </h2>
+
+                    <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                      <div className="p-4 rounded-xl border border-border bg-background/60">
+                        <strong className="text-foreground block mb-1">المشكلة قبل البدء:</strong>
+                        الحاجة للانتقال من ملفات تعريفية فردية إلى مظهر مؤسسي متماسك يستهدف مدراء الموارد البشرية والمشتريات في كبرى مصانع وشركات الجبيل الصناعية لتوقيع عقود إسكان مؤسسي طويلة الأجل.
+                      </div>
+
+                      <div className="p-4 rounded-xl border border-border bg-background/60">
+                        <strong className="text-foreground block mb-1">التدخل البصري والهيكلي من تاج ستوديو:</strong>
+                        إعادة صياغة هيكل الوثيقة، بناء مصفوفة سعة الغرف والفلل الفندقية، وتوحيد المطبوعات الرسمية ومستندات التعاقد والفواتير بنظام بصري رسمي يعكس الاستقرار والصلابة.
+                      </div>
+
+                      <div className="p-4 rounded-xl border border-border bg-background/60">
+                        <strong className="text-foreground block mb-1">المخرج المعتمد:</strong>
+                        وثيقة مؤسسية رقمية ومطبوعة تستخدمها إدارة المجمع في جلسات التفاوض وتوقيع اتفاقيات الإسكان مع كبرى الشركات الصناعية.
+                      </div>
+                    </div>
+
+                    <div className="mt-8">
+                      <Link
+                        href="/work/saken-corporate-housing-brand-identity"
+                        className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
+                      >
+                        <span>استعرض دراسة حالة ساكن كاملة</span>
+                        <span>←</span>
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-border bg-background shadow-md">
+                      <Image
+                        src="/images/saken/saken-official-envelope-mockup.webp"
+                        alt="تصميم ظرف المراسلات والخطابات الرسمية الفاخر - شركة ساكن"
+                        fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-border bg-background shadow-md">
+                      <Image
+                        src="/images/saken/saken-letterhead-stationery-mockup.webp"
+                        alt="تصميم ورق المراسلات والخطابات الرسمية - هوية ساكن للإسكان المؤسسي"
+                        fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-border bg-background shadow-md">
+                      <Image
+                        src="/images/saken/saken-official-invoice-mockup.webp"
+                        alt="تصميم فاتورة ومستندات التعاقد الرسمية - شركة ساكن"
+                        fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-border bg-background shadow-md">
+                      <Image
+                        src="/images/saken/saken-room-phone-book-directory-mockup.webp"
+                        alt="دليل الخدمات والمرافق الداخلية - ساكن"
+                        fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* COST DYNAMICS SECTION */}
+            <section className="py-20 border-t border-border bg-background">
+              <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="max-w-3xl">
+                  <p className="font-semibold text-primary text-sm tracking-wider uppercase">محددات الميزانية</p>
+                  <h2 className="mt-2 text-3xl font-extrabold text-foreground sm:text-4xl">
+                    كيف تتحدد تكلفة تصميم وتجهيز ملف الشركة؟
+                  </h2>
+                  <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                    نبتعد عن الباقات الجاهزة المعلبة لأن متطلبات كل منشأة تختلف حسب طبيعة نشاطها. هذه العوامل الأربعة هي التي تحكم ميزانية العمل:
+                  </p>
+                </div>
+
+                <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                  <div className="p-6 rounded-2xl border border-border bg-card/40">
+                    <h3 className="font-bold text-foreground mb-2">حجم الملف وعدد الصفحات</h3>
+                    <p className="text-xs leading-relaxed text-muted-foreground">
+                      إعداد ملف موجز من 12 إلى 16 صفحة يختلف في وقته ومجهوده عن بروفايل شامل يوثق عشرات المشاريع في أكثر من 40 صفحة.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl border border-border bg-card/40">
+                    <h3 className="font-bold text-foreground mb-2">جاهزية المحتوى الأولي</h3>
+                    <p className="text-xs leading-relaxed text-muted-foreground">
+                      هل البيانات وسوابق الأعمال مكتوبة ومراجعة من فريقكم، أم يتولى فريقنا تحريرها وصياغتها مهنياً من البداية؟
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl border border-border bg-card/40">
+                    <h3 className="font-bold text-foreground mb-2">اللغات والمصطلحات</h3>
+                    <p className="text-xs leading-relaxed text-muted-foreground">
+                      تقديم الملف باللغة العربية فقط، أو نسخة ثنائية اللغة (عربي/إنجليزي) مع ضبط محاذاة اللغتين وتنسيق الجداول الفنية.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl border border-border bg-card/40">
+                    <h3 className="font-bold text-foreground mb-2">نوع ومواصفات المخرجات</h3>
+                    <p className="text-xs leading-relaxed text-muted-foreground">
+                      ملف PDF تفاعلي للمراسلات الرقمية، أو إضافة إعداد ملفات الفرز الطباعي الفاخر وتنسيق عينات الطباعة.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
         {/* RELATED ARTICLES SECTION */}
         {(() => {
           const todayStr = new Date().toISOString().split("T")[0]
@@ -588,15 +795,27 @@ export default function ServicePage({ params }: Props) {
           <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-card p-10 lg:p-16 shadow-2xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <h2 className="text-3xl font-extrabold text-foreground sm:text-5xl">
-              جاهز لبناء <span className="text-primary">حضور بصري أقوى؟</span>
+              {service.slug === "company-profile-design" ? (
+                <>
+                  جاهز لتنظيم وتطوير <span className="text-primary">ملف شركتك وسوابق أعمالك؟</span>
+                </>
+              ) : (
+                <>
+                  جاهز لبناء <span className="text-primary">حضور بصري أقوى؟</span>
+                </>
+              )}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              شاركنا تفاصيل مشروعك وسنساعدك على تحديد النطاق الأنسب بدل شراء عناصر لا يحتاجها المشروع.
+              {service.slug === "company-profile-design"
+                ? "أرسل نبذة عن نشاط شركتك وسابقة أعمالك الحالية، وسنزودك بتصور مقترح للهيكل الأمثل للملف التعريفي الخاص بكم مع تقدير دقيق لنطاق العمل والوقت المطلوب."
+                : "شاركنا تفاصيل مشروعك وسنساعدك على تحديد النطاق الأنسب بدل شراء عناصر لا يحتاجها المشروع."}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
                 href={`https://wa.me/201009215131?text=${encodeURIComponent(
-                  `مرحبًا، أريد عرض سعر لخدمة ${service.shortTitle}`
+                  service.slug === "company-profile-design"
+                    ? "مرحبًا، أريد مناقشة نطاق عمل وتصميم بروفايل لشركتنا في السعودية"
+                    : `مرحبًا، أريد عرض سعر لخدمة ${service.shortTitle}`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
