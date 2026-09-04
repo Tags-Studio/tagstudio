@@ -1,23 +1,13 @@
-"use client"
-
 import Image from "next/image"
 import Link from "next/link"
 import { ServiceData } from "@/lib/servicesData"
+import WhatsAppCTA from "@/components/WhatsAppCTA"
 
 interface Props {
   service: ServiceData
 }
 
 export default function CompanyProfilePage({ service }: Props) {
-  const handleWhatsAppClick = () => {
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "whatsapp_click", {
-        page_path: "/services/company-profile-design",
-        service_name: "company-profile-design",
-      })
-    }
-  }
-
   return (
     <div className="relative isolate overflow-hidden bg-background text-foreground">
       {/* ── 1. HERO SECTION ── */}
@@ -58,18 +48,17 @@ export default function CompanyProfilePage({ service }: Props) {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <a
+                <WhatsAppCTA
                   href={`https://wa.me/201009215131?text=${encodeURIComponent(
                     "مرحبًا، أريد مناقشة نطاق عمل وتصميم بروفايل لشركتنا في السعودية"
                   )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handleWhatsAppClick}
+                  pagePath="/services/company-profile-design"
+                  serviceName="company-profile-design"
                   className="apple-button px-8 py-4 inline-flex items-center gap-2 text-base font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all"
                 >
                   <span>ناقش نطاق عمل ملف شركتك</span>
                   <span>↗</span>
-                </a>
+                </WhatsAppCTA>
                 <a
                   href="#saken-proof"
                   className="rounded-full border border-border/80 bg-card/60 px-8 py-4 text-base font-bold text-foreground transition hover:border-primary hover:text-primary hover:bg-card"
@@ -508,18 +497,17 @@ export default function CompanyProfilePage({ service }: Props) {
             أرسل نبذة عن نشاط شركتك وسابقة أعمالك الحالية، وسنزودك بتصور مقترح للهيكل الأمثل للملف التعريفي الخاص بكم مع تقدير دقيق لنطاق العمل والوقت المطلوب.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
+            <WhatsAppCTA
               href={`https://wa.me/201009215131?text=${encodeURIComponent(
                 "مرحبًا، أريد مناقشة نطاق عمل وتصميم بروفايل لشركتنا في السعودية"
               )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleWhatsAppClick}
+              pagePath="/services/company-profile-design"
+              serviceName="company-profile-design"
               className="apple-button px-8 py-4 inline-flex items-center gap-2 text-base font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all"
             >
               <span>ناقش ملف شركتك على واتساب</span>
               <span>↗</span>
-            </a>
+            </WhatsAppCTA>
             <a
               href="mailto:wearetagstudio@gmail.com"
               className="rounded-full border border-border px-8 py-4 text-base font-bold text-foreground transition hover:border-primary hover:text-primary"
