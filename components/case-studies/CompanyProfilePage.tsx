@@ -1,4 +1,6 @@
-﻿import Image from "next/image"
+"use client"
+
+import Image from "next/image"
 import Link from "next/link"
 import { ServiceData } from "@/lib/servicesData"
 
@@ -7,6 +9,15 @@ interface Props {
 }
 
 export default function CompanyProfilePage({ service }: Props) {
+  const handleWhatsAppClick = () => {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "whatsapp_click", {
+        page_path: "/services/company-profile-design",
+        service_name: "company-profile-design",
+      })
+    }
+  }
+
   return (
     <div className="relative isolate overflow-hidden bg-background text-foreground">
       {/* ── 1. HERO SECTION ── */}
@@ -53,6 +64,7 @@ export default function CompanyProfilePage({ service }: Props) {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleWhatsAppClick}
                   className="apple-button px-8 py-4 inline-flex items-center gap-2 text-base font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all"
                 >
                   <span>ناقش نطاق عمل ملف شركتك</span>
@@ -502,6 +514,7 @@ export default function CompanyProfilePage({ service }: Props) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick}
               className="apple-button px-8 py-4 inline-flex items-center gap-2 text-base font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all"
             >
               <span>ناقش ملف شركتك على واتساب</span>
