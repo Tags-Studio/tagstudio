@@ -12,7 +12,7 @@ import CTASection from "./components/CTASection"
 import ContactForm from "./components/ContactForm"
 
 export const metadata: Metadata = {
-  title: "شركة تصميم هوية بصرية وشعارات في السعودية ومصر",
+  title: "تاج ستوديو | شركة تصميم هوية بصرية وشعارات في الرياض والقاهرة",
   description:
     "تاج ستوديو وكالة تصميم متخصصة في تصميم الهوية البصرية والشعارات والسوشيال ميديا والمطبوعات والموشن جرافيك للشركات في السعودية ومصر.",
   alternates: {
@@ -106,13 +106,6 @@ const websiteSchema = {
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(professionalServiceSchema),
-        }}
-      />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

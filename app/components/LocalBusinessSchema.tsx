@@ -5,8 +5,14 @@ export default function LocalBusinessSchema() {
       {
         "@type": "ProfessionalService",
         "@id": "https://www.wearetagstudio.com/#organization",
-        name: "تاج ستوديو - TAG Studio",
-        alternateName: "تاج ستوديو لتصميم الهوية البصرية والسوشيال ميديا",
+        name: "تاج ستوديو",
+        alternateName: [
+          "Tag Studio",
+          "استديو تاج",
+          "استديو التاج",
+          "We Are Tag Studio",
+          "wearetagstudio"
+        ],
         url: "https://www.wearetagstudio.com",
         logo: "https://www.wearetagstudio.com/images/logo.png",
         image: "https://www.wearetagstudio.com/images/logo.png",
