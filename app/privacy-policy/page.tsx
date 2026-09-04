@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     canonical: "https://www.wearetagstudio.com/privacy-policy",
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
   },
 }

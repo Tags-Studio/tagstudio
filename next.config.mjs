@@ -23,6 +23,21 @@ const nextConfig = {
     }
     return config
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "wearetagstudio.com",
+          },
+        ],
+        destination: "https://www.wearetagstudio.com/:path*",
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {
