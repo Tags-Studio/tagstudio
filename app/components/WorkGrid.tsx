@@ -1,343 +1,189 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
-import ImageModal from "./ImageModal"
 import Link from "next/link"
+import ImageModal from "./ImageModal"
+import { projects, ProjectItem } from "@/lib/portfolioData"
 
-const projects = [
+// Extended project interface with layout size and tags for the Bento Grid
+interface BentoProject extends ProjectItem {
+  size?: "large" | "wide" | "normal" | "tall"
+  tags?: string[]
+  subCategory?: string
+}
+
+// Map real projects to Bento sizes and tags matching the luxury editorial layout
+const bentoProjects: BentoProject[] = [
+  // 01. Large featured (2x2) - Al-Ameen Dates
   {
-    id: 19,
-    title: "هوية زعتر و سمسم",
-    description: "تصميم هوية بصرية متكاملة لمطعم زعتر و سمسم، تشمل الشعار، الألوان، التعبئة، والزي الرسمي.",
-    imageUrl: "/images/zaatar-identity-portfolio3.webp",
-    category: "الهوية البصرية",
-    caseStudy: {
-      client: "مطعم زعتر وسمسم (القاهرة والرياض)",
-      problem: "الهوية القديمة للمطعم كانت تفتقر إلى التناغم والتفرد البصري، وصعوبة تطبيقها على مواد التعبئة والتغليف الصديقة للبيئة.",
-      solution: "تصميم شعار جديد مبتكر يدمج بين حبتي السمسم وورقة الزعتر، وتطوير لوحة ألوان دافئة مستوحاة من ريف الشرق الأوسط مع أنماط خطوط فريدة تلائم الباكجينج والمطبوعات الورقية.",
-      results: "توحيد الحضور البصري للمطعم عبر فروعه، وزيادة ثقة وسعادة العملاء بالعبوات الجديدة، وتحقيق زيادة ملحوظة في نسبة مشاركة تصاميم التغليف على منصات التواصل الاجتماعي."
-    }, // تم التحديث هنا
-  },
-  {
-    id: 20,
-    title: "هوية جمعية التنمية الزراعية",
-    description: "تطوير هوية بصرية لجمعية التنمية الزراعية، مع التركيز على الاستدامة والطبيعة.",
-    imageUrl: "/images/agricultural-development-association.avif",
-    category: "الهوية البصرية",
-    caseStudy: {
-      client: "جمعية التنمية الزراعية بالأحساء (المملكة العربية السعودية)",
-      problem: "كانت الجمعية تبحث عن هوية بصرية تجمع بين الطابع المؤسسي الرسمي وبين الطبيعة الزراعية لمنطقة الأحساء الغنية بالنخيل والخيرات.",
-      solution: "ابتكار شعار مستلهم من سعف النخيل وتقسيمات الحقول، وتطوير هوية بصرية بألوان ترابية ودرجات أخضر تعبر عن النمو والازدهار مع كتابة كوفية هندسية رصينة للخطاب الرسمي.",
-      results: "نالت الهوية استحسان الهيئات الحكومية والجمهور بالأحساء، وعززت المظهر المؤسسي للجمعية في المعارض والملتقيات الزراعية الإقليمية."
-    }, // تم التحديث هنا
-  },
-  {
-    id: 21,
-    title: "هوية برجر راجي",
-    description: "تصميم هوية بصرية شاملة لعلامة برجر راجي.",
-    imageUrl: "/images/ragy-identity-portfolio.webp",
-    category: "الهوية البصرية",
-    caseStudy: {
-      client: "مطعم برجر راجي (الرياض)",
-      problem: "المنافسة الشديدة في قطاع مطاعم البرجر في الرياض تتطلب هوية بصرية مليئة بالطاقة والحيوية لتجذب فئة الشباب بشكل فوري.",
-      solution: "تصميم هوية بصرية ممتعة ومليئة بالنشاط باستخدام لوحة ألوان دافئة (أحمر، برتقالي، أصفر) تعزز الشهية، وتصميم علب وأكواب التوصيل برسومات كرتونية تفاعلية مخصصة.",
-      results: "نجاح باهر في جذب الزبائن من النظرة الأولى، وتزايد كبير في طلبات التوصيل بفضل المظهر المميز لأكياس وعلب المطعم في الشوارع."
-    },
-  },
-  {
-    id: 22,
-    title: "هوية ساكن للإسكان المؤسسي",
-    description: "تصميم هوية بصرية فاخرة لمجمع ساكن السكني في الجبيل، مع لوحة ألوان ترابية متناسقة وتطبيقات للشركات والفلل المفروشة.",
-    imageUrl: "/images/saken-identity-showcase-thumbnail.webp",
-    category: "الهوية البصرية",
-    caseStudy: {
-      client: "مجمع ساكن السكني (الجبيل الصناعية)",
-      problem: "الحاجة إلى هوية بصرية متميزة تعكس الفخامة والسكينة لمجمع إسكان مؤسسي يستهدف كبرى الشركات الصناعية والكوادر التنفيذية.",
-      solution: "ابتكار نظام بصري راقٍ مستوحى من الخطوط المعمارية الحديثة مع لوحة ألوان ترابية فاخرة (درجات البيج، الرملي، البني العميق) وتطبيقات موحدة للوحات والبروفايلات.",
-      results: "ترسيخ مكانة ساكن كخيار أول لإسكان الشركات في الجبيل مع تعزيز ثقة المستأجرين والشركاء المؤسسيين."
-    },
-  },
-  {
-    id: 24,
-    title: "الفريج للأسماك",
-    description: "تصميم بروشور أو كتيب، ربما لعلامة تجارية فاخرة أو عقارية.",
-    imageUrl: "/images/print-design-1.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 25,
-    title: "الأمين للتمور",
-    description: "تصميم كتيب أو تقرير سنوي للشركات، يتميز بتصميم نظيف ومهني.",
-    imageUrl: "/images/print-design-2.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 26,
-    title: "الأمين للتمور",
-    description: "تصميم بطاقة عمل بأسلوب عصري وبسيط.",
-    imageUrl: "/images/print-design-3.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 27,
-    title: "الأمين للتمور",
-    description: "تصميم آخر لبطاقة عمل، يتميز بتصميم فريد أو استخدام مواد مميزة.",
-    imageUrl: "/images/print-design-4.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 28,
-    title: "الأكاديمية المالية",
-    description: "تصميم صفحة مجلة أو مطبوعة كبيرة الحجم، ربما للأزياء أو نمط الحياة.",
-    imageUrl: "/images/print-design-5.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 29,
-    title: "السهلي",
-    description: "تصميم بروشور أو نشرة إعلانية، قد يكون لحدث أو منتج.",
-    imageUrl: "/images/print-design-6.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 30,
-    title: "الامتياز التجاري",
-    description: "تصميم غلاف كتاب أو منشور، يركز على الطباعة والصور.",
-    imageUrl: "/images/print-design-7.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 31,
-    title: "وزارة السياحة",
-    description: "تصميم ملصق أو إعلان كبير الحجم، ربما لحدث ثقافي أو إطلاق منتج.",
-    imageUrl: "/images/print-design-8.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 32,
-    title: "انجلش زون",
-    description: "تصميم عبوة منتج، قد يكون لمنتج غذائي أو استهلاكي، مع هوية بصرية مميزة.",
-    imageUrl: "/images/print-design-9.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 33,
-    title: "انجلش زون",
-    description: "تصميم غلاف مجلة أو كتاب، يظهر فيه نص عربي بارز وتصميم فني.",
-    imageUrl: "/images/print-design-10.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 34,
-    title: "كتيب لجمعية الفيصلية",
-    description: "تصميم بطاقة عمل أو دعوة، مع تركيز على التفاصيل الدقيقة والخطوط الأنيقة.",
-    imageUrl: "/images/print-design-11.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 35,
-    title: "روابي الخليج",
-    description: "تصميم عبوة منتج فاخرة، ربما لمستحضرات تجميل أو منتجات فاخرة، مع شعار مميز.",
-    imageUrl: "/images/print-design-12.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 36,
-    title: "بروفايل لمكتب محاماه آل زرعه",
-    description: "تصميم بروشور أو كتيب، يظهر فيه تخطيط متعدد الصفحات ومعلومات منظمة.",
-    imageUrl: "/images/print-design-13.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 37,
-    title: "بريزينتيشن للأكاديمية المالية",
-    description: "تصميم ملصق أو إعلان، يتميز برسومات توضيحية أو أيقونات.",
-    imageUrl: "/images/print-design-14.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 38,
-    title: "كارت شخصي AMP",
-    description: "تصميم بطاقة عمل أو هوية بصرية، مع استخدام ألوان جريئة وتصميم حديث.",
-    imageUrl: "/images/print-design-15.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 39,
-    title: "كارت شخصي لشركة أبعاد",
-    description: "تصميم عبوة منتج، ربما لمنتجات غذائية أو مشروبات، مع التركيز على الجاذبية البصرية.",
-    imageUrl: "/images/print-design-16.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
+    ...projects.find((p) => p.id === 40) || projects[0],
     id: 40,
-    title: "بوكسات للأمين للتمور",
-    description: "تصميم غلاف كتاب أو مجلة، يظهر فيه صورة جذابة وعنوان واضح.",
+    title: "الأمين للتمور",
+    description: "تصميم عبوة وتغليف كوكيز التمور الفاخر مع هوية تراثية عصرية متكاملة للمتاجر السعودية.",
     imageUrl: "/images/print-design-17.avif",
     category: "تصاميم المطبوعات",
+    size: "large",
+    subCategory: "تغليف ومطبوعات",
+    tags: ["تغليف", "مطبوعات", "هويات"],
   },
+  // 02. Normal (1x1) - Business cards
   {
-    id: 41,
-    title: "بوكسات للأمين للتمور",
-    description: "تصميم بطاقة عمل أو دعوة، مع استخدام عناصر تصميم بسيطة وأنيقة.",
-    imageUrl: "/images/print-design-1.avif",
+    ...projects.find((p) => p.id === 26) || projects[1],
+    id: 26,
+    title: "تصاميم المطبوعات",
+    description: "بطاقات عمل ومستندات رسمية للأمين للتمور",
+    imageUrl: "/images/print-design-3.avif",
     category: "تصاميم المطبوعات",
+    size: "normal",
+    subCategory: "الأمين للتمور",
+    tags: ["مطبوعات", "هويات"],
   },
+  // 03. Normal (1x1) - Brochure
   {
-    id: 42,
-    title: "بوكسات للأمين للتمور",
-    description: "تصميم بطاقة عمل أو هوية بصرية، مع شعار بسيط وأنيق.",
-    imageUrl: "/images/print-design-19.avif",
+    ...projects.find((p) => p.id === 28) || projects[2],
+    id: 28,
+    title: "تصاميم المطبوعات",
+    description: "كتيب فاخر لوزارة السياحة والأكاديمية",
+    imageUrl: "/images/print-design-5.avif",
     category: "تصاميم المطبوعات",
+    size: "normal",
+    subCategory: "مطبوعات وكتيبات",
+    tags: ["مطبوعات"],
   },
+  // 04. Wide (2x1) - Social Media campaign
   {
-    id: 43,
-    title: "غلاف مجلة بتصميم فني",
-    description: "تصميم غلاف مجلة أو كتاب، يظهر فيه تصميم فني معقد.",
-    imageUrl: "/images/print-design-20.avif",
-    category: "تصاميم المطبوعات",
-  },
-  {
-    id: 44,
-    title: "بروشور بصور كبيرة",
-    description: "تصميم بروشور أو كتيب، يركز على الصور الكبيرة والنصوص الموجزة.",
-    imageUrl: "/images/print-design-21.avif",
-    category: "تصاميم المطبوعات",
-  },
-  // مشاريع السوشيال ميديا
-  {
+    ...projects.find((p) => p.id === 45) || projects[3],
     id: 45,
-    title: "الامتياز التجاري",
-    description: "تصميم منشور لوسائل التواصل الاجتماعي لمطعم زعتر و سمسم.",
+    title: "تصاميم السوشيال ميديا",
+    description: "منشورات وحملات إعلانية ترويجية لمطعم زعتر وسمسم",
     imageUrl: "/images/social-media-zaatar-1.avif",
     category: "تصميمات السوشيال ميديا",
+    size: "wide",
+    subCategory: "منشورات إعلانية",
+    tags: ["سوشيال ميديا", "هويات"],
   },
+  // 05. Normal (1x1) - Promotional flyers / cards
   {
-    id: 46,
-    title: "الامتياز التجاري",
-    description: "تصميم إعلان وجبة جديدة لمطعم زعتر و سمسم.",
-    imageUrl: "/images/social-media-zaatar-2.avif",
+    ...projects.find((p) => p.id === 30) || projects[4],
+    id: 30,
+    title: "تصاميم السوشيال والمطبوعات",
+    description: "حملة إعلانية ومطبوعات لعلامة الامتياز التجاري",
+    imageUrl: "/images/print-design-7.avif",
     category: "تصميمات السوشيال ميديا",
+    size: "normal",
+    subCategory: "حملة إعلانية",
+    tags: ["سوشيال ميديا", "مطبوعات"],
   },
+  // 06. Normal (1x1) - Charity Brand Identity
   {
-    id: 47,
-    title: "divehood",
-    description: "تصميم عرض خاص لمطعم زعتر و سمسم.",
-    imageUrl: "/images/social-media-zaatar-3.avif",
-    category: "تصميمات السوشيال ميديا",
+    ...projects.find((p) => p.id === 20) || projects[1],
+    id: 20,
+    title: "تصميم الهوية البصرية",
+    description: "هوية بصرية كاملة لجمعية التنمية الزراعية بالأحساء",
+    imageUrl: "/images/agricultural-development-association.avif",
+    category: "الهوية البصرية",
+    size: "normal",
+    subCategory: "جمعية وتنمية",
+    tags: ["هويات"],
   },
+  // 07. Normal (1x1) - Stationery / Letterhead
   {
-    id: 48,
-    title: "divehood",
-    description: "تصميم إعلان لبرجر جديد لعلامة برجر راجي.",
-    imageUrl: "/images/social-media-ragy-1.avif",
-    category: "تصميمات السوشيال ميديا",
+    ...projects.find((p) => p.id === 22) || projects[3],
+    id: 22,
+    title: "تصميم الهوية والمطبوعات",
+    description: "أوراق مراسلات وأظرف رسمية لمجمع ساكن السكني بالجبيل",
+    imageUrl: "/images/saken/saken-official-envelope-mockup.webp",
+    category: "الهوية البصرية",
+    size: "normal",
+    subCategory: "مستندات مؤسسية",
+    tags: ["هويات", "مطبوعات"],
   },
+  // 08. Normal (1x1) - Packaging Cinnabon / Al-Ameen
   {
-    id: 49,
-    title: "divehood",
-    description: "تصميم منشور تفاعلي لعلامة برجر راجي.",
-    imageUrl: "/images/social-media-ragy-2.avif",
-    category: "تصميمات السوشيال ميديا",
+    ...projects.find((p) => p.id === 41) || projects[4],
+    id: 41,
+    title: "تصاميم التغليف والمطبوعات",
+    description: "تصميم علبة سينابون رولز الفاخرة للأمين للتمور",
+    imageUrl: "/images/print-design-19.avif",
+    category: "تصاميم المطبوعات",
+    size: "normal",
+    subCategory: "سينابون رولز",
+    tags: ["تغليف", "مطبوعات"],
   },
+  // 09. Wide (2x1) - Educational Social Media Campaign
   {
-    id: 50,
-    title: "جمعية التنمية الأهلية بالقارة",
-    description: "تصميم حملة تسويقية لعلامة برجر راجي.",
-    imageUrl: "/images/social-media-ragy-3.avif",
-    category: "تصميمات السوشيال ميديا",
-  },
-  {
-    id: 51,
-    title: "دايف هود",
-    description: "تصميم منشور لمنتج جديد لعلامة الواحة.",
-    imageUrl: "/images/social-media-alwaha-1.avif",
-    category: "تصميمات السوشيال ميديا",
-  },
-  {
+    ...projects.find((p) => p.id === 52) || projects[5],
     id: 52,
-    title: "Bateel Diver",
-    description: "تصميم إعلان لموسم جديد لعلامة الواحة.",
-    imageUrl: "/images/social-media-alwaha-2.avif",
+    title: "تصاميم السوشيال ميديا",
+    description: "منشورات تعليمية وبوستات تسويقية لمعهد إنجلش زون",
+    imageUrl: "/images/social-media-english-zone-1.avif",
     category: "تصميمات السوشيال ميديا",
+    size: "wide",
+    subCategory: "منشورات تعليمية",
+    tags: ["سوشيال ميديا", "هويات"],
   },
+  // 10. Large (2x2) - Zaatar & Semsem Case Study
   {
-    id: 53,
-    title: "جدارة",
-    description: "تصميم منشور توعوي لعلامة الواحة.",
-    imageUrl: "/images/social-media-alwaha-3.avif",
-    category: "تصميمات السوشيال ميديا",
+    ...projects.find((p) => p.id === 19) || projects[0],
+    id: 19,
+    title: "مطعم زعتر وسمسم",
+    description: "دراسة حالة وهوية بصرية كاملة وتغليف ورقي مستدام لمطعم زعتر وسمسم.",
+    imageUrl: "/images/zaatar-identity-portfolio3.webp",
+    category: "الهوية البصرية",
+    size: "large",
+    subCategory: "مطاعم وكافيهات",
+    tags: ["دراسات حالة", "هويات", "تغليف"],
   },
+  // 11. Normal (1x1) - Ragy Burger
   {
-    id: 54,
-    title: "انجلش زون",
-    description: "تصميم منشور إخباري لعلامة المساء.",
-    imageUrl: "/images/social-media-almasaa-1.avif",
-    category: "تصميمات السوشيال ميديا",
+    ...projects.find((p) => p.id === 21) || projects[2],
+    id: 21,
+    title: "برجر راجي",
+    description: "هوية بصرية مليئة بالطاقة وتطبيقات تغليف وجبات البرجر بالرياض",
+    imageUrl: "/images/ragy-identity-portfolio.webp",
+    category: "الهوية البصرية",
+    size: "normal",
+    subCategory: "مطاعم سريعة",
+    tags: ["دراسات حالة", "هويات"],
   },
+  // 12. Normal (1x1) - Motion Graphic Video
   {
-    id: 55,
-    title: "الامتياز التجاري",
-    description: "تصميم إعلان لحدث قادم لعلامة المساء.",
-    imageUrl: "/images/social-media-almasaa-2.avif",
-    category: "تصميمات السوشيال ميديا",
-  },
-  {
-    id: 56,
-    title: "الامتياز التجاري",
-    description: "تصميم منشور تفاعلي لعلامة المساء.",
-    imageUrl: "/images/social-media-almasaa-3.avif",
-    category: "تصميمات السوشيال ميديا",
-  },
-  {
-    id: 57,
-    title: "الامتياز التجاري",
-    description: "تصميم منشور ديني لعلامة النور.",
-    imageUrl: "/images/social-media-alnour-1.avif",
-    category: "تصميمات السوشيال ميديا",
-  },
-  {
-    id: 58,
-    title: "انجلش زون",
-    description: "تصميم إعلان لمناسبة دينية لعلامة النور.",
-    imageUrl: "/images/social-media-alnour-2.avif",
-    category: "تصميمات السوشيال ميديا",
-  },
-  {
-    id: 59,
-    title: "انجلش زون",
-    description: "تصميم منشور صباحي لعلامة الفجر.",
-    imageUrl: "/images/social-media-alfajr-1.avif",
-    category: "تصميمات السوشيال ميديا",
-  },
-  {
-    id: 60,
-    title: "انجلش زون",
-    description: "تصميم إعلان لمنتج جديد لعلامة الفجر.",
-    imageUrl: "/images/social-media-alfajr-2.avif",
-    category: "تصميمات السوشيال ميديا",
-  },
-  {
+    ...projects.find((p) => p.id === 23) || projects[6],
     id: 23,
-    title: "فيديو موشن جرافيك",
-    description: "جاري التحديث",
-    imageUrl: "/placeholder.svg?height=800&width=600",
+    title: "فيديو موشن جرافيك - VOKO ERP",
+    description: "فيديو موشن جرافيك احترافي لنظام VOKO ERP السحابي لإدارة الشركات",
+    imageUrl: "/images/voko-erp-motion-graphic-thumbnail.jpg",
     category: "فيديو موشن جرافيك",
-  },
+    size: "normal",
+    subCategory: "موشن جرافيك",
+    tags: ["موشن جرافيك"],
+  }
 ]
 
-const categories = ["الكل", "الهوية البصرية", "تصميمات السوشيال ميديا", "تصاميم المطبوعات", "فيديو موشن جرافيك"]
+const filterTabs = [
+  { label: "الكل", value: "all" },
+  { label: "هويات", value: "الهوية البصرية" },
+  { label: "مطبوعات", value: "تصاميم المطبوعات" },
+  { label: "تغليف", value: "تغليف" },
+  { label: "سوشيال ميديا", value: "تصميمات السوشيال ميديا" },
+  { label: "موشن جرافيك", value: "فيديو موشن جرافيك" },
+  { label: "دراسات حالة", value: "دراسات حالة" },
+]
 
 export default function WorkGrid() {
-  const [filter, setFilter] = useState("الهوية البصرية")
-  const [selectedProject, setSelectedProject] = useState<any>(null)
+  const [activeFilter, setActiveFilter] = useState("all")
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const filteredProjects = filter === "الكل" ? projects : projects.filter((project) => project.category === filter)
+  const filteredProjects = bentoProjects.filter((item) => {
+    if (activeFilter === "all") return true
+    if (activeFilter === "تغليف") return item.tags?.includes("تغليف")
+    if (activeFilter === "دراسات حالة") return Boolean(item.caseStudy) || item.tags?.includes("دراسات حالة")
+    return item.category === activeFilter
+  })
 
-  const openModal = (project: any) => {
+  const openModal = (project: ProjectItem) => {
     setSelectedProject(project)
     setIsModalOpen(true)
   }
@@ -347,194 +193,182 @@ export default function WorkGrid() {
     setSelectedProject(null)
   }
 
+  const getCaseStudyUrl = (project: BentoProject) => {
+    if (project.id === 19) return "/work/zaatar-w-simsim-brand-identity"
+    if (project.id === 20) return "/work/agricultural-development-association-brand-identity"
+    if (project.id === 21) return "/work/ragy-burger-brand-identity"
+    if (project.id === 22) return "/work/saken-corporate-housing-brand-identity"
+    return null
+  }
+
   return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-4xl font-bold text-foreground sm:text-5xl">أعمالنا</h2>
-          <p className="mt-4 text-lg text-muted-foreground">استكشف مجموعة واسعة من مشاريعنا الإبداعية.</p>
-        </motion.div>
-
-        <div className="flex justify-center space-x-4 mb-8 space-x-reverse flex-wrap gap-2">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                filter === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence>
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-background rounded-3xl shadow-lg overflow-hidden hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
+    <section className="py-12 bg-background text-foreground transition-colors duration-300">
+      {/* ── 1. FILTERS (PILL BUTTONS) ── */}
+      <div className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+        <div className="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none flex-nowrap sm:flex-wrap">
+          {filterTabs.map((tab) => {
+            const isActive = activeFilter === tab.value
+            return (
+              <button
+                key={tab.value}
+                onClick={() => setActiveFilter(tab.value)}
+                className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all whitespace-nowrap cursor-pointer border ${
+                  isActive
+                    ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/20 scale-105"
+                    : "bg-card/60 text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
+                }`}
               >
-                {project.caseStudy ? (
-                  <Link
-                    href={`/work/${
-                      project.id === 19
-                        ? "zaatar-w-simsim-brand-identity"
-                        : project.id === 20
-                        ? "agricultural-development-association-brand-identity"
-                        : project.id === 21
-                        ? "ragy-burger-brand-identity"
-                        : "saken-corporate-housing-brand-identity"
-                    }`}
-                    className="block relative overflow-hidden h-64 group/img cursor-pointer"
-                  >
-                    <Image
-                      src={project.imageUrl || "/placeholder.svg"}
-                      alt={project.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-transform duration-500 ease-in-out group-hover:scale-105"
-                    />
-                    <motion.div
-                      className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"
-                    >
-                      <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full font-bold text-sm shadow-lg flex items-center gap-1.5">
-                        عرض دراسة الحالة
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                        </svg>
-                      </span>
-                    </motion.div>
-                  </Link>
-                ) : (
-                  <div
-                    onClick={() => openModal(project)}
-                    className={`relative overflow-hidden cursor-pointer group/img ${
-                      project.category === "تصميمات السوشيال ميديا" ? "h-[400px]" : "h-64"
-                    }`}
-                  >
-                    <Image
-                      src={project.imageUrl || "/placeholder.svg"}
-                      alt={project.title}
-                      layout="fill"
-                      objectFit={project.category === "تصميمات السوشيال ميديا" ? "contain" : "cover"}
-                      className="transition-transform duration-300 ease-in-out group-hover:scale-105"
-                    />
-                    <motion.div
-                      className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300"
-                      whileHover={{ opacity: 1 }}
-                    >
-                      <p className="text-white text-center px-4">{project.description}</p>
-                    </motion.div>
+                {tab.label}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* ── 2. BENTO PORTFOLIO GRID ── */}
+      <div className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[280px] sm:auto-rows-[260px] lg:auto-rows-[270px] gap-4 sm:gap-5">
+          {filteredProjects.map((project, idx) => {
+            const caseStudyUrl = getCaseStudyUrl(project)
+            const isLarge = project.size === "large"
+            const isWide = project.size === "wide"
+
+            // Compute grid layout classes based on item size
+            let gridSpanClass = "col-span-1 row-span-1"
+            if (isLarge) {
+              gridSpanClass = "sm:col-span-2 sm:row-span-2 col-span-1 row-span-1"
+            } else if (isWide) {
+              gridSpanClass = "sm:col-span-2 row-span-1 col-span-1"
+            }
+
+            const formattedNumber = idx + 1 < 10 ? `0${idx + 1}` : `${idx + 1}`
+
+            return (
+              <article
+                key={`${project.id}-${idx}`}
+                className={`group relative overflow-hidden rounded-2xl bg-card border border-border/80 shadow-sm hover:shadow-xl transition-all duration-500 ${gridSpanClass}`}
+              >
+                {/* Background Image with Next.js Optimization */}
+                <div className="relative w-full h-full overflow-hidden bg-muted/40">
+                  <Image
+                    src={project.imageUrl || "/placeholder.jpg"}
+                    alt={project.title}
+                    fill
+                    sizes={
+                      isLarge
+                        ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                        : isWide
+                        ? "(max-width: 768px) 100vw, 50vw"
+                        : "(max-width: 768px) 100vw, 25vw"
+                    }
+                    className="object-cover transition-transform duration-700 cubic-bezier(0.2, 0.7, 0.2, 1) group-hover:scale-105 group-hover:brightness-90"
+                    priority={idx < 4}
+                  />
+                </div>
+
+                {/* Always visible gradient & text overlay */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-7 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-95 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-400">
+                  {/* Project Number */}
+                  <div className="flex items-center gap-2 mb-2 text-primary font-mono text-xs font-bold tracking-wider">
+                    <span className="w-6 h-[2px] bg-primary inline-block" />
+                    <span>{formattedNumber}</span>
                   </div>
-                )}
-                <div className="p-6">
-                  <div className="text-sm font-medium text-primary mb-1">{project.category}</div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
-                  {project.caseStudy ? (
+
+                  {/* Project Title */}
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 leading-tight drop-shadow-sm">
+                    {project.title}
+                  </h3>
+
+                  {/* SubCategory */}
+                  <p className="text-xs sm:text-sm text-gray-300 font-medium mb-3">
+                    {project.subCategory || project.category}
+                  </p>
+
+                  {/* Tags */}
+                  {project.tags && project.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-white/15 text-gray-100 border border-white/20 backdrop-blur-sm"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Action Link: Case Study or Modal View */}
+                  {caseStudyUrl ? (
                     <Link
-                      href={`/work/${
-                        project.id === 19
-                          ? "zaatar-w-simsim-brand-identity"
-                          : project.id === 20
-                          ? "agricultural-development-association-brand-identity"
-                          : project.id === 21
-                          ? "ragy-burger-brand-identity"
-                          : "saken-corporate-housing-brand-identity"
-                      }`}
-                      className="text-primary font-bold hover:underline inline-flex items-center gap-1.5"
+                      href={caseStudyUrl}
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary hover:underline mt-1"
                     >
-                      عرض دراسة الحالة
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                      </svg>
+                      <span>عرض دراسة الحالة</span>
+                      <span className="text-base font-sans">←</span>
                     </Link>
-                  ) : (
-                  <button
-                    onClick={() => openModal(project)}
-                    className="text-primary hover:underline inline-flex items-center"
-                  >
-                    <svg
-                      className="w-4 h-4 ml-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                  ) : project.externalLink ? (
+                    <a
+                      href={project.externalLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary hover:underline mt-1"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                      />
-                    </svg>
-                    عرض المشروع
-                  </button>
+                      <span>مشاهدة الفيديو على يوتيوب</span>
+                      <span className="text-base font-sans">↗</span>
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => openModal(project)}
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary hover:underline mt-1 text-right cursor-pointer"
+                    >
+                      <span>عرض تفاصيل المشروع</span>
+                      <span className="text-base font-sans">←</span>
+                    </button>
                   )}
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-        {filter !== "الكل" && (
-          <div className="mt-12 text-center">
-            <a
-              href={
-                filter === "الهوية البصرية"
-                  ? "/services/visual-identity"
-                  : filter === "تصميمات السوشيال ميديا"
-                  ? "/services/social-media-design"
-                  : filter === "تصاميم المطبوعات"
-                  ? "/services/print-design"
-                  : filter === "فيديو موشن جرافيك"
-                  ? "/services/motion-graphics"
-                  : "#"
-              }
-              className="inline-flex items-center text-primary hover:text-primary/80 font-bold text-lg hover:underline transition-all"
-            >
-              اقرأ المزيد عن {filter}
-              <svg
-                className="w-5 h-5 mr-2 rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </a>
-          </div>
-        )}
-
-        <ImageModal
-          imageUrl={selectedProject?.imageUrl || null}
-          title={selectedProject?.title || ""}
-          category={selectedProject?.category}
-          description={selectedProject?.description}
-          caseStudy={selectedProject?.caseStudy}
-          isOpen={isModalOpen}
-          onClose={closeModal}
-        />
+              </article>
+            )
+          })}
+        </div>
       </div>
+
+      {/* ── 3. BOTTOM CTA SECTION (Editorial Style) ── */}
+      <section className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-border">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div>
+            <div className="text-primary font-bold text-xs tracking-wider mb-2 flex items-center gap-2">
+              <span className="w-5 h-[2px] bg-primary inline-block" />
+              <span>هل لديك مشروع قادم؟</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
+              جاهز لبدء مشروعك القادم؟
+            </h2>
+            <p className="mt-2 text-muted-foreground text-base">
+              نحول أفكارك إلى تصاميم تصنع الفرق في السوقين السعودي والمصري.
+            </p>
+          </div>
+
+          <Link
+            href="/#contact-form"
+            className="apple-button px-8 py-4 text-sm font-bold shadow-xl hover:scale-105 transition-transform shrink-0 inline-flex items-center gap-2"
+          >
+            <span>تواصل معنا الآن</span>
+            <span>←</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* ── 4. PROJECT MODAL (Preserved for projects without full case studies) ── */}
+      <ImageModal
+        imageUrl={selectedProject?.imageUrl || null}
+        title={selectedProject?.title || ""}
+        category={selectedProject?.category}
+        description={selectedProject?.description}
+        caseStudy={selectedProject?.caseStudy}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </section>
   )
 }
