@@ -275,20 +275,18 @@ export default function WorkGrid() {
   // Compute exact count for each filter category
   const filterTabs = useMemo(() => {
     const totalCount = allBentoProjects.length
+    const identityCount = allBentoProjects.filter((p) => p.category === "الهوية البصرية").length
     const packagingCount = allBentoProjects.filter((p) => p.category === "تغليف").length
     const printCount = allBentoProjects.filter((p) => p.category === "تصاميم المطبوعات").length
     const socialCount = allBentoProjects.filter((p) => p.category === "تصميمات السوشيال ميديا").length
-    const identityCount = allBentoProjects.filter((p) => p.category === "الهوية البصرية").length
-    const caseStudiesCount = allBentoProjects.filter((p) => Boolean(p.caseStudy) || p.tags?.includes("دراسات حالة")).length
     const motionCount = allBentoProjects.filter((p) => p.category === "فيديو موشن جرافيك").length
 
     return [
       { label: "الكل", value: "all", count: totalCount },
+      { label: "هويات", value: "الهوية البصرية", count: identityCount },
       { label: "تغليف", value: "تغليف", count: packagingCount },
       { label: "مطبوعات", value: "تصاميم المطبوعات", count: printCount },
       { label: "سوشيال ميديا", value: "تصميمات السوشيال ميديا", count: socialCount },
-      { label: "هويات", value: "الهوية البصرية", count: identityCount },
-      { label: "دراسات حالة", value: "دراسات حالة", count: caseStudiesCount },
       { label: "موشن جرافيك", value: "فيديو موشن جرافيك", count: motionCount },
     ]
   }, [])
@@ -297,7 +295,6 @@ export default function WorkGrid() {
     return allBentoProjects.filter((item) => {
       if (activeFilter === "all") return true
       if (activeFilter === "تغليف") return item.category === "تغليف"
-      if (activeFilter === "دراسات حالة") return Boolean(item.caseStudy) || item.tags?.includes("دراسات حالة")
       return item.category === activeFilter
     })
   }, [activeFilter])
