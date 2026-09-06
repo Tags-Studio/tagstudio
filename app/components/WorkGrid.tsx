@@ -24,7 +24,7 @@ const projectOverrides: Record<
     description?: string
   }
 > = {
-  // Case Studies & Brand Identities
+  // Case Studies & Brand Identities (Grand 2x2 Showcases)
   19: {
     size: "large",
     title: "مطعم زعتر وسمسم",
@@ -32,13 +32,13 @@ const projectOverrides: Record<
     tags: ["دراسات حالة", "هويات"],
   },
   20: {
-    size: "wide",
+    size: "large",
     title: "جمعية التنمية الزراعية",
     subCategory: "جمعيات ومؤسسات",
     tags: ["دراسات حالة", "هويات"],
   },
   21: {
-    size: "wide",
+    size: "large",
     title: "برجر راجي",
     subCategory: "مطاعم سريعة",
     tags: ["دراسات حالة", "هويات"],
@@ -66,7 +66,7 @@ const projectOverrides: Record<
     tags: ["تغليف"],
   },
   42: {
-    size: "wide",
+    size: "normal",
     title: "الأمين للتمور - علبة تمور محشوة بالمكسرات",
     description: "تصميم عبوة هدايا كرتونية هندسية فريدة للتمور الفاخرة المحشوة بالمكسرات لمصنع الأمين للتمور.",
     subCategory: "تغليف كرتوني مبتكر",
@@ -80,7 +80,7 @@ const projectOverrides: Record<
     tags: ["تغليف"],
   },
   44: {
-    size: "wide",
+    size: "normal",
     title: "مصنع الأمين للتمور - علبة تمور مستطيلة فاخرة",
     description: "تصميم علبة هدايا مستطيلة فاخرة لتمور محشوة بالمكسرات لمصنع الأمين للتمور.",
     subCategory: "علب هدايا فاخرة",
@@ -96,14 +96,14 @@ const projectOverrides: Record<
     tags: ["مطبوعات", "هويات"],
   },
   28: {
-    size: "wide",
+    size: "normal",
     title: "الأكاديمية المالية",
     description: "كتيب فاخر وتصميم مطبوعات تعريفية متعددة الصفحات للأكاديمية المالية.",
     subCategory: "كتيبات وبروشورات",
     tags: ["مطبوعات"],
   },
   31: {
-    size: "wide",
+    size: "normal",
     title: "وزارة السياحة",
     description: "تصميم ملصق وإعلانات مطبوعة كبرى للحملات الترويجية لوزارة السياحة.",
     subCategory: "ملصقات وإعلانات",
@@ -117,14 +117,14 @@ const projectOverrides: Record<
     tags: ["مطبوعات"],
   },
   35: {
-    size: "wide",
+    size: "normal",
     title: "كتاب الأحساء - التسامح المذهبي",
     description: "تصميم وإخراج غلاف كتاب الأحساء نموذج التسامح المذهبي للكاتب محمد علي الحرز.",
     subCategory: "تصميم كتب ومطبوعات",
     tags: ["مطبوعات"],
   },
   36: {
-    size: "wide",
+    size: "normal",
     title: "مكتب محاماة آل زرعه",
     description: "تصميم بروفايل شركات تعريفي فاخر ومطبوعات قانونية ومستندات رسمية.",
     subCategory: "بروفايل شركات",
@@ -168,7 +168,7 @@ const projectOverrides: Record<
 
   // Social Media Campaigns
   45: {
-    size: "wide",
+    size: "normal",
     title: "مطعم زعتر وسمسم - سوشيال ميديا",
     description: "منشورات وحملات إعلانية ترويجية وتفاعلية لمطعم زعتر وسمسم.",
     subCategory: "سوشيال ميديا ومطاعم",
@@ -189,7 +189,7 @@ const projectOverrides: Record<
     tags: ["سوشيال ميديا"],
   },
   52: {
-    size: "wide",
+    size: "normal",
     title: "Bateel Diver - الواحة",
     description: "تصميم حملة إعلانية لموسم الغوص الجديد لعلامة Bateel Diver والواحة.",
     subCategory: "حملات إعلانية",
@@ -205,7 +205,7 @@ const projectOverrides: Record<
 
   // Motion Graphics
   23: {
-    size: "wide",
+    size: "normal",
     title: "فيديو موشن جرافيك - VOKO ERP",
     description: "فيديو موشن جرافيك احترافي لنظام VOKO ERP السحابي لإدارة الشركات.",
     subCategory: "موشن جرافيك وإعلانات",
@@ -215,8 +215,23 @@ const projectOverrides: Record<
 
 // Curated order for the "الكل" view to blend packaging, identities, prints, and social media seamlessly
 const curatedOrder = [
-  42, 26, 28, 45, 22, 20, 31, 25, 52, 19, 21, 24, 44, 23, 27, 43, 29, 30,
-  32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 46, 47, 48, 49, 50, 51, 53, 54,
+  // الصف الأول: 4 تصاميم تغليف ومطبوعات بارزة
+  25, 26, 42, 43,
+
+  // البلوك الثاني: هوية مطعم زعتر وسمسم (كبير 2x2) وبجانبها 4 تصاميم منوعة
+  19, 27, 44, 28, 45,
+
+  // البلوك الثالث: ثنائية هويات بارزة (مجمع ساكن 2x2 + جمعية التنمية الزراعية 2x2)
+  22, 20,
+
+  // الصف الرابع: 4 تصاميم متوازنة
+  31, 52, 24, 34,
+
+  // البلوك الخامس: هوية برجر راجي (كبير 2x2) وبجانبها 4 تصاميم
+  21, 23, 29, 30, 32,
+
+  // باقي الأعمال
+  33, 35, 36, 37, 38, 39, 40, 41, 46, 47, 48, 49, 50, 51, 53, 54,
   55, 56, 57, 58, 59, 60,
 ]
 
