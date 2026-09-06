@@ -29,7 +29,7 @@ const projectOverrides: Record<
     size: "large",
     title: "مطعم زعتر وسمسم",
     subCategory: "مطاعم ومقاهي",
-    tags: ["دراسات حالة", "هويات", "تغليف"],
+    tags: ["دراسات حالة", "هويات"],
   },
   20: {
     size: "wide",
@@ -41,7 +41,7 @@ const projectOverrides: Record<
     size: "wide",
     title: "برجر راجي",
     subCategory: "مطاعم سريعة",
-    tags: ["دراسات حالة", "هويات", "تغليف"],
+    tags: ["دراسات حالة", "هويات"],
   },
   22: {
     size: "large",
@@ -247,9 +247,6 @@ const allBentoProjects: BentoProject[] = curatedOrder
     } else if (p.category === "الهوية البصرية") {
       defaultTags = ["هويات"]
       defaultSubCategory = "هوية بصرية كاملة"
-      if ([19, 21].includes(p.id)) {
-        defaultTags.push("تغليف")
-      }
     } else if (p.category === "فيديو موشن جرافيك") {
       defaultTags = ["موشن جرافيك"]
       defaultSubCategory = "موشن جرافيك"
@@ -278,7 +275,7 @@ export default function WorkGrid() {
   // Compute exact count for each filter category
   const filterTabs = useMemo(() => {
     const totalCount = allBentoProjects.length
-    const packagingCount = allBentoProjects.filter((p) => p.category === "تغليف" || p.tags?.includes("تغليف")).length
+    const packagingCount = allBentoProjects.filter((p) => p.category === "تغليف").length
     const printCount = allBentoProjects.filter((p) => p.category === "تصاميم المطبوعات").length
     const socialCount = allBentoProjects.filter((p) => p.category === "تصميمات السوشيال ميديا").length
     const identityCount = allBentoProjects.filter((p) => p.category === "الهوية البصرية").length
@@ -299,7 +296,7 @@ export default function WorkGrid() {
   const filteredProjects = useMemo(() => {
     return allBentoProjects.filter((item) => {
       if (activeFilter === "all") return true
-      if (activeFilter === "تغليف") return item.category === "تغليف" || item.tags?.includes("تغليف")
+      if (activeFilter === "تغليف") return item.category === "تغليف"
       if (activeFilter === "دراسات حالة") return Boolean(item.caseStudy) || item.tags?.includes("دراسات حالة")
       return item.category === activeFilter
     })
