@@ -1,6 +1,6 @@
-﻿"use client"
+"use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import ImageModal from "./ImageModal"
@@ -8,180 +8,278 @@ import { projects, ProjectItem } from "@/lib/portfolioData"
 
 // Extended project interface with layout size and tags for the Bento Grid
 interface BentoProject extends ProjectItem {
-  size?: "large" | "wide" | "normal" | "tall"
+  size?: "large" | "wide" | "normal"
   tags?: string[]
   subCategory?: string
 }
 
-// Map real projects to Bento sizes and tags matching the luxury editorial layout
-const bentoProjects: BentoProject[] = [
-  // 01. Large featured (2x2) - Al-Ameen Dates
+// Explicit overrides for key showcase projects
+const projectOverrides: Record<
+  number,
   {
-    ...projects.find((p) => p.id === 40) || projects[0],
-    id: 40,
-    title: "الأمين للتمور",
-    description: "تصميم عبوة وتغليف كوكيز التمور الفاخر مع هوية تراثية عصرية متكاملة للمتاجر السعودية.",
-    imageUrl: "/images/print-design-17.avif",
-    category: "تصاميم المطبوعات",
+    size?: "large" | "wide" | "normal"
+    subCategory?: string
+    tags?: string[]
+    title?: string
+    description?: string
+  }
+> = {
+  // Case Studies & Brand Identities
+  19: {
     size: "large",
-    subCategory: "تغليف ومطبوعات",
-    tags: ["تغليف", "مطبوعات", "هويات"],
-  },
-  // 02. Normal (1x1) - Business cards
-  {
-    ...projects.find((p) => p.id === 26) || projects[1],
-    id: 26,
-    title: "تصاميم المطبوعات",
-    description: "بطاقات عمل ومستندات رسمية للأمين للتمور",
-    imageUrl: "/images/print-design-3.avif",
-    category: "تصاميم المطبوعات",
-    size: "normal",
-    subCategory: "الأمين للتمور",
-    tags: ["مطبوعات", "هويات"],
-  },
-  // 03. Normal (1x1) - Brochure
-  {
-    ...projects.find((p) => p.id === 28) || projects[2],
-    id: 28,
-    title: "تصاميم المطبوعات",
-    description: "كتيب فاخر لوزارة السياحة والأكاديمية",
-    imageUrl: "/images/print-design-5.avif",
-    category: "تصاميم المطبوعات",
-    size: "normal",
-    subCategory: "مطبوعات وكتيبات",
-    tags: ["مطبوعات"],
-  },
-  // 04. Wide (2x1) - Social Media campaign
-  {
-    ...projects.find((p) => p.id === 45) || projects[3],
-    id: 45,
-    title: "تصاميم السوشيال ميديا",
-    description: "منشورات وحملات إعلانية ترويجية لمطعم زعتر وسمسم",
-    imageUrl: "/images/social-media-zaatar-1.avif",
-    category: "تصميمات السوشيال ميديا",
-    size: "wide",
-    subCategory: "منشورات إعلانية",
-    tags: ["سوشيال ميديا", "هويات"],
-  },
-  // 05. Normal (1x1) - Promotional flyers / cards
-  {
-    ...projects.find((p) => p.id === 30) || projects[4],
-    id: 30,
-    title: "تصاميم السوشيال والمطبوعات",
-    description: "حملة إعلانية ومطبوعات لعلامة الامتياز التجاري",
-    imageUrl: "/images/print-design-7.avif",
-    category: "تصميمات السوشيال ميديا",
-    size: "normal",
-    subCategory: "حملة إعلانية",
-    tags: ["سوشيال ميديا", "مطبوعات"],
-  },
-  // 06. Normal (1x1) - Charity Brand Identity
-  {
-    ...projects.find((p) => p.id === 20) || projects[1],
-    id: 20,
-    title: "تصميم الهوية البصرية",
-    description: "هوية بصرية كاملة لجمعية التنمية الزراعية بالأحساء",
-    imageUrl: "/images/agricultural-development-association.avif",
-    category: "الهوية البصرية",
-    size: "normal",
-    subCategory: "جمعية وتنمية",
-    tags: ["هويات"],
-  },
-  // 07. Normal (1x1) - Stationery / Letterhead
-  {
-    ...projects.find((p) => p.id === 22) || projects[3],
-    id: 22,
-    title: "تصميم الهوية والمطبوعات",
-    description: "أوراق مراسلات وأظرف رسمية لمجمع ساكن السكني بالجبيل",
-    imageUrl: "/images/saken/saken-official-envelope-mockup.webp",
-    category: "الهوية البصرية",
-    size: "normal",
-    subCategory: "مستندات مؤسسية",
-    tags: ["هويات", "مطبوعات"],
-  },
-  // 08. Normal (1x1) - Packaging Cinnabon / Al-Ameen
-  {
-    ...projects.find((p) => p.id === 41) || projects[4],
-    id: 41,
-    title: "تصاميم التغليف والمطبوعات",
-    description: "تصميم علبة سينابون رولز الفاخرة للأمين للتمور",
-    imageUrl: "/images/print-design-19.avif",
-    category: "تصاميم المطبوعات",
-    size: "normal",
-    subCategory: "سينابون رولز",
-    tags: ["تغليف", "مطبوعات"],
-  },
-  // 09. Wide (2x1) - Educational Social Media Campaign
-  {
-    ...projects.find((p) => p.id === 52) || projects[5],
-    id: 52,
-    title: "تصاميم السوشيال ميديا",
-    description: "منشورات تعليمية وبوستات تسويقية لمعهد إنجلش زون",
-    imageUrl: "/images/social-media-english-zone-1.avif",
-    category: "تصميمات السوشيال ميديا",
-    size: "wide",
-    subCategory: "منشورات تعليمية",
-    tags: ["سوشيال ميديا", "هويات"],
-  },
-  // 10. Large (2x2) - Zaatar & Semsem Case Study
-  {
-    ...projects.find((p) => p.id === 19) || projects[0],
-    id: 19,
     title: "مطعم زعتر وسمسم",
-    description: "دراسة حالة وهوية بصرية كاملة وتغليف ورقي مستدام لمطعم زعتر وسمسم.",
-    imageUrl: "/images/zaatar-identity-portfolio3.webp",
-    category: "الهوية البصرية",
-    size: "large",
-    subCategory: "مطاعم وكافيهات",
+    subCategory: "مطاعم ومقاهي",
     tags: ["دراسات حالة", "هويات", "تغليف"],
   },
-  // 11. Normal (1x1) - Ragy Burger
-  {
-    ...projects.find((p) => p.id === 21) || projects[2],
-    id: 21,
-    title: "برجر راجي",
-    description: "هوية بصرية مليئة بالطاقة وتطبيقات تغليف وجبات البرجر بالرياض",
-    imageUrl: "/images/ragy-identity-portfolio.webp",
-    category: "الهوية البصرية",
-    size: "normal",
-    subCategory: "مطاعم سريعة",
+  20: {
+    size: "wide",
+    title: "جمعية التنمية الزراعية",
+    subCategory: "جمعيات ومؤسسات",
     tags: ["دراسات حالة", "هويات"],
   },
-  // 12. Normal (1x1) - Motion Graphic Video
-  {
-    ...projects.find((p) => p.id === 23) || projects[6],
-    id: 23,
-    title: "فيديو موشن جرافيك - VOKO ERP",
-    description: "فيديو موشن جرافيك احترافي لنظام VOKO ERP السحابي لإدارة الشركات",
-    imageUrl: "/images/voko-erp-motion-graphic-thumbnail.jpg",
-    category: "فيديو موشن جرافيك",
+  21: {
+    size: "wide",
+    title: "برجر راجي",
+    subCategory: "مطاعم سريعة",
+    tags: ["دراسات حالة", "هويات", "تغليف"],
+  },
+  22: {
+    size: "large",
+    title: "مجمع ساكن للإسكان المؤسسي",
+    subCategory: "إسكان مؤسسي وعقارات",
+    tags: ["دراسات حالة", "هويات", "مطبوعات"],
+  },
+
+  // Highlighted Print & Packaging Designs
+  40: {
+    size: "large",
+    title: "الأمين للتمور - كوكيز التمور",
+    description: "تصميم عبوة وتغليف كوكيز التمور الفاخر مع هوية تراثية عصرية متكاملة للمتاجر السعودية.",
+    subCategory: "تغليف ومطبوعات",
+    tags: ["تغليف", "مطبوعات"],
+  },
+  41: {
     size: "normal",
-    subCategory: "موشن جرافيك",
+    title: "الأمين للتمور - سينابون رولز",
+    description: "تصميم علبة سينابون رولز الفاخرة للأمين للتمور مع رسومات وتنسيق طباعي متميز.",
+    subCategory: "تغليف وعلب",
+    tags: ["تغليف", "مطبوعات"],
+  },
+  42: {
+    size: "wide",
+    title: "الأمين للتمور - بوكسات الهدايا",
+    description: "تصميم علب وبوكسات التمور الفاخرة للهدايا والمناسبات الرسمية بالمملكة.",
+    subCategory: "تغليف فاخر",
+    tags: ["تغليف", "مطبوعات"],
+  },
+  26: {
+    size: "normal",
+    title: "الأمين للتمور - كروت عمل",
+    description: "بطاقات عمل ومستندات رسمية للأمين للتمور بأسلوب عصري وأنيق.",
+    subCategory: "مطبوعات وهويات",
+    tags: ["مطبوعات", "هويات"],
+  },
+  28: {
+    size: "wide",
+    title: "الأكاديمية المالية",
+    description: "كتيب فاخر وتصميم مطبوعات تعريفية متعددة الصفحات للأكاديمية المالية.",
+    subCategory: "كتيبات وبروشورات",
+    tags: ["مطبوعات"],
+  },
+  31: {
+    size: "wide",
+    title: "وزارة السياحة",
+    description: "تصميم ملصق وإعلانات مطبوعة كبرى للحملات الترويجية لوزارة السياحة.",
+    subCategory: "ملصقات وإعلانات",
+    tags: ["مطبوعات"],
+  },
+  34: {
+    size: "normal",
+    title: "جمعية الفيصلية",
+    description: "تصميم كتيب تعريفي فاخر وبطاقات رسمية لجمعية الفيصلية الخيرية.",
+    subCategory: "كتيبات وتقارير",
+    tags: ["مطبوعات"],
+  },
+  35: {
+    size: "wide",
+    title: "روابي الخليج",
+    description: "تصميم عبوة منتج فاخرة وهوية تغليف متكاملة لعلامة روابي الخليج.",
+    subCategory: "تغليف ومطبوعات",
+    tags: ["تغليف", "مطبوعات"],
+  },
+  36: {
+    size: "wide",
+    title: "مكتب محاماة آل زرعه",
+    description: "تصميم بروفايل شركات تعريفي فاخر ومطبوعات قانونية ومستندات رسمية.",
+    subCategory: "بروفايل شركات",
+    tags: ["مطبوعات"],
+  },
+  37: {
+    size: "normal",
+    title: "الأكاديمية المالية - عرض تقديمي",
+    description: "تصميم عرض تقديمي وبريزينتيشن احترافي ومطبوع للأكاديمية المالية.",
+    subCategory: "عروض ومطبوعات",
+    tags: ["مطبوعات"],
+  },
+  38: {
+    size: "normal",
+    title: "كارت شخصي AMP",
+    description: "تصميم بطاقة عمل وهوية شخصية بألوان عصرية وتشطيبات فاخرة.",
+    subCategory: "كروت شخصية",
+    tags: ["مطبوعات"],
+  },
+  39: {
+    size: "normal",
+    title: "كارت شخصي شركة أبعاد",
+    description: "تصميم كارت أعمال ومستندات مؤسسية لشركة أبعاد الاستثمارية.",
+    subCategory: "كروت شخصية",
+    tags: ["مطبوعات"],
+  },
+
+  // Social Media Campaigns
+  45: {
+    size: "wide",
+    title: "مطعم زعتر وسمسم - سوشيال ميديا",
+    description: "منشورات وحملات إعلانية ترويجية وتفاعلية لمطعم زعتر وسمسم.",
+    subCategory: "سوشيال ميديا ومطاعم",
+    tags: ["سوشيال ميديا"],
+  },
+  46: {
+    size: "normal",
+    title: "مطعم زعتر وسمسم - إعلان وجبات",
+    description: "تصميم إعلان وجبات جديدة وعروض موسمية لمنصات التواصل الاجتماعي.",
+    subCategory: "سوشيال ميديا",
+    tags: ["سوشيال ميديا"],
+  },
+  48: {
+    size: "normal",
+    title: "برجر راجي - بوست سبيشال",
+    description: "تصميم إعلان وجبة برجر جديدة بأسلوب بصري شهي وجذاب.",
+    subCategory: "سوشيال ميديا ومطاعم",
+    tags: ["سوشيال ميديا"],
+  },
+  52: {
+    size: "wide",
+    title: "Bateel Diver - الواحة",
+    description: "تصميم حملة إعلانية لموسم الغوص الجديد لعلامة Bateel Diver والواحة.",
+    subCategory: "حملات إعلانية",
+    tags: ["سوشيال ميديا"],
+  },
+  54: {
+    size: "normal",
+    title: "إنجلش زون - بوستات تعليمية",
+    description: "منشورات تعليمية وبوستات تسويقية لمعهد إنجلش زون.",
+    subCategory: "سوشيال ميديا",
+    tags: ["سوشيال ميديا"],
+  },
+
+  // Motion Graphics
+  23: {
+    size: "wide",
+    title: "فيديو موشن جرافيك - VOKO ERP",
+    description: "فيديو موشن جرافيك احترافي لنظام VOKO ERP السحابي لإدارة الشركات.",
+    subCategory: "موشن جرافيك وإعلانات",
     tags: ["موشن جرافيك"],
-  }
+  },
+}
+
+// Curated order for the "الكل" view to blend identities, prints, packaging, and social media seamlessly
+const curatedOrder = [
+  40, 26, 28, 45, 22, 20, 31, 41, 52, 19, 21, 24, 36, 23, 25, 27, 29, 30,
+  32, 33, 34, 35, 37, 38, 39, 42, 43, 44, 46, 47, 48, 49, 50, 51, 53, 54,
+  55, 56, 57, 58, 59, 60,
 ]
 
-const filterTabs = [
-  { label: "الكل", value: "all" },
-  { label: "هويات", value: "الهوية البصرية" },
-  { label: "مطبوعات", value: "تصاميم المطبوعات" },
-  { label: "تغليف", value: "تغليف" },
-  { label: "سوشيال ميديا", value: "تصميمات السوشيال ميديا" },
-  { label: "موشن جرافيك", value: "فيديو موشن جرافيك" },
-  { label: "دراسات حالة", value: "دراسات حالة" },
-]
+// Build the complete enriched list of all 42 projects
+const allProjectsMap = new Map<number, ProjectItem>()
+projects.forEach((p) => allProjectsMap.set(p.id, p))
+
+const allBentoProjects: BentoProject[] = curatedOrder
+  .map((id) => {
+    const p = allProjectsMap.get(id)
+    if (!p) return null
+
+    const override = projectOverrides[id] || {}
+
+    // Dynamic tags and subcategories
+    let defaultTags: string[] = []
+    let defaultSubCategory = p.category
+
+    if (p.category === "تصاميم المطبوعات") {
+      defaultTags = ["مطبوعات"]
+      defaultSubCategory = "مطبوعات وكتيبات"
+      if (
+        p.title.includes("بوكسات") ||
+        p.title.includes("عبوة") ||
+        p.description.includes("عبوة") ||
+        [32, 35, 40, 41, 42].includes(p.id)
+      ) {
+        defaultTags.push("تغليف")
+        defaultSubCategory = "تغليف وعلب"
+      }
+    } else if (p.category === "تصميمات السوشيال ميديا") {
+      defaultTags = ["سوشيال ميديا"]
+      defaultSubCategory = "سوشيال ميديا وإعلانات"
+    } else if (p.category === "الهوية البصرية") {
+      defaultTags = ["هويات"]
+      defaultSubCategory = "هوية بصرية كاملة"
+      if ([19, 21].includes(p.id)) {
+        defaultTags.push("تغليف")
+      }
+    } else if (p.category === "فيديو موشن جرافيك") {
+      defaultTags = ["موشن جرافيك"]
+      defaultSubCategory = "موشن جرافيك"
+    }
+
+    if (p.caseStudy) {
+      defaultTags.unshift("دراسات حالة")
+    }
+
+    return {
+      ...p,
+      title: override.title || p.title,
+      description: override.description || p.description,
+      size: override.size || "normal",
+      subCategory: override.subCategory || defaultSubCategory,
+      tags: override.tags || defaultTags,
+    }
+  })
+  .filter((p): p is BentoProject => p !== null)
 
 export default function WorkGrid() {
   const [activeFilter, setActiveFilter] = useState("all")
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const filteredProjects = bentoProjects.filter((item) => {
-    if (activeFilter === "all") return true
-    if (activeFilter === "تغليف") return item.tags?.includes("تغليف")
-    if (activeFilter === "دراسات حالة") return Boolean(item.caseStudy) || item.tags?.includes("دراسات حالة")
-    return item.category === activeFilter
-  })
+  // Compute exact count for each filter category
+  const filterTabs = useMemo(() => {
+    const totalCount = allBentoProjects.length
+    const identityCount = allBentoProjects.filter((p) => p.category === "الهوية البصرية").length
+    const printCount = allBentoProjects.filter((p) => p.category === "تصاميم المطبوعات").length
+    const packagingCount = allBentoProjects.filter((p) => p.tags?.includes("تغليف")).length
+    const socialCount = allBentoProjects.filter((p) => p.category === "تصميمات السوشيال ميديا").length
+    const motionCount = allBentoProjects.filter((p) => p.category === "فيديو موشن جرافيك").length
+    const caseStudiesCount = allBentoProjects.filter((p) => Boolean(p.caseStudy) || p.tags?.includes("دراسات حالة")).length
+
+    return [
+      { label: "الكل", value: "all", count: totalCount },
+      { label: "مطبوعات", value: "تصاميم المطبوعات", count: printCount },
+      { label: "سوشيال ميديا", value: "تصميمات السوشيال ميديا", count: socialCount },
+      { label: "هويات", value: "الهوية البصرية", count: identityCount },
+      { label: "تغليف", value: "تغليف", count: packagingCount },
+      { label: "دراسات حالة", value: "دراسات حالة", count: caseStudiesCount },
+      { label: "موشن جرافيك", value: "فيديو موشن جرافيك", count: motionCount },
+    ]
+  }, [])
+
+  const filteredProjects = useMemo(() => {
+    return allBentoProjects.filter((item) => {
+      if (activeFilter === "all") return true
+      if (activeFilter === "تغليف") return item.tags?.includes("تغليف")
+      if (activeFilter === "دراسات حالة") return Boolean(item.caseStudy) || item.tags?.includes("دراسات حالة")
+      return item.category === activeFilter
+    })
+  }, [activeFilter])
 
   const openModal = (project: ProjectItem) => {
     setSelectedProject(project)
@@ -203,7 +301,7 @@ export default function WorkGrid() {
 
   return (
     <section className="py-12 bg-background text-foreground transition-colors duration-300">
-      {/* ── 1. FILTERS (PILL BUTTONS) ── */}
+      {/* ── 1. FILTERS (PILL BUTTONS WITH COUNTS) ── */}
       <div className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <div className="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none flex-nowrap sm:flex-wrap">
           {filterTabs.map((tab) => {
@@ -212,28 +310,37 @@ export default function WorkGrid() {
               <button
                 key={tab.value}
                 onClick={() => setActiveFilter(tab.value)}
-                className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all whitespace-nowrap cursor-pointer border ${
+                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all whitespace-nowrap cursor-pointer border flex items-center gap-2 ${
                   isActive
                     ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/20 scale-105"
                     : "bg-card/60 text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
                 }`}
               >
-                {tab.label}
+                <span>{tab.label}</span>
+                <span
+                  className={`text-[11px] px-2 py-0.5 rounded-full font-mono font-extrabold ${
+                    isActive
+                      ? "bg-black/25 text-black"
+                      : "bg-muted text-muted-foreground"
+                  }`}
+                >
+                  {tab.count}
+                </span>
               </button>
             )
           })}
         </div>
       </div>
 
-      {/* ── 2. BENTO PORTFOLIO GRID ── */}
+      {/* ── 2. BENTO PORTFOLIO GRID (FULL 42 PROJECTS) ── */}
       <div className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[280px] sm:auto-rows-[260px] lg:auto-rows-[270px] gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[280px] sm:auto-rows-[260px] lg:auto-rows-[270px] gap-4 sm:gap-5 grid-flow-dense">
           {filteredProjects.map((project, idx) => {
             const caseStudyUrl = getCaseStudyUrl(project)
             const isLarge = project.size === "large"
             const isWide = project.size === "wide"
 
-            // Compute grid layout classes based on item size
+            // Compute responsive grid layout classes based on item size
             let gridSpanClass = "col-span-1 row-span-1"
             if (isLarge) {
               gridSpanClass = "sm:col-span-2 sm:row-span-2 col-span-1 row-span-1"
@@ -246,7 +353,16 @@ export default function WorkGrid() {
             return (
               <article
                 key={`${project.id}-${idx}`}
-                className={`group relative overflow-hidden rounded-2xl bg-card border border-border/80 shadow-sm hover:shadow-xl transition-all duration-500 ${gridSpanClass}`}
+                onClick={() => {
+                  if (caseStudyUrl) {
+                    window.location.href = caseStudyUrl
+                  } else if (project.externalLink) {
+                    window.open(project.externalLink, "_blank", "noopener,noreferrer")
+                  } else {
+                    openModal(project)
+                  }
+                }}
+                className={`group relative overflow-hidden rounded-2xl bg-card border border-border/80 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer ${gridSpanClass}`}
               >
                 {/* Background Image with Next.js Optimization */}
                 <div className="relative w-full h-full overflow-hidden bg-muted/40">
@@ -267,7 +383,7 @@ export default function WorkGrid() {
                 </div>
 
                 {/* Always visible gradient & text overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-7 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-95 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-400">
+                <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-7 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-95 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-400 pointer-events-none">
                   {/* Project Number */}
                   <div className="flex items-center gap-2 mb-2 text-primary font-mono text-xs font-bold tracking-wider">
                     <span className="w-6 h-[2px] bg-primary inline-block" />
@@ -275,12 +391,12 @@ export default function WorkGrid() {
                   </div>
 
                   {/* Project Title */}
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 leading-tight drop-shadow-sm">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 leading-tight drop-shadow-sm line-clamp-1">
                     {project.title}
                   </h3>
 
                   {/* SubCategory */}
-                  <p className="text-xs sm:text-sm text-gray-300 font-medium mb-3">
+                  <p className="text-xs sm:text-sm text-gray-300 font-medium mb-3 line-clamp-1">
                     {project.subCategory || project.category}
                   </p>
 
@@ -299,33 +415,34 @@ export default function WorkGrid() {
                   )}
 
                   {/* Action Link: Case Study or Modal View */}
-                  {caseStudyUrl ? (
-                    <Link
-                      href={caseStudyUrl}
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary hover:underline mt-1"
-                    >
-                      <span>عرض دراسة الحالة</span>
-                      <span className="text-base font-sans">←</span>
-                    </Link>
-                  ) : project.externalLink ? (
-                    <a
-                      href={project.externalLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary hover:underline mt-1"
-                    >
-                      <span>مشاهدة الفيديو على يوتيوب</span>
-                      <span className="text-base font-sans">↗</span>
-                    </a>
-                  ) : (
-                    <button
-                      onClick={() => openModal(project)}
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary hover:underline mt-1 text-right cursor-pointer"
-                    >
-                      <span>عرض تفاصيل المشروع</span>
-                      <span className="text-base font-sans">←</span>
-                    </button>
-                  )}
+                  <div className="pointer-events-auto mt-1">
+                    {caseStudyUrl ? (
+                      <Link
+                        href={caseStudyUrl}
+                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary hover:underline"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <span>عرض دراسة الحالة</span>
+                        <span className="text-base font-sans">←</span>
+                      </Link>
+                    ) : project.externalLink ? (
+                      <a
+                        href={project.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary hover:underline"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <span>مشاهدة الفيديو على يوتيوب</span>
+                        <span className="text-base font-sans">↗</span>
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary group-hover:underline text-right">
+                        <span>عرض تفاصيل العمل</span>
+                        <span className="text-base font-sans">←</span>
+                      </span>
+                    )}
+                  </div>
                 </div>
               </article>
             )
@@ -342,10 +459,10 @@ export default function WorkGrid() {
               <span>هل لديك مشروع قادم؟</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
-              جاهز لبدء مشروعك القادم؟
+              جاهز لبدء مشروعك القادم مع تاج ستوديو؟
             </h2>
-            <p className="mt-2 text-muted-foreground text-base">
-              نحول أفكارك إلى تصاميم تصنع الفرق في السوقين السعودي والمصري.
+            <p className="mt-2 text-muted-foreground text-base max-w-xl">
+              نحول أفكارك إلى تصاميم تصنع الفرق في السوقين السعودي والمصري، مع اهتمام كامل بأدق التفاصيل والطباعة الفاخرة.
             </p>
           </div>
 
@@ -359,7 +476,7 @@ export default function WorkGrid() {
         </div>
       </section>
 
-      {/* ── 4. PROJECT MODAL (Preserved for projects without full case studies) ── */}
+      {/* ── 4. PROJECT MODAL ── */}
       <ImageModal
         imageUrl={selectedProject?.imageUrl || null}
         title={selectedProject?.title || ""}
