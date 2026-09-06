@@ -50,28 +50,44 @@ const projectOverrides: Record<
     tags: ["دراسات حالة", "هويات", "مطبوعات"],
   },
 
-  // Highlighted Print & Packaging Designs
-  40: {
-    size: "large",
-    title: "الأمين للتمور - كوكيز التمور",
-    description: "تصميم عبوة وتغليف كوكيز التمور الفاخر مع هوية تراثية عصرية متكاملة للمتاجر السعودية.",
-    subCategory: "تغليف ومطبوعات",
-    tags: ["تغليف", "مطبوعات"],
-  },
-  41: {
+  // Packaging Designs (Al-Ameen Dates Boxes)
+  25: {
     size: "normal",
-    title: "الأمين للتمور - سينابون رولز",
-    description: "تصميم علبة سينابون رولز الفاخرة للأمين للتمور مع رسومات وتنسيق طباعي متميز.",
-    subCategory: "تغليف وعلب",
-    tags: ["تغليف", "مطبوعات"],
+    title: "الأمين للتمور - علبة سينابون رولز",
+    description: "تصميم عبوة وتغليف كرتوني مبتكر لسينابون رولز بالتمر والقرفة لمصنع الأمين للتمور.",
+    subCategory: "تصميم عبوات وتغليف",
+    tags: ["تغليف"],
+  },
+  27: {
+    size: "normal",
+    title: "الأمين للتمور - خليط كوكيز التمر",
+    description: "تصميم عبوة كرتونية فاخرة لمنتج خليط كوكيز التمر العضوي لمصنع الأمين للتمور.",
+    subCategory: "تصميم عبوات غذائية",
+    tags: ["تغليف"],
   },
   42: {
     size: "wide",
-    title: "الأمين للتمور - بوكسات الهدايا",
-    description: "تصميم علب وبوكسات التمور الفاخرة للهدايا والمناسبات الرسمية بالمملكة.",
-    subCategory: "تغليف فاخر",
-    tags: ["تغليف", "مطبوعات"],
+    title: "الأمين للتمور - علبة تمور محشوة بالمكسرات",
+    description: "تصميم عبوة هدايا كرتونية هندسية فريدة للتمور الفاخرة المحشوة بالمكسرات لمصنع الأمين للتمور.",
+    subCategory: "تغليف كرتوني مبتكر",
+    tags: ["تغليف"],
   },
+  43: {
+    size: "normal",
+    title: "الأمين للتمور - علبة سناك التمر والصقعي",
+    description: "تصميم علبة تمور كرتونية فاخرة باللون الأخضر الزيتي والذهبي لسناك التمر وصقعي التمر للأمين للتمور.",
+    subCategory: "علب تمور فاخرة",
+    tags: ["تغليف"],
+  },
+  44: {
+    size: "wide",
+    title: "مصنع الأمين للتمور - علبة تمور مستطيلة فاخرة",
+    description: "تصميم علبة هدايا مستطيلة فاخرة لتمور محشوة بالمكسرات لمصنع الأمين للتمور.",
+    subCategory: "علب هدايا فاخرة",
+    tags: ["تغليف"],
+  },
+
+  // Highlighted Print Designs
   26: {
     size: "normal",
     title: "الأمين للتمور - كروت عمل",
@@ -102,10 +118,10 @@ const projectOverrides: Record<
   },
   35: {
     size: "wide",
-    title: "روابي الخليج",
-    description: "تصميم عبوة منتج فاخرة وهوية تغليف متكاملة لعلامة روابي الخليج.",
-    subCategory: "تغليف ومطبوعات",
-    tags: ["تغليف", "مطبوعات"],
+    title: "كتاب الأحساء - التسامح المذهبي",
+    description: "تصميم وإخراج غلاف كتاب الأحساء نموذج التسامح المذهبي للكاتب محمد علي الحرز.",
+    subCategory: "تصميم كتب ومطبوعات",
+    tags: ["مطبوعات"],
   },
   36: {
     size: "wide",
@@ -123,16 +139,30 @@ const projectOverrides: Record<
   },
   38: {
     size: "normal",
-    title: "كارت شخصي AMP",
-    description: "تصميم بطاقة عمل وهوية شخصية بألوان عصرية وتشطيبات فاخرة.",
-    subCategory: "كروت شخصية",
+    title: "الأكاديمية المالية - مطبوعات المستثمرين",
+    description: "تصميم مطبوعات وبروشور تعريفي لمشروع تعزيز وتطوير قدرات المستثمرين للأكاديمية المالية.",
+    subCategory: "كتيبات ومطبوعات",
     tags: ["مطبوعات"],
   },
   39: {
     size: "normal",
-    title: "كارت شخصي شركة أبعاد",
-    description: "تصميم كارت أعمال ومستندات مؤسسية لشركة أبعاد الاستثمارية.",
+    title: "كارت شخصي AMP CONNECT",
+    description: "تصميم بطاقات عمل وهوية شخصية لعلامة AMP CONNECT بألوان وتنسيق عصري.",
     subCategory: "كروت شخصية",
+    tags: ["مطبوعات"],
+  },
+  40: {
+    size: "normal",
+    title: "كارت شخصي لشركة أبعاد",
+    description: "تصميم بطاقة عمل ومستندات رسمية لشركة أبعاد الاستثمارية بتشطيبات راقية.",
+    subCategory: "كروت شخصية",
+    tags: ["مطبوعات"],
+  },
+  41: {
+    size: "normal",
+    title: "الفريج للأسماك - بطاقات ترويجية",
+    description: "تصميم بطاقات وكروت ترويجية لمتجر الفريج للأسماك والروبيان.",
+    subCategory: "بطاقات ترويجية",
     tags: ["مطبوعات"],
   },
 
@@ -183,10 +213,10 @@ const projectOverrides: Record<
   },
 }
 
-// Curated order for the "الكل" view to blend identities, prints, packaging, and social media seamlessly
+// Curated order for the "الكل" view to blend packaging, identities, prints, and social media seamlessly
 const curatedOrder = [
-  40, 26, 28, 45, 22, 20, 31, 41, 52, 19, 21, 24, 36, 23, 25, 27, 29, 30,
-  32, 33, 34, 35, 37, 38, 39, 42, 43, 44, 46, 47, 48, 49, 50, 51, 53, 54,
+  42, 26, 28, 45, 22, 20, 31, 25, 52, 19, 21, 24, 44, 23, 27, 43, 29, 30,
+  32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 46, 47, 48, 49, 50, 51, 53, 54,
   55, 56, 57, 58, 59, 60,
 ]
 
@@ -205,18 +235,12 @@ const allBentoProjects: BentoProject[] = curatedOrder
     let defaultTags: string[] = []
     let defaultSubCategory = p.category
 
-    if (p.category === "تصاميم المطبوعات") {
+    if (p.category === "تغليف") {
+      defaultTags = ["تغليف"]
+      defaultSubCategory = "تصميم التغليف والعلب"
+    } else if (p.category === "تصاميم المطبوعات") {
       defaultTags = ["مطبوعات"]
       defaultSubCategory = "مطبوعات وكتيبات"
-      if (
-        p.title.includes("بوكسات") ||
-        p.title.includes("عبوة") ||
-        p.description.includes("عبوة") ||
-        [32, 35, 40, 41, 42].includes(p.id)
-      ) {
-        defaultTags.push("تغليف")
-        defaultSubCategory = "تغليف وعلب"
-      }
     } else if (p.category === "تصميمات السوشيال ميديا") {
       defaultTags = ["سوشيال ميديا"]
       defaultSubCategory = "سوشيال ميديا وإعلانات"
@@ -254,19 +278,19 @@ export default function WorkGrid() {
   // Compute exact count for each filter category
   const filterTabs = useMemo(() => {
     const totalCount = allBentoProjects.length
-    const identityCount = allBentoProjects.filter((p) => p.category === "الهوية البصرية").length
+    const packagingCount = allBentoProjects.filter((p) => p.category === "تغليف" || p.tags?.includes("تغليف")).length
     const printCount = allBentoProjects.filter((p) => p.category === "تصاميم المطبوعات").length
-    const packagingCount = allBentoProjects.filter((p) => p.tags?.includes("تغليف")).length
     const socialCount = allBentoProjects.filter((p) => p.category === "تصميمات السوشيال ميديا").length
-    const motionCount = allBentoProjects.filter((p) => p.category === "فيديو موشن جرافيك").length
+    const identityCount = allBentoProjects.filter((p) => p.category === "الهوية البصرية").length
     const caseStudiesCount = allBentoProjects.filter((p) => Boolean(p.caseStudy) || p.tags?.includes("دراسات حالة")).length
+    const motionCount = allBentoProjects.filter((p) => p.category === "فيديو موشن جرافيك").length
 
     return [
       { label: "الكل", value: "all", count: totalCount },
+      { label: "تغليف", value: "تغليف", count: packagingCount },
       { label: "مطبوعات", value: "تصاميم المطبوعات", count: printCount },
       { label: "سوشيال ميديا", value: "تصميمات السوشيال ميديا", count: socialCount },
       { label: "هويات", value: "الهوية البصرية", count: identityCount },
-      { label: "تغليف", value: "تغليف", count: packagingCount },
       { label: "دراسات حالة", value: "دراسات حالة", count: caseStudiesCount },
       { label: "موشن جرافيك", value: "فيديو موشن جرافيك", count: motionCount },
     ]
@@ -275,7 +299,7 @@ export default function WorkGrid() {
   const filteredProjects = useMemo(() => {
     return allBentoProjects.filter((item) => {
       if (activeFilter === "all") return true
-      if (activeFilter === "تغليف") return item.tags?.includes("تغليف")
+      if (activeFilter === "تغليف") return item.category === "تغليف" || item.tags?.includes("تغليف")
       if (activeFilter === "دراسات حالة") return Boolean(item.caseStudy) || item.tags?.includes("دراسات حالة")
       return item.category === activeFilter
     })

@@ -10,7 +10,7 @@ export interface ProjectItem {
   title: string
   description: string
   imageUrl: string
-  category: "الهوية البصرية" | "تصميمات السوشيال ميديا" | "تصاميم المطبوعات" | "فيديو موشن جرافيك"
+  category: "الهوية البصرية" | "تصميمات السوشيال ميديا" | "تصاميم المطبوعات" | "فيديو موشن جرافيك" | "تغليف"
   caseStudy?: CaseStudy
   externalLink?: string
 }
@@ -21,6 +21,7 @@ export const serviceSlugToCategory: Record<string, string> = {
   "print-design": "تصاميم المطبوعات",
   "motion-graphics": "فيديو موشن جرافيك",
   "company-profile-design": "تصاميم المطبوعات",
+  "packaging-design": "تغليف",
 }
 
 export const categoryToServiceSlug: Record<string, string> = {
@@ -28,6 +29,7 @@ export const categoryToServiceSlug: Record<string, string> = {
   "تصميمات السوشيال ميديا": "social-media-design",
   "تصاميم المطبوعات": "print-design",
   "فيديو موشن جرافيك": "motion-graphics",
+  "تغليف": "print-design",
 }
 
 export const projects: ProjectItem[] = [
@@ -92,24 +94,24 @@ export const projects: ProjectItem[] = [
   },
   {
     id: 25,
-    title: "الأمين للتمور",
-    description: "تصميم كتيب أو تقرير سنوي للشركات، يتميز بتصميم نظيف ومهني.",
+    title: "الأمين للتمور - علبة سينابون رولز",
+    description: "تصميم عبوة وتغليف كرتوني مبتكر لسينابون رولز بالتمر والقرفة لمصنع الأمين للتمور.",
     imageUrl: "/images/print-design-2.avif",
-    category: "تصاميم المطبوعات",
+    category: "تغليف",
   },
   {
     id: 26,
     title: "الأمين للتمور",
-    description: "تصميم بطاقة عمل بأسلوب عصري وبسيط.",
+    description: "تصميم بطاقة عمل بأسلوب عصري وبسيط لمصنع الأمين للتمور.",
     imageUrl: "/images/print-design-3.avif",
     category: "تصاميم المطبوعات",
   },
   {
     id: 27,
-    title: "الأمين للتمور",
-    description: "تصميم آخر لبطاقة عمل، يتميز بتصميم فريد أو استخدام مواد مميزة.",
+    title: "الأمين للتمور - خليط كوكيز التمر",
+    description: "تصميم عبوة كرتونية فاخرة لمنتج خليط كوكيز التمر العضوي لمصنع الأمين للتمور.",
     imageUrl: "/images/print-design-4.avif",
-    category: "تصاميم المطبوعات",
+    category: "تغليف",
   },
   {
     id: 28,
@@ -183,52 +185,52 @@ export const projects: ProjectItem[] = [
   },
   {
     id: 38,
-    title: "كارت شخصي AMP",
-    description: "تصميم بطاقة عمل أو هوية بصرية، مع استخدام ألوان جريئة وتصميم حديث.",
+    title: "الأكاديمية المالية - مطبوعات المستثمرين",
+    description: "تصميم مطبوعات وبروشور تعريفي لمشروع تعزيز وتطوير قدرات المستثمرين للأكاديمية المالية.",
     imageUrl: "/images/print-design-15.avif",
     category: "تصاميم المطبوعات",
   },
   {
     id: 39,
-    title: "كارت شخصي لشركة أبعاد",
-    description: "تصميم عبوة منتج، ربما لمنتجات غذائية أو مشروبات، مع التركيز على الجاذبية البصرية.",
+    title: "كارت شخصي AMP CONNECT",
+    description: "تصميم بطاقات عمل وهوية شخصية لعلامة AMP CONNECT بألوان وتنسيق عصري.",
     imageUrl: "/images/print-design-16.avif",
     category: "تصاميم المطبوعات",
   },
   {
     id: 40,
-    title: "بوكسات للأمين للتمور",
-    description: "تصميم غلاف كتاب أو مجلة، يظهر فيه صورة جذابة وعنوان واضح.",
+    title: "كارت شخصي لشركة أبعاد",
+    description: "تصميم بطاقة عمل ومستندات رسمية لشركة أبعاد الاستثمارية بتشطيبات راقية.",
     imageUrl: "/images/print-design-17.avif",
     category: "تصاميم المطبوعات",
   },
   {
     id: 41,
-    title: "بوكسات للأمين للتمور",
-    description: "تصميم بطاقة عمل أو دعوة، مع استخدام عناصر تصميم بسيطة وأنيقة.",
+    title: "الفريج للأسماك - بطاقات ترويجية",
+    description: "تصميم بطاقات وكروت ترويجية لمتجر الفريج للأسماك والروبيان.",
     imageUrl: "/images/print-design-1.avif",
     category: "تصاميم المطبوعات",
   },
   {
     id: 42,
-    title: "بوكسات للأمين للتمور",
-    description: "تصميم بطاقة عمل أو هوية بصرية، مع شعار بسيط وأنيق.",
+    title: "الأمين للتمور - علبة تمور محشوة بالمكسرات",
+    description: "تصميم عبوة هدايا كرتونية هندسية فريدة للتمور الفاخرة المحشوة بالمكسرات للأمين للتمور.",
     imageUrl: "/images/print-design-19.avif",
-    category: "تصاميم المطبوعات",
+    category: "تغليف",
   },
   {
     id: 43,
-    title: "غلاف مجلة بتصميم فني",
-    description: "تصميم غلاف مجلة أو كتاب، يظهر فيه تصميم فني معقد.",
+    title: "الأمين للتمور - علبة سناك التمر والصقعي",
+    description: "تصميم علبة كرتونية راقية بلون زيتي وذهبي لسناك التمر والصقعي الفاخر للأمين للتمور.",
     imageUrl: "/images/print-design-20.avif",
-    category: "تصاميم المطبوعات",
+    category: "تغليف",
   },
   {
     id: 44,
-    title: "بروشور بصور كبيرة",
-    description: "تصميم بروشور أو كتيب، يركز على الصور الكبيرة والنصوص الموجزة.",
+    title: "مصنع الأمين للتمور - علبة تمور مستطيلة فاخرة",
+    description: "تصميم علبة هدايا مستطيلة فاخرة لتمور محشوة بالمكسرات لمصنع الأمين للتمور.",
     imageUrl: "/images/print-design-21.avif",
-    category: "تصاميم المطبوعات",
+    category: "تغليف",
   },
   {
     id: 45,
