@@ -282,7 +282,21 @@ const allBentoProjects: BentoProject[] = curatedOrder
   })
   .filter((p): p is BentoProject => p !== null)
 
-export default function WorkGrid() {
+interface WorkGridProps {
+  showHeader?: boolean
+  showBottomCTA?: boolean
+  id?: string
+  title?: string
+  subtitle?: string
+}
+
+export default function WorkGrid({
+  showHeader = false,
+  showBottomCTA = true,
+  id = "portfolio-grid",
+  title = "أعمالنا ومشاريعنا",
+  subtitle = "عرض لتصاميمنا وحلولنا الإبداعية في الهوية البصرية، التغليف، المطبوعات، وحملات السوشيال ميديا بالسوقين السعودي والمصري.",
+}: WorkGridProps = {}) {
   const [activeFilter, setActiveFilter] = useState("all")
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -333,7 +347,23 @@ export default function WorkGrid() {
   }
 
   return (
-    <section className="py-12 bg-background text-foreground transition-colors duration-300">
+    <section id={id} className="py-12 bg-background text-foreground transition-colors duration-300">
+      {/* ── 0. OPTIONAL HEADER FOR HOMEPAGE ── */}
+      {showHeader && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-xs font-bold tracking-wider mb-4">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span>سابقة أعمالنا والمشاريع</span>
+          </div>
+          <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl lg:text-5xl tracking-tight">
+            {title}
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            {subtitle}
+          </p>
+        </div>
+      )}
+
       {/* ── 1. FILTERS (PILL BUTTONS WITH COUNTS) ── */}
       <div className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <div className="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none flex-nowrap sm:flex-wrap">
@@ -483,31 +513,46 @@ export default function WorkGrid() {
         </div>
       </div>
 
-      {/* ── 3. BOTTOM CTA SECTION (Editorial Style) ── */}
-      <section className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-border">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div>
-            <div className="text-primary font-bold text-xs tracking-wider mb-2 flex items-center gap-2">
-              <span className="w-5 h-[2px] bg-primary inline-block" />
-              <span>هل لديك مشروع قادم؟</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
-              جاهز لبدء مشروعك القادم مع تاج ستوديو؟
-            </h2>
-            <p className="mt-2 text-muted-foreground text-base max-w-xl">
-              نحول أفكارك إلى تصاميم تصنع الفرق في السوقين السعودي والمصري، مع اهتمام كامل بأدق التفاصيل والطباعة الفاخرة.
-            </p>
-          </div>
-
+      {/* ── 2.5 HOMEPAGE "VIEW ALL WORK" BUTTON ── */}
+      {showHeader && (
+        <div className="text-center mt-12 pb-4">
           <Link
-            href="/#contact-form"
-            className="apple-button px-8 py-4 text-sm font-bold shadow-xl hover:scale-105 transition-transform shrink-0 inline-flex items-center gap-2"
+            href="/work"
+            className="apple-button px-9 py-4 text-sm sm:text-base font-bold shadow-xl hover:scale-105 transition-transform inline-flex items-center gap-3"
           >
-            <span>تواصل معنا الآن</span>
-            <span>←</span>
+            <span>تصفح كافة أعمالنا ومشاريعنا بالتفصيل</span>
+            <span className="text-base font-sans">←</span>
           </Link>
         </div>
-      </section>
+      )}
+
+      {/* ── 3. BOTTOM CTA SECTION (Editorial Style - For Dedicated Work Page) ── */}
+      {showBottomCTA && (
+        <section className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-border">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div>
+              <div className="text-primary font-bold text-xs tracking-wider mb-2 flex items-center gap-2">
+                <span className="w-5 h-[2px] bg-primary inline-block" />
+                <span>هل لديك مشروع قادم؟</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
+                جاهز لبدء مشروعك القادم مع تاج ستوديو؟
+              </h2>
+              <p className="mt-2 text-muted-foreground text-base max-w-xl">
+                نحول أفكارك إلى تصاميم تصنع الفرق في السوقين السعودي والمصري، مع اهتمام كامل بأدق التفاصيل والطباعة الفاخرة.
+              </p>
+            </div>
+
+            <Link
+              href="/#contact-form"
+              className="apple-button px-8 py-4 text-sm font-bold shadow-xl hover:scale-105 transition-transform shrink-0 inline-flex items-center gap-2"
+            >
+              <span>تواصل معنا الآن</span>
+              <span>←</span>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* ── 4. PROJECT MODAL ── */}
       <ImageModal
