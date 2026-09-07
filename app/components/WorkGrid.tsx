@@ -297,13 +297,12 @@ export default function WorkGrid({
   title = "أعمالنا ومشاريعنا",
   subtitle = "عرض لتصاميمنا وحلولنا الإبداعية في الهوية البصرية، التغليف، المطبوعات، وحملات السوشيال ميديا بالسوقين السعودي والمصري.",
 }: WorkGridProps = {}) {
-  const [activeFilter, setActiveFilter] = useState("all")
+  const [activeFilter, setActiveFilter] = useState("الهوية البصرية")
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // Compute exact count for each filter category
+  // Compute exact count for each filter category (5 sections)
   const filterTabs = useMemo(() => {
-    const totalCount = allBentoProjects.length
     const identityCount = allBentoProjects.filter((p) => p.category === "الهوية البصرية").length
     const packagingCount = allBentoProjects.filter((p) => p.category === "تغليف").length
     const printCount = allBentoProjects.filter((p) => p.category === "تصاميم المطبوعات").length
@@ -311,7 +310,6 @@ export default function WorkGrid({
     const motionCount = allBentoProjects.filter((p) => p.category === "فيديو موشن جرافيك").length
 
     return [
-      { label: "الكل", value: "all", count: totalCount },
       { label: "هويات", value: "الهوية البصرية", count: identityCount },
       { label: "تغليف", value: "تغليف", count: packagingCount },
       { label: "مطبوعات", value: "تصاميم المطبوعات", count: printCount },
@@ -321,11 +319,15 @@ export default function WorkGrid({
   }, [])
 
   const filteredProjects = useMemo(() => {
-    return allBentoProjects.filter((item) => {
-      if (activeFilter === "all") return true
+    const list = allBentoProjects.filter((item) => {
       if (activeFilter === "تغليف") return item.category === "تغليف"
       return item.category === activeFilter
     })
+    if (activeFilter === "الهوية البصرية") {
+      const order = [19, 20, 21, 22]
+      return [...list].sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id))
+    }
+    return list
   }, [activeFilter])
 
   const openModal = (project: ProjectItem) => {
