@@ -9,6 +9,18 @@ const categoryRedirects: Record<string, string> = {
 
 export function middleware(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl
+  const decodedPath = decodeURIComponent(pathname)
+
+  // Redirect any Arabic or alternate URL variations of National Day 96 to the dedicated tool page
+  if (
+    pathname !== "/tools/saudi-national-day-96-identity" &&
+    (decodedPath.includes("اليوم-الوطني-96") ||
+     decodedPath.includes("اليوم-الوطني-السعودي-96") ||
+     pathname === "/tools/saudi-national-day-96" ||
+     pathname === "/tools/nd96")
+  ) {
+    return NextResponse.redirect(new URL("/tools/saudi-national-day-96-identity", request.url), 308)
+  }
 
   if (pathname !== "/") {
     return NextResponse.next()
@@ -25,5 +37,9 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/",
+  matcher: [
+    "/",
+    "/tools/:path*",
+    "/blog/:path*",
+  ],
 }
