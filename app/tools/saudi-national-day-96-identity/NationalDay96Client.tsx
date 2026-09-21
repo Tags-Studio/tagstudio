@@ -45,13 +45,13 @@ import {
 const QUICK_ACTIONS = [
   { id: "download-logo", label: "الشعار مفرغ PNG", icon: Download, bg: "bg-[#006C35] hover:bg-[#005228] text-white" },
   { id: "download-video", label: "فيديو الشعار MP4", icon: Film, bg: "bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 text-white font-bold" },
-  { id: "download-guideline", label: "دليل الهوية PDF", icon: FileText, bg: "bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold" },
-  { id: "section-coloring", label: "رسومات وتلوين 96", icon: Paintbrush, bg: "bg-pink-950/40 border border-pink-500/30 text-pink-300 hover:bg-pink-900/40" },
-  { id: "section-date", label: "موعد الإجازة (23 سبتمبر)", icon: Calendar, bg: "bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-900/40" },
-  { id: "section-pillars", label: "ركائز الهوية الـ 6", icon: Layers, bg: "bg-zinc-800/80 border border-zinc-700 text-zinc-200 hover:bg-zinc-800" },
-  { id: "section-vision-kit", label: "ملحقات Vision Kit", icon: Compass, bg: "bg-zinc-800/80 border border-zinc-700 text-[#D4AF37] hover:bg-zinc-800" },
-  { id: "colors-and-elements", label: "أكواد الألوان HEX", icon: Palette, bg: "bg-zinc-800/80 border border-zinc-700 text-zinc-200 hover:bg-zinc-800" },
-  { id: "songs-section", label: "أغاني اليوم الوطني MP3", icon: Music, bg: "bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-900/40" },
+  { id: "download-guideline", label: "دليل الهوية PDF", icon: FileText, bg: "bg-[#D4AF37] hover:bg-yellow-500 text-zinc-950 font-black" },
+  { id: "section-coloring", label: "رسومات وتلوين 96", icon: Paintbrush, bg: "bg-pink-50 hover:bg-pink-100 border border-pink-200 text-pink-800 font-bold" },
+  { id: "section-date", label: "موعد الإجازة (23 سبتمبر)", icon: Calendar, bg: "bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 font-bold" },
+  { id: "section-pillars", label: "ركائز الهوية الـ 6", icon: Layers, bg: "bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 text-zinc-800" },
+  { id: "section-vision-kit", label: "ملحقات Vision Kit", icon: Compass, bg: "bg-amber-50/80 hover:bg-amber-100 border border-amber-200 text-amber-900" },
+  { id: "colors-and-elements", label: "أكواد الألوان HEX", icon: Palette, bg: "bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 text-zinc-800" },
+  { id: "songs-section", label: "أغاني اليوم الوطني MP3", icon: Music, bg: "bg-cyan-50 hover:bg-cyan-100 border border-cyan-200 text-cyan-800 font-bold" },
 ]
 
 const MAIN_DOWNLOADS = [
@@ -163,7 +163,7 @@ const PILLARS = [
     desc: "تجسد الطموح الوطني اللامحدود واستشراف المستقبل الواعد والريادة العالمية في ظل رؤية المملكة 2030.",
     sub: "شعاع الرؤية والنسيج المستقبلي",
     hex: "#7c5d21",
-    tagColor: "border-[#7c5d21]/50 text-[#d4af37] bg-[#7c5d21]/20",
+    tagColor: "border-[#7c5d21]/40 text-[#7c5d21] bg-[#7c5d21]/10",
     tapestryImg: "https://a-amaq.com/assets/national-day-96/elements/tapestry-vision.webp",
     typoImg: "https://a-amaq.com/assets/national-day-96/elements/typo-vision.webp",
     patterns: [
@@ -180,7 +180,7 @@ const PILLARS = [
     desc: "ترمز للبطولة وبسالة الأجداد والفروسية وحماية تراب الوطن الغالي بكل قوة وتضحية عبر التاريخ.",
     sub: "السيف السعودي والفروسية التراثية",
     hex: "#607c4f",
-    tagColor: "border-[#607c4f]/50 text-[#8bb871] bg-[#607c4f]/20",
+    tagColor: "border-[#607c4f]/40 text-[#607c4f] bg-[#607c4f]/10",
     tapestryImg: "https://a-amaq.com/assets/national-day-96/elements/tapestry-courage.webp",
     typoImg: "https://a-amaq.com/assets/national-day-96/elements/typo-courage.webp",
     patterns: [
@@ -197,7 +197,7 @@ const PILLARS = [
     desc: "مستوحاة من مقولة «همة السعوديين كجبل طويق»، تعبر عن الصمود والإصرار الذي لا يعرف المستحيل.",
     sub: "جبل طويق وقوة الإصرار",
     hex: "#971a4d",
-    tagColor: "border-[#971a4d]/50 text-[#e24c83] bg-[#971a4d]/20",
+    tagColor: "border-[#971a4d]/40 text-[#971a4d] bg-[#971a4d]/10",
     tapestryImg: "https://a-amaq.com/assets/national-day-96/elements/tapestry-determination.webp",
     typoImg: "https://a-amaq.com/assets/national-day-96/elements/typo-determination.webp",
     patterns: [
@@ -214,7 +214,7 @@ const PILLARS = [
     desc: "تجسيد للجذور التاريخية العميقة والتمسك بالتقاليد والهوية الوطنية المتوارثة عبر الأجيال.",
     sub: "النخلة الباسقة والجذور الراسخة",
     hex: "#5aba1c",
-    tagColor: "border-[#5aba1c]/50 text-[#79df3b] bg-[#5aba1c]/20",
+    tagColor: "border-[#5aba1c]/40 text-[#449112] bg-[#5aba1c]/10",
     tapestryImg: "https://a-amaq.com/assets/national-day-96/elements/tapestry-authenticity.webp",
     typoImg: "https://a-amaq.com/assets/national-day-96/elements/typo-authenticity.webp",
     patterns: [
@@ -231,7 +231,7 @@ const PILLARS = [
     desc: "رمز كرم الضيافة السعودية الأصيلة وحفاوة الاستقبال التي أصبحت علامة فارقة للمملكة عالمياً.",
     sub: "الدلة وفنجان القهوة السعودية",
     hex: "#0050af",
-    tagColor: "border-[#0050af]/50 text-[#418eff] bg-[#0050af]/20",
+    tagColor: "border-[#0050af]/40 text-[#0050af] bg-[#0050af]/10",
     tapestryImg: "https://a-amaq.com/assets/national-day-96/elements/tapestry-generosity.webp",
     typoImg: "https://a-amaq.com/assets/national-day-96/elements/typo-generosity.webp",
     patterns: [
@@ -248,7 +248,7 @@ const PILLARS = [
     desc: "تعبر عن الجود الإنساني والعطاء السخي وطيب الأثر والخير الممتد للجميع في كل زمان ومكان.",
     sub: "المبخرة السعودية ونفحات الخزامى",
     hex: "#6565e0",
-    tagColor: "border-[#6565e0]/50 text-[#9c9cf5] bg-[#6565e0]/20",
+    tagColor: "border-[#6565e0]/40 text-[#5454d4] bg-[#6565e0]/10",
     tapestryImg: "https://a-amaq.com/assets/national-day-96/elements/tapestry-giving.webp",
     typoImg: "https://a-amaq.com/assets/national-day-96/elements/typo-giving.webp",
     patterns: [
@@ -458,43 +458,44 @@ export default function NationalDay96Client() {
       />
 
       {/* Top Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-zinc-400 mb-6 flex-wrap">
-        <Link href="/" className="hover:text-white transition-colors">الرئيسية</Link>
+      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-zinc-500 mb-6 flex-wrap">
+        <Link href="/" className="hover:text-zinc-900 transition-colors">الرئيسية</Link>
         <span>/</span>
-        <Link href="/tools" className="hover:text-white transition-colors">أدواتنا</Link>
+        <Link href="/tools" className="hover:text-zinc-900 transition-colors">أدواتنا</Link>
         <span>/</span>
-        <span className="text-[#D4AF37] font-bold">تحميل هوية وشعار اليوم الوطني السعودي 96</span>
+        <span className="text-[#006C35] font-bold">تحميل هوية وشعار اليوم الوطني السعودي 96</span>
       </nav>
 
       {/* Header Badge & Title */}
-      <div className="text-center md:text-right mb-8">
-        <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-4">
-          <span className="inline-flex items-center gap-1.5 bg-[#006C35]/20 text-[#4ade80] border border-[#006C35]/40 text-xs font-black px-3.5 py-1 rounded-full">
+      <div className="text-center md:text-right mb-10">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5 mb-4">
+          <span className="inline-flex items-center gap-1.5 bg-[#006C35]/10 text-[#006C35] border border-[#006C35]/25 text-xs font-black px-3.5 py-1.5 rounded-full shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
             هوية رسمية معتمدة 1448هـ
           </span>
-          <span className="text-xs text-zinc-400 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-full flex items-center gap-1.5">
-            <Clock className="w-3 h-3 text-[#D4AF37]" /> آخر تحديث: 21 سبتمبر 2026
+          <span className="text-xs text-zinc-600 bg-white border border-zinc-200 px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-2xs">
+            <Clock className="w-3 h-3 text-[#006C35]" /> آخر تحديث: 21 سبتمبر 2026
           </span>
-          <span className="text-xs text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-3 py-1 rounded-full font-bold">
+          <span className="text-xs text-[#916e10] bg-[#D4AF37]/15 border border-[#D4AF37]/30 px-3 py-1.5 rounded-full font-bold shadow-2xs">
             تحميل مجاني 100%
           </span>
         </div>
 
-        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-snug sm:leading-tight mb-4 tracking-tight">
+        {/* Title with generous line-height for Arabic typography */}
+        <h1 className="text-2xl sm:text-4xl lg:text-[2.65rem] font-black text-zinc-950 leading-[1.6] sm:leading-[1.65] md:leading-[1.7] lg:leading-[1.75] mb-6">
           تحميل هوية وشعار اليوم الوطني السعودي 96 (2026) — عزنا بطبعنا PDF و PNG ورسومات تلوين
         </h1>
 
-        <p className="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-3xl">
+        <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-3xl font-medium">
           الدليل الشامل والمكتبة الرسمية المتكاملة لملفات وهوية <strong>اليوم الوطني السعودي 96</strong> تحت شعار{" "}
-          <span className="text-[#4ade80] font-black">«عزّنا بطبعنا»</span>: حمّل مجاناً شعار اليوم الوطني 2026 مفرغ بدقة فائقة،
+          <span className="text-[#006C35] font-black">«عزّنا بطبعنا»</span>: حمّل مجاناً شعار اليوم الوطني 2026 مفرغ بدقة فائقة،
           ودليل الهوية المعتمد PDF، والخطوط الرسمية الـ 8، وفيديو موشن الشعار بدقة 1080p، ورسومات تلوين الأطفال للمدارس، وسجاد وملحقات استوديو الرؤية.
         </p>
       </div>
 
       {/* Quick Action Pills Navigation */}
-      <div className="bg-zinc-900/90 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-zinc-800 shadow-xl mb-8">
-        <div className="flex items-center gap-2 text-xs font-bold text-zinc-400 mb-3 px-1">
+      <div className="bg-white/95 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-zinc-200 shadow-sm mb-8">
+        <div className="flex items-center gap-2 text-xs font-bold text-zinc-700 mb-3 px-1">
           <Sparkles className="w-4 h-4 text-[#D4AF37]" />
           <span>وصول فوري وسريع للأقسام وملفات التحميل:</span>
         </div>
@@ -505,7 +506,7 @@ export default function NationalDay96Client() {
               <a
                 key={action.id}
                 href={`#${action.id}`}
-                className={`${action.bg} py-2.5 px-2 rounded-xl flex items-center justify-center gap-1.5 transition-all text-center hover:scale-[1.02] shadow-sm`}
+                className={`${action.bg} py-2.5 px-2 rounded-xl flex items-center justify-center gap-1.5 transition-all text-center hover:scale-[1.02] shadow-xs`}
               >
                 <Icon className="w-3.5 h-3.5 shrink-0" />
                 <span className="truncate">{action.label}</span>
@@ -518,52 +519,52 @@ export default function NationalDay96Client() {
       {/* Instant Answer Callout (Featured Snippet) */}
       <div
         id="section-date"
-        className="scroll-mt-32 bg-gradient-to-l from-emerald-950/40 via-zinc-900 to-zinc-900 border-r-4 border-r-[#006C35] border border-emerald-900/40 p-4 sm:p-5 rounded-2xl mb-8 shadow-lg"
+        className="scroll-mt-32 bg-gradient-to-l from-emerald-50 via-white to-emerald-50/40 border-r-4 border-r-[#006C35] border border-emerald-200/80 p-4 sm:p-5 rounded-2xl mb-8 shadow-xs"
       >
-        <div className="flex items-center gap-2 text-[#4ade80] font-black text-sm mb-1.5">
+        <div className="flex items-center gap-2 text-[#006C35] font-black text-sm mb-1.5">
           <Calendar className="w-4 h-4 text-[#D4AF37]" />
           <span>إجابة سريعة: متى موعد اليوم الوطني السعودي 96 لعام 2026؟</span>
         </div>
-        <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed font-medium">
-          يوافق اليوم الوطني السعودي 96 يوم <span className="text-[#4ade80] font-black underline decoration-2">الأربعاء 23 سبتمبر 2026م</span> (الموافق 11 ربيع الأول 1448هـ)، وهو إجازة رسمية مدفوعة الأجر لكافة القطاعات الحكومية والخاصة والمدارس في كافة أرجاء المملكة العربية السعودية تحت الشعار الرسمي المعتمد <span className="text-[#D4AF37] font-black">«عزّنا بطبعنا»</span>.
+        <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-medium">
+          يوافق اليوم الوطني السعودي 96 يوم <span className="text-[#006C35] font-black underline decoration-2">الأربعاء 23 سبتمبر 2026م</span> (الموافق 11 ربيع الأول 1448هـ)، وهو إجازة رسمية مدفوعة الأجر لكافة القطاعات الحكومية والخاصة والمدارس في كافة أرجاء المملكة العربية السعودية تحت الشعار الرسمي المعتمد <span className="text-[#006C35] font-black">«عزّنا بطبعنا»</span>.
         </p>
       </div>
 
-      {/* Live Interactive Countdown Widget */}
-      <div className="bg-gradient-to-r from-zinc-900 via-[#002615] to-zinc-900 border border-[#006C35]/40 rounded-3xl p-6 sm:p-8 mb-12 text-center relative overflow-hidden shadow-2xl">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-[#006C35]/15 blur-2xl rounded-full pointer-events-none" />
+      {/* Live Interactive Countdown Widget (Light Modern Theme) */}
+      <div className="bg-gradient-to-br from-white via-emerald-50/30 to-white border-2 border-emerald-600/25 rounded-3xl p-6 sm:p-8 mb-12 text-center relative overflow-hidden shadow-sm">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-[#006C35]/5 blur-2xl rounded-full pointer-events-none" />
         <div className="relative z-10 max-w-xl mx-auto">
-          <div className="inline-flex items-center gap-2 text-xs font-bold text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/25 px-3 py-1 rounded-full mb-3">
-            <Clock className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 text-xs font-bold text-[#006C35] bg-[#006C35]/10 border border-[#006C35]/25 px-3 py-1 rounded-full mb-3">
+            <Clock className="w-3.5 h-3.5 text-[#006C35]" />
             <span>العد التنازلي لليوم الوطني السعودي 96</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-black text-white mb-6">
+          <h3 className="text-xl sm:text-2xl font-black text-zinc-950 mb-6">
             كم باقي على موعد اليوم الوطني 96 (عزنا بطبعنا)؟
           </h3>
 
           {timeLeft.isToday ? (
-            <div className="p-6 bg-[#006C35]/30 border border-[#4ade80]/40 rounded-2xl">
-              <span className="text-2xl sm:text-3xl font-black text-[#4ade80]">
+            <div className="p-6 bg-[#006C35]/10 border border-[#006C35]/30 rounded-2xl">
+              <span className="text-2xl sm:text-3xl font-black text-[#006C35]">
                 🇸🇦 اليوم نحتفل باليوم الوطني السعودي 96 — دمت عزيزاً وشامخاً يا وطن! 🇸🇦
               </span>
             </div>
           ) : (
             <div className="grid grid-cols-4 gap-2 sm:gap-4">
-              <div className="bg-black/50 border border-zinc-800 rounded-2xl p-3 sm:p-4">
-                <span className="block text-2xl sm:text-4xl font-black font-mono text-[#4ade80]">{timeLeft.days}</span>
-                <span className="text-[11px] sm:text-xs text-zinc-400 font-bold">يوم</span>
+              <div className="bg-white border border-emerald-200/80 shadow-xs rounded-2xl p-3 sm:p-4">
+                <span className="block text-2xl sm:text-4xl font-black font-mono text-[#006C35]">{timeLeft.days}</span>
+                <span className="text-[11px] sm:text-xs text-zinc-500 font-bold">يوم</span>
               </div>
-              <div className="bg-black/50 border border-zinc-800 rounded-2xl p-3 sm:p-4">
-                <span className="block text-2xl sm:text-4xl font-black font-mono text-[#4ade80]">{timeLeft.hours}</span>
-                <span className="text-[11px] sm:text-xs text-zinc-400 font-bold">ساعة</span>
+              <div className="bg-white border border-emerald-200/80 shadow-xs rounded-2xl p-3 sm:p-4">
+                <span className="block text-2xl sm:text-4xl font-black font-mono text-[#006C35]">{timeLeft.hours}</span>
+                <span className="text-[11px] sm:text-xs text-zinc-500 font-bold">ساعة</span>
               </div>
-              <div className="bg-black/50 border border-zinc-800 rounded-2xl p-3 sm:p-4">
-                <span className="block text-2xl sm:text-4xl font-black font-mono text-[#4ade80]">{timeLeft.minutes}</span>
-                <span className="text-[11px] sm:text-xs text-zinc-400 font-bold">دقيقة</span>
+              <div className="bg-white border border-emerald-200/80 shadow-xs rounded-2xl p-3 sm:p-4">
+                <span className="block text-2xl sm:text-4xl font-black font-mono text-[#006C35]">{timeLeft.minutes}</span>
+                <span className="text-[11px] sm:text-xs text-zinc-500 font-bold">دقيقة</span>
               </div>
-              <div className="bg-black/50 border border-zinc-800 rounded-2xl p-3 sm:p-4">
-                <span className="block text-2xl sm:text-4xl font-black font-mono text-[#D4AF37]">{timeLeft.seconds}</span>
-                <span className="text-[11px] sm:text-xs text-zinc-400 font-bold">ثانية</span>
+              <div className="bg-white border border-emerald-200/80 shadow-xs rounded-2xl p-3 sm:p-4">
+                <span className="block text-2xl sm:text-4xl font-black font-mono text-[#916e10]">{timeLeft.seconds}</span>
+                <span className="text-[11px] sm:text-xs text-zinc-500 font-bold">ثانية</span>
               </div>
             </div>
           )}
@@ -573,7 +574,7 @@ export default function NationalDay96Client() {
       {/* Video Outro Preview & Download Card */}
       <div id="download-video" className="scroll-mt-32 mb-14">
         {/* Video Preview */}
-        <div className="mb-4 overflow-hidden rounded-3xl shadow-2xl relative bg-black aspect-video border-2 border-[#006C35]/30">
+        <div className="mb-4 overflow-hidden rounded-3xl shadow-xl relative bg-black aspect-video border-2 border-[#006C35]/20">
           <video
             autoPlay
             loop
@@ -590,35 +591,35 @@ export default function NationalDay96Client() {
           </video>
         </div>
 
-        {/* Video Download Card */}
-        <div className="bg-gradient-to-br from-zinc-900 via-zinc-900 to-[#002615] border-2 border-[#006C35]/40 rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+        {/* Video Download Card (Light Theme) */}
+        <div className="bg-white border-2 border-emerald-600/20 rounded-3xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex-1 space-y-2.5">
-              <div className="inline-flex items-center gap-2 bg-[#006C35]/20 text-[#4ade80] px-3.5 py-1 rounded-full text-xs font-black border border-[#006C35]/40">
+              <div className="inline-flex items-center gap-2 bg-[#006C35]/10 text-[#006C35] px-3.5 py-1 rounded-full text-xs font-black border border-[#006C35]/20">
                 <Film className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>فيديو موشن جرافيك رسمي معتمد (آوترو 96)</span>
               </div>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-snug">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-zinc-950 leading-snug">
                 تحميل فيديو شعار اليوم الوطني 96 (عزنا بطبعنا) بدقة 1080p Full HD
               </h2>
-              <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-2xl">
+              <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed max-w-2xl font-medium">
                 احصل على النسخة الرسمية الأصلية لموشن جرافيك شعار اليوم الوطني السعودي 96 بصيغة{" "}
-                <span className="text-[#4ade80] font-black">MP4 عالية الدقة</span> وبدون حقوق مزعجة، جاهزة للاستخدام الفوري
+                <span className="text-[#006C35] font-black">MP4 عالية الدقة</span> وبدون حقوق مزعجة، جاهزة للاستخدام الفوري
                 في المونتاج (CapCut, Premiere, After Effects)، وإنترو إعلانات الشركات، ومقاطع ريلز وتيك توك وسناب شات.
               </p>
 
               {/* Specs Badges */}
-              <div className="flex flex-wrap items-center gap-2 pt-2 text-xs font-bold text-zinc-300">
-                <span className="inline-flex items-center gap-1.5 bg-black/50 border border-zinc-800 px-3 py-1 rounded-lg">
-                  <Eye className="w-3.5 h-3.5 text-[#4ade80]" /> 1920x1080 (Full HD)
+              <div className="flex flex-wrap items-center gap-2 pt-2 text-xs font-bold text-zinc-700">
+                <span className="inline-flex items-center gap-1.5 bg-zinc-50 border border-zinc-200 px-3 py-1 rounded-lg shadow-2xs">
+                  <Eye className="w-3.5 h-3.5 text-[#006C35]" /> 1920x1080 (Full HD)
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-black/50 border border-zinc-800 px-3 py-1 rounded-lg">
+                <span className="inline-flex items-center gap-1.5 bg-zinc-50 border border-zinc-200 px-3 py-1 rounded-lg shadow-2xs">
                   <Film className="w-3.5 h-3.5 text-[#D4AF37]" /> صيغة MP4
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-black/50 border border-zinc-800 px-3 py-1 rounded-lg">
-                  <FileText className="w-3.5 h-3.5 text-zinc-400" /> الحجم: 5.4 ميجابايت
+                <span className="inline-flex items-center gap-1.5 bg-zinc-50 border border-zinc-200 px-3 py-1 rounded-lg shadow-2xs">
+                  <FileText className="w-3.5 h-3.5 text-zinc-500" /> الحجم: 5.4 ميجابايت
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-[#006C35]/20 border border-[#006C35]/40 text-[#4ade80] px-3 py-1 rounded-lg">
+                <span className="inline-flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 text-[#006C35] px-3 py-1 rounded-lg">
                   <Shield className="w-3.5 h-3.5" /> ترخيص رسمي مجاني
                 </span>
               </div>
@@ -629,7 +630,7 @@ export default function NationalDay96Client() {
                 href="https://a-amaq.com/assets/national-day-96/SaudiNationalDay_Outro.mp4"
                 download="فيديو-شعار-اليوم-الوطني-96-عزنا-بطبعنا.mp4"
                 onClick={() => triggerDownloadFeedback("فيديو الشعار MP4")}
-                className="group inline-flex items-center justify-center gap-3 bg-[#006C35] hover:bg-[#005228] text-white px-8 py-4 rounded-2xl font-black text-base shadow-xl hover:scale-[1.03] transition-all border border-[#4ade80]/30 w-full md:w-auto"
+                className="group inline-flex items-center justify-center gap-3 bg-[#006C35] hover:bg-[#005228] text-white px-8 py-4 rounded-2xl font-black text-base shadow-md hover:shadow-lg hover:scale-[1.03] transition-all w-full md:w-auto"
               >
                 <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
                 <div className="flex flex-col text-right leading-tight">
@@ -642,16 +643,16 @@ export default function NationalDay96Client() {
         </div>
       </div>
 
-      {/* Main Downloads Grid Section */}
+      {/* Main Downloads Grid Section (Light Theme) */}
       <div id="downloads-section" className="scroll-mt-32 mb-16">
         <div className="text-center mb-8">
-          <span className="inline-flex items-center gap-2 text-xs font-bold text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/25 px-3.5 py-1 rounded-full mb-2">
-            <Download className="w-3.5 h-3.5" /> مركز الملفات والروابط الرسمية
+          <span className="inline-flex items-center gap-2 text-xs font-bold text-[#006C35] bg-emerald-50 border border-emerald-200 px-3.5 py-1 rounded-full mb-2">
+            <Download className="w-3.5 h-3.5 text-[#006C35]" /> مركز الملفات والروابط الرسمية
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-white">
+          <h2 className="text-2xl sm:text-3xl font-black text-zinc-950">
             روابط تحميل هوية وشعار اليوم الوطني 96 المعتمدة
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+          <p className="text-xs sm:text-sm text-zinc-500 mt-1 font-medium">
             اضغط على أي كارت بالأسفل لتحميل الحزمة الأصلية مباشرة بروابط سريعة ومباشرة
           </p>
         </div>
@@ -666,12 +667,12 @@ export default function NationalDay96Client() {
                 href={item.link}
                 download
                 onClick={() => triggerDownloadFeedback(item.title)}
-                className={`group relative flex flex-col justify-between bg-zinc-900/80 hover:bg-zinc-850 border ${
-                  item.featured ? "border-[#006C35]/60 hover:border-[#4ade80]" : "border-zinc-800 hover:border-zinc-700"
-                } rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 shadow-lg overflow-hidden`}
+                className={`group relative flex flex-col justify-between bg-white hover:bg-emerald-50/30 border ${
+                  item.featured ? "border-emerald-500/50 hover:border-[#006C35]" : "border-zinc-200 hover:border-zinc-300"
+                } rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 shadow-xs hover:shadow-md overflow-hidden`}
               >
                 {item.featured && (
-                  <span className="absolute top-3 left-3 bg-[#006C35] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full z-10">
+                  <span className="absolute top-3 left-3 bg-[#006C35] text-white text-[10px] font-black px-2.5 py-0.5 rounded-full z-10 shadow-xs">
                     ملف أساسي
                   </span>
                 )}
@@ -679,7 +680,7 @@ export default function NationalDay96Client() {
                 <div>
                   <div className="flex items-center gap-3.5 mb-4">
                     {item.image ? (
-                      <div className="w-16 h-16 rounded-xl bg-black/50 border border-zinc-800 overflow-hidden flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform">
+                      <div className="w-16 h-16 rounded-xl bg-zinc-50 border border-zinc-100 overflow-hidden flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform">
                         <img
                           src={item.image}
                           alt={item.title}
@@ -688,30 +689,30 @@ export default function NationalDay96Client() {
                         />
                       </div>
                     ) : (
-                      <div className="w-16 h-16 rounded-xl bg-[#006C35]/15 border border-[#006C35]/30 text-[#4ade80] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                      <div className="w-16 h-16 rounded-xl bg-emerald-50 border border-emerald-100 text-[#006C35] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                         <ItemIcon className="w-7 h-7" />
                       </div>
                     )}
                     <div className="min-w-0">
-                      <h3 className="text-base font-black text-white group-hover:text-[#4ade80] transition-colors leading-snug">
+                      <h3 className="text-base font-black text-zinc-950 group-hover:text-[#006C35] transition-colors leading-snug">
                         {item.title}
                       </h3>
-                      <span className="inline-block text-[11px] font-mono text-[#D4AF37] mt-0.5 font-bold">
+                      <span className="inline-block text-[11px] font-mono text-[#916e10] mt-0.5 font-bold">
                         {item.size}
                       </span>
                     </div>
                   </div>
 
-                  <p className="text-xs text-zinc-400 leading-relaxed mb-5">
+                  <p className="text-xs text-zinc-600 leading-relaxed mb-5 font-medium">
                     {item.subtitle}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs font-bold text-zinc-300 group-hover:text-white">
-                  <span className="flex items-center gap-1.5 text-[#4ade80]">
+                <div className="pt-3 border-t border-zinc-100 flex items-center justify-between text-xs font-bold text-zinc-600 group-hover:text-zinc-950">
+                  <span className="flex items-center gap-1.5 text-[#006C35] font-black">
                     <Download className="w-3.5 h-3.5" /> تحميل مباشر
                   </span>
-                  <span className="text-zinc-500 font-mono text-[11px] group-hover:text-zinc-400">
+                  <span className="text-zinc-400 font-mono text-[11px]">
                     GEA CDN
                   </span>
                 </div>
@@ -722,60 +723,60 @@ export default function NationalDay96Client() {
       </div>
 
       {/* Slogan Meaning & Philosophy Section («عزنا بطبعنا») */}
-      <div id="section-slogan-meaning" className="scroll-mt-32 my-16 bg-gradient-to-br from-zinc-900 via-zinc-900 to-[#002615] border border-[#006C35]/30 rounded-3xl p-6 sm:p-8 shadow-xl">
-        <div className="flex items-center gap-3.5 mb-6 pb-4 border-b border-zinc-800">
+      <div id="section-slogan-meaning" className="scroll-mt-32 my-16 bg-gradient-to-br from-emerald-50/70 via-white to-amber-50/40 border border-emerald-200/70 rounded-3xl p-6 sm:p-8 shadow-xs">
+        <div className="flex items-center gap-3.5 mb-6 pb-4 border-b border-emerald-100">
           <div className="w-12 h-12 rounded-2xl bg-[#006C35] text-white flex items-center justify-center text-xl shrink-0 shadow-md">
             <Award className="w-6 h-6 text-[#D4AF37]" />
           </div>
           <div>
-            <h2 className="text-xl sm:text-2xl font-black text-white">
+            <h2 className="text-xl sm:text-2xl font-black text-zinc-950">
               ما معنى وفلسفة شعار اليوم الوطني 96 «عزّنا بطبعنا»؟
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-400">
+            <p className="text-xs sm:text-sm text-zinc-600">
               الدلالات اللغوية والثقافية للشعار الرسمي لعام 2026 / 1448هـ المعتمد من الهيئة العامة للترفيه
             </p>
           </div>
         </div>
 
-        <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-6">
+        <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed mb-6 font-medium">
           أطلقت الهيئة العامة للترفيه الهوية الرسمية لليوم الوطني الـ 96 تحت شعار <strong>«عزّنا بطبعنا»</strong>،
           وهو شعار يحمل أبعاداً وجدانية وتاريخية وثقافية تمس كل مواطن ومقيم على أرض المملكة:
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div className="bg-black/40 border border-zinc-800 rounded-2xl p-5">
-            <h4 className="text-sm sm:text-base font-black text-[#D4AF37] mb-2 flex items-center gap-2">
+          <div className="bg-white border border-emerald-100 rounded-2xl p-5 shadow-xs">
+            <h4 className="text-sm sm:text-base font-black text-[#916e10] mb-2 flex items-center gap-2">
               <Shield className="w-4 h-4 text-[#D4AF37]" /> دلالة كلمة «عزّنا»:
             </h4>
-            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium">
               العز والمنعة والرفعة المستمدة من ثوابت الدين الحنيف، والتاريخ التليد الممتد لأكثر من ثلاثة قرون منذ تأسيس الدولة السعودية الأولى، وفخر الانتماء لوطن عزيز بوحدته وتلاحم شعبه مع قيادته الرشيدة.
             </p>
           </div>
-          <div className="bg-black/40 border border-zinc-800 rounded-2xl p-5">
-            <h4 className="text-sm sm:text-base font-black text-[#4ade80] mb-2 flex items-center gap-2">
-              <Heart className="w-4 h-4 text-rose-400" /> دلالة كلمة «بطبعنا»:
+          <div className="bg-white border border-emerald-100 rounded-2xl p-5 shadow-xs">
+            <h4 className="text-sm sm:text-base font-black text-[#006C35] mb-2 flex items-center gap-2">
+              <Heart className="w-4 h-4 text-rose-500" /> دلالة كلمة «بطبعنا»:
             </h4>
-            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium">
               أن العزة والشجاعة والكرم والجود والشهامة ليست سلوكاً طارئاً أو مظهراً مصطنعاً، بل هي سجية وفطرة وطبيعة متجذرة في سمات الشخصية السعودية عبر الأجيال، متوارثة من الآباء إلى الأبناء.
             </p>
           </div>
         </div>
 
-        <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+        <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium">
           ويأتي الشعار ليربط بين ماضي المملكة المجيد وعراقة تقاليدها، وبين حاضرها المزدهر ومستقبلها الريادي العالمي في إطار <strong>رؤية السعودية 2030</strong>.
         </p>
       </div>
 
-      {/* 6 Identity Pillars Section (ركائز وصفات الهوية الستة) */}
+      {/* 6 Identity Pillars Section (ركائز وصفات الهوية الستة - Light Theme) */}
       <div id="section-pillars" className="scroll-mt-32 my-16">
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-flex items-center gap-2 bg-[#006C35]/20 text-[#4ade80] border border-[#006C35]/30 text-xs font-black px-4 py-1.5 rounded-full mb-3">
-            <Layers className="w-3.5 h-3.5 text-[#D4AF37]" /> الهوية البصرية الرسمية المعتمدة
+          <span className="inline-flex items-center gap-2 bg-emerald-50 text-[#006C35] border border-emerald-200 text-xs font-black px-4 py-1.5 rounded-full mb-3 shadow-2xs">
+            <Layers className="w-3.5 h-3.5 text-[#006C35]" /> الهوية البصرية الرسمية المعتمدة
           </span>
-          <h2 className="text-2xl sm:text-4xl font-black text-white mb-3">
-            ركائز وصفات الهوية الستة <span className="text-[#D4AF37]">«عزّنا بطبعنا»</span> — نقوش وأنسجة سدو 3D
+          <h2 className="text-2xl sm:text-4xl font-black text-zinc-950 mb-3">
+            ركائز وصفات الهوية الستة <span className="text-[#006C35]">«عزّنا بطبعنا»</span> — نقوش وأنسجة سدو 3D
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium">
             بُنيت الهوية البصرية لليوم الوطني 96 على ست صفات وقيم سعودية أصيلة، تم تجسيد كل صفة بنسيج سدو عصري ثلاثي الأبعاد، أيقونة منسوجة مفرغة، ونقوش تراثية خاصة مع كود HEX معتمد. انقر على أي عنصر لمعاينته أو تحميله مباشرة:
           </p>
         </div>
@@ -784,7 +785,7 @@ export default function NationalDay96Client() {
           {PILLARS.map((pillar) => (
             <div
               key={pillar.id}
-              className="bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-lg"
+              className="bg-white border border-zinc-200 hover:border-zinc-300 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-xs hover:shadow-md"
             >
               <div>
                 {/* Pillar Header */}
@@ -795,13 +796,13 @@ export default function NationalDay96Client() {
                   <button
                     type="button"
                     onClick={() => copyHex(pillar.hex)}
-                    className="inline-flex items-center gap-1.5 bg-black/60 hover:bg-zinc-800 text-xs font-mono font-bold text-zinc-200 px-3 py-1 rounded-lg border border-zinc-700 transition-colors"
+                    className="inline-flex items-center gap-1.5 bg-zinc-50 hover:bg-zinc-100 text-xs font-mono font-bold text-zinc-800 px-3 py-1 rounded-lg border border-zinc-200 transition-colors shadow-2xs"
                     title="اضغط لنسخ كود اللون"
                   >
                     {copiedHex === pillar.hex ? (
                       <>
-                        <Check className="w-3 h-3 text-[#4ade80]" />
-                        <span className="text-[#4ade80]">تم النسخ!</span>
+                        <Check className="w-3 h-3 text-[#006C35]" />
+                        <span className="text-[#006C35]">تم النسخ!</span>
                       </>
                     ) : (
                       <>
@@ -816,7 +817,7 @@ export default function NationalDay96Client() {
                 <div className="flex items-center gap-3.5 mb-4">
                   <div
                     onClick={() => setLightboxImg({ src: pillar.tapestryImg, title: `نسيج سدو 3D — ${pillar.nameAr}` })}
-                    className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-zinc-700 bg-black/50 cursor-pointer group/tap"
+                    className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 border-2 border-zinc-200 bg-zinc-50 cursor-pointer group/tap shadow-xs"
                     title="انقر لتكبير ومعاينة النسيج"
                   >
                     <img
@@ -825,7 +826,7 @@ export default function NationalDay96Client() {
                       loading="lazy"
                       className="w-full h-full object-cover group-hover/tap:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/tap:opacity-100 flex items-center justify-center transition-opacity">
+                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/tap:opacity-100 flex items-center justify-center transition-opacity">
                       <Eye className="w-4 h-4 text-white" />
                     </div>
                   </div>
@@ -851,34 +852,34 @@ export default function NationalDay96Client() {
                           e.stopPropagation()
                           triggerDownloadFeedback(`مخطوطة ${pillar.nameAr}`)
                         }}
-                        className="w-7 h-7 rounded-lg bg-black/50 hover:bg-zinc-800 text-[#D4AF37] hover:text-white border border-zinc-700 flex items-center justify-center text-xs transition-colors shrink-0"
+                        className="w-7 h-7 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-[#006C35] border border-zinc-200 flex items-center justify-center text-xs transition-colors shrink-0 shadow-2xs"
                         title="تحميل المخطوطة مباشرة"
                       >
                         <Download className="w-3.5 h-3.5" />
                       </a>
                     </div>
-                    <h4 className="text-base font-black text-white">{pillar.nameAr}</h4>
-                    <p className="text-xs text-zinc-400">{pillar.sub}</p>
+                    <h4 className="text-base font-black text-zinc-950">{pillar.nameAr}</h4>
+                    <p className="text-xs text-zinc-500">{pillar.sub}</p>
                   </div>
                 </div>
 
-                <p className="text-xs text-zinc-300 leading-relaxed mb-4">
+                <p className="text-xs text-zinc-600 leading-relaxed mb-4 font-medium">
                   {pillar.desc}
                 </p>
               </div>
 
               {/* 4 Pattern Mini Gallery */}
-              <div className="pt-3 border-t border-zinc-800 mt-auto">
-                <div className="flex items-center justify-between text-[11px] text-zinc-400 font-bold mb-2">
+              <div className="pt-3 border-t border-zinc-100 mt-auto">
+                <div className="flex items-center justify-between text-[11px] text-zinc-500 font-bold mb-2">
                   <span>أنماط وأيقونات الركيزة (HD):</span>
-                  <span className="font-mono text-[10px] text-zinc-500">4 عناصر</span>
+                  <span className="font-mono text-[10px] text-zinc-400">4 عناصر</span>
                 </div>
                 <div className="grid grid-cols-4 gap-2">
                   {pillar.patterns.map((pat, idx) => (
                     <div
                       key={idx}
                       onClick={() => setLightboxImg({ src: pat.src, title: pat.title })}
-                      className="group/pat relative aspect-square rounded-lg overflow-hidden border border-zinc-800 bg-black/40 hover:border-[#D4AF37] transition-all cursor-pointer"
+                      className="group/pat relative aspect-square rounded-lg overflow-hidden border border-zinc-200 bg-zinc-50 hover:border-[#006C35] transition-all cursor-pointer shadow-2xs"
                       title={pat.title}
                     >
                       <img
@@ -887,7 +888,7 @@ export default function NationalDay96Client() {
                         loading="lazy"
                         className="w-full h-full object-cover group-hover/pat:scale-110 transition-transform"
                       />
-                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/pat:opacity-100 flex items-center justify-center text-white text-xs transition-opacity">
+                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/pat:opacity-100 flex items-center justify-center text-white text-xs transition-opacity">
                         <Eye className="w-3.5 h-3.5" />
                       </div>
                     </div>
@@ -899,23 +900,23 @@ export default function NationalDay96Client() {
         </div>
 
         {/* Global Color Palette Summary */}
-        <div id="colors-and-elements" className="scroll-mt-32 mt-10 bg-zinc-900/80 border border-zinc-800 rounded-2xl p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 text-xs">
-          <div className="flex items-center gap-2 text-zinc-300 font-bold">
-            <Palette className="w-4 h-4 text-[#D4AF37]" />
+        <div id="colors-and-elements" className="scroll-mt-32 mt-10 bg-white border border-zinc-200 rounded-2xl p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 text-xs shadow-xs">
+          <div className="flex items-center gap-2 text-zinc-800 font-bold">
+            <Palette className="w-4 h-4 text-[#006C35]" />
             <span>لوحة ألوان الهوية الرسمية (HEX Codes):</span>
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             <button
               type="button"
               onClick={() => copyHex("#006C35")}
-              className="inline-flex items-center gap-1.5 bg-[#006C35]/30 hover:bg-[#006C35] border border-[#006C35] text-white px-2.5 py-1 rounded-md font-mono transition-colors"
+              className="inline-flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-[#006C35] px-2.5 py-1 rounded-md font-mono transition-colors font-bold shadow-2xs"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-[#006C35]" /> #006C35 الأخضر
             </button>
             <button
               type="button"
               onClick={() => copyHex("#D4AF37")}
-              className="inline-flex items-center gap-1.5 bg-[#D4AF37]/30 hover:bg-[#D4AF37] border border-[#D4AF37] text-white px-2.5 py-1 rounded-md font-mono transition-colors"
+              className="inline-flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100 border border-amber-300 text-[#916e10] px-2.5 py-1 rounded-md font-mono transition-colors font-bold shadow-2xs"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-[#D4AF37]" /> #D4AF37 الذهبي
             </button>
@@ -924,7 +925,7 @@ export default function NationalDay96Client() {
                 key={p.id}
                 type="button"
                 onClick={() => copyHex(p.hex)}
-                className="inline-flex items-center gap-1.5 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-zinc-200 px-2.5 py-1 rounded-md font-mono transition-colors"
+                className="inline-flex items-center gap-1.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 text-zinc-700 px-2.5 py-1 rounded-md font-mono transition-colors shadow-2xs"
               >
                 <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: p.hex }} />
                 {p.hex} {p.nameAr.replace("عزّنا ب", "")}
@@ -934,8 +935,8 @@ export default function NationalDay96Client() {
         </div>
       </div>
 
-      {/* Vision Studio Showcase («عزّنا برؤيتنا» Vision Kit) */}
-      <div id="section-vision-kit" className="scroll-mt-32 my-16 bg-gradient-to-br from-[#021f1d] via-zinc-900 to-zinc-900 border-2 border-[#D4AF37]/30 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden">
+      {/* Vision Studio Showcase («عزّنا برؤيتنا» Vision Kit - Luxury Presentation) */}
+      <div id="section-vision-kit" className="scroll-mt-32 my-16 bg-gradient-to-br from-[#002b18] via-[#003820] to-[#012214] text-white border-2 border-[#D4AF37]/35 rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
         <div className="text-center max-w-3xl mx-auto mb-10">
           <span className="inline-flex items-center gap-2 bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-black px-4 py-1.5 rounded-full mb-3">
             <Compass className="w-3.5 h-3.5" /> استوديو ملحقات الهوية الرسمية — Vision Kit
@@ -943,7 +944,7 @@ export default function NationalDay96Client() {
           <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
             ملحقات وهوية «عزّنا برؤيتنا» — سجاد اليوم الوطني 96، الوشاح ثلاثي الأبعاد، وعناصر التصميم
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed">
             استعراض شامل لكافة عناصر وملحقات ملف الهوية الرسمي <span className="text-[#D4AF37] font-bold font-mono">Vision.pdf</span> المعتمد من الهيئة العامة للترفيه لليوم الوطني 96.
           </p>
         </div>
@@ -953,17 +954,17 @@ export default function NationalDay96Client() {
           {VISION_STUDIO_ASSETS.map((asset, idx) => (
             <div
               key={idx}
-              className="bg-black/40 border border-zinc-800 rounded-2xl p-5 flex flex-col justify-between group hover:border-[#D4AF37]/50 transition-all"
+              className="bg-black/40 border border-white/10 rounded-2xl p-5 flex flex-col justify-between group hover:border-[#D4AF37]/50 transition-all"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-[#D4AF37] bg-[#D4AF37]/10 px-2.5 py-0.5 rounded-md border border-[#D4AF37]/30">
+                  <span className="text-xs font-bold text-[#D4AF37] bg-[#D4AF37]/15 px-2.5 py-0.5 rounded-md border border-[#D4AF37]/30">
                     {asset.badge}
                   </span>
                 </div>
                 <div
                   onClick={() => setLightboxImg({ src: asset.img, title: asset.title })}
-                  className="aspect-video sm:aspect-square rounded-xl overflow-hidden bg-black/60 border border-zinc-800 mb-4 cursor-pointer relative"
+                  className="aspect-video sm:aspect-square rounded-xl overflow-hidden bg-black/60 border border-white/10 mb-4 cursor-pointer relative"
                   title="انقر لتكبير ومعاينة الصورة"
                 >
                   <img
@@ -986,7 +987,7 @@ export default function NationalDay96Client() {
                 href={asset.img}
                 download={`${asset.title}.webp`}
                 onClick={() => triggerDownloadFeedback(asset.title)}
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#c49f2e] text-black font-black text-xs sm:text-sm py-2.5 px-4 rounded-xl shadow-md transition-all hover:scale-[1.02]"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#c49f2e] text-zinc-950 font-black text-xs sm:text-sm py-2.5 px-4 rounded-xl shadow-md transition-all hover:scale-[1.02]"
               >
                 <Download className="w-4 h-4" /> تحميل عالي الدقة (HD)
               </a>
@@ -1005,7 +1006,7 @@ export default function NationalDay96Client() {
               <div
                 key={carpet.id}
                 onClick={() => setLightboxImg({ src: carpet.src, title: carpet.title })}
-                className="group bg-black/40 border border-zinc-800 hover:border-[#D4AF37] rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all"
+                className="group bg-black/40 border border-white/10 hover:border-[#D4AF37] rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all"
               >
                 <div className="aspect-square rounded-lg overflow-hidden bg-black mb-2.5 relative">
                   <img
@@ -1028,7 +1029,7 @@ export default function NationalDay96Client() {
                     e.stopPropagation()
                     triggerDownloadFeedback(carpet.title)
                   }}
-                  className="w-full bg-zinc-800 hover:bg-[#006C35] text-white text-[11px] font-bold py-1.5 rounded-lg flex items-center justify-center gap-1.5 transition-colors"
+                  className="w-full bg-white/10 hover:bg-[#006C35] text-white text-[11px] font-bold py-1.5 rounded-lg flex items-center justify-center gap-1.5 transition-colors"
                 >
                   <Download className="w-3 h-3" /> تحميل
                 </a>
@@ -1048,9 +1049,9 @@ export default function NationalDay96Client() {
               <div
                 key={idx}
                 onClick={() => setLightboxImg({ src: cutout.src, title: cutout.title })}
-                className="group bg-black/40 border border-zinc-800 hover:border-[#4ade80] rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all text-center"
+                className="group bg-black/40 border border-white/10 hover:border-[#4ade80] rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all text-center"
               >
-                <div className="aspect-square rounded-lg overflow-hidden bg-zinc-950/80 mb-2.5 relative flex items-center justify-center p-2">
+                <div className="aspect-square rounded-lg overflow-hidden bg-black/60 mb-2.5 relative flex items-center justify-center p-2">
                   <img
                     src={cutout.src}
                     alt={cutout.title}
@@ -1062,7 +1063,7 @@ export default function NationalDay96Client() {
                   </div>
                 </div>
                 <h5 className="text-[11px] sm:text-xs font-black text-white">{cutout.title}</h5>
-                <p className="text-[10px] text-zinc-400 mb-2">{cutout.sub}</p>
+                <p className="text-[10px] text-zinc-300 mb-2">{cutout.sub}</p>
                 <a
                   href={cutout.src}
                   download={`${cutout.title}.webp`}
@@ -1070,7 +1071,7 @@ export default function NationalDay96Client() {
                     e.stopPropagation()
                     triggerDownloadFeedback(cutout.title)
                   }}
-                  className="w-full bg-[#006C35]/30 hover:bg-[#006C35] text-[#4ade80] hover:text-white border border-[#006C35]/40 text-[11px] font-bold py-1.5 rounded-lg flex items-center justify-center gap-1.5 transition-colors"
+                  className="w-full bg-[#006C35]/40 hover:bg-[#006C35] text-[#4ade80] hover:text-white border border-[#4ade80]/30 text-[11px] font-bold py-1.5 rounded-lg flex items-center justify-center gap-1.5 transition-colors"
                 >
                   <Download className="w-3 h-3" /> مفرغ PNG
                 </a>
@@ -1080,38 +1081,38 @@ export default function NationalDay96Client() {
         </div>
       </div>
 
-      {/* Coloring Section for Kids & Schools (رسومات وتلوين اليوم الوطني 96) */}
-      <div id="section-coloring" className="scroll-mt-32 my-16 bg-gradient-to-br from-pink-950/20 via-zinc-900 to-zinc-900 border border-pink-500/30 rounded-3xl p-6 sm:p-8 shadow-xl">
-        <div className="flex items-center gap-3.5 mb-6 pb-4 border-b border-pink-500/20">
+      {/* Coloring Section for Kids & Schools (رسومات وتلوين اليوم الوطني 96 - Light Theme) */}
+      <div id="section-coloring" className="scroll-mt-32 my-16 bg-gradient-to-br from-pink-50/70 via-white to-rose-50/40 border border-pink-200 rounded-3xl p-6 sm:p-8 shadow-xs">
+        <div className="flex items-center gap-3.5 mb-6 pb-4 border-b border-pink-100">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-pink-600 to-rose-600 text-white flex items-center justify-center shrink-0 shadow-md">
             <Paintbrush className="w-6 h-6" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-xl sm:text-2xl font-black text-white">
+              <h2 className="text-xl sm:text-2xl font-black text-zinc-950">
                 رسومات وتلوين اليوم الوطني السعودي 96 للأطفال والمدارس
               </h2>
-              <span className="hidden sm:inline-block text-[11px] bg-pink-500/20 border border-pink-500/30 text-pink-300 font-bold px-2.5 py-0.5 rounded-full">
+              <span className="hidden sm:inline-block text-[11px] bg-pink-100 border border-pink-200 text-pink-700 font-bold px-2.5 py-0.5 rounded-full">
                 طباعة A4 جاهزة
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-zinc-400">
+            <p className="text-xs sm:text-sm text-zinc-600">
               رسومات وشعار مفرغ للتلوين بالخط الخارجي (Outline) بدقة فائقة لمشاريع المدارس والأنشطة الطلابية
             </p>
           </div>
         </div>
 
-        <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-6">
+        <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed mb-6 font-medium">
           نوفر للمعلمين والمعلمات وأولياء الأمور مجموعة حصرية وشاملة من <strong>رسومات اليوم الوطني 96</strong> الجاهزة للطباعة بجودة عالية A4. تتضمن المجموعة <strong>شعار اليوم الوطني 96 مفرغ للتلوين (أبيض وأسود Outline)</strong>، ورسمات لعلم المملكة العربية السعودية والسيفين والنخلة، و<strong>كراسة أنشطة وتلوين اليوم الوطني 96 للمدارس</strong> مقاس A4 بدقة 300 DPI.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {/* Card 1: Outline Logo */}
-          <div className="bg-black/50 border border-zinc-800 hover:border-pink-500/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div className="bg-white border border-zinc-200 hover:border-pink-300 rounded-2xl p-5 flex flex-col justify-between transition-all group shadow-xs hover:shadow-md">
             <div>
               <div
                 onClick={() => setLightboxImg({ src: "https://a-amaq.com/assets/national-day-96/Outline.png", title: "شعار عزنا بطبعنا للتلوين (Outline)" })}
-                className="aspect-square rounded-xl bg-white p-4 flex items-center justify-center mb-4 cursor-pointer relative"
+                className="aspect-square rounded-xl bg-zinc-50 border border-zinc-100 p-4 flex items-center justify-center mb-4 cursor-pointer relative"
               >
                 <img
                   src="https://a-amaq.com/assets/national-day-96/Outline.png"
@@ -1123,15 +1124,15 @@ export default function NationalDay96Client() {
                   A4 أبيض وأسود
                 </span>
               </div>
-              <h4 className="text-sm sm:text-base font-black text-white mb-1">شعار عزنا بطبعنا للتلوين (Outline)</h4>
-              <p className="text-xs text-zinc-400 mb-4">رسم وتلوين شعار اليوم الوطني 96 مفرغ عالي الدقة</p>
+              <h4 className="text-sm sm:text-base font-black text-zinc-950 mb-1">شعار عزنا بطبعنا للتلوين (Outline)</h4>
+              <p className="text-xs text-zinc-500 mb-4 font-medium">رسم وتلوين شعار اليوم الوطني 96 مفرغ عالي الدقة</p>
             </div>
             <div className="flex gap-2">
               <a
                 href="https://a-amaq.com/assets/national-day-96/outline.zip"
                 download="شعار-عزنا-بطبعنا-96-تلوين-outline.zip"
                 onClick={() => triggerDownloadFeedback("شعار التلوين ZIP")}
-                className="flex-1 bg-[#006C35] hover:bg-[#005228] text-white py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
+                className="flex-1 bg-[#006C35] hover:bg-[#005228] text-white py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-xs"
               >
                 <Download className="w-3.5 h-3.5" /> تحميل ZIP
               </a>
@@ -1139,7 +1140,7 @@ export default function NationalDay96Client() {
                 href="https://a-amaq.com/assets/national-day-96/Outline.png"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 bg-zinc-800 hover:bg-zinc-700 text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center transition-colors shrink-0"
+                className="w-11 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center transition-colors shrink-0"
                 title="طباعة"
               >
                 <Printer className="w-4 h-4" />
@@ -1148,11 +1149,11 @@ export default function NationalDay96Client() {
           </div>
 
           {/* Card 2: Flag & Crest */}
-          <div className="bg-black/50 border border-zinc-800 hover:border-pink-500/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div className="bg-white border border-zinc-200 hover:border-pink-300 rounded-2xl p-5 flex flex-col justify-between transition-all group shadow-xs hover:shadow-md">
             <div>
               <div
                 onClick={() => setLightboxImg({ src: "https://a-amaq.com/assets/national-day-96/saudi-flag-crest-coloring.jpeg", title: "رسم علم السعودية والسيفين والنخلة للتلوين" })}
-                className="aspect-square rounded-xl bg-white p-4 flex items-center justify-center mb-4 cursor-pointer relative"
+                className="aspect-square rounded-xl bg-zinc-50 border border-zinc-100 p-4 flex items-center justify-center mb-4 cursor-pointer relative"
               >
                 <img
                   src="https://a-amaq.com/assets/national-day-96/saudi-flag-crest-coloring.jpeg"
@@ -1164,15 +1165,15 @@ export default function NationalDay96Client() {
                   علم وسيفين
                 </span>
               </div>
-              <h4 className="text-sm sm:text-base font-black text-white mb-1">رسم علم السعودية والسيفين والنخلة</h4>
-              <p className="text-xs text-zinc-400 mb-4">رسمة سهلة وبسيطة لطلاب الروضة والابتدائي</p>
+              <h4 className="text-sm sm:text-base font-black text-zinc-950 mb-1">رسم علم السعودية والسيفين والنخلة</h4>
+              <p className="text-xs text-zinc-500 mb-4 font-medium">رسمة سهلة وبسيطة لطلاب الروضة والابتدائي</p>
             </div>
             <div className="flex gap-2">
               <a
                 href="https://a-amaq.com/assets/national-day-96/saudi-flag-crest-coloring.jpeg"
                 download="رسم-علم-السعودية-للتلوين.jpeg"
                 onClick={() => triggerDownloadFeedback("رسم علم السعودية")}
-                className="flex-1 bg-[#006C35] hover:bg-[#005228] text-white py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
+                className="flex-1 bg-[#006C35] hover:bg-[#005228] text-white py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-xs"
               >
                 <Download className="w-3.5 h-3.5" /> تحميل الرسمة
               </a>
@@ -1180,7 +1181,7 @@ export default function NationalDay96Client() {
                 href="https://a-amaq.com/assets/national-day-96/saudi-flag-crest-coloring.jpeg"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 bg-zinc-800 hover:bg-zinc-700 text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center transition-colors shrink-0"
+                className="w-11 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center transition-colors shrink-0"
                 title="طباعة"
               >
                 <Printer className="w-4 h-4" />
@@ -1189,25 +1190,25 @@ export default function NationalDay96Client() {
           </div>
 
           {/* Card 3: School Activity Booklet PDF */}
-          <div className="bg-black/50 border border-zinc-800 hover:border-pink-500/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div className="bg-white border border-zinc-200 hover:border-pink-300 rounded-2xl p-5 flex flex-col justify-between transition-all group shadow-xs hover:shadow-md">
             <div>
-              <div className="aspect-square rounded-xl bg-gradient-to-tr from-pink-950/40 to-rose-950/40 border border-pink-500/30 p-4 flex flex-col items-center justify-center text-center mb-4 relative">
-                <FileText className="w-14 h-14 text-rose-400 mb-2" />
-                <span className="block text-sm font-black text-white">كراسة تلوين 96</span>
-                <span className="block text-[11px] text-zinc-400">أنشطة مدرسية ومسابقات</span>
-                <span className="absolute top-2 right-2 bg-rose-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">
+              <div className="aspect-square rounded-xl bg-gradient-to-tr from-pink-50 to-rose-50 border border-pink-200/80 p-4 flex flex-col items-center justify-center text-center mb-4 relative">
+                <FileText className="w-14 h-14 text-rose-500 mb-2" />
+                <span className="block text-sm font-black text-zinc-900">كراسة تلوين 96</span>
+                <span className="block text-[11px] text-zinc-500 font-bold">أنشطة مدرسية ومسابقات</span>
+                <span className="absolute top-2 right-2 bg-rose-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-xs">
                   PDF · 1.9MB
                 </span>
               </div>
-              <h4 className="text-sm sm:text-base font-black text-white mb-1">كراسة أنشطة وتلوين اليوم الوطني 96</h4>
-              <p className="text-xs text-zinc-400 mb-4">أوراق عمل متكاملة جاهزة للطباعة والتوزيع المدرسي</p>
+              <h4 className="text-sm sm:text-base font-black text-zinc-950 mb-1">كراسة أنشطة وتلوين اليوم الوطني 96</h4>
+              <p className="text-xs text-zinc-500 mb-4 font-medium">أوراق عمل متكاملة جاهزة للطباعة والتوزيع المدرسي</p>
             </div>
             <div className="flex gap-2">
               <a
                 href="https://a-amaq.com/assets/national-day-96/كراسة-أنشطة-وتلوين-اليوم-الوطني-96.pdf"
                 download="كراسة-أنشطة-وتلوين-اليوم-الوطني-96.pdf"
                 onClick={() => triggerDownloadFeedback("كراسة التلوين PDF")}
-                className="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 text-white py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
+                className="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 text-white py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-xs"
               >
                 <Download className="w-3.5 h-3.5" /> تحميل PDF
               </a>
@@ -1215,7 +1216,7 @@ export default function NationalDay96Client() {
                 href="https://a-amaq.com/assets/national-day-96/كراسة-أنشطة-وتلوين-اليوم-الوطني-96.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 bg-zinc-800 hover:bg-zinc-700 text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center transition-colors shrink-0"
+                className="w-11 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center transition-colors shrink-0"
                 title="تصفح"
               >
                 <Eye className="w-4 h-4" />
@@ -1225,16 +1226,16 @@ export default function NationalDay96Client() {
         </div>
       </div>
 
-      {/* 8 Official Fonts Suite (خطوط وزارة الثقافة) */}
-      <div id="section-fonts" className="scroll-mt-32 my-16 bg-gradient-to-br from-[#00381e] via-zinc-900 to-zinc-900 border border-[#006C35]/40 rounded-3xl p-6 sm:p-8 shadow-xl">
+      {/* 8 Official Fonts Suite (خطوط وزارة الثقافة - Light Theme) */}
+      <div id="section-fonts" className="scroll-mt-32 my-16 bg-gradient-to-br from-emerald-50/70 via-white to-zinc-50 border border-emerald-200/80 rounded-3xl p-6 sm:p-8 shadow-xs">
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="inline-flex items-center gap-2 text-xs font-bold text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/25 px-3.5 py-1 rounded-full mb-2">
-            <Sparkles className="w-3.5 h-3.5" /> وزارة الثقافة السعودية
+          <span className="inline-flex items-center gap-2 text-xs font-bold text-[#006C35] bg-emerald-100/70 border border-emerald-300 px-3.5 py-1 rounded-full mb-2">
+            <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" /> وزارة الثقافة السعودية
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
+          <h2 className="text-2xl sm:text-3xl font-black text-zinc-950 mb-2">
             تحميل خطوط اليوم الوطني 96 المعتمدة — 8 خطوط رسمية
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-300">
+          <p className="text-xs sm:text-sm text-zinc-600 font-medium">
             الخطوط الرسمية المعتمدة لليوم الوطني من وزارة الثقافة (الخط السعودي الأصيل، الخط الأول، عام الحرف، والمصمك) بصيغتي TTF و OTF للمصممين والمطابع:
           </p>
         </div>
@@ -1246,21 +1247,21 @@ export default function NationalDay96Client() {
               href={font.link}
               download
               onClick={() => triggerDownloadFeedback(font.name)}
-              className="bg-black/40 hover:bg-zinc-850 border border-zinc-800 hover:border-[#4ade80] rounded-xl p-4 text-center transition-all group flex flex-col justify-between"
+              className="bg-white hover:bg-emerald-50/30 border border-zinc-200 hover:border-[#006C35] rounded-xl p-4 text-center transition-all group flex flex-col justify-between shadow-xs hover:shadow-sm"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-[#006C35]/20 text-[#4ade80] flex items-center justify-center mx-auto mb-2.5 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-lg bg-emerald-50 text-[#006C35] flex items-center justify-center mx-auto mb-2.5 group-hover:scale-110 transition-transform">
                   <FileText className="w-5 h-5" />
                 </div>
-                <h4 className="text-xs sm:text-sm font-black text-white group-hover:text-[#4ade80] transition-colors">
+                <h4 className="text-xs sm:text-sm font-black text-zinc-950 group-hover:text-[#006C35] transition-colors">
                   {font.name}
                 </h4>
-                <p className="text-[10px] text-zinc-500 font-mono mt-0.5">{font.nameEn}</p>
-                <span className="inline-block text-[10px] text-zinc-400 font-mono mt-2 bg-zinc-900 px-2 py-0.5 rounded">
+                <p className="text-[10px] text-zinc-400 font-mono mt-0.5">{font.nameEn}</p>
+                <span className="inline-block text-[10px] text-zinc-500 font-mono mt-2 bg-zinc-100 px-2 py-0.5 rounded">
                   {font.size}
                 </span>
               </div>
-              <div className="mt-3 pt-2.5 border-t border-zinc-800/80 flex items-center justify-center gap-1.5 text-xs text-[#D4AF37] group-hover:text-white font-bold">
+              <div className="mt-3 pt-2.5 border-t border-zinc-100 flex items-center justify-center gap-1.5 text-xs text-[#006C35] font-bold">
                 <Download className="w-3 h-3" /> تحميل الخط
               </div>
             </a>
@@ -1268,37 +1269,37 @@ export default function NationalDay96Client() {
         </div>
       </div>
 
-      {/* Official Audio Player (أغاني اليوم الوطني 96 الرسمية) */}
-      <div id="songs-section" className="scroll-mt-32 my-16 bg-gradient-to-b from-[#1b1740] to-zinc-900 border border-indigo-500/30 rounded-3xl p-6 sm:p-8 shadow-xl">
+      {/* Official Audio Player (أغاني اليوم الوطني 96 الرسمية - Light Theme) */}
+      <div id="songs-section" className="scroll-mt-32 my-16 bg-gradient-to-br from-indigo-50/60 via-white to-cyan-50/40 border border-indigo-200/60 rounded-3xl p-6 sm:p-8 shadow-xs">
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="inline-flex items-center gap-2 text-xs font-bold text-cyan-400 bg-cyan-950/40 border border-cyan-500/30 px-3.5 py-1 rounded-full mb-2">
-            <Music className="w-3.5 h-3.5" /> الأغاني الوطنية الرسمية MP3
+          <span className="inline-flex items-center gap-2 text-xs font-bold text-indigo-800 bg-indigo-100/70 border border-indigo-200 px-3.5 py-1 rounded-full mb-2">
+            <Music className="w-3.5 h-3.5 text-indigo-600" /> الأغاني الوطنية الرسمية MP3
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-white">
+          <h2 className="text-2xl sm:text-3xl font-black text-zinc-950">
             مشغل أغاني اليوم الوطني السعودي 96 (استماع وتحميل مباشر)
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-300 mt-1">
+          <p className="text-xs sm:text-sm text-zinc-600 mt-1 font-medium">
             استمع مباشرة للأغاني الوطنية الرسمية وحمّلها بصيغة MP3 للاحتفالات المدرسية والفعاليات
           </p>
         </div>
 
         {/* Player Bar */}
-        <div className="bg-black/50 backdrop-blur-md rounded-2xl border border-zinc-800 p-5 mb-6 max-w-xl mx-auto">
+        <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm p-5 mb-6 max-w-xl mx-auto">
           <div className="flex items-center justify-between gap-4 mb-4">
             <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={togglePlay}
-                className="w-12 h-12 rounded-full bg-cyan-500 hover:bg-cyan-400 text-black flex items-center justify-center text-lg shadow-lg hover:scale-105 transition-all"
+                className="w-12 h-12 rounded-full bg-[#006C35] hover:bg-[#005228] text-white flex items-center justify-center text-lg shadow-md hover:scale-105 transition-all"
                 title={isPlaying ? "إيقاف مؤقت" : "تشغيل"}
               >
                 {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current ml-0.5" />}
               </button>
               <div>
-                <h4 className="text-base font-black text-white">
+                <h4 className="text-base font-black text-zinc-950">
                   {SONGS_PLAYLIST[currentTrackIndex].title}
                 </h4>
-                <p className="text-xs text-zinc-400">
+                <p className="text-xs text-zinc-500">
                   {SONGS_PLAYLIST[currentTrackIndex].titleEn} · اليوم الوطني 96
                 </p>
               </div>
@@ -1307,16 +1308,16 @@ export default function NationalDay96Client() {
               href={SONGS_PLAYLIST[currentTrackIndex].src}
               download={`${SONGS_PLAYLIST[currentTrackIndex].title}.mp3`}
               onClick={() => triggerDownloadFeedback(SONGS_PLAYLIST[currentTrackIndex].title)}
-              className="inline-flex items-center gap-1.5 bg-zinc-800 hover:bg-cyan-500 hover:text-black text-zinc-300 text-xs font-bold px-3 py-1.5 rounded-lg transition-colors"
+              className="inline-flex items-center gap-1.5 bg-zinc-100 hover:bg-[#006C35] hover:text-white text-zinc-700 text-xs font-bold px-3 py-1.5 rounded-lg transition-colors shadow-2xs"
             >
               <Download className="w-3.5 h-3.5" /> تحميل MP3
             </a>
           </div>
 
           {/* Progress Bar */}
-          <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+          <div className="w-full bg-zinc-100 h-1.5 rounded-full overflow-hidden">
             <div
-              className="bg-cyan-500 h-full transition-all duration-200"
+              className="bg-[#006C35] h-full transition-all duration-200"
               style={{ width: `${audioProgress}%` }}
             />
           </div>
@@ -1330,16 +1331,16 @@ export default function NationalDay96Client() {
               onClick={() => selectTrack(idx)}
               className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
                 currentTrackIndex === idx
-                  ? "bg-cyan-950/30 border-cyan-500/50 text-white"
-                  : "bg-black/30 border-zinc-800 text-zinc-300 hover:bg-zinc-800/50"
+                  ? "bg-emerald-50 border-emerald-300 text-[#006C35] font-black"
+                  : "bg-white border-zinc-200 text-zinc-800 hover:bg-zinc-50"
               }`}
             >
               <div className="flex items-center gap-3">
-                <span className="w-7 h-7 rounded-full bg-zinc-800 flex items-center justify-center text-xs font-mono text-cyan-400">
+                <span className="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center text-xs font-mono font-bold text-[#006C35]">
                   {idx + 1}
                 </span>
                 <div>
-                  <h5 className="text-sm font-black text-white">{song.title}</h5>
+                  <h5 className="text-sm font-black">{song.title}</h5>
                   <span className="text-[10px] text-zinc-400 font-mono">{song.titleEn}</span>
                 </div>
               </div>
@@ -1350,7 +1351,7 @@ export default function NationalDay96Client() {
                   e.stopPropagation()
                   triggerDownloadFeedback(song.title)
                 }}
-                className="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-cyan-500 hover:text-black text-zinc-400 flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-zinc-100 hover:bg-[#006C35] hover:text-white text-zinc-600 flex items-center justify-center transition-colors"
                 title="تحميل"
               >
                 <Download className="w-3.5 h-3.5" />
@@ -1360,10 +1361,10 @@ export default function NationalDay96Client() {
         </div>
       </div>
 
-      {/* Tag Studio Custom Corporate Design Services Banner (B2B Authority) */}
-      <div className="my-16 bg-gradient-to-br from-[#00381e] via-[#002615] to-black border-2 border-[#D4AF37]/50 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+      {/* Tag Studio Custom Corporate Design Services Banner (Executive Presentation) */}
+      <div className="my-16 bg-gradient-to-br from-[#00381e] via-[#002615] to-black border-2 border-[#D4AF37]/50 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden text-white">
         <div className="relative z-10">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-8 pb-8 border-b border-zinc-800">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-8 pb-8 border-b border-white/10">
             <div className="space-y-3">
               <span className="inline-flex items-center gap-2 bg-[#D4AF37]/20 text-[#D4AF37] border border-[#D4AF37]/40 text-xs font-black px-3.5 py-1 rounded-full">
                 <Award className="w-3.5 h-3.5" /> خدمات تاج ستوديو للشركات والمصانع السعودية
@@ -1371,7 +1372,7 @@ export default function NationalDay96Client() {
               <h2 className="text-2xl sm:text-3xl font-black text-white leading-snug">
                 هل تستعد شركتك لموسم اليوم الوطني 96؟ صمم حملتك مع تاج ستوديو
               </h2>
-              <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-2xl">
+              <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed max-w-2xl font-medium">
                 يُعد موسم اليوم الوطني السعودي الحدث التسويقي والتجاري الأضخم سنوياً في المملكة. نحن في <strong>تاج ستوديو</strong> نساعد الشركات والمصانع والمؤسسات الكبرى على تحويل الهوية الوطنية إلى حضور بصري استثنائي:
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-zinc-200 pt-2 font-medium">
@@ -1393,14 +1394,14 @@ export default function NationalDay96Client() {
             <div className="w-full lg:w-auto shrink-0 flex flex-col sm:flex-row lg:flex-col gap-3">
               <Link
                 href="/services/company-profile-design"
-                className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-yellow-500 text-black font-black text-sm px-7 py-3.5 rounded-xl shadow-lg transition-all text-center"
+                className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-yellow-500 text-zinc-950 font-black text-sm px-7 py-3.5 rounded-xl shadow-lg transition-all text-center"
               >
                 <span>استكشف خدمة بروفايل الشركات</span>
                 <ChevronLeft className="w-4 h-4" />
               </Link>
               <Link
                 href="/work"
-                className="inline-flex items-center justify-center gap-2 bg-zinc-850 hover:bg-zinc-800 text-white font-bold text-sm px-7 py-3.5 rounded-xl border border-zinc-700 transition-all text-center"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-7 py-3.5 rounded-xl border border-white/20 transition-all text-center"
               >
                 <span>شاهد أعمالنا ودراسات الحالة</span>
               </Link>
@@ -1408,11 +1409,11 @@ export default function NationalDay96Client() {
           </div>
 
           {/* Quick WhatsApp Inquiry Form */}
-          <div className="bg-black/40 border border-zinc-800/80 rounded-2xl p-5 sm:p-6">
+          <div className="bg-black/40 border border-white/10 rounded-2xl p-5 sm:p-6">
             <h4 className="text-sm sm:text-base font-black text-white mb-2 flex items-center gap-2">
               <MessageCircle className="w-4 h-4 text-[#25D366]" /> هل تحتاج إلى تصاميم مخصصة أو ملحقات إضافية؟ تواصل معنا فوراً
             </h4>
-            <p className="text-xs text-zinc-400 mb-4">
+            <p className="text-xs text-zinc-300 mb-4">
               اكتب طلبك وسيقوم فريق تاج ستوديو بالتواصل معك مباشرة عبر واتساب لتقديم الاستشارة وعرض العمل:
             </p>
 
@@ -1423,7 +1424,7 @@ export default function NationalDay96Client() {
                 value={waName}
                 onChange={(e) => setWaName(e.target.value)}
                 required
-                className="bg-zinc-900 border border-zinc-700 px-4 py-2.5 rounded-xl text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#D4AF37]"
+                className="bg-white/10 border border-white/20 px-4 py-2.5 rounded-xl text-xs text-white placeholder-zinc-400 focus:outline-none focus:border-[#D4AF37]"
               />
               <input
                 type="text"
@@ -1431,11 +1432,11 @@ export default function NationalDay96Client() {
                 value={waDetails}
                 onChange={(e) => setWaDetails(e.target.value)}
                 required
-                className="bg-zinc-900 border border-zinc-700 px-4 py-2.5 rounded-xl text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#D4AF37]"
+                className="bg-white/10 border border-white/20 px-4 py-2.5 rounded-xl text-xs text-white placeholder-zinc-400 focus:outline-none focus:border-[#D4AF37]"
               />
               <button
                 type="submit"
-                className="bg-[#25D366] hover:bg-[#1ebe5d] text-black font-black text-xs sm:text-sm py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 shadow-lg transition-all"
+                className="bg-[#25D366] hover:bg-[#1ebe5d] text-zinc-950 font-black text-xs sm:text-sm py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 shadow-lg transition-all"
               >
                 <MessageCircle className="w-4 h-4 fill-current" /> إرسال الطلب عبر واتساب
               </button>
@@ -1444,13 +1445,13 @@ export default function NationalDay96Client() {
         </div>
       </div>
 
-      {/* FAQ Accordion Section (AEO/GEO & Snippets) */}
+      {/* FAQ Accordion Section (Light Theme) */}
       <div className="my-16">
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="inline-flex items-center gap-2 text-xs font-bold text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/25 px-3.5 py-1 rounded-full mb-2">
-            <HelpCircle className="w-3.5 h-3.5" /> الأسئلة الشائعة
+          <span className="inline-flex items-center gap-2 text-xs font-bold text-[#006C35] bg-emerald-50 border border-emerald-200 px-3.5 py-1 rounded-full mb-2">
+            <HelpCircle className="w-3.5 h-3.5 text-[#006C35]" /> الأسئلة الشائعة
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-white">
+          <h2 className="text-2xl sm:text-3xl font-black text-zinc-950">
             كل ما تريد معرفته عن هوية اليوم الوطني السعودي 96
           </h2>
         </div>
@@ -1459,22 +1460,22 @@ export default function NationalDay96Client() {
           {FAQS.map((faq, idx) => (
             <div
               key={idx}
-              className="bg-zinc-900/80 border border-zinc-800 rounded-2xl overflow-hidden transition-colors"
+              className="bg-white border border-zinc-200 rounded-2xl overflow-hidden shadow-2xs transition-colors"
             >
               <button
                 type="button"
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                className="w-full text-right p-4 sm:p-5 font-black text-sm sm:text-base text-zinc-100 flex items-center justify-between gap-4"
+                className="w-full text-right p-4 sm:p-5 font-black text-sm sm:text-base text-zinc-900 flex items-center justify-between gap-4"
               >
                 <span>{faq.q}</span>
                 <ChevronDown
-                  className={`w-4 h-4 text-[#D4AF37] shrink-0 transition-transform duration-300 ${
+                  className={`w-4 h-4 text-[#006C35] shrink-0 transition-transform duration-300 ${
                     openFaq === idx ? "rotate-180" : ""
                   }`}
                 />
               </button>
               {openFaq === idx && (
-                <div className="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-zinc-300 leading-relaxed border-t border-zinc-800/60 pt-3">
+                <div className="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3 font-medium">
                   {faq.a}
                 </div>
               )}
@@ -1488,29 +1489,29 @@ export default function NationalDay96Client() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => setLightboxImg(null)}
         >
           <div
-            className="relative max-w-4xl w-full max-h-[90vh] bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden shadow-2xl flex flex-col"
+            className="relative max-w-4xl w-full max-h-[90vh] bg-white border border-zinc-200 rounded-2xl overflow-hidden shadow-2xl flex flex-col text-zinc-900"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between p-4 border-b border-zinc-800 bg-black/40">
-              <h4 className="text-sm sm:text-base font-black text-white truncate max-w-md">
+            <div className="flex items-center justify-between p-4 border-b border-zinc-100 bg-zinc-50">
+              <h4 className="text-sm sm:text-base font-black text-zinc-900 truncate max-w-md">
                 {lightboxImg.title}
               </h4>
               <button
                 type="button"
                 onClick={() => setLightboxImg(null)}
-                className="w-8 h-8 rounded-full bg-zinc-800 hover:bg-zinc-700 text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-zinc-200 hover:bg-zinc-300 text-zinc-700 flex items-center justify-center transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
             {/* Modal Body */}
-            <div className="flex-1 overflow-auto p-4 flex items-center justify-center bg-black/80">
+            <div className="flex-1 overflow-auto p-4 flex items-center justify-center bg-zinc-100">
               <img
                 src={lightboxImg.src}
                 alt={lightboxImg.title}
@@ -1519,8 +1520,8 @@ export default function NationalDay96Client() {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 border-t border-zinc-800 bg-black/40 flex items-center justify-between gap-4">
-              <span className="text-xs text-zinc-400 font-mono hidden sm:inline-block">
+            <div className="p-4 border-t border-zinc-100 bg-zinc-50 flex items-center justify-between gap-4">
+              <span className="text-xs text-zinc-500 font-mono hidden sm:inline-block">
                 هوية اليوم الوطني السعودي 96
               </span>
               <div className="flex items-center gap-2">
@@ -1528,7 +1529,7 @@ export default function NationalDay96Client() {
                   href={lightboxImg.src}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+                  className="bg-zinc-200 hover:bg-zinc-300 text-zinc-800 text-xs font-bold px-4 py-2 rounded-xl transition-colors"
                 >
                   فتح بالحجم الكامل
                 </a>
@@ -1536,7 +1537,7 @@ export default function NationalDay96Client() {
                   href={lightboxImg.src}
                   download={`${lightboxImg.title}.webp`}
                   onClick={() => triggerDownloadFeedback(lightboxImg.title)}
-                  className="bg-[#D4AF37] hover:bg-[#c49f2e] text-black text-xs font-black px-4 py-2 rounded-xl flex items-center gap-1.5 transition-colors"
+                  className="bg-[#006C35] hover:bg-[#005228] text-white text-xs font-black px-4 py-2 rounded-xl flex items-center gap-1.5 transition-colors shadow-xs"
                 >
                   <Download className="w-3.5 h-3.5" /> تحميل الصورة
                 </a>
@@ -1548,11 +1549,11 @@ export default function NationalDay96Client() {
 
       {/* Floating Download Toast */}
       {downloadToast && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#006C35] text-white px-5 py-3 rounded-2xl shadow-2xl border border-[#4ade80]/40 flex items-center gap-3 animate-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed bottom-6 right-6 z-50 bg-[#006C35] text-white px-5 py-3 rounded-2xl shadow-2xl border border-emerald-400/40 flex items-center gap-3 animate-in slide-in-from-bottom-5 duration-300">
           <Check className="w-5 h-5 text-[#D4AF37]" />
           <div className="text-xs">
             <span className="block font-black">بدأ تحميل الملف بنجاح!</span>
-            <span className="text-zinc-200">{downloadToast}</span>
+            <span className="text-zinc-100">{downloadToast}</span>
           </div>
         </div>
       )}

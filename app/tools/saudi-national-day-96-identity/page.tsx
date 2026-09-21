@@ -225,9 +225,9 @@ export default function SaudiNationalDay96Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
 
-      <main className="min-h-screen bg-[#070b09] text-zinc-100 pt-28 md:pt-36 pb-20 selection:bg-[#006C35] selection:text-white relative overflow-hidden">
-        {/* Ambient National Glows */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#006C35]/15 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <main className="min-h-screen bg-gradient-to-b from-emerald-50/40 via-zinc-50/60 to-white text-zinc-900 pt-28 md:pt-36 pb-20 selection:bg-[#006C35] selection:text-white relative overflow-hidden">
+        {/* Subtle Ambient National Glows */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#006C35]/5 blur-[120px] rounded-full pointer-events-none -z-10" />
         <div className="absolute top-96 -right-20 w-[500px] h-[500px] bg-[#D4AF37]/10 blur-[140px] rounded-full pointer-events-none -z-10" />
 
         <NationalDay96Client />
