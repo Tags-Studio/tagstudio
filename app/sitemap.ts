@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next"
 import { blogPosts } from "@/lib/blogData"
 import { caseStudies } from "@/lib/caseStudies"
 import { services } from "@/lib/servicesData"
+import { locations } from "@/lib/locationsData"
 
 const baseUrl = "https://www.wearetagstudio.com"
 
@@ -69,20 +70,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // Locations routes
-  const locationSlugs = [
-    "riyadh",
-    "jeddah",
-    "dammam",
-    "khobar",
-    "mecca",
-    "medina",
-    "cairo",
-    "alexandria"
-  ]
-
-  const locationRoutes: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
-    url: `${baseUrl}/locations/${slug}`,
+  // Locations routes (dynamically sourced from locationsData to avoid broken 404 links)
+  const locationRoutes: MetadataRoute.Sitemap = locations.map((loc) => ({
+    url: `${baseUrl}/locations/${loc.slug}`,
     changeFrequency: "monthly",
     priority: 0.8,
   }))

@@ -79,8 +79,37 @@
 
 ---
 
-## 6. البنود المفتوحة والمعلقة (Pending Action Items)
-- [ ] استلام أرقام تغطية الفهرسة (Coverage Report: Indexed / Crawled-not-indexed / Discovered-not-indexed / noindex / Duplicate).
+## 6. بيانات تغطية الفهرسة الرسمية (GSC Coverage Baseline — 2026-09-21)
+- **المصدر:** إكسبورت رسمي من Google Search Console:
+  `C:\Users\zahran\Downloads\https___www.wearetagstudio.com_-Coverage-2026-09-21.zip`
+- **الحالة العامة للفهرسة:**
+  - **الصفحات المفهرسة (Indexed):** **55 صفحة** (نمو تصاعدي من 13 صفحة في 30 يونيو إلى 55 صفحة في سبتمبر 2026).
+  - **الصفحات غير المفهرسة (Not Indexed):** **52 صفحة**.
+- **تفصيل أسباب عدم الفهرسة (Critical Issues Breakdown):**
+  1. **Not found (404) — 21 صفحة (Validation: Failed):**
+     - **السبب الجذري:** وجود 19 رابطاً قديماً لمقالات بالمدونة تم تعديل الـ slugs الخاصة بها سابقاً وظلت الروابط القديمة موجودة داخل نصوص المقالات الحية (مثل `/blog/5-hawiyat-basariyah-saudiyah` و `/blog/dalel-tasmim-profile-sharikah`)، بالإضافة إلى رابط مسار `/locations/khobar` الذي كان مضافاً يدوياً بالسايت ماب ولا توجد له بيانات في `locationsData.ts`.
+     - **الإصلاح الفني المطبق:**
+       - إضافة تحويلات 301 دائمة في `middleware.ts` لجميع الـ 19 رابطاً قديماً لتحويل جوجل مباشرة للمسار الجديد المفهرس.
+       - تحويل `/locations/khobar` إلى `/locations/dammam` برمز 301.
+       - تصحيح وتحديث 98 رابطاً داخلياً في `lib/blogData.ts` للإشارة للروابط الجديدة مباشرة.
+       - ربط خريطة الموقع `app/sitemap.ts` برمجياً بمصفوفة `locations` الحقيقية بدلاً من المصفوفة اليدوية الخاطئة.
+  2. **Discovered - currently not indexed — 26 صفحة (Validation: Not Started):**
+     - صفحات ومقالات جديدة اكتشفها محرك جوجل وتنتظر تخصيص ميزانية الزحف وفهرستها تدريجياً.
+  3. **Crawled - currently not indexed — 2 صفحة (Validation: Not Started):**
+     - صفحتان زحف إليها جوجل وقرر تأجيل الفهرسة.
+  4. **Duplicate without user-selected canonical — 1 صفحة (Validation: Not Started):**
+     - **السبب:** صفحة الخدمات الرئيسية `/services` كان بها رابط الكانونيكال ينتهي بـ slash زائد (`/services/`) مما تسبب في تعارض الكانونيكال مع إعادة التوجيه. تم إزالة الـ slash ليصبح الكانونيكال موحداً: `https://www.wearetagstudio.com/services`.
+  5. **Blocked by robots.txt — 1 صفحة (Validation: Not Started):**
+     - سجل تاريخي قديم في GSC، تم التحقق من ملف `app/robots.ts` والتأكد من إتاحة الموقع بالكامل وربط السايت ماب.
+  6. **Page with redirect — 1 صفحة (Validation: Not Started):**
+     - ناتجة عن تحويل الـ trailing slash القديم لصفحة `/services/`.
+
+---
+
+## 7. البنود المفتوحة والمعلقة (Pending Action Items)
+- [x] استلام أرقام تغطية الفهرسة (Coverage Report: تم الاستلام والتحليل والتسجيل بتاريخ 2026-09-21).
+- [x] تصحيح أخطاء الـ 404 والتحويلات والكانونيكال في الكود (`middleware.ts`, `blogData.ts`, `sitemap.ts`, `app/services/page.tsx`).
+- [ ] طلب إعادة التحقق (Start New Validation) في Google Search Console لقسم "Not found (404)".
 - [ ] استلام تقرير ملفات السايت ماب (Sitemaps Status & Discovered URLs).
 - [ ] معرفة تاريخ إطلاق الموقع وعمر الدومين.
 - [ ] تفعيل حدث `whatsapp_click` كـ Key Event في Google Analytics 4.
@@ -88,11 +117,14 @@
 
 ---
 
-## 7. جدول مواعيد المراجعة والقياس (Review Schedule)
+## 8. جدول مواعيد المراجعة والقياس (Review Schedule)
 - **تاريخ الأساس (Baseline Date):** 2026-09-04.
+- **تحديث تغطية الفهرسة:** 2026-09-21.
 - **مراجعة 30 يوماً (30-Day Check):** **2026-10-04**.
 - **مراجعة 90 يوماً (90-Day Check):** **2026-12-03**.
 - **الـ KPIs المستهدفة:**
+  - زيادة المفهرس من 55 صفحة إلى 75+ صفحة بعد معالجة الـ 404 وفهرسة الـ Discovered.
+  - نجاح إعادة التحقق (Passed Validation) لأخطاء 404 في GSC.
   - ظهور صفحة البروفايل: من 9 ظهور إلى 300+ ظهور.
   - متوسط ترتيب البروفايل: من 50.56 إلى ما دون 30.
   - نقرات الواتساب المسجلة عبر `whatsapp_click`: $\ge$ 10 نقرات شهرياً.

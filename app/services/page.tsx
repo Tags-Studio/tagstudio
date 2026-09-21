@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     "وكالة تصميم السعودية",
   ],
   alternates: {
-    canonical: `${baseUrl}/services/`,
+    canonical: `${baseUrl}/services`,
   },
   openGraph: {
     title: "خدمات تاج ستوديو — تصميم هوية بصرية وسوشيال ميديا",
     description:
       "خدمات تصميم احترافية في الهوية البصرية، السوشيال ميديا، المطبوعات والتغليف، والموشن جرافيك للشركات في السعودية ومصر.",
-    url: `${baseUrl}/services/`,
+    url: `${baseUrl}/services`,
     type: "website",
     locale: "ar_EG",
     siteName: "تاج ستوديو",
