@@ -5,6 +5,18 @@ import Link from "next/link"
 
 const TOOLS = [
   {
+    id: 'gradient-generator',
+    name: 'مولّد التدرجات اللونية الفاخرة (Mesh & Grainy Gradients)',
+    desc: 'صمم تدرجات لونية سائلة وعصرية (Mesh Gradients) مع ملمس نويز سينمائي محبب (Grainy Texture) وأورورا متحركة. صدّر كود CSS، وانسخ فيكتور SVG لبرنامج Figma مباشرة، أو حمّل خلفيات بدقة 4K فائقة.',
+    cat: 'design',
+    badge: 'new',
+    color: '#8B5CF6',
+    colorDim: 'rgba(139,92,246,0.08)',
+    icon: 'fas fa-palette',
+    url: '/tools/gradient-generator',
+    features: ['تدرجات شبكية سائلة Mesh', 'ملمس نويز سينمائي Grainy', 'تصدير مباشر لـ Figma (SVG)', 'تحميل صور خلفيات بدقة 4K']
+  },
+  {
     id: 'saudi-national-day-96-identity',
     name: 'تحميل هوية وشعار اليوم الوطني 96 (عزنا بطبعنا)',
     desc: 'الدليل الشامل لتحميل هوية وشعار اليوم الوطني السعودي 96 (2026): الشعار مفرغ PNG، ملفات فيكتور AI، دليل الهوية PDF، والخطوط الرسمية ورسومات التلوين.',

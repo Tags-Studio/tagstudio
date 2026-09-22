@@ -52,6 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Tools routes
   const toolSlugs = [
+    "gradient-generator",
     "saudi-national-day-96-identity",
     "company-stamp-generator",
     "ads-budget-calculator",
