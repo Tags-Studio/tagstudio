@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "احسب صافي أرباح متجرك الإلكتروني، وتكاليف الشحن والتغليف، وهامش الربح بدقة لاتخاذ قرارات تسعير مدروسة وزيادة مبيعاتك وأرباحك.",
   alternates: { canonical: "https://www.wearetagstudio.com/tools/ecommerce-calculator" },
   openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
     title: "حاسبة أرباح وتكاليف المتاجر الإلكترونية وحساب ROI | تاج ستوديو",
     description: "احسب صافي أرباح متجرك الإلكتروني، وتكاليف الشحن والتغليف، وهامش الربح بدقة لاتخاذ قرارات تسعير مدروسة وزيادة مبيعاتك وأرباحك.",
     url: "https://www.wearetagstudio.com/tools/ecommerce-calculator",

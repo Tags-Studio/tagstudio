@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "ولد لوحات ألوان احترافية متناسقة لهويتك البصرية وموقعك الإلكتروني مع أكواد HEX و RGB و CSS مع نصائح التطبيق لمختلف المجالات التجارية.",
   alternates: { canonical: "https://www.wearetagstudio.com/tools/palette-generator" },
   openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
     title: "مولد لوحات الألوان المتناسقة للهويات والمواقع | تاج ستوديو",
     description: "ولد لوحات ألوان احترافية متناسقة لهويتك البصرية وموقعك الإلكتروني مع أكواد HEX و RGB و CSS مع نصائح التطبيق لمختلف المجالات التجارية.",
     url: "https://www.wearetagstudio.com/tools/palette-generator",

@@ -12,7 +12,7 @@ import CTASection from "./components/CTASection"
 import ContactForm from "./components/ContactForm"
 
 export const metadata: Metadata = {
-  title: "تاج ستوديو | شركة تصميم هوية بصرية وشعارات في الرياض والقاهرة",
+  title: "تاج ستوديو | تصميم هوية بصرية وشعارات بالرياض والقاهرة",
   description:
     "تاج ستوديو وكالة تصميم متخصصة في تصميم الهوية البصرية والشعارات والسوشيال ميديا والمطبوعات والموشن جرافيك للشركات في السعودية ومصر.",
   alternates: {

@@ -5,7 +5,7 @@ import { services } from "@/lib/servicesData"
 const baseUrl = "https://www.wearetagstudio.com"
 
 export const metadata: Metadata = {
-  title: "خدمات تصميم الهوية البصرية والسوشيال ميديا والمطبوعات",
+  title: "خدمات تصميم الهوية البصرية والمطبوعات",
   description:
     "اكتشف خدمات تاج ستوديو المتخصصة في تصميم الهوية البصرية، السوشيال ميديا، المطبوعات والتغليف، وفيديو الموشن جرافيك للشركات في السعودية ومصر.",
   keywords: [

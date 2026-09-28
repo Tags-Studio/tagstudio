@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.wearetagstudio.com/tasmim-huwiya-basariya-saudi",
   },
+  openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
+    title: "تصميم هوية بصرية في السعودية (الرياض وجدة) | تاج ستوديو",
+    description: "خدمة تصميم هوية بصرية وشعارات متكاملة للشركات والمطاعم والمراكز الطبية في السعودية. من الشعار حتى ملفات الطباعة والـ Brand Guidelines مع باقات شفافة.",
+    url: "https://www.wearetagstudio.com/tasmim-huwiya-basariya-saudi",
+    siteName: "تاج ستوديو",
+    locale: "ar_EG",
+    type: "website",
+  },
 }
 
 export default function SaudiDesignPage() {

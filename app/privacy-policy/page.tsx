@@ -4,9 +4,15 @@ import LegalPage from "@/app/components/LegalPage"
 export const metadata: Metadata = {
   title: "سياسة الخصوصية",
   description:
-    "تعرف على كيفية جمع تاج ستوديو للبيانات واستخدامها وحمايتها عند استخدام الموقع أو التواصل معنا.",
+    "تعرف على سياسة الخصوصية وكيفية جمع وحماية البيانات في تاج ستوديو عند تصفح الموقع أو إرسال استفساراتك حول خدمات التصميم والهوية البصرية.",
   alternates: {
     canonical: "https://www.wearetagstudio.com/privacy-policy",
+  },
+  openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
+    title: "سياسة الخصوصية | تاج ستوديو",
+    description: "تعرف على كيفية جمع تاج ستوديو للبيانات واستخدامها وحمايتها عند استخدام الموقع أو التواصل معنا.",
+    url: "https://www.wearetagstudio.com/privacy-policy",
   },
   robots: {
     index: false,

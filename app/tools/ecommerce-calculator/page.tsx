@@ -1,10 +1,5 @@
 import { Metadata } from "next"
-import dynamic from "next/dynamic"
-
-const EcommerceCalculatorClient = dynamic(
-  () => import("./EcommerceCalculatorClient"),
-  { ssr: false }
-)
+import EcommerceCalculatorClient from "./EcommerceCalculatorClient"
 
 export const metadata: Metadata = {
   title: "حاسبة التجارة الإلكترونية والتسعير الاحترافي | تاج ستوديو",
@@ -22,6 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.wearetagstudio.com/tools/ecommerce-calculator" },
   openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
     url: "https://www.wearetagstudio.com/tools/ecommerce-calculator",
   },
 }

@@ -84,7 +84,7 @@ function StandardCaseStudy({ slug }: { slug: string }) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "الرئيسية", item: `${baseUrl}/` },
-      { "@type": "ListItem", position: 2, name: "أعمالنا", item: `${baseUrl}/work/` },
+      { "@type": "ListItem", position: 2, name: "أعمالنا", item: `${baseUrl}/work` },
       { "@type": "ListItem", position: 3, name: item.title, item: canonical },
     ],
   }
@@ -102,7 +102,7 @@ function StandardCaseStudy({ slug }: { slug: string }) {
       <nav aria-label="مسار التنقل" className="breadcrumb-nav mb-8">
         <Link href="/">الرئيسية</Link>
         <span className="breadcrumb-sep">/</span>
-        <Link href="/work/">أعمالنا</Link>
+        <Link href="/work">أعمالنا</Link>
         <span className="breadcrumb-sep">/</span>
         <span className="breadcrumb-current" aria-current="page">{item.title}</span>
       </nav>

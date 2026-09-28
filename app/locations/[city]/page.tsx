@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: location.keywords,
     alternates: { canonical: canonicalUrl },
     openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
       title: location.metaTitle,
       description: location.metaDescription,
       url: canonicalUrl,
@@ -63,7 +64,7 @@ export default function LocationPage({ params }: Props) {
     address: {
       "@type": "PostalAddress",
       addressLocality: location.city,
-      addressCountry: location.country,
+      addressCountry: location.country === "السعودية" ? "SA" : "EG",
     },
     geo: {
       "@type": "GeoCoordinates",

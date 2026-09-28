@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "صمم ختم شركتك أو مؤسستك الرسمية مجاناً وبجودة عالية للطباعة بصيغ PNG و SVG. خيارات تخصيص متعددة للشركات في السعودية ومصر.",
   alternates: { canonical: "https://www.wearetagstudio.com/tools/company-stamp-generator" },
   openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
     title: "صانع أختام الشركات والمؤسسات الرسمية أونلاين | تاج ستوديو",
     description: "صمم ختم شركتك أو مؤسستك الرسمية مجاناً وبجودة عالية للطباعة بصيغ PNG و SVG. خيارات تخصيص متعددة للشركات في السعودية ومصر.",
     url: "https://www.wearetagstudio.com/tools/company-stamp-generator",

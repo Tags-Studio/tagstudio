@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.wearetagstudio.com/tools/company-stamp-generator" },
   openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
     url: "https://www.wearetagstudio.com/tools/company-stamp-generator",
   },
 }

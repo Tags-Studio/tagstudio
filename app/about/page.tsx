@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "تعرف على تاج ستوديو: وكالة تصميم متخصصة في ابتكار الهويات البصرية والشعارات والسوشيال ميديا والمطبوعات والموشن جرافيك للشركات في السعودية ومصر.",
   alternates: { canonical: "https://www.wearetagstudio.com/about" },
   openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
     title: "من نحن | تصميم الهوية البصرية والشعارات",
     description: "تعرف على تاج ستوديو: وكالة تصميم متخصصة في ابتكار الهويات البصرية والشعارات والسوشيال ميديا والمطبوعات والموشن جرافيك للشركات في السعودية ومصر.",
     url: "https://www.wearetagstudio.com/about",

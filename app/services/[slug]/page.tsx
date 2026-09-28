@@ -149,7 +149,7 @@ export default function ServicePage({ params }: Props) {
         "@type": "ListItem",
         position: 2,
         name: "الخدمات",
-        item: `${baseUrl}/services/`,
+        item: `${baseUrl}/services`,
       },
       {
         "@type": "ListItem",
@@ -203,7 +203,7 @@ export default function ServicePage({ params }: Props) {
             <nav aria-label="مسار التنقل" className="breadcrumb-nav mb-6">
               <Link href="/">الرئيسية</Link>
               <span className="breadcrumb-sep">/</span>
-              <Link href="/services/">الخدمات</Link>
+              <Link href="/services">الخدمات</Link>
               <span className="breadcrumb-sep">/</span>
               <span className="breadcrumb-current" aria-current="page">{service.shortTitle}</span>
             </nav>

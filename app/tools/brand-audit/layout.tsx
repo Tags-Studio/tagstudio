@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "أداة تقييم شاملة لفحص قوة الهوية البصرية لشركتك، مدى اتساق الشعار والألوان، وتوافقها مع معايير السوق لتحديد نقاط القوة وفرص التطوير.",
   alternates: { canonical: "https://www.wearetagstudio.com/tools/brand-audit" },
   openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
     title: "فحص وتقييم قوة الهوية البصرية والعلامة التجارية | تاج ستوديو",
     description: "أداة تقييم شاملة لفحص قوة الهوية البصرية لشركتك، مدى اتساق الشعار والألوان، وتوافقها مع معايير السوق لتحديد نقاط القوة وفرص التطوير.",
     url: "https://www.wearetagstudio.com/tools/brand-audit",

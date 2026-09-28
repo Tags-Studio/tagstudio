@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: "شاهد كيف حوّلنا أفكار عملائنا في السعودية ومصر إلى هويات بصرية جذابة ومشاريع ناجحة. تصفح سابقة أعمال تاج ستوديو واستلهم فكرة مشروعك القادم.",
   alternates: { canonical: "https://www.wearetagstudio.com/work" },
   openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
     url: "https://www.wearetagstudio.com/work",
   },
 }

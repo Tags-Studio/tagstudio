@@ -24,6 +24,7 @@ export function generateMetadata({ searchParams }: Props): Metadata {
       "تاج ستوديو",
     ],
     openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
       title: "مدونة تاج ستوديو | نصائح التصميم والتسويق",
       description:
         "نصائح احترافية في التصميم الجرافيكي والتسويق الرقمي من فريق تاج ستوديو",

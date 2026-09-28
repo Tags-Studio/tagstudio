@@ -4,8 +4,19 @@ import BrandAuditClient from "./BrandAuditClient"
 export const metadata: Metadata = {
   title: "أداة تدقيق وتقييم الهوية البصرية | تاج ستوديو",
   description:
-    "قيّم قوة وتأثير الهوية البصرية لمشروعك (عيادة، مطعم، شركة) من خلال هذا الاختبار السريع واحصل على تقريرك مجاناً.",
+    "قيّم قوة وتأثير الهوية البصرية لعلامتك التجارية (شركة، عيادة، مطعم) عبر اختبار تدقيق احترافي سريع، واحصل على تقرير تشخيصي فوري لنقاط القوة والفرص مجاناً.",
   keywords: ["تدقيق هوية بصرية", "تقييم براندنج", "Brand Audit", "تاج ستوديو"],
+  alternates: { canonical: "https://www.wearetagstudio.com/tools/brand-audit" },
+  openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
+    title: "أداة تدقيق وتقييم الهوية البصرية | تاج ستوديو",
+    description:
+      "قيّم قوة وتأثير الهوية البصرية لعلامتك التجارية (شركة، عيادة، مطعم) عبر اختبار تدقيق احترافي سريع، واحصل على تقرير تشخيصي فوري لنقاط القوة والفرص مجاناً.",
+    url: "https://www.wearetagstudio.com/tools/brand-audit",
+    siteName: "تاج ستوديو",
+    locale: "ar_EG",
+    type: "website",
+  },
 }
 
 export default function BrandAuditPage() {

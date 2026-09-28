@@ -56,7 +56,7 @@ const projectOverrides: Record<
     title: "الأمين للتمور - علبة سينابون رولز",
     description: "تصميم عبوة وتغليف كرتوني مبتكر لسينابون رولز بالتمر والقرفة لمصنع الأمين للتمور.",
     subCategory: "تصميم عبوات وتغليف",
-    tags: ["تغليف"],
+    tags: ["دراسات حالة", "تغليف"],
   },
   27: {
     size: "normal",
@@ -70,7 +70,7 @@ const projectOverrides: Record<
     title: "الأمين للتمور - علبة تمور محشوة بالمكسرات",
     description: "تصميم عبوة هدايا كرتونية هندسية فريدة للتمور الفاخرة المحشوة بالمكسرات لمصنع الأمين للتمور.",
     subCategory: "تغليف كرتوني مبتكر",
-    tags: ["تغليف"],
+    tags: ["دراسات حالة", "تغليف"],
   },
   43: {
     size: "normal",
@@ -345,6 +345,9 @@ export default function WorkGrid({
     if (project.id === 20) return "/work/agricultural-development-association-brand-identity"
     if (project.id === 21) return "/work/ragy-burger-brand-identity"
     if (project.id === 22) return "/work/saken-corporate-housing-brand-identity"
+    if (project.id === 25 || project.id === 27 || project.id === 42 || project.id === 43 || project.id === 44) {
+      return "/lp/dates-packaging"
+    }
     return null
   }
 

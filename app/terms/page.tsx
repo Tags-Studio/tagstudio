@@ -4,9 +4,15 @@ import LegalPage from "@/app/components/LegalPage"
 export const metadata: Metadata = {
   title: "الشروط والأحكام",
   description:
-    "الشروط العامة لاستخدام موقع تاج ستوديو والتواصل بشأن خدمات التصميم والمحتوى المعروض.",
+    "الشروط والأحكام الرسمية لاستخدام موقع تاج ستوديو وحقوق الملكية الفكرية لتصاميم الهوية البصرية ومحددات التعاقد والتواصل بشأن المشاريع.",
   alternates: {
     canonical: "https://www.wearetagstudio.com/terms",
+  },
+  openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
+    title: "الشروط والأحكام | تاج ستوديو",
+    description: "الشروط العامة لاستخدام موقع تاج ستوديو والتواصل بشأن خدمات التصميم والمحتوى المعروض.",
+    url: "https://www.wearetagstudio.com/terms",
   },
   robots: {
     index: false,

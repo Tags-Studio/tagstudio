@@ -19,20 +19,25 @@ export default function LocalBusinessSchema() {
         description: "مكتب تصميم متقدم متخصص في ابتكار الهويات البصرية، الشعارات، تصميمات السوشيال ميديا، المطبوعات، وفيديوهات الموشن جرافيك للشركات والمراكز الطبية في السعودية ومصر.",
         telephone: "+201009215131",
         priceRange: "$$",
-        address: [
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "طريق الملك فهد، حي العليا",
+          addressLocality: "الرياض",
+          addressRegion: "منطقة الرياض",
+          addressCountry: "SA"
+        },
+        department: [
           {
-            "@type": "PostalAddress",
-            streetAddress: "طريق الملك فهد، حي العليا",
-            addressLocality: "الرياض",
-            addressRegion: "منطقة الرياض",
-            addressCountry: "SA"
-          },
-          {
-            "@type": "PostalAddress",
-            streetAddress: "شارع التحرير، الدقي",
-            addressLocality: "الجيزة",
-            addressRegion: "القاهرة الكبرى",
-            addressCountry: "EG"
+            "@type": "ProfessionalService",
+            name: "تاج ستوديو - فرع القاهرة والجيزة",
+            telephone: "+201009215131",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "شارع التحرير، الدقي",
+              addressLocality: "الجيزة",
+              addressRegion: "القاهرة الكبرى",
+              addressCountry: "EG"
+            }
           }
         ],
         geo: {

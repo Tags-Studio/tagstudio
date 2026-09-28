@@ -4,9 +4,15 @@ import LegalPage from "@/app/components/LegalPage"
 export const metadata: Metadata = {
   title: "سياسة ملفات الارتباط",
   description:
-    "معلومات عن ملفات الارتباط وأدوات التحليل المستخدمة في موقع تاج ستوديو.",
+    "تعرف على سياسة ملفات تعريف الارتباط (Cookies) وأدوات التحليل وقياس الأداء المتبعة في موقع تاج ستوديو لضمان أفضل تجربة تصفح آمنة.",
   alternates: {
     canonical: "https://www.wearetagstudio.com/cookie-policy",
+  },
+  openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
+    title: "سياسة ملفات الارتباط | تاج ستوديو",
+    description: "معلومات عن ملفات الارتباط وأدوات التحليل المستخدمة في موقع تاج ستوديو.",
+    url: "https://www.wearetagstudio.com/cookie-policy",
   },
   robots: {
     index: false,

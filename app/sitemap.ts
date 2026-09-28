@@ -48,6 +48,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/lp/dates-packaging`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ]
 
   // Tools routes

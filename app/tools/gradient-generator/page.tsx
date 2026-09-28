@@ -3,9 +3,9 @@ import Script from "next/script"
 import GradientGeneratorClient from "./GradientGeneratorClient"
 
 export const metadata: Metadata = {
-  title: "مولّد التدرجات اللونية الفاخرة — Mesh & Grainy Gradients Builder | تاج ستوديو",
+  title: "مولد التدرجات اللونية الفاخرة Mesh Gradients | تاج ستوديو",
   description:
-    "أداة مجانية لتصميم تدرجات لونية سائلة وعصرية (Mesh Gradients) مع ملمس نويز سينمائي (Grainy Texture) وأورورا متحركة. صدّر كود CSS، وانسخ فيكتور SVG لبرنامج Figma مباشرة، أو حمّل خلفيات 4K فائقة الدقة.",
+    "أداة مجانية لتصميم تدرجات سائلة وعصرية (Mesh Gradients) مع نويز سينمائي وخلفيات أورورا. انسخ كود CSS وفيكتور Figma أو حمّل خلفيات 4K بدقة عالية.",
   keywords: [
     "مولد تدرجات لونية",
     "mesh gradient generator",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.wearetagstudio.com/tools/gradient-generator",
-    title: "مولّد التدرجات اللونية الفاخرة (Mesh & Grainy Gradients) | تاج ستوديو",
+    title: "مولد التدرجات اللونية الفاخرة Mesh Gradients | تاج ستوديو",
     description:
-      "اصنع تدرجات لونية سائلة ومحببة مع نويز سينمائي مجاناً. انسخ كود CSS وفيكتور SVG لـ Figma أو حمّل خلفيات بدقة 4K.",
+      "أداة مجانية لتصميم تدرجات سائلة وعصرية (Mesh Gradients) مع نويز سينمائي وخلفيات أورورا. انسخ كود CSS وفيكتور Figma أو حمّل خلفيات 4K بدقة عالية.",
     images: [
       {
         url: "https://www.wearetagstudio.com/images/logo.png",

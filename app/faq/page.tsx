@@ -14,6 +14,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.wearetagstudio.com/faq",
   },
+  openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
+    title: "الأسئلة الشائعة عن تصميم الهوية البصرية | تاج ستوديو",
+    description: "كافة الإجابات التي تبحث عنها حول أسعار وباقات وتصميم الهويات البصرية والشعارات وفيديو الموشن جرافيك في السعودية ومصر مع تاج ستوديو.",
+    url: "https://www.wearetagstudio.com/faq",
+    siteName: "تاج ستوديو",
+    locale: "ar_EG",
+    type: "website",
+  },
 }
 
 const faqSections = [

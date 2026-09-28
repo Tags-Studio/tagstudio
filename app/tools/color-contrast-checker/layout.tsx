@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "تأكد من وضوح وقابلية قراءة ألوان تصميمك وموقعك وفق معايير الوصول العالمية WCAG 2.1. افحص تباين النصوص والخلفيات بسهولة وبشكل فوري.",
   alternates: { canonical: "https://www.wearetagstudio.com/tools/color-contrast-checker" },
   openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
     title: "أداة فحص تباين الألوان ومعايير WCAG للتصميم | تاج ستوديو",
     description: "تأكد من وضوح وقابلية قراءة ألوان تصميمك وموقعك وفق معايير الوصول العالمية WCAG 2.1. افحص تباين النصوص والخلفيات بسهولة وبشكل فوري.",
     url: "https://www.wearetagstudio.com/tools/color-contrast-checker",

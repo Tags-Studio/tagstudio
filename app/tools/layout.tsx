@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "مجموعة أدوات مجانية مصممة لتسريع عملك: حاسبة ميزانية الإعلانات، عارض المنطقة الآمنة، فاحص تباين الألوان والمزيد.",
   alternates: { canonical: "https://www.wearetagstudio.com/tools" },
   openGraph: {
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "تاج ستوديو" }],
     url: "https://www.wearetagstudio.com/tools",
   },
 }

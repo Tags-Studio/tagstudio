@@ -20,7 +20,7 @@ export default function CompanyProfilePage({ service }: Props) {
           <nav aria-label="مسار التنقل" className="breadcrumb-nav mb-6">
             <Link href="/">الرئيسية</Link>
             <span className="breadcrumb-sep">/</span>
-            <Link href="/services/">الخدمات</Link>
+            <Link href="/services">الخدمات</Link>
             <span className="breadcrumb-sep">/</span>
             <span className="breadcrumb-current" aria-current="page">بروفايل الشركات والتأهيل المؤسسي</span>
           </nav>
