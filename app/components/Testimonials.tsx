@@ -168,6 +168,7 @@ export default function Testimonials() {
                         alt={testimonial.author}
                         width={60}
                         height={60}
+                        unoptimized
                         className="rounded-full mb-3"
                       />
                       <div>
