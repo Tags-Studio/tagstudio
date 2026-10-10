@@ -7,6 +7,7 @@ import ZaatarCaseStudy from "@/components/case-studies/ZaatarCaseStudy"
 import AgriculturalCaseStudy from "@/components/case-studies/AgriculturalCaseStudy"
 import RagyBurgerCaseStudy from "@/components/case-studies/RagyBurgerCaseStudy"
 import SakenCaseStudy from "@/components/case-studies/SakenCaseStudy"
+import AlMousaSchoolCaseStudy from "@/components/case-studies/AlMousaSchoolCaseStudy"
 import Image from "next/image"
 
 const baseUrl = "https://www.wearetagstudio.com"
@@ -179,6 +180,10 @@ export default function CaseStudyPage({
 
   if (params.slug === "saken-corporate-housing-brand-identity") {
     return <SakenCaseStudy />
+  }
+
+  if (params.slug === "al-mousa-school-cladding-facade") {
+    return <AlMousaSchoolCaseStudy />
   }
 
   return <StandardCaseStudy slug={params.slug} />
