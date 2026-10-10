@@ -28,9 +28,9 @@ const projectOverrides: Record<
   61: {
     size: "large",
     title: "مدرسة الشيخ عبدالرحمن بن عبداللطيف الموسى",
-    description: "تصميم وتنفيذ واجهات الكلادينج واللوحات الصرحية بالحروف البارزة 3D المطلية بالتيتانيوم الذهبي.",
-    subCategory: "لوحات كلادينج وحروف بارزة 3D",
-    tags: ["دراسات حالة", "كلادينج", "حروف بارزة 3D"],
+    description: "تصميم وتنفيذ لوحات الحروف البارزة 3D والواجهات المعمارية (الواجهة الأمامية 5×1.5م والخلفية 10×1.2م).",
+    subCategory: "لوحات 3D وحروف بارزة",
+    tags: ["لوحات 3D", "كلادينج", "حروف بارزة 3D"],
   },
   19: {
     size: "large",
@@ -263,9 +263,9 @@ const allBentoProjects: BentoProject[] = curatedOrder
     if (p.category === "تغليف") {
       defaultTags = ["تغليف"]
       defaultSubCategory = "تصميم التغليف والعلب"
-    } else if (p.category === "لوحات كلادينج") {
-      defaultTags = ["كلادينج", "حروف بارزة 3D"]
-      defaultSubCategory = "لوحات كلادينج وحروف بارزة 3D"
+    } else if (p.category === "لوحات 3D") {
+      defaultTags = ["لوحات 3D", "حروف بارزة 3D"]
+      defaultSubCategory = "لوحات 3D وحروف بارزة"
     } else if (p.category === "تصاميم المطبوعات") {
       defaultTags = ["مطبوعات"]
       defaultSubCategory = "مطبوعات وكتيبات"
@@ -280,7 +280,7 @@ const allBentoProjects: BentoProject[] = curatedOrder
       defaultSubCategory = "موشن جرافيك"
     }
 
-    if (p.caseStudy) {
+    if (p.caseStudy && p.category === "الهوية البصرية") {
       defaultTags.unshift("دراسات حالة")
     }
 
@@ -317,7 +317,7 @@ export default function WorkGrid({
   // Compute exact count for each filter category
   const filterTabs = useMemo(() => {
     const identityCount = allBentoProjects.filter((p) => p.category === "الهوية البصرية").length
-    const claddingCount = allBentoProjects.filter((p) => p.category === "لوحات كلادينج").length
+    const signsCount = allBentoProjects.filter((p) => p.category === "لوحات 3D").length
     const packagingCount = allBentoProjects.filter((p) => p.category === "تغليف").length
     const printCount = allBentoProjects.filter((p) => p.category === "تصاميم المطبوعات").length
     const socialCount = allBentoProjects.filter((p) => p.category === "تصميمات السوشيال ميديا").length
@@ -325,7 +325,7 @@ export default function WorkGrid({
 
     return [
       { label: "هويات", value: "الهوية البصرية", count: identityCount },
-      { label: "لوحات كلادينج", value: "لوحات كلادينج", count: claddingCount },
+      { label: "لوحات 3D", value: "لوحات 3D", count: signsCount },
       { label: "تغليف", value: "تغليف", count: packagingCount },
       { label: "مطبوعات", value: "تصاميم المطبوعات", count: printCount },
       { label: "سوشيال ميديا", value: "تصميمات السوشيال ميديا", count: socialCount },
@@ -356,7 +356,7 @@ export default function WorkGrid({
   }
 
   const getCaseStudyUrl = (project: BentoProject) => {
-    if (project.id === 61 || project.category === "لوحات كلادينج") {
+    if (project.id === 61 || project.category === "لوحات 3D") {
       return "/work/al-mousa-school-cladding-facade"
     }
     if (project.id === 19) return "/work/zaatar-w-simsim-brand-identity"

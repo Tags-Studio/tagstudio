@@ -10,7 +10,7 @@ export interface ProjectItem {
   title: string
   description: string
   imageUrl: string
-  category: "الهوية البصرية" | "تصميمات السوشيال ميديا" | "تصاميم المطبوعات" | "فيديو موشن جرافيك" | "تغليف" | "لوحات كلادينج"
+  category: "الهوية البصرية" | "تصميمات السوشيال ميديا" | "تصاميم المطبوعات" | "فيديو موشن جرافيك" | "تغليف" | "لوحات 3D"
   caseStudy?: CaseStudy
   externalLink?: string
 }
@@ -22,7 +22,7 @@ export const serviceSlugToCategory: Record<string, string> = {
   "motion-graphics": "فيديو موشن جرافيك",
   "company-profile-design": "تصاميم المطبوعات",
   "packaging-design": "تغليف",
-  "cladding-signboards": "لوحات كلادينج",
+  "3d-signboards": "لوحات 3D",
 }
 
 export const categoryToServiceSlug: Record<string, string> = {
@@ -31,19 +31,19 @@ export const categoryToServiceSlug: Record<string, string> = {
   "تصاميم المطبوعات": "print-design",
   "فيديو موشن جرافيك": "motion-graphics",
   "تغليف": "packaging-design",
-  "لوحات كلادينج": "cladding-signboards",
+  "لوحات 3D": "3d-signboards",
 }
 
 export const projects: ProjectItem[] = [
   {
     id: 61,
-    title: "لوحات وكلادينج مدرسة الشيخ عبدالرحمن بن عبداللطيف الموسى",
-    description: "تصميم وتنفيذ واجهات الكلادينج المعمارية ولوحات الحروف البارزة 3D المطلية بالتيتانيوم الذهبي لمدرسة تحفيظ القرآن الكريم بالأحساء.",
+    title: "لوحات 3D مدرسة الشيخ عبدالرحمن بن عبداللطيف الموسى",
+    description: "تصميم وتنفيذ لوحات الحروف البارزة 3D والواجهات المعمارية لمدرسة تحفيظ القرآن الكريم بالأحساء (الواجهة الأمامية 5×1.5م والخلفية 10×1.2م).",
     imageUrl: "/images/cladding/al-mousa-school/thumbnail-signboard.webp",
-    category: "لوحات كلادينج",
+    category: "لوحات 3D",
     caseStudy: {
       client: "مدرسة الشيخ عبدالرحمن بن عبداللطيف الموسى لتحفيظ القرآن الكريم (تعليم الأحساء)",
-      problem: "الحاجة إلى تنفيذ واجهات كلادينج ولوحات حروف بارزة ذات متانة هندسية عالية ومظهر وقور يليق بصرح تعليمي قرآني رائد بالأحساء.",
+      problem: "الحاجة إلى تنفيذ واجهات ولوحات حروف بارزة 3D ذات متانة هندسية عالية ومقاسات دقيقة (5×1.5م للأمامية و10×1.2م للخلفية) ومظهر وقور يليق بصرح تعليمي قرآني رائد.",
       solution: "تصميم وتركيب ألواح كلادينج معمارية متناسقة مع حجر الواجهة مع حروف إستانلس ستيل 3D مطلية بالتيتانيوم الذهبي وإضاءة خلفية دافئة.",
       results: "واجهة معمارية صرحية تجمع بين الفخامة والوضوح النهاري والليلي وتحمل كامل للظروف المناخية في المنطقة الشرقية."
     },
