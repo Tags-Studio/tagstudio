@@ -6,6 +6,9 @@ import { locations } from "@/lib/locationsData"
 
 const baseUrl = "https://www.wearetagstudio.com"
 
+// Revalidate sitemap daily to automatically include scheduled blog articles as their date arrives
+export const revalidate = 86400
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
